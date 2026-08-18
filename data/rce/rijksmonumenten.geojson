@@ -21513,7 +21513,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/514308",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -33613,6 +33613,26 @@
         "coordinates": [
           4.524030586067799,
           51.904533746303855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/65952",
+        "rijksmonumentnummer": "526565",
+        "naam": "Moestuinensemble",
+        "geometry_bron": "Point",
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/526565",
+        "oorspronkelijke_functie": "Tuin, park en plantsoen",
+        "oorspronkelijke_functie_begraafplaats": false,
+        "monument_aard": "onroerend gebouwd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.499345536087022,
+          52.196117942090055
         ]
       }
     },
@@ -75027,7 +75047,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/529432",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -105521,7 +105541,7 @@
         "geometry_bron": "Polygon",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/524873",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -129415,7 +129435,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/511047",
         "oorspronkelijke_functie": "Dierenbegraafplaats",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -145259,7 +145279,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525168",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -171735,20 +171755,60 @@
     {
       "type": "Feature",
       "properties": {
-        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/65952",
-        "rijksmonumentnummer": "526565",
-        "naam": "Moestuinensemble",
+        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66026",
+        "rijksmonumentnummer": "525291",
+        "naam": null,
         "geometry_bron": "Point",
-        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/526565",
-        "oorspronkelijke_functie": "Tuin, park en plantsoen",
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525291",
+        "oorspronkelijke_functie": "Hooischuur",
         "oorspronkelijke_functie_begraafplaats": false,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.499345536087022,
-          52.196117942090055
+          4.383924868992922,
+          51.973713476628596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66081",
+        "rijksmonumentnummer": "526020",
+        "naam": null,
+        "geometry_bron": "Point",
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/526020",
+        "oorspronkelijke_functie": "Tuinmuur",
+        "oorspronkelijke_functie_begraafplaats": false,
+        "monument_aard": "onroerend gebouwd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.352722714905833,
+          52.123743516823005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66092",
+        "rijksmonumentnummer": "512189",
+        "naam": null,
+        "geometry_bron": "Point",
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/512189",
+        "oorspronkelijke_functie": "Hek",
+        "oorspronkelijke_functie_begraafplaats": false,
+        "monument_aard": "onroerend gebouwd"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.638048977694796,
+          51.94184562422306
         ]
       }
     },
@@ -175681,7 +175741,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/506299",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -186219,7 +186279,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/514307",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -196891,7 +196951,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/514301",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -205145,66 +205205,6 @@
         "coordinates": [
           4.699290994888319,
           51.99602488733222
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66026",
-        "rijksmonumentnummer": "525291",
-        "naam": null,
-        "geometry_bron": "Point",
-        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525291",
-        "oorspronkelijke_functie": "Hooischuur",
-        "oorspronkelijke_functie_begraafplaats": false,
-        "monument_aard": "onroerend gebouwd"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.383924868992922,
-          51.973713476628596
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66081",
-        "rijksmonumentnummer": "526020",
-        "naam": null,
-        "geometry_bron": "Point",
-        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/526020",
-        "oorspronkelijke_functie": "Tuinmuur",
-        "oorspronkelijke_functie_begraafplaats": false,
-        "monument_aard": "onroerend gebouwd"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.352722714905833,
-          52.123743516823005
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/66092",
-        "rijksmonumentnummer": "512189",
-        "naam": null,
-        "geometry_bron": "Point",
-        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/512189",
-        "oorspronkelijke_functie": "Hek",
-        "oorspronkelijke_functie_begraafplaats": false,
-        "monument_aard": "onroerend gebouwd"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.638048977694796,
-          51.94184562422306
         ]
       }
     },
@@ -265133,7 +265133,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/522271",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -267029,7 +267029,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525111",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -273605,7 +273605,7 @@
         "geometry_bron": "Polygon",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/517878",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -319289,7 +319289,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525116",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -380285,7 +380285,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/506296",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -386127,7 +386127,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516119",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -388155,7 +388155,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525110",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -444131,7 +444131,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525117",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -466255,7 +466255,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/512646",
         "oorspronkelijke_functie": "Begraafplaatsaula",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -488717,7 +488717,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/524289",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -497433,7 +497433,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525114",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {
@@ -498485,7 +498485,7 @@
         "geometry_bron": "Point",
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/512465",
         "oorspronkelijke_functie": "Begraafplaatshek",
-        "oorspronkelijke_functie_begraafplaats": false,
+        "oorspronkelijke_functie_begraafplaats": true,
         "monument_aard": "onroerend gebouwd"
       },
       "geometry": {

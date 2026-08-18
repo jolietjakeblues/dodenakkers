@@ -53,19 +53,20 @@
 # Voor het FILTERBARE booleanveld ?functieBegraafplaats gebruiken we
 # daarom FILTER EXISTS met een vaste lijst concept-URI's i.p.v. de
 # OPTIONAL-naam: dat is multiplicatie-veilig (geen extra rijen) en mist
-# geen match ook als een ander functie-label toevallig "wint". De lijst is
-# een inhoudelijke keuze, geverifieerd tegen de live thesaurus op
-# 2026-08-18 door te zoeken op labels die "begraafplaats"/"kerkhof"
-# bevatten:
-#   WEL meegenomen (kernbetekenis = begraafplaats/kerkhof zelf):
-#     Begraafplaats, Kerkhof, Kloosterbegraafplaats (F), Kloosterbegraafplaats (H),
-#     Begraafplaats en -onderdelen
-#   NIET meegenomen (aparte/onzekere categorie, nog geen besluit van Leon):
-#     Dierenbegraafplaats (ander domein), Begraafplaatsaula (gebouwonderdeel,
-#     geen terrein), Begraafplaatshek (onderdeel), Uitvaartcentra en
-#     begraafplaatsen (gemengde categorie)
-# Zie sectie 42 van de briefing / docs/data/004-rce-mcp-querystrategie.md
-# voor deze open keuze.
+# geen match ook als een ander functie-label toevallig "wint".
+#
+# Geen eigen inhoudelijke curatie: de lijst bevat alle 9 concepten uit de
+# functienaam-thesaurus waarvan het label "begraafplaats" of "kerkhof"
+# bevat (gevonden via CONTAINS-zoekopdracht op skos:prefLabel, geverifieerd
+# tegen de live dataset op 2026-08-18) -- Begraafplaats, Kerkhof,
+# Kloosterbegraafplaats (F), Kloosterbegraafplaats (H), Begraafplaats en
+# -onderdelen, Dierenbegraafplaats, Begraafplaatsaula, Begraafplaatshek,
+# Uitvaartcentra en begraafplaatsen. Een eerdere versie liet vier hiervan
+# weg als "componenten/mengcategorieen"; dat was zelf al de platslag die
+# sectie 37 van de briefing afraadt ("geen afgeleide classificatie zonder
+# inhoudelijke validatie"), dus nu blijft de selectie tekstueel/thesaurus-
+# gedreven en blijft ?oorspronkelijkeFunctie (het label zelf, zie hieronder)
+# zichtbaar zodat je per monument ziet welk van de 9 concepten het precies is.
 #
 # Bron: RCE CHO Linked Data Voorziening, graph instanties-rce.
 
@@ -96,6 +97,10 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?f
           <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/8ac11fd7-9476-48ff-8aa5-625e6a4fb720>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1a165436-a892-4bf0-ab8c-fb541b1b04e2>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/618a9bfd-994c-4c2b-b1e9-c6239144e1c1>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1680dfc0-666a-4a01-9781-59e9af26ec51>
         }
       } AS ?functieBegraafplaats
     )
@@ -147,6 +152,10 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?f
           <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/8ac11fd7-9476-48ff-8aa5-625e6a4fb720>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1a165436-a892-4bf0-ab8c-fb541b1b04e2>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/618a9bfd-994c-4c2b-b1e9-c6239144e1c1>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1680dfc0-666a-4a01-9781-59e9af26ec51>
         }
       } AS ?functieBegraafplaats
     )

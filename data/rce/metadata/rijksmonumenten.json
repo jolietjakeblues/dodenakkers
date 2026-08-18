@@ -2,7 +2,7 @@
   "source": "RCE Linked Data Voorziening (CHO)",
   "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
   "query_file": "queries/rce/rijksmonumenten.sparql",
-  "retrieved_at": "2026-08-18T14:32:53.759297+00:00",
+  "retrieved_at": "2026-08-18T14:56:59.947507+00:00",
   "feature_count": 14204,
   "stats": {
     "point_rows_from_endpoint": 25021,
@@ -16,5 +16,5 @@
     "min_lat": 51.66,
     "max_lat": 52.32
   },
-  "notes": "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. oorspronkelijke_functie_begraafplaats = FILTER EXISTS op een vaste concept-URI-lijst (Begraafplaats/Kerkhof/Kloosterbegraafplaats F+H/Begraafplaats en -onderdelen), zie queries/rce/rijksmonumenten.sparql voor de motivatie en uitgesloten randgevallen. Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; zie docs/data/004-rce-mcp-querystrategie.md."
+  "notes": "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. oorspronkelijke_functie_begraafplaats = FILTER EXISTS op alle 9 thesaurusconcepten met 'begraafplaats'/'kerkhof' in het label (geen eigen curatie), zie queries/rce/rijksmonumenten.sparql voor de volledige lijst en motivatie. Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; zie docs/data/004-rce-mcp-querystrategie.md."
 }

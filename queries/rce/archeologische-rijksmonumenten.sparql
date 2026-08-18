@@ -55,6 +55,10 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?functie
           <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/8ac11fd7-9476-48ff-8aa5-625e6a4fb720>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1a165436-a892-4bf0-ab8c-fb541b1b04e2>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/618a9bfd-994c-4c2b-b1e9-c6239144e1c1>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1680dfc0-666a-4a01-9781-59e9af26ec51>
         }
       } AS ?functieBegraafplaats
     )
@@ -104,6 +108,10 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?functie
           <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
           <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/8ac11fd7-9476-48ff-8aa5-625e6a4fb720>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1a165436-a892-4bf0-ab8c-fb541b1b04e2>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/618a9bfd-994c-4c2b-b1e9-c6239144e1c1>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/1680dfc0-666a-4a01-9781-59e9af26ec51>
         }
       } AS ?functieBegraafplaats
     )

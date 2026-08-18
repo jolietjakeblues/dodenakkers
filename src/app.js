@@ -44,6 +44,44 @@ const map = new maplibregl.Map({
 
 map.addControl(new maplibregl.NavigationControl(), "top-right");
 
+function polygonVertexCentroid(geometry) {
+  // Cheap vertex-average centroid, only used to place a marker for gebouwde
+  // monumenten die alleen een polygoongeometrie hebben -- geen vervanging
+  // voor een echte (oppervlakte-gewogen) centroid, en niet gebruikt voor
+  // ruimtelijke analyse (dat gebeurt met de echte geometrie in
+  // scripts/analyse_spatial.py).
+  const coords = [];
+  const collectRing = (ring) => coords.push(...ring);
+  if (geometry.type === "Polygon") {
+    collectRing(geometry.coordinates[0]);
+  } else if (geometry.type === "MultiPolygon") {
+    geometry.coordinates.forEach((poly) => collectRing(poly[0]));
+  }
+  const lon = coords.reduce((s, c) => s + c[0], 0) / coords.length;
+  const lat = coords.reduce((s, c) => s + c[1], 0) / coords.length;
+  return [lon, lat];
+}
+
+function deriveMonumentPoints(monumentenFc) {
+  // Gebouwde monumenten blijven altijd een punt (centroid als de bron een
+  // polygoon is); archeologische monumenten met een polygoon laten we hier
+  // weg -- die tonen we als vlak (zie monumenten-vlak-laag), niet ook nog
+  // als punt erbovenop.
+  const features = [];
+  for (const f of monumentenFc.features) {
+    if (f.geometry.type === "Point") {
+      features.push(f);
+    } else if (f.properties.monument_aard !== "archeologisch") {
+      features.push({
+        type: "Feature",
+        properties: f.properties,
+        geometry: { type: "Point", coordinates: polygonVertexCentroid(f.geometry) },
+      });
+    }
+  }
+  return { type: "FeatureCollection", features };
+}
+
 function relevantMonumentUris(begraafplaatsenFc) {
   const uris = new Set();
   for (const f of begraafplaatsenFc.features) {
@@ -141,12 +179,19 @@ async function main() {
     paint: { "line-color": "#5f3dc4", "line-width": 1.5, "line-dasharray": [2, 1] },
   });
 
-  // --- Rijksmonumenten (initieel uit, 14k punten) ---
+  // --- Rijksmonumenten ---
+  // Gebouwde monumenten altijd als punt (ook wanneer de bron een
+  // polygoongeometrie heeft -- dan een client-side centroid, alleen voor
+  // de marker-positie, geen vervanging van de echte geometrie). Archeologische
+  // rijksmonumenten juist als vlak wanneer de bron een polygoon heeft (anders
+  // als punt, want er is dan geen polygoon om te tonen).
+  const monumentenPunten = deriveMonumentPoints(monumenten);
   map.addSource("monumenten", { type: "geojson", data: monumenten });
+  map.addSource("monumenten-punten", { type: "geojson", data: monumentenPunten });
   map.addLayer({
     id: "monumenten-punt",
     type: "circle",
-    source: "monumenten",
+    source: "monumenten-punten",
     layout: { visibility: "none" },
     paint: {
       "circle-radius": 4,
@@ -162,43 +207,42 @@ async function main() {
       "circle-stroke-color": "#ffffff",
     },
   });
-  // Monumenten met polygoongeometrie (o.a. archeologische rijksmonumenten)
-  // renderen niet via een circle-laag -- die tekent alleen Point-features.
-  // Dezelfde bron, een fill+outline laag ernaast voor de Polygon-features.
-  const monumentenKleur = [
-    "case",
-    ["==", ["get", "monument_aard"], "archeologisch"],
-    "#e8590c",
-    ["==", ["get", "monument_aard"], "onroerend gebouwd"],
-    "#1971c2",
-    "#868e96",
-  ];
+  const archeologischFilter = ["==", ["get", "monument_aard"], "archeologisch"];
   map.addLayer({
     id: "monumenten-vlak",
     type: "fill",
     source: "monumenten",
     layout: { visibility: "none" },
-    paint: { "fill-color": monumentenKleur, "fill-opacity": 0.4 },
+    filter: archeologischFilter,
+    paint: { "fill-color": "#e8590c", "fill-opacity": 0.4 },
   });
   map.addLayer({
     id: "monumenten-vlak-outline",
     type: "line",
     source: "monumenten",
     layout: { visibility: "none" },
-    paint: { "line-color": monumentenKleur, "line-width": 1.5 },
+    filter: archeologischFilter,
+    paint: { "line-color": "#e8590c", "line-width": 1.5 },
   });
 
   const relevantUris = relevantMonumentUris(begraafplaatsen);
   const relevantMonumentenFilter = ["in", ["get", "cho_uri"], ["literal", Array.from(relevantUris)]];
-  const monumentenLayerIds = ["monumenten-punt", "monumenten-vlak", "monumenten-vlak-outline"];
+  const monumentenBaseFilters = {
+    "monumenten-punt": null,
+    "monumenten-vlak": archeologischFilter,
+    "monumenten-vlak-outline": archeologischFilter,
+  };
   function updateMonumentenFilter() {
     const showAll = document.getElementById("toggle-monumenten-alle").checked;
     const functieOnly = document.getElementById("filter-functie-begraafplaats").checked;
-    const clauses = [];
-    if (!showAll) clauses.push(relevantMonumentenFilter);
-    if (functieOnly) clauses.push(["==", ["get", "oorspronkelijke_functie_begraafplaats"], true]);
-    const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
-    monumentenLayerIds.forEach((id) => map.setFilter(id, filter));
+    const dynamicClauses = [];
+    if (!showAll) dynamicClauses.push(relevantMonumentenFilter);
+    if (functieOnly) dynamicClauses.push(["==", ["get", "oorspronkelijke_functie_begraafplaats"], true]);
+    for (const [id, base] of Object.entries(monumentenBaseFilters)) {
+      const clauses = base ? [base, ...dynamicClauses] : dynamicClauses;
+      const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
+      map.setFilter(id, filter);
+    }
   }
   updateMonumentenFilter();
   document.getElementById("monumenten-count").textContent = `(${relevantUris.size} relevant, ≤100m)`;
@@ -210,15 +254,19 @@ async function main() {
     type: "fill",
     source: "terrein",
     paint: {
+      // #adb5bd (geruimd) en #f1f3f5 (statusconflict) waren tegen OSM prima
+      // te onderscheiden, maar vallen bijna weg tegen de grijze PDOK
+      // BRT-achtergrondkaart -- vervangen door kleuren met genoeg verzadiging
+      // om op een grijs/wit ondergrond te blijven opvallen.
       "fill-color": [
         "case",
         ["==", ["get", "status_conflict"], true],
-        "#f1f3f5",
+        "#ffd43b",
         ["==", ["get", "geruimd"], true],
-        "#adb5bd",
+        "#a9713f",
         "#40c057",
       ],
-      "fill-opacity": 0.55,
+      "fill-opacity": 0.65,
     },
   });
   map.addLayer({
@@ -329,7 +377,7 @@ async function main() {
     "toggle-terrein": ["terrein-fill", "terrein-outline"],
     "toggle-ingangen": ["ingangen-punt"],
     "toggle-gezichten": ["gezichten-fill", "gezichten-outline"],
-    "toggle-monumenten": monumentenLayerIds,
+    "toggle-monumenten": Object.keys(monumentenBaseFilters),
   };
   for (const [checkboxId, layerIds] of Object.entries(layerToggles)) {
     document.getElementById(checkboxId).addEventListener("change", (e) => {

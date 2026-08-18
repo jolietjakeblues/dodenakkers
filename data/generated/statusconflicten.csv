@@ -1,0 +1,5 @@
+﻿id,naam,plaats,csv_regel_terrein,csv_regel_ingang,geruimd_bron_terrein,geruimd_bron_ingang,ingang_gedeeld,opmerking
+zh-0003,RK begraafplaats,Oude Wetering,4,20,False,True,False,
+zh-0090,Oud NH kerkhof,Schoonhoven,177,194,False,True,False,
+zh-0222,NH Kerkhof,Zwammerdam,435,450,True,False,False,
+zh-0346,Vm. NH kerkhof,Maasland,685,703,False,True,False,

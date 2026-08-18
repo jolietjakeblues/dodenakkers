@@ -213,9 +213,9 @@ def main() -> None:
         rm_stats,
         notes=(
             "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. "
-            "oorspronkelijke_functie_begraafplaats = FILTER EXISTS op een vaste concept-URI-lijst "
-            "(Begraafplaats/Kerkhof/Kloosterbegraafplaats F+H/Begraafplaats en -onderdelen), zie "
-            "queries/rce/rijksmonumenten.sparql voor de motivatie en uitgesloten randgevallen. "
+            "oorspronkelijke_functie_begraafplaats = FILTER EXISTS op alle 9 thesaurusconcepten met "
+            "'begraafplaats'/'kerkhof' in het label (geen eigen curatie), zie "
+            "queries/rce/rijksmonumenten.sparql voor de volledige lijst en motivatie. "
             "Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; "
             "zie docs/data/004-rce-mcp-querystrategie.md."
         ),

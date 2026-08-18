@@ -32,7 +32,14 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 - oppervlakte en omtrek worden uit de terreinpolygoon berekend;
 - `geruimd` wordt als expliciet statusveld gemodelleerd;
 - statusconflicten tussen punt en polygoon worden gerapporteerd en niet stil gecorrigeerd;
-- RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md).
+- RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md);
+- de ruimtelijke join tussen begraafplaatsen en de RCE-extracten draait via `scripts/analyse_spatial.py` (output `data/generated/analyse.geojson`), zie [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md);
+- een eerste MapLibre-viewer (`src/index.html`/`app.js`) toont terrein, ingangen, beschermde gezichten en rijksmonumenten met filters op geruimd/statusconflict/erfgoedrelaties, tegen de PDOK BRT-achtergrondkaart (grijs) als ondergrond;
+- de vier bekende `geruimd`-statusconflicten zijn exporteerbaar naar `data/generated/statusconflicten.csv` via `scripts/export_statusconflicten.py`, met CSV-regelnummers voor handmatige aanvulling door Leon.
+
+## Bekend openstaand punt
+
+`scripts/build_base_dataset.py` is nog een stub: de huidige `data/generated/begraafplaatsen.geojson`/`analyse.geojson` zijn reproduceerbaar wat betreft de RCE-verrijking, maar de basisdataset zelf (terrein/ingang-koppeling vanuit de CSV) is nog niet als werkende code in de repository herbouwd — zie sectie 1 van [Auditresultaten basisdataset](data/kml-audit-resultaten.md) voor de bekende matching-regels die nog geïmplementeerd moeten worden.
 
 ## Nummering
 

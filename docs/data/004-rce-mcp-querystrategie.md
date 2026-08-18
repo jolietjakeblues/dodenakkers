@@ -15,9 +15,9 @@ Q1, Q2 en Q3 zijn geïmplementeerd als opgeslagen SPARQL in `queries/rce/` en
 uitgevoerd via `scripts/fetch_rce.py`. De ruwe extracten staan in
 `data/rce/*.geojson`, met provenance per extract in `data/rce/metadata/*.json`.
 
-Dit is nog niet de definitieve productiequery: zie "Open punten" hieronder
-voor bekende beperkingen die eerst opgelost moeten worden voordat deze
-extracten als kernlogica voor de viewer dienen.
+De extracten voeden al de ruimtelijke join en de viewer (zie hieronder), maar
+dit zijn nog niet de definitieve productiequery's: zie "Open punten" voor
+bekende beperkingen.
 
 ## Primaire RCE-datasets / graphs
 
@@ -118,6 +118,37 @@ Resultaat: **99 archeologische rijksmonumenten** in de Zuid-Holland bbox,
 waarvan 76 met een polygoongeometrie. Slechts 8 hebben een naam (dezelfde
 beperking als bij Q2).
 
+## Oorspronkelijke functie
+
+Q2 en Q3 bevatten ook `oorspronkelijke_functie` (vrij label, via
+`ceo:heeftOorspronkelijkeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel`)
+en een filterbare boolean `oorspronkelijke_functie_begraafplaats`.
+
+Voor die boolean gebruiken we `FILTER EXISTS` met een vaste lijst van **alle
+9** thesaurusconcepten waarvan het label "begraafplaats" of "kerkhof" bevat
+(Begraafplaats, Kerkhof, Kloosterbegraafplaats F/H, Begraafplaats en
+-onderdelen, Dierenbegraafplaats, Begraafplaatsaula, Begraafplaatshek,
+Uitvaartcentra en begraafplaatsen) — zonder verdere curatie. Een eerdere
+versie liet vier daarvan weg als "componenten/mengcategorieën"; dat bleek
+zelf de ongedocumenteerde platslag die de briefing afraadt, dus nu is de
+selectie puur tekstueel/thesaurus-gedreven en blijft het werkelijke label
+per monument zichtbaar in de popup. Resultaat: **67 van de 14.204**
+rijksmonumenten in de bbox (was 47 met de smallere lijst).
+
+`FILTER EXISTS` i.p.v. de `OPTIONAL`-labelquery zelf, omdat
+`heeftOorspronkelijkeFunctie` multi-valued kan zijn (net als
+`heeftOmschrijving`): met een gewone `OPTIONAL` zou een willekeurige van de
+meerdere functies "winnen" bij het samenvoegen in `fetch_rce.py`, en zou een
+monument met bv. zowel "Kerk" als "Begraafplaats" als oorspronkelijke
+functie de boolean kunnen missen. `EXISTS` telt onafhankelijk van welk label
+uiteindelijk getoond wordt.
+
+Let op: `skos:prefLabel` voor het functieconcept leeft niet in de graph
+`instanties-rce` (net als bij `heeftJuridischeStatus`/`heeftMonumentAard`) —
+die labelopzoeking moet dus buiten de `GRAPH`-restrictie staan, anders geeft
+de query stil 0 resultaten. Dit kostte een debug-ronde: de eerste versie
+had 0% naam-dekking terwijl de EXISTS-boolean al wel correct 47/67 vond.
+
 ## Waarom bounding box, geen gemeentelijst
 
 Overwogen alternatief: filteren op `ceo:gemeentenaam` (BRK-relatie, platte
@@ -150,6 +181,13 @@ metadata-bestand bevat: bron, endpoint, querybestand, extractiedatum
 (`retrieved_at`), featuretelling, ruwe tellingen per deelquery en de
 gebruikte bbox. Vereiste Python-pakketten staan in `requirements.txt`.
 
+## Al gebouwd op deze extracten
+
+De lokale ruimtelijke join tussen `data/generated/begraafplaatsen.geojson`
+en Q1/Q2/Q3 draait via `scripts/analyse_spatial.py` (output
+`data/generated/analyse.geojson`), zie
+[005 Erfgoedrelaties resultaten](005-erfgoedrelaties-resultaten.md).
+
 ## Open punten
 
 1. `heeftOmschrijving` als naam-fallback ophalen voor rijksmonumenten
@@ -157,10 +195,6 @@ gebruikte bbox. Vereiste Python-pakketten staan in `requirements.txt`.
    vermijden).
 2. Aanwijzingsinformatie uit de graph `aanwijzingenmonumenten` is nog niet
    meegenomen in Q2/Q3.
-3. De lokale ruimtelijke join tussen `data/generated/begraafplaatsen.geojson`
-   en deze drie RCE-extracten (Q1/Q2/Q3) moet nog gebouwd worden — dat is
-   de volgende stap (`scripts/analyse_spatial.py` in de voorgestelde
-   repositorystructuur).
-4. `build_base_dataset.py` is zelf nog een stub (zie sectie 1 van deze map);
+3. `build_base_dataset.py` is zelf nog een stub (zie sectie 1 van deze map);
    de RCE-extracten hierboven zijn dus reproduceerbaar, maar de
-   basisdataset waartegen ze straks worden gejoind nog niet.
+   basisdataset waartegen ze worden gejoind nog niet.
