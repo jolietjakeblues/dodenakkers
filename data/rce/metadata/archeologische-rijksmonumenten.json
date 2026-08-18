@@ -1,0 +1,20 @@
+{
+  "source": "RCE Linked Data Voorziening (CHO)",
+  "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
+  "query_file": "queries/rce/archeologische-rijksmonumenten.sparql",
+  "retrieved_at": "2026-08-18T14:32:54.904519+00:00",
+  "feature_count": 99,
+  "stats": {
+    "point_rows_from_endpoint": 99,
+    "polygon_rows_from_endpoint": 76,
+    "distinct_cho": 99,
+    "cho_with_polygon": 76
+  },
+  "bbox_wgs84": {
+    "min_lon": 3.9,
+    "max_lon": 5.14,
+    "min_lat": 51.66,
+    "max_lat": 52.32
+  },
+  "notes": "Subset van Rijksmonument met heeftMonumentAard = archeologisch (concept-URI, geen keyword-classificatie), serverside bbox-filter op WKT-string."
+}

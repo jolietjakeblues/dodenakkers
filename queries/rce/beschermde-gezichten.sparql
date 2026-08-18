@@ -1,0 +1,33 @@
+# Q1. Beschermde stads- en dorpsgezichten
+#
+# Doel: alle rijksbeschermde stads- en dorpsgezichten (ceo:Gezicht) met
+# gezichtsnummer, naam en polygoongeometrie, nationaal.
+#
+# De selectie wordt daarna client-side (scripts/fetch_rce.py) beperkt tot
+# de bounding box van de Zuid-Holland begraafplaatsendataset, met buffer.
+# Nationaal telt deze query 472 rijksbeschermde gezichten (2026-08-18),
+# dus een volledige nationale fetch met lokale bbox-filtering is
+# eenvoudiger en robuuster dan een provincie/gemeente-filter in SPARQL.
+#
+# heeftGezichtsstatus is vast gezet op de concept-URI voor
+# "rijksbeschermd stads- of dorpsgezicht" (i.p.v. "gewaardeerd, niet
+# beschermd" of "in procedure"), geverifieerd via query_sparql tegen de
+# live dataset op 2026-08-18.
+#
+# Bron: RCE CHO Linked Data Voorziening, graph gezicht_hvdl (geometrie)
+# en het CEO-instantiemodel voor Gezicht (buiten een specifieke graph).
+
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT DISTINCT ?gezicht ?gezichtsnummer ?naam ?wkt WHERE {
+  ?gezicht a ceo:Gezicht ;
+    ceo:gezichtsnummer ?gezichtsnummer ;
+    ceo:heeftGezichtsstatus <https://data.cultureelerfgoed.nl/term/id/rn/2/fd968529-bf70-4afa-8564-7c6c2fcfcc54> ;
+    ceo:heeftGeometrie ?geom .
+  ?geom geo:asWKT ?wkt .
+  OPTIONAL {
+    ?gezicht ceo:heeftNaam ?naamObj .
+    ?naamObj ceo:naam ?naam .
+  }
+}

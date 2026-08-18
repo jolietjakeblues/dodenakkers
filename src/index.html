@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Dodenakkers Zuid-Holland — onderzoeksviewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="panel">
+    <h1>Dodenakkers Zuid-Holland</h1>
+    <p class="subtitle">Onderzoeksviewer — begraafplaatsen &amp; erfgoed (MVP)</p>
+
+    <section>
+      <h2>Lagen</h2>
+      <label><input type="checkbox" id="toggle-terrein" checked /> Begraafplaatsen (terrein)</label>
+      <label><input type="checkbox" id="toggle-ingangen" checked /> Ingangen</label>
+      <label><input type="checkbox" id="toggle-gezichten" checked /> Beschermde gezichten</label>
+      <label><input type="checkbox" id="toggle-monumenten" /> Rijksmonumenten <span id="monumenten-count">(relevant)</span></label>
+      <label class="sub"><input type="checkbox" id="toggle-monumenten-alle" /> — toon alle 14.204 (kan traag zijn)</label>
+    </section>
+
+    <section>
+      <h2>Filters</h2>
+      <label><input type="checkbox" id="filter-niet-geruimd" /> Alleen niet-geruimd</label>
+      <label><input type="checkbox" id="filter-geruimd" /> Alleen geruimd</label>
+      <label><input type="checkbox" id="filter-conflict" /> Alleen statusconflict</label>
+      <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht</label>
+      <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument</label>
+      <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein (&le;100m)</label>
+      <label><input type="checkbox" id="filter-functie-begraafplaats" /> Rijksmonument: oorspr. functie begraafplaats</label>
+    </section>
+
+    <section>
+      <h2>Legenda</h2>
+      <div class="legend-item"><span class="swatch" style="background:#40c057"></span> Niet-geruimd</div>
+      <div class="legend-item"><span class="swatch" style="background:#adb5bd"></span> Geruimd</div>
+      <div class="legend-item"><span class="swatch" style="background:#f1f3f5;border:2px solid #e03131"></span> Statusconflict</div>
+      <div class="legend-item"><span class="swatch dot" style="background:#e64980"></span> Ingang</div>
+      <div class="legend-item"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
+      <div class="legend-item"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd)</div>
+      <div class="legend-item"><span class="swatch dot" style="background:#e8590c"></span> Rijksmonument (archeologisch)</div>
+    </section>
+
+    <p id="status">Data laden…</p>
+  </div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

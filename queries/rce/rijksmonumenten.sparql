@@ -1,0 +1,173 @@
+# Q2. Rijksmonumenten
+#
+# Doel: alle actieve rijksmonumenten (ceo:Rijksmonument met
+# heeftJuridischeStatus = "rijksmonument") binnen de bounding box van de
+# Zuid-Holland begraafplaatsendataset (plus buffer), met monumentnummer,
+# naam, monumentaard, oorspronkelijke functie en geometrie.
+#
+# Nationaal zijn er 63.103 rijksmonumenten (2026-08-18) -- te veel om in
+# zijn geheel op te halen en lokaal te filteren zoals bij Q1. Daarom wordt
+# hier wel serverside op bounding box gefilterd.
+#
+# geof:sfWithin/sfIntersects veroorzaken structurele timeouts op dit
+# Virtuoso-endpoint (zie known_pitfalls van de RCE-MCP), dus er wordt geen
+# GeoSPARQL-relatie gebruikt. In plaats daarvan wordt de WKT-string zelf
+# ontleed (STRAFTER/STRBEFORE + xsd:double) en numeriek vergeleken met de
+# bbox-grenzen. Dat werkt alleen betrouwbaar per geometrietype (Point vs
+# Polygon hebben een ander aantal openingshaakjes), dus dit bestand bevat
+# twee aparte SELECT-queries die scripts/fetch_rce.py los uitvoert en
+# samenvoegt: per CHO wordt de polygoon verkozen boven het punt wanneer
+# beide beschikbaar zijn (zie sectie 21 van de briefing).
+#
+# Bounding box (WGS84, met buffer op de werkelijke extent van
+# data/generated/begraafplaatsen.geojson: lon 3.923089-5.116852,
+# lat 51.683378-52.300807):
+#   lon 3.90 .. 5.14
+#   lat 51.66 .. 52.32
+#
+# heeftJuridischeStatus is vastgezet op de concept-URI voor
+# "rijksmonument" (i.p.v. "voorbeschermd" of "geen rijksmonument"),
+# geverifieerd via query_sparql tegen de live dataset op 2026-08-18.
+#
+# Naam: ceo:naam heeft in de ontologie rdfs:domain ceo:Naam, niet
+# ceo:Rijksmonument -- een rijksmonument heeft dus GEEN eigen ceo:naam,
+# alleen ceo:heeftNaam -> ceo:Naam -> ceo:naam. Empirisch heeft slechts
+# 8.263 van de 63.103 rijksmonumenten (13%) uberhaupt een heeftNaam-relatie
+# (geverifieerd 2026-08-18); de rest heeft alleen een ceo:heeftOmschrijving
+# (vrije tekst, bv. "Bouwvallig doch schilderachtig dwarshuisje..."), die
+# hier bewust nog niet wordt meegenomen omdat een CHO meerdere
+# omschrijvingen kan hebben en dat in dezelfde OPTIONAL als een andere
+# multi-valued tak een cartesisch product riskeert (zie het known-pitfall
+# patroon in de RCE-MCP addresses-topic). Zie
+# docs/data/004-rce-mcp-querystrategie.md voor deze open opvolgstap.
+#
+# Oorspronkelijke functie (sectie 42, vraag over kruisverband met de
+# begraafplaatsendataset): pad ceo:heeftOorspronkelijkeFunctie ->
+# ceo:heeftFunctieNaam -> skos:prefLabel (geverifieerd via de RCE-MCP
+# semantics-topic "functions" op 2026-08-18). Net als heeftNaam/heeftOmschrijving
+# kan dit multi-valued zijn (een CHO kan meerdere geregistreerde
+# oorspronkelijke functies hebben) -- ?oorspronkelijkeFunctie geeft daarom
+# willekeurig een van de waarden terug ("laatste wint" bij het samenvoegen
+# in fetch_rce.py), puur voor presentatie.
+#
+# Voor het FILTERBARE booleanveld ?functieBegraafplaats gebruiken we
+# daarom FILTER EXISTS met een vaste lijst concept-URI's i.p.v. de
+# OPTIONAL-naam: dat is multiplicatie-veilig (geen extra rijen) en mist
+# geen match ook als een ander functie-label toevallig "wint". De lijst is
+# een inhoudelijke keuze, geverifieerd tegen de live thesaurus op
+# 2026-08-18 door te zoeken op labels die "begraafplaats"/"kerkhof"
+# bevatten:
+#   WEL meegenomen (kernbetekenis = begraafplaats/kerkhof zelf):
+#     Begraafplaats, Kerkhof, Kloosterbegraafplaats (F), Kloosterbegraafplaats (H),
+#     Begraafplaats en -onderdelen
+#   NIET meegenomen (aparte/onzekere categorie, nog geen besluit van Leon):
+#     Dierenbegraafplaats (ander domein), Begraafplaatsaula (gebouwonderdeel,
+#     geen terrein), Begraafplaatshek (onderdeel), Uitvaartcentra en
+#     begraafplaatsen (gemengde categorie)
+# Zie sectie 42 van de briefing / docs/data/004-rce-mcp-querystrategie.md
+# voor deze open keuze.
+#
+# Bron: RCE CHO Linked Data Voorziening, graph instanties-rce.
+
+# --- QUERY: points ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?functieBegraafplaats ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:Rijksmonument ;
+      ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
+      ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL {
+      ?cho ceo:heeftNaam ?naamObj .
+      ?naamObj ceo:naam ?naam .
+    }
+    OPTIONAL { ?cho ceo:heeftMonumentAard ?aard . }
+    BIND(
+      EXISTS {
+        ?cho ceo:heeftOorspronkelijkeFunctie ?fObj2 .
+        ?fObj2 ceo:heeftFunctieNaam ?fConcept2 .
+        VALUES ?fConcept2 {
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0bc8785b-f37d-47bf-af1b-b467d19703cf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/cf239ca3-4a63-49b2-a8e4-27deefb663f9>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+        }
+      } AS ?functieBegraafplaats
+    )
+  }
+  # skos:prefLabel voor het functieconcept leeft NIET in instanties-rce (net als bij
+  # heeftJuridischeStatus/heeftMonumentAard-labels): nesten binnen de GRAPH-restrictie
+  # hierboven geeft stil 0 matches. Daarom hier een aparte OPTIONAL: de relatie
+  # (heeftOorspronkelijkeFunctie/heeftFunctieNaam) blijft graph-gescopet, de labelopzoeking niet.
+  OPTIONAL {
+    GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+      ?cho ceo:heeftOorspronkelijkeFunctie ?fObj .
+      ?fObj ceo:heeftFunctieNaam ?fConcept .
+    }
+    ?fConcept skos:prefLabel ?oorspronkelijkeFunctie .
+    FILTER(lang(?oorspronkelijkeFunctie) = "nl")
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Point"))
+  BIND(STRBEFORE(STRAFTER(STR(?wkt), "("), ")") AS ?inner)
+  BIND(xsd:double(STRBEFORE(?inner, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?inner, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}
+
+# --- QUERY: polygons ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?functieBegraafplaats ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:Rijksmonument ;
+      ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
+      ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL {
+      ?cho ceo:heeftNaam ?naamObj .
+      ?naamObj ceo:naam ?naam .
+    }
+    OPTIONAL { ?cho ceo:heeftMonumentAard ?aard . }
+    BIND(
+      EXISTS {
+        ?cho ceo:heeftOorspronkelijkeFunctie ?fObj2 .
+        ?fObj2 ceo:heeftFunctieNaam ?fConcept2 .
+        VALUES ?fConcept2 {
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0bc8785b-f37d-47bf-af1b-b467d19703cf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/cf239ca3-4a63-49b2-a8e4-27deefb663f9>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+        }
+      } AS ?functieBegraafplaats
+    )
+  }
+  # skos:prefLabel voor het functieconcept leeft NIET in instanties-rce (net als bij
+  # heeftJuridischeStatus/heeftMonumentAard-labels): nesten binnen de GRAPH-restrictie
+  # hierboven geeft stil 0 matches. Daarom hier een aparte OPTIONAL: de relatie
+  # (heeftOorspronkelijkeFunctie/heeftFunctieNaam) blijft graph-gescopet, de labelopzoeking niet.
+  OPTIONAL {
+    GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+      ?cho ceo:heeftOorspronkelijkeFunctie ?fObj .
+      ?fObj ceo:heeftFunctieNaam ?fConcept .
+    }
+    ?fConcept skos:prefLabel ?oorspronkelijkeFunctie .
+    FILTER(lang(?oorspronkelijkeFunctie) = "nl")
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Polygon"))
+  BIND(STRAFTER(STRAFTER(STR(?wkt), "("), "(") AS ?rest)
+  BIND(STRBEFORE(?rest, ",") AS ?firstVertex)
+  BIND(xsd:double(STRBEFORE(?firstVertex, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?firstVertex, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}

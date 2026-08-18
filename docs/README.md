@@ -18,6 +18,7 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 - [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md)
 - [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md)
 - [Auditresultaten basisdataset](data/kml-audit-resultaten.md)
+- [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md)
 
 ## MVP
 
@@ -30,7 +31,8 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 - punt = ingang/toegang;
 - oppervlakte en omtrek worden uit de terreinpolygoon berekend;
 - `geruimd` wordt als expliciet statusveld gemodelleerd;
-- statusconflicten tussen punt en polygoon worden gerapporteerd en niet stil gecorrigeerd.
+- statusconflicten tussen punt en polygoon worden gerapporteerd en niet stil gecorrigeerd;
+- RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md).
 
 ## Nummering
 

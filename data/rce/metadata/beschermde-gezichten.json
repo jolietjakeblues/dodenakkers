@@ -1,0 +1,19 @@
+{
+  "source": "RCE Linked Data Voorziening (CHO)",
+  "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
+  "query_file": "queries/rce/beschermde-gezichten.sparql",
+  "retrieved_at": "2026-08-18T14:32:19.017835+00:00",
+  "feature_count": 105,
+  "stats": {
+    "rows_from_endpoint": 472,
+    "features_in_bbox": 105,
+    "skipped_out_of_bbox": 367
+  },
+  "bbox_wgs84": {
+    "min_lon": 3.9,
+    "max_lon": 5.14,
+    "min_lat": 51.66,
+    "max_lat": 52.32
+  },
+  "notes": "Nationale fetch (472 rijksbeschermde gezichten op 2026-08-18), lokaal gefilterd op de Zuid-Holland bbox via de centroid van elke polygon."
+}

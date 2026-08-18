@@ -1,0 +1,128 @@
+# Q3. Archeologische rijksmonumenten
+#
+# Doel: dezelfde basisvelden als Q2 (queries/rce/rijksmonumenten.sparql),
+# maar beperkt tot rijksmonumenten met monumentaard "archeologisch"
+# (ceo:heeftMonumentAard = concept-URI hieronder), binnen dezelfde
+# Zuid-Holland bounding box.
+#
+# Belangrijk (zie sectie 13 van de briefing): dit is een semantische
+# selectie op de vaste concept-URI voor "archeologisch"
+# (ceo:heeftMonumentAard), niet een tekst-/keyword-match op naam of
+# omschrijving. Nationaal zijn er 1.499 archeologische rijksmonumenten
+# (1.492 met puntcoordinaten), geverifieerd via de RCE-MCP semantics-topic
+# "monument_aard" op 2026-08-18.
+#
+# Let op het onderscheid met de bredere archeologische registerclasses
+# (ceo:ArcheologischTerrein, ceo:ArcheologischComplex, etc. -- zie
+# semantics-topic "archaeology"): dit zijn aparte classes naast
+# ceo:Rijksmonument, gekoppeld via ceo:bevatObject/ceo:ligtInObject. Deze
+# query haalt uitsluitend de rijksmonumenten-subset op (het is deze
+# subset die de briefing "archeologische rijksmonumenten" noemt); de
+# bredere archeologische registerdata is een mogelijke latere uitbreiding,
+# geen onderdeel van deze extractie.
+#
+# Zelfde bbox-redenering, Point/Polygon-opsplitsing, heeftNaam-beperking en
+# oorspronkelijke-functie-aanpak (?functieBegraafplaats via FILTER EXISTS
+# met een vaste concept-URI-lijst, zie de uitgebreide toelichting in
+# queries/rce/rijksmonumenten.sparql) als Q2. Relevant hier: ook een
+# archeologisch rijksmonument (bv. een grafheuvel of grafveld) kan als
+# oorspronkelijke functie "begraafplaats"/"kerkhof" hebben.
+
+# --- QUERY: points ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?functieBegraafplaats ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:Rijksmonument ;
+      ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
+      ceo:heeftMonumentAard <https://data.cultureelerfgoed.nl/term/id/rn/2/b673c8c1-5d93-496d-8f9e-89133d579d77> ;
+      ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL {
+      ?cho ceo:heeftNaam ?naamObj .
+      ?naamObj ceo:naam ?naam .
+    }
+    BIND(
+      EXISTS {
+        ?cho ceo:heeftOorspronkelijkeFunctie ?fObj2 .
+        ?fObj2 ceo:heeftFunctieNaam ?fConcept2 .
+        VALUES ?fConcept2 {
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0bc8785b-f37d-47bf-af1b-b467d19703cf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/cf239ca3-4a63-49b2-a8e4-27deefb663f9>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+        }
+      } AS ?functieBegraafplaats
+    )
+  }
+  # skos:prefLabel leeft niet in instanties-rce -- zie het commentaar in
+  # queries/rce/rijksmonumenten.sparql.
+  OPTIONAL {
+    GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+      ?cho ceo:heeftOorspronkelijkeFunctie ?fObj .
+      ?fObj ceo:heeftFunctieNaam ?fConcept .
+    }
+    ?fConcept skos:prefLabel ?oorspronkelijkeFunctie .
+    FILTER(lang(?oorspronkelijkeFunctie) = "nl")
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Point"))
+  BIND(STRBEFORE(STRAFTER(STR(?wkt), "("), ")") AS ?inner)
+  BIND(xsd:double(STRBEFORE(?inner, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?inner, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}
+
+# --- QUERY: polygons ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?functieBegraafplaats ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:Rijksmonument ;
+      ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
+      ceo:heeftMonumentAard <https://data.cultureelerfgoed.nl/term/id/rn/2/b673c8c1-5d93-496d-8f9e-89133d579d77> ;
+      ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL {
+      ?cho ceo:heeftNaam ?naamObj .
+      ?naamObj ceo:naam ?naam .
+    }
+    BIND(
+      EXISTS {
+        ?cho ceo:heeftOorspronkelijkeFunctie ?fObj2 .
+        ?fObj2 ceo:heeftFunctieNaam ?fConcept2 .
+        VALUES ?fConcept2 {
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0bc8785b-f37d-47bf-af1b-b467d19703cf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/cf239ca3-4a63-49b2-a8e4-27deefb663f9>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/0df5876b-6b95-4492-9d44-a49ef8a8b4bf>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/46e0b2d8-27a7-4fa3-bea7-7b243d655c2b>
+          <https://data.cultureelerfgoed.nl/term/id/rn/2/b310b911-d793-4637-be04-19c521f1c5bb>
+        }
+      } AS ?functieBegraafplaats
+    )
+  }
+  # skos:prefLabel leeft niet in instanties-rce -- zie het commentaar in
+  # queries/rce/rijksmonumenten.sparql.
+  OPTIONAL {
+    GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+      ?cho ceo:heeftOorspronkelijkeFunctie ?fObj .
+      ?fObj ceo:heeftFunctieNaam ?fConcept .
+    }
+    ?fConcept skos:prefLabel ?oorspronkelijkeFunctie .
+    FILTER(lang(?oorspronkelijkeFunctie) = "nl")
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Polygon"))
+  BIND(STRAFTER(STRAFTER(STR(?wkt), "("), "(") AS ?rest)
+  BIND(STRBEFORE(?rest, ",") AS ?firstVertex)
+  BIND(xsd:double(STRBEFORE(?firstVertex, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?firstVertex, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}
