@@ -1,117 +1,104 @@
-# MVP 001: Eerste werkende onderzoekskaart
+# MVP 001: Eerste werkende versie
 
 ## Onderzoeksvraag
 
-Kunnen we voor iedere begraafplaats betrouwbaar bepalen of deze:
+Kan Leon per begraafplaats snel zien:
 
-1. binnen of overlappend met een beschermd stads- of dorpsgezicht ligt;
-2. een relatie heeft met een rijksmonument;
-3. een relatie heeft met een archeologisch rijksmonument?
+1. wat het terrein is en waar de ingang ligt;
+2. of de begraafplaats geruimd of niet-geruimd is;
+3. wat oppervlakte en omtrek zijn;
+4. of het terrein binnen een beschermd stads- of dorpsgezicht ligt;
+5. of er rijksmonumenten op of aan het terrein liggen;
+6. of het terrein overlapt met archeologische rijksmonumenten?
 
-Als dat werkt, is de kern van Leons opdracht bewezen.
+## Binnen scope
 
-## Scope
+- genormaliseerde CSV als primaire build-bron;
+- KML als oorspronkelijke kaartbron en controlebron;
+- terreinpolygonen en ingangspunten koppelen;
+- `geruimd` als expliciet statusveld;
+- oppervlakte en omtrek berekenen;
+- bronconflicten rapporteren;
+- RCE-data voor monumenten, archeologie en beschermde gezichten;
+- waar nuttig PDOK voor geometrie;
+- vooranalyse naar GeoJSON/JSON;
+- eenvoudige MapLibre-viewer;
+- statische publicatie via GitHub Pages.
 
-### Wel
+## Buiten scope eerste MVP
 
-- begraafplaatsen uit de KML;
-- opschoning en validatie;
-- beschermd stads- en dorpsgezicht;
-- rijksmonumenten;
-- archeologische rijksmonumenten;
-- ruimtelijke analyse;
-- kaart;
-- drie tot vijf filters;
-- detailvenster;
-- CSV/GeoJSON-export;
-- bronvermelding.
-
-### Niet in MVP
-
-- Kadaster/percelen;
-- historische kaarten;
+- uitgebreid kadastraal onderzoek;
+- historische perceelsreconstructies;
 - gebruikersaccounts;
-- database;
-- beheerinterface;
-- handmatige editing in de viewer;
-- CARTO;
-- server-side API.
+- database/backend;
+- handmatige GIS-bewerkingen in de browser;
+- automatisch oplossen van onzekere bronconflicten.
 
 ## Werkvolgorde
 
-### Stap 1: KML auditen en converteren
+### 1. KML audit en basismodel
 
-Output:
+- polygonen als terrein herkennen;
+- punten als ingang herkennen;
+- terrein en ingang koppelen;
+- expliciet CSV-veld `geruimd` verwerken;
+- statusconflicten markeren;
+- oppervlakte en omtrek berekenen;
+- schone basisdataset maken.
 
-```text
-data/generated/begraafplaatsen.geojson
-docs/data/kml-audit-resultaten.md
-```
+### 2. RCE-datamodel onderzoeken
 
-### Stap 2: RCE-datamodel verkennen
+- beschermde stads- en dorpsgezichten;
+- rijksmonumenten;
+- archeologische rijksmonumenten;
+- relevante classificaties en geometrieën.
 
-Onderzoek:
+### 3. RCE-MCP/LDV-data ophalen
 
-- beschermde gezichten;
-- monumentaanwijzingen;
-- geometrieën;
-- onderscheid gebouwd/archeologisch.
+Alleen de data die nodig is voor Zuid-Holland en de gekozen onderzoeksvragen.
 
-Output:
+### 4. Ruimtelijke joins
 
-```text
-docs/data/rce-query-notes.md
-queries/
-```
+Per terrein bepalen:
 
-### Stap 3: RCE/PDOK-data ophalen
+- beschermd gezicht;
+- monumenten op/in/aan het terrein;
+- archeologische overlap;
+- relevante afstanden.
 
-Maak reproduceerbare scripts.
+### 5. Validatie
 
-Output bijvoorbeeld:
+Controleer een representatieve selectie met onder andere:
 
-```text
-data/generated/rce-monumenten.geojson
-data/generated/beschermde-gezichten.geojson
-```
+- geruimde en niet-geruimde begraafplaatsen;
+- grote en kleine terreinen;
+- begraafplaatsen binnen en buiten beschermd gezicht;
+- bekende monumentlocaties;
+- de vier bekende statusconflicten uit de bron.
 
-### Stap 4: Spatial joins
+### 6. Viewer
 
-Genereer per begraafplaats:
+Toon:
 
-```text
-protected_view
-monument_count
-archaeology_count
-relations[]
-```
+- terreinpolygonen met verschillende stijl voor geruimd/niet-geruimd;
+- ingangspunten;
+- erfgoedlagen;
+- filters;
+- oppervlakte en omtrek;
+- detailinformatie en bronverwijzingen.
 
-### Stap 5: Steekproef
+### 7. Publicatie
 
-Controleer enkele gevallen handmatig op de kaart.
-
-Leg fouten en uitzonderingen vast.
-
-### Stap 6: Viewer
-
-Bouw een kleine MapLibre-viewer met:
-
-- laag begraafplaatsen;
-- filter beschermd gezicht;
-- filter rijksmonument;
-- filter archeologie;
-- detailvenster.
-
-### Stap 7: Publiceren
-
-Publiceer de statische viewer met GitHub Pages.
+GitHub Actions bouwt de afgeleide data en viewer. GitHub Pages serveert het statische resultaat.
 
 ## Definition of done
 
-Het MVP is geslaagd wanneer Leon:
+De eerste MVP is geslaagd wanneer Leon zonder GIS-software een begraafplaats kan selecteren en direct kan zien:
 
-- een locatie kan aanklikken;
-- de drie kernrelaties kan zien;
-- erop kan filteren;
-- een selectie kan exporteren;
-- kan zien waar de conclusies vandaan komen.
+- terrein en ingang;
+- geruimd/niet-geruimd;
+- oppervlakte en omtrek;
+- beschermd gezicht ja/nee;
+- relevante rijksmonumenten;
+- archeologische relatie;
+- bron en eventuele datakwaliteitswaarschuwing.

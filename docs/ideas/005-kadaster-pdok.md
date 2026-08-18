@@ -1,4 +1,10 @@
-# Idee 005: Kadaster en PDOK
+# Idee 005: Kadaster en PDOK als aanvullende lagen
+
+## Afbakening
+
+De primaire erfgoedlagen komen uit de RCE-MCP/LDV.
+
+PDOK is daarom **geen noodzakelijke tussenlaag** voor rijksmonumenten of beschermde gezichten. We gebruiken PDOK/Kadaster alleen wanneer het onderzoek een aanvullende ruimtelijke laag nodig heeft, vooral percelen en basiskaarten.
 
 ## Doel
 

@@ -1,4 +1,18 @@
-# Idee 004: RCE Linked Data
+# Idee 004: RCE-MCP / Linked Data als primaire erfgoedbron
+
+## Besluit
+
+Voor de erfgoedanalyse gebruiken we de **RCE-MCP / Linked Data Voorziening van de RCE als primaire bron**.
+
+We gaan de rijksmonumenten, archeologische rijksmonumenten en beschermde stads- en dorpsgezichten dus niet eerst uit PDOK reconstrueren.
+
+De RCE-MCP levert de combinatie die we nodig hebben:
+
+1. betekenis en classificatie;
+2. identifiers en URI's;
+3. relaties tussen erfgoedobjecten;
+4. geometrieën waar beschikbaar;
+5. GeoJSON-uitvoer voor ruimtelijke verwerking.
 
 ## Doel
 

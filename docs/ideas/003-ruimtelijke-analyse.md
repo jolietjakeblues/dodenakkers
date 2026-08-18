@@ -1,79 +1,119 @@
 # Idee 003: Ruimtelijke analyse
 
-## Doel
+## Basisgeometrie
 
-Bereken de relaties tussen de geometrie van een begraafplaats en erfgoedobjecten.
+Voor erfgoedanalyse is de **terreinpolygoon** de primaire geometrie.
 
-Alleen kaartlagen over elkaar tekenen is niet genoeg. We willen de relatie als data opslaan.
+Het **ingangspunt** heeft een andere functie en wordt niet gebruikt als vervanging van het terrein.
 
-## Relaties
+## Afgeleide geometrische kenmerken
 
-Voor een begraafplaats kunnen we onder andere bepalen:
+Per terrein berekenen we in RD New (`EPSG:28992`):
 
-- `intersects`: geometrieën raken of overlappen;
-- `within`: de begraafplaats ligt volledig binnen een gebied;
-- `contains`: het object ligt binnen de begraafplaats;
-- `distance`: kleinste afstand tussen beide geometrieën.
+- oppervlakte in m²;
+- oppervlakte in hectare;
+- omtrek in meter.
 
-## Voorgestelde resultaatvelden
+## Relaties met erfgoedobjecten
+
+We willen relaties expliciet vastleggen, bijvoorbeeld:
+
+- `intersects`;
+- `within`;
+- `contains`;
+- `touches`;
+- `distance`.
+
+Daarmee kunnen we onderscheid maken tussen:
+
+- erfgoedobject op het begraafplaatsterrein;
+- gedeeltelijke overlap;
+- begraafplaats binnen beschermd gebied;
+- object direct aan de grens;
+- object alleen in de nabijheid.
+
+## Archeologie
+
+Voor de vraag of een begraafplaats "boven archeologie" ligt is de terreinpolygoon leidend.
+
+Als de RCE-bron een vlakgeometrie heeft, berekenen we werkelijke vlakoverlap.
+
+Als alleen een puntgeometrie beschikbaar is, registreren we dat als een andere soort relatie, bijvoorbeeld `point_in_cemetery`, en doen we niet alsof er een bewezen vlakoverlap is.
+
+## Rijksmonumenten
+
+Voor rijksmonumenten kunnen verschillende situaties voorkomen:
+
+- monument binnen het terrein;
+- monumentgeometrie overlapt het terrein;
+- monument raakt de terreinrand;
+- monument ligt vlak naast de begraafplaats.
+
+De precieze betekenis van "annex aan een rijksmonument" moet op basis van deze meetbare relaties met Leon worden gevalideerd.
+
+## Ingang als aanvullende geometrie
+
+De ingang kan later gebruikt worden voor:
+
+- afstand tot openbare weg;
+- route-informatie;
+- bereikbaarheid;
+- toegang tot een terrein dat zelf veel groter is dan het ingangspunt.
+
+## Status `geruimd`
+
+`geruimd` is geen ruimtelijke relatie maar een eigenschap van de begraafplaats.
+
+Daarom blijft deze status gescheiden van:
+
+- monumentstatus;
+- archeologische overlap;
+- beschermd gezicht;
+- afstandsrelaties.
+
+Zo kunnen we bijvoorbeeld onderzoeken of geruimde begraafplaatsen vaker of juist minder vaak binnen beschermde gebieden liggen.
+
+## Analyse-output
+
+Per begraafplaats willen we uiteindelijk minimaal:
 
 ```json
 {
-  "id": "begraafplaats-001",
-  "naam": "NH Kerkhof, Oude Wetering",
+  "id": "zh-0001",
+  "geruimd": false,
+  "oppervlakte_m2": 3421.0,
+  "omtrek_m": 248.0,
   "protected_view": false,
   "monument_count": 2,
   "archaeology_count": 0,
-  "relations": [
-    {
-      "target": "RCE-URI",
-      "type": "intersects",
-      "distance_m": 0
-    }
-  ]
+  "relations": []
 }
 ```
 
-## Belangrijk onderscheid
+## Techniek
 
-Een punt van een rijksmonument binnen een begraafplaatspolygoon betekent iets anders dan overlap tussen twee polygonen.
+Voer ruimtelijke joins vooraf uit in de build-stap, bijvoorbeeld met:
 
-We moeten daarom per databron vastleggen:
-
-- geometrie-type;
-- nauwkeurigheid;
-- gebruikte ruimtelijke relatie;
-- eventuele afstandsdrempel.
-
-## Mogelijke classificatie
-
-Voor de viewer kunnen we technische relaties vertalen naar:
-
-| Technische relatie | Label voor Leon |
-|---|---|
-| object binnen begraafplaats | op het terrein |
-| polygonen overlappen | overlapt |
-| afstand 0 tot 25 m | direct aangrenzend |
-| afstand 25 tot 100 m | nabij |
-| geen relatie | geen relatie gevonden |
-
-De afstandsgrenzen moeten we samen met Leon valideren voordat we ze als onderzoekscriterium gebruiken.
-
-## Analyseproces
-
-1. valideer de begraafplaatsgeometrieën;
-2. zet alle lagen in een geschikt coördinatenstelsel;
-3. voer spatial joins uit;
-4. bereken relevante afstanden;
-5. sla de bronobjecten en relaties op;
-6. exporteer GeoJSON en CSV;
-7. test een steekproef visueel.
-
-## Gereedschap
-
-Eerste kandidaten:
-
-- GeoPandas + Shapely;
+- Python + GeoPandas/Shapely; of
 - DuckDB Spatial.
 
-Voor een eerste dataset van deze omvang is eenvoud belangrijker dan schaal.
+De browser krijgt daarna een compacte, reproduceerbare dataset en hoeft niet zelf alle ruimtelijke analyses uit te voeren.
+
+## Bron van de erfgoedgeometrie
+
+Voor de eerste analyse gebruiken we geometrieën uit de RCE-MCP/LDV zelf waar die beschikbaar zijn.
+
+Dat geeft één reproduceerbare keten:
+
+```text
+RCE object + classificatie + URI + geometrie
+                    │
+                    ▼
+              GeoJSON / WKT
+                    │
+                    ▼
+       ruimtelijke join met terrein
+```
+
+Alleen wanneer een benodigd RCE-object geen bruikbare geometrie heeft, onderzoeken we een aanvullende geometrische bron.
+
