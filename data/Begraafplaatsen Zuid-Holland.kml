@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Begraafplaatsen Zuid-Holland</name>
+    <description/>
+    <NetworkLink>
+      <name>Begraafplaatsen Zuid-Holland</name>
+      <Link>
+        <href><![CDATA[https://www.google.com/maps/d/kml?forcekml=1&mid=1xOjDMkB6HqNyGE0lbgT3WCHaVM7-Uqc]]></href>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>
