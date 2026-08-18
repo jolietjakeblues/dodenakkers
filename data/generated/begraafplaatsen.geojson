@@ -13265,7 +13265,7 @@
         "geruimd_bron_ingang": false,
         "status_conflict": false,
         "oppervlakte_m2": 78060.5,
-        "oppervlakte_ha": 7.8061,
+        "oppervlakte_ha": 7.806,
         "omtrek_m": 1577.46,
         "ingang": {
           "type": "Point",

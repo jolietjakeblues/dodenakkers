@@ -65,6 +65,18 @@ def run_query(sparql_query: str) -> list[dict]:
     return rows
 
 
+FUNCTIE_SUFFIX_RE = re.compile(r"\s*\([^)]*\)\s*$")
+
+
+def strip_functie_suffix(label: str | None) -> str | None:
+    """Drop a trailing RCE subtype code, e.g. "Woonhuis(K)" -> "Woonhuis",
+    "Boerderij (M1)" -> "Boerderij". Used to bucket near-duplicate labels
+    for filtering; the raw label is kept separately for display."""
+    if not label:
+        return label
+    return FUNCTIE_SUFFIX_RE.sub("", label).strip() or label
+
+
 def wkt_to_geojson_geometry(wkt_str: str) -> dict:
     geom = shapely_wkt.loads(wkt_str)
     return mapping(geom)
@@ -140,8 +152,9 @@ def build_rijksmonumenten(query_file: Path, feature_name: str, include_aard: boo
                 else None
             ),
             "oorspronkelijke_functie": row.get("oorspronkelijkeFunctie"),
-            # zie queries/rce/rijksmonumenten.sparql voor de vaste concept-URI-lijst
-            "oorspronkelijke_functie_begraafplaats": row.get("functieBegraafplaats") == "true",
+            "oorspronkelijke_functie_kort": strip_functie_suffix(row.get("oorspronkelijkeFunctie")),
+            "huidige_functie": row.get("huidigeFunctie"),
+            "type": row.get("type"),
         }
         if include_aard:
             aard_uri = row.get("aard")
@@ -213,9 +226,10 @@ def main() -> None:
         rm_stats,
         notes=(
             "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. "
-            "oorspronkelijke_functie_begraafplaats = FILTER EXISTS op alle 9 thesaurusconcepten met "
-            "'begraafplaats'/'kerkhof' in het label (geen eigen curatie), zie "
-            "queries/rce/rijksmonumenten.sparql voor de volledige lijst en motivatie. "
+            "oorspronkelijke_functie/huidige_functie/type via heeftOorspronkelijkeFunctie/"
+            "heeftHuidigeFunctie/heeftType (geen curatie, echte labels), zie "
+            "queries/rce/rijksmonumenten.sparql. oorspronkelijke_functie_kort heeft de "
+            "RCE-subtypecode ('(K)', '(M1)', ...) afgeknipt, voor filtering. "
             "Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; "
             "zie docs/data/004-rce-mcp-querystrategie.md."
         ),

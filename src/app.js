@@ -82,6 +82,16 @@ function deriveMonumentPoints(monumentenFc) {
   return { type: "FeatureCollection", features };
 }
 
+function functieCounts(monumentenFc) {
+  const counts = new Map();
+  for (const f of monumentenFc.features) {
+    const label = f.properties.oorspronkelijke_functie_kort;
+    if (!label) continue;
+    counts.set(label, (counts.get(label) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
 function relevantMonumentUris(begraafplaatsenFc) {
   const uris = new Set();
   for (const f of begraafplaatsenFc.features) {
@@ -232,12 +242,51 @@ async function main() {
     "monumenten-vlak": archeologischFilter,
     "monumenten-vlak-outline": archeologischFilter,
   };
+
+  // --- Functiefilter: dynamisch opgebouwd uit de daadwerkelijk voorkomende
+  // oorspronkelijke_functie_kort-waarden, geen vaste curatie (zie
+  // docs/data/004-rce-mcp-querystrategie.md, "Filteren: alleen op
+  // oorspronkelijke functie"). Selectie staat los van de zoekbalk zodat
+  // filteren op tekst de selectie niet ongedaan maakt.
+  const functieOptions = functieCounts(monumenten);
+  const selectedFunctie = new Set();
+  const functieSelectEl = document.getElementById("functie-select");
+  const functieSearchEl = document.getElementById("functie-search");
+  function renderFunctieOptions() {
+    const query = functieSearchEl.value.trim().toLowerCase();
+    const prevScroll = functieSelectEl.scrollTop;
+    functieSelectEl.innerHTML = "";
+    for (const [label, count] of functieOptions) {
+      if (query && !label.toLowerCase().includes(query)) continue;
+      const opt = document.createElement("option");
+      opt.value = label;
+      opt.textContent = `${label} (${count})`;
+      opt.selected = selectedFunctie.has(label);
+      functieSelectEl.appendChild(opt);
+    }
+    functieSelectEl.scrollTop = prevScroll;
+  }
+  renderFunctieOptions();
+  functieSearchEl.addEventListener("input", renderFunctieOptions);
+  functieSelectEl.addEventListener("change", () => {
+    selectedFunctie.clear();
+    for (const opt of functieSelectEl.selectedOptions) selectedFunctie.add(opt.value);
+    updateMonumentenFilter();
+  });
+  document.getElementById("functie-clear").addEventListener("click", () => {
+    selectedFunctie.clear();
+    functieSearchEl.value = "";
+    renderFunctieOptions();
+    updateMonumentenFilter();
+  });
+
   function updateMonumentenFilter() {
     const showAll = document.getElementById("toggle-monumenten-alle").checked;
-    const functieOnly = document.getElementById("filter-functie-begraafplaats").checked;
     const dynamicClauses = [];
     if (!showAll) dynamicClauses.push(relevantMonumentenFilter);
-    if (functieOnly) dynamicClauses.push(["==", ["get", "oorspronkelijke_functie_begraafplaats"], true]);
+    if (selectedFunctie.size) {
+      dynamicClauses.push(["in", ["get", "oorspronkelijke_functie_kort"], ["literal", [...selectedFunctie]]]);
+    }
     for (const [id, base] of Object.entries(monumentenBaseFilters)) {
       const clauses = base ? [base, ...dynamicClauses] : dynamicClauses;
       const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
@@ -357,7 +406,8 @@ async function main() {
           ["Rijksmonumentnummer", p.rijksmonumentnummer],
           ["Aard", p.monument_aard],
           ["Oorspronkelijke functie", p.oorspronkelijke_functie],
-          ["Functie is begraafplaats/kerkhof", p.oorspronkelijke_functie_begraafplaats ? "ja" : "nee"],
+          ["Huidige functie", p.huidige_functie],
+          ["Type", p.type],
           ["Geometriebron", p.geometry_bron],
           ["Register", p.monumentenregister_url ? `<a href="${p.monumentenregister_url}" target="_blank" rel="noopener">bekijk</a>` : null],
         ])
@@ -387,7 +437,6 @@ async function main() {
   }
 
   document.getElementById("toggle-monumenten-alle").addEventListener("change", updateMonumentenFilter);
-  document.getElementById("filter-functie-begraafplaats").addEventListener("change", updateMonumentenFilter);
 
   // --- Filters (terrein/ingangen; werken via GeoJSON filter-expressies) ---
   function applyFilters() {

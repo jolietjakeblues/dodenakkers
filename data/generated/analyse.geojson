@@ -316,14 +316,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/22802",
             "relation": "0-25m",
-            "distance_m": 13.6
+            "distance_m": 13.7
           },
           {
             "rijksmonumentnummer": "7093",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45055",
             "relation": "25-100m",
-            "distance_m": 82.2
+            "distance_m": 82.3
           }
         ]
       },
@@ -712,7 +712,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51890",
             "relation": "25-100m",
-            "distance_m": 41.2
+            "distance_m": 41.3
           },
           {
             "rijksmonumentnummer": "9372",
@@ -733,7 +733,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61297",
             "relation": "25-100m",
-            "distance_m": 95.0
+            "distance_m": 95.1
           },
           {
             "rijksmonumentnummer": "9368",
@@ -1064,7 +1064,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68578",
             "relation": "25-100m",
-            "distance_m": 28.8
+            "distance_m": 28.9
           },
           {
             "rijksmonumentnummer": "525246",
@@ -1199,16 +1199,16 @@
         "rijksmonument_count": 4,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "525267",
+            "rijksmonumentnummer": "525266",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79575",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79576",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "525266",
+            "rijksmonumentnummer": "525267",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79576",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79575",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -1819,16 +1819,9 @@
         "rijksmonument_count": 23,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "476062",
+            "rijksmonumentnummer": "476059",
             "naam": "Gemeentelijke Begraafplaats",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/41668",
-            "relation": "inside_on_site",
-            "distance_m": 0.0
-          },
-          {
-            "rijksmonumentnummer": "476060",
-            "naam": "Gemeentelijke Begraafplaats",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/23740",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/15362",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -1840,16 +1833,23 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "476059",
+            "rijksmonumentnummer": "476061",
             "naam": "Gemeentelijke Begraafplaats",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/15362",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55355",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "476061",
+            "rijksmonumentnummer": "476060",
             "naam": "Gemeentelijke Begraafplaats",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55355",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/23740",
+            "relation": "inside_on_site",
+            "distance_m": 0.0
+          },
+          {
+            "rijksmonumentnummer": "476062",
+            "naam": "Gemeentelijke Begraafplaats",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/41668",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -1886,7 +1886,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43631",
             "relation": "25-100m",
-            "distance_m": 80.6
+            "distance_m": 80.5
           },
           {
             "rijksmonumentnummer": "475917",
@@ -2097,16 +2097,16 @@
         "rijksmonument_count": 23,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "17618",
+            "rijksmonumentnummer": "17619",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/21022",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11156",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "17619",
+            "rijksmonumentnummer": "17618",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11156",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/21022",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -2192,7 +2192,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/15684",
             "relation": "25-100m",
-            "distance_m": 40.3
+            "distance_m": 40.4
           },
           {
             "rijksmonumentnummer": "475919",
@@ -2468,16 +2468,16 @@
         "rijksmonument_count": 3,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "17997",
+            "rijksmonumentnummer": "17998",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/49072",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/17579",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "17998",
+            "rijksmonumentnummer": "17997",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/17579",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/49072",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -2769,13 +2769,6 @@
             "distance_m": 35.5
           },
           {
-            "rijksmonumentnummer": "522271",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69600",
-            "relation": "25-100m",
-            "distance_m": 47.4
-          },
-          {
             "rijksmonumentnummer": "522270",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69601",
@@ -2783,9 +2776,9 @@
             "distance_m": 47.4
           },
           {
-            "rijksmonumentnummer": "529432",
+            "rijksmonumentnummer": "522271",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69599",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69600",
             "relation": "25-100m",
             "distance_m": 47.4
           },
@@ -2793,6 +2786,13 @@
             "rijksmonumentnummer": "13321",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69602",
+            "relation": "25-100m",
+            "distance_m": 47.4
+          },
+          {
+            "rijksmonumentnummer": "529432",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69599",
             "relation": "25-100m",
             "distance_m": 47.4
           }
@@ -3092,7 +3092,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/46834",
             "relation": "0-25m",
-            "distance_m": 4.2
+            "distance_m": 4.1
           },
           {
             "rijksmonumentnummer": "8281",
@@ -3339,7 +3339,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45849",
             "relation": "0-25m",
-            "distance_m": 16.1
+            "distance_m": 16.2
           },
           {
             "rijksmonumentnummer": "532021",
@@ -3536,6 +3536,13 @@
         "rijksmonument_count": 3,
         "rijksmonument_relations": [
           {
+            "rijksmonumentnummer": "525110",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71495",
+            "relation": "inside_on_site",
+            "distance_m": 0.0
+          },
+          {
             "rijksmonumentnummer": "525111",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71494",
@@ -3546,13 +3553,6 @@
             "rijksmonumentnummer": "525109",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71496",
-            "relation": "inside_on_site",
-            "distance_m": 0.0
-          },
-          {
-            "rijksmonumentnummer": "525110",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71495",
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
@@ -3669,9 +3669,9 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "525116",
+            "rijksmonumentnummer": "525113",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77458",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77461",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -3683,9 +3683,9 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "525113",
+            "rijksmonumentnummer": "525116",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77461",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77458",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -3715,7 +3715,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71495",
             "relation": "25-100m",
-            "distance_m": 81.2
+            "distance_m": 81.3
           }
         ]
       },
@@ -3901,7 +3901,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61376",
             "relation": "0-25m",
-            "distance_m": 2.2
+            "distance_m": 2.3
           },
           {
             "rijksmonumentnummer": "22134",
@@ -4050,7 +4050,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73312",
             "relation": "0-25m",
-            "distance_m": 4.2
+            "distance_m": 4.3
           },
           {
             "rijksmonumentnummer": "509921",
@@ -4064,7 +4064,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73313",
             "relation": "25-100m",
-            "distance_m": 29.1
+            "distance_m": 29.2
           }
         ]
       },
@@ -4536,16 +4536,16 @@
         "rijksmonument_count": 4,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "23518",
+            "rijksmonumentnummer": "23517",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12744",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28645",
             "relation": "25-100m",
             "distance_m": 33.0
           },
           {
-            "rijksmonumentnummer": "23517",
+            "rijksmonumentnummer": "23518",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28645",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12744",
             "relation": "25-100m",
             "distance_m": 33.0
           },
@@ -4638,16 +4638,16 @@
         "rijksmonument_count": 8,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "23518",
+            "rijksmonumentnummer": "23517",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12744",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28645",
             "relation": "0-25m",
             "distance_m": 23.1
           },
           {
-            "rijksmonumentnummer": "23517",
+            "rijksmonumentnummer": "23518",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28645",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12744",
             "relation": "0-25m",
             "distance_m": 23.1
           },
@@ -6096,7 +6096,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/76848",
             "relation": "0-25m",
-            "distance_m": 2.4
+            "distance_m": 2.5
           }
         ]
       },
@@ -6223,7 +6223,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/76847",
             "relation": "0-25m",
-            "distance_m": 12.0
+            "distance_m": 11.9
           },
           {
             "rijksmonumentnummer": "514993",
@@ -6511,7 +6511,7 @@
             "naam": "Heilig Hartschool",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/24057",
             "relation": "25-100m",
-            "distance_m": 66.3
+            "distance_m": 66.2
           },
           {
             "rijksmonumentnummer": "24725",
@@ -6787,7 +6787,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19883",
             "relation": "0-25m",
-            "distance_m": 12.6
+            "distance_m": 12.7
           },
           {
             "rijksmonumentnummer": "37944",
@@ -6871,7 +6871,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19324",
             "relation": "25-100m",
-            "distance_m": 98.8
+            "distance_m": 98.9
           }
         ]
       },
@@ -8106,14 +8106,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/34630",
             "relation": "0-25m",
-            "distance_m": 6.7
+            "distance_m": 6.6
           },
           {
             "rijksmonumentnummer": "29805",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33233",
             "relation": "0-25m",
-            "distance_m": 6.8
+            "distance_m": 6.7
           },
           {
             "rijksmonumentnummer": "29804",
@@ -8123,16 +8123,16 @@
             "distance_m": 7.2
           },
           {
-            "rijksmonumentnummer": "29832",
+            "rijksmonumentnummer": "29833",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14646",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11842",
             "relation": "0-25m",
             "distance_m": 7.3
           },
           {
-            "rijksmonumentnummer": "29829",
+            "rijksmonumentnummer": "29832",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/62303",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14646",
             "relation": "0-25m",
             "distance_m": 7.3
           },
@@ -8144,9 +8144,9 @@
             "distance_m": 7.3
           },
           {
-            "rijksmonumentnummer": "29833",
+            "rijksmonumentnummer": "29829",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11842",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/62303",
             "relation": "0-25m",
             "distance_m": 7.3
           },
@@ -8158,16 +8158,16 @@
             "distance_m": 7.3
           },
           {
-            "rijksmonumentnummer": "29802",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26599",
-            "relation": "0-25m",
-            "distance_m": 8.0
-          },
-          {
             "rijksmonumentnummer": "29835",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48715",
+            "relation": "0-25m",
+            "distance_m": 7.9
+          },
+          {
+            "rijksmonumentnummer": "29802",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26599",
             "relation": "0-25m",
             "distance_m": 8.0
           },
@@ -8183,7 +8183,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/21275",
             "relation": "0-25m",
-            "distance_m": 9.0
+            "distance_m": 8.9
           },
           {
             "rijksmonumentnummer": "29827",
@@ -8211,7 +8211,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37580",
             "relation": "0-25m",
-            "distance_m": 17.5
+            "distance_m": 17.4
           },
           {
             "rijksmonumentnummer": "29841",
@@ -8232,7 +8232,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51033",
             "relation": "0-25m",
-            "distance_m": 18.9
+            "distance_m": 19.0
           },
           {
             "rijksmonumentnummer": "28655",
@@ -8246,7 +8246,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/31848",
             "relation": "25-100m",
-            "distance_m": 27.9
+            "distance_m": 28.0
           },
           {
             "rijksmonumentnummer": "29820",
@@ -8267,21 +8267,21 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54239",
             "relation": "25-100m",
-            "distance_m": 30.5
+            "distance_m": 30.4
           },
           {
             "rijksmonumentnummer": "29821",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12026",
             "relation": "25-100m",
-            "distance_m": 31.4
+            "distance_m": 31.3
           },
           {
             "rijksmonumentnummer": "29822",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43444",
             "relation": "25-100m",
-            "distance_m": 33.0
+            "distance_m": 32.9
           },
           {
             "rijksmonumentnummer": "29840",
@@ -8309,7 +8309,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/25984",
             "relation": "25-100m",
-            "distance_m": 50.5
+            "distance_m": 50.6
           },
           {
             "rijksmonumentnummer": "29817",
@@ -8330,14 +8330,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/30390",
             "relation": "25-100m",
-            "distance_m": 80.9
-          },
-          {
-            "rijksmonumentnummer": "29863",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38372",
-            "relation": "25-100m",
-            "distance_m": 81.8
+            "distance_m": 81.0
           },
           {
             "rijksmonumentnummer": "29815",
@@ -8347,23 +8340,30 @@
             "distance_m": 81.9
           },
           {
+            "rijksmonumentnummer": "29863",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38372",
+            "relation": "25-100m",
+            "distance_m": 81.9
+          },
+          {
             "rijksmonumentnummer": "29813",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12338",
             "relation": "25-100m",
-            "distance_m": 83.8
-          },
-          {
-            "rijksmonumentnummer": "29812",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/49360",
-            "relation": "25-100m",
-            "distance_m": 85.8
+            "distance_m": 83.9
           },
           {
             "rijksmonumentnummer": "29814",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58360",
+            "relation": "25-100m",
+            "distance_m": 85.9
+          },
+          {
+            "rijksmonumentnummer": "29812",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/49360",
             "relation": "25-100m",
             "distance_m": 85.9
           },
@@ -8379,7 +8379,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26276",
             "relation": "25-100m",
-            "distance_m": 87.6
+            "distance_m": 87.7
           },
           {
             "rijksmonumentnummer": "29862",
@@ -8400,7 +8400,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28095",
             "relation": "25-100m",
-            "distance_m": 95.9
+            "distance_m": 96.0
           }
         ]
       },
@@ -8900,20 +8900,6 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "511983",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68554",
-            "relation": "25-100m",
-            "distance_m": 39.5
-          },
-          {
-            "rijksmonumentnummer": "511982",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68555",
-            "relation": "25-100m",
-            "distance_m": 39.5
-          },
-          {
             "rijksmonumentnummer": "511984",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68553",
@@ -8924,6 +8910,20 @@
             "rijksmonumentnummer": "511985",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68552",
+            "relation": "25-100m",
+            "distance_m": 39.5
+          },
+          {
+            "rijksmonumentnummer": "511983",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68554",
+            "relation": "25-100m",
+            "distance_m": 39.5
+          },
+          {
+            "rijksmonumentnummer": "511982",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/68555",
             "relation": "25-100m",
             "distance_m": 39.5
           }
@@ -9196,7 +9196,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/74964",
             "relation": "25-100m",
-            "distance_m": 82.2
+            "distance_m": 82.1
           },
           {
             "rijksmonumentnummer": "509681",
@@ -10072,16 +10072,16 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "518126",
+            "rijksmonumentnummer": "518124",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71577",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71579",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "518124",
+            "rijksmonumentnummer": "518126",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71579",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/71577",
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
@@ -10580,16 +10580,16 @@
         "rijksmonument_count": 8,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "506296",
+            "rijksmonumentnummer": "506297",
             "naam": "Algemene Begraafplaats Crooswijk",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78735",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78734",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "506294",
+            "rijksmonumentnummer": "506296",
             "naam": "Algemene Begraafplaats Crooswijk",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78737",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78735",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -10601,16 +10601,16 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "506297",
+            "rijksmonumentnummer": "506299",
             "naam": "Algemene Begraafplaats Crooswijk",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78734",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78732",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "506299",
+            "rijksmonumentnummer": "506294",
             "naam": "Algemene Begraafplaats Crooswijk",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78732",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78737",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -11203,19 +11203,19 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/59397",
             "relation": "0-25m",
-            "distance_m": 7.3
-          },
-          {
-            "rijksmonumentnummer": "33472",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/44408",
-            "relation": "0-25m",
-            "distance_m": 13.9
+            "distance_m": 7.4
           },
           {
             "rijksmonumentnummer": "33473",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11874",
+            "relation": "0-25m",
+            "distance_m": 13.9
+          },
+          {
+            "rijksmonumentnummer": "33472",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/44408",
             "relation": "0-25m",
             "distance_m": 13.9
           },
@@ -11280,7 +11280,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38377",
             "relation": "25-100m",
-            "distance_m": 47.2
+            "distance_m": 47.3
           },
           {
             "rijksmonumentnummer": "33442",
@@ -11294,14 +11294,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/44649",
             "relation": "25-100m",
-            "distance_m": 54.3
+            "distance_m": 54.4
           },
           {
             "rijksmonumentnummer": "33482",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/62289",
             "relation": "25-100m",
-            "distance_m": 57.7
+            "distance_m": 57.8
           },
           {
             "rijksmonumentnummer": "33504",
@@ -11311,16 +11311,16 @@
             "distance_m": 59.4
           },
           {
-            "rijksmonumentnummer": "33464",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58825",
-            "relation": "25-100m",
-            "distance_m": 61.4
-          },
-          {
             "rijksmonumentnummer": "33550",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55399",
+            "relation": "25-100m",
+            "distance_m": 61.5
+          },
+          {
+            "rijksmonumentnummer": "33464",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58825",
             "relation": "25-100m",
             "distance_m": 61.5
           },
@@ -11336,7 +11336,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48789",
             "relation": "25-100m",
-            "distance_m": 62.1
+            "distance_m": 62.0
           },
           {
             "rijksmonumentnummer": "33505",
@@ -11350,7 +11350,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39426",
             "relation": "25-100m",
-            "distance_m": 63.3
+            "distance_m": 63.2
           },
           {
             "rijksmonumentnummer": "33463",
@@ -11371,7 +11371,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/50089",
             "relation": "25-100m",
-            "distance_m": 71.4
+            "distance_m": 71.3
           },
           {
             "rijksmonumentnummer": "33514",
@@ -11406,14 +11406,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12453",
             "relation": "25-100m",
-            "distance_m": 79.4
+            "distance_m": 79.5
           },
           {
             "rijksmonumentnummer": "33551",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/18340",
             "relation": "25-100m",
-            "distance_m": 80.9
+            "distance_m": 81.0
           },
           {
             "rijksmonumentnummer": "33500",
@@ -11427,7 +11427,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/47524",
             "relation": "25-100m",
-            "distance_m": 88.7
+            "distance_m": 88.6
           },
           {
             "rijksmonumentnummer": "33501",
@@ -11448,14 +11448,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14993",
             "relation": "25-100m",
-            "distance_m": 94.6
+            "distance_m": 94.5
           },
           {
             "rijksmonumentnummer": "33460",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43969",
             "relation": "25-100m",
-            "distance_m": 95.4
+            "distance_m": 95.5
           },
           {
             "rijksmonumentnummer": "33440",
@@ -11586,7 +11586,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37452",
             "relation": "25-100m",
-            "distance_m": 67.8
+            "distance_m": 67.9
           },
           {
             "rijksmonumentnummer": "33503",
@@ -11827,7 +11827,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26236",
             "relation": "25-100m",
-            "distance_m": 51.6
+            "distance_m": 51.7
           }
         ]
       },
@@ -11912,7 +11912,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11019",
             "relation": "0-25m",
-            "distance_m": 6.3
+            "distance_m": 6.4
           },
           {
             "rijksmonumentnummer": "33553",
@@ -12117,7 +12117,7 @@
             "naam": "Casa Reale",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/36455",
             "relation": "25-100m",
-            "distance_m": 94.8
+            "distance_m": 94.7
           }
         ]
       },
@@ -12246,9 +12246,9 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "510520",
+            "rijksmonumentnummer": "510521",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79754",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79753",
             "relation": "25-100m",
             "distance_m": 51.3
           },
@@ -12260,16 +12260,9 @@
             "distance_m": 51.3
           },
           {
-            "rijksmonumentnummer": "510523",
+            "rijksmonumentnummer": "510517",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79751",
-            "relation": "25-100m",
-            "distance_m": 51.3
-          },
-          {
-            "rijksmonumentnummer": "510524",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79750",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79756",
             "relation": "25-100m",
             "distance_m": 51.3
           },
@@ -12281,6 +12274,27 @@
             "distance_m": 51.3
           },
           {
+            "rijksmonumentnummer": "510525",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79749",
+            "relation": "25-100m",
+            "distance_m": 51.3
+          },
+          {
+            "rijksmonumentnummer": "510524",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79750",
+            "relation": "25-100m",
+            "distance_m": 51.3
+          },
+          {
+            "rijksmonumentnummer": "510523",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79751",
+            "relation": "25-100m",
+            "distance_m": 51.3
+          },
+          {
             "rijksmonumentnummer": "510522",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79752",
@@ -12288,23 +12302,9 @@
             "distance_m": 51.3
           },
           {
-            "rijksmonumentnummer": "510517",
+            "rijksmonumentnummer": "510520",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79756",
-            "relation": "25-100m",
-            "distance_m": 51.3
-          },
-          {
-            "rijksmonumentnummer": "510521",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79753",
-            "relation": "25-100m",
-            "distance_m": 51.3
-          },
-          {
-            "rijksmonumentnummer": "510525",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79749",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/79754",
             "relation": "25-100m",
             "distance_m": 51.3
           }
@@ -13132,7 +13132,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14414",
             "relation": "25-100m",
-            "distance_m": 74.8
+            "distance_m": 74.9
           }
         ]
       },
@@ -13364,7 +13364,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57606",
             "relation": "0-25m",
-            "distance_m": 14.7
+            "distance_m": 14.6
           },
           {
             "rijksmonumentnummer": "38361",
@@ -13420,14 +13420,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43250",
             "relation": "25-100m",
-            "distance_m": 32.6
+            "distance_m": 32.7
           },
           {
             "rijksmonumentnummer": "38354",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54246",
             "relation": "25-100m",
-            "distance_m": 35.7
+            "distance_m": 35.8
           },
           {
             "rijksmonumentnummer": "525049",
@@ -14314,13 +14314,6 @@
         "rijksmonument_count": 3,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "516154",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67253",
-            "relation": "25-100m",
-            "distance_m": 66.8
-          },
-          {
             "rijksmonumentnummer": "516152",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67255",
@@ -14331,6 +14324,13 @@
             "rijksmonumentnummer": "516153",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67254",
+            "relation": "25-100m",
+            "distance_m": 66.8
+          },
+          {
+            "rijksmonumentnummer": "516154",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67253",
             "relation": "25-100m",
             "distance_m": 66.8
           }
@@ -14683,13 +14683,6 @@
         "rijksmonument_count": 6,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "512463",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78829",
-            "relation": "inside_on_site",
-            "distance_m": 0.0
-          },
-          {
             "rijksmonumentnummer": "512464",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78828",
@@ -14697,9 +14690,9 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "512461",
+            "rijksmonumentnummer": "512463",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78831",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78829",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -14714,6 +14707,13 @@
             "rijksmonumentnummer": "512460",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78832",
+            "relation": "inside_on_site",
+            "distance_m": 0.0
+          },
+          {
+            "rijksmonumentnummer": "512461",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/78831",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -15687,16 +15687,16 @@
         "rijksmonument_count": 6,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "41035",
+            "rijksmonumentnummer": "41034",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54880",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12033",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "41034",
+            "rijksmonumentnummer": "41035",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12033",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54880",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -16185,7 +16185,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/22120",
             "relation": "25-100m",
-            "distance_m": 88.6
+            "distance_m": 88.5
           }
         ]
       },
@@ -16459,16 +16459,16 @@
         "rijksmonument_count": 2,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "31709",
+            "rijksmonumentnummer": "31708",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58001",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35733",
             "relation": "25-100m",
             "distance_m": 86.0
           },
           {
-            "rijksmonumentnummer": "31708",
+            "rijksmonumentnummer": "31709",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35733",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58001",
             "relation": "25-100m",
             "distance_m": 86.0
           }
@@ -16768,32 +16768,32 @@
         "rijksmonument_count": 7,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "31697",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52050",
-            "relation": "0-25m",
-            "distance_m": 4.5
-          },
-          {
             "rijksmonumentnummer": "31699",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56522",
             "relation": "0-25m",
-            "distance_m": 4.5
+            "distance_m": 4.4
           },
           {
             "rijksmonumentnummer": "31698",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/42870",
             "relation": "0-25m",
-            "distance_m": 4.5
+            "distance_m": 4.4
+          },
+          {
+            "rijksmonumentnummer": "31697",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52050",
+            "relation": "0-25m",
+            "distance_m": 4.4
           },
           {
             "rijksmonumentnummer": "31692",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48730",
             "relation": "25-100m",
-            "distance_m": 52.5
+            "distance_m": 52.4
           },
           {
             "rijksmonumentnummer": "31696",
@@ -17233,16 +17233,16 @@
         "rijksmonument_count": 5,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "32451",
-            "naam": "Sint Willibrord",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54700",
+            "rijksmonumentnummer": "32466",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51270",
             "relation": "25-100m",
             "distance_m": 42.8
           },
           {
-            "rijksmonumentnummer": "32466",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51270",
+            "rijksmonumentnummer": "32451",
+            "naam": "Sint Willibrord",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54700",
             "relation": "25-100m",
             "distance_m": 42.8
           },
@@ -17801,18 +17801,18 @@
         "rijksmonument_count": 47,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "16162",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57265",
-            "relation": "0-25m",
-            "distance_m": 11.8
-          },
-          {
             "rijksmonumentnummer": "16161",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/36848",
             "relation": "0-25m",
-            "distance_m": 11.8
+            "distance_m": 11.7
+          },
+          {
+            "rijksmonumentnummer": "16162",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57265",
+            "relation": "0-25m",
+            "distance_m": 11.7
           },
           {
             "rijksmonumentnummer": "16160",
@@ -17826,7 +17826,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33416",
             "relation": "0-25m",
-            "distance_m": 24.5
+            "distance_m": 24.4
           },
           {
             "rijksmonumentnummer": "16244",
@@ -17840,14 +17840,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56890",
             "relation": "25-100m",
-            "distance_m": 37.7
+            "distance_m": 37.6
           },
           {
             "rijksmonumentnummer": "16159",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52585",
             "relation": "25-100m",
-            "distance_m": 39.1
+            "distance_m": 39.0
           },
           {
             "rijksmonumentnummer": "16245",
@@ -17861,7 +17861,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43279",
             "relation": "25-100m",
-            "distance_m": 44.5
+            "distance_m": 44.4
           },
           {
             "rijksmonumentnummer": "16172",
@@ -17875,21 +17875,28 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11544",
             "relation": "25-100m",
-            "distance_m": 45.7
+            "distance_m": 45.6
           },
           {
             "rijksmonumentnummer": "16168",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54897",
             "relation": "25-100m",
-            "distance_m": 47.9
+            "distance_m": 47.8
           },
           {
             "rijksmonumentnummer": "16241",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33175",
             "relation": "25-100m",
-            "distance_m": 48.2
+            "distance_m": 48.1
+          },
+          {
+            "rijksmonumentnummer": "16240",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16079",
+            "relation": "25-100m",
+            "distance_m": 50.4
           },
           {
             "rijksmonumentnummer": "16167",
@@ -17897,13 +17904,6 @@
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37017",
             "relation": "25-100m",
             "distance_m": 50.4
-          },
-          {
-            "rijksmonumentnummer": "16240",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16079",
-            "relation": "25-100m",
-            "distance_m": 50.5
           },
           {
             "rijksmonumentnummer": "16246",
@@ -17917,28 +17917,28 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33114",
             "relation": "25-100m",
-            "distance_m": 52.0
+            "distance_m": 51.9
           },
           {
             "rijksmonumentnummer": "16239",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/53036",
             "relation": "25-100m",
-            "distance_m": 52.5
+            "distance_m": 52.4
           },
           {
             "rijksmonumentnummer": "16171",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19770",
             "relation": "25-100m",
-            "distance_m": 55.5
+            "distance_m": 55.4
           },
           {
             "rijksmonumentnummer": "16169",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48655",
             "relation": "25-100m",
-            "distance_m": 58.5
+            "distance_m": 58.4
           },
           {
             "rijksmonumentnummer": "16238",
@@ -17959,14 +17959,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/18284",
             "relation": "25-100m",
-            "distance_m": 61.1
+            "distance_m": 61.0
           },
           {
             "rijksmonumentnummer": "16230",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/29050",
             "relation": "25-100m",
-            "distance_m": 61.9
+            "distance_m": 61.8
           },
           {
             "rijksmonumentnummer": "16234",
@@ -17987,77 +17987,77 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/40389",
             "relation": "25-100m",
-            "distance_m": 63.7
+            "distance_m": 63.6
           },
           {
             "rijksmonumentnummer": "16175",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/29597",
             "relation": "25-100m",
-            "distance_m": 64.3
+            "distance_m": 64.2
           },
           {
             "rijksmonumentnummer": "16233",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14670",
             "relation": "25-100m",
-            "distance_m": 64.4
+            "distance_m": 64.3
           },
           {
             "rijksmonumentnummer": "16232",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/22140",
             "relation": "25-100m",
-            "distance_m": 64.9
+            "distance_m": 64.8
           },
           {
             "rijksmonumentnummer": "16235",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45086",
             "relation": "25-100m",
-            "distance_m": 65.1
+            "distance_m": 65.0
           },
           {
             "rijksmonumentnummer": "16231",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57492",
             "relation": "25-100m",
-            "distance_m": 67.5
+            "distance_m": 67.4
           },
           {
             "rijksmonumentnummer": "16176",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11014",
             "relation": "25-100m",
-            "distance_m": 67.5
+            "distance_m": 67.4
           },
           {
             "rijksmonumentnummer": "16228",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16561",
             "relation": "25-100m",
-            "distance_m": 71.5
+            "distance_m": 71.4
           },
           {
             "rijksmonumentnummer": "16177",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37981",
             "relation": "25-100m",
-            "distance_m": 73.1
+            "distance_m": 73.0
           },
           {
             "rijksmonumentnummer": "16227",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/29937",
             "relation": "25-100m",
-            "distance_m": 75.8
+            "distance_m": 75.7
           },
           {
             "rijksmonumentnummer": "16226",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38498",
             "relation": "25-100m",
-            "distance_m": 76.5
+            "distance_m": 76.4
           },
           {
             "rijksmonumentnummer": "16225",
@@ -18078,14 +18078,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26235",
             "relation": "25-100m",
-            "distance_m": 83.5
+            "distance_m": 83.4
           },
           {
             "rijksmonumentnummer": "16184",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54609",
             "relation": "25-100m",
-            "distance_m": 87.0
+            "distance_m": 86.8
           },
           {
             "rijksmonumentnummer": "16236",
@@ -18099,14 +18099,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57263",
             "relation": "25-100m",
-            "distance_m": 88.5
+            "distance_m": 88.4
           },
           {
             "rijksmonumentnummer": "16185",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/47591",
             "relation": "25-100m",
-            "distance_m": 90.3
+            "distance_m": 90.2
           },
           {
             "rijksmonumentnummer": "16186",
@@ -18759,7 +18759,7 @@
         "geruimd_bron_ingang": false,
         "status_conflict": false,
         "oppervlakte_m2": 78060.5,
-        "oppervlakte_ha": 7.8061,
+        "oppervlakte_ha": 7.806,
         "omtrek_m": 1577.46,
         "ingang": {
           "type": "Point",
@@ -19933,7 +19933,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/69129",
             "relation": "25-100m",
-            "distance_m": 28.0
+            "distance_m": 27.9
           },
           {
             "rijksmonumentnummer": "508277",
@@ -21189,7 +21189,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/42557",
             "relation": "25-100m",
-            "distance_m": 44.8
+            "distance_m": 44.7
           }
         ]
       },
@@ -22064,7 +22064,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/40577",
             "relation": "0-25m",
-            "distance_m": 6.5
+            "distance_m": 6.4
           }
         ]
       },
@@ -22691,7 +22691,7 @@
             "naam": "Rhodus",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/30942",
             "relation": "25-100m",
-            "distance_m": 91.9
+            "distance_m": 92.0
           }
         ]
       },
@@ -23351,7 +23351,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16320",
             "relation": "0-25m",
-            "distance_m": 13.2
+            "distance_m": 13.3
           },
           {
             "rijksmonumentnummer": "32508",
@@ -23365,7 +23365,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/32939",
             "relation": "25-100m",
-            "distance_m": 87.7
+            "distance_m": 87.8
           }
         ]
       },
@@ -23454,7 +23454,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19858",
             "relation": "25-100m",
-            "distance_m": 78.6
+            "distance_m": 78.5
           }
         ]
       },
@@ -24772,7 +24772,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33786",
             "relation": "25-100m",
-            "distance_m": 29.7
+            "distance_m": 29.6
           },
           {
             "rijksmonumentnummer": "22626",
@@ -24924,7 +24924,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38083",
             "relation": "25-100m",
-            "distance_m": 63.3
+            "distance_m": 63.2
           },
           {
             "rijksmonumentnummer": "16109",
@@ -25104,7 +25104,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/24645",
             "relation": "0-25m",
-            "distance_m": 7.4
+            "distance_m": 7.5
           },
           {
             "rijksmonumentnummer": "16114",
@@ -26186,16 +26186,16 @@
         "rijksmonument_count": 4,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "512484",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/75031",
+            "rijksmonumentnummer": "19921",
+            "naam": "Sint Barnebas",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/75033",
             "relation": "25-100m",
             "distance_m": 33.4
           },
           {
-            "rijksmonumentnummer": "19921",
-            "naam": "Sint Barnebas",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/75033",
+            "rijksmonumentnummer": "512484",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/75031",
             "relation": "25-100m",
             "distance_m": 33.4
           },
@@ -26486,7 +26486,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12215",
             "relation": "25-100m",
-            "distance_m": 85.2
+            "distance_m": 85.3
           }
         ]
       },
@@ -26585,7 +26585,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58548",
             "relation": "25-100m",
-            "distance_m": 88.2
+            "distance_m": 88.1
           }
         ]
       },
@@ -26700,7 +26700,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61662",
             "relation": "25-100m",
-            "distance_m": 85.6
+            "distance_m": 85.5
           }
         ]
       },
@@ -27243,18 +27243,18 @@
         "rijksmonument_count": 4,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "7524",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33001",
-            "relation": "0-25m",
-            "distance_m": 6.0
-          },
-          {
             "rijksmonumentnummer": "7523",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/53394",
             "relation": "0-25m",
-            "distance_m": 6.0
+            "distance_m": 5.9
+          },
+          {
+            "rijksmonumentnummer": "7524",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33001",
+            "relation": "0-25m",
+            "distance_m": 5.9
           },
           {
             "rijksmonumentnummer": "7525",
@@ -28097,7 +28097,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60014",
             "relation": "25-100m",
-            "distance_m": 37.1
+            "distance_m": 37.2
           },
           {
             "rijksmonumentnummer": "29378",
@@ -28111,14 +28111,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/17572",
             "relation": "25-100m",
-            "distance_m": 74.1
+            "distance_m": 74.2
           },
           {
             "rijksmonumentnummer": "526559",
             "naam": "hekwerk",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16585",
             "relation": "25-100m",
-            "distance_m": 96.1
+            "distance_m": 96.2
           }
         ]
       },
@@ -28438,7 +28438,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19593",
             "relation": "25-100m",
-            "distance_m": 38.6
+            "distance_m": 38.7
           }
         ]
       },
@@ -28527,7 +28527,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/27132",
             "relation": "25-100m",
-            "distance_m": 29.3
+            "distance_m": 29.4
           }
         ]
       },
@@ -28722,7 +28722,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/10439",
             "relation": "0-25m",
-            "distance_m": 10.7
+            "distance_m": 10.8
           },
           {
             "rijksmonumentnummer": "29749",
@@ -28736,7 +28736,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56064",
             "relation": "25-100m",
-            "distance_m": 34.5
+            "distance_m": 34.6
           },
           {
             "rijksmonumentnummer": "29768",
@@ -28750,7 +28750,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/50784",
             "relation": "25-100m",
-            "distance_m": 40.3
+            "distance_m": 40.4
           },
           {
             "rijksmonumentnummer": "29784",
@@ -28764,7 +28764,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/34445",
             "relation": "25-100m",
-            "distance_m": 48.7
+            "distance_m": 48.8
           },
           {
             "rijksmonumentnummer": "29785",
@@ -28778,14 +28778,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/20749",
             "relation": "25-100m",
-            "distance_m": 59.7
+            "distance_m": 59.6
           },
           {
             "rijksmonumentnummer": "29771",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/36786",
             "relation": "25-100m",
-            "distance_m": 64.8
+            "distance_m": 64.9
           },
           {
             "rijksmonumentnummer": "29786",
@@ -28820,7 +28820,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16130",
             "relation": "25-100m",
-            "distance_m": 81.8
+            "distance_m": 81.9
           },
           {
             "rijksmonumentnummer": "29789",
@@ -28834,7 +28834,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11333",
             "relation": "25-100m",
-            "distance_m": 85.1
+            "distance_m": 85.2
           },
           {
             "rijksmonumentnummer": "29790",
@@ -29139,7 +29139,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/13396",
             "relation": "25-100m",
-            "distance_m": 86.9
+            "distance_m": 86.8
           },
           {
             "rijksmonumentnummer": "29885",
@@ -29903,7 +29903,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39618",
             "relation": "25-100m",
-            "distance_m": 61.2
+            "distance_m": 61.1
           },
           {
             "rijksmonumentnummer": "20072",
@@ -30331,16 +30331,16 @@
         "rijksmonument_count": 4,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "516114",
+            "rijksmonumentnummer": "516117",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67419",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67416",
             "relation": "0-25m",
             "distance_m": 13.1
           },
           {
-            "rijksmonumentnummer": "516117",
+            "rijksmonumentnummer": "516114",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67416",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/67419",
             "relation": "0-25m",
             "distance_m": 13.1
           },
@@ -31108,20 +31108,6 @@
             "distance_m": 42.8
           },
           {
-            "rijksmonumentnummer": "518161",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77509",
-            "relation": "25-100m",
-            "distance_m": 47.6
-          },
-          {
-            "rijksmonumentnummer": "38406",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77510",
-            "relation": "25-100m",
-            "distance_m": 47.6
-          },
-          {
             "rijksmonumentnummer": "518162",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77508",
@@ -31132,6 +31118,20 @@
             "rijksmonumentnummer": "518163",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77507",
+            "relation": "25-100m",
+            "distance_m": 47.6
+          },
+          {
+            "rijksmonumentnummer": "518161",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77509",
+            "relation": "25-100m",
+            "distance_m": 47.6
+          },
+          {
+            "rijksmonumentnummer": "38406",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/77510",
             "relation": "25-100m",
             "distance_m": 47.6
           }
@@ -31452,7 +31452,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56001",
             "relation": "25-100m",
-            "distance_m": 99.4
+            "distance_m": 99.3
           }
         ]
       },
@@ -32401,13 +32401,6 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "32898",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39708",
-            "relation": "inside_on_site",
-            "distance_m": 0.0
-          },
-          {
             "rijksmonumentnummer": "32900",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37166",
@@ -32418,6 +32411,13 @@
             "rijksmonumentnummer": "32897",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61788",
+            "relation": "inside_on_site",
+            "distance_m": 0.0
+          },
+          {
+            "rijksmonumentnummer": "32898",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39708",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -33295,16 +33295,16 @@
             "distance_m": 11.7
           },
           {
-            "rijksmonumentnummer": "515012",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73338",
+            "rijksmonumentnummer": "515011",
+            "naam": "St.  Laurentius",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73339",
             "relation": "0-25m",
             "distance_m": 17.9
           },
           {
-            "rijksmonumentnummer": "515011",
-            "naam": "St.  Laurentius",
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73339",
+            "rijksmonumentnummer": "515012",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73338",
             "relation": "0-25m",
             "distance_m": 17.9
           }
@@ -33423,14 +33423,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/24145",
             "relation": "0-25m",
-            "distance_m": 23.6
+            "distance_m": 23.7
           },
           {
             "rijksmonumentnummer": "38001",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/25114",
             "relation": "25-100m",
-            "distance_m": 30.4
+            "distance_m": 30.5
           },
           {
             "rijksmonumentnummer": "38016",
@@ -34052,7 +34052,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14874",
             "relation": "0-25m",
-            "distance_m": 24.3
+            "distance_m": 24.4
           },
           {
             "rijksmonumentnummer": "33557",
@@ -34446,14 +34446,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/34944",
             "relation": "0-25m",
-            "distance_m": 16.8
+            "distance_m": 16.7
           },
           {
             "rijksmonumentnummer": "41919",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/13073",
             "relation": "25-100m",
-            "distance_m": 80.1
+            "distance_m": 80.0
           }
         ]
       },
@@ -38705,14 +38705,14 @@
             "naam": "H.H. Petrus en Paulus",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73291",
             "relation": "25-100m",
-            "distance_m": 71.2
+            "distance_m": 71.3
           },
           {
             "rijksmonumentnummer": "511306",
             "naam": "H.H. Petrus en Paulus",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/73290",
             "relation": "25-100m",
-            "distance_m": 71.2
+            "distance_m": 71.3
           },
           {
             "rijksmonumentnummer": "511307",
@@ -39077,14 +39077,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12155",
             "relation": "0-25m",
-            "distance_m": 4.3
+            "distance_m": 4.2
           },
           {
             "rijksmonumentnummer": "16264",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45788",
             "relation": "0-25m",
-            "distance_m": 17.0
+            "distance_m": 16.9
           },
           {
             "rijksmonumentnummer": "16258",
@@ -39112,7 +39112,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/31085",
             "relation": "0-25m",
-            "distance_m": 21.5
+            "distance_m": 21.4
           },
           {
             "rijksmonumentnummer": "16265",
@@ -39126,7 +39126,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/31889",
             "relation": "25-100m",
-            "distance_m": 25.7
+            "distance_m": 25.6
           }
         ]
       },
@@ -40216,25 +40216,25 @@
         "rijksmonument_count": 3,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "9351",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26611",
-            "relation": "0-25m",
-            "distance_m": 17.4
-          },
-          {
             "rijksmonumentnummer": "9352",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54221",
             "relation": "0-25m",
-            "distance_m": 17.4
+            "distance_m": 17.3
+          },
+          {
+            "rijksmonumentnummer": "9351",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26611",
+            "relation": "0-25m",
+            "distance_m": 17.3
           },
           {
             "rijksmonumentnummer": "9353",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/36534",
             "relation": "25-100m",
-            "distance_m": 70.7
+            "distance_m": 70.8
           }
         ]
       },
@@ -40781,7 +40781,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/22814",
             "relation": "25-100m",
-            "distance_m": 34.2
+            "distance_m": 34.3
           },
           {
             "rijksmonumentnummer": "26561",
@@ -40823,7 +40823,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38656",
             "relation": "25-100m",
-            "distance_m": 49.6
+            "distance_m": 49.7
           },
           {
             "rijksmonumentnummer": "26578",
@@ -40844,7 +40844,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/13113",
             "relation": "25-100m",
-            "distance_m": 57.2
+            "distance_m": 57.3
           },
           {
             "rijksmonumentnummer": "26562",
@@ -41532,14 +41532,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/20661",
             "relation": "25-100m",
-            "distance_m": 84.0
+            "distance_m": 84.1
           },
           {
             "rijksmonumentnummer": "26548",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43266",
             "relation": "25-100m",
-            "distance_m": 86.7
+            "distance_m": 86.8
           }
         ]
       },
@@ -42470,7 +42470,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28209",
             "relation": "0-25m",
-            "distance_m": 17.4
+            "distance_m": 17.3
           },
           {
             "rijksmonumentnummer": "33293",
@@ -42484,7 +42484,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/36201",
             "relation": "25-100m",
-            "distance_m": 26.2
+            "distance_m": 26.1
           },
           {
             "rijksmonumentnummer": "33292",
@@ -42609,7 +42609,7 @@
             "naam": "St. Jacobuskerk",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/76275",
             "relation": "25-100m",
-            "distance_m": 44.6
+            "distance_m": 44.7
           },
           {
             "rijksmonumentnummer": "525388",
@@ -44566,16 +44566,16 @@
         "rijksmonument_count": 5,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "11474",
+            "rijksmonumentnummer": "11473",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26736",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19078",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "11473",
+            "rijksmonumentnummer": "11474",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/19078",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/26736",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
@@ -44598,7 +44598,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35718",
             "relation": "25-100m",
-            "distance_m": 62.8
+            "distance_m": 62.9
           }
         ]
       },
@@ -45733,7 +45733,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/76848",
             "relation": "25-100m",
-            "distance_m": 96.8
+            "distance_m": 96.9
           }
         ]
       },
@@ -45953,16 +45953,16 @@
         "rijksmonument_count": 2,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "347960",
+            "rijksmonumentnummer": "23542",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60589",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56323",
             "relation": "0-25m",
             "distance_m": 16.7
           },
           {
-            "rijksmonumentnummer": "23542",
+            "rijksmonumentnummer": "347960",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56323",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60589",
             "relation": "0-25m",
             "distance_m": 16.7
           }
@@ -47640,7 +47640,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55881",
             "relation": "25-100m",
-            "distance_m": 25.5
+            "distance_m": 25.4
           }
         ]
       },
@@ -47926,7 +47926,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/53933",
             "relation": "25-100m",
-            "distance_m": 84.5
+            "distance_m": 84.4
           },
           {
             "rijksmonumentnummer": "32241",
@@ -48381,18 +48381,18 @@
             "distance_m": 24.8
           },
           {
-            "rijksmonumentnummer": "17027",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51459",
-            "relation": "0-25m",
-            "distance_m": 25.0
-          },
-          {
             "rijksmonumentnummer": "17026",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14033",
             "relation": "0-25m",
-            "distance_m": 25.0
+            "distance_m": 24.9
+          },
+          {
+            "rijksmonumentnummer": "17027",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51459",
+            "relation": "0-25m",
+            "distance_m": 24.9
           }
         ]
       },
@@ -48635,14 +48635,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/31190",
             "relation": "0-25m",
-            "distance_m": 20.2
+            "distance_m": 20.3
           },
           {
             "rijksmonumentnummer": "8599",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57638",
             "relation": "25-100m",
-            "distance_m": 47.5
+            "distance_m": 47.6
           }
         ]
       },
@@ -49157,7 +49157,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28036",
             "relation": "0-25m",
-            "distance_m": 21.1
+            "distance_m": 21.0
           },
           {
             "rijksmonumentnummer": "21353",
@@ -50228,7 +50228,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56303",
             "relation": "0-25m",
-            "distance_m": 10.1
+            "distance_m": 10.2
           },
           {
             "rijksmonumentnummer": "32155",
@@ -50242,7 +50242,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37313",
             "relation": "25-100m",
-            "distance_m": 41.8
+            "distance_m": 41.9
           }
         ]
       },
@@ -50612,14 +50612,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/15304",
             "relation": "25-100m",
-            "distance_m": 47.7
+            "distance_m": 47.8
           },
           {
             "rijksmonumentnummer": "30082",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/54926",
             "relation": "25-100m",
-            "distance_m": 49.5
+            "distance_m": 49.6
           },
           {
             "rijksmonumentnummer": "30084",
@@ -51272,7 +51272,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/20929",
             "relation": "0-25m",
-            "distance_m": 12.6
+            "distance_m": 12.5
           },
           {
             "rijksmonumentnummer": "10682",
@@ -51300,14 +51300,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58603",
             "relation": "0-25m",
-            "distance_m": 15.1
+            "distance_m": 15.0
           },
           {
             "rijksmonumentnummer": "10687",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/38260",
             "relation": "0-25m",
-            "distance_m": 15.5
+            "distance_m": 15.4
           },
           {
             "rijksmonumentnummer": "10679",
@@ -51335,7 +51335,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/47732",
             "relation": "0-25m",
-            "distance_m": 19.4
+            "distance_m": 19.3
           },
           {
             "rijksmonumentnummer": "10992",
@@ -51349,7 +51349,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/32005",
             "relation": "0-25m",
-            "distance_m": 21.6
+            "distance_m": 21.5
           },
           {
             "rijksmonumentnummer": "10986",
@@ -51370,7 +51370,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/25637",
             "relation": "25-100m",
-            "distance_m": 25.6
+            "distance_m": 25.7
           },
           {
             "rijksmonumentnummer": "10651",
@@ -51391,7 +51391,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52839",
             "relation": "25-100m",
-            "distance_m": 28.2
+            "distance_m": 28.1
           },
           {
             "rijksmonumentnummer": "10653",
@@ -51447,7 +51447,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35712",
             "relation": "25-100m",
-            "distance_m": 32.7
+            "distance_m": 32.8
           },
           {
             "rijksmonumentnummer": "10880",
@@ -51461,7 +51461,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/29588",
             "relation": "25-100m",
-            "distance_m": 33.5
+            "distance_m": 33.4
           },
           {
             "rijksmonumentnummer": "10993",
@@ -51475,14 +51475,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35971",
             "relation": "25-100m",
-            "distance_m": 36.4
+            "distance_m": 36.3
           },
           {
             "rijksmonumentnummer": "10879",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/20971",
             "relation": "25-100m",
-            "distance_m": 36.5
+            "distance_m": 36.4
           },
           {
             "rijksmonumentnummer": "10876",
@@ -51517,21 +51517,21 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55396",
             "relation": "25-100m",
-            "distance_m": 41.2
+            "distance_m": 41.1
           },
           {
             "rijksmonumentnummer": "10647",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/46469",
             "relation": "25-100m",
-            "distance_m": 41.8
+            "distance_m": 41.9
           },
           {
             "rijksmonumentnummer": "10673",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/42353",
             "relation": "25-100m",
-            "distance_m": 42.9
+            "distance_m": 42.8
           },
           {
             "rijksmonumentnummer": "10697",
@@ -51594,14 +51594,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58494",
             "relation": "25-100m",
-            "distance_m": 58.3
+            "distance_m": 58.2
           },
           {
             "rijksmonumentnummer": "10699",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48333",
             "relation": "25-100m",
-            "distance_m": 60.5
+            "distance_m": 60.6
           },
           {
             "rijksmonumentnummer": "10691",
@@ -51615,7 +51615,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39496",
             "relation": "25-100m",
-            "distance_m": 64.0
+            "distance_m": 63.9
           },
           {
             "rijksmonumentnummer": "10692",
@@ -51629,7 +51629,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58553",
             "relation": "25-100m",
-            "distance_m": 69.6
+            "distance_m": 69.5
           },
           {
             "rijksmonumentnummer": "10789",
@@ -51657,7 +51657,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55192",
             "relation": "25-100m",
-            "distance_m": 88.1
+            "distance_m": 88.0
           },
           {
             "rijksmonumentnummer": "10822",
@@ -51671,7 +51671,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56370",
             "relation": "25-100m",
-            "distance_m": 89.1
+            "distance_m": 89.0
           },
           {
             "rijksmonumentnummer": "10892",
@@ -51692,14 +51692,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/41627",
             "relation": "25-100m",
-            "distance_m": 91.0
+            "distance_m": 90.9
           },
           {
             "rijksmonumentnummer": "10894",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57697",
             "relation": "25-100m",
-            "distance_m": 93.7
+            "distance_m": 93.6
           },
           {
             "rijksmonumentnummer": "10818",
@@ -52052,7 +52052,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56895",
             "relation": "25-100m",
-            "distance_m": 75.6
+            "distance_m": 75.5
           },
           {
             "rijksmonumentnummer": "9411",
@@ -52073,7 +52073,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16635",
             "relation": "25-100m",
-            "distance_m": 97.9
+            "distance_m": 97.8
           }
         ]
       },
@@ -52563,19 +52563,19 @@
             "naam": "hekwerk",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/16585",
             "relation": "0-25m",
-            "distance_m": 6.8
-          },
-          {
-            "rijksmonumentnummer": "10259",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60014",
-            "relation": "0-25m",
-            "distance_m": 22.8
+            "distance_m": 6.7
           },
           {
             "rijksmonumentnummer": "10260",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/17572",
+            "relation": "0-25m",
+            "distance_m": 22.7
+          },
+          {
+            "rijksmonumentnummer": "10259",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60014",
             "relation": "0-25m",
             "distance_m": 22.8
           },
@@ -52605,7 +52605,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/56346",
             "relation": "25-100m",
-            "distance_m": 52.8
+            "distance_m": 52.7
           },
           {
             "rijksmonumentnummer": "10255",
@@ -52819,16 +52819,16 @@
         "rijksmonument_count": 2,
         "rijksmonument_relations": [
           {
-            "rijksmonumentnummer": "31709",
+            "rijksmonumentnummer": "31708",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58001",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35733",
             "relation": "inside_on_site",
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "31708",
+            "rijksmonumentnummer": "31709",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35733",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58001",
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
@@ -53154,35 +53154,35 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/53933",
             "relation": "0-25m",
-            "distance_m": 22.3
+            "distance_m": 22.2
           },
           {
             "rijksmonumentnummer": "32249",
             "naam": "Springende Peert",
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39731",
             "relation": "25-100m",
-            "distance_m": 48.2
+            "distance_m": 48.1
           },
           {
             "rijksmonumentnummer": "32250",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/58851",
             "relation": "25-100m",
-            "distance_m": 74.3
+            "distance_m": 74.2
           },
           {
             "rijksmonumentnummer": "32251",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/48069",
             "relation": "25-100m",
-            "distance_m": 81.5
+            "distance_m": 81.4
           },
           {
             "rijksmonumentnummer": "32252",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/29446",
             "relation": "25-100m",
-            "distance_m": 88.2
+            "distance_m": 88.1
           },
           {
             "rijksmonumentnummer": "32253",
@@ -53426,7 +53426,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/27407",
             "relation": "25-100m",
-            "distance_m": 37.3
+            "distance_m": 37.2
           },
           {
             "rijksmonumentnummer": "522575",
@@ -53440,7 +53440,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/11510",
             "relation": "25-100m",
-            "distance_m": 43.6
+            "distance_m": 43.5
           },
           {
             "rijksmonumentnummer": "522576",
@@ -53468,21 +53468,21 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61560",
             "relation": "25-100m",
-            "distance_m": 55.8
+            "distance_m": 55.7
           },
           {
             "rijksmonumentnummer": "9390",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57717",
             "relation": "25-100m",
-            "distance_m": 62.6
+            "distance_m": 62.5
           },
           {
             "rijksmonumentnummer": "9400",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52133",
             "relation": "25-100m",
-            "distance_m": 68.0
+            "distance_m": 67.9
           },
           {
             "rijksmonumentnummer": "9389",
@@ -53496,7 +53496,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/13599",
             "relation": "25-100m",
-            "distance_m": 69.5
+            "distance_m": 69.4
           },
           {
             "rijksmonumentnummer": "522612",
@@ -53538,14 +53538,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/14584",
             "relation": "25-100m",
-            "distance_m": 81.8
+            "distance_m": 81.7
           },
           {
             "rijksmonumentnummer": "9402",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/62047",
             "relation": "25-100m",
-            "distance_m": 86.1
+            "distance_m": 86.0
           },
           {
             "rijksmonumentnummer": "9383",
@@ -53559,19 +53559,19 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/33541",
             "relation": "25-100m",
-            "distance_m": 95.5
-          },
-          {
-            "rijksmonumentnummer": "9406",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37270",
-            "relation": "25-100m",
-            "distance_m": 96.9
+            "distance_m": 95.4
           },
           {
             "rijksmonumentnummer": "9404",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/60969",
+            "relation": "25-100m",
+            "distance_m": 96.8
+          },
+          {
+            "rijksmonumentnummer": "9406",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/37270",
             "relation": "25-100m",
             "distance_m": 96.9
           }
@@ -53690,16 +53690,16 @@
             "distance_m": 28.4
           },
           {
-            "rijksmonumentnummer": "9014",
+            "rijksmonumentnummer": "9013",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45128",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52093",
             "relation": "25-100m",
             "distance_m": 47.3
           },
           {
-            "rijksmonumentnummer": "9013",
+            "rijksmonumentnummer": "9014",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/52093",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45128",
             "relation": "25-100m",
             "distance_m": 47.3
           },
@@ -53708,7 +53708,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/22051",
             "relation": "25-100m",
-            "distance_m": 89.0
+            "distance_m": 88.9
           }
         ]
       },
@@ -54294,7 +54294,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/39531",
             "relation": "0-25m",
-            "distance_m": 15.4
+            "distance_m": 15.3
           },
           {
             "rijksmonumentnummer": "19943",
@@ -54308,7 +54308,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/23060",
             "relation": "25-100m",
-            "distance_m": 28.3
+            "distance_m": 28.2
           },
           {
             "rijksmonumentnummer": "19941",
@@ -54329,7 +54329,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/23484",
             "relation": "25-100m",
-            "distance_m": 40.3
+            "distance_m": 40.2
           },
           {
             "rijksmonumentnummer": "19946",
@@ -54518,7 +54518,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/45267",
             "relation": "25-100m",
-            "distance_m": 46.0
+            "distance_m": 45.9
           },
           {
             "rijksmonumentnummer": "29886",
@@ -54539,21 +54539,21 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/50672",
             "relation": "25-100m",
-            "distance_m": 88.1
+            "distance_m": 88.0
           },
           {
             "rijksmonumentnummer": "29883",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/35387",
             "relation": "25-100m",
-            "distance_m": 92.8
+            "distance_m": 92.7
           },
           {
             "rijksmonumentnummer": "29882",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51990",
             "relation": "25-100m",
-            "distance_m": 93.9
+            "distance_m": 93.8
           }
         ]
       },
@@ -54669,7 +54669,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/17561",
             "relation": "0-25m",
-            "distance_m": 15.7
+            "distance_m": 15.6
           },
           {
             "rijksmonumentnummer": "32497",
@@ -54690,14 +54690,14 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/10896",
             "relation": "0-25m",
-            "distance_m": 21.3
+            "distance_m": 21.2
           },
           {
             "rijksmonumentnummer": "32506",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/28889",
             "relation": "0-25m",
-            "distance_m": 24.0
+            "distance_m": 24.1
           },
           {
             "rijksmonumentnummer": "32501",
@@ -54735,16 +54735,16 @@
             "distance_m": 45.5
           },
           {
-            "rijksmonumentnummer": "32481",
+            "rijksmonumentnummer": "32482",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12030",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57379",
             "relation": "25-100m",
             "distance_m": 52.2
           },
           {
-            "rijksmonumentnummer": "32482",
+            "rijksmonumentnummer": "32481",
             "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/57379",
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/12030",
             "relation": "25-100m",
             "distance_m": 52.2
           },
@@ -54753,7 +54753,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55635",
             "relation": "25-100m",
-            "distance_m": 62.3
+            "distance_m": 62.2
           }
         ]
       },
@@ -55207,18 +55207,18 @@
             "distance_m": 0.0
           },
           {
-            "rijksmonumentnummer": "31920",
-            "naam": null,
-            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55215",
-            "relation": "0-25m",
-            "distance_m": 4.3
-          },
-          {
             "rijksmonumentnummer": "31921",
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/51464",
             "relation": "0-25m",
-            "distance_m": 4.3
+            "distance_m": 4.2
+          },
+          {
+            "rijksmonumentnummer": "31920",
+            "naam": null,
+            "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/55215",
+            "relation": "0-25m",
+            "distance_m": 4.2
           },
           {
             "rijksmonumentnummer": "31919",
@@ -55427,7 +55427,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/43266",
             "relation": "0-25m",
-            "distance_m": 11.9
+            "distance_m": 12.0
           }
         ]
       },
@@ -55560,7 +55560,7 @@
             "naam": null,
             "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/rijksmonument/61185",
             "relation": "25-100m",
-            "distance_m": 67.9
+            "distance_m": 68.0
           },
           {
             "rijksmonumentnummer": "514026",
