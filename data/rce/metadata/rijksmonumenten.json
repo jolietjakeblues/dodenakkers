@@ -2,11 +2,11 @@
   "source": "RCE Linked Data Voorziening (CHO)",
   "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
   "query_file": "queries/rce/rijksmonumenten.sparql",
-  "retrieved_at": "2026-08-18T14:56:59.947507+00:00",
+  "retrieved_at": "2026-08-18T15:32:50.718294+00:00",
   "feature_count": 14204,
   "stats": {
-    "point_rows_from_endpoint": 25021,
-    "polygon_rows_from_endpoint": 2361,
+    "point_rows_from_endpoint": 25097,
+    "polygon_rows_from_endpoint": 2367,
     "distinct_cho": 14204,
     "cho_with_polygon": 2289
   },
@@ -16,5 +16,5 @@
     "min_lat": 51.66,
     "max_lat": 52.32
   },
-  "notes": "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. oorspronkelijke_functie_begraafplaats = FILTER EXISTS op alle 9 thesaurusconcepten met 'begraafplaats'/'kerkhof' in het label (geen eigen curatie), zie queries/rce/rijksmonumenten.sparql voor de volledige lijst en motivatie. Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; zie docs/data/004-rce-mcp-querystrategie.md."
+  "notes": "heeftJuridischeStatus = rijksmonument, serverside bbox-filter op WKT-string. oorspronkelijke_functie/huidige_functie/type via heeftOorspronkelijkeFunctie/heeftHuidigeFunctie/heeftType (geen curatie, echte labels), zie queries/rce/rijksmonumenten.sparql. oorspronkelijke_functie_kort heeft de RCE-subtypecode ('(K)', '(M1)', ...) afgeknipt, voor filtering. Aanwijzingsinformatie (aanwijzingenmonumenten-graph) is nog niet meegenomen; zie docs/data/004-rce-mcp-querystrategie.md."
 }

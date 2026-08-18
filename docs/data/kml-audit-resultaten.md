@@ -1,5 +1,7 @@
 # Data: auditresultaten basisdataset
 
+*Gegenereerd door `scripts/build_base_dataset.py` -- niet handmatig bewerken.*
+
 ## Samenvatting
 
 De genormaliseerde CSV bevat **924 bronrecords**:
@@ -25,29 +27,24 @@ Koppeling is uitgevoerd met behoud van de bronwaarden.
 
 ### Gedeelde ingang
 
-Bij **Katwijk aan Zee** heeft het ingangspunt `Gem. begraafplaats Duinrust en NH begraafplaats` twee nabijgelegen terreinrecords:
-
-- `Gem. begraafplaats Duinrust`;
-- `NH begraafplaats Duinrust`.
-
-Dezelfde ingang wordt daarom aan beide terreinen gekoppeld en gemarkeerd met `ingang_gedeeld = true`.
+- `zh-0039` NH begraafplaats Duinrust (Katwijk aan Zee), koppelwijze `shared_entrance_spatial`
+- `zh-0357` Gem. begraafplaats Duinrust (Katwijk aan Zee), koppelwijze `spatial_name_variant`
 
 ### Ontbrekende ingang
-
-Voor de volgende terreinrecord is geen ingangspunt gevonden:
 
 - `zh-0368`: Gem. begraafplaats, Oudenhoorn
 
 ## Statusconflicten
 
-Er zijn **4** gevallen waarin terrein en ingang een verschillende bronwaarde voor `geruimd` hebben.
+Er zijn **4** gevallen waarin terrein en ingang een verschillende bronwaarde
+voor `geruimd` hebben.
 
 In deze gevallen krijgt het afgeleide veld `geruimd` voorlopig `null` en `status_conflict = true`.
 
-- RK begraafplaats, Oude Wetering: terrein = `false`, ingang = `true`
-- Oud NH kerkhof, Schoonhoven: terrein = `false`, ingang = `true`
-- NH Kerkhof, Zwammerdam: terrein = `true`, ingang = `false`
-- Vm. NH kerkhof, Maasland: terrein = `false`, ingang = `true`
+- RK begraafplaats, Oude Wetering: terrein = `False`, ingang = `True`
+- Oud NH kerkhof, Schoonhoven: terrein = `False`, ingang = `True`
+- NH Kerkhof, Zwammerdam: terrein = `True`, ingang = `False`
+- Vm. NH kerkhof, Maasland: terrein = `False`, ingang = `True`
 
 ## Oppervlakte en omtrek
 

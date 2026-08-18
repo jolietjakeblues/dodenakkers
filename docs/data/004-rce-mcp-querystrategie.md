@@ -118,36 +118,46 @@ Resultaat: **99 archeologische rijksmonumenten** in de Zuid-Holland bbox,
 waarvan 76 met een polygoongeometrie. Slechts 8 hebben een naam (dezelfde
 beperking als bij Q2).
 
-## Oorspronkelijke functie
+## Functies en type
 
-Q2 en Q3 bevatten ook `oorspronkelijke_functie` (vrij label, via
-`ceo:heeftOorspronkelijkeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel`)
-en een filterbare boolean `oorspronkelijke_functie_begraafplaats`.
+Q2 en Q3 bevatten drie parallelle velden, alle drie via de RCE-MCP
+semantics-topic "functions" geverifieerd op 2026-08-18:
 
-Voor die boolean gebruiken we `FILTER EXISTS` met een vaste lijst van **alle
-9** thesaurusconcepten waarvan het label "begraafplaats" of "kerkhof" bevat
-(Begraafplaats, Kerkhof, Kloosterbegraafplaats F/H, Begraafplaats en
--onderdelen, Dierenbegraafplaats, Begraafplaatsaula, Begraafplaatshek,
-Uitvaartcentra en begraafplaatsen) — zonder verdere curatie. Een eerdere
-versie liet vier daarvan weg als "componenten/mengcategorieën"; dat bleek
-zelf de ongedocumenteerde platslag die de briefing afraadt, dus nu is de
-selectie puur tekstueel/thesaurus-gedreven en blijft het werkelijke label
-per monument zichtbaar in de popup. Resultaat: **67 van de 14.204**
-rijksmonumenten in de bbox (was 47 met de smallere lijst).
+- `oorspronkelijke_functie` — `ceo:heeftOorspronkelijkeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel`;
+- `huidige_functie` — `ceo:heeftHuidigeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel` (dekking **3,2%**,
+  te laag voor een zinvol filter, wordt alleen meegegeven als data);
+- `type` — `ceo:heeftType -> ceo:heeftTypeNaam -> skos:prefLabel` (dekking 13,8%).
 
-`FILTER EXISTS` i.p.v. de `OPTIONAL`-labelquery zelf, omdat
-`heeftOorspronkelijkeFunctie` multi-valued kan zijn (net als
-`heeftOmschrijving`): met een gewone `OPTIONAL` zou een willekeurige van de
-meerdere functies "winnen" bij het samenvoegen in `fetch_rce.py`, en zou een
-monument met bv. zowel "Kerk" als "Begraafplaats" als oorspronkelijke
-functie de boolean kunnen missen. `EXISTS` telt onafhankelijk van welk label
-uiteindelijk getoond wordt.
+`skos:prefLabel` voor deze concepten leeft niet in de graph `instanties-rce`
+(net als bij `heeftJuridischeStatus`/`heeftMonumentAard`) — de labelopzoeking
+moet dus buiten de `GRAPH`-restrictie staan, anders geeft de query stil 0
+resultaten. Kostte eerder een debug-ronde voor `oorspronkelijke_functie`.
 
-Let op: `skos:prefLabel` voor het functieconcept leeft niet in de graph
-`instanties-rce` (net als bij `heeftJuridischeStatus`/`heeftMonumentAard`) —
-die labelopzoeking moet dus buiten de `GRAPH`-restrictie staan, anders geeft
-de query stil 0 resultaten. Dit kostte een debug-ronde: de eerste versie
-had 0% naam-dekking terwijl de EXISTS-boolean al wel correct 47/67 vond.
+Alle drie kunnen multi-valued zijn (net als `heeftOmschrijving`): bij
+samenvoegen in `fetch_rce.py` "wint" willekeurig een van de waarden. Voor
+deze presentatie-/filtervelden is dat geaccepteerd (zelfde afweging als bij
+`naam`); zie sectie "Naam is onvolledig" hierboven voor de volledige
+redenering.
+
+### Filteren: alleen op oorspronkelijke functie, geen gecureerde boolean
+
+Een eerdere versie had een apart, filterbaar booleanveld
+`oorspronkelijke_functie_begraafplaats`, met een handmatig samengestelde
+lijst van 9 thesaurusconcepten waarvan het label "begraafplaats"/"kerkhof"
+bevat. Dat bleek zelf de platslag die sectie 37 van de briefing afraadt —
+de keuze welke functiewaarden "meetellen" hoort bij Leon, niet in een
+SPARQL-VALUES-lijst. Dat veld is verwijderd.
+
+In plaats daarvan filtert de viewer nu rechtstreeks op het echte label via
+`oorspronkelijke_functie_kort` — `oorspronkelijke_functie` met de RCE-
+subtypecode aan het einde afgeknipt (`"Woonhuis(K)"` -> `"Woonhuis"`,
+`"Boerderij (M1)"` -> `"Boerderij"`; regex `\s*\([^)]*\)\s*$`, in
+`fetch_rce.py`, niet in SPARQL). Dat brengt het aantal distincte
+functiewaarden in de Zuid-Holland-extractie terug van 511 naar 483 zonder
+er inhoudelijk iets van weg te laten — de ruwe `oorspronkelijke_functie`
+blijft ernaast bewaard voor weergave. De viewer bouwt de filterlijst
+dynamisch op uit de daadwerkelijk voorkomende waarden (zie
+`src/app.js`), dus geen vaste lijst meer om te onderhouden of te herzien.
 
 ## Waarom bounding box, geen gemeentelijst
 
