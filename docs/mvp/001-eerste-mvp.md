@@ -1,5 +1,14 @@
 # MVP 001: Eerste werkende versie
 
+## Status (2026-08-19)
+
+Alle punten onder "Definition of done" zijn gehaald: volledige reproduceerbare
+keten (CSV -> `build_base_dataset.py` -> `fetch_rce.py` -> `analyse_spatial.py`
+-> viewer), live op **https://dodenakkers-zh.pages.dev/** voor Leon om te
+bekijken en te testen. Publicatie loopt via **Cloudflare Pages**, niet GitHub
+Pages zoals hieronder nog vermeld staat -- zie
+[006 Hosting](../ideas/006-hosting.md) voor het herziene besluit.
+
 ## Onderzoeksvraag
 
 Kan Leon per begraafplaats snel zien:

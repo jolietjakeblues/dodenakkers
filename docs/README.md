@@ -63,7 +63,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - statusconflicten tussen punt en polygoon worden gerapporteerd en niet stil gecorrigeerd;
 - RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md);
 - de ruimtelijke join tussen begraafplaatsen en de RCE-extracten draait via `scripts/analyse_spatial.py` (output `data/generated/analyse.geojson`), zie [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md);
-- een eerste MapLibre-viewer (`src/index.html`/`app.js`) toont terrein, ingangen, beschermde gezichten en rijksmonumenten met filters op geruimd/statusconflict/erfgoedrelaties, tegen de PDOK BRT-achtergrondkaart (grijs) als ondergrond;
+- een eerste MapLibre-viewer (`src/index.html`/`app.js`) toont terrein, ingangen, beschermde gezichten en rijksmonumenten met filters op geruimd/statusconflict/erfgoedrelaties en een doorzoekbaar filter op oorspronkelijke functie (dynamisch opgebouwd uit de data, geen vaste lijst), tegen de PDOK BRT-achtergrondkaart (grijs) als ondergrond, met een korte introtekst en het Dodenakkers-logo bovenaan het paneel voor Leon;
 - de vier bekende `geruimd`-statusconflicten zijn exporteerbaar naar `data/generated/statusconflicten.csv` via `scripts/export_statusconflicten.py`, met CSV-regelnummers voor handmatige aanvulling door Leon.
 
 ## Reproduceerbaarheid
@@ -85,6 +85,29 @@ faalt met een assertion zodra de bekende invarianten (924/463/461,
 tegen de eerder handmatig gebouwde snapshot: identieke uitkomst, op de
 opmaak van `bron_rij_ingang` na (voorheen `18.0`, nu `18` -- het brongegeven
 was altijd een geheel getal).
+
+## Hosting
+
+Live voor Leon op **https://dodenakkers-zh.pages.dev/** (Cloudflare Pages,
+project `dodenakkers-zh`, account jolietjakeblues64@gmail.com). Gekozen
+boven GitHub Pages omdat dat account al draait voor doorzoekerfgoed.nl —
+zie [006 Hosting](ideas/006-hosting.md) voor de oorspronkelijke afweging
+(die inmiddels is herzien).
+
+`site/` is een build-artefact (gitignored, niet committen) dat alleen bevat
+wat de viewer nodig heeft — niet de hele repo. Opnieuw bouwen en deployen:
+
+```bash
+python scripts/build_site.py
+npx wrangler pages deploy site --project-name dodenakkers-zh --branch main
+```
+
+`scripts/build_site.py` kopieert `src/index.html`/`style.css`/`app.js` en de
+drie GeoJSON-bestanden die de viewer nodig heeft naar `site/`, en herschrijft
+`app.js`'s `../data/...`-paden naar `data/...` (index.html staat in `site/`
+op het root-niveau, niet onder `src/`). Nog geen automatische deploy bij
+`git push` -- dat is een mogelijke volgende stap zodra dit meer dan een
+testversie voor Leon hoeft te zijn.
 
 ## Nummering
 

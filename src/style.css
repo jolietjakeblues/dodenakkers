@@ -25,15 +25,34 @@ html, body {
   font-size: 13px;
 }
 
+#panel .brand {
+  margin: 0 0 8px;
+}
+
+#panel .brand .logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 #panel h1 {
   font-size: 16px;
   margin: 0 0 2px;
 }
 
 #panel .subtitle {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: #555;
   font-size: 12px;
+}
+
+#panel .intro {
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 #panel h2 {
