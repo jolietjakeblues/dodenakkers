@@ -1,8 +1,8 @@
-// Dodenakkers Zuid-Holland — onderzoeksviewer (MVP)
+// Dodenakkers Zuid-Holland - onderzoeksviewer (MVP)
 //
 // Laadt de gebouwde basisdataset en RCE-extracten rechtstreeks als
 // statische GeoJSON. Geen live SPARQL vanuit de browser (zie sectie 15
-// van de briefing) — alle data komt uit data/generated/ en data/rce/,
+// van de briefing) - alle data komt uit data/generated/ en data/rce/,
 // zoals gegenereerd door scripts/build_base_dataset.py en
 // scripts/fetch_rce.py.
 
@@ -197,7 +197,7 @@ function ingangenFromBegraafplaatsen(fc) {
 function extendBoundsWithGeometry(bounds, geometry) {
   if (!geometry) return;
   // One terrain record is a GeometryCollection rather than a Polygon
-  // (section 2/4 of the briefing) — coordinates live on its sub-geometries.
+  // (section 2/4 of the briefing) - coordinates live on its sub-geometries.
   if (geometry.type === "GeometryCollection") {
     geometry.geometries.forEach((g) => extendBoundsWithGeometry(bounds, g));
     return;

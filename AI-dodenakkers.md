@@ -1,4 +1,4 @@
-# Dodenakkers Zuid-Holland — programmeerbriefing
+# Dodenakkers Zuid-Holland - programmeerbriefing
 
 Dit document is de centrale briefing voor AI en andere ontwikkelaars die aan deze repository werken.
 

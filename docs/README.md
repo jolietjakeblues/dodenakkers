@@ -9,7 +9,7 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md).*
 
-**Begraafplaatsen** — 443 terreinen, samen circa **519 ha**:
+**Begraafplaatsen** - 443 terreinen, samen circa **519 ha**:
 
 - 402 niet-geruimd, 37 geruimd, 4 met een statusconflict (bron spreekt zichzelf tegen, niet automatisch opgelost);
 - kleinste terrein 15,84 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.260,05 m².
@@ -24,13 +24,13 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 **Tegenover archeologische rijksmonumenten** (99 in de bbox):
 
 - 0 begraafplaatsen overlappen een archeologisch rijksmonument;
-- dichtstbijzijnste niet-overlappende geval: NH kerkhof, Heenvliet, **6,2 m** van een archeologisch rijksmonument — een randgeval, geen "ver weg", zie sectie "Bijna-overlap" in de erfgoedrelaties-audit.
+- dichtstbijzijnste niet-overlappende geval: NH kerkhof, Heenvliet, **6,2 m** van een archeologisch rijksmonument - een randgeval, geen "ver weg", zie sectie "Bijna-overlap" in de erfgoedrelaties-audit.
 
 **Tegenover (gebouwde) rijksmonumenten** (14.204 in de bbox):
 
-- 243 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (1.043 relaties in totaal, categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m` — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
+- 243 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (1.043 relaties in totaal, categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m` - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
 
-Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt — ongeacht of ze bij een van de 443 begraafplaatsen in de buurt liggen.
+Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt - ongeacht of ze bij een van de 443 begraafplaatsen in de buurt liggen.
 
 ## Ideeën
 
@@ -96,7 +96,7 @@ zie [006 Hosting](ideas/006-hosting.md) voor de oorspronkelijke afweging
 (die inmiddels is herzien).
 
 `site/` is een build-artefact (gitignored, niet committen) dat alleen bevat
-wat de viewer nodig heeft — niet de hele repo. Opnieuw bouwen en deployen:
+wat de viewer nodig heeft - niet de hele repo. Opnieuw bouwen en deployen:
 
 ```bash
 python scripts/build_site.py

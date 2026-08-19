@@ -265,7 +265,7 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
         f"(**{stats['met_rijksmonument_250m']}** binnen {RM_NEARBY_BUFFER_M} m -- de dataset bewaart relaties tot "
         f"{RM_NEARBY_BUFFER_M} m zodat de schuifregelaar in de viewer verder dan 100 m kan verkennen). "
         "Categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`/`100-250m`, zie sectie 18 van de "
-        "briefing — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard.",
+        "briefing - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard.",
         "",
         f"{skipped_null_aard} rijksmonumenten zonder `monument_aard` zijn uitgesloten van de "
         "'gebouwd'-set in `data/rce/rijksmonumenten.geojson` (noch als gebouwd, noch als archeologisch geteld).",
@@ -277,7 +277,7 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
     for f in examples:
         p = f["properties"]
         gezicht_namen = ", ".join(g["naam"] or "?" for g in p["beschermd_gezicht_relaties"])
-        lines.append(f"- `{p['id']}` {p['naam']} ({p['plaats']}) — gezicht: {gezicht_namen}")
+        lines.append(f"- `{p['id']}` {p['naam']} ({p['plaats']}) - gezicht: {gezicht_namen}")
 
     lines += ["", "## Voorbeelden met archeologische overlap", ""]
     examples = [f for f in features if f["properties"]["archeologische_rm_count"] > 0][:10]
@@ -291,14 +291,14 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
         rels = ", ".join(
             f"{r['naam'] or r['rijksmonumentnummer']} ({r['relation']})" for r in p["archeologische_rm_relations"]
         )
-        lines.append(f"- `{p['id']}` {p['naam']} ({p['plaats']}) — {rels}")
+        lines.append(f"- `{p['id']}` {p['naam']} ({p['plaats']}) - {rels}")
 
     lines += [
         "",
         "## Bijna-overlap met archeologische rijksmonumenten",
         "",
         "Geen overlap (dus niet in `archeologische_rm_relations`), maar wel de dichtstbijzijnde "
-        "archeologische rijksmonumenten per terrein — puur informatief (`archeologische_rm_nearest`), "
+        "archeologische rijksmonumenten per terrein - puur informatief (`archeologische_rm_nearest`), "
         "om te laten zien wanneer 'geen overlap' een randgeval is in plaats van 'ver weg'.",
         "",
     ]
@@ -308,7 +308,7 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
         p = f["properties"]
         n = p["archeologische_rm_nearest"]
         lines.append(
-            f"- `{p['id']}` {p['naam']} ({p['plaats']}) — {n['distance_m']} m tot "
+            f"- `{p['id']}` {p['naam']} ({p['plaats']}) - {n['distance_m']} m tot "
             f"{n['naam'] or n['rijksmonumentnummer']}"
         )
 
@@ -316,7 +316,7 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
         "",
         "## Gegenereerde bestanden",
         "",
-        "- `data/generated/analyse.geojson` — `begraafplaatsen.geojson` verrijkt met "
+        "- `data/generated/analyse.geojson` - `begraafplaatsen.geojson` verrijkt met "
         "`in_beschermd_gezicht`, `beschermd_gezicht_relaties`, `archeologische_rm_*` en `rijksmonument_*`.",
         "",
         "## Open punten",

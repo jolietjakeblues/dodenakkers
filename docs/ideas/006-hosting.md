@@ -57,7 +57,7 @@ vraag zodra bleek dat Cloudflare al bestaande, bewezen infrastructuur is: de
 gebruiker draait doorzoekerfgoed.nl (een zwaarder RCE-project, met
 server-side API-routes) al probleemloos op Cloudflare. Dan is de vraag niet
 "heeft dit project Cloudflare nodig" maar "waarom een tweede
-hostingpatroon optuigen naast wat je al hebt en kent" — geen nieuw
+hostingpatroon optuigen naast wat je al hebt en kent" - geen nieuw
 platform, hergebruik van bestaand platform.
 
 Live op **https://dodenakkers-zh.pages.dev/** (project `dodenakkers-zh`).
