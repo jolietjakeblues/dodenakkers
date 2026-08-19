@@ -198,13 +198,24 @@ en Q1/Q2/Q3 draait via `scripts/analyse_spatial.py` (output
 `data/generated/analyse.geojson`), zie
 [005 Erfgoedrelaties resultaten](005-erfgoedrelaties-resultaten.md).
 
+## Aanwijzingsinformatie (opgelost, 2026-08-19)
+
+Onderzocht of de graph `aanwijzingenmonumenten` zinvolle per-monument
+aanwijzingsinformatie bevat, zoals gevraagd. Antwoord: nee -- die graph
+bevat in totaal maar 19 triples, en dat zijn allemaal generieke landelijke
+beleidsprogramma's/wetten ("Monumentenwet 1961", "MIP",
+"Beleidsregel aanwijzing beschermde monumenten 2009", ...), niet gekoppeld
+aan individuele CHO's. Bewust niet gebruikt.
+
+In plaats daarvan is `?datumInschrijving`
+(`ceo:datumInschrijvingInMonumentenregister`) toegevoegd aan Q2/Q3 -- die
+staat rechtstreeks op elk Rijksmonument, 97% dekking nationaal (65.575 van
+67.494), 100% in de Zuid-Holland-bbox. Dat is de bruikbare
+aanwijzingsinformatie per monument, nu zichtbaar in de viewer-popup als
+"Datum inschrijving monumentenregister".
+
 ## Open punten
 
 1. `heeftOmschrijving` als naam-fallback ophalen voor rijksmonumenten
    zonder `heeftNaam` (los van de geometrie-query, om cartesisch product te
    vermijden).
-2. Aanwijzingsinformatie uit de graph `aanwijzingenmonumenten` is nog niet
-   meegenomen in Q2/Q3.
-3. `build_base_dataset.py` is zelf nog een stub (zie sectie 1 van deze map);
-   de RCE-extracten hierboven zijn dus reproduceerbaar, maar de
-   basisdataset waartegen ze worden gejoind nog niet.

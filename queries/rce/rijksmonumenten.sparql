@@ -63,6 +63,16 @@
 # het echte label (zie ?oorspronkelijkeFunctie), zodat Leon zelf kiest
 # welke functiewaarden relevant zijn.
 #
+# Aanwijzingsinformatie (2026-08-19): de graph aanwijzingenmonumenten bevat
+# GEEN per-monument aanwijzingsdata -- slechts 19 triples totaal, allemaal
+# generieke landelijke beleidsprogramma's/wetten ("Monumentenwet 1961",
+# "MIP", "Beleidsregel aanwijzing beschermde monumenten 2009", ...), niet
+# gekoppeld aan individuele CHO's. Bewust NIET gebruikt (te weinig zinnige
+# informatie). In plaats daarvan ?datumInschrijving
+# (ceo:datumInschrijvingInMonumentenregister, rechtstreeks op Rijksmonument,
+# 97% dekking nationaal: 65.575 van 67.494) -- dat IS de bruikbare
+# aanwijzingsinformatie per monument.
+#
 # Bron: RCE CHO Linked Data Voorziening, graph instanties-rce.
 
 # --- QUERY: points ---
@@ -71,7 +81,7 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?datumInschrijving ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
   GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
     ?cho a ceo:Rijksmonument ;
       ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
@@ -82,6 +92,7 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?h
       ?naamObj ceo:naam ?naam .
     }
     OPTIONAL { ?cho ceo:heeftMonumentAard ?aard . }
+    OPTIONAL { ?cho ceo:datumInschrijvingInMonumentenregister ?datumInschrijving . }
   }
   # skos:prefLabel voor deze concepten leeft NIET in instanties-rce (net als bij
   # heeftJuridischeStatus/heeftMonumentAard-labels): nesten binnen een GRAPH-restrictie
@@ -125,7 +136,7 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?datumInschrijving ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
   GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
     ?cho a ceo:Rijksmonument ;
       ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
@@ -136,6 +147,7 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?aard ?oorspronkelijkeFunctie ?h
       ?naamObj ceo:naam ?naam .
     }
     OPTIONAL { ?cho ceo:heeftMonumentAard ?aard . }
+    OPTIONAL { ?cho ceo:datumInschrijvingInMonumentenregister ?datumInschrijving . }
   }
   OPTIONAL {
     GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {

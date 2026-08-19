@@ -4,10 +4,12 @@ Assemble a clean, minimal static site for deployment (Cloudflare Pages).
 
 Only copies what the viewer actually needs -- not the whole repository
 (docs, queries, scripts, source CSV stay out of the deployed site). Flattens
-src/ + data/ into a single site/ root so the page is reachable at "/"
-instead of "/src/index.html": app.js's DATA paths are rewritten from
-"../data/..." (correct for src/index.html) to "data/..." (correct once
-index.html sits at the site root next to a data/ sibling).
+src/ + data/ + images/ into a single site/ root so the page is reachable at
+"/" instead of "/src/index.html": app.js's DATA paths and index.html's
+logo/favicon paths are rewritten from "../data/..."/"../images/..."
+(correct for src/index.html, one level down from the repo root) to
+"data/..."/"images/..." (correct once index.html sits at the site root
+next to data/ and images/ siblings).
 
 Output: site/ (gitignored, rebuilt by this script -- not committed).
 """
@@ -20,7 +22,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = REPO_ROOT / "site"
 
 FILES_TO_COPY = [
-    (REPO_ROOT / "src" / "index.html", SITE_DIR / "index.html"),
     (REPO_ROOT / "src" / "style.css", SITE_DIR / "style.css"),
     (REPO_ROOT / "data" / "generated" / "analyse.geojson", SITE_DIR / "data" / "generated" / "analyse.geojson"),
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
@@ -30,6 +31,20 @@ FILES_TO_COPY = [
         SITE_DIR / "images" / "Dodenakkers-logo-68015ff5.webp",
     ),
 ]
+
+REWRITES = [("../data/generated/", "data/generated/"), ("../data/rce/", "data/rce/"), ("../images/", "images/")]
+
+
+def copy_with_rewrites(src: Path, dst: Path) -> None:
+    text = src.read_text(encoding="utf-8")
+    rewritten = text
+    for old, new in REWRITES:
+        rewritten = rewritten.replace(old, new)
+    if rewritten == text:
+        raise RuntimeError(f"{src.relative_to(REPO_ROOT)}: geen paden gevonden om te herschrijven -- gewijzigd?")
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text(rewritten, encoding="utf-8")
+    print(f"{src.relative_to(REPO_ROOT)} -> {dst.relative_to(REPO_ROOT)} (paden herschreven)")
 
 
 def main() -> None:
@@ -42,12 +57,8 @@ def main() -> None:
         shutil.copyfile(src, dst)
         print(f"{src.relative_to(REPO_ROOT)} -> {dst.relative_to(REPO_ROOT)}")
 
-    app_js = (REPO_ROOT / "src" / "app.js").read_text(encoding="utf-8")
-    rewritten = app_js.replace("../data/generated/", "data/generated/").replace("../data/rce/", "data/rce/")
-    if rewritten == app_js:
-        raise RuntimeError("app.js: geen '../data/' paden gevonden om te herschrijven -- src/app.js gewijzigd?")
-    (SITE_DIR / "app.js").write_text(rewritten, encoding="utf-8")
-    print(f"src/app.js -> site/app.js (../data/ -> data/)")
+    copy_with_rewrites(REPO_ROOT / "src" / "index.html", SITE_DIR / "index.html")
+    copy_with_rewrites(REPO_ROOT / "src" / "app.js", SITE_DIR / "app.js")
 
     total_bytes = sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
     print(f"\nsite/ klaar, {total_bytes / 1024 / 1024:.1f} MB")

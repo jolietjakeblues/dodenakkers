@@ -17,27 +17,72 @@ const DATA = {
 
 const statusEl = document.getElementById("status");
 
-// PDOK BRT-achtergrondkaart (grijs), zelfde ondergrond als
-// https://github.com/jolietjakeblues/doorzoeker-v2a (app/HeritageMap.tsx).
-// WMTS, EPSG:3857 -- de tilematrix/tilerow/tilecol-parameters komen 1-op-1
-// overeen met MapLibre's {z}/{x}/{y}-tileschema.
+// Ondergronden, allemaal PDOK WMTS in EPSG:3857 (tilematrix/tilerow/tilecol
+// komen 1-op-1 overeen met MapLibre's {z}/{x}/{y}-tileschema). "grijs" is de
+// standaard, zelfde ondergrond als https://github.com/jolietjakeblues/doorzoeker-v2a
+// (app/HeritageMap.tsx). De overige drie op verzoek (2026-08-19), net als de
+// ondergrondkeuze bij WatWasHier: luchtfoto, BRK-percelen (overlay, transparant
+// -- géén eigen basemap), BGT. Alle vier vooraf geverifieerd met een losse
+// tile-request (HTTP 200, echte beeldinhoud) voordat ze hier terechtkwamen.
+const BASEMAPS = {
+  grijs: {
+    tiles: [
+      "https://service.pdok.nl/kadaster/brt-achtergrondkaart/wmts/v2_0?service=WMTS&request=GetTile&version=1.0.0&layer=grijs&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
+    ],
+    attribution: 'Kaart: <a href="https://www.pdok.nl/">PDOK</a> · BRT Kadaster',
+  },
+  luchtfoto: {
+    tiles: [
+      "https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0?service=WMTS&request=GetTile&version=1.0.0&layer=Actueel_orthoHR&style=default&tilematrixset=EPSG:3857&format=image/jpeg&tilematrix={z}&tilerow={y}&tilecol={x}",
+    ],
+    attribution: 'Luchtfoto: <a href="https://www.pdok.nl/">PDOK</a> · Beeldmateriaal.nl',
+  },
+  bgt: {
+    tiles: [
+      "https://service.pdok.nl/lv/bgt/wmts/v1_0?service=WMTS&request=GetTile&version=1.0.0&layer=standaardvisualisatie&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
+    ],
+    attribution: 'Kaart: <a href="https://www.pdok.nl/">PDOK</a> · BGT Kadaster',
+  },
+};
+const BRK_PERCELEN_OVERLAY = {
+  tiles: [
+    "https://service.pdok.nl/kadaster/kadastralekaart/wmts/v5_0?service=WMTS&request=GetTile&version=1.0.0&layer=Kadastralekaart&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
+  ],
+  attribution: 'Percelen: <a href="https://www.pdok.nl/">PDOK</a> · BRK Kadaster',
+};
+
+function basemapStyleLayers() {
+  const sources = {};
+  const layers = [];
+  for (const [id, cfg] of Object.entries(BASEMAPS)) {
+    sources[`base-${id}`] = { type: "raster", tiles: cfg.tiles, tileSize: 256, maxzoom: 19, attribution: cfg.attribution };
+    layers.push({
+      id: `base-${id}`,
+      type: "raster",
+      source: `base-${id}`,
+      layout: { visibility: id === "grijs" ? "visible" : "none" },
+    });
+  }
+  sources["overlay-brk-percelen"] = {
+    type: "raster",
+    tiles: BRK_PERCELEN_OVERLAY.tiles,
+    tileSize: 256,
+    maxzoom: 19,
+    attribution: BRK_PERCELEN_OVERLAY.attribution,
+  };
+  layers.push({
+    id: "overlay-brk-percelen",
+    type: "raster",
+    source: "overlay-brk-percelen",
+    layout: { visibility: "none" },
+  });
+  return { sources, layers };
+}
+const { sources: baseSources, layers: baseLayers } = basemapStyleLayers();
+
 const map = new maplibregl.Map({
   container: "map",
-  style: {
-    version: 8,
-    sources: {
-      "pdok-brt-grijs": {
-        type: "raster",
-        tiles: [
-          "https://service.pdok.nl/kadaster/brt-achtergrondkaart/wmts/v2_0?service=WMTS&request=GetTile&version=1.0.0&layer=grijs&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
-        ],
-        tileSize: 256,
-        maxzoom: 19,
-        attribution: 'Kaart: <a href="https://www.pdok.nl/">PDOK</a> · BRT Kadaster',
-      },
-    },
-    layers: [{ id: "pdok-brt-grijs", type: "raster", source: "pdok-brt-grijs" }],
-  },
+  style: { version: 8, sources: baseSources, layers: baseLayers },
   center: [4.5, 52.0],
   zoom: 9,
 });
@@ -146,6 +191,22 @@ function boundsOfFeatureCollection(fc) {
     extendBoundsWithGeometry(bounds, f.geometry);
   }
   return bounds;
+}
+
+// Leon bevestigde 2026-08-19: "annex aan een rijksmonument" betekent
+// grenscontact (touches), niet zomaar "binnen X meter". Andere relaties
+// blijven de ruwe categorie tonen (zie sectie 18 van de briefing --
+// werkhypothesen, geen definitieve indeling).
+const RELATION_LABELS = {
+  touches: "annex (grenst aan)",
+  inside_on_site: "op het terrein",
+  intersects: "overlapt",
+  contains: "omvat het monument",
+  within: "monument omvat het terrein",
+  point_inside: "punt binnen terrein",
+};
+function relationLabel(relation) {
+  return RELATION_LABELS[relation] || relation;
 }
 
 function popupHtml(title, rows) {
@@ -363,7 +424,7 @@ async function main() {
           [
             "Archeologisch rijksmonument",
             archRelaties.length
-              ? archRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${r.relation})`).join(", ")
+              ? archRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${relationLabel(r.relation)})`).join(", ")
               : archNearest
               ? `geen overlap (dichtstbij: ${archNearest.distance_m} m)`
               : "geen",
@@ -371,7 +432,7 @@ async function main() {
           [
             "Rijksmonumenten &le;100m",
             rmRelaties.length
-              ? rmRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${r.relation}, ${r.distance_m}m)`).join(", ")
+              ? rmRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${relationLabel(r.relation)}, ${r.distance_m}m)`).join(", ")
               : "geen",
           ],
           ["Koppelwijze ingang", p.ingang_koppelwijze],
@@ -408,6 +469,7 @@ async function main() {
           ["Oorspronkelijke functie", p.oorspronkelijke_functie],
           ["Huidige functie", p.huidige_functie],
           ["Type", p.type],
+          ["Datum inschrijving monumentenregister", p.datum_inschrijving_monumentenregister],
           ["Geometriebron", p.geometry_bron],
           ["Register", p.monumentenregister_url ? `<a href="${p.monumentenregister_url}" target="_blank" rel="noopener">bekijk</a>` : null],
         ])
@@ -437,6 +499,18 @@ async function main() {
   }
 
   document.getElementById("toggle-monumenten-alle").addEventListener("change", updateMonumentenFilter);
+
+  // --- Ondergrond ---
+  for (const radio of document.querySelectorAll('input[name="basemap"]')) {
+    radio.addEventListener("change", (e) => {
+      for (const id of Object.keys(BASEMAPS)) {
+        map.setLayoutProperty(`base-${id}`, "visibility", id === e.target.value ? "visible" : "none");
+      }
+    });
+  }
+  document.getElementById("toggle-brk-percelen").addEventListener("change", (e) => {
+    map.setLayoutProperty("overlay-brk-percelen", "visibility", e.target.checked ? "visible" : "none");
+  });
 
   // --- Filters (terrein/ingangen; werken via GeoJSON filter-expressies) ---
   function applyFilters() {

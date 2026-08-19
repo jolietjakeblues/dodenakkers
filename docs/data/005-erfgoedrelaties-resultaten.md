@@ -48,6 +48,6 @@ Geen overlap (dus niet in `archeologische_rm_relations`), maar wel de dichtstbij
 
 ## Open punten
 
-1. De 100 m-grens voor 'nabij gebouwd rijksmonument' is een werkhypothese (sectie 18), nog niet door Leon bevestigd.
+1. De 100 m-grens voor 'nabij gebouwd rijksmonument' is een werkhypothese (sectie 18), nog niet door Leon bevestigd. Wel al bevestigd (2026-08-19): 'annex aan een rijksmonument' betekent grenscontact -- de relatie `touches` -- niet zomaar 'binnen X meter'; de viewer toont dit nu als 'annex (grenst aan)'.
 2. `rijksmonument_relations` gebruikt alleen de punt/polygoon-geometrie uit `data/rce/rijksmonumenten.geojson`; monumenten zonder geometrie in die extractie ontbreken hier per definitie.
-3. Kadastrale percelen (fase 2, sectie 22) zijn nog niet meegenomen.
+3. Kadastrale percelen (fase 2, sectie 22) zijn nog niet meegenomen. Zonder percelen kunnen we ook niet zien of meerdere rijksmonumenten (zoals de cluster bij NH Kerkhof Wassenaar) op hetzelfde perceel liggen en dus als 1 site geclusterd zouden moeten worden i.p.v. als losse punten -- dat is precies waar sectie 42-vraag 4 van de briefing over gaat.

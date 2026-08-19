@@ -21,12 +21,12 @@
 # bredere archeologische registerdata is een mogelijke latere uitbreiding,
 # geen onderdeel van deze extractie.
 #
-# Zelfde bbox-redenering, Point/Polygon-opsplitsing, heeftNaam-beperking en
-# functies/type-aanpak (oorspronkelijke functie, huidige functie, type --
-# zie de uitgebreide toelichting in queries/rce/rijksmonumenten.sparql) als
-# Q2. Relevant hier: ook een archeologisch rijksmonument (bv. een
-# grafheuvel of grafveld) kan als oorspronkelijke functie
-# "begraafplaats"/"kerkhof" hebben.
+# Zelfde bbox-redenering, Point/Polygon-opsplitsing, heeftNaam-beperking,
+# functies/type-aanpak en aanwijzingsinformatie-keuze (datumInschrijving
+# i.p.v. de vrijwel lege aanwijzingenmonumenten-graph -- zie de uitgebreide
+# toelichting in queries/rce/rijksmonumenten.sparql) als Q2. Relevant hier:
+# ook een archeologisch rijksmonument (bv. een grafheuvel of grafveld) kan
+# als oorspronkelijke functie "begraafplaats"/"kerkhof" hebben.
 
 # --- QUERY: points ---
 PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
@@ -34,7 +34,7 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?datumInschrijving ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
   GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
     ?cho a ceo:Rijksmonument ;
       ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
@@ -45,6 +45,7 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?huidige
       ?cho ceo:heeftNaam ?naamObj .
       ?naamObj ceo:naam ?naam .
     }
+    OPTIONAL { ?cho ceo:datumInschrijvingInMonumentenregister ?datumInschrijving . }
   }
   OPTIONAL {
     GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
@@ -84,7 +85,7 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
+SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?datumInschrijving ?oorspronkelijkeFunctie ?huidigeFunctie ?type ?wkt WHERE {
   GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
     ?cho a ceo:Rijksmonument ;
       ceo:heeftJuridischeStatus <https://data.cultureelerfgoed.nl/term/id/rn/2/b2d9a59a-fe1e-4552-9a05-3c2acddff864> ;
@@ -95,6 +96,7 @@ SELECT DISTINCT ?cho ?rijksmonumentnummer ?naam ?oorspronkelijkeFunctie ?huidige
       ?cho ceo:heeftNaam ?naamObj .
       ?naamObj ceo:naam ?naam .
     }
+    OPTIONAL { ?cho ceo:datumInschrijvingInMonumentenregister ?datumInschrijving . }
   }
   OPTIONAL {
     GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
