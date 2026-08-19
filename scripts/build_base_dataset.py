@@ -73,7 +73,14 @@ def normalize(value) -> str:
 
 def load_source() -> pd.DataFrame:
     df = pd.read_csv(SOURCE_CSV, encoding="utf-8-sig")
-    assert len(df) == 924, f"bronrecords: verwacht 924, gevonden {len(df)}"
+    # 924 -> 884 op 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen
+    # (Tienhoven, Ameide, Lexmond, Hei en Boeicop, Schoonrewoerd, Leerbroek,
+    # Kedichem, Leerdam, Oosterwijk, Nieuwland, Meerkerk) verwijderd -- die
+    # gemeente ging in 2019 van Zuid-Holland naar Utrecht. Leon had dit al
+    # in een oude Excel gecorrigeerd, maar niet in de KML/CSV die deze build
+    # leest. Zie scripts/fix_vijfheerenlanden.py (eenmalig gedraaid) en
+    # docs/data/003-csv-bron-en-koppeling.md.
+    assert len(df) == 884, f"bronrecords: verwacht 884, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -142,8 +149,8 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
 
     assert len(matches) == len(terrein), f"matches: verwacht {len(terrein)}, gevonden {len(matches)}"
     counts = Counter(m["koppelwijze"] for m in matches)
-    assert counts["exact_name_place"] == 449, counts
-    assert counts["spatial_name_variant"] == 12, counts
+    assert counts["exact_name_place"] == 430, counts
+    assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
     assert counts["missing"] == 1, counts
 
@@ -369,8 +376,8 @@ def main() -> None:
     df = load_source()
     terrein = prepare(df[df["begraafplaats"] == "begraafplaats"])
     ingang = prepare(df[df["ingang"] == "ingang"])
-    assert len(terrein) == 463, f"terreinen: verwacht 463, gevonden {len(terrein)}"
-    assert len(ingang) == 461, f"ingangen: verwacht 461, gevonden {len(ingang)}"
+    assert len(terrein) == 443, f"terreinen: verwacht 443, gevonden {len(terrein)}"
+    assert len(ingang) == 441, f"ingangen: verwacht 441, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 
