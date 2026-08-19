@@ -6,7 +6,7 @@
 - **43** volledig binnen een rijksbeschermd gezicht (`in_beschermd_gezicht = within`);
 - **5** deels overlappend met een rijksbeschermd gezicht (`intersects`);
 - **0** met minstens één overlappend archeologisch rijksmonument;
-- **243** met minstens één gebouwd rijksmonument binnen 100 m (categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`, zie sectie 18 van de briefing — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
+- **243** met minstens één gebouwd rijksmonument binnen 100 m (**312** binnen 250 m -- de dataset bewaart relaties tot 250 m zodat de schuifregelaar in de viewer verder dan 100 m kan verkennen). Categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`/`100-250m`, zie sectie 18 van de briefing — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard.
 
 0 rijksmonumenten zonder `monument_aard` zijn uitgesloten van de 'gebouwd'-set in `data/rce/rijksmonumenten.geojson` (noch als gebouwd, noch als archeologisch geteld).
 

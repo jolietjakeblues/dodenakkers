@@ -29,8 +29,8 @@
       <h2>Ondergrond</h2>
       <label><input type="radio" name="basemap" value="grijs" checked /> PDOK grijs</label>
       <label><input type="radio" name="basemap" value="luchtfoto" /> Luchtfoto (actueel)</label>
-      <label><input type="radio" name="basemap" value="bgt" /> BGT</label>
-      <label><input type="checkbox" id="toggle-brk-percelen" /> Kadastrale percelen (BRK)</label>
+      <label><input type="radio" name="basemap" value="bgt" /> BGT <span class="hint">(vanaf sterk ingezoomd)</span></label>
+      <label><input type="checkbox" id="toggle-brk-percelen" /> Kadastrale percelen (BRK) <span class="hint">(vanaf sterk ingezoomd)</span></label>
     </section>
 
     <section>
@@ -44,12 +44,17 @@
 
     <section>
       <h2>Filters</h2>
-      <label><input type="checkbox" id="filter-niet-geruimd" /> Alleen niet-geruimd</label>
-      <label><input type="checkbox" id="filter-geruimd" /> Alleen geruimd</label>
-      <label><input type="checkbox" id="filter-conflict" /> Alleen statusconflict</label>
-      <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht</label>
-      <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument</label>
-      <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein (&le;100m)</label>
+      <p class="filter-summary" id="filter-summary"></p>
+      <label><input type="checkbox" id="filter-niet-geruimd" /> Alleen niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-geruimd" /> Alleen geruimd <span class="count" id="count-filter-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-conflict" /> Alleen statusconflict <span class="count" id="count-filter-conflict"></span></label>
+      <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht <span class="count" id="count-filter-gezicht"></span></label>
+      <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument <span class="count" id="count-filter-archeologie"></span></label>
+      <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein <span class="count" id="count-filter-rijksmonument"></span></label>
+      <div class="threshold-row">
+        <input type="range" id="rm-threshold" min="50" max="250" step="50" value="100" />
+        <span id="rm-threshold-label">&le;100m</span>
+      </div>
     </section>
 
     <section>
@@ -68,6 +73,7 @@
       <div class="legend-item"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
       <div class="legend-item"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd, punt)</div>
       <div class="legend-item"><span class="swatch" style="background:#e8590c66;border:1.5px solid #e8590c"></span> Rijksmonument (archeologisch, vlak/punt)</div>
+      <p class="hint">BGT en kadastrale percelen (BRK) tonen pas beeld vanaf sterk ingezoomd (straat-/pandniveau) &mdash; op provincie- of stadsschaal geeft PDOK daar bewust een lege tegel voor terug, geen storing.</p>
     </section>
 
     <p id="status">Data laden…</p>
