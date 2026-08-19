@@ -2,10 +2,10 @@
   "source": "RCE Linked Data Voorziening (CHO)",
   "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
   "query_file": "queries/rce/rijksmonumenten.sparql",
-  "retrieved_at": "2026-08-18T15:32:50.718294+00:00",
+  "retrieved_at": "2026-08-19T20:56:20.852242+00:00",
   "feature_count": 14204,
   "stats": {
-    "point_rows_from_endpoint": 25097,
+    "point_rows_from_endpoint": 25096,
     "polygon_rows_from_endpoint": 2367,
     "distinct_cho": 14204,
     "cho_with_polygon": 2289

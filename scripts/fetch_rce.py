@@ -155,6 +155,7 @@ def build_rijksmonumenten(query_file: Path, feature_name: str, include_aard: boo
             "oorspronkelijke_functie_kort": strip_functie_suffix(row.get("oorspronkelijkeFunctie")),
             "huidige_functie": row.get("huidigeFunctie"),
             "type": row.get("type"),
+            "datum_inschrijving_monumentenregister": row.get("datumInschrijving"),
         }
         if include_aard:
             aard_uri = row.get("aard")

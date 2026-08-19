@@ -2,7 +2,7 @@
   "source": "RCE Linked Data Voorziening (CHO)",
   "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
   "query_file": "queries/rce/beschermde-gezichten.sparql",
-  "retrieved_at": "2026-08-18T15:32:12.114259+00:00",
+  "retrieved_at": "2026-08-19T20:55:42.889410+00:00",
   "feature_count": 105,
   "stats": {
     "rows_from_endpoint": 472,

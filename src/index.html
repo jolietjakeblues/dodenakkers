@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>Dodenakkers Zuid-Holland — onderzoeksviewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,17 +13,25 @@
 
   <div id="panel">
     <div class="brand">
-      <img src="images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
+      <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
     </div>
     <h1>Dodenakkers Zuid-Holland</h1>
     <p class="subtitle">Onderzoeksviewer — begraafplaatsen &amp; erfgoed (MVP)</p>
     <p class="intro">
-      Testversie voor review. Toont 463 begraafplaatsen in Zuid-Holland tegenover
+      Testversie voor review. Toont 443 begraafplaatsen in Zuid-Holland tegenover
       beschermde stads- en dorpsgezichten, rijksmonumenten en archeologische
       rijksmonumenten uit de RCE Linked Data. Grenzen en categorieën (zoals
       "100m" voor "nabij") zijn voorlopige werkhypothesen, nog niet definitief
       vastgesteld.
     </p>
+
+    <section>
+      <h2>Ondergrond</h2>
+      <label><input type="radio" name="basemap" value="grijs" checked /> PDOK grijs</label>
+      <label><input type="radio" name="basemap" value="luchtfoto" /> Luchtfoto (actueel)</label>
+      <label><input type="radio" name="basemap" value="bgt" /> BGT</label>
+      <label><input type="checkbox" id="toggle-brk-percelen" /> Kadastrale percelen (BRK)</label>
+    </section>
 
     <section>
       <h2>Lagen</h2>
