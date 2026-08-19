@@ -24,12 +24,12 @@ bekende beperkingen.
 Geverifieerd via de RCE-MCP (`graphs_list`, `ontology_describe_class`,
 `explore_class`, `semantics_describe_topic`):
 
-- `instanties-rce` — actuele instantiedata, inclusief `heeftJuridischeStatus`
+- `instanties-rce` - actuele instantiedata, inclusief `heeftJuridischeStatus`
   en `heeftMonumentAard` (alle triples voor deze twee properties leven
   uitsluitend in deze graph);
-- `gezicht_hvdl` — polygonen van beschermde stads- en dorpsgezichten
+- `gezicht_hvdl` - polygonen van beschermde stads- en dorpsgezichten
   (`ceo:Gezicht`);
-- `owms` — gemeenten/provincies, alleen relevant als we later alsnog op
+- `owms` - gemeenten/provincies, alleen relevant als we later alsnog op
   gemeente willen filteren (zie "Waarom bounding box, geen gemeentelijst"
   hieronder).
 
@@ -60,14 +60,14 @@ Resultaat: **105 rijksbeschermde gezichten** in de Zuid-Holland bbox, alle
 Bestand: `queries/rce/rijksmonumenten.sparql`
 
 `heeftJuridischeStatus` vastgezet op de concept-URI voor `rijksmonument`
-(niet `voorbeschermd` of `geen rijksmonument`). Nationaal 63.103 stuks — te
+(niet `voorbeschermd` of `geen rijksmonument`). Nationaal 63.103 stuks - te
 veel om zoals Q1 in zijn geheel op te halen. `geof:sfWithin`/`sfIntersects`
 veroorzaken structurele timeouts op dit Virtuoso-endpoint (bekende
 RCE-MCP-valkuil), dus de bounding box wordt server-side toegepast door de
 WKT-string zelf te ontleden (`STRAFTER`/`STRBEFORE` + `xsd:double`). Dat kan
 alleen betrouwbaar per geometrietype, dus het bestand bevat twee losse
 SELECT-queries (punten, polygonen) die `fetch_rce.py` los uitvoert en per
-CHO samenvoegt — de polygoon wint van het punt wanneer een monument beide
+CHO samenvoegt - de polygoon wint van het punt wanneer een monument beide
 heeft (zie sectie 21 van de briefing).
 
 Bounding box (WGS84, extent van `data/generated/begraafplaatsen.geojson`
@@ -76,7 +76,7 @@ plus buffer): lon 3.90–5.14, lat 51.66–52.32.
 Resultaat: **14.204 rijksmonumenten** in de Zuid-Holland bbox, waarvan
 **2.289** met een polygoongeometrie (de overige 11.915 alleen een punt).
 
-### Naam is onvolledig — bekende beperking
+### Naam is onvolledig - bekende beperking
 
 `ceo:naam` heeft in de ontologie `rdfs:domain ceo:Naam`, niet
 `ceo:Rijksmonument`: een rijksmonument heeft dus geen eigen `ceo:naam`,
@@ -100,7 +100,7 @@ Bestand: `queries/rce/archeologische-rijksmonumenten.sparql`
 
 Semantische selectie via `ceo:heeftMonumentAard` vastgezet op de
 concept-URI voor `archeologisch` (niet via keyword-classificatie op naam of
-omschrijving — zie sectie 13 van de briefing). Nationaal 1.499 archeologische
+omschrijving - zie sectie 13 van de briefing). Nationaal 1.499 archeologische
 rijksmonumenten (1.492 met puntcoördinaten), geverifieerd via de RCE-MCP
 semantics-topic `monument_aard`.
 
@@ -109,7 +109,7 @@ Let op het onderscheid met de bredere archeologische registerclasses
 `ceo:ArcheologischOnderzoeksgebied`, `ceo:Vondstlocatie`, `ceo:Vondsten`,
 `ceo:Grondsporen`): dit zijn aparte classes naast `ceo:Rijksmonument`,
 onderling gekoppeld via `ceo:bevatObject`/`ceo:ligtInObject`. Deze query
-haalt uitsluitend de rijksmonumenten-subset op — dat is de subset die de
+haalt uitsluitend de rijksmonumenten-subset op - dat is de subset die de
 briefing "archeologische rijksmonumenten" noemt. De bredere archeologische
 registerdata (vondstlocaties, grondsporen, etc.) is niet opgehaald; dat is
 een mogelijke latere uitbreiding, geen onderdeel van deze extractie.
@@ -123,13 +123,13 @@ beperking als bij Q2).
 Q2 en Q3 bevatten drie parallelle velden, alle drie via de RCE-MCP
 semantics-topic "functions" geverifieerd op 2026-08-18:
 
-- `oorspronkelijke_functie` — `ceo:heeftOorspronkelijkeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel`;
-- `huidige_functie` — `ceo:heeftHuidigeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel` (dekking **3,2%**,
+- `oorspronkelijke_functie` - `ceo:heeftOorspronkelijkeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel`;
+- `huidige_functie` - `ceo:heeftHuidigeFunctie -> ceo:heeftFunctieNaam -> skos:prefLabel` (dekking **3,2%**,
   te laag voor een zinvol filter, wordt alleen meegegeven als data);
-- `type` — `ceo:heeftType -> ceo:heeftTypeNaam -> skos:prefLabel` (dekking 13,8%).
+- `type` - `ceo:heeftType -> ceo:heeftTypeNaam -> skos:prefLabel` (dekking 13,8%).
 
 `skos:prefLabel` voor deze concepten leeft niet in de graph `instanties-rce`
-(net als bij `heeftJuridischeStatus`/`heeftMonumentAard`) — de labelopzoeking
+(net als bij `heeftJuridischeStatus`/`heeftMonumentAard`) - de labelopzoeking
 moet dus buiten de `GRAPH`-restrictie staan, anders geeft de query stil 0
 resultaten. Kostte eerder een debug-ronde voor `oorspronkelijke_functie`.
 
@@ -149,12 +149,12 @@ de keuze welke functiewaarden "meetellen" hoort bij Leon, niet in een
 SPARQL-VALUES-lijst. Dat veld is verwijderd.
 
 In plaats daarvan filtert de viewer nu rechtstreeks op het echte label via
-`oorspronkelijke_functie_kort` — `oorspronkelijke_functie` met de RCE-
+`oorspronkelijke_functie_kort` - `oorspronkelijke_functie` met de RCE-
 subtypecode aan het einde afgeknipt (`"Woonhuis(K)"` -> `"Woonhuis"`,
 `"Boerderij (M1)"` -> `"Boerderij"`; regex `\s*\([^)]*\)\s*$`, in
 `fetch_rce.py`, niet in SPARQL). Dat brengt het aantal distincte
 functiewaarden in de Zuid-Holland-extractie terug van 511 naar 483 zonder
-er inhoudelijk iets van weg te laten — de ruwe `oorspronkelijke_functie`
+er inhoudelijk iets van weg te laten - de ruwe `oorspronkelijke_functie`
 blijft ernaast bewaard voor weergave. De viewer bouwt de filterlijst
 dynamisch op uit de daadwerkelijk voorkomende waarden (zie
 `src/app.js`), dus geen vaste lijst meer om te onderhouden of te herzien.

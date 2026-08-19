@@ -1,8 +1,8 @@
-// Dodenakkers Zuid-Holland — onderzoeksviewer (MVP)
+// Dodenakkers Zuid-Holland - onderzoeksviewer (MVP)
 //
 // Laadt de gebouwde basisdataset en RCE-extracten rechtstreeks als
 // statische GeoJSON. Geen live SPARQL vanuit de browser (zie sectie 15
-// van de briefing) — alle data komt uit data/generated/ en data/rce/,
+// van de briefing) - alle data komt uit data/generated/ en data/rce/,
 // zoals gegenereerd door scripts/build_base_dataset.py en
 // scripts/fetch_rce.py.
 
@@ -39,9 +39,13 @@ const BASEMAPS = {
   },
   bgt: {
     tiles: [
-      "https://service.pdok.nl/lv/bgt/wmts/v1_0?service=WMTS&request=GetTile&version=1.0.0&layer=standaardvisualisatie&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
+      "https://service.pdok.nl/kadaster/bgt/wmts/v1_0?service=WMTS&request=GetTile&version=1.0.0&layer=standaardvisualisatie&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
     ],
     attribution: 'Kaart: <a href="https://www.pdok.nl/">PDOK</a> · BGT Kadaster',
+    // BGT geeft tot en met zoom 16 een lege (maar geldige, HTTP 200) tegel
+    // terug -- geverifieerd op meerdere locaties (Delft, Amsterdam Dam),
+    // pas vanaf zoom 17 komt er echt beeld. Geen bug, een servergrens.
+    minzoom: 17,
   },
 };
 const BRK_PERCELEN_OVERLAY = {
@@ -49,13 +53,22 @@ const BRK_PERCELEN_OVERLAY = {
     "https://service.pdok.nl/kadaster/kadastralekaart/wmts/v5_0?service=WMTS&request=GetTile&version=1.0.0&layer=Kadastralekaart&style=default&tilematrixset=EPSG:3857&format=image/png&tilematrix={z}&tilerow={y}&tilecol={x}",
   ],
   attribution: 'Percelen: <a href="https://www.pdok.nl/">PDOK</a> · BRK Kadaster',
+  // Zelfde servergrens als BGT hierboven, zelfde manier geverifieerd.
+  minzoom: 17,
 };
 
 function basemapStyleLayers() {
   const sources = {};
   const layers = [];
   for (const [id, cfg] of Object.entries(BASEMAPS)) {
-    sources[`base-${id}`] = { type: "raster", tiles: cfg.tiles, tileSize: 256, maxzoom: 19, attribution: cfg.attribution };
+    sources[`base-${id}`] = {
+      type: "raster",
+      tiles: cfg.tiles,
+      tileSize: 256,
+      minzoom: cfg.minzoom || 0,
+      maxzoom: 19,
+      attribution: cfg.attribution,
+    };
     layers.push({
       id: `base-${id}`,
       type: "raster",
@@ -67,6 +80,7 @@ function basemapStyleLayers() {
     type: "raster",
     tiles: BRK_PERCELEN_OVERLAY.tiles,
     tileSize: 256,
+    minzoom: BRK_PERCELEN_OVERLAY.minzoom,
     maxzoom: 19,
     attribution: BRK_PERCELEN_OVERLAY.attribution,
   };
@@ -137,14 +151,27 @@ function functieCounts(monumentenFc) {
   return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-function relevantMonumentUris(begraafplaatsenFc) {
+// data/generated/analyse.geojson bewaart rijksmonument-relaties tot 250m
+// (scripts/analyse_spatial.py); de viewer filtert daaronder client-side op
+// de gekozen drempel (schuifregelaar, sectie 18 van de briefing -- 100m
+// was een werkhypothese, dit maakt 'm verkenbaar i.p.v. hardgecodeerd).
+function relevantMonumentUris(begraafplaatsenFc, maxDistance) {
   const uris = new Set();
   for (const f of begraafplaatsenFc.features) {
     for (const r of f.properties.rijksmonument_relations || []) {
-      if (r.cho_uri) uris.add(r.cho_uri);
+      if (r.cho_uri && r.distance_m <= maxDistance) uris.add(r.cho_uri);
     }
   }
   return uris;
+}
+
+function idsWithRijksmonumentWithin(begraafplaatsenFc, maxDistance) {
+  const ids = new Set();
+  for (const f of begraafplaatsenFc.features) {
+    const has = (f.properties.rijksmonument_relations || []).some((r) => r.distance_m <= maxDistance);
+    if (has) ids.add(f.properties.id);
+  }
+  return ids;
 }
 
 function ingangenFromBegraafplaatsen(fc) {
@@ -170,7 +197,7 @@ function ingangenFromBegraafplaatsen(fc) {
 function extendBoundsWithGeometry(bounds, geometry) {
   if (!geometry) return;
   // One terrain record is a GeometryCollection rather than a Polygon
-  // (section 2/4 of the briefing) — coordinates live on its sub-geometries.
+  // (section 2/4 of the briefing) - coordinates live on its sub-geometries.
   if (geometry.type === "GeometryCollection") {
     geometry.geometries.forEach((g) => extendBoundsWithGeometry(bounds, g));
     return;
@@ -296,8 +323,10 @@ async function main() {
     paint: { "line-color": "#e8590c", "line-width": 1.5 },
   });
 
-  const relevantUris = relevantMonumentUris(begraafplaatsen);
-  const relevantMonumentenFilter = ["in", ["get", "cho_uri"], ["literal", Array.from(relevantUris)]];
+  let rmThreshold = 100;
+  const rmThresholdEl = document.getElementById("rm-threshold");
+  const rmThresholdLabelEl = document.getElementById("rm-threshold-label");
+
   const monumentenBaseFilters = {
     "monumenten-punt": null,
     "monumenten-vlak": archeologischFilter,
@@ -343,6 +372,8 @@ async function main() {
 
   function updateMonumentenFilter() {
     const showAll = document.getElementById("toggle-monumenten-alle").checked;
+    const relevantUris = relevantMonumentUris(begraafplaatsen, rmThreshold);
+    const relevantMonumentenFilter = ["in", ["get", "cho_uri"], ["literal", Array.from(relevantUris)]];
     const dynamicClauses = [];
     if (!showAll) dynamicClauses.push(relevantMonumentenFilter);
     if (selectedFunctie.size) {
@@ -353,9 +384,9 @@ async function main() {
       const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
       map.setFilter(id, filter);
     }
+    document.getElementById("monumenten-count").textContent = `(${relevantUris.size} relevant, ≤${rmThreshold}m)`;
   }
   updateMonumentenFilter();
-  document.getElementById("monumenten-count").textContent = `(${relevantUris.size} relevant, ≤100m)`;
 
   // --- Begraafplaatsen terrein ---
   map.addSource("terrein", { type: "geojson", data: begraafplaatsen });
@@ -513,34 +544,67 @@ async function main() {
   });
 
   // --- Filters (terrein/ingangen; werken via GeoJSON filter-expressies) ---
-  function applyFilters() {
-    const nietGeruimd = document.getElementById("filter-niet-geruimd").checked;
-    const geruimdOnly = document.getElementById("filter-geruimd").checked;
-    const conflictOnly = document.getElementById("filter-conflict").checked;
-    const gezichtOnly = document.getElementById("filter-gezicht").checked;
-    const archeologieOnly = document.getElementById("filter-archeologie").checked;
-    const rijksmonumentOnly = document.getElementById("filter-rijksmonument").checked;
-    const clauses = [];
-    if (nietGeruimd) clauses.push(["==", ["get", "geruimd"], false]);
-    if (geruimdOnly) clauses.push(["==", ["get", "geruimd"], true]);
-    if (conflictOnly) clauses.push(["==", ["get", "status_conflict"], true]);
-    if (gezichtOnly) clauses.push(["!=", ["get", "in_beschermd_gezicht"], "none"]);
-    if (archeologieOnly) clauses.push([">", ["get", "archeologische_rm_count"], 0]);
-    if (rijksmonumentOnly) clauses.push([">", ["get", "rijksmonument_count"], 0]);
-    const filter = clauses.length ? ["all", ...clauses] : null;
-    map.setFilter("terrein-fill", filter);
-    map.setFilter("terrein-outline", filter);
-  }
-  for (const id of [
+  // Eén predicate-set, gebruikt voor zowel de MapLibre-filter als de live
+  // aantallen per checkbox (facet-stijl: "als je dit ook aanvinkt, gegeven
+  // je huidige andere selectie").
+  const FILTER_IDS = [
     "filter-niet-geruimd",
     "filter-geruimd",
     "filter-conflict",
     "filter-gezicht",
     "filter-archeologie",
     "filter-rijksmonument",
-  ]) {
+  ];
+  function terreinPredicates() {
+    return {
+      "filter-niet-geruimd": (p) => p.geruimd === false,
+      "filter-geruimd": (p) => p.geruimd === true,
+      "filter-conflict": (p) => p.status_conflict === true,
+      "filter-gezicht": (p) => p.in_beschermd_gezicht !== "none",
+      "filter-archeologie": (p) => p.archeologische_rm_count > 0,
+      "filter-rijksmonument": (p) => (p.rijksmonument_relations || []).some((r) => r.distance_m <= rmThreshold),
+    };
+  }
+  function applyFilters() {
+    const predicates = terreinPredicates();
+    const clauses = [];
+    if (document.getElementById("filter-niet-geruimd").checked) clauses.push(["==", ["get", "geruimd"], false]);
+    if (document.getElementById("filter-geruimd").checked) clauses.push(["==", ["get", "geruimd"], true]);
+    if (document.getElementById("filter-conflict").checked) clauses.push(["==", ["get", "status_conflict"], true]);
+    if (document.getElementById("filter-gezicht").checked) clauses.push(["!=", ["get", "in_beschermd_gezicht"], "none"]);
+    if (document.getElementById("filter-archeologie").checked) clauses.push([">", ["get", "archeologische_rm_count"], 0]);
+    if (document.getElementById("filter-rijksmonument").checked) {
+      const ids = idsWithRijksmonumentWithin(begraafplaatsen, rmThreshold);
+      clauses.push(["in", ["get", "id"], ["literal", Array.from(ids)]]);
+    }
+    const filter = clauses.length ? ["all", ...clauses] : null;
+    map.setFilter("terrein-fill", filter);
+    map.setFilter("terrein-outline", filter);
+    updateFilterCounts(predicates);
+  }
+  function updateFilterCounts(predicates) {
+    predicates = predicates || terreinPredicates();
+    const allProps = begraafplaatsen.features.map((f) => f.properties);
+    const activeIds = FILTER_IDS.filter((id) => document.getElementById(id).checked);
+    for (const id of FILTER_IDS) {
+      const others = activeIds.filter((otherId) => otherId !== id);
+      const count = allProps.filter((p) => others.every((o) => predicates[o](p)) && predicates[id](p)).length;
+      const el = document.getElementById(`count-${id}`);
+      if (el) el.textContent = `(${count})`;
+    }
+    const visibleCount = allProps.filter((p) => activeIds.every((id) => predicates[id](p))).length;
+    document.getElementById("filter-summary").textContent = `${visibleCount} van ${allProps.length} zichtbaar`;
+  }
+  for (const id of FILTER_IDS) {
     document.getElementById(id).addEventListener("change", applyFilters);
   }
+  rmThresholdEl.addEventListener("input", () => {
+    rmThreshold = Number(rmThresholdEl.value);
+    rmThresholdLabelEl.textContent = `≤${rmThreshold}m`;
+    updateMonumentenFilter();
+    applyFilters();
+  });
+  applyFilters();
 
   map.fitBounds(boundsOfFeatureCollection(begraafplaatsen), { padding: 40, duration: 0 });
 
