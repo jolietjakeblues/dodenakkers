@@ -9,27 +9,28 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md).*
 
-**Begraafplaatsen** — 463 terreinen, samen circa **527 ha**:
+**Begraafplaatsen** — 443 terreinen, samen circa **519 ha**:
 
-- 421 niet-geruimd, 38 geruimd, 4 met een statusconflict (bron spreekt zichzelf tegen, niet automatisch opgelost);
-- kleinste terrein 15,84 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.123,17 m².
+- 402 niet-geruimd, 37 geruimd, 4 met een statusconflict (bron spreekt zichzelf tegen, niet automatisch opgelost);
+- kleinste terrein 15,84 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.260,05 m².
+- was 463 tot 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen (nu provincie Utrecht, niet Zuid-Holland) verwijderd uit de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#vijfheerenlanden-2026-08-19-bronwijziging).
 
 **Tegenover beschermde gezichten** (105 rijksbeschermde stads-/dorpsgezichten in de Zuid-Holland-bbox):
 
-- 47 begraafplaatsen liggen volledig binnen een beschermd gezicht;
-- 6 overlappen een beschermd gezicht deels;
-- 410 hebben geen relatie met een beschermd gezicht.
+- 43 begraafplaatsen liggen volledig binnen een beschermd gezicht;
+- 5 overlappen een beschermd gezicht deels;
+- 395 hebben geen relatie met een beschermd gezicht.
 
 **Tegenover archeologische rijksmonumenten** (99 in de bbox):
 
 - 0 begraafplaatsen overlappen een archeologisch rijksmonument;
-- dichtstbijzijnde niet-overlappende geval: NH kerkhof, Heenvliet, **6,2 m** van een archeologisch rijksmonument — een randgeval, geen "ver weg", zie sectie "Bijna-overlap" in de erfgoedrelaties-audit.
+- dichtstbijzijnste niet-overlappende geval: NH kerkhof, Heenvliet, **6,2 m** van een archeologisch rijksmonument — een randgeval, geen "ver weg", zie sectie "Bijna-overlap" in de erfgoedrelaties-audit.
 
 **Tegenover (gebouwde) rijksmonumenten** (14.204 in de bbox):
 
-- 257 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (1.085 relaties in totaal, categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m` — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
+- 243 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (1.043 relaties in totaal, categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m` — voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
 
-Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt — ongeacht of ze bij een van de 463 begraafplaatsen in de buurt liggen.
+Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt — ongeacht of ze bij een van de 443 begraafplaatsen in de buurt liggen.
 
 ## Ideeën
 

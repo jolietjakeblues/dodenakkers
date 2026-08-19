@@ -4,15 +4,15 @@
 
 ## Samenvatting
 
-De genormaliseerde CSV bevat **924 bronrecords**:
+De genormaliseerde CSV bevat **884 bronrecords**:
 
-- **463** begraafplaatsterreinen;
-- **461** ingangen;
-- **462** terreinpolygonen;
+- **443** begraafplaatsterreinen;
+- **441** ingangen;
+- **442** terreinpolygonen;
 - **1** terreinrecord met een `GeometryCollection`;
-- **80** bronrecords met status `geruimd`.
+- **78** bronrecords met status `geruimd`.
 
-De basisdataset bevat **463 begraafplaatsrecords**, één record per terrein.
+De basisdataset bevat **443 begraafplaatsrecords**, één record per terrein.
 
 ## Koppeling terrein en ingang
 
@@ -20,19 +20,19 @@ Koppeling is uitgevoerd met behoud van de bronwaarden.
 
 | Koppelwijze | Terreinen |
 |---|---:|
-| Exacte genormaliseerde naam + opgeschoonde plaats | 449 |
-| Ruimtelijke koppeling bij naamvariant | 12 |
+| Exacte genormaliseerde naam + opgeschoonde plaats | 430 |
+| Ruimtelijke koppeling bij naamvariant | 11 |
 | Gedeelde ingang, ruimtelijk gekoppeld | 1 |
 | Geen ingang gevonden | 1 |
 
 ### Gedeelde ingang
 
 - `zh-0039` NH begraafplaats Duinrust (Katwijk aan Zee), koppelwijze `shared_entrance_spatial`
-- `zh-0357` Gem. begraafplaats Duinrust (Katwijk aan Zee), koppelwijze `spatial_name_variant`
+- `zh-0343` Gem. begraafplaats Duinrust (Katwijk aan Zee), koppelwijze `spatial_name_variant`
 
 ### Ontbrekende ingang
 
-- `zh-0368`: Gem. begraafplaats, Oudenhoorn
+- `zh-0354`: Gem. begraafplaats, Oudenhoorn
 
 ## Statusconflicten
 
@@ -51,10 +51,10 @@ In deze gevallen krijgt het afgeleide veld `geruimd` voorlopig `null` en `status
 Oppervlakte en omtrek zijn berekend na transformatie van WGS84 naar RD New (`EPSG:28992`).
 
 - kleinste oppervlakte: **15.84 m²**;
-- mediaan oppervlakte: **3,123.17 m²**;
+- mediaan oppervlakte: **3,260.05 m²**;
 - grootste oppervlakte: **268,823.91 m²**;
 - kleinste omtrek: **15.95 m**;
-- mediaan omtrek: **242.20 m**;
+- mediaan omtrek: **243.73 m**;
 - grootste omtrek: **2,084.91 m**.
 
 Deze extremen zijn signalen voor controle en niet automatisch fouten.

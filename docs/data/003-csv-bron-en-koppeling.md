@@ -57,6 +57,23 @@ Dit punt ligt bij twee afzonderlijke terreinrecords. We behandelen dit als een g
 
 Voor `Gem. begraafplaats, Oudenhoorn` is in de bron geen ingangspunt gevonden. Het terrein blijft in de dataset en krijgt geen verzonnen ingang.
 
+### Vijfheerenlanden (2026-08-19, bronwijziging)
+
+Bij de gemeentelijke herindeling van 2019 ging Vijfheerenlanden (Ameide,
+Hei en Boeicop, Kedichem, Leerbroek, Leerdam, Lexmond, Meerkerk, Nieuwland,
+Oosterwijk, Schoonrewoerd, Tienhoven) van provincie Zuid-Holland naar
+provincie Utrecht. Leon had deze 20 begraafplaatsen destijds al uit een
+Excel-versie van de bron verwijderd, maar die correctie had de KML/CSV die
+deze build leest nooit bereikt.
+
+Verwijderd via `scripts/fix_vijfheerenlanden.py` (eenmalig gedraaid,
+2026-08-19): 20 terreinen + hun 20 gekoppelde ingangen (40 bronregels),
+op naam+plaats geverifieerd tegen Leons opgave voordat er iets verwijderd
+werd. Bron ging van 924 naar 884 records; basisdataset van 463 naar 443
+begraafplaatsen. Zie `git log -- "data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"`
+voor de exacte verwijderde rijen (provenance via git-historie, niet apart
+gearchiveerd).
+
 ## Statusconflicten
 
 Wanneer de status van terrein en ingang verschilt:
