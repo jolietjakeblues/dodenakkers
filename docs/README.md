@@ -81,8 +81,8 @@ CSV (data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv)
 
 `build_base_dataset.py` implementeert de matchingregels uit
 [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md) en
-faalt met een assertion zodra de bekende invarianten (924/463/461,
-449/12/1/1 koppelwijzen, 4 statusconflicten) niet meer kloppen. Geverifieerd
+faalt met een assertion zodra de bekende invarianten (884/443/441,
+430/11/1/1 koppelwijzen, 4 statusconflicten) niet meer kloppen. Geverifieerd
 tegen de eerder handmatig gebouwde snapshot: identieke uitkomst, op de
 opmaak van `bron_rij_ingang` na (voorheen `18.0`, nu `18` -- het brongegeven
 was altijd een geheel getal).
