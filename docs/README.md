@@ -11,7 +11,7 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 
 **Begraafplaatsen** - 443 terreinen, samen circa **519 ha**:
 
-- 402 niet-geruimd, 37 geruimd, 4 met een statusconflict (bron spreekt zichzelf tegen, niet automatisch opgelost);
+- 402 niet-geruimd, 41 geruimd, 0 statusconflicten (de eerdere 4 zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#statusconflicten-2026-08-20-opgelost));
 - kleinste terrein 15,84 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.260,05 m².
 - was 463 tot 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen (nu provincie Utrecht, niet Zuid-Holland) verwijderd uit de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#vijfheerenlanden-2026-08-19-bronwijziging).
 
@@ -65,7 +65,8 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md);
 - de ruimtelijke join tussen begraafplaatsen en de RCE-extracten draait via `scripts/analyse_spatial.py` (output `data/generated/analyse.geojson`), zie [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md);
 - een eerste MapLibre-viewer (`src/index.html`/`app.js`) toont terrein, ingangen, beschermde gezichten en rijksmonumenten met filters op geruimd/statusconflict/erfgoedrelaties en een doorzoekbaar filter op oorspronkelijke functie (dynamisch opgebouwd uit de data, geen vaste lijst), tegen de PDOK BRT-achtergrondkaart (grijs) als ondergrond, met een korte introtekst en het Dodenakkers-logo bovenaan het paneel voor Leon;
-- de vier bekende `geruimd`-statusconflicten zijn exporteerbaar naar `data/generated/statusconflicten.csv` via `scripts/export_statusconflicten.py`, met CSV-regelnummers voor handmatige aanvulling door Leon.
+- de provinciegrens van Zuid-Holland (`scripts/fetch_provinciegrens.py`, PDOK bestuurlijkegebieden WFS, opgeslagen in `data/pdok/`) ligt als toggelbare referentielijn onder alle andere lagen, puur ter oriëntatie;
+- `scripts/export_statusconflicten.py` exporteert eventuele `geruimd`-statusconflicten naar `data/generated/statusconflicten.csv` (met CSV-regelnummers) zodat Leon ze handmatig kan annoteren; de 4 die zich hebben voorgedaan zijn op 2026-08-20 opgelost, het bestand is nu leeg.
 
 ## Reproduceerbaarheid
 
@@ -82,7 +83,7 @@ CSV (data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv)
 `build_base_dataset.py` implementeert de matchingregels uit
 [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md) en
 faalt met een assertion zodra de bekende invarianten (884/443/441,
-430/11/1/1 koppelwijzen, 4 statusconflicten) niet meer kloppen. Geverifieerd
+430/11/1/1 koppelwijzen, 0 statusconflicten) niet meer kloppen. Geverifieerd
 tegen de eerder handmatig gebouwde snapshot: identieke uitkomst, op de
 opmaak van `bron_rij_ingang` na (voorheen `18.0`, nu `18` -- het brongegeven
 was altijd een geheel getal).

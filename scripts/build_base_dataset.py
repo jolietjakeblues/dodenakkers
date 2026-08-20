@@ -386,7 +386,11 @@ def main() -> None:
     ]
 
     conflicts = sum(1 for f in features if f["properties"]["status_conflict"])
-    assert conflicts == 4, f"statusconflicten: verwacht 4, gevonden {conflicts}"
+    # De 4 conflicten (Oude Wetering RK, Schoonhoven, Zwammerdam, Maasland)
+    # zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de
+    # bron via scripts/fix_statusconflicten.py -- zie
+    # docs/data/003-csv-bron-en-koppeling.md.
+    assert conflicts == 0, f"statusconflicten: verwacht 0, gevonden {conflicts}"
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     write_geojson(features)

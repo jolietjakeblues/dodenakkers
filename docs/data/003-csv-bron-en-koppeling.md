@@ -92,6 +92,18 @@ geruimd_bron_ingang
 
 Dit maakt handmatige validatie mogelijk zonder informatieverlies.
 
+### Statusconflicten (2026-08-20, opgelost)
+
+De 4 conflicten die zich in de bron voordeden (RK begraafplaats Oude
+Wetering, Oud NH kerkhof Schoonhoven, NH Kerkhof Zwammerdam, Vm. NH kerkhof
+Maasland) zijn door Leon bevestigd als geruimd. Opgelost via
+`scripts/fix_statusconflicten.py` (eenmalig gedraaid, 2026-08-20): voor elk
+conflict is de rij (terrein of ingang) die nog niet `geruimd` had daarop
+gezet, en heeft `plaats (origineel)` de bestaande `(geruimd)`-suffixconventie
+gekregen. `data/generated/statusconflicten.csv` is nu leeg; het mechanisme
+in `scripts/build_base_dataset.py` blijft bestaan voor eventuele toekomstige
+conflicten.
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:
