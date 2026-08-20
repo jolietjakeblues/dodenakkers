@@ -10,7 +10,7 @@ De genormaliseerde CSV bevat **884 bronrecords**:
 - **441** ingangen;
 - **442** terreinpolygonen;
 - **1** terreinrecord met een `GeometryCollection`;
-- **78** bronrecords met status `geruimd`.
+- **82** bronrecords met status `geruimd`.
 
 De basisdataset bevat **443 begraafplaatsrecords**, één record per terrein.
 
@@ -36,15 +36,11 @@ Koppeling is uitgevoerd met behoud van de bronwaarden.
 
 ## Statusconflicten
 
-Er zijn **4** gevallen waarin terrein en ingang een verschillende bronwaarde
+Er zijn **0** gevallen waarin terrein en ingang een verschillende bronwaarde
 voor `geruimd` hebben.
 
 In deze gevallen krijgt het afgeleide veld `geruimd` voorlopig `null` en `status_conflict = true`.
 
-- RK begraafplaats, Oude Wetering: terrein = `False`, ingang = `True`
-- Oud NH kerkhof, Schoonhoven: terrein = `False`, ingang = `True`
-- NH Kerkhof, Zwammerdam: terrein = `True`, ingang = `False`
-- Vm. NH kerkhof, Maasland: terrein = `False`, ingang = `True`
 
 ## Oppervlakte en omtrek
 
