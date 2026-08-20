@@ -1,0 +1,86 @@
+# Q4. Archeologische onderzoeksgebieden
+#
+# Doel: gebieden waar archeologisch onderzoek is/wordt uitgevoerd door een
+# vergunninghouder (ceo:ArcheologischOnderzoeksgebied) -- een andere class
+# dan ceo:Rijksmonument, zie semantics-topic "archaeology". Wens van de
+# gebruiker (2026-08-20): informatie + geometrieen tonen als losse,
+# uitschakelbare kaartlaag.
+#
+# Schaal: 22.454 gebieden binnen de Zuid-Holland bbox (vrijwel allemaal
+# polygonen, 0 losse punten aangetroffen -- het punten-block staat er toch
+# in voor consistentie met Q2/Q3 en als vangnet). Dit is een individuele
+# rij per archeologisch vooronderzoek/opgravingsproject, geen handvol
+# benoemde regio's -- vandaar de puntenblock/polygonblock-opzet zoals Q2/Q3,
+# niet zoals de kleinere Q1/Q3-achtige lagen.
+#
+# Vertrouwelijkheid (ceo:heeftVertrouwelijkAanduiding): elk gebied heeft
+# deze vlag, met precies 2 landelijke waarden ("openbaar"/"vertrouwelijk").
+# Binnen de Zuid-Holland bbox zijn 200 van de 22.454 gebieden gemarkeerd
+# "vertrouwelijk" (concept-URI
+# https://data.cultureelerfgoed.nl/term/id/rn/2/6583f522-c545-4bc9-8079-ebaf44548c3e).
+# Deze query haalt de vlag ruw mee (concept-URI, geen labelopzoeking --
+# bleek onbetrouwbaar op dit endpoint voor deze specifieke property); de
+# 200 vertrouwelijke gebieden worden in scripts/fetch_rce.py uitgesloten
+# van de publieke GeoJSON-extractie (precieze opgravingslocaties die de
+# bron zelf als vertrouwelijk aanmerkt horen niet op een publieke kaart --
+# risico op plundering van nog niet onderzochte vindplaatsen). Aantal en
+# reden staan in de metadata/audit, niet stilzwijgend weggelaten.
+#
+# ceo:heeftOmschrijving is hier multi-valued (binnen de ZH-bbox heeft een
+# klein deel van de gebieden >1 omschrijving) -- alle waarden worden in
+# code samengevoegd, niet willekeurig een gekozen (zie "Naam is onvolledig"
+# in docs/data/004-rce-mcp-querystrategie.md voor dezelfde afweging bij Q2).
+#
+# Geen ceo:heeftNaam op deze class; ceo:cultuurhistorischObjectnummer is de
+# enige identifier, ceo:registratiedatum de enige datering.
+
+# --- QUERY: points ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cho ?objectnummer ?registratiedatum ?omschrijving ?vertrouwelijkConcept ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:ArcheologischOnderzoeksgebied ;
+      ceo:cultuurhistorischObjectnummer ?objectnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL { ?cho ceo:registratiedatum ?registratiedatum . }
+    OPTIONAL { ?cho ceo:heeftVertrouwelijkAanduiding ?vertrouwelijkConcept . }
+    OPTIONAL {
+      ?cho ceo:heeftOmschrijving ?omschrObj .
+      ?omschrObj ceo:omschrijving ?omschrijving .
+    }
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Point"))
+  BIND(STRBEFORE(STRAFTER(STR(?wkt), "("), ")") AS ?inner)
+  BIND(xsd:double(STRBEFORE(?inner, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?inner, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}
+
+# --- QUERY: polygons ---
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cho ?objectnummer ?registratiedatum ?omschrijving ?vertrouwelijkConcept ?wkt WHERE {
+  GRAPH <https://linkeddata.cultureelerfgoed.nl/graph/instanties-rce> {
+    ?cho a ceo:ArcheologischOnderzoeksgebied ;
+      ceo:cultuurhistorischObjectnummer ?objectnummer ;
+      ceo:heeftGeometrie ?geom .
+    OPTIONAL { ?cho ceo:registratiedatum ?registratiedatum . }
+    OPTIONAL { ?cho ceo:heeftVertrouwelijkAanduiding ?vertrouwelijkConcept . }
+    OPTIONAL {
+      ?cho ceo:heeftOmschrijving ?omschrObj .
+      ?omschrObj ceo:omschrijving ?omschrijving .
+    }
+  }
+  ?geom geo:asWKT ?wkt .
+  FILTER(STRSTARTS(STR(?wkt), "Polygon"))
+  BIND(STRAFTER(STRAFTER(STR(?wkt), "("), "(") AS ?rest)
+  BIND(STRBEFORE(?rest, ",") AS ?firstVertex)
+  BIND(xsd:double(STRBEFORE(?firstVertex, " ")) AS ?lon)
+  BIND(xsd:double(STRAFTER(?firstVertex, " ")) AS ?lat)
+  FILTER(?lon >= 3.90 && ?lon <= 5.14 && ?lat >= 51.66 && ?lat <= 52.32)
+}

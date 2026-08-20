@@ -1,0 +1,21 @@
+{
+  "source": "RCE Linked Data Voorziening (CHO)",
+  "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
+  "query_file": "queries/rce/archeologische-onderzoeksgebieden.sparql",
+  "retrieved_at": "2026-08-20T10:54:13.392314+00:00",
+  "feature_count": 22254,
+  "stats": {
+    "point_rows_from_endpoint": 0,
+    "polygon_rows_from_endpoint": 22603,
+    "distinct_cho": 22454,
+    "vertrouwelijk_uitgesloten": 200,
+    "features_published": 22254
+  },
+  "bbox_wgs84": {
+    "min_lon": 3.9,
+    "max_lon": 5.14,
+    "min_lat": 51.66,
+    "max_lat": 52.32
+  },
+  "notes": "ceo:ArcheologischOnderzoeksgebied, andere class dan Rijksmonument (zie semantics-topic 'archaeology'). Wens van de gebruiker (2026-08-20). 200 gebieden met heeftVertrouwelijkAanduiding = 'vertrouwelijk' zijn uitgesloten van deze publieke extractie (precieze opgravingslocaties die de bron zelf als vertrouwelijk aanmerkt horen niet op een publieke kaart) -- alleen het aantal wordt hier bijgehouden, geen identificerende gegevens van de uitgesloten gebieden. Geometrie is vereenvoudigd (Douglas-Peucker, tolerantie 0.0001 graad / ~11m) en afgerond op 6 decimalen, en het bestand is compact (geen indent) weggeschreven -- zonder deze stappen was het bestand 68MB, boven Cloudflare Pages' limiet van 25MB per bestand."
+}
