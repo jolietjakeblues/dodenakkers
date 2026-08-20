@@ -82,6 +82,28 @@ def wkt_to_geojson_geometry(wkt_str: str) -> dict:
     return mapping(geom)
 
 
+def _round_coords(coords, decimals: int):
+    if isinstance(coords, (list, tuple)) and coords and isinstance(coords[0], (int, float)):
+        return [round(c, decimals) for c in coords]
+    return [_round_coords(c, decimals) for c in coords]
+
+
+def simplified_geojson_geometry(wkt_str: str, tolerance: float, decimals: int) -> dict:
+    """Reduce vertex count (Douglas-Peucker, degrees) and coordinate precision.
+
+    Only for the onderzoeksgebieden extract: at 22k+ polygons, full-precision
+    survey geometry produces a 68MB file (Cloudflare Pages caps at 25MB per
+    file). tolerance=0.0001 deg (~11m) is imperceptible at the province/city
+    scale this reference layer is viewed at -- this is a context layer, not a
+    source for precise measurement. The other extracts are small enough that
+    this isn't needed and keep full precision.
+    """
+    geom = shapely_wkt.loads(wkt_str).simplify(tolerance, preserve_topology=True)
+    gj = mapping(geom)
+    gj["coordinates"] = _round_coords(gj["coordinates"], decimals)
+    return gj
+
+
 def bbox_ok(lon: float, lat: float) -> bool:
     return (
         ZH_BBOX["min_lon"] <= lon <= ZH_BBOX["max_lon"]
@@ -180,12 +202,88 @@ def build_rijksmonumenten(query_file: Path, feature_name: str, include_aard: boo
     return fc, stats
 
 
-def write_extract(name: str, feature_collection: dict, query_file: Path, stats: dict, notes: str) -> None:
+VERTROUWELIJK_CONCEPT = "https://data.cultureelerfgoed.nl/term/id/rn/2/6583f522-c545-4bc9-8079-ebaf44548c3e"
+OPENBAAR_CONCEPT = "https://data.cultureelerfgoed.nl/term/id/rn/2/62e59073-a069-42df-9eba-5e2699643345"
+
+
+def build_onderzoeksgebieden() -> tuple[dict, dict]:
+    query_file = QUERIES_DIR / "archeologische-onderzoeksgebieden.sparql"
+    blocks = split_queries(query_file.read_text(encoding="utf-8"))
+    point_rows = run_query(blocks["points"])
+    polygon_rows = run_query(blocks["polygons"])
+
+    # cho kan >1 omschrijving hebben (zie de .sparql-toelichting) -- alle
+    # rijen per cho samenvoegen i.p.v. willekeurig een kiezen.
+    by_cho: dict[str, dict] = {}
+    for row, geometry_type in [(r, "Point") for r in point_rows] + [(r, "Polygon") for r in polygon_rows]:
+        cho = row["cho"]
+        entry = by_cho.setdefault(
+            cho,
+            {
+                "objectnummer": row.get("objectnummer"),
+                "registratiedatum": row.get("registratiedatum"),
+                "vertrouwelijk_concept": row.get("vertrouwelijkConcept"),
+                "omschrijvingen": set(),
+                "geometry_type": None,
+                "wkt": None,
+            },
+        )
+        if row.get("omschrijving"):
+            entry["omschrijvingen"].add(row["omschrijving"])
+        # polygon wint van punt, net als build_rijksmonumenten()
+        if entry["geometry_type"] != "Polygon":
+            entry["geometry_type"] = geometry_type
+            entry["wkt"] = row["wkt"]
+
+    vertrouwelijk_count = sum(1 for e in by_cho.values() if e["vertrouwelijk_concept"] == VERTROUWELIJK_CONCEPT)
+
+    features = []
+    for cho, entry in by_cho.items():
+        # Vertrouwelijke onderzoeksgebieden (bron-eigen vlag) horen niet met
+        # precieze geometrie op een publieke kaart -- zie de .sparql-toelichting.
+        if entry["vertrouwelijk_concept"] == VERTROUWELIJK_CONCEPT:
+            continue
+        props = {
+            "cho_uri": cho,
+            "objectnummer": entry["objectnummer"],
+            "registratiedatum": entry["registratiedatum"],
+            "omschrijving": " | ".join(sorted(entry["omschrijvingen"])) or None,
+            "geometry_bron": entry["geometry_type"],
+        }
+        features.append(
+            {
+                "type": "Feature",
+                "properties": props,
+                "geometry": simplified_geojson_geometry(entry["wkt"], tolerance=0.0001, decimals=6),
+            }
+        )
+
+    fc = {"type": "FeatureCollection", "name": "archeologische_onderzoeksgebieden_zuid_holland", "features": features}
+    stats = {
+        "point_rows_from_endpoint": len(point_rows),
+        "polygon_rows_from_endpoint": len(polygon_rows),
+        "distinct_cho": len(by_cho),
+        "vertrouwelijk_uitgesloten": vertrouwelijk_count,
+        "features_published": len(features),
+    }
+    return fc, stats
+
+
+def write_extract(
+    name: str, feature_collection: dict, query_file: Path, stats: dict, notes: str, compact: bool = False
+) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     METADATA_DIR.mkdir(parents=True, exist_ok=True)
 
     geojson_path = OUTPUT_DIR / f"{name}.geojson"
-    geojson_path.write_text(json.dumps(feature_collection, ensure_ascii=False, indent=2), encoding="utf-8")
+    if compact:
+        # 22k+ features: indent=2 nearly doubles the file size for no benefit
+        # (nobody reads this by eye), and it's already close to Cloudflare
+        # Pages' 25MB per-file cap -- see simplified_geojson_geometry().
+        text = json.dumps(feature_collection, ensure_ascii=False, separators=(",", ":"))
+    else:
+        text = json.dumps(feature_collection, ensure_ascii=False, indent=2)
+    geojson_path.write_text(text, encoding="utf-8")
 
     metadata = {
         "source": "RCE Linked Data Voorziening (CHO)",
@@ -250,6 +348,28 @@ def main() -> None:
             "Subset van Rijksmonument met heeftMonumentAard = archeologisch "
             "(concept-URI, geen keyword-classificatie), serverside bbox-filter op WKT-string."
         ),
+    )
+
+    ozg_fc, ozg_stats = build_onderzoeksgebieden()
+    write_extract(
+        "archeologische-onderzoeksgebieden",
+        ozg_fc,
+        QUERIES_DIR / "archeologische-onderzoeksgebieden.sparql",
+        ozg_stats,
+        notes=(
+            "ceo:ArcheologischOnderzoeksgebied, andere class dan Rijksmonument (zie "
+            "semantics-topic 'archaeology'). Wens van de gebruiker (2026-08-20). "
+            f"{ozg_stats['vertrouwelijk_uitgesloten']} gebieden met heeftVertrouwelijkAanduiding "
+            "= 'vertrouwelijk' zijn uitgesloten van deze publieke extractie (precieze "
+            "opgravingslocaties die de bron zelf als vertrouwelijk aanmerkt horen niet op "
+            "een publieke kaart) -- alleen het aantal wordt hier bijgehouden, geen "
+            "identificerende gegevens van de uitgesloten gebieden. Geometrie is "
+            "vereenvoudigd (Douglas-Peucker, tolerantie 0.0001 graad / ~11m) en afgerond "
+            "op 6 decimalen, en het bestand is compact (geen indent) weggeschreven -- "
+            "zonder deze stappen was het bestand 68MB, boven Cloudflare Pages' limiet "
+            "van 25MB per bestand."
+        ),
+        compact=True,
     )
 
 

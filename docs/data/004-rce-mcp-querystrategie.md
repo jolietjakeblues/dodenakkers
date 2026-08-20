@@ -118,6 +118,46 @@ Resultaat: **99 archeologische rijksmonumenten** in de Zuid-Holland bbox,
 waarvan 76 met een polygoongeometrie. Slechts 8 hebben een naam (dezelfde
 beperking als bij Q2).
 
+## Q4. Archeologische onderzoeksgebieden (2026-08-20)
+
+Bestand: `queries/rce/archeologische-onderzoeksgebieden.sparql`
+
+Wens van de gebruiker: de bredere archeologische registerdata die bij Q3
+bewust nog niet was opgehaald, specifiek `ceo:ArcheologischOnderzoeksgebied`
+(zie semantics-topic "archaeology"). Andere class dan `ceo:Rijksmonument`,
+geen `heeftMonumentAard`/`heeftJuridischeStatus` op deze class.
+
+Schaal bleek veel groter dan verwacht: **22.454 onderzoeksgebieden** in de
+Zuid-Holland bbox (individuele archeologische vooronderzoeken/opgravings-
+projecten, niet een handvol benoemde regio's), vrijwel allemaal polygonen.
+
+**Vertrouwelijkheid**: elk onderzoeksgebied heeft `ceo:heeftVertrouwelijk-
+Aanduiding` (2 landelijke waarden: "openbaar"/"vertrouwelijk"). Binnen de
+ZH-bbox zijn **200 gebieden gemarkeerd "vertrouwelijk"** - deze worden in
+`scripts/fetch_rce.py` (`build_onderzoeksgebieden()`) uitgesloten van de
+publieke GeoJSON-extractie: precieze locaties die de bron zelf als
+vertrouwelijk aanmerkt horen niet met exacte geometrie op een publieke
+kaart (plunderingsrisico op nog niet volledig onderzochte vindplaatsen).
+Alleen het aantal wordt bijgehouden (in de extract-metadata), geen
+identificerende gegevens van de uitgesloten gebieden zelf. **22.254 van de
+22.454** worden gepubliceerd.
+
+**Bestandsgrootte**: op volle precisie was het GeoJSON-bestand 68MB - boven
+Cloudflare Pages' limiet van 25MB per bestand. Opgelost met (uitsluitend
+voor deze extract, de andere blijven op volle precisie omdat ze klein
+genoeg zijn): geometrievereenvoudiging (Douglas-Peucker, tolerantie 0.0001
+graad / ~11m - onmerkbaar op de provincie-/stadsschaal waarop deze
+referentielaag wordt bekeken, geen bron voor precisiemetingen), coördinaten
+afgerond op 6 decimalen, en compacte JSON (geen indent). Resultaat: 17MB.
+
+`ceo:heeftOmschrijving` bleek multi-valued voor een klein deel van de
+gebieden binnen de ZH-bbox (22.603 rijen voor 22.454 distincte CHO's) -
+alle omschrijvingen worden in code samengevoegd (`" | "`-gescheiden), niet
+willekeurig een gekozen.
+
+**Viewer**: laadt lazy (pas bij het aanzetten van de laag, niet standaard
+mee bij het openen van de pagina) gezien de bestandsgrootte.
+
 ## Functies en type
 
 Q2 en Q3 bevatten drie parallelle velden, alle drie via de RCE-MCP

@@ -27,6 +27,10 @@ FILES_TO_COPY = [
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
     (REPO_ROOT / "data" / "rce" / "rijksmonumenten.geojson", SITE_DIR / "data" / "rce" / "rijksmonumenten.geojson"),
     (
+        REPO_ROOT / "data" / "rce" / "archeologische-onderzoeksgebieden.geojson",
+        SITE_DIR / "data" / "rce" / "archeologische-onderzoeksgebieden.geojson",
+    ),
+    (
         REPO_ROOT / "data" / "pdok" / "provincie-zuid-holland.geojson",
         SITE_DIR / "data" / "pdok" / "provincie-zuid-holland.geojson",
     ),

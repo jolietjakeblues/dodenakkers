@@ -14,6 +14,9 @@ const DATA = {
   gezichten: "../data/rce/beschermde-gezichten.geojson",
   monumenten: "../data/rce/rijksmonumenten.geojson",
   provinciegrens: "../data/pdok/provincie-zuid-holland.geojson",
+  // Niet in de initiele Promise.all: 22.254 features / 17MB, alleen ophalen
+  // zodra de gebruiker de laag daadwerkelijk aanzet (zie toggle-onderzoeksgebieden).
+  onderzoeksgebieden: "../data/rce/archeologische-onderzoeksgebieden.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -274,6 +277,56 @@ async function main() {
     type: "line",
     source: "provinciegrens",
     paint: { "line-color": "#495057", "line-width": 2, "line-dasharray": [4, 2] },
+  });
+
+  // --- Archeologische onderzoeksgebieden (lazy: 22.254 polygonen, 17MB --
+  // pas ophalen zodra de gebruiker de laag echt aanzet, niet standaard mee-
+  // laden bij elke paginabezoek). Wens van de gebruiker (2026-08-20).
+  let onderzoeksgebiedenLoaded = false;
+  document.getElementById("toggle-onderzoeksgebieden").addEventListener("change", async (e) => {
+    if (!e.target.checked) {
+      if (onderzoeksgebiedenLoaded) {
+        map.setLayoutProperty("onderzoeksgebieden-fill", "visibility", "none");
+        map.setLayoutProperty("onderzoeksgebieden-outline", "visibility", "none");
+      }
+      return;
+    }
+    if (onderzoeksgebiedenLoaded) {
+      map.setLayoutProperty("onderzoeksgebieden-fill", "visibility", "visible");
+      map.setLayoutProperty("onderzoeksgebieden-outline", "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Archeologische onderzoeksgebieden laden (17MB)…";
+    const onderzoeksgebieden = await loadJson(DATA.onderzoeksgebieden);
+    map.addSource("onderzoeksgebieden", { type: "geojson", data: onderzoeksgebieden });
+    map.addLayer({
+      id: "onderzoeksgebieden-fill",
+      type: "fill",
+      source: "onderzoeksgebieden",
+      paint: { "fill-color": "#0c8599", "fill-opacity": 0.2 },
+    });
+    map.addLayer({
+      id: "onderzoeksgebieden-outline",
+      type: "line",
+      source: "onderzoeksgebieden",
+      paint: { "line-color": "#0c8599", "line-width": 1 },
+    });
+    map.on("click", "onderzoeksgebieden-fill", (ev) => {
+      const p = ev.features[0].properties;
+      new maplibregl.Popup()
+        .setLngLat(ev.lngLat)
+        .setHTML(
+          popupHtml(`Archeologisch onderzoeksgebied ${p.objectnummer}`, [
+            ["Registratiedatum", p.registratiedatum],
+            ["Omschrijving", p.omschrijving],
+          ])
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "onderzoeksgebieden-fill", () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", "onderzoeksgebieden-fill", () => (map.getCanvas().style.cursor = ""));
+    onderzoeksgebiedenLoaded = true;
+    statusEl.textContent = `${onderzoeksgebieden.features.length} archeologische onderzoeksgebieden geladen.`;
   });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
