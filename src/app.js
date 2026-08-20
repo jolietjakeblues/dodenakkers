@@ -13,6 +13,7 @@ const DATA = {
   begraafplaatsen: "../data/generated/analyse.geojson",
   gezichten: "../data/rce/beschermde-gezichten.geojson",
   monumenten: "../data/rce/rijksmonumenten.geojson",
+  provinciegrens: "../data/pdok/provincie-zuid-holland.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -251,16 +252,29 @@ async function loadJson(url) {
 }
 
 async function main() {
-  const [begraafplaatsen, gezichten, monumenten] = await Promise.all([
+  const [begraafplaatsen, gezichten, monumenten, provinciegrens] = await Promise.all([
     loadJson(DATA.begraafplaatsen),
     loadJson(DATA.gezichten),
     loadJson(DATA.monumenten),
+    loadJson(DATA.provinciegrens),
   ]);
   const ingangen = ingangenFromBegraafplaatsen(begraafplaatsen);
 
   if (!map.isStyleLoaded()) {
     await new Promise((resolve) => map.on("load", resolve));
   }
+
+  // --- Provinciegrens Zuid-Holland (referentielijn, onderste laag van alles) ---
+  // scripts/fetch_provinciegrens.py, PDOK bestuurlijkegebieden WFS. Puur ter
+  // oriëntatie (wens van de gebruiker, 2026-08-20) -- geen eigen data, geen
+  // klikinteractie, geen fill.
+  map.addSource("provinciegrens", { type: "geojson", data: provinciegrens });
+  map.addLayer({
+    id: "provinciegrens-lijn",
+    type: "line",
+    source: "provinciegrens",
+    paint: { "line-color": "#495057", "line-width": 2, "line-dasharray": [4, 2] },
+  });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
   map.addSource("gezichten", { type: "geojson", data: gezichten });
@@ -517,6 +531,7 @@ async function main() {
 
   // --- Laagtoggles ---
   const layerToggles = {
+    "toggle-provinciegrens": ["provinciegrens-lijn"],
     "toggle-terrein": ["terrein-fill", "terrein-outline"],
     "toggle-ingangen": ["ingangen-punt"],
     "toggle-gezichten": ["gezichten-fill", "gezichten-outline"],

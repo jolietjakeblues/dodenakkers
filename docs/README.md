@@ -65,6 +65,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - RCE-extracten (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) worden opgehaald via `scripts/fetch_rce.py` met opgeslagen SPARQL in `queries/rce/`, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md);
 - de ruimtelijke join tussen begraafplaatsen en de RCE-extracten draait via `scripts/analyse_spatial.py` (output `data/generated/analyse.geojson`), zie [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md);
 - een eerste MapLibre-viewer (`src/index.html`/`app.js`) toont terrein, ingangen, beschermde gezichten en rijksmonumenten met filters op geruimd/statusconflict/erfgoedrelaties en een doorzoekbaar filter op oorspronkelijke functie (dynamisch opgebouwd uit de data, geen vaste lijst), tegen de PDOK BRT-achtergrondkaart (grijs) als ondergrond, met een korte introtekst en het Dodenakkers-logo bovenaan het paneel voor Leon;
+- de provinciegrens van Zuid-Holland (`scripts/fetch_provinciegrens.py`, PDOK bestuurlijkegebieden WFS, opgeslagen in `data/pdok/`) ligt als toggelbare referentielijn onder alle andere lagen, puur ter oriëntatie;
 - `scripts/export_statusconflicten.py` exporteert eventuele `geruimd`-statusconflicten naar `data/generated/statusconflicten.csv` (met CSV-regelnummers) zodat Leon ze handmatig kan annoteren; de 4 die zich hebben voorgedaan zijn op 2026-08-20 opgelost, het bestand is nu leeg.
 
 ## Reproduceerbaarheid

@@ -1,0 +1,8 @@
+{
+  "source": "PDOK bestuurlijkegebieden WFS (Kadaster)",
+  "endpoint": "https://service.pdok.nl/kadaster/bestuurlijkegebieden/wfs/v1_0",
+  "layer": "bestuurlijkegebieden:Provinciegebied",
+  "retrieved_at": "2026-08-20T08:16:36.338138+00:00",
+  "filter": "naam == 'Zuid-Holland' (client-side, zie docstring)",
+  "geometry_type": "MultiPolygon"
+}

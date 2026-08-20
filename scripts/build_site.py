@@ -27,12 +27,21 @@ FILES_TO_COPY = [
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
     (REPO_ROOT / "data" / "rce" / "rijksmonumenten.geojson", SITE_DIR / "data" / "rce" / "rijksmonumenten.geojson"),
     (
+        REPO_ROOT / "data" / "pdok" / "provincie-zuid-holland.geojson",
+        SITE_DIR / "data" / "pdok" / "provincie-zuid-holland.geojson",
+    ),
+    (
         REPO_ROOT / "images" / "Dodenakkers-logo-68015ff5.webp",
         SITE_DIR / "images" / "Dodenakkers-logo-68015ff5.webp",
     ),
 ]
 
-REWRITES = [("../data/generated/", "data/generated/"), ("../data/rce/", "data/rce/"), ("../images/", "images/")]
+REWRITES = [
+    ("../data/generated/", "data/generated/"),
+    ("../data/rce/", "data/rce/"),
+    ("../data/pdok/", "data/pdok/"),
+    ("../images/", "images/"),
+]
 
 
 def copy_with_rewrites(src: Path, dst: Path) -> None:
