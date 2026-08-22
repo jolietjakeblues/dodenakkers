@@ -104,6 +104,21 @@ gekregen. `data/generated/statusconflicten.csv` is nu leeg; het mechanisme
 in `scripts/build_base_dataset.py` blijft bestaan voor eventuele toekomstige
 conflicten.
 
+### Losse geruimd-correcties (2026-08-22)
+
+Opdrachtgever Leon meldde twee losstaande fouten in de bron (niet gerelateerd
+aan de statusconflicten hierboven -- deze twee hadden helemaal geen
+`geruimd`-waarde, dus geen conflict, gewoon een ontbrekende waarde):
+
+- Oudenhoorn, `Gem. begraafplaats` (de variant zonder ingang, zie "Bijzondere
+  gevallen" hieronder -- niet de andere Oudenhoorn-begraafplaats, `NH
+  Kerkhof`, die wel een ingang heeft);
+- Stad aan 't Haringvliet, `NH kerkhof` (niet de andere begraafplaats in dat
+  dorp, `Gem. Begraafplaats`).
+
+Beide zijn nu `geruimd`. Opgelost via
+`scripts/fix_geruimd_oudenhoorn_haringvliet.py` (eenmalig gedraaid).
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:
