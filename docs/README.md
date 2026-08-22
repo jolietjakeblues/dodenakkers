@@ -11,7 +11,7 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 
 **Begraafplaatsen** - 443 terreinen, samen circa **519 ha**:
 
-- 402 niet-geruimd, 41 geruimd, 0 statusconflicten (de eerdere 4 zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#statusconflicten-2026-08-20-opgelost));
+- 400 niet-geruimd, 43 geruimd, 0 statusconflicten (de eerdere 4 zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#statusconflicten-2026-08-20-opgelost); 2 losstaande correcties -- Oudenhoorn/Gem. begraafplaats en Stad aan 't Haringvliet/NH kerkhof -- kwamen er op 2026-08-22 bij van de opdrachtgever zelf);
 - kleinste terrein 15,84 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.260,05 m².
 - was 463 tot 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen (nu provincie Utrecht, niet Zuid-Holland) verwijderd uit de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#vijfheerenlanden-2026-08-19-bronwijziging).
 
