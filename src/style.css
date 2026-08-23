@@ -61,6 +61,26 @@ html, body {
   color: #666;
 }
 
+#filter-reset {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-group-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #666;
+  margin: 10px 0 2px;
+}
+
+.filter-group-heading .hint {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .count {
   color: #888;
   font-size: 11px;

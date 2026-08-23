@@ -615,14 +615,23 @@ async function main() {
   // Eén predicate-set, gebruikt voor zowel de MapLibre-filter als de live
   // aantallen per checkbox (facet-stijl: "als je dit ook aanvinkt, gegeven
   // je huidige andere selectie").
-  const FILTER_IDS = [
-    "filter-niet-geruimd",
-    "filter-geruimd",
-    "filter-conflict",
-    "filter-gezicht",
-    "filter-archeologie",
-    "filter-rijksmonument",
-  ];
+  //
+  // Twee groepen met andere combinatielogica:
+  // - STATUS_FILTER_IDS zijn drie elkaar uitsluitende toestanden van hetzelfde
+  //   veld (geruimd/niet-geruimd/statusconflict) -- samen aanvinken moet de
+  //   resultaten VERBREDEN (OR/unie), niet versmallen. Met AND is de
+  //   combinatie altijd tegenstrijdig (bv. geruimd === false EN === true) en
+  //   levert dat altijd 0 resultaten op.
+  // - HERITAGE_FILTER_IDS zijn onafhankelijke facetten die een begraafplaats
+  //   allemaal tegelijk kan hebben, dus die blijven VERSMALLEN (AND).
+  const STATUS_FILTER_IDS = ["filter-niet-geruimd", "filter-geruimd", "filter-conflict"];
+  const HERITAGE_FILTER_IDS = ["filter-gezicht", "filter-archeologie", "filter-rijksmonument"];
+  const FILTER_IDS = [...STATUS_FILTER_IDS, ...HERITAGE_FILTER_IDS];
+  const STATUS_FILTER_EXPR = {
+    "filter-niet-geruimd": ["==", ["get", "geruimd"], false],
+    "filter-geruimd": ["==", ["get", "geruimd"], true],
+    "filter-conflict": ["==", ["get", "status_conflict"], true],
+  };
   function terreinPredicates() {
     return {
       "filter-niet-geruimd": (p) => p.geruimd === false,
@@ -633,39 +642,69 @@ async function main() {
       "filter-rijksmonument": (p) => (p.rijksmonument_relations || []).some((r) => r.distance_m <= rmThreshold),
     };
   }
+  function statusMatch(predicates, statusIds, p) {
+    if (statusIds.length === 0) return true;
+    return statusIds.some((id) => predicates[id](p));
+  }
+  function heritageMatch(predicates, heritageIds, p) {
+    return heritageIds.every((id) => predicates[id](p));
+  }
+  function activeIdsIn(group) {
+    return group.filter((id) => document.getElementById(id).checked);
+  }
   function applyFilters() {
     const predicates = terreinPredicates();
+    const activeStatusIds = activeIdsIn(STATUS_FILTER_IDS);
+    const activeHeritageIds = activeIdsIn(HERITAGE_FILTER_IDS);
+
     const clauses = [];
-    if (document.getElementById("filter-niet-geruimd").checked) clauses.push(["==", ["get", "geruimd"], false]);
-    if (document.getElementById("filter-geruimd").checked) clauses.push(["==", ["get", "geruimd"], true]);
-    if (document.getElementById("filter-conflict").checked) clauses.push(["==", ["get", "status_conflict"], true]);
-    if (document.getElementById("filter-gezicht").checked) clauses.push(["!=", ["get", "in_beschermd_gezicht"], "none"]);
-    if (document.getElementById("filter-archeologie").checked) clauses.push([">", ["get", "archeologische_rm_count"], 0]);
-    if (document.getElementById("filter-rijksmonument").checked) {
+    if (activeStatusIds.length) {
+      const statusExprs = activeStatusIds.map((id) => STATUS_FILTER_EXPR[id]);
+      clauses.push(statusExprs.length === 1 ? statusExprs[0] : ["any", ...statusExprs]);
+    }
+    if (activeHeritageIds.includes("filter-gezicht")) clauses.push(["!=", ["get", "in_beschermd_gezicht"], "none"]);
+    if (activeHeritageIds.includes("filter-archeologie")) clauses.push([">", ["get", "archeologische_rm_count"], 0]);
+    if (activeHeritageIds.includes("filter-rijksmonument")) {
       const ids = idsWithRijksmonumentWithin(begraafplaatsen, rmThreshold);
       clauses.push(["in", ["get", "id"], ["literal", Array.from(ids)]]);
     }
     const filter = clauses.length ? ["all", ...clauses] : null;
     map.setFilter("terrein-fill", filter);
     map.setFilter("terrein-outline", filter);
-    updateFilterCounts(predicates);
+    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds);
   }
-  function updateFilterCounts(predicates) {
+  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds) {
     predicates = predicates || terreinPredicates();
+    activeStatusIds = activeStatusIds || activeIdsIn(STATUS_FILTER_IDS);
+    activeHeritageIds = activeHeritageIds || activeIdsIn(HERITAGE_FILTER_IDS);
     const allProps = begraafplaatsen.features.map((f) => f.properties);
-    const activeIds = FILTER_IDS.filter((id) => document.getElementById(id).checked);
-    for (const id of FILTER_IDS) {
-      const others = activeIds.filter((otherId) => otherId !== id);
-      const count = allProps.filter((p) => others.every((o) => predicates[o](p)) && predicates[id](p)).length;
-      const el = document.getElementById(`count-${id}`);
-      if (el) el.textContent = `(${count})`;
+
+    for (const id of STATUS_FILTER_IDS) {
+      const hypothetical = activeStatusIds.includes(id) ? activeStatusIds : [...activeStatusIds, id];
+      const count = allProps.filter(
+        (p) => heritageMatch(predicates, activeHeritageIds, p) && statusMatch(predicates, hypothetical, p)
+      ).length;
+      document.getElementById(`count-${id}`).textContent = `(${count})`;
     }
-    const visibleCount = allProps.filter((p) => activeIds.every((id) => predicates[id](p))).length;
+    for (const id of HERITAGE_FILTER_IDS) {
+      const hypothetical = activeHeritageIds.includes(id) ? activeHeritageIds : [...activeHeritageIds, id];
+      const count = allProps.filter(
+        (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, hypothetical, p)
+      ).length;
+      document.getElementById(`count-${id}`).textContent = `(${count})`;
+    }
+    const visibleCount = allProps.filter(
+      (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, activeHeritageIds, p)
+    ).length;
     document.getElementById("filter-summary").textContent = `${visibleCount} van ${allProps.length} zichtbaar`;
   }
   for (const id of FILTER_IDS) {
     document.getElementById(id).addEventListener("change", applyFilters);
   }
+  document.getElementById("filter-reset").addEventListener("click", () => {
+    for (const id of FILTER_IDS) document.getElementById(id).checked = false;
+    applyFilters();
+  });
   rmThresholdEl.addEventListener("input", () => {
     rmThreshold = Number(rmThresholdEl.value);
     rmThresholdLabelEl.textContent = `≤${rmThreshold}m`;

@@ -18,7 +18,7 @@
     <h1>Dodenakkers Zuid-Holland</h1>
     <p class="subtitle">Onderzoeksviewer - begraafplaatsen &amp; erfgoed (MVP)</p>
     <p class="intro">
-      Testversie voor review. Toont 443 begraafplaatsen in Zuid-Holland tegenover
+      Testversie voor review. Toont 446 begraafplaatsen in Zuid-Holland tegenover
       beschermde stads- en dorpsgezichten, rijksmonumenten en archeologische
       rijksmonumenten uit de RCE Linked Data. Grenzen en categorieën (zoals
       "100m" voor "nabij") zijn voorlopige werkhypothesen, nog niet definitief
@@ -47,9 +47,14 @@
     <section>
       <h2>Filters</h2>
       <p class="filter-summary" id="filter-summary"></p>
-      <label><input type="checkbox" id="filter-niet-geruimd" /> Alleen niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
-      <label><input type="checkbox" id="filter-geruimd" /> Alleen geruimd <span class="count" id="count-filter-geruimd"></span></label>
-      <label><input type="checkbox" id="filter-conflict" /> Alleen statusconflict <span class="count" id="count-filter-conflict"></span></label>
+      <button type="button" id="filter-reset">Wis filters</button>
+
+      <h3 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h3>
+      <label><input type="checkbox" id="filter-niet-geruimd" /> Niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-geruimd" /> Geruimd <span class="count" id="count-filter-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-conflict" /> Statusconflict <span class="count" id="count-filter-conflict"></span></label>
+
+      <h3 class="filter-group-heading">Erfgoedrelatie <span class="hint">(meerdere aanvinken versmalt de selectie)</span></h3>
       <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht <span class="count" id="count-filter-gezicht"></span></label>
       <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument <span class="count" id="count-filter-archeologie"></span></label>
       <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein <span class="count" id="count-filter-rijksmonument"></span></label>
