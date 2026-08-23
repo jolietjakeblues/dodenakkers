@@ -113,13 +113,16 @@ op het root-niveau, niet onder `src/`).
 
 ### Automatische deploy (2026-08-23)
 
-`.github/workflows/deploy.yml` bouwt en deployt automatisch bij elke push
-naar `main` (en is ook handmatig te starten via "Run workflow" in de
-GitHub Actions-tab). Dit verving de handmatige stap, nadat bleek dat drie
-gemergede PR's in deze sessie niet live kwamen omdat niemand het
-`wrangler`-commando handmatig had gedraaid — zie
-[006 Hosting](ideas/006-hosting.md#automatische-deploy-2026-08-23) voor hoe
-dat is opgelost en welke twee repository-secrets daarvoor nodig zijn.
+De Cloudflare Pages-project `dodenakkers-zh` is direct aan deze GitHub-repo
+gekoppeld (Cloudflare's eigen Git-integratie, hetzelfde patroon als
+doorzoekerfgoed.nl). Cloudflare bouwt en deployt zelf bij elke push naar
+`main` — build command `python scripts/build_site.py`, output directory
+`site`. Geen GitHub Action, geen API-token, geen handmatig `wrangler`-
+commando meer nodig. Zie
+[006 Hosting](ideas/006-hosting.md#automatische-deploy-2026-08-23) voor de
+aanloop (een eerdere, inmiddels verwijderde poging met een GitHub Action +
+API-token werkte ook, maar was nodeloos ingewikkeld vergeleken met deze
+Git-integratie).
 
 Handmatig blijft ook mogelijk (bv. om een niet-main-branch te testen):
 
