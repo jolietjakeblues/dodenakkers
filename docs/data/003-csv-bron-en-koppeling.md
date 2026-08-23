@@ -53,9 +53,37 @@ Eén ingangspunt heet:
 
 Dit punt ligt bij twee afzonderlijke terreinrecords. We behandelen dit als een gedeelde ingang en bewaren beide terreinen als afzonderlijke records.
 
-### Oudenhoorn
+### Oudenhoorn (2026-08-23, opgelost -- met een nieuwe uitzondering)
 
-Voor `Gem. begraafplaats, Oudenhoorn` is in de bron geen ingangspunt gevonden. Het terrein blijft in de dataset en krijgt geen verzonnen ingang.
+Voor `Gem. begraafplaats, Oudenhoorn` was in de bron geen ingangspunt
+gevonden (`koppelwijze = missing`). Bij het uitzoeken bleek de bron wél een
+ingangpunt te bevatten, maar verkeerd gelabeld: getagd als `NH Kerkhof,
+Oudenhoorn` (koppelde dus via exacte naam+plaats aan het NH Kerkhof-terrein),
+terwijl het punt ruimtelijk 132 m van het NH Kerkhof-terrein ligt en 0 m van
+-- dus binnen -- het terrein van Gem. begraafplaats. Vrijwel zeker een
+naamverwisseling in de oorspronkelijke aanlevering.
+
+Op verzoek van de opdrachtgever (Joop, 2026-08-23, tegen zijn eigen database
+bevestigd) zijn twee dingen gedaan via `scripts/fix_oudenhoorn_ingang.py`
+(eenmalig gedraaid):
+
+1. Het verkeerd-gelabelde punt is hernoemd naar `Gem. begraafplaats,
+   Oudenhoorn` (met dezelfde geruimd-conventie als het terrein);
+2. Een tweede, nieuwe ingang is toegevoegd op de zuidwesthoek van het
+   terrein (`POINT (4.191578 51.826529)`, expliciet aangewezen door de
+   opdrachtgever als "ter linkerzijde (west)" -- geen verzonnen centroid).
+
+Gevolg: `Gem. begraafplaats, Oudenhoorn` heeft nu twee eigen ingangen, de
+eerste keer dat dit voorkomt in de dataset. `scripts/build_base_dataset.py`
+staat dit toe via de expliciet gedocumenteerde uitzonderingset
+`EXTRA_INGANG_EXCEPTIONS` (precies dit ene, met naam genoemde geval, geen
+algemene ondersteuning voor meerdere ingangen). De tweede ingang staat in
+`properties.ingang_extra` (naast, niet in plaats van, de primaire `ingang`)
+en wordt door de viewer als extra punt getoond.
+
+`NH Kerkhof, Oudenhoorn` heeft hierdoor zelf geen ingang meer
+(`koppelwijze = missing` verschuift van Gem. begraafplaats naar NH Kerkhof)
+-- een bewuste afweging van de opdrachtgever, niet een nieuw gat in de bron.
 
 ### Vijfheerenlanden (2026-08-19, bronwijziging)
 

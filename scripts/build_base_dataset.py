@@ -51,6 +51,15 @@ SPATIAL_MATCH_THRESHOLD_M = 500
 # province -- an audit signal, not a hard province-boundary check.
 PLAUSIBLE_BBOX = {"min_lon": 3.5, "max_lon": 5.5, "min_lat": 51.4, "max_lat": 52.6}
 
+# One terrain with two of its own entrances (normalized nkey, pkey), added
+# 2026-08-23 per scripts/fix_oudenhoorn_ingang.py: Gem. begraafplaats,
+# Oudenhoorn has a reassigned (formerly mislabeled "NH Kerkhof") entrance
+# plus a new one on the terrain's southwest corner, both confirmed against
+# the opdrachtgever's own database. The matching algorithm otherwise assumes
+# at most one ingang per (naam, plaats) key -- this is the one documented
+# exception, not a general capability.
+EXTRA_INGANG_EXCEPTIONS = {("gem. begraafplaats", "oudenhoorn")}
+
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
 
@@ -85,7 +94,13 @@ def load_source() -> pd.DataFrame:
     # Oud-Alblas) toegevoegd uit Leons "Tijdelijk Zuid-Holland.kmz". Zie
     # scripts/add_tijdelijk_zuidholland_kmz.py (eenmalig gedraaid) en
     # docs/data/003-csv-bron-en-koppeling.md.
-    assert len(df) == 890, f"bronrecords: verwacht 890, gevonden {len(df)}"
+    # 890 -> 891 op 2026-08-23: 1 nieuwe ingang toegevoegd voor Gem.
+    # begraafplaats, Oudenhoorn (tweede, eigen ingang op de zuidwesthoek,
+    # naast de hernoemde/hertoegewezen ingang die voorheen ten onrechte als
+    # "NH Kerkhof, Oudenhoorn" was gelabeld). Zie
+    # scripts/fix_oudenhoorn_ingang.py (eenmalig gedraaid) en
+    # docs/data/003-csv-bron-en-koppeling.md.
+    assert len(df) == 891, f"bronrecords: verwacht 891, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -101,19 +116,37 @@ def prepare(df: pd.DataFrame) -> pd.DataFrame:
 
 def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[dict]:
     assert terrein.groupby(["nkey", "pkey"]).size().max() == 1, "dubbele terrein naam+plaats-sleutel"
-    assert ingang.groupby(["nkey", "pkey"]).size().max() == 1, "dubbele ingang naam+plaats-sleutel"
+    ingang_key_counts = ingang.groupby(["nkey", "pkey"]).size()
+    duplicate_ingang_keys = set(ingang_key_counts[ingang_key_counts > 1].index)
+    assert duplicate_ingang_keys <= EXTRA_INGANG_EXCEPTIONS, (
+        f"onverwachte dubbele ingang naam+plaats-sleutel: {duplicate_ingang_keys - EXTRA_INGANG_EXCEPTIONS}"
+    )
+    assert all(ingang_key_counts[k] == 2 for k in EXTRA_INGANG_EXCEPTIONS if k in ingang_key_counts), (
+        "EXTRA_INGANG_EXCEPTIONS: verwacht precies 2 ingangen per uitzondering"
+    )
 
-    ingang_by_key = {(r.nkey, r.pkey): i for i, r in ingang.iterrows()}
+    ingang_by_key: dict[tuple[str, str], list[int]] = {}
+    for i, r in ingang.iterrows():
+        ingang_by_key.setdefault((r.nkey, r.pkey), []).append(i)
 
     matches: list[dict] = []
     matched_ingang_idx: set[int] = set()
 
-    # Tier 1: exact genormaliseerde naam + opgeschoonde plaats.
+    # Tier 1: exact genormaliseerde naam + opgeschoonde plaats. Meestal
+    # precies 1 ingang per sleutel; voor EXTRA_INGANG_EXCEPTIONS (precies 1
+    # bekend geval) zijn het er 2, allebei gekoppeld aan hetzelfde terrein.
     for ti, trow in terrein.iterrows():
-        ii = ingang_by_key.get((trow.nkey, trow.pkey))
-        if ii is not None:
-            matches.append({"terrein_idx": ti, "ingang_idx": ii, "koppelwijze": "exact_name_place"})
-            matched_ingang_idx.add(ii)
+        ii_list = ingang_by_key.get((trow.nkey, trow.pkey), [])
+        if ii_list:
+            matches.append(
+                {
+                    "terrein_idx": ti,
+                    "ingang_idx": ii_list[0],
+                    "ingang_idx_extra": ii_list[1:],
+                    "koppelwijze": "exact_name_place",
+                }
+            )
+            matched_ingang_idx.update(ii_list)
 
     matched_terrein_idx = {m["terrein_idx"] for m in matches}
     remaining_terrein = [ti for ti in terrein.index if ti not in matched_terrein_idx]
@@ -154,6 +187,11 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
 
     assert len(matches) == len(terrein), f"matches: verwacht {len(terrein)}, gevonden {len(matches)}"
     counts = Counter(m["koppelwijze"] for m in matches)
+    # Aantallen blijven gelijk aan vóór de Oudenhoorn-ingangfix (433/11/1/1):
+    # Gem. begraafplaats krijgt er een ingang bij (missing -> exact_name_place),
+    # maar NH Kerkhof, Oudenhoorn verliest zijn enige ingang aan die
+    # hertoewijzing (exact_name_place -> missing) -- per saldo neutraal. Zie
+    # scripts/fix_oudenhoorn_ingang.py en docs/data/003-csv-bron-en-koppeling.md.
     assert counts["exact_name_place"] == 433, counts
     assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
@@ -183,6 +221,7 @@ def build_record(seq: int, match: dict, terrein: pd.DataFrame, ingang: pd.DataFr
     assert perimeter_m > 0, f"{fid}: omtrek <= 0"
 
     ii = match["ingang_idx"]
+    ii_extra = match.get("ingang_idx_extra") or []
     geruimd_bron_terrein = bool(trow["geruimd_bron"])
 
     if ii is None:
@@ -212,6 +251,18 @@ def build_record(seq: int, match: dict, terrein: pd.DataFrame, ingang: pd.DataFr
             geruimd = None
             status_conflict = True
 
+    # Eén bekende uitzondering (EXTRA_INGANG_EXCEPTIONS, Gem. begraafplaats
+    # Oudenhoorn) heeft een tweede, eigen ingang -- bewaard als apart
+    # optioneel Point-object, naast (niet in plaats van) de primaire ingang.
+    ingang_extra_point = None
+    ingang_extra_lon = ingang_extra_lat = None
+    if ii_extra:
+        assert len(ii_extra) == 1, f"{fid}: meer dan 1 extra ingang, niet ondersteund"
+        irow_extra = ingang.loc[ii_extra[0]]
+        assert irow_extra["geom"].geom_type == "Point", f"{fid}: extra ingang is geen Point"
+        ingang_extra_point = irow_extra["geom"]
+        ingang_extra_lon, ingang_extra_lat = ingang_extra_point.x, ingang_extra_point.y
+
     props = {
         "id": fid,
         "naam": trow["naam"],
@@ -227,6 +278,9 @@ def build_record(seq: int, match: dict, terrein: pd.DataFrame, ingang: pd.DataFr
         "ingang": mapping(ingang_point) if ingang_point is not None else None,
         "ingang_lon": ingang_lon,
         "ingang_lat": ingang_lat,
+        "ingang_extra": mapping(ingang_extra_point) if ingang_extra_point is not None else None,
+        "ingang_extra_lon": ingang_extra_lon,
+        "ingang_extra_lat": ingang_extra_lat,
         "ingang_koppelwijze": match["koppelwijze"],
         "ingang_afstand_tot_terrein_m": ingang_afstand,
         "ingang_gedeeld": ingang_gedeeld,
@@ -243,6 +297,7 @@ def build_record(seq: int, match: dict, terrein: pd.DataFrame, ingang: pd.DataFr
         "geometry": mapping(geom_wgs84),
         "_wkt_terrein": trow["WKT"],
         "_wkt_ingang": ingang.loc[ii, "WKT"] if ii is not None else None,
+        "_wkt_ingang_extra": ingang.loc[ii_extra[0], "WKT"] if ii_extra else None,
     }
 
 
@@ -266,9 +321,10 @@ def write_csv(features: list[dict]) -> None:
     fieldnames = [
         "id", "naam", "plaats_origineel", "plaats", "geruimd", "geruimd_bron_terrein",
         "geruimd_bron_ingang", "status_conflict", "oppervlakte_m2", "oppervlakte_ha", "omtrek_m",
-        "ingang_lon", "ingang_lat", "ingang_koppelwijze", "ingang_afstand_tot_terrein_m",
-        "ingang_gedeeld", "naam_bron_terrein", "naam_bron_ingang", "bron_rij_terrein",
-        "bron_rij_ingang", "bron", "source_file", "terrein_wkt", "ingang_wkt",
+        "ingang_lon", "ingang_lat", "ingang_extra_lon", "ingang_extra_lat", "ingang_koppelwijze",
+        "ingang_afstand_tot_terrein_m", "ingang_gedeeld", "naam_bron_terrein", "naam_bron_ingang",
+        "bron_rij_terrein", "bron_rij_ingang", "bron", "source_file", "terrein_wkt", "ingang_wkt",
+        "ingang_extra_wkt",
     ]
     path = OUTPUT_DIR / "begraafplaatsen.csv"
     with path.open("w", encoding="utf-8-sig", newline="") as f:
@@ -277,8 +333,10 @@ def write_csv(features: list[dict]) -> None:
         for feat in features:
             row = dict(feat["properties"])
             row.pop("ingang", None)
+            row.pop("ingang_extra", None)
             row["terrein_wkt"] = feat["_wkt_terrein"]
             row["ingang_wkt"] = feat["_wkt_ingang"]
+            row["ingang_extra_wkt"] = feat["_wkt_ingang_extra"]
             writer.writerow(row)
     print(f"{len(features)} begraafplaatsen -> {path}")
 
@@ -373,6 +431,20 @@ def write_audit(features: list[dict], terrein: pd.DataFrame, ingang: pd.DataFram
         "Point-object in `properties.ingang` bewaard. Hierdoor blijft de terreinpolygoon direct "
         "bruikbaar voor kaartweergave en ruimtelijke analyse, zonder de betekenis van de ingang te verliezen.",
     ]
+    extra_ingang = [f for f in features if f["properties"].get("ingang_extra")]
+    if extra_ingang:
+        lines += [
+            "",
+            "## Tweede ingang (uitzondering)",
+            "",
+            "Eén terrein heeft twee eigen ingangen (`properties.ingang_extra`), zie "
+            "`docs/data/003-csv-bron-en-koppeling.md`:",
+            "",
+        ]
+        for f in extra_ingang:
+            p = f["properties"]
+            lines.append(f"- `{p['id']}` {p['naam']} ({p['plaats']})")
+    lines.append("")
     AUDIT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"audit herschreven -> {AUDIT_PATH}")
 
@@ -382,7 +454,7 @@ def main() -> None:
     terrein = prepare(df[df["begraafplaats"] == "begraafplaats"])
     ingang = prepare(df[df["ingang"] == "ingang"])
     assert len(terrein) == 446, f"terreinen: verwacht 446, gevonden {len(terrein)}"
-    assert len(ingang) == 444, f"ingangen: verwacht 444, gevonden {len(ingang)}"
+    assert len(ingang) == 445, f"ingangen: verwacht 445, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 

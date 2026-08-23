@@ -73,7 +73,8 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - `scripts/export_statusconflicten.py` exporteert eventuele `geruimd`-statusconflicten naar `data/generated/statusconflicten.csv` (met CSV-regelnummers) zodat Leon ze handmatig kan annoteren; de 4 die zich hebben voorgedaan zijn op 2026-08-20 opgelost, het bestand is nu leeg;
 - de filters in het paneel zijn twee groepen met andere combinatielogica (2026-08-23): de drie status-checkboxes (geruimd/niet-geruimd/statusconflict) verbreden de selectie (OR/unie) omdat het elkaar uitsluitende toestanden van hetzelfde veld zijn, de drie erfgoed-checkboxes versmallen (AND) omdat een begraafplaats meerdere erfgoedrelaties tegelijk kan hebben -- zie de toelichting bij `applyFilters()` in `src/app.js`;
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
-- de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is.
+- de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
+- een terrein kan bij uitzondering twee eigen ingangen hebben (`properties.ingang_extra`, tot nu toe alleen Gem. begraafplaats Oudenhoorn) -- expliciet gedocumenteerd via `EXTRA_INGANG_EXCEPTIONS` in `scripts/build_base_dataset.py`, geen algemene meerdere-ingangen-ondersteuning, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#oudenhoorn-2026-08-23-opgelost----met-een-nieuwe-uitzondering).
 
 ## Reproduceerbaarheid
 
@@ -89,7 +90,7 @@ CSV (data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv)
 
 `build_base_dataset.py` implementeert de matchingregels uit
 [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md) en
-faalt met een assertion zodra de bekende invarianten (890/446/444,
+faalt met een assertion zodra de bekende invarianten (891/446/445,
 433/11/1/1 koppelwijzen, 0 statusconflicten) niet meer kloppen. Geverifieerd
 tegen de eerder handmatig gebouwde snapshot: identieke uitkomst, op de
 opmaak van `bron_rij_ingang` na (voorheen `18.0`, nu `18` -- het brongegeven
