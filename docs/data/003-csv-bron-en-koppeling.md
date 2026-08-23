@@ -53,37 +53,49 @@ Eén ingangspunt heet:
 
 Dit punt ligt bij twee afzonderlijke terreinrecords. We behandelen dit als een gedeelde ingang en bewaren beide terreinen als afzonderlijke records.
 
-### Oudenhoorn (2026-08-23, opgelost -- met een nieuwe uitzondering)
+### Oudenhoorn (2026-08-23, opgelost -- in twee stappen, tweede stap definitief)
 
 Voor `Gem. begraafplaats, Oudenhoorn` was in de bron geen ingangspunt
 gevonden (`koppelwijze = missing`). Bij het uitzoeken bleek de bron wél een
 ingangpunt te bevatten, maar verkeerd gelabeld: getagd als `NH Kerkhof,
 Oudenhoorn` (koppelde dus via exacte naam+plaats aan het NH Kerkhof-terrein),
 terwijl het punt ruimtelijk 132 m van het NH Kerkhof-terrein ligt en 0 m van
--- dus binnen -- het terrein van Gem. begraafplaats. Vrijwel zeker een
-naamverwisseling in de oorspronkelijke aanlevering.
+-- dus binnen -- het terrein van Gem. begraafplaats.
 
-Op verzoek van de opdrachtgever (Joop, 2026-08-23, tegen zijn eigen database
-bevestigd) zijn twee dingen gedaan via `scripts/fix_oudenhoorn_ingang.py`
+**Eerste poging** (Joop, tegen zijn eigen database bevestigd): het
+verkeerd-gelabelde punt hernoemd naar `Gem. begraafplaats, Oudenhoorn` en
+`Gem. begraafplaats` op `geruimd` gezet (dit was zelf al een eerdere
+correctie, van 2026-08-22, zie hieronder), met een nieuwe tweede ingang op
+de zuidwesthoek van het terrein (`POINT (4.191578 51.826529)`, "ter
+linkerzijde (west)"). Uitgevoerd via `scripts/fix_oudenhoorn_ingang.py`.
+Dit vereiste tijdelijk een `EXTRA_INGANG_EXCEPTIONS`-mechanisme in
+`scripts/build_base_dataset.py` (één terrein met twee eigen ingangen).
+
+**Leon corrigeerde dit dezelfde dag** na het zien van de live kaart (WhatsApp
+naar Joop, met een satellietscreenshot van beide terreinen): "De groene moet
+geruimd en de bruine niet. Ingang aan westzijde van de bruine moet naar de
+groene, nagenoeg zelfde locatie." Groen = `NH Kerkhof`, bruin = `Gem.
+begraafplaats`. Uitgevoerd via `scripts/fix_oudenhoorn_reversed.py`
 (eenmalig gedraaid):
 
-1. Het verkeerd-gelabelde punt is hernoemd naar `Gem. begraafplaats,
-   Oudenhoorn` (met dezelfde geruimd-conventie als het terrein);
-2. Een tweede, nieuwe ingang is toegevoegd op de zuidwesthoek van het
-   terrein (`POINT (4.191578 51.826529)`, expliciet aangewezen door de
-   opdrachtgever als "ter linkerzijde (west)" -- geen verzonnen centroid).
+1. `NH Kerkhof, Oudenhoorn` -> `geruimd`; `Gem. begraafplaats, Oudenhoorn`
+   -> niet-geruimd (de omgekeerde van de eerdere, foutieve
+   2026-08-22-correctie -- "Kerkhof" in Leons oorspronkelijke foutmelding
+   bleek dus letterlijk `NH Kerkhof` te betekenen, niet `Gem.
+   begraafplaats`);
+2. de nieuwe west-ingang (`POINT (4.191578 51.826529)`) hertoegewezen van
+   `Gem. begraafplaats` naar `NH Kerkhof`, geruimd-status volgt het nieuwe
+   terrein;
+3. de andere ingang (`POINT (4.192397 51.826557)`, de oorspronkelijk
+   verkeerd-gelabelde) blijft bij `Gem. begraafplaats` (Leon noemde alleen
+   "de ingang aan westzijde"), nu terug naar niet-geruimd.
 
-Gevolg: `Gem. begraafplaats, Oudenhoorn` heeft nu twee eigen ingangen, de
-eerste keer dat dit voorkomt in de dataset. `scripts/build_base_dataset.py`
-staat dit toe via de expliciet gedocumenteerde uitzonderingset
-`EXTRA_INGANG_EXCEPTIONS` (precies dit ene, met naam genoemde geval, geen
-algemene ondersteuning voor meerdere ingangen). De tweede ingang staat in
-`properties.ingang_extra` (naast, niet in plaats van, de primaire `ingang`)
-en wordt door de viewer als extra punt getoond.
-
-`NH Kerkhof, Oudenhoorn` heeft hierdoor zelf geen ingang meer
-(`koppelwijze = missing` verschuift van Gem. begraafplaats naar NH Kerkhof)
--- een bewuste afweging van de opdrachtgever, niet een nieuw gat in de bron.
+Resultaat: beide terreinen hebben weer precies 1 eigen ingang, zoals elk
+ander record in de dataset. Het `EXTRA_INGANG_EXCEPTIONS`-mechanisme was
+dus niet meer nodig en is teruggedraaid (`properties.ingang_extra` bestaat
+niet meer). `NH Kerkhof, Oudenhoorn` heeft nu wél een ingang, ~130 m van
+zijn eigen terrein -- geografisch ongebruikelijk, maar expliciet bevestigd
+door Leon, dus behouden zoals aangeleverd.
 
 ### Vijfheerenlanden (2026-08-19, bronwijziging)
 
