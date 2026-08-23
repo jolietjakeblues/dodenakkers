@@ -284,6 +284,7 @@ async function main() {
   // laden bij elke paginabezoek). Wens van de gebruiker (2026-08-20).
   let onderzoeksgebiedenLoaded = false;
   document.getElementById("toggle-onderzoeksgebieden").addEventListener("change", async (e) => {
+    updateLegendActivity();
     if (!e.target.checked) {
       if (onderzoeksgebiedenLoaded) {
         map.setLayoutProperty("onderzoeksgebieden-fill", "visibility", "none");
@@ -590,10 +591,20 @@ async function main() {
     "toggle-gezichten": ["gezichten-fill", "gezichten-outline"],
     "toggle-monumenten": Object.keys(monumentenBaseFilters),
   };
+  // Legenda dimt items waarvan de laag uitstaat (data-layer verwijst naar de
+  // checkbox-id hierboven), zodat de legenda meteen laat zien wat je nu op
+  // de kaart ziet i.p.v. alle mogelijke stijlen zonder onderscheid.
+  function updateLegendActivity() {
+    document.querySelectorAll(".legend-item[data-layer]").forEach((el) => {
+      const checkbox = document.getElementById(el.dataset.layer);
+      el.classList.toggle("inactive", checkbox ? !checkbox.checked : false);
+    });
+  }
   for (const [checkboxId, layerIds] of Object.entries(layerToggles)) {
     document.getElementById(checkboxId).addEventListener("change", (e) => {
       const visibility = e.target.checked ? "visible" : "none";
       layerIds.forEach((id) => map.setLayoutProperty(id, "visibility", visibility));
+      updateLegendActivity();
     });
   }
 
@@ -652,12 +663,33 @@ async function main() {
   function activeIdsIn(group) {
     return group.filter((id) => document.getElementById(id).checked);
   }
+
+  // --- Zoeken op naam/plaats (los van de facet-filters hierboven: versmalt
+  // altijd extra, ongeacht status-/erfgoedselectie) ---
+  const searchInputEl = document.getElementById("search-naam-plaats");
+  const searchCountEl = document.getElementById("search-count");
+  function searchQuery() {
+    return searchInputEl.value.trim().toLowerCase();
+  }
+  function searchMatch(query, p) {
+    if (!query) return true;
+    return (p.naam && p.naam.toLowerCase().includes(query)) || (p.plaats && p.plaats.toLowerCase().includes(query));
+  }
+
   function applyFilters() {
     const predicates = terreinPredicates();
     const activeStatusIds = activeIdsIn(STATUS_FILTER_IDS);
     const activeHeritageIds = activeIdsIn(HERITAGE_FILTER_IDS);
+    const query = searchQuery();
 
     const clauses = [];
+    if (query) {
+      clauses.push([
+        "any",
+        ["in", query, ["downcase", ["get", "naam"]]],
+        ["in", query, ["downcase", ["coalesce", ["get", "plaats"], ""]]],
+      ]);
+    }
     if (activeStatusIds.length) {
       const statusExprs = activeStatusIds.map((id) => STATUS_FILTER_EXPR[id]);
       clauses.push(statusExprs.length === 1 ? statusExprs[0] : ["any", ...statusExprs]);
@@ -671,13 +703,15 @@ async function main() {
     const filter = clauses.length ? ["all", ...clauses] : null;
     map.setFilter("terrein-fill", filter);
     map.setFilter("terrein-outline", filter);
-    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds);
+    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query);
   }
-  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds) {
+  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query) {
     predicates = predicates || terreinPredicates();
     activeStatusIds = activeStatusIds || activeIdsIn(STATUS_FILTER_IDS);
     activeHeritageIds = activeHeritageIds || activeIdsIn(HERITAGE_FILTER_IDS);
-    const allProps = begraafplaatsen.features.map((f) => f.properties);
+    query = query === undefined ? searchQuery() : query;
+    const totalCount = begraafplaatsen.features.length;
+    const allProps = begraafplaatsen.features.map((f) => f.properties).filter((p) => searchMatch(query, p));
 
     for (const id of STATUS_FILTER_IDS) {
       const hypothetical = activeStatusIds.includes(id) ? activeStatusIds : [...activeStatusIds, id];
@@ -696,13 +730,15 @@ async function main() {
     const visibleCount = allProps.filter(
       (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, activeHeritageIds, p)
     ).length;
-    document.getElementById("filter-summary").textContent = `${visibleCount} van ${allProps.length} zichtbaar`;
+    document.getElementById("filter-summary").textContent = `${visibleCount} van ${totalCount} zichtbaar`;
+    searchCountEl.textContent = query ? `${allProps.length} gevonden op "${query}"` : "";
   }
   for (const id of FILTER_IDS) {
     document.getElementById(id).addEventListener("change", applyFilters);
   }
   document.getElementById("filter-reset").addEventListener("click", () => {
     for (const id of FILTER_IDS) document.getElementById(id).checked = false;
+    searchInputEl.value = "";
     applyFilters();
   });
   rmThresholdEl.addEventListener("input", () => {
@@ -711,7 +747,30 @@ async function main() {
     updateMonumentenFilter();
     applyFilters();
   });
+
+  // Bij een korte, specifieke zoekmatch (1-20 begraafplaatsen) automatisch
+  // inzoomen -- bij een brede match (bv. "gem.") blijft de kaart staan, dat
+  // zou anders een verrassende sprong naar een provinciebrede bbox geven.
+  let searchFlyDebounce = null;
+  searchInputEl.addEventListener("input", () => {
+    applyFilters();
+    clearTimeout(searchFlyDebounce);
+    const query = searchQuery();
+    if (!query) return;
+    const matches = begraafplaatsen.features.filter((f) => searchMatch(query, f.properties));
+    if (matches.length >= 1 && matches.length <= 20) {
+      searchFlyDebounce = setTimeout(() => {
+        map.fitBounds(boundsOfFeatureCollection({ type: "FeatureCollection", features: matches }), {
+          padding: 60,
+          maxZoom: 15,
+          duration: 500,
+        });
+      }, 300);
+    }
+  });
+
   applyFilters();
+  updateLegendActivity();
 
   map.fitBounds(boundsOfFeatureCollection(begraafplaatsen), { padding: 40, duration: 0 });
 
