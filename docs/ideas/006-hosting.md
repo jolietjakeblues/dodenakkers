@@ -74,27 +74,43 @@ Handmatige deploys bleken in de praktijk niet te gebeuren: drie PR's zijn op
 filterfix/zoekveld/legenda, mobiele paneel-toggle), maar de live site bleef
 op de commit van vóór die sessie staan omdat niemand `wrangler pages deploy`
 had gedraaid -- en dat commando is sowieso niet vanaf een telefoon te
-draaien. Opgelost met `.github/workflows/deploy.yml`: bouwt en deployt
-automatisch bij elke push naar `main`, en is ook handmatig te starten via de
-"Run workflow"-knop op de Actions-tab in GitHub (geen CLI nodig).
+draaien.
 
-### Eenmalige setup: twee repository-secrets
+### Eerste poging: GitHub Action + API-token (verworpen)
 
-De workflow heeft twee GitHub-secrets nodig (repo -> Settings -> Secrets and
-variables -> Actions -> "New repository secret"). Beide zijn te verkrijgen
-via de Cloudflare-dashboard in de browser, ook op mobiel:
+Eerst opgelost met een GitHub Action (`.github/workflows/deploy.yml`) die
+bij elke push `wrangler pages deploy` draaide met een `CLOUDFLARE_API_TOKEN`-
+en `CLOUDFLARE_ACCOUNT_ID`-secret. Dat werkte (geverifieerd: de build-stap
+slaagde, de deploy-stap faalde precies op de ontbrekende secrets, geen
+andere fout), maar was de verkeerde vergelijking: doorzoekerfgoed.nl draait
+al probleemloos op Cloudflare zonder ooit zo'n token-gedoe nodig te hebben
+gehad, omdat dat project via Cloudflare's eigen Git-integratie draait in
+plaats van via `wrangler` + GitHub Actions. De Action voegde dus precies het
+soort handmatig beheer toe dat we probeerden te elimineren. Verwijderd
+nadat bleek dat de eenvoudiger route (hieronder) hetzelfde bereikt zonder
+tokens.
 
-**`CLOUDFLARE_ACCOUNT_ID`**
-: dash.cloudflare.com -> een willekeurige site/project openen -> de
-  Account ID staat rechts in de zijbalk op het overzicht.
+### Gekozen oplossing: Cloudflare Git-integratie
 
-**`CLOUDFLARE_API_TOKEN`**
-: dash.cloudflare.com -> profielicoon rechtsboven -> "My Profile" ->
-  "API Tokens" -> "Create Token" -> template "Edit Cloudflare Workers" (dekt
-  ook Pages) of een custom token met permissie "Account > Cloudflare Pages >
-  Edit" -> aanmaken -> token direct kopiëren (wordt daarna niet meer getoond).
+`dodenakkers-zh` is nu direct aan deze GitHub-repo gekoppeld, hetzelfde
+patroon als doorzoekerfgoed.nl: Cloudflare's eigen build-systeem (niet
+GitHub Actions) checkt de repo uit, draait het build command en publiceert
+de output directory bij elke push naar `main`. Geen GitHub-secrets, geen
+API-token, geen `wrangler`-commando meer nodig van wie dan ook.
 
-Zodra beide secrets bestaan, deployt elke push naar `main` automatisch; een
-mislukte run vóór het toevoegen van de secrets is zichtbaar in de
-Actions-tab (rode kruis) maar beschadigt niets -- gewoon opnieuw draaien
-via "Re-run" nadat de secrets zijn toegevoegd.
+Eenmalige setup (via het Cloudflare-dashboard, ook op mobiel):
+
+1. dash.cloudflare.com -> Workers & Pages -> project `dodenakkers-zh` ->
+   Settings -> "Builds and deployments" (bij een Direct Upload-project staat
+   hier een optie om alsnog een Git-repository te koppelen; is die er niet,
+   dan een nieuw Pages-project aanmaken met "Connect to Git" en de oude
+   Direct Upload-project verwijderen zodra de nieuwe live staat, zodat de
+   naam/URL vrijkomt).
+2. GitHub-autorisatie volgen, repository `jolietjakeblues/dodenakkers`
+   selecteren, branch `main`.
+3. Build-instellingen:
+   - Framework preset: None
+   - Build command: `python scripts/build_site.py`
+   - Build output directory: `site`
+4. Opslaan -- Cloudflare deployt meteen de huidige `main`, en daarna
+   automatisch bij elke volgende push.
