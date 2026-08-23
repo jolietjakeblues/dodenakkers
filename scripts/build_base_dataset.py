@@ -80,7 +80,12 @@ def load_source() -> pd.DataFrame:
     # in een oude Excel gecorrigeerd, maar niet in de KML/CSV die deze build
     # leest. Zie scripts/fix_vijfheerenlanden.py (eenmalig gedraaid) en
     # docs/data/003-csv-bron-en-koppeling.md.
-    assert len(df) == 884, f"bronrecords: verwacht 884, gevonden {len(df)}"
+    # 884 -> 890 op 2026-08-23: 3 begraafplaatsen (Nieuwe Joodse begraafplaats
+    # Schiedam, Grafmonument juffrouw Begeer Voorschoten, NH Kerkhof
+    # Oud-Alblas) toegevoegd uit Leons "Tijdelijk Zuid-Holland.kmz". Zie
+    # scripts/add_tijdelijk_zuidholland_kmz.py (eenmalig gedraaid) en
+    # docs/data/003-csv-bron-en-koppeling.md.
+    assert len(df) == 890, f"bronrecords: verwacht 890, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -149,7 +154,7 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
 
     assert len(matches) == len(terrein), f"matches: verwacht {len(terrein)}, gevonden {len(matches)}"
     counts = Counter(m["koppelwijze"] for m in matches)
-    assert counts["exact_name_place"] == 430, counts
+    assert counts["exact_name_place"] == 433, counts
     assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
     assert counts["missing"] == 1, counts
@@ -376,8 +381,8 @@ def main() -> None:
     df = load_source()
     terrein = prepare(df[df["begraafplaats"] == "begraafplaats"])
     ingang = prepare(df[df["ingang"] == "ingang"])
-    assert len(terrein) == 443, f"terreinen: verwacht 443, gevonden {len(terrein)}"
-    assert len(ingang) == 441, f"ingangen: verwacht 441, gevonden {len(ingang)}"
+    assert len(terrein) == 446, f"terreinen: verwacht 446, gevonden {len(terrein)}"
+    assert len(ingang) == 444, f"ingangen: verwacht 444, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 

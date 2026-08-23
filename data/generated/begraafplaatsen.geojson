@@ -40320,6 +40320,209 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0444",
+        "naam": "Nieuwe Joodse begraafplaats",
+        "plaats_origineel": "Schiedam (geruimd)",
+        "plaats": "Schiedam",
+        "geruimd": true,
+        "geruimd_bron_terrein": true,
+        "geruimd_bron_ingang": true,
+        "status_conflict": false,
+        "oppervlakte_m2": 692.6,
+        "oppervlakte_ha": 0.0693,
+        "omtrek_m": 106.05,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.37637548784211,
+            51.91424815689535
+          ]
+        },
+        "ingang_lon": 4.37637548784211,
+        "ingang_lat": 51.91424815689535,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 1.71,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "Nieuwe Joodse begraafplaats",
+        "naam_bron_ingang": "Nieuwe Joodse begraafplaats",
+        "bron_rij_terrein": 886,
+        "bron_rij_ingang": 887,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.376436926896394,
+              51.91419465584179
+            ],
+            [
+              4.376826049090361,
+              51.91428079344742
+            ],
+            [
+              4.37672519933929,
+              51.9144891194146
+            ],
+            [
+              4.376313629097483,
+              51.91438506568954
+            ],
+            [
+              4.376436926896394,
+              51.91419465584179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0445",
+        "naam": "Grafmonument juffrouw Begeer",
+        "plaats_origineel": "Voorschoten",
+        "plaats": "Voorschoten",
+        "geruimd": false,
+        "geruimd_bron_terrein": false,
+        "geruimd_bron_ingang": false,
+        "status_conflict": false,
+        "oppervlakte_m2": 13.49,
+        "oppervlakte_ha": 0.0013,
+        "omtrek_m": 14.92,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.461668206895164,
+            52.13595572203785
+          ]
+        },
+        "ingang_lon": 4.461668206895164,
+        "ingang_lat": 52.13595572203785,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 0.27,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "Grafmonument juffrouw Begeer",
+        "naam_bron_ingang": "Grafmonument juffrouw Begeer",
+        "bron_rij_terrein": 888,
+        "bron_rij_ingang": 889,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.461735354222762,
+              52.13593794162929
+            ],
+            [
+              4.461692502120775,
+              52.13596706073938
+            ],
+            [
+              4.46165581325487,
+              52.13594474323968
+            ],
+            [
+              4.461704885203974,
+              52.13592148966165
+            ],
+            [
+              4.461735354222762,
+              52.13593794162929
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0446",
+        "naam": "NH Kerkhof",
+        "plaats_origineel": "Oud-Alblas (geruimd)",
+        "plaats": "Oud-Alblas",
+        "geruimd": true,
+        "geruimd_bron_terrein": true,
+        "geruimd_bron_ingang": true,
+        "status_conflict": false,
+        "oppervlakte_m2": 1874.8,
+        "oppervlakte_ha": 0.1875,
+        "omtrek_m": 166.82,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.704549637159468,
+            51.85863986527865
+          ]
+        },
+        "ingang_lon": 4.704549637159468,
+        "ingang_lat": 51.85863986527865,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 0.0,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "NH Kerkhof",
+        "naam_bron_ingang": "NH Kerkhof",
+        "bron_rij_terrein": 890,
+        "bron_rij_ingang": 891,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.703936259285015,
+              51.85858005150909
+            ],
+            [
+              4.704070491552816,
+              51.85825971422141
+            ],
+            [
+              4.704627649513364,
+              51.85830468808538
+            ],
+            [
+              4.704626772629698,
+              51.85843825339539
+            ],
+            [
+              4.704609608948362,
+              51.85857586422542
+            ],
+            [
+              4.704574660219871,
+              51.85869474057886
+            ],
+            [
+              4.70443798156166,
+              51.85869964632094
+            ],
+            [
+              4.704232850572046,
+              51.85867964459442
+            ],
+            [
+              4.703979448443265,
+              51.85861750597728
+            ],
+            [
+              4.703936259285015,
+              51.85858005150909
+            ]
+          ]
+        ]
+      }
     }
   ]
 }
