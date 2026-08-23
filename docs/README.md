@@ -74,7 +74,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - de filters in het paneel zijn twee groepen met andere combinatielogica (2026-08-23): de drie status-checkboxes (geruimd/niet-geruimd/statusconflict) verbreden de selectie (OR/unie) omdat het elkaar uitsluitende toestanden van hetzelfde veld zijn, de drie erfgoed-checkboxes versmallen (AND) omdat een begraafplaats meerdere erfgoedrelaties tegelijk kan hebben -- zie de toelichting bij `applyFilters()` in `src/app.js`;
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
 - de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
-- een terrein kan bij uitzondering twee eigen ingangen hebben (`properties.ingang_extra`, tot nu toe alleen Gem. begraafplaats Oudenhoorn) -- expliciet gedocumenteerd via `EXTRA_INGANG_EXCEPTIONS` in `scripts/build_base_dataset.py`, geen algemene meerdere-ingangen-ondersteuning, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#oudenhoorn-2026-08-23-opgelost----met-een-nieuwe-uitzondering).
+- Oudenhoorn had kortstondig een terrein met twee eigen ingangen (`EXTRA_INGANG_EXCEPTIONS`), maar Leon draaide de geruimd-status en de ingangtoewijzing dezelfde dag om na het zien van de live kaart; sindsdien heeft elk terrein weer precies 1 ingang, zoals de rest van de dataset, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#oudenhoorn-2026-08-23-opgelost----in-twee-stappen-tweede-stap-definitief).
 
 ## Reproduceerbaarheid
 
@@ -91,7 +91,7 @@ CSV (data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv)
 `build_base_dataset.py` implementeert de matchingregels uit
 [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md) en
 faalt met een assertion zodra de bekende invarianten (891/446/445,
-433/11/1/1 koppelwijzen, 0 statusconflicten) niet meer kloppen. Geverifieerd
+434/11/1/0 koppelwijzen, 0 statusconflicten) niet meer kloppen. Geverifieerd
 tegen de eerder handmatig gebouwde snapshot: identieke uitkomst, op de
 opmaak van `bron_rij_ingang` na (voorheen `18.0`, nu `18` -- het brongegeven
 was altijd een geheel getal).
