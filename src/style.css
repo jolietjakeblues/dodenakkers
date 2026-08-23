@@ -61,6 +61,26 @@ html, body {
   color: #666;
 }
 
+#filter-reset {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-group-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #666;
+  margin: 10px 0 2px;
+}
+
+.filter-group-heading .hint {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .count {
   color: #888;
   font-size: 11px;
@@ -94,7 +114,7 @@ p.hint {
   min-width: 44px;
 }
 
-#panel h2 {
+#panel details.panel-section summary {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -102,11 +122,16 @@ p.hint {
   margin: 14px 0 6px;
   border-top: 1px solid #ddd;
   padding-top: 10px;
+  cursor: pointer;
 }
 
-#panel section:first-of-type h2 {
+#panel details.panel-section:first-of-type summary {
   border-top: none;
   padding-top: 0;
+}
+
+#panel details.panel-section[open] summary {
+  margin-bottom: 6px;
 }
 
 #panel label {
@@ -126,6 +151,11 @@ p.hint {
   align-items: center;
   gap: 6px;
   margin: 4px 0;
+  transition: opacity 0.15s ease;
+}
+
+.legend-item.inactive {
+  opacity: 0.35;
 }
 
 .swatch {
@@ -145,7 +175,8 @@ p.hint {
   border: 2px solid;
 }
 
-#functie-search {
+#functie-search,
+#search-naam-plaats {
   width: 100%;
   box-sizing: border-box;
   padding: 4px 6px;

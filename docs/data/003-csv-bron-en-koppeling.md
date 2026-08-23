@@ -119,6 +119,24 @@ aan de statusconflicten hierboven -- deze twee hadden helemaal geen
 Beide zijn nu `geruimd`. Opgelost via
 `scripts/fix_geruimd_oudenhoorn_haringvliet.py` (eenmalig gedraaid).
 
+### Tijdelijk Zuid-Holland.kmz (2026-08-23, bronwijziging)
+
+Leon leverde een aparte KMZ (`data/Tijdelijk Zuid-Holland.kmz`, bewaard voor
+provenance naast de KML) met 3 nieuwe begraafplaatsen die nog niet in de
+hoofdbron zaten:
+
+- Nieuwe Joodse begraafplaats, Schiedam (geruimd);
+- Grafmonument juffrouw Begeer, Voorschoten (niet geruimd);
+- NH Kerkhof, Oud-Alblas (geruimd).
+
+Elk placemark leverde een terrein-Polygon en een ingang-Point, dezelfde
+structuur als de bestaande bron. Toegevoegd via
+`scripts/add_tijdelijk_zuidholland_kmz.py` (eenmalig gedraaid, 2026-08-23):
+6 rijen (3 terreinen + 3 ingangen) achteraan de CSV. Alle 3 koppelen exact
+op naam + opgeschoonde plaats (geen van de drie botst met een bestaande
+naam+plaats-combinatie in de bron). Bron ging van 884 naar 890 records;
+basisdataset van 443 naar 446 begraafplaatsen.
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:

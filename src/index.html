@@ -18,23 +18,29 @@
     <h1>Dodenakkers Zuid-Holland</h1>
     <p class="subtitle">Onderzoeksviewer - begraafplaatsen &amp; erfgoed (MVP)</p>
     <p class="intro">
-      Testversie voor review. Toont 443 begraafplaatsen in Zuid-Holland tegenover
+      Testversie voor review. Toont 446 begraafplaatsen in Zuid-Holland tegenover
       beschermde stads- en dorpsgezichten, rijksmonumenten en archeologische
       rijksmonumenten uit de RCE Linked Data. Grenzen en categorieën (zoals
       "100m" voor "nabij") zijn voorlopige werkhypothesen, nog niet definitief
       vastgesteld.
     </p>
 
-    <section>
-      <h2>Ondergrond</h2>
+    <details class="panel-section" open>
+      <summary>Zoeken</summary>
+      <input type="text" id="search-naam-plaats" placeholder="zoek op naam of plaats…" />
+      <p class="hint" id="search-count"></p>
+    </details>
+
+    <details class="panel-section" open>
+      <summary>Ondergrond</summary>
       <label><input type="radio" name="basemap" value="grijs" checked /> PDOK grijs</label>
       <label><input type="radio" name="basemap" value="luchtfoto" /> Luchtfoto (actueel)</label>
       <label><input type="radio" name="basemap" value="bgt" /> BGT <span class="hint">(vanaf sterk ingezoomd)</span></label>
       <label><input type="checkbox" id="toggle-brk-percelen" /> Kadastrale percelen (BRK) <span class="hint">(vanaf sterk ingezoomd)</span></label>
-    </section>
+    </details>
 
-    <section>
-      <h2>Lagen</h2>
+    <details class="panel-section" open>
+      <summary>Lagen</summary>
       <label><input type="checkbox" id="toggle-provinciegrens" checked /> Provinciegrens Zuid-Holland</label>
       <label><input type="checkbox" id="toggle-terrein" checked /> Begraafplaatsen (terrein)</label>
       <label><input type="checkbox" id="toggle-ingangen" checked /> Ingangen</label>
@@ -42,14 +48,19 @@
       <label><input type="checkbox" id="toggle-monumenten" /> Rijksmonumenten <span id="monumenten-count">(relevant)</span></label>
       <label class="sub"><input type="checkbox" id="toggle-monumenten-alle" /> - toon alle 14.204 (kan traag zijn)</label>
       <label><input type="checkbox" id="toggle-onderzoeksgebieden" /> Archeologische onderzoeksgebieden <span class="hint">(22.254, kan traag zijn)</span></label>
-    </section>
+    </details>
 
-    <section>
-      <h2>Filters</h2>
+    <details class="panel-section" open>
+      <summary>Filters</summary>
       <p class="filter-summary" id="filter-summary"></p>
-      <label><input type="checkbox" id="filter-niet-geruimd" /> Alleen niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
-      <label><input type="checkbox" id="filter-geruimd" /> Alleen geruimd <span class="count" id="count-filter-geruimd"></span></label>
-      <label><input type="checkbox" id="filter-conflict" /> Alleen statusconflict <span class="count" id="count-filter-conflict"></span></label>
+      <button type="button" id="filter-reset">Wis filters</button>
+
+      <h3 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h3>
+      <label><input type="checkbox" id="filter-niet-geruimd" /> Niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-geruimd" /> Geruimd <span class="count" id="count-filter-geruimd"></span></label>
+      <label><input type="checkbox" id="filter-conflict" /> Statusconflict <span class="count" id="count-filter-conflict"></span></label>
+
+      <h3 class="filter-group-heading">Erfgoedrelatie <span class="hint">(meerdere aanvinken versmalt de selectie)</span></h3>
       <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht <span class="count" id="count-filter-gezicht"></span></label>
       <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument <span class="count" id="count-filter-archeologie"></span></label>
       <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein <span class="count" id="count-filter-rijksmonument"></span></label>
@@ -57,28 +68,30 @@
         <input type="range" id="rm-threshold" min="50" max="250" step="50" value="100" />
         <span id="rm-threshold-label">&le;100m</span>
       </div>
-    </section>
+      <p class="hint threshold-hint">"Annex (grenst aan)" betekent grenscontact, ongeacht deze drempel &mdash; de drempel bepaalt alleen tot hoever losstaande (niet-rakende) monumenten worden meegeteld.</p>
+    </details>
 
-    <section>
-      <h2>Rijksmonument: oorspr. functie</h2>
+    <details class="panel-section">
+      <summary>Rijksmonument: oorspr. functie</summary>
       <input type="text" id="functie-search" placeholder="zoek functie… (bv. kerk, hek)" />
       <select id="functie-select" multiple size="8"></select>
       <button type="button" id="functie-clear">Wis selectie</button>
-    </section>
+    </details>
 
-    <section>
-      <h2>Legenda</h2>
-      <div class="legend-item"><span class="swatch outline" style="border-color:#495057;border-style:dashed"></span> Provinciegrens Zuid-Holland</div>
-      <div class="legend-item"><span class="swatch" style="background:#40c057"></span> Niet-geruimd</div>
-      <div class="legend-item"><span class="swatch" style="background:#a9713f"></span> Geruimd</div>
-      <div class="legend-item"><span class="swatch" style="background:#ffd43b;border:2px solid #e03131"></span> Statusconflict</div>
-      <div class="legend-item"><span class="swatch dot" style="background:#e64980"></span> Ingang</div>
-      <div class="legend-item"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
-      <div class="legend-item"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd, punt)</div>
-      <div class="legend-item"><span class="swatch" style="background:#e8590c66;border:1.5px solid #e8590c"></span> Rijksmonument (archeologisch, vlak/punt)</div>
-      <div class="legend-item"><span class="swatch" style="background:#0c859933;border:1px solid #0c8599"></span> Archeologisch onderzoeksgebied</div>
+    <details class="panel-section">
+      <summary>Legenda</summary>
+      <div class="legend-item" data-layer="toggle-provinciegrens"><span class="swatch outline" style="border-color:#495057;border-style:dashed"></span> Provinciegrens Zuid-Holland</div>
+      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#40c057"></span> Niet-geruimd</div>
+      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#a9713f"></span> Geruimd</div>
+      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#ffd43b;border:2px solid #e03131"></span> Statusconflict</div>
+      <div class="legend-item" data-layer="toggle-ingangen"><span class="swatch dot" style="background:#e64980"></span> Ingang</div>
+      <div class="legend-item" data-layer="toggle-gezichten"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
+      <div class="legend-item" data-layer="toggle-monumenten"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd, punt)</div>
+      <div class="legend-item" data-layer="toggle-monumenten"><span class="swatch" style="background:#e8590c66;border:1.5px solid #e8590c"></span> Rijksmonument (archeologisch, vlak/punt)</div>
+      <div class="legend-item" data-layer="toggle-onderzoeksgebieden"><span class="swatch" style="background:#0c859933;border:1px solid #0c8599"></span> Archeologisch onderzoeksgebied</div>
+      <p class="hint">Vervaagde items staan uit &mdash; vink de bijbehorende laag aan onder "Lagen" om ze te tonen.</p>
       <p class="hint">BGT en kadastrale percelen (BRK) tonen pas beeld vanaf sterk ingezoomd (straat-/pandniveau) &mdash; op provincie- of stadsschaal geeft PDOK daar bewust een lege tegel voor terug, geen storing.</p>
-    </section>
+    </details>
 
     <p id="status">Data laden…</p>
   </div>
