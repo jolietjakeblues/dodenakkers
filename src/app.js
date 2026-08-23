@@ -21,6 +21,24 @@ const DATA = {
 
 const statusEl = document.getElementById("status");
 
+// --- Mobiel paneel-toggle (los van main()/de data-load, zodat de knop ook
+// werkt terwijl de data nog laadt of als het laden faalt). Alleen zichtbaar
+// onder de 700px-breakpoint in style.css -- op desktop blijft het paneel
+// gewoon altijd zichtbaar zoals voorheen.
+const panelEl = document.getElementById("panel");
+const panelToggleEl = document.getElementById("panel-toggle");
+let panelOpen = true;
+function updatePanelToggle() {
+  panelEl.classList.toggle("collapsed", !panelOpen);
+  panelToggleEl.textContent = panelOpen ? "×" : "☰";
+  panelToggleEl.setAttribute("aria-label", panelOpen ? "Paneel sluiten" : "Paneel openen");
+  panelToggleEl.setAttribute("aria-expanded", String(panelOpen));
+}
+panelToggleEl.addEventListener("click", () => {
+  panelOpen = !panelOpen;
+  updatePanelToggle();
+});
+
 // Ondergronden, allemaal PDOK WMTS in EPSG:3857 (tilematrix/tilerow/tilecol
 // komen 1-op-1 overeen met MapLibre's {z}/{x}/{y}-tileschema). "grijs" is de
 // standaard, zelfde ondergrond als https://github.com/jolietjakeblues/doorzoeker-v2a

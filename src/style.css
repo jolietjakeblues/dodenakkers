@@ -25,6 +25,46 @@ html, body {
   font-size: 13px;
 }
 
+#panel-toggle {
+  display: none;
+}
+
+/* Mobiel: het vaste zijpaneel neemt anders bijna het hele scherm in beslag
+   zonder manier om het weg te tikken en de kaart te zien. Daarom hier breder
+   (goed leesbaar/tikbaar) maar wegschuifbaar via een vaste knop die altijd
+   boven het paneel blijft staan, ook als het paneel dicht is. */
+@media (max-width: 700px) {
+  #panel-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    right: 16px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #212529;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  #panel {
+    width: calc(100vw - 24px);
+    box-sizing: border-box;
+    transition: transform 0.25s ease;
+  }
+
+  #panel.collapsed {
+    transform: translateX(calc(-100% - 24px));
+  }
+}
+
 #panel .brand {
   margin: 0 0 8px;
 }
