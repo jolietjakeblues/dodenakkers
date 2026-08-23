@@ -104,19 +104,29 @@ zie [006 Hosting](ideas/006-hosting.md) voor de oorspronkelijke afweging
 (die inmiddels is herzien).
 
 `site/` is een build-artefact (gitignored, niet committen) dat alleen bevat
-wat de viewer nodig heeft - niet de hele repo. Opnieuw bouwen en deployen:
+wat de viewer nodig heeft - niet de hele repo.
+
+`scripts/build_site.py` kopieert `src/index.html`/`style.css`/`app.js` en de
+drie GeoJSON-bestanden die de viewer nodig heeft naar `site/`, en herschrijft
+`app.js`'s `../data/...`-paden naar `data/...` (index.html staat in `site/`
+op het root-niveau, niet onder `src/`).
+
+### Automatische deploy (2026-08-23)
+
+`.github/workflows/deploy.yml` bouwt en deployt automatisch bij elke push
+naar `main` (en is ook handmatig te starten via "Run workflow" in de
+GitHub Actions-tab). Dit verving de handmatige stap, nadat bleek dat drie
+gemergede PR's in deze sessie niet live kwamen omdat niemand het
+`wrangler`-commando handmatig had gedraaid — zie
+[006 Hosting](ideas/006-hosting.md#automatische-deploy-2026-08-23) voor hoe
+dat is opgelost en welke twee repository-secrets daarvoor nodig zijn.
+
+Handmatig blijft ook mogelijk (bv. om een niet-main-branch te testen):
 
 ```bash
 python scripts/build_site.py
 npx wrangler pages deploy site --project-name dodenakkers-zh --branch main
 ```
-
-`scripts/build_site.py` kopieert `src/index.html`/`style.css`/`app.js` en de
-drie GeoJSON-bestanden die de viewer nodig heeft naar `site/`, en herschrijft
-`app.js`'s `../data/...`-paden naar `data/...` (index.html staat in `site/`
-op het root-niveau, niet onder `src/`). Nog geen automatische deploy bij
-`git push` -- dat is een mogelijke volgende stap zodra dit meer dan een
-testversie voor Leon hoeft te zijn.
 
 ## Nummering
 
