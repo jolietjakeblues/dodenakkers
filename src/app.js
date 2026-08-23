@@ -200,18 +200,36 @@ function ingangenFromBegraafplaatsen(fc) {
   const features = [];
   for (const f of fc.features) {
     const ingang = f.properties.ingang;
-    if (!ingang) continue;
-    features.push({
-      type: "Feature",
-      geometry: ingang,
-      properties: {
-        begraafplaats_id: f.properties.id,
-        naam: f.properties.naam,
-        plaats: f.properties.plaats,
-        koppelwijze: f.properties.ingang_koppelwijze,
-        gedeeld: f.properties.ingang_gedeeld,
-      },
-    });
+    if (ingang) {
+      features.push({
+        type: "Feature",
+        geometry: ingang,
+        properties: {
+          begraafplaats_id: f.properties.id,
+          naam: f.properties.naam,
+          plaats: f.properties.plaats,
+          koppelwijze: f.properties.ingang_koppelwijze,
+          gedeeld: f.properties.ingang_gedeeld,
+        },
+      });
+    }
+    // Eén bekende uitzondering (Gem. begraafplaats, Oudenhoorn, zie
+    // scripts/fix_oudenhoorn_ingang.py) heeft een tweede, eigen ingang.
+    const ingangExtra = f.properties.ingang_extra;
+    if (ingangExtra) {
+      features.push({
+        type: "Feature",
+        geometry: ingangExtra,
+        properties: {
+          begraafplaats_id: f.properties.id,
+          naam: f.properties.naam,
+          plaats: f.properties.plaats,
+          koppelwijze: f.properties.ingang_koppelwijze,
+          gedeeld: false,
+          extra: true,
+        },
+      });
+    }
   }
   return { type: "FeatureCollection", features };
 }
@@ -563,7 +581,13 @@ async function main() {
     const p = e.features[0].properties;
     new maplibregl.Popup()
       .setLngLat(e.lngLat)
-      .setHTML(popupHtml(`Ingang: ${p.naam}`, [["Plaats", p.plaats], ["Gedeelde ingang", p.gedeeld]]))
+      .setHTML(
+        popupHtml(`Ingang: ${p.naam}`, [
+          ["Plaats", p.plaats],
+          ["Gedeelde ingang", p.gedeeld],
+          ["Tweede ingang van dit terrein", p.extra || null],
+        ])
+      )
       .addTo(map);
   });
 

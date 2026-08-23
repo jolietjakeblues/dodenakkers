@@ -4,13 +4,13 @@
 
 ## Samenvatting
 
-De genormaliseerde CSV bevat **890 bronrecords**:
+De genormaliseerde CSV bevat **891 bronrecords**:
 
 - **446** begraafplaatsterreinen;
-- **444** ingangen;
+- **445** ingangen;
 - **445** terreinpolygonen;
 - **1** terreinrecord met een `GeometryCollection`;
-- **89** bronrecords met status `geruimd`.
+- **91** bronrecords met status `geruimd`.
 
 De basisdataset bevat **446 begraafplaatsrecords**, één record per terrein.
 
@@ -32,7 +32,7 @@ Koppeling is uitgevoerd met behoud van de bronwaarden.
 
 ### Ontbrekende ingang
 
-- `zh-0354`: Gem. begraafplaats, Oudenhoorn
+- `zh-0353`: NH Kerkhof, Oudenhoorn
 
 ## Statusconflicten
 
@@ -61,3 +61,10 @@ Deze extremen zijn signalen voor controle en niet automatisch fouten.
 - `data/generated/begraafplaatsen.csv`
 
 De GeoJSON gebruikt het **terrein als feature geometry**. De ingang wordt daarnaast als Point-object in `properties.ingang` bewaard. Hierdoor blijft de terreinpolygoon direct bruikbaar voor kaartweergave en ruimtelijke analyse, zonder de betekenis van de ingang te verliezen.
+
+## Tweede ingang (uitzondering)
+
+Eén terrein heeft twee eigen ingangen (`properties.ingang_extra`), zie `docs/data/003-csv-bron-en-koppeling.md`:
+
+- `zh-0354` Gem. begraafplaats (Oudenhoorn)
+
