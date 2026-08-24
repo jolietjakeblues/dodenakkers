@@ -1,0 +1,86 @@
+# ABR2. Volledige inhoud van het Archeologisch Basisregister (ABR2) als thesaurus
+#
+# Doel: beantwoorden of de gehele inhoud van het Archeologisch Basisregister 2
+# via SPARQL als thesaurus is op te vragen (vraag van de gebruiker,
+# 2026-08-24) -- en zo ja, dat als één herbruikbare, opgeslagen query
+# vastleggen (zelfde conventie als queries/rce/*.sparql).
+#
+# Endpoint: LET OP, dit is een ANDER endpoint dan queries/rce/*.sparql
+# gebruikt. Dit is het thesaurus-specifieke endpoint van de RCE Linked Data
+# Voorziening, niet het RCE CHO-endpoint:
+#   https://api.linkeddata.cultureelerfgoed.nl/datasets/thesauri/archeologischbasisregister/sparql
+#
+# Graphs (geverifieerd 2026-08-24 via `SELECT DISTINCT ?g WHERE { GRAPH ?g {?s ?p ?o} }`
+# op dit endpoint):
+#   abr/2/thesaurus        - huidige ABR2-data (2 SKOS-schemes, zie hieronder)
+#   abr/2/metadata/adms     - ADMS-metadata bij abr/2/thesaurus
+#   abr/2/metadata/void     - VoID-metadata bij abr/2/thesaurus
+#   abr/thesaurus           - LEGACY (ABR1, geen "/2/" in de URI's), 322.627
+#                             triples, aparte, oudere concept-URI's
+#   abr/metadata/adms       - metadata bij de legacy graph
+#   abr/metadata/void       - metadata bij de legacy graph
+#
+# Deze query is bewust vastgezet op de graph `abr/2/thesaurus` (GRAPH-clausule
+# hieronder): zonder die restrictie levert het endpoint zowel ABR2- als de
+# legacy ABR1-concepten in hetzelfde resultaat (27.240 i.p.v. 13.622
+# skos:Concept-instanties) -- dat zou geen "ABR2 als thesaurus" zijn maar een
+# vermenging van twee thesaurusversies.
+#
+# Binnen abr/2/thesaurus zijn er 2 skos:ConceptScheme's (beide "Archeologisch
+# Basisregister" in de bredere zin van het RCE-datasetnaam, niet 1:1 met wat
+# de gebruiker als scheme-titel ziet op de linked-data-site):
+#   - <https://data.cultureelerfgoed.nl/term/id/abr/2/b402446a-...> "Archeologisch Basis Register" (dcterms:subject "ABR"/"Archis")
+#   - <https://data.cultureelerfgoed.nl/term/id/abr/2/206bde29-...> "Algemene lijsten" (statuswaarden als "definitief"/"vervallen", geen archeologische termen zelf)
+# Beide zijn hier bewust meegenomen (niet gefilterd op 1 scheme): "de gehele
+# inhoud" van de gebruikersvraag omvat ook de statuslijsten, en de query
+# toont per rij welk scheme het is.
+#
+# Resultaat (geverifieerd 2026-08-24, timing ~6s, geen timeout): 13.621 van de
+# 13.622 skos:Concept-instanties in abr/2/thesaurus (1 concept heeft wel een
+# skos:prefLabel@nl maar geen skos:inScheme en valt daarom buiten deze query
+# -- gehaald met een JOIN op skos:inScheme, zie hieronder). Rijen: 5.915
+# "Algemene lijsten" + 7.706 "Archeologisch Basis Register".
+#
+# Vorm: EEN rij per concept (skos:Concept), niet één rij per triple. Dat is
+# nodig omdat skos:altLabel, skos:notation en skos:broader multi-valued
+# kunnen zijn (poly-hiërarchie/synoniemen); die los in dezelfde OPTIONAL-tak
+# combineren zou een cartesisch product geven (zelfde valkuil als
+# scripts/fetch_rce.py documenteert voor heeftOmschrijving/functies).
+# Oplossing hier: GROUP BY ?concept met SAMPLE() voor velden waarvan alleen
+# de eerste waarde nodig is (prefLabel, notation, scheme, scopeNote) en
+# GROUP_CONCAT(DISTINCT ...; separator=" | ") voor de echt multi-valued
+# velden (altLabel, broader) -- geen rijen verdwijnen, wel netjes één regel
+# per thesaurusterm.
+#
+# code: skos:notation, niet rnce:codeAbr/rnce:hasAbrCode -- die laatste twee
+# zijn RCE-eigen extensieproperties (koppeling naar een apart codeobject
+# resp. losse literal) die niet op elk concept voorkomen en een tweede
+# multi-valued tak zouden toevoegen; skos:notation dekt het gangbare
+# ABR-codepatroon (bv. "IJZL" voor IJzertijd laat) en is een standaard
+# SKOS-property, dus voldoende voor "de thesaurus tonen".
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?concept
+  (SAMPLE(?prefLabel) AS ?label)
+  (GROUP_CONCAT(DISTINCT ?altLabel; separator=" | ") AS ?altLabels)
+  (SAMPLE(?notation) AS ?code)
+  (GROUP_CONCAT(DISTINCT ?broader; separator=" | ") AS ?broaderConcepts)
+  (SAMPLE(?schemeLabel) AS ?scheme)
+  (SAMPLE(?note) AS ?scopeNoteText)
+WHERE {
+  GRAPH <https://data.cultureelerfgoed.nl/term/id/abr/2/thesaurus> {
+    ?concept a skos:Concept ;
+      skos:prefLabel ?prefLabel ;
+      skos:inScheme ?schemeUri .
+    OPTIONAL { ?concept skos:altLabel ?altLabel . }
+    OPTIONAL { ?concept skos:notation ?notation . }
+    OPTIONAL { ?concept skos:broader ?broader . }
+    OPTIONAL { ?concept skos:scopeNote ?note . FILTER(lang(?note) = "nl") }
+    ?schemeUri dcterms:title ?schemeLabel . FILTER(lang(?schemeLabel) = "nl")
+  }
+  FILTER(lang(?prefLabel) = "nl")
+}
+GROUP BY ?concept
+ORDER BY ?scheme ?label

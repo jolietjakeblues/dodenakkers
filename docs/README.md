@@ -52,6 +52,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md)
 - [Auditresultaten basisdataset](data/kml-audit-resultaten.md)
 - [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md)
+- [006 ABR2-thesaurus verkenning](data/006-abr-thesaurus-verkenning.md)
 
 ## MVP
 
