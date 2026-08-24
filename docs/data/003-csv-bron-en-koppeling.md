@@ -93,9 +93,30 @@ begraafplaats`. Uitgevoerd via `scripts/fix_oudenhoorn_reversed.py`
 Resultaat: beide terreinen hebben weer precies 1 eigen ingang, zoals elk
 ander record in de dataset. Het `EXTRA_INGANG_EXCEPTIONS`-mechanisme was
 dus niet meer nodig en is teruggedraaid (`properties.ingang_extra` bestaat
-niet meer). `NH Kerkhof, Oudenhoorn` heeft nu wél een ingang, ~130 m van
-zijn eigen terrein -- geografisch ongebruikelijk, maar expliciet bevestigd
-door Leon, dus behouden zoals aangeleverd.
+niet meer).
+
+### NH Kerkhof, Oudenhoorn: eigen ingang (2026-08-24)
+
+Na stap 2 hierboven had `NH Kerkhof, Oudenhoorn` weliswaar een ingang, maar
+die lag ~130 m van zijn eigen terrein -- feitelijk de zuidwesthoek van het
+*andere* terrein (Gem. begraafplaats). NH Kerkhof blijkt een ommuurde/
+omgrachte kerkterp te zijn met eigen voetbruggen over de gracht. Opgezocht
+via de echte BGT-brondata (PDOK OGC API,
+`https://api.pdok.nl/lv/bgt/ogc/v1/collections/overbruggingsdeel/items`,
+laag `overbruggingsdeel` met `hoort_bij_typeoverbrugging = brug`, elk met
+een aansluitend `voetpad` in de laag `wegdeel`) in plaats van pixels te
+schatten op een screenshot: precies 3 actieve bruggen over de gracht --
+zuid (4.19132, 51.82773), noordoost (4.19145, 51.82833), west (4.19094,
+51.82804).
+
+Gekozen: de noordoostbrug, overeenkomstig het toegangspad dat zowel op de
+satellietfoto van de opdrachtgever als op een BGT-laagscreenshot zichtbaar
+is (pad vanaf de noordzijde van de ring rechtstreeks naar het kerkgebouw).
+Uitgevoerd via `scripts/fix_oudenhoorn_nh_kerkhof_ingang.py` (eenmalig
+gedraaid): ingang-WKT van `POINT (4.191578 51.826529)` naar
+`POINT (4.19145 51.82833)`, nu 2,7 m van het eigen terrein (breedte van de
+gracht/wal) in plaats van 130 m. Alleen de coördinaat is gewijzigd, geen
+rijen toegevoegd of verwijderd.
 
 ### Vijfheerenlanden (2026-08-19, bronwijziging)
 
