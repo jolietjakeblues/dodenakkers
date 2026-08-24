@@ -50258,14 +50258,14 @@
         "ingang": {
           "type": "Point",
           "coordinates": [
-            4.19145,
-            51.82833
+            4.190879,
+            51.828035
           ]
         },
-        "ingang_lon": 4.19145,
-        "ingang_lat": 51.82833,
+        "ingang_lon": 4.190879,
+        "ingang_lat": 51.828035,
         "ingang_koppelwijze": "exact_name_place",
-        "ingang_afstand_tot_terrein_m": 2.73,
+        "ingang_afstand_tot_terrein_m": 6.96,
         "ingang_gedeeld": false,
         "naam_bron_terrein": "NH Kerkhof",
         "naam_bron_ingang": "NH Kerkhof",

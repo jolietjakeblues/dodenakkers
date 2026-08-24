@@ -109,14 +109,23 @@ schatten op een screenshot: precies 3 actieve bruggen over de gracht --
 zuid (4.19132, 51.82773), noordoost (4.19145, 51.82833), west (4.19094,
 51.82804).
 
-Gekozen: de noordoostbrug, overeenkomstig het toegangspad dat zowel op de
-satellietfoto van de opdrachtgever als op een BGT-laagscreenshot zichtbaar
-is (pad vanaf de noordzijde van de ring rechtstreeks naar het kerkgebouw).
+Eerste keuze: de noordoostbrug, overeenkomstig het toegangspad dat zowel op
+de satellietfoto van de opdrachtgever als op een BGT-laagscreenshot
+zichtbaar leek (pad vanaf de noordzijde van de ring naar het kerkgebouw).
 Uitgevoerd via `scripts/fix_oudenhoorn_nh_kerkhof_ingang.py` (eenmalig
 gedraaid): ingang-WKT van `POINT (4.191578 51.826529)` naar
-`POINT (4.19145 51.82833)`, nu 2,7 m van het eigen terrein (breedte van de
-gracht/wal) in plaats van 130 m. Alleen de coördinaat is gewijzigd, geen
-rijen toegevoegd of verwijderd.
+`POINT (4.19145 51.82833)`.
+
+**Correctie (zelfde dag):** verkeerde brug gekozen. De opdrachtgever
+deelde een Google Maps-pin
+(`https://maps.app.goo.gl/sjR4CcPvCResN9Ns5`, resolvet naar
+`51.8280348,4.1908791999999995`) voor de echte ingang -- 4,2 m van de
+westbrug-kandidaat, 51,3 m van de gekozen noordoostbrug. Uitgevoerd via
+`scripts/fix_oudenhoorn_nh_kerkhof_ingang2.py` (eenmalig gedraaid):
+ingang-WKT naar `POINT (4.190879 51.828035)` -- de exacte, geresolvede
+Google Maps-coördinaat, niet de afgeronde BGT-brugcentroïde. Nu ~7 m van
+het eigen terrein (nog steeds de gracht/wal-breedte). Alleen de coördinaat
+is gewijzigd, geen rijen toegevoegd of verwijderd.
 
 ### Vijfheerenlanden (2026-08-19, bronwijziging)
 
