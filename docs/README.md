@@ -76,6 +76,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
 - de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
 - Oudenhoorn had kortstondig een terrein met twee eigen ingangen (`EXTRA_INGANG_EXCEPTIONS`), maar Leon draaide de geruimd-status en de ingangtoewijzing dezelfde dag om na het zien van de live kaart; sindsdien heeft elk terrein weer precies 1 ingang, zoals de rest van de dataset, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#oudenhoorn-2026-08-23-opgelost----in-twee-stappen-tweede-stap-definitief).
+- twee viewer-fixes uit Leons/Renes feedbacklijst (2026-08-26): de ingang-popup toont niet langer de kale boolean `Gedeelde ingang: false`, maar een leesbaar `Type`-veld (`Hoofdingang` of `Gedeeld (ook ingang van naburig terrein)`); de rijksmonumentlagen renderen nu boven de terreinvlak-fill (`map.moveLayer(...)` zonder tweede argument) zodat de puntmarkers niet verkleuren onder het halftransparante vlak, gemeld door Rene (kleurenblind).
 
 ## Reproduceerbaarheid
 

@@ -506,6 +506,16 @@ async function main() {
     },
   });
 
+  // Rijksmonumenten-lagen zijn eerder toegevoegd dan het terrein (voor de
+  // filter-/UI-logica die eraan hangt), maar moeten er visueel bovenop
+  // liggen -- anders verkleurt de halftransparante terreinvlak-fill de
+  // monumentpunten eronder en zijn ze nauwelijks te onderscheiden (gemeld
+  // door Rene, kleurenblind). Zonder tweede argument verplaatst moveLayer
+  // een laag naar de bovenkant van de stapel.
+  map.moveLayer("monumenten-vlak");
+  map.moveLayer("monumenten-vlak-outline");
+  map.moveLayer("monumenten-punt");
+
   // --- Ingangen (bovenste laag: kleine punten) ---
   map.addSource("ingangen", { type: "geojson", data: ingangen });
   map.addLayer({
@@ -561,9 +571,13 @@ async function main() {
 
   map.on("click", "ingangen-punt", (e) => {
     const p = e.features[0].properties;
+    // "Gedeelde ingang: false" als kale boolean was verwarrend voor bijna
+    // elke ingang (alleen Duinrust deelt er echt een) -- vervangen door een
+    // leesbaar type-label i.p.v. het technische veld te tonen.
+    const type = p.gedeeld ? "Gedeeld (ook ingang van naburig terrein)" : "Hoofdingang";
     new maplibregl.Popup()
       .setLngLat(e.lngLat)
-      .setHTML(popupHtml(`Ingang: ${p.naam}`, [["Plaats", p.plaats], ["Gedeelde ingang", p.gedeeld]]))
+      .setHTML(popupHtml(`Ingang: ${p.naam}`, [["Plaats", p.plaats], ["Type", type]]))
       .addTo(map);
   });
 
