@@ -38,6 +38,9 @@ FILES_TO_COPY = [
         REPO_ROOT / "images" / "Dodenakkers-logo-68015ff5.webp",
         SITE_DIR / "images" / "Dodenakkers-logo-68015ff5.webp",
     ),
+    # Cloudflare Pages leest _headers uit de root van de build-output (geen
+    # paden erin, dus geen REWRITES nodig -- gewoon 1-op-1 kopieren).
+    (REPO_ROOT / "_headers", SITE_DIR / "_headers"),
 ]
 
 REWRITES = [
