@@ -9,18 +9,19 @@ Deze map bevat losse Markdown-notities voor ideeën, data-audits en MVP-beslissi
 methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md).*
 
-**Begraafplaatsen** - 446 terreinen, samen circa **519 ha**:
+**Begraafplaatsen** - 448 terreinen, samen circa **520 ha**:
 
-- 401 niet-geruimd, 45 geruimd, 0 statusconflicten (de eerdere 4 zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#statusconflicten-2026-08-20-opgelost); 2 losstaande correcties -- Oudenhoorn/Gem. begraafplaats en Stad aan 't Haringvliet/NH kerkhof -- kwamen er op 2026-08-22 bij van de opdrachtgever zelf);
-- kleinste terrein 13,49 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.238,09 m².
+- 401 niet-geruimd, 47 geruimd, 0 statusconflicten (de eerdere 4 zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#statusconflicten-2026-08-20-opgelost); 2 losstaande correcties -- Oudenhoorn/Gem. begraafplaats en Stad aan 't Haringvliet/NH kerkhof -- kwamen er op 2026-08-22 bij van de opdrachtgever zelf);
+- kleinste terrein 13,49 m², grootste 268.823,91 m² (26,9 ha), mediaan 3.177,55 m².
 - was 463 tot 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen (nu provincie Utrecht, niet Zuid-Holland) verwijderd uit de bron, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#vijfheerenlanden-2026-08-19-bronwijziging);
-- 443 -> 446 op 2026-08-23: 3 begraafplaatsen (Nieuwe Joodse begraafplaats Schiedam, Grafmonument juffrouw Begeer Voorschoten, NH Kerkhof Oud-Alblas) toegevoegd uit Leons "Tijdelijk Zuid-Holland.kmz", zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#tijdelijk-zuid-holland-kmz-2026-08-23-bronwijziging).
+- 443 -> 446 op 2026-08-23: 3 begraafplaatsen (Nieuwe Joodse begraafplaats Schiedam, Grafmonument juffrouw Begeer Voorschoten, NH Kerkhof Oud-Alblas) toegevoegd uit Leons "Tijdelijk Zuid-Holland.kmz", zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#tijdelijk-zuid-holland-kmz-2026-08-23-bronwijziging);
+- 446 -> 448 op 2026-08-26: nog 2 begraafplaatsen (NH kerkhof, De Lier; NH Kerkhof, Oostvoorne; beide geruimd) toegevoegd uit een tweede "Tijdelijk Zuid-Holland"-kmz van Leon, zie [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md#tijdelijk-zuid-holland-2-kmz-2026-08-26-bronwijziging).
 
 **Tegenover beschermde gezichten** (105 rijksbeschermde stads-/dorpsgezichten in de Zuid-Holland-bbox):
 
 - 43 begraafplaatsen liggen volledig binnen een beschermd gezicht;
 - 5 overlappen een beschermd gezicht deels;
-- 398 hebben geen relatie met een beschermd gezicht.
+- 400 hebben geen relatie met een beschermd gezicht.
 
 **Tegenover archeologische rijksmonumenten** (99 in de bbox):
 
@@ -29,9 +30,9 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 
 **Tegenover (gebouwde) rijksmonumenten** (14.204 in de bbox):
 
-- 245 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (1.054 relaties in totaal, categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m` - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
+- 247 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (316 binnen 250 m -- de dataset bewaart relaties tot 250 m zodat de schuifregelaar in de viewer verder dan 100 m kan verkennen; categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`/`100-250m` - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
 
-Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt - ongeacht of ze bij een van de 446 begraafplaatsen in de buurt liggen.
+Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt - ongeacht of ze bij een van de 448 begraafplaatsen in de buurt liggen.
 
 **Archeologische onderzoeksgebieden** (`ceo:ArcheologischOnderzoeksgebied`, andere class dan rijksmonumenten, wens van de gebruiker, 2026-08-20): 22.254 gebieden in de bbox gepubliceerd als losse, standaard uitgeschakelde kaartlaag (200 gebieden met een "vertrouwelijk"-vlag in de bron zijn uitgesloten, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md#q4-archeologische-onderzoeksgebieden-2026-08-20)). Geen spatiale koppeling met de begraafplaatsendataset (nog niet gevraagd), puur een informatieve referentielaag.
 

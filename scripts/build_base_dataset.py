@@ -91,7 +91,11 @@ def load_source() -> pd.DataFrame:
     # scripts/fix_oudenhoorn_reversed.py, beide eenmalig gedraaid, en
     # docs/data/003-csv-bron-en-koppeling.md. Rijenaantal blijft 891: de
     # omdraaiing hernoemt/herlabelt bestaande rijen, voegt er geen toe.
-    assert len(df) == 891, f"bronrecords: verwacht 891, gevonden {len(df)}"
+    # 891 -> 895 op 2026-08-26: 2 nieuwe begraafplaatsen (4 rijen: NH kerkhof
+    # De Lier + NH Kerkhof Oostvoorne, beide geruimd) uit Leons tweede
+    # "Tijdelijk Zuid-Holland"-kmz, zie scripts/add_tijdelijk_zuidholland_kmz2.py
+    # (eenmalig gedraaid) en docs/data/003-csv-bron-en-koppeling.md.
+    assert len(df) == 895, f"bronrecords: verwacht 895, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -164,7 +168,9 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
     # reversed.py) heeft zowel NH Kerkhof als Gem. begraafplaats, Oudenhoorn
     # weer precies 1 eigen ingang (voorheen had één van de twee er geen).
     # Zie docs/data/003-csv-bron-en-koppeling.md.
-    assert counts["exact_name_place"] == 434, counts
+    # 434 -> 436 op 2026-08-26: 2 nieuwe begraafplaatsen uit de tweede
+    # "Tijdelijk Zuid-Holland"-kmz koppelen allebei exact op naam+plaats.
+    assert counts["exact_name_place"] == 436, counts
     assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
     assert counts["missing"] == 0, counts
@@ -391,8 +397,12 @@ def main() -> None:
     df = load_source()
     terrein = prepare(df[df["begraafplaats"] == "begraafplaats"])
     ingang = prepare(df[df["ingang"] == "ingang"])
-    assert len(terrein) == 446, f"terreinen: verwacht 446, gevonden {len(terrein)}"
-    assert len(ingang) == 445, f"ingangen: verwacht 445, gevonden {len(ingang)}"
+    # 446 -> 448 terreinen, 445 -> 447 ingangen op 2026-08-26: 2 nieuwe
+    # begraafplaatsen uit de tweede "Tijdelijk Zuid-Holland"-kmz, zie
+    # scripts/add_tijdelijk_zuidholland_kmz2.py en
+    # docs/data/003-csv-bron-en-koppeling.md.
+    assert len(terrein) == 448, f"terreinen: verwacht 448, gevonden {len(terrein)}"
+    assert len(ingang) == 447, f"ingangen: verwacht 447, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 

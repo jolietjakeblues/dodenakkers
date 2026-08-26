@@ -4,15 +4,15 @@
 
 ## Samenvatting
 
-De genormaliseerde CSV bevat **891 bronrecords**:
+De genormaliseerde CSV bevat **895 bronrecords**:
 
-- **446** begraafplaatsterreinen;
-- **445** ingangen;
-- **445** terreinpolygonen;
+- **448** begraafplaatsterreinen;
+- **447** ingangen;
+- **447** terreinpolygonen;
 - **1** terreinrecord met een `GeometryCollection`;
-- **90** bronrecords met status `geruimd`.
+- **94** bronrecords met status `geruimd`.
 
-De basisdataset bevat **446 begraafplaatsrecords**, één record per terrein.
+De basisdataset bevat **448 begraafplaatsrecords**, één record per terrein.
 
 ## Koppeling terrein en ingang
 
@@ -20,7 +20,7 @@ Koppeling is uitgevoerd met behoud van de bronwaarden.
 
 | Koppelwijze | Terreinen |
 |---|---:|
-| Exacte genormaliseerde naam + opgeschoonde plaats | 434 |
+| Exacte genormaliseerde naam + opgeschoonde plaats | 436 |
 | Ruimtelijke koppeling bij naamvariant | 11 |
 | Gedeelde ingang, ruimtelijk gekoppeld | 1 |
 | Geen ingang gevonden | 0 |
@@ -46,10 +46,10 @@ In deze gevallen krijgt het afgeleide veld `geruimd` voorlopig `null` en `status
 Oppervlakte en omtrek zijn berekend na transformatie van WGS84 naar RD New (`EPSG:28992`).
 
 - kleinste oppervlakte: **13.49 m²**;
-- mediaan oppervlakte: **3,238.09 m²**;
+- mediaan oppervlakte: **3,220.27 m²**;
 - grootste oppervlakte: **268,823.91 m²**;
 - kleinste omtrek: **14.92 m**;
-- mediaan omtrek: **242.82 m**;
+- mediaan omtrek: **242.20 m**;
 - grootste omtrek: **2,084.91 m**.
 
 Deze extremen zijn signalen voor controle en niet automatisch fouten.
