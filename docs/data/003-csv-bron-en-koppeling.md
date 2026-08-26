@@ -207,6 +207,25 @@ op naam + opgeschoonde plaats (geen van de drie botst met een bestaande
 naam+plaats-combinatie in de bron). Bron ging van 884 naar 890 records;
 basisdataset van 443 naar 446 begraafplaatsen.
 
+### Tijdelijk Zuid-Holland 2.kmz (2026-08-26, bronwijziging)
+
+Leon leverde een tweede, losstaande KMZ met dezelfde bestandsnaam als
+hierboven -- bewaard als `data/Tijdelijk Zuid-Holland 2.kmz` om de eerste
+niet te overschrijven -- met 2 nieuwe begraafplaatsen die nog niet in de
+hoofdbron zaten:
+
+- NH kerkhof, De Lier (geruimd);
+- NH Kerkhof, Oostvoorne (geruimd).
+
+Beide namen zijn onafhankelijk van de al bestaande begraafplaatsen in
+diezelfde plaatsen (`Gem. begraafplaats, De Lier` en `Gem. begraafplaats
+Westvoorne, Oostvoorne`) -- geen naamsbotsing, echt 2 nieuwe records.
+Elk placemark leverde weer een terrein-Polygon en een ingang-Point.
+Toegevoegd via `scripts/add_tijdelijk_zuidholland_kmz2.py` (eenmalig
+gedraaid, 2026-08-26): 4 rijen (2 terreinen + 2 ingangen) achteraan de CSV.
+Beide koppelen exact op naam + opgeschoonde plaats. Bron ging van 891 naar
+895 records; basisdataset van 446 naar 448 begraafplaatsen.
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:

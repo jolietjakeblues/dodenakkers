@@ -40529,6 +40529,220 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0447",
+        "naam": "NH kerkhof",
+        "plaats_origineel": "De Lier (geruimd)",
+        "plaats": "De Lier",
+        "geruimd": true,
+        "geruimd_bron_terrein": true,
+        "geruimd_bron_ingang": true,
+        "status_conflict": false,
+        "oppervlakte_m2": 526.7,
+        "oppervlakte_ha": 0.0527,
+        "omtrek_m": 103.6,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.24839379149998,
+            51.97420768417251
+          ]
+        },
+        "ingang_lon": 4.24839379149998,
+        "ingang_lat": 51.97420768417251,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 1.15,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "NH kerkhof",
+        "naam_bron_ingang": "NH kerkhof",
+        "bron_rij_terrein": 893,
+        "bron_rij_ingang": 894,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.248143815160432,
+              51.97437707439563
+            ],
+            [
+              4.248324079049648,
+              51.97419538482441
+            ],
+            [
+              4.248746299123692,
+              51.97434168312579
+            ],
+            [
+              4.248723566021511,
+              51.97435243630456
+            ],
+            [
+              4.248700807102401,
+              51.97435246410684
+            ],
+            [
+              4.248655436983619,
+              51.9743937640009
+            ],
+            [
+              4.248588466133254,
+              51.97438807220664
+            ],
+            [
+              4.248588487373583,
+              51.97439467127707
+            ],
+            [
+              4.248508140627047,
+              51.97439312031076
+            ],
+            [
+              4.248501495130474,
+              51.97440880174879
+            ],
+            [
+              4.248143815160432,
+              51.97437707439563
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0448",
+        "naam": "NH Kerkhof",
+        "plaats_origineel": "Oostvoorne (geruimd)",
+        "plaats": "Oostvoorne",
+        "geruimd": true,
+        "geruimd_bron_terrein": true,
+        "geruimd_bron_ingang": true,
+        "status_conflict": false,
+        "oppervlakte_m2": 2474.47,
+        "oppervlakte_ha": 0.2474,
+        "omtrek_m": 181.26,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.101991025564759,
+            51.91505954097205
+          ]
+        },
+        "ingang_lon": 4.101991025564759,
+        "ingang_lat": 51.91505954097205,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 0.05,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "NH Kerkhof",
+        "naam_bron_ingang": "NH Kerkhof",
+        "bron_rij_terrein": 895,
+        "bron_rij_ingang": 896,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.101992863765272,
+              51.91503452087517
+            ],
+            [
+              4.102105175014891,
+              51.91494360829629
+            ],
+            [
+              4.102257347884657,
+              51.91488733941859
+            ],
+            [
+              4.102283815932131,
+              51.91487200161093
+            ],
+            [
+              4.102348169436896,
+              51.91486540147927
+            ],
+            [
+              4.102475606845961,
+              51.91486961234462
+            ],
+            [
+              4.102578780815509,
+              51.91489697229198
+            ],
+            [
+              4.102699381092734,
+              51.91495155253963
+            ],
+            [
+              4.10283771981743,
+              51.91505604933565
+            ],
+            [
+              4.102855513603394,
+              51.9150999293815
+            ],
+            [
+              4.102850105139677,
+              51.91517812630268
+            ],
+            [
+              4.102777948085206,
+              51.91527445742388
+            ],
+            [
+              4.102665018036173,
+              51.91530852899972
+            ],
+            [
+              4.102593900290461,
+              51.91538308666956
+            ],
+            [
+              4.102486410219656,
+              51.91537164893624
+            ],
+            [
+              4.102396442259075,
+              51.91536289681967
+            ],
+            [
+              4.102284629576502,
+              51.91533109287361
+            ],
+            [
+              4.102171026850177,
+              51.91528518544293
+            ],
+            [
+              4.102107362898685,
+              51.91524313843709
+            ],
+            [
+              4.102042318515686,
+              51.9151932441396
+            ],
+            [
+              4.101988657613685,
+              51.91513094112463
+            ],
+            [
+              4.101992863765272,
+              51.91503452087517
+            ]
+          ]
+        ]
+      }
     }
   ]
 }
