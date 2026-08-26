@@ -567,8 +567,6 @@ async function main() {
               ? rmRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${relationLabel(r.relation)}, ${r.distance_m}m)`).join(", ")
               : "geen",
           ],
-          ["Koppelwijze ingang", p.ingang_koppelwijze],
-          ["ID", p.id],
         ])
       )
       .addTo(map);
@@ -606,7 +604,6 @@ async function main() {
           ["Huidige functie", p.huidige_functie],
           ["Type", p.type],
           ["Datum inschrijving monumentenregister", p.datum_inschrijving_monumentenregister],
-          ["Geometriebron", p.geometry_bron],
           ["Register", p.monumentenregister_url ? `<a href="${p.monumentenregister_url}" target="_blank" rel="noopener">bekijk</a>` : null],
         ])
       )

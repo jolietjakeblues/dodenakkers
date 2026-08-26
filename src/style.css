@@ -75,6 +75,11 @@ html, body {
   display: block;
 }
 
+/* Type-schaal: 3 maten i.p.v. de 6 (16/13/12.5/12/11.5/11px) die er stonden
+   -- organisch gegroeid doordat elke kleine toevoeging zijn eigen maatje
+   kreeg, zonder bewuste hiërarchie. 16px = titel, 13px (#panel's basis,
+   hierboven) = leestekst (labels, checkboxes), 11px = alle "meta"-tekst
+   hieronder (subtitel, hints, tellingen, kopjes, invoervelden, statusregel). */
 #panel h1 {
   font-size: 16px;
   margin: 0 0 2px;
@@ -83,7 +88,7 @@ html, body {
 #panel .subtitle {
   margin: 0 0 10px;
   color: #555;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 #panel .intro {
@@ -91,18 +96,18 @@ html, body {
   padding-bottom: 12px;
   border-bottom: 1px solid #ddd;
   color: #444;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
 .filter-summary {
   margin: 0 0 6px;
-  font-size: 12px;
+  font-size: 11px;
   color: #666;
 }
 
 #filter-reset {
-  font-size: 11.5px;
+  font-size: 11px;
   padding: 2px 8px;
   margin-bottom: 8px;
   cursor: pointer;
@@ -153,15 +158,15 @@ p.hint {
 }
 
 .threshold-row span {
-  font-size: 12px;
+  font-size: 11px;
   color: #555;
   min-width: 44px;
 }
 
 #panel details.panel-section summary {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: #333;
   margin: 14px 0 6px;
   border-top: 1px solid #ddd;
@@ -186,7 +191,7 @@ p.hint {
 
 #panel label.sub {
   margin-left: 18px;
-  font-size: 12px;
+  font-size: 11px;
   color: #555;
 }
 
@@ -224,14 +229,14 @@ p.hint {
   width: 100%;
   box-sizing: border-box;
   padding: 4px 6px;
-  font-size: 12.5px;
+  font-size: 11px;
   margin-bottom: 4px;
 }
 
 #functie-select {
   width: 100%;
   box-sizing: border-box;
-  font-size: 12.5px;
+  font-size: 11px;
 }
 
 #functie-select option {
@@ -240,14 +245,23 @@ p.hint {
 
 #functie-clear {
   margin-top: 4px;
-  font-size: 11.5px;
+  font-size: 11px;
   cursor: pointer;
 }
 
 #status {
   color: #555;
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 12px;
+}
+
+/* Formuliervelden/knoppen erven font-family niet automatisch van body (de
+   browser geeft ze standaard het systeem-UI-font) -- expliciet gelijktrekken
+   zodat ze niet in een ander lettertype ogen dan de rest van het paneel. */
+#panel input,
+#panel select,
+#panel button {
+  font-family: inherit;
 }
 
 .maplibregl-popup-content {
