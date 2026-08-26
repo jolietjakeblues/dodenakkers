@@ -303,6 +303,7 @@ async function main() {
   let onderzoeksgebiedenLoaded = false;
   document.getElementById("toggle-onderzoeksgebieden").addEventListener("change", async (e) => {
     updateLegendActivity();
+    syncUrl();
     if (!e.target.checked) {
       if (onderzoeksgebiedenLoaded) {
         map.setLayoutProperty("onderzoeksgebieden-fill", "visibility", "none");
@@ -471,8 +472,12 @@ async function main() {
       map.setFilter(id, filter);
     }
     document.getElementById("monumenten-count").textContent = `(${relevantUris.size} relevant, ≤${rmThreshold}m)`;
+    syncUrl();
   }
-  updateMonumentenFilter();
+  // Geen aanroep hier meer -- de enige initiele aanroep gebeurt nu via
+  // applyStateFromUrl() aan het einde van main(), na alle andere
+  // declaraties (o.a. searchInputEl bestaat pas verderop; er wordt tussen
+  // hier en daar niets gerenderd, dus dit verandert het gedrag niet).
 
   // --- Begraafplaatsen terrein ---
   map.addSource("terrein", { type: "geojson", data: begraafplaatsen });
@@ -637,6 +642,7 @@ async function main() {
       const visibility = e.target.checked ? "visible" : "none";
       layerIds.forEach((id) => map.setLayoutProperty(id, "visibility", visibility));
       updateLegendActivity();
+      syncUrl();
     });
   }
 
@@ -648,10 +654,12 @@ async function main() {
       for (const id of Object.keys(BASEMAPS)) {
         map.setLayoutProperty(`base-${id}`, "visibility", id === e.target.value ? "visible" : "none");
       }
+      syncUrl();
     });
   }
   document.getElementById("toggle-brk-percelen").addEventListener("change", (e) => {
     map.setLayoutProperty("overlay-brk-percelen", "visibility", e.target.checked ? "visible" : "none");
+    syncUrl();
   });
 
   // --- Filters (terrein/ingangen; werken via GeoJSON filter-expressies) ---
@@ -708,6 +716,12 @@ async function main() {
     return (p.naam && p.naam.toLowerCase().includes(query)) || (p.plaats && p.plaats.toLowerCase().includes(query));
   }
 
+  // Bijgehouden voor de exportknoppen (zie verderop): de features die nu
+  // daadwerkelijk aan alle actieve filters + zoekopdracht voldoen, zodat
+  // "exporteer huidige selectie" niet de hele dataset opnieuw hoeft te
+  // filteren en altijd exact overeenkomt met wat er op de kaart te zien is.
+  let currentVisibleFeatures = begraafplaatsen.features;
+
   function applyFilters() {
     const predicates = terreinPredicates();
     const activeStatusIds = activeIdsIn(STATUS_FILTER_IDS);
@@ -736,6 +750,13 @@ async function main() {
     map.setFilter("terrein-fill", filter);
     map.setFilter("terrein-outline", filter);
     updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query);
+    currentVisibleFeatures = begraafplaatsen.features.filter(
+      (f) =>
+        searchMatch(query, f.properties) &&
+        statusMatch(predicates, activeStatusIds, f.properties) &&
+        heritageMatch(predicates, activeHeritageIds, f.properties)
+    );
+    syncUrl();
   }
   function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query) {
     predicates = predicates || terreinPredicates();
@@ -801,10 +822,245 @@ async function main() {
     }
   });
 
-  applyFilters();
-  updateLegendActivity();
+  // --- Permalink: huidige kaartweergave + filters/zoekopdracht in de URL,
+  // zodat een gedeelde link exact dezelfde weergave reproduceert (wens van
+  // Joop, 2026-08-26 -- "waarschijnlijk het nuttigste voor Leons workflow").
+  // Alleen history.replaceState (nooit pushState), zodat elke checkbox/pan
+  // geen eigen entry in de browser-terug-geschiedenis krijgt. Losse, korte
+  // parameternamen i.p.v. de volledige checkbox-id's om de URL leesbaar te
+  // houden.
+  const LAYER_TOGGLE_CODES = {
+    "toggle-provinciegrens": "prov",
+    "toggle-terrein": "terrein",
+    "toggle-ingangen": "ingang",
+    "toggle-gezichten": "gezicht",
+    "toggle-monumenten": "mon",
+    "toggle-monumenten-alle": "monalle",
+    "toggle-onderzoeksgebieden": "arch",
+  };
+  const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g", "filter-conflict": "sc" };
+  const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };
 
-  map.fitBounds(boundsOfFeatureCollection(begraafplaatsen), { padding: 40, duration: 0 });
+  function currentStateParams() {
+    const params = new URLSearchParams();
+    const center = map.getCenter();
+    params.set("lon", center.lng.toFixed(5));
+    params.set("lat", center.lat.toFixed(5));
+    params.set("z", map.getZoom().toFixed(2));
+    const basemap = document.querySelector('input[name="basemap"]:checked')?.value;
+    if (basemap && basemap !== "grijs") params.set("bm", basemap);
+    if (document.getElementById("toggle-brk-percelen").checked) params.set("brk", "1");
+    const layers = Object.entries(LAYER_TOGGLE_CODES)
+      .filter(([id]) => document.getElementById(id).checked)
+      .map(([, code]) => code);
+    if (layers.length) params.set("lyr", layers.join(","));
+    const status = Object.entries(STATUS_CODES)
+      .filter(([id]) => document.getElementById(id).checked)
+      .map(([, code]) => code);
+    if (status.length) params.set("st", status.join(","));
+    const heritage = Object.entries(HERITAGE_CODES)
+      .filter(([id]) => document.getElementById(id).checked)
+      .map(([, code]) => code);
+    if (heritage.length) params.set("hg", heritage.join(","));
+    if (rmThreshold !== 100) params.set("rmt", String(rmThreshold));
+    if (selectedFunctie.size) params.set("fn", [...selectedFunctie].join("|"));
+    const query = searchInputEl.value.trim();
+    if (query) params.set("q", query);
+    return params;
+  }
+
+  function buildShareUrl() {
+    const qs = currentStateParams().toString();
+    return `${location.origin}${location.pathname}${qs ? "?" + qs : ""}`;
+  }
+
+  let urlSyncDebounce = null;
+  function syncUrl() {
+    clearTimeout(urlSyncDebounce);
+    urlSyncDebounce = setTimeout(() => history.replaceState(null, "", buildShareUrl()), 300);
+  }
+
+  // Leest ?lon/lat/z/bm/brk/lyr/st/hg/rmt/fn/q uit de URL en zet de
+  // bijbehorende controls, inclusief het versturen van "change"-events zodat
+  // de bestaande listeners (laagzichtbaarheid, ondergrond, etc.) hun normale
+  // werk doen -- geen aparte kopie van die logica hier. Draait sowieso 1x bij
+  // het laden (ook zonder querystring) om de initiele filters/legenda/tellingen
+  // te zetten; retourneert of er een expliciete camera-positie was.
+  function applyStateFromUrl() {
+    const params = new URLSearchParams(location.search);
+    let hasView = false;
+    if (params.toString()) {
+      const lon = parseFloat(params.get("lon"));
+      const lat = parseFloat(params.get("lat"));
+      const z = parseFloat(params.get("z"));
+      hasView = Number.isFinite(lon) && Number.isFinite(lat) && Number.isFinite(z);
+      if (hasView) map.jumpTo({ center: [lon, lat], zoom: z });
+
+      const bm = params.get("bm");
+      if (bm && BASEMAPS[bm]) {
+        const radio = document.querySelector(`input[name="basemap"][value="${bm}"]`);
+        if (radio) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event("change"));
+        }
+      }
+      if (params.get("brk") === "1") {
+        const cb = document.getElementById("toggle-brk-percelen");
+        cb.checked = true;
+        cb.dispatchEvent(new Event("change"));
+      }
+      const layerCodes = new Set((params.get("lyr") || "").split(",").filter(Boolean));
+      for (const [id, code] of Object.entries(LAYER_TOGGLE_CODES)) {
+        const cb = document.getElementById(id);
+        const shouldCheck = layerCodes.has(code);
+        if (cb.checked !== shouldCheck) {
+          cb.checked = shouldCheck;
+          cb.dispatchEvent(new Event("change"));
+        }
+      }
+      const statusCodes = new Set((params.get("st") || "").split(",").filter(Boolean));
+      for (const [id, code] of Object.entries(STATUS_CODES)) {
+        document.getElementById(id).checked = statusCodes.has(code);
+      }
+      const heritageCodes = new Set((params.get("hg") || "").split(",").filter(Boolean));
+      for (const [id, code] of Object.entries(HERITAGE_CODES)) {
+        document.getElementById(id).checked = heritageCodes.has(code);
+      }
+      const rmt = parseInt(params.get("rmt"), 10);
+      if (Number.isFinite(rmt)) {
+        rmThreshold = rmt;
+        rmThresholdEl.value = String(rmt);
+        rmThresholdLabelEl.textContent = `≤${rmt}m`;
+      }
+      const fn = params.get("fn");
+      if (fn) {
+        for (const label of fn.split("|")) selectedFunctie.add(label);
+        renderFunctieOptions();
+      }
+      const q = params.get("q");
+      if (q) searchInputEl.value = q;
+    }
+
+    updateMonumentenFilter();
+    applyFilters();
+    updateLegendActivity();
+    return hasView;
+  }
+  map.on("moveend", syncUrl);
+
+  // --- Data-export: knop om de huidige gefilterde selectie te downloaden
+  // (wens van Joop, 2026-08-26 -- handig voor Leon om afwijkingen offline te
+  // checken). Als eigen kaart-control i.p.v. paneelknoppen, zodat het
+  // filterpaneel links niet voller wordt -- hoort qua functie toch bij "wat
+  // zie ik nu op de kaart", net als de laagtoggles.
+  const CSV_EXPORT_EXCLUDE_KEYS = new Set(["ingang"]);
+  function toCsvValue(value) {
+    if (value === null || value === undefined) return "";
+    const s = typeof value === "object" ? JSON.stringify(value) : String(value);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  }
+  function featuresToCsv(features) {
+    const keys = [];
+    const seen = new Set();
+    for (const f of features) {
+      for (const k of Object.keys(f.properties)) {
+        if (CSV_EXPORT_EXCLUDE_KEYS.has(k) || seen.has(k)) continue;
+        seen.add(k);
+        keys.push(k);
+      }
+    }
+    const lines = [keys.join(",")];
+    for (const f of features) lines.push(keys.map((k) => toCsvValue(f.properties[k])).join(","));
+    return lines.join("\r\n");
+  }
+  function featuresToGeoJson(features) {
+    return JSON.stringify({ type: "FeatureCollection", features }, null, 2);
+  }
+  function downloadBlob(filename, content, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  function todayStamp() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  class ExportControl {
+    onAdd() {
+      const container = document.createElement("div");
+      container.className = "maplibregl-ctrl maplibregl-ctrl-group dodenakkers-export-ctrl";
+      const csvBtn = document.createElement("button");
+      csvBtn.type = "button";
+      csvBtn.textContent = "CSV";
+      csvBtn.title = "Exporteer huidige selectie als CSV";
+      csvBtn.setAttribute("aria-label", "Exporteer huidige selectie als CSV");
+      csvBtn.addEventListener("click", () => {
+        downloadBlob(`dodenakkers-zh-selectie-${todayStamp()}.csv`, featuresToCsv(currentVisibleFeatures), "text/csv;charset=utf-8");
+      });
+      const geoBtn = document.createElement("button");
+      geoBtn.type = "button";
+      geoBtn.textContent = "GeoJSON";
+      geoBtn.title = "Exporteer huidige selectie als GeoJSON";
+      geoBtn.setAttribute("aria-label", "Exporteer huidige selectie als GeoJSON");
+      geoBtn.addEventListener("click", () => {
+        downloadBlob(`dodenakkers-zh-selectie-${todayStamp()}.geojson`, featuresToGeoJson(currentVisibleFeatures), "application/geo+json");
+      });
+      container.append(csvBtn, geoBtn);
+      this._container = container;
+      return container;
+    }
+    onRemove() {
+      this._container.remove();
+    }
+  }
+
+  class LinkControl {
+    onAdd() {
+      const container = document.createElement("div");
+      container.className = "maplibregl-ctrl maplibregl-ctrl-group dodenakkers-link-ctrl";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "Link";
+      btn.title = "Kopieer link naar huidige weergave";
+      btn.setAttribute("aria-label", "Kopieer link naar huidige weergave");
+      btn.addEventListener("click", async () => {
+        const url = buildShareUrl();
+        history.replaceState(null, "", url);
+        try {
+          await navigator.clipboard.writeText(url);
+          btn.textContent = "✓";
+          btn.setAttribute("aria-label", "Link gekopieerd");
+        } catch (err) {
+          console.error("Kopiëren naar klembord mislukt", err);
+          btn.textContent = "✗";
+        }
+        setTimeout(() => {
+          btn.textContent = "Link";
+          btn.setAttribute("aria-label", "Kopieer link naar huidige weergave");
+        }, 1500);
+      });
+      container.appendChild(btn);
+      this._container = container;
+      return container;
+    }
+    onRemove() {
+      this._container.remove();
+    }
+  }
+
+  map.addControl(new LinkControl(), "top-right");
+  map.addControl(new ExportControl(), "top-right");
+
+  const hadUrlView = applyStateFromUrl();
+  if (!hadUrlView) {
+    map.fitBounds(boundsOfFeatureCollection(begraafplaatsen), { padding: 40, duration: 0 });
+  }
 
   statusEl.textContent =
     `${begraafplaatsen.features.length} begraafplaatsen · ` +

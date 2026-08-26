@@ -281,3 +281,17 @@ p.hint {
 .maplibregl-ctrl-attrib a {
   text-decoration: underline;
 }
+
+/* Link- en exportknoppen: eigen kaart-controls i.p.v. paneelknoppen (zie
+   toelichting bij LinkControl/ExportControl in app.js), dus ook eigen
+   breedte -- MapLibre's standaard .maplibregl-ctrl-group-knoppen zijn
+   29x29px vierkant voor icon-only gebruik, te smal voor leesbare tekst. */
+.dodenakkers-link-ctrl button,
+.dodenakkers-export-ctrl button {
+  width: auto;
+  height: 26px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-family: inherit;
+  white-space: nowrap;
+}
