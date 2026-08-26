@@ -122,12 +122,16 @@ html, body {
 }
 
 .count {
-  color: #888;
+  /* #767676 i.p.v. het eerdere #888 -- dat haalde maar 3.54:1 contrast op
+     wit, onder de WCAG 2.1 AA-drempel van 4.5:1 voor deze 11px-tekst. */
+  color: #767676;
   font-size: 11px;
 }
 
 .hint {
-  color: #999;
+  /* #767676 i.p.v. het eerdere #999 -- dat haalde maar 2.85:1 contrast op
+     wit, ruim onder de WCAG 2.1 AA-drempel van 4.5:1 voor deze 11px-tekst. */
+  color: #767676;
   font-size: 11px;
   font-style: italic;
 }
@@ -268,4 +272,12 @@ p.hint {
 
 .maplibregl-popup-content dd {
   margin: 0;
+}
+
+/* De standaard MapLibre-attributielinks (rechtsonder) zijn alleen via
+   kleur te onderscheiden van de omringende tekst (2.02:1 contrast, WCAG
+   2.1 SC 1.4.1) -- underline maakt ze ook zonder kleurwaarneming
+   herkenbaar als link. */
+.maplibregl-ctrl-attrib a {
+  text-decoration: underline;
 }
