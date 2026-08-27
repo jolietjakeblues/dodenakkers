@@ -13331,8 +13331,8 @@
       "properties": {
         "id": "zh-0085",
         "naam": "RK begraafplaats Schiedam",
-        "plaats_origineel": null,
-        "plaats": null,
+        "plaats_origineel": "Schiedam",
+        "plaats": "Schiedam",
         "geruimd": false,
         "geruimd_bron_terrein": false,
         "geruimd_bron_ingang": false,
@@ -35879,8 +35879,8 @@
       "properties": {
         "id": "zh-0234",
         "naam": "Gem. begraafplaats Westduin",
-        "plaats_origineel": "Dan Haag",
-        "plaats": "Dan Haag",
+        "plaats_origineel": "Den Haag",
+        "plaats": "Den Haag",
         "geruimd": false,
         "geruimd_bron_terrein": false,
         "geruimd_bron_ingang": false,

@@ -24,6 +24,7 @@ SITE_DIR = REPO_ROOT / "site"
 FILES_TO_COPY = [
     (REPO_ROOT / "src" / "style.css", SITE_DIR / "style.css"),
     (REPO_ROOT / "data" / "generated" / "analyse.geojson", SITE_DIR / "data" / "generated" / "analyse.geojson"),
+    (REPO_ROOT / "data" / "generated" / "statistieken.json", SITE_DIR / "data" / "generated" / "statistieken.json"),
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
     (REPO_ROOT / "data" / "rce" / "rijksmonumenten.geojson", SITE_DIR / "data" / "rce" / "rijksmonumenten.geojson"),
     (
@@ -75,6 +76,8 @@ def main() -> None:
 
     copy_with_rewrites(REPO_ROOT / "src" / "index.html", SITE_DIR / "index.html")
     copy_with_rewrites(REPO_ROOT / "src" / "app.js", SITE_DIR / "app.js")
+    copy_with_rewrites(REPO_ROOT / "src" / "statistieken.html", SITE_DIR / "statistieken.html")
+    copy_with_rewrites(REPO_ROOT / "src" / "statistieken.js", SITE_DIR / "statistieken.js")
 
     total_bytes = sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
     print(f"\nsite/ klaar, {total_bytes / 1024 / 1024:.1f} MB")

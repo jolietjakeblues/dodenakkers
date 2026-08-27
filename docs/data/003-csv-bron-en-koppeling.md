@@ -226,6 +226,26 @@ gedraaid, 2026-08-26): 4 rijen (2 terreinen + 2 ingangen) achteraan de CSV.
 Beide koppelen exact op naam + opgeschoonde plaats. Bron ging van 891 naar
 895 records; basisdataset van 446 naar 448 begraafplaatsen.
 
+### Twee plaats-velden gecorrigeerd (2026-08-26, bijvangst)
+
+Gevonden als bijvangst bij het bouwen van de statistiekenpagina (een
+"meeste totale oppervlakte per plaats"-tabel groepeerde Den Haag in twee
+stukken, en een begraafplaats zonder plaats verscheen als "(onbekend)" in
+elke per-plaats-tabel):
+
+- `Gem. begraafplaats Westduin` (terrein + ingang) had `plaats (origineel)`
+  = `plaats (opgeschoon)` = `"Dan Haag"` -- een tikfout in de bron, geen
+  andere `Gem. begraafplaats Westduin, Den Haag` bestond om mee te botsen.
+- `RK begraafplaats Schiedam` (terrein) had een lege `plaats`-kolom -- de
+  plaatsnaam stond alleen in `naam` gebakken. De gekoppelde ingang (`RK
+  begraafplaats`, plaats `Schiedam`) had het al wel correct, en de koppeling
+  liep toch al via `spatial_name_variant` (de naam-strings verschillen
+  sowieso), dus dit vult alleen de ontbrekende waarde aan.
+
+Beide gecorrigeerd via `scripts/fix_plaats_typos.py` (eenmalig gedraaid).
+Geen rijen toegevoegd/verwijderd, geen koppelcategorie veranderd
+(`exact_name_place`/`spatial_name_variant`-tellingen blijven gelijk).
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:

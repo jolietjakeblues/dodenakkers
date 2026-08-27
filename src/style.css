@@ -309,3 +309,134 @@ p.hint {
   font-family: inherit;
   white-space: nowrap;
 }
+
+/* --- Statistiekenpagina (src/statistieken.html) ---------------------- */
+
+body.stats-page {
+  background: #f4f4f5;
+  color: #212529;
+}
+
+#stats {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.stats-header .logo {
+  height: 40px;
+  width: auto;
+  flex: none;
+}
+
+.stats-header h1 {
+  font-size: 20px;
+  margin: 0 0 2px;
+}
+
+.stats-header .subtitle {
+  margin: 0;
+  color: #555;
+  font-size: 12px;
+}
+
+.stats-header .subtitle a {
+  color: #1971c2;
+}
+
+#stats .intro {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 12px 0 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.stats-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.stats-section h2 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.stats-section h3 {
+  font-size: 13px;
+  color: #333;
+  margin: 18px 0 8px;
+}
+
+.stats-section > .hint {
+  margin: 0 0 12px;
+}
+
+.stats-kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 16px;
+  row-gap: 6px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.stats-kv dt {
+  color: #555;
+  white-space: nowrap;
+}
+
+.stats-kv dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.stats-table-wrap {
+  overflow-x: auto;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.stats-table th,
+.stats-table td {
+  text-align: left;
+  padding: 5px 10px 5px 0;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.stats-table th {
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+.stats-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+@media (max-width: 700px) {
+  #stats {
+    padding: 16px 12px 40px;
+  }
+  .stats-header .logo {
+    height: 32px;
+  }
+}
