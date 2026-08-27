@@ -586,6 +586,19 @@ async function main() {
     if (selectedFunctie.size) {
       dynamicClauses.push(["in", ["get", "oorspronkelijke_functie_kort"], ["literal", [...selectedFunctie]]]);
     }
+    // Aan/uit voor gebouwde vs archeologische monumenten (ceo:monumentAard,
+    // wens van Joop 2026-08-27). Bij beide aan geen extra clausule (zelfde
+    // gedrag als voorheen); bij een van beide uit filteren op de resterende
+    // aard-waarde; bij beide uit een "in" met een lege literal-array, die
+    // voor elke feature false oplevert en zo alles verbergt.
+    const gebouwdAan = document.getElementById("toggle-monumenten-gebouwd").checked;
+    const archeologischAan = document.getElementById("toggle-monumenten-archeologisch").checked;
+    if (!gebouwdAan || !archeologischAan) {
+      const aardWaarden = [];
+      if (gebouwdAan) aardWaarden.push("onroerend gebouwd");
+      if (archeologischAan) aardWaarden.push("archeologisch");
+      dynamicClauses.push(["in", ["get", "monument_aard"], ["literal", aardWaarden]]);
+    }
     for (const [id, base] of Object.entries(monumentenBaseFilters)) {
       const clauses = base ? [base, ...dynamicClauses] : dynamicClauses;
       const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
@@ -752,7 +765,13 @@ async function main() {
   function updateLegendActivity() {
     document.querySelectorAll(".legend-item[data-layer]").forEach((el) => {
       const checkbox = document.getElementById(el.dataset.layer);
-      el.classList.toggle("inactive", checkbox ? !checkbox.checked : false);
+      // data-parent: voor sub-toggles die alleen zichtbaar zijn als hun
+      // ouder-checkbox ook aanstaat (bv. toggle-monumenten-gebouwd onder
+      // toggle-monumenten) -- anders blijft het legenda-item ten onrechte
+      // actief ogen terwijl de hele laag uitstaat.
+      const parentCheckbox = el.dataset.parent ? document.getElementById(el.dataset.parent) : null;
+      const inactive = (checkbox ? !checkbox.checked : false) || (parentCheckbox ? !parentCheckbox.checked : false);
+      el.classList.toggle("inactive", inactive);
     });
   }
   for (const [checkboxId, layerIds] of Object.entries(layerToggles)) {
@@ -765,6 +784,14 @@ async function main() {
   }
 
   document.getElementById("toggle-monumenten-alle").addEventListener("change", updateMonumentenFilter);
+  document.getElementById("toggle-monumenten-gebouwd").addEventListener("change", () => {
+    updateLegendActivity();
+    updateMonumentenFilter();
+  });
+  document.getElementById("toggle-monumenten-archeologisch").addEventListener("change", () => {
+    updateLegendActivity();
+    updateMonumentenFilter();
+  });
 
   // --- Ondergrond ---
   for (const radio of document.querySelectorAll('input[name="basemap"]')) {
@@ -957,6 +984,8 @@ async function main() {
     "toggle-gezichten": "gezicht",
     "toggle-monumenten": "mon",
     "toggle-monumenten-alle": "monalle",
+    "toggle-monumenten-gebouwd": "monbouwd",
+    "toggle-monumenten-archeologisch": "monarch",
     "toggle-onderzoeksgebieden": "arch",
     "toggle-chs-archeologie": "chsarch",
   };
