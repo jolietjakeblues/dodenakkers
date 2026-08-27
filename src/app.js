@@ -21,6 +21,12 @@ const DATA = {
   // in scripts/analyse_spatial.py, maar Joop wilde de grenzen ook als
   // toggelbare referentielaag op de kaart (2026-08-27), zie toggle-gemeentegrenzen.
   gemeentegrenzen: "../data/pdok/gemeenten-zuid-holland.geojson",
+  // Ook lazy (464KB, klein genoeg om eager te laden, maar zelfde
+  // "standaard uit, referentielaag"-principe als de twee hierboven). Eigen
+  // provinciale bron (Provincie Zuid-Holland CHS), geen RCE-bbox-fetch dus
+  // geen bbox-rand-effect (wens van Joop, 2026-08-27, na het vinden van
+  // https://data.overheid.nl/dataset/32677).
+  chsArcheologie: "../data/zuid-holland/chs-archeologie-provinciaal-belang.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -383,6 +389,66 @@ async function main() {
     map.on("mouseleave", "onderzoeksgebieden-fill", () => (map.getCanvas().style.cursor = ""));
     onderzoeksgebiedenLoaded = true;
     statusEl.textContent = `${onderzoeksgebieden.features.length} archeologische onderzoeksgebieden geladen.`;
+  });
+
+  // --- Archeologische terreinen van provinciaal belang (lazy: 662 polygonen,
+  // 464KB -- klein genoeg om eager te laden, maar zelfde "standaard uit,
+  // referentielaag"-principe als de twee lagen hierboven). Provincie
+  // Zuid-Holland CHS, andere bron dan de RCE-lagen (wens van Joop, 2026-08-27).
+  let chsArcheologieLoaded = false;
+  document.getElementById("toggle-chs-archeologie").addEventListener("change", async (e) => {
+    updateLegendActivity();
+    syncUrl();
+    if (!e.target.checked) {
+      if (chsArcheologieLoaded) {
+        map.setLayoutProperty("chs-archeologie-fill", "visibility", "none");
+        map.setLayoutProperty("chs-archeologie-outline", "visibility", "none");
+      }
+      return;
+    }
+    if (chsArcheologieLoaded) {
+      map.setLayoutProperty("chs-archeologie-fill", "visibility", "visible");
+      map.setLayoutProperty("chs-archeologie-outline", "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Archeologische terreinen van provinciaal belang laden…";
+    const chsArcheologie = await loadJson(DATA.chsArcheologie);
+    map.addSource("chs-archeologie", { type: "geojson", data: chsArcheologie });
+    map.addLayer({
+      id: "chs-archeologie-fill",
+      type: "fill",
+      source: "chs-archeologie",
+      // #997404 (olijfgeel/goud) i.p.v. het al gebruikte #e8590c (rijksmonument
+      // archeologisch) of #0c8599 (RCE-onderzoeksgebieden) -- eigen, goed te
+      // onderscheiden kleur nodig (Rene, kleurenblind).
+      paint: { "fill-color": "#997404", "fill-opacity": 0.25 },
+    });
+    map.addLayer({
+      id: "chs-archeologie-outline",
+      type: "line",
+      source: "chs-archeologie",
+      paint: { "line-color": "#997404", "line-width": 1 },
+    });
+    map.on("click", "chs-archeologie-fill", (ev) => {
+      const p = ev.features[0].properties;
+      new maplibregl.Popup()
+        .setLngLat(ev.lngLat)
+        .setHTML(
+          popupHtml(p.Toponiem || `Archeologisch terrein ${p.MONUMENTNR}`, [
+            ["Gemeente", p.Gemeente],
+            ["Plaats", p.Plaats],
+            ["Waarde", p.WAARDE],
+            ["Datering", p.Datering],
+            ["Beschrijving", p.Beschrijving],
+            ["Zichtbaar", p.Zichtbaarh],
+          ])
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "chs-archeologie-fill", () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", "chs-archeologie-fill", () => (map.getCanvas().style.cursor = ""));
+    chsArcheologieLoaded = true;
+    statusEl.textContent = `${chsArcheologie.features.length} archeologische terreinen van provinciaal belang geladen.`;
   });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
@@ -892,6 +958,7 @@ async function main() {
     "toggle-monumenten": "mon",
     "toggle-monumenten-alle": "monalle",
     "toggle-onderzoeksgebieden": "arch",
+    "toggle-chs-archeologie": "chsarch",
   };
   const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };

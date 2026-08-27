@@ -44,6 +44,10 @@ FILES_TO_COPY = [
         SITE_DIR / "data" / "pdok" / "gemeenten-zuid-holland.geojson",
     ),
     (
+        REPO_ROOT / "data" / "zuid-holland" / "chs-archeologie-provinciaal-belang.geojson",
+        SITE_DIR / "data" / "zuid-holland" / "chs-archeologie-provinciaal-belang.geojson",
+    ),
+    (
         REPO_ROOT / "images" / "Dodenakkers-logo-68015ff5.webp",
         SITE_DIR / "images" / "Dodenakkers-logo-68015ff5.webp",
     ),
@@ -56,6 +60,7 @@ REWRITES = [
     ("../data/generated/", "data/generated/"),
     ("../data/rce/", "data/rce/"),
     ("../data/pdok/", "data/pdok/"),
+    ("../data/zuid-holland/", "data/zuid-holland/"),
     ("../images/", "images/"),
 ]
 
