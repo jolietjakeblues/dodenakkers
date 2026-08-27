@@ -35,6 +35,77 @@ function mapLink(kandidaat) {
   return `index.html?${params.toString()}`;
 }
 
+// Zelfde idee, maar voor een rijksmonument (klooster/synagoge) i.p.v. een
+// archeologisch onderzoeksgebied: rijksmonumentenlaag aan i.p.v. "arch", en
+// "monalle" erbij zodat het punt zichtbaar is ongeacht de rm-afstandsslider
+// op de hoofdkaart (deze kandidaten liggen vaak juist ver van een bekende
+// begraafplaats, dus zouden anders weggefilterd worden).
+function mapLinkRijksmonument(kandidaat) {
+  const params = new URLSearchParams({
+    lon: kandidaat.lon.toFixed(5),
+    lat: kandidaat.lat.toFixed(5),
+    z: "16.00",
+    lyr: "terrein,ingang,gezicht,mon,monalle",
+  });
+  return `index.html?${params.toString()}`;
+}
+
+function renderRijksmonumentSectie(containerId, titel, data) {
+  const container = document.getElementById(containerId);
+  const section = el("div", { class: "stats-section" });
+  section.appendChild(el("h2", { text: `${titel} (${data.kandidaten.length})` }));
+  section.appendChild(
+    el("div", { class: "warning-box" }, [
+      el("p", { text: data.waarschuwing }),
+    ])
+  );
+  if (data.aantal_buiten_zuid_holland_bbox_rand) {
+    section.appendChild(
+      el("p", {
+        class: "hint",
+        text: `${fmt(data.aantal_buiten_zuid_holland_bbox_rand)} rijksmonument(en) genegeerd (bbox-rand-effect, buiten Zuid-Holland).`,
+      })
+    );
+  }
+
+  const wrap = el("div", { class: "stats-table-wrap" });
+  const t = el("table", { class: "stats-table kandidaten-table" });
+  t.appendChild(
+    el("thead", {}, [
+      el("tr", {}, [
+        el("th", { text: "Naam" }),
+        el("th", { text: "Gemeente" }),
+        el("th", { text: "Afstand" }),
+        el("th", { text: "Dichtstbijzijnde bekende bp" }),
+        el("th", { text: "Rijksmonumenten in cluster" }),
+        el("th", { text: "Links" }),
+      ]),
+    ])
+  );
+  const tbody = el("tbody");
+  for (const k of data.kandidaten) {
+    const links = el("td", {}, [
+      el("a", { href: k.monumentenregister_url, target: "_blank", rel: "noopener", text: "bron" }),
+      el("span", { text: " · " }),
+      el("a", { href: mapLinkRijksmonument(k), text: "kaart" }),
+    ]);
+    tbody.appendChild(
+      el("tr", {}, [
+        el("td", { text: k.naam || "(geen naam)" }),
+        el("td", { text: k.gemeente }),
+        el("td", { text: `${fmt(k.afstand_tot_bekende_bp_m)} m` }),
+        el("td", { text: k.dichtstbijzijnde_bp }),
+        el("td", { text: fmt(k.aantal_rijksmonumenten_in_cluster) }),
+        links,
+      ])
+    );
+  }
+  t.appendChild(tbody);
+  wrap.appendChild(t);
+  section.appendChild(wrap);
+  container.appendChild(section);
+}
+
 async function main() {
   const res = await fetch("../data/generated/kandidaat_begraafplaatsen.json");
   if (!res.ok) throw new Error(`kandidaat_begraafplaatsen.json: HTTP ${res.status}`);
@@ -107,6 +178,9 @@ async function main() {
   wrap.appendChild(t);
   section.appendChild(wrap);
   tableContainer.appendChild(section);
+
+  renderRijksmonumentSectie("kandidaten-kloosters", "Kloosters", d.kloosters);
+  renderRijksmonumentSectie("kandidaten-synagoges", "Synagoges", d.synagoges);
 
   statusEl.textContent = "";
 }

@@ -2032,5 +2032,233 @@
       "lon": 4.760588,
       "lat": 52.083822
     }
-  ]
+  ],
+  "kloosters": {
+    "waarschuwing": "EXPERIMENTEEL. Kloosters (oorspronkelijke_functie_kort bevat 'klooster') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen (zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot een bekende begraafplaats is GEEN bevestiging: veel kloosters zijn al tijdens/na de Reformatie (16e eeuw) opgeheven en gesloopt of herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart geregistreerd. Puur een aanwijzing waar het de moeite waard is om te kijken.",
+    "aantal_buiten_zuid_holland_bbox_rand": 13,
+    "kandidaten": [
+      {
+        "naam": "De Hof",
+        "gemeente": "Dordrecht",
+        "aantal_rijksmonumenten_in_cluster": 8,
+        "rijksmonumentnummers": [
+          "13433",
+          "13434",
+          "13436",
+          "13439",
+          "13438",
+          "13442",
+          "13440",
+          "13437"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/13433",
+        "afstand_tot_bekende_bp_m": 1170.4,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Dordrecht",
+        "lon": 4.670311,
+        "lat": 51.815448
+      },
+      {
+        "naam": null,
+        "gemeente": "Leiden",
+        "aantal_rijksmonumenten_in_cluster": 2,
+        "rijksmonumentnummers": [
+          "25503",
+          "24976"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/25503",
+        "afstand_tot_bekende_bp_m": 1163.8,
+        "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+        "lon": 4.485608,
+        "lat": 52.156483
+      },
+      {
+        "naam": null,
+        "gemeente": "Schiedam",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "525408"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525408",
+        "afstand_tot_bekende_bp_m": 1051.9,
+        "dichtstbijzijnde_bp": "RK begraafplaats Schiedam, Schiedam",
+        "lon": 4.403143,
+        "lat": 51.912383
+      },
+      {
+        "naam": null,
+        "gemeente": "Gouda",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "16819"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16819",
+        "afstand_tot_bekende_bp_m": 699.2,
+        "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "lon": 4.714085,
+        "lat": 52.01059
+      },
+      {
+        "naam": null,
+        "gemeente": "'s-Gravenhage",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "17859"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/17859",
+        "afstand_tot_bekende_bp_m": 639.6,
+        "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "lon": 4.307222,
+        "lat": 52.079489
+      },
+      {
+        "naam": null,
+        "gemeente": "Delft",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "12029"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12029",
+        "afstand_tot_bekende_bp_m": 554.7,
+        "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "lon": 4.354711,
+        "lat": 52.012436
+      },
+      {
+        "naam": null,
+        "gemeente": "Delft",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "12151"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12151",
+        "afstand_tot_bekende_bp_m": 527.4,
+        "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "lon": 4.359535,
+        "lat": 52.016784
+      },
+      {
+        "naam": null,
+        "gemeente": "Delft",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "11987"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/11987",
+        "afstand_tot_bekende_bp_m": 453.0,
+        "dichtstbijzijnde_bp": "Vm. RK begraafplaats, Delft",
+        "lon": 4.358459,
+        "lat": 52.007786
+      },
+      {
+        "naam": null,
+        "gemeente": "Gouda",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "16795"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16795",
+        "afstand_tot_bekende_bp_m": 431.1,
+        "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "lon": 4.707071,
+        "lat": 52.010128
+      },
+      {
+        "naam": "Sint Bavo",
+        "gemeente": "Noordwijk",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "509680"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/509680",
+        "afstand_tot_bekende_bp_m": 222.8,
+        "dichtstbijzijnde_bp": "H. Jozefkerkhof, Noordwijkerhout",
+        "lon": 4.491936,
+        "lat": 52.265739
+      },
+      {
+        "naam": "H.H. Petrus en Paulus",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "511307"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/511307",
+        "afstand_tot_bekende_bp_m": 96.4,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Reeuwijk-Dorp",
+        "lon": 4.692098,
+        "lat": 52.055162
+      },
+      {
+        "naam": "Sint-Agathaklooster",
+        "gemeente": "Lisse",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "516104"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516104",
+        "afstand_tot_bekende_bp_m": 70.1,
+        "dichtstbijzijnde_bp": "NH Kerkhof, Lisse",
+        "lon": 4.552108,
+        "lat": 52.25756
+      },
+      {
+        "naam": null,
+        "gemeente": "Midden-Delfland",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "26567"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/26567",
+        "afstand_tot_bekende_bp_m": 42.7,
+        "dichtstbijzijnde_bp": "Vm. NH kerkhof, Maasland",
+        "lon": 4.272863,
+        "lat": 51.93665
+      }
+    ]
+  },
+  "synagoges": {
+    "waarschuwing": "EXPERIMENTEEL. Synagoges (oorspronkelijke_functie_kort bevat 'synagoge') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen. LET OP, anders dan bij kerken/kloosters: een joodse begraafplaats hoort van oudsher juist NIET dicht bij de synagoge te liggen -- vaak bewust buiten de bebouwde kom, op een afgelegen plek (denk aan toponiemen als 'Jodenberg(je)'). De afstand hieronder is dus geen signaal op zichzelf, alleen een startpunt: waar stond de synagoge, en is er apart archief- of toponiemenonderzoek nodig naar de bijbehorende begraafplaats elders? Met maar een handvol synagoges in Zuid-Holland is dit bovendien een heel kleine set, niet generaliseerbaar.",
+    "aantal_buiten_zuid_holland_bbox_rand": 1,
+    "kandidaten": [
+      {
+        "naam": null,
+        "gemeente": "Leiden",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "25118"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/25118",
+        "afstand_tot_bekende_bp_m": 648.3,
+        "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+        "lon": 4.493199,
+        "lat": 52.155462
+      },
+      {
+        "naam": null,
+        "gemeente": "Alphen aan den Rijn",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "516139"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516139",
+        "afstand_tot_bekende_bp_m": 218.6,
+        "dichtstbijzijnde_bp": "Grafkapel fam. De Smeth, Alphen aan den Rijn",
+        "lon": 4.663871,
+        "lat": 52.129128
+      },
+      {
+        "naam": "v.m. Hoogduitsche Synagoge",
+        "gemeente": "'s-Gravenhage",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "459778"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/459778",
+        "afstand_tot_bekende_bp_m": 166.5,
+        "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "lon": 4.31337,
+        "lat": 52.075005
+      }
+    ]
+  }
 }
