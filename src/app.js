@@ -446,9 +446,27 @@ async function main() {
     paint: { "line-color": "#e8590c", "line-width": 1.5 },
   });
 
+  // Drie vaste stappen i.p.v. een doorlopende 50-250m-schaal (2026-08-27,
+  // wens van Joop: "afstand aanpassen naar 25, 50 en 100 meter. > 100 is
+  // niet interessant genoeg") -- een <input type="range"> ondersteunt geen
+  // onregelmatige stapgrootte, dus de slider zelf loopt over de index
+  // (0/1/2) en wordt hier vertaald naar de echte meterwaarde. rmThreshold
+  // zelf blijft overal (predicates, label, permalink) gewoon in meters.
+  const RM_THRESHOLD_STEPS = [25, 50, 100];
   let rmThreshold = 100;
   const rmThresholdEl = document.getElementById("rm-threshold");
   const rmThresholdLabelEl = document.getElementById("rm-threshold-label");
+  function rmThresholdIndexFor(meters) {
+    const exact = RM_THRESHOLD_STEPS.indexOf(meters);
+    if (exact !== -1) return exact;
+    // Onbekende waarde (bv. een oude permalink van vóór deze wijziging) --
+    // dichtstbijzijnde stap kiezen i.p.v. de slider stuk laten gaan.
+    let best = 0;
+    for (let i = 1; i < RM_THRESHOLD_STEPS.length; i++) {
+      if (Math.abs(RM_THRESHOLD_STEPS[i] - meters) < Math.abs(RM_THRESHOLD_STEPS[best] - meters)) best = i;
+    }
+    return best;
+  }
 
   const monumentenBaseFilters = {
     "monumenten-punt": null,
@@ -831,7 +849,7 @@ async function main() {
     applyFilters();
   });
   rmThresholdEl.addEventListener("input", () => {
-    rmThreshold = Number(rmThresholdEl.value);
+    rmThreshold = RM_THRESHOLD_STEPS[Number(rmThresholdEl.value)];
     rmThresholdLabelEl.textContent = `≤${rmThreshold}m`;
     updateMonumentenFilter();
     applyFilters();
@@ -965,9 +983,10 @@ async function main() {
       }
       const rmt = parseInt(params.get("rmt"), 10);
       if (Number.isFinite(rmt)) {
-        rmThreshold = rmt;
-        rmThresholdEl.value = String(rmt);
-        rmThresholdLabelEl.textContent = `≤${rmt}m`;
+        const index = rmThresholdIndexFor(rmt);
+        rmThreshold = RM_THRESHOLD_STEPS[index];
+        rmThresholdEl.value = String(index);
+        rmThresholdLabelEl.textContent = `≤${rmThreshold}m`;
       }
       const fn = params.get("fn");
       if (fn) {
