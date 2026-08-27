@@ -74,6 +74,7 @@ function renderRijksmonumentSectie(containerId, titel, data) {
     el("thead", {}, [
       el("tr", {}, [
         el("th", { text: "Naam" }),
+        el("th", { text: "Type" }),
         el("th", { text: "Gemeente" }),
         el("th", { text: "Afstand" }),
         el("th", { text: "Dichtstbijzijnde bekende bp" }),
@@ -92,6 +93,7 @@ function renderRijksmonumentSectie(containerId, titel, data) {
     tbody.appendChild(
       el("tr", {}, [
         el("td", { text: k.naam || "(geen naam)" }),
+        el("td", { text: k.functie }),
         el("td", { text: k.gemeente }),
         el("td", { text: `${fmt(k.afstand_tot_bekende_bp_m)} m` }),
         el("td", { text: k.dichtstbijzijnde_bp }),
@@ -181,6 +183,7 @@ async function main() {
 
   renderRijksmonumentSectie("kandidaten-kloosters", "Kloosters", d.kloosters);
   renderRijksmonumentSectie("kandidaten-synagoges", "Synagoges", d.synagoges);
+  renderRijksmonumentSectie("kandidaten-kapellen", "Kapellen", d.kapellen);
 
   statusEl.textContent = "";
 }

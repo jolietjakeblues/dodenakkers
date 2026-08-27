@@ -30,16 +30,18 @@ via "begraafplaats" al apart wordt gevonden. Netto voegde "beenderen"
 dus alleen een fout-positief toe en geen enkele nieuwe echte treffer.
 
 Naast de tekstzoekactie op archeologische rapporten bevat de output ook
-twee kleinere signalen op basis van rijksmonumenten (data/rce/rijksmonumenten.geojson,
-oorspronkelijke_functie_kort): kloosters en synagoges. Zelfde bbox-fetch
-kanttekening als bij de eerdere kerk-analyse (scripts/analyse_spatial.py) --
+drie kleinere signalen op basis van rijksmonumenten (data/rce/rijksmonumenten.geojson,
+oorspronkelijke_functie_kort): kloosters, synagoges en kapellen. Zelfde
+bbox-fetch kanttekening als bij de eerdere kerk-analyse (scripts/analyse_spatial.py) --
 ook hier eerst filteren op de echte ZH-gemeentegrenzen. Complexen met
 meerdere apart geregistreerde rijksmonumentnummers (bv. losse vleugels)
 worden geclusterd binnen CLUSTER_AFSTAND_M om dubbele kandidaten voor
 hetzelfde fysieke gebouw te voorkomen. Zie de losse waarschuwingsteksten
 per categorie verderop in dit bestand voor waarom "afstand tot een
 bekende begraafplaats" bij synagoges NIET hetzelfde betekent als bij
-kloosters/kerken.
+kloosters/kerken/kapellen, en voor de "kapel" gebruikt zelf ook geen
+eenduidige categorie is (Grafkapel/Bidkapel/Bedevaartkapel zitten er
+ongefilterd in).
 
 Output:
   data/generated/kandidaat_begraafplaatsen.json
@@ -88,6 +90,7 @@ HEDGE_PATTERN = re.compile(r"\bzou\w*\b|\bkunnen\b|\bkan\b|mogelijk\w*|verwacht\
 # meeste records (zie main()).
 KLOOSTER_PATTERN = re.compile(r"klooster", re.IGNORECASE)
 SYNAGOGE_PATTERN = re.compile(r"synagoge", re.IGNORECASE)
+KAPEL_PATTERN = re.compile(r"kapel", re.IGNORECASE)
 
 # Onderdelen van hetzelfde fysieke complex (bv. losse vleugels) staan vaak
 # als aparte rijksmonumentnummers geregistreerd, vlak bij elkaar --
@@ -117,6 +120,22 @@ SYNAGOGE_WAARSCHUWING = (
     "toponiemenonderzoek nodig naar de bijbehorende begraafplaats elders? Met "
     "maar een handvol synagoges in Zuid-Holland is dit bovendien een heel "
     "kleine set, niet generaliseerbaar."
+)
+
+KAPEL_WAARSCHUWING = (
+    "EXPERIMENTEEL. Kapellen (oorspronkelijke_functie_kort bevat 'kapel') uit "
+    "de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen "
+    "(zelfde bbox-rand-effect als bij kerk/klooster/synagoge). Net als bij "
+    "kloosters is een grote afstand tot een bekende begraafplaats een "
+    "aanwijzing, geen bevestiging: kapellen (vaak van een parochie of gasthuis) "
+    "hadden soms een eigen kerkhofrecht, en zijn net als kloosters vaak al "
+    "eeuwen geleden verdwenen of herbestemd. LET OP: deze categorie is minder "
+    "eenduidig dan klooster/synagoge -- 'kapel' omvat ook een handvol "
+    "'Grafkapel' (een grafmonument dat per definitie al bij een begraafplaats "
+    "hoort, dus eerder een bevestiging dan een nieuwe kandidaat) en 'Bidkapel'/"
+    "'Bedevaartkapel' (wegkapellen voor gebed/bedevaart, zonder duidelijke "
+    "begraaftraditie). Geen van beide is eruit gefilterd -- zie zelf de naam/"
+    "functie in de brontekst voordat je een rij serieus neemt."
 )
 
 
@@ -152,6 +171,7 @@ def rijksmonument_kandidaten(
             "point_rd": point_rd,
             "gemeente": gemeente,
             "naam": f["properties"].get("naam"),
+            "functie": functie,
             "rijksmonumentnummer": f["properties"].get("rijksmonumentnummer"),
             "monumentenregister_url": f["properties"].get("monumentenregister_url"),
             "lon": round(point.x, 6),
@@ -182,8 +202,10 @@ def rijksmonument_kandidaten(
         i = bp_tree.nearest(centroid_rd)
         afstand = round(centroid_rd.distance(bp_geoms[i]), 1)
         url = next((c["monumentenregister_url"] for c in cluster if c["monumentenregister_url"]), None)
+        functies = sorted({c["functie"] for c in cluster})
         results.append({
             "naam": named[0] if named else None,
+            "functie": ", ".join(functies),
             "gemeente": cluster[0]["gemeente"],
             "aantal_rijksmonumenten_in_cluster": len(cluster),
             "rijksmonumentnummers": [c["rijksmonumentnummer"] for c in cluster],
@@ -268,6 +290,9 @@ def main() -> None:
     synagoges, synagoges_buiten_zh = rijksmonument_kandidaten(
         rijksmonumenten, SYNAGOGE_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
     )
+    kapellen, kapellen_buiten_zh = rijksmonument_kandidaten(
+        rijksmonumenten, KAPEL_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
+    )
 
     out = {
         "waarschuwing": (
@@ -290,6 +315,11 @@ def main() -> None:
             "aantal_buiten_zuid_holland_bbox_rand": synagoges_buiten_zh,
             "kandidaten": synagoges,
         },
+        "kapellen": {
+            "waarschuwing": KAPEL_WAARSCHUWING,
+            "aantal_buiten_zuid_holland_bbox_rand": kapellen_buiten_zh,
+            "kandidaten": kapellen,
+        },
     }
     OUT_PATH.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -301,6 +331,7 @@ def main() -> None:
           f"{sum(1 for c in candidates if c['afstand_tot_bekende_bp_m'] > 250)} daarvan >250m van een bekende begraafplaats")
     print(f"  {len(kloosters)} kloostercomplexen in Zuid-Holland ({kloosters_buiten_zh} buiten bbox-rand)")
     print(f"  {len(synagoges)} synagoges in Zuid-Holland ({synagoges_buiten_zh} buiten bbox-rand)")
+    print(f"  {len(kapellen)} kapellen(complexen) in Zuid-Holland ({kapellen_buiten_zh} buiten bbox-rand)")
 
 
 if __name__ == "__main__":
