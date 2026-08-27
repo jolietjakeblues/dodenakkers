@@ -174,6 +174,12 @@ async function main() {
         ["Oorspronkelijke functie", "Aantal"],
         s.rijksmonumenten.top_functies_nabij_100m.map((r) => [r.functie, fmt(r.aantal)])
       ),
+      el("h3", { text: "Alle rijksmonumenten naar aard (ceo:monumentAard)" }),
+      el("p", { class: "hint", text: "Los van nabijheid tot een begraafplaats -- de volledige verdeling in de bbox. Op de kaart apart aan/uit te zetten." }),
+      table(
+        ["Aard", "Aantal"],
+        s.rijksmonumenten.aantal_naar_aard.map((r) => [r.aard, fmt(r.aantal)])
+      ),
     ]
   );
 
