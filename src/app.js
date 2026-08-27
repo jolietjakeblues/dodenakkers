@@ -27,6 +27,10 @@ const DATA = {
   // geen bbox-rand-effect (wens van Joop, 2026-08-27, na het vinden van
   // https://data.overheid.nl/dataset/32677).
   chsArcheologie: "../data/zuid-holland/chs-archeologie-provinciaal-belang.geojson",
+  // Lazy, klein (92 punten): Leons eigen KMZ met verdwenen begraafplaatsen
+  // (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py), wens
+  // van Joop (2026-08-27) nadat Leon de KMZ deelde.
+  verdwenen: "../data/generated/verdwenen-begraafplaatsen.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -449,6 +453,58 @@ async function main() {
     map.on("mouseleave", "chs-archeologie-fill", () => (map.getCanvas().style.cursor = ""));
     chsArcheologieLoaded = true;
     statusEl.textContent = `${chsArcheologie.features.length} archeologische terreinen van provinciaal belang geladen.`;
+  });
+
+  // --- Verdwenen begraafplaatsen (lazy, klein: 92 punten) -- Leons eigen
+  // KMZ (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py),
+  // andere aard dan de rest van de kaart: geen terrein meer (alleen de
+  // historische locatie), en geen automatische heuristiek zoals de
+  // kandidatenpagina maar Leons eigen kennis. Kleur onderscheidt of de
+  // locatie al herkenbaar is in de hoofddataset (grijs, minder interessant)
+  // of niet (rood, de "echt onbekende" gevallen -- wens van Joop, 2026-08-27).
+  let verdwenenLoaded = false;
+  document.getElementById("toggle-verdwenen").addEventListener("change", async (e) => {
+    updateLegendActivity();
+    syncUrl();
+    if (!e.target.checked) {
+      if (verdwenenLoaded) map.setLayoutProperty("verdwenen-punt", "visibility", "none");
+      return;
+    }
+    if (verdwenenLoaded) {
+      map.setLayoutProperty("verdwenen-punt", "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Verdwenen begraafplaatsen laden…";
+    const verdwenen = await loadJson(DATA.verdwenen);
+    map.addSource("verdwenen", { type: "geojson", data: verdwenen });
+    map.addLayer({
+      id: "verdwenen-punt",
+      type: "circle",
+      source: "verdwenen",
+      paint: {
+        "circle-radius": 5,
+        "circle-color": ["case", ["get", "in_hoofddataset"], "#adb5bd", "#c92a2a"],
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff",
+      },
+    });
+    map.on("click", "verdwenen-punt", (ev) => {
+      const p = ev.features[0].properties;
+      new maplibregl.Popup()
+        .setLngLat(ev.lngLat)
+        .setHTML(
+          popupHtml(p.naam, [
+            ["Plaats", p.plaats],
+            ["Vermelde status", p.status_vermeld],
+            ["In hoofddataset", p.in_hoofddataset ? "lijkt al bekend (naam+plaats-heuristiek)" : "niet gevonden -- mogelijk ontbrekend"],
+          ])
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "verdwenen-punt", () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", "verdwenen-punt", () => (map.getCanvas().style.cursor = ""));
+    verdwenenLoaded = true;
+    statusEl.textContent = `${verdwenen.features.length} verdwenen begraafplaatsen geladen.`;
   });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
@@ -988,6 +1044,7 @@ async function main() {
     "toggle-monumenten-archeologisch": "monarch",
     "toggle-onderzoeksgebieden": "arch",
     "toggle-chs-archeologie": "chsarch",
+    "toggle-verdwenen": "verdwenen",
   };
   const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };

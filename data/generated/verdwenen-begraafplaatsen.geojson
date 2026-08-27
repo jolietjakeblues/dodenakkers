@@ -1,0 +1,1479 @@
+{
+  "type": "FeatureCollection",
+  "waarschuwing": "Bron: Leon (data/Verdwenen.kmz), niet de automatische kandidaat-signalen op kandidaten.html. 'in_hoofddataset' is een ruwe naam+plaats-heuristiek, geen exacte koppeling -- bij twijfel staat 'false'. Punten, geen terreinpolygoon: de begraafplaats bestaat niet meer, alleen de historische locatie is bekend.",
+  "aantal_landelijk": 907,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene begraafplaats",
+        "plaats": "Alphen aan den Rijn",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.658734,
+          52.128911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gem. begraafplaats Lage Zijde",
+        "plaats": "Alphen aan den Rijn",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.675724,
+          52.119954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Blankenburg",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.253693,
+          51.891396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oud gem. kerkhof",
+        "plaats": "Bleskensgraaf",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.780804,
+          51.870814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Boskoop",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.659176,
+          52.074439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St. Pieterskerkhof",
+        "plaats": "Brielle",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.163765,
+          51.904108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Hervormde begraafplaats",
+        "plaats": "Charlois",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.460131,
+          51.894376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Heilige Geestkerkhof",
+        "plaats": "Delft",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.356184,
+          52.012396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Broerhuisstraat",
+        "plaats": "Delft",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.363401,
+          52.011901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterkerkhof Bagijnen",
+        "plaats": "Delft",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.353228,
+          52.013954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe kerkhof",
+        "plaats": "Delft",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.360513,
+          52.012188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Pestkerkhof",
+        "plaats": "Delft",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.370683,
+          52.013305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Dolhuis",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.302394,
+          52.077204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Agnietenklooster",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.305158,
+          52.076967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Barbaraklooster",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.30597,
+          52.076294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Grote kerk",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.307219,
+          52.077462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterkerkhof",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.309893,
+          52.08224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Noorderkerkhof",
+        "plaats": "Den Haag",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.300383,
+          52.078271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grote kerkhof",
+        "plaats": "Dordrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.660804,
+          51.814463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Dordrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.656295,
+          51.811172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Minderbroedersklooster",
+        "plaats": "Dordrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.665936,
+          51.813872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterbegraafplaats Amstelwijck",
+        "plaats": "Dordrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.648799,
+          51.782087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe kerkhof",
+        "plaats": "Dordrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.673268,
+          51.818027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof en begraafplaats",
+        "plaats": "Dubbeldam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.70086,
+          51.793948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Giessenburg",
+        "status_vermeld": "verdwenen",
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.888203,
+          51.852267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude kerkhof",
+        "plaats": "Gorinchem",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.973738,
+          51.829584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Gouda",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.706649,
+          52.0237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Bloemendaal",
+        "plaats": "Gouda",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.702273,
+          52.030566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude joodse begraafplaats",
+        "plaats": "Gouda",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.710003,
+          52.016132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude kerkhof",
+        "plaats": "Gouda",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.712255,
+          52.010795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Goudswaard",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.274313,
+          51.795257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Groot Ammers",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.817762,
+          51.923307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats De Struyten",
+        "plaats": "Hellevoetsluis",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.152238,
+          51.826337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Het Franse graf",
+        "plaats": "Hellevoetsluis",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.125649,
+          51.825273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterbegraafplaats Uithof Oosthoek",
+        "plaats": "Hellevoetsluis",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.157826,
+          51.847249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Hellevoetsluis",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.130092,
+          51.823144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Herkingen",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.088363,
+          51.710608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Katholieke kerkhof",
+        "plaats": "Hoogmade",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.585601,
+          52.173576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Hoogmade",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.583972,
+          52.169215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Hoogvliet",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.35866,
+          51.864493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Krimpen aan de Lek",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.62745,
+          51.890928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Armenbegraafplaats Blauwe Bolwerk",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.483931,
+          52.155519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Armenbegraafplaats Grote Bolwerk",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.498516,
+          52.16388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begijnkerkhof",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.487371,
+          52.156452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Papagaaiebolwerk (Marepoort)",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.492896,
+          52.164541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats op het Rijnsburger Bolwerk",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.486586,
+          52.16462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse armenbegraafplaats",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.487734,
+          52.164232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Hooglandse kerk",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.494221,
+          52.157577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude begraafplaats Pesthuis",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.474901,
+          52.165341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude joodse begraafplaats",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.483853,
+          52.154936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Pieterskerkhof",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.486985,
+          52.157507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Vrouwekerkhof",
+        "plaats": "Leiden",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.489592,
+          52.161149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Lekkerkerk",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.683804,
+          51.895013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplats",
+        "plaats": "Maassluis",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.248879,
+          51.922245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oud kerkhof",
+        "plaats": "Maassluis",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.250603,
+          51.921818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude RK begraafplaats",
+        "plaats": "Maassluis",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.260713,
+          51.92271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Melissant",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.067044,
+          51.769285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Moerkapelle",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.576235,
+          52.044123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene begraafplaats",
+        "plaats": "Naaldwijk",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.209378,
+          51.995492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Eerste gemeentelijke begraafplaats",
+        "plaats": "Nieuw-Lekkerland",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.683016,
+          51.890197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Nieuw-Lekkerland",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.688389,
+          51.89132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Nieuwpoort",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.869358,
+          51.934607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Johannes Stichting",
+        "plaats": "Nieuwveen",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.753038,
+          52.201887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene begraafplaats",
+        "plaats": "Noordwijkerhout",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.485196,
+          52.262981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Numansdorp",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.439546,
+          51.727804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof",
+        "plaats": "Papendrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.698545,
+          51.824401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Rockanje",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.070753,
+          51.874178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Bombazijnen kerkhof",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.48064,
+          51.920601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.505157,
+          51.924643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Begijnenhof",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482914,
+          51.922587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof van Schoonderloo",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.457602,
+          51.905741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Begraafplaats Delfshaven",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.440737,
+          51.918352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH begraafplaats",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.492751,
+          51.923369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof Overschie",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.419922,
+          51.939149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Pestkerkhof",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482483,
+          51.920528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Portugees-Israelitische begraafplaats",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.492041,
+          51.937531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Portugees-Joodse begraafplaats Crooswijk",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.495778,
+          51.93442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK begraafplaats St. Antonius Abt",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.461529,
+          51.90686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Sint Laurenskerkhof",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.485585,
+          51.921529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Zuiderkerkhof",
+        "plaats": "Rotterdam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.485482,
+          51.915525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Schiedam",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.403473,
+          51.917286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude gem. begraafplaats",
+        "plaats": "Schiedam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.403362,
+          51.917832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St. Janskerkhof",
+        "plaats": "Schiedam",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.399781,
+          51.917778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene begraafplaats",
+        "plaats": "Sliedrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.773064,
+          51.823422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude kerkhof",
+        "plaats": "Sliedrecht",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.771846,
+          51.822075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Stolwijk",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.771082,
+          51.971598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Strijen",
+        "status_vermeld": null,
+        "in_hoofddataset": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.551684,
+          51.744767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof bij Grote Kerk",
+        "plaats": "Vlaardingen",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.342722,
+          51.907964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude kerkhof",
+        "plaats": "Waarder",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.819218,
+          52.061021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oorlogsbegraafplaats Schouwweg",
+        "plaats": "Wassenaar",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.376026,
+          52.127215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof",
+        "plaats": "Wateringen",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.274984,
+          52.024208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Onbevlekt Ontvangen (kloosterbegraafplaats)",
+        "plaats": "Zoeterwoude-Rijndijk",
+        "status_vermeld": null,
+        "in_hoofddataset": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.523834,
+          52.144355
+        ]
+      }
+    }
+  ]
+}
