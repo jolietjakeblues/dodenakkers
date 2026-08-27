@@ -2039,6 +2039,7 @@
     "kandidaten": [
       {
         "naam": "De Hof",
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Dordrecht",
         "aantal_rijksmonumenten_in_cluster": 8,
         "rijksmonumentnummers": [
@@ -2059,6 +2060,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Leiden",
         "aantal_rijksmonumenten_in_cluster": 2,
         "rijksmonumentnummers": [
@@ -2073,6 +2075,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster",
         "gemeente": "Schiedam",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2086,6 +2089,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Gouda",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2099,6 +2103,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "'s-Gravenhage",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2112,6 +2117,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2125,6 +2131,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2138,6 +2145,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2151,6 +2159,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Gouda",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2164,6 +2173,7 @@
       },
       {
         "naam": "Sint Bavo",
+        "functie": "Klooster",
         "gemeente": "Noordwijk",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2177,6 +2187,7 @@
       },
       {
         "naam": "H.H. Petrus en Paulus",
+        "functie": "Klooster",
         "gemeente": "Bodegraven-Reeuwijk",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2190,6 +2201,7 @@
       },
       {
         "naam": "Sint-Agathaklooster",
+        "functie": "Klooster",
         "gemeente": "Lisse",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2203,6 +2215,7 @@
       },
       {
         "naam": null,
+        "functie": "Klooster, kloosteronderdl",
         "gemeente": "Midden-Delfland",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2222,6 +2235,7 @@
     "kandidaten": [
       {
         "naam": null,
+        "functie": "Synagoge",
         "gemeente": "Leiden",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2235,6 +2249,7 @@
       },
       {
         "naam": null,
+        "functie": "Synagoge",
         "gemeente": "Alphen aan den Rijn",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2248,6 +2263,7 @@
       },
       {
         "naam": "v.m. Hoogduitsche Synagoge",
+        "functie": "Synagoge",
         "gemeente": "'s-Gravenhage",
         "aantal_rijksmonumenten_in_cluster": 1,
         "rijksmonumentnummers": [
@@ -2258,6 +2274,195 @@
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
         "lon": 4.31337,
         "lat": 52.075005
+      }
+    ]
+  },
+  "kapellen": {
+    "waarschuwing": "EXPERIMENTEEL. Kapellen (oorspronkelijke_functie_kort bevat 'kapel') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen (zelfde bbox-rand-effect als bij kerk/klooster/synagoge). Net als bij kloosters is een grote afstand tot een bekende begraafplaats een aanwijzing, geen bevestiging: kapellen (vaak van een parochie of gasthuis) hadden soms een eigen kerkhofrecht, en zijn net als kloosters vaak al eeuwen geleden verdwenen of herbestemd. LET OP: deze categorie is minder eenduidig dan klooster/synagoge -- 'kapel' omvat ook een handvol 'Grafkapel' (een grafmonument dat per definitie al bij een begraafplaats hoort, dus eerder een bevestiging dan een nieuwe kandidaat) en 'Bidkapel'/'Bedevaartkapel' (wegkapellen voor gebed/bedevaart, zonder duidelijke begraaftraditie). Geen van beide is eruit gefilterd -- zie zelf de naam/functie in de brontekst voordat je een rij serieus neemt.",
+    "aantal_buiten_zuid_holland_bbox_rand": 5,
+    "kandidaten": [
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Delft",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "12090"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12090",
+        "afstand_tot_bekende_bp_m": 734.8,
+        "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "lon": 4.356575,
+        "lat": 52.011185
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Gouda",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "16879"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16879",
+        "afstand_tot_bekende_bp_m": 696.7,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+        "lon": 4.711019,
+        "lat": 52.013
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Gouda",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "16828"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16828",
+        "afstand_tot_bekende_bp_m": 655.8,
+        "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "lon": 4.713049,
+        "lat": 52.010665
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Alphen aan den Rijn",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "516137"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516137",
+        "afstand_tot_bekende_bp_m": 645.4,
+        "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
+        "lon": 4.667256,
+        "lat": 52.123854
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "'s-Gravenhage",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "17477"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/17477",
+        "afstand_tot_bekende_bp_m": 430.1,
+        "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "lon": 4.313942,
+        "lat": 52.080341
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Westland",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "30163"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/30163",
+        "afstand_tot_bekende_bp_m": 250.5,
+        "dichtstbijzijnde_bp": "RK begraafplaats St. Adrianus, Naaldwijk",
+        "lon": 4.209679,
+        "lat": 51.992521
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Voorne aan Zee",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "10654"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/10654",
+        "afstand_tot_bekende_bp_m": 216.6,
+        "dichtstbijzijnde_bp": "NH kerkhof, Brielle",
+        "lon": 4.163815,
+        "lat": 51.904832
+      },
+      {
+        "naam": null,
+        "functie": "Bedevaartkapel",
+        "gemeente": "Voorne aan Zee",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "518186"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/518186",
+        "afstand_tot_bekende_bp_m": 164.5,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Brielle",
+        "lon": 4.154681,
+        "lat": 51.895046
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Krimpenerwaard",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "33479"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/33479",
+        "afstand_tot_bekende_bp_m": 157.8,
+        "dichtstbijzijnde_bp": "Oud NH kerkhof, Schoonhoven",
+        "lon": 4.850607,
+        "lat": 51.947537
+      },
+      {
+        "naam": null,
+        "functie": "Bidkapel, Kapel",
+        "gemeente": "Alphen aan den Rijn",
+        "aantal_rijksmonumenten_in_cluster": 2,
+        "rijksmonumentnummers": [
+          "7494",
+          "516117"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/7494",
+        "afstand_tot_bekende_bp_m": 57.4,
+        "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
+        "lon": 4.660799,
+        "lat": 52.128107
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Leiden",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "24732"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/24732",
+        "afstand_tot_bekende_bp_m": 11.4,
+        "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
+        "lon": 4.503902,
+        "lat": 52.162545
+      },
+      {
+        "naam": null,
+        "functie": "Grafkapel",
+        "gemeente": "Gouda",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "517619"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/517619",
+        "afstand_tot_bekende_bp_m": 6.4,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+        "lon": 4.719158,
+        "lat": 52.018098
+      },
+      {
+        "naam": null,
+        "functie": "Kapel",
+        "gemeente": "Goeree-Overflakkee",
+        "aantal_rijksmonumenten_in_cluster": 1,
+        "rijksmonumentnummers": [
+          "521892"
+        ],
+        "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/521892",
+        "afstand_tot_bekende_bp_m": 0.0,
+        "dichtstbijzijnde_bp": "RK begraafplaats, Oude Tonge",
+        "lon": 4.203846,
+        "lat": 51.692351
       }
     ]
   }
