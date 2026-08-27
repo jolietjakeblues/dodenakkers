@@ -35,6 +35,22 @@ function mapLink(kandidaat) {
   return `index.html?${params.toString()}`;
 }
 
+// Compacte weergave van bebouwing_bij_punt() uit
+// scripts/compute_kandidaat_begraafplaatsen.py: aantal BAG-gebouwen binnen
+// 30m van de kandidaat, plus bouwjaar-range. Geen check gedraaid (bv. lokaal
+// met --no-kadaster-check) -> "-"; check mislukt (endpoint niet bereikbaar)
+// -> "?".
+function fmtBebouwing(b) {
+  if (!b) return "-";
+  if (b.fout) return "? (kadaster-check mislukt)";
+  const n = b.aantal_gebouwen_binnen_30m;
+  if (n === 0) return "0 (open terrein)";
+  const oud = b.oudste_bouwjaar_nabij;
+  const nieuw = b.nieuwste_bouwjaar_nabij;
+  if (oud == null) return `${fmt(n)}`;
+  return oud === nieuw ? `${fmt(n)} (${oud})` : `${fmt(n)} (${oud}-${nieuw})`;
+}
+
 // Zelfde idee, maar voor een rijksmonument (klooster/synagoge) i.p.v. een
 // archeologisch onderzoeksgebied: rijksmonumentenlaag aan i.p.v. "arch", en
 // "monalle" erbij zodat het punt zichtbaar is ongeacht de rm-afstandsslider
@@ -50,7 +66,7 @@ function mapLinkRijksmonument(kandidaat) {
   return `index.html?${params.toString()}`;
 }
 
-function renderRijksmonumentSectie(containerId, titel, data) {
+function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
   const container = document.getElementById(containerId);
   const section = el("div", { class: "stats-section" });
   section.appendChild(el("h2", { text: `${titel} (${data.kandidaten.length})` }));
@@ -67,6 +83,9 @@ function renderRijksmonumentSectie(containerId, titel, data) {
       })
     );
   }
+  if (bebouwingCheck && data.kandidaten.some((k) => k.bebouwing)) {
+    section.appendChild(el("p", { class: "hint", text: bebouwingCheck.waarschuwing }));
+  }
 
   const wrap = el("div", { class: "stats-table-wrap" });
   const t = el("table", { class: "stats-table kandidaten-table" });
@@ -79,6 +98,7 @@ function renderRijksmonumentSectie(containerId, titel, data) {
         el("th", { text: "Afstand" }),
         el("th", { text: "Dichtstbijzijnde bekende bp" }),
         el("th", { text: "Rijksmonumenten in cluster" }),
+        el("th", { text: bebouwingCheck ? `Gebouwen binnen ${bebouwingCheck.radius_m}m` : "Bebouwing" }),
         el("th", { text: "Links" }),
       ]),
     ])
@@ -98,6 +118,7 @@ function renderRijksmonumentSectie(containerId, titel, data) {
         el("td", { text: `${fmt(k.afstand_tot_bekende_bp_m)} m` }),
         el("td", { text: k.dichtstbijzijnde_bp }),
         el("td", { text: fmt(k.aantal_rijksmonumenten_in_cluster) }),
+        el("td", { text: fmtBebouwing(k.bebouwing) }),
         links,
       ])
     );
@@ -181,9 +202,9 @@ async function main() {
   section.appendChild(wrap);
   tableContainer.appendChild(section);
 
-  renderRijksmonumentSectie("kandidaten-kloosters", "Kloosters", d.kloosters);
-  renderRijksmonumentSectie("kandidaten-synagoges", "Synagoges", d.synagoges);
-  renderRijksmonumentSectie("kandidaten-kapellen", "Kapellen", d.kapellen);
+  renderRijksmonumentSectie("kandidaten-kloosters", "Kloosters", d.kloosters, d.bebouwing_check);
+  renderRijksmonumentSectie("kandidaten-synagoges", "Synagoges", d.synagoges, d.bebouwing_check);
+  renderRijksmonumentSectie("kandidaten-kapellen", "Kapellen", d.kapellen, d.bebouwing_check);
 
   statusEl.textContent = "";
 }

@@ -43,6 +43,14 @@ kloosters/kerken/kapellen, en voor de "kapel" gebruikt zelf ook geen
 eenduidige categorie is (Grafkapel/Bidkapel/Bedevaartkapel zitten er
 ongefilterd in).
 
+Voor diezelfde drie categorieen (klooster/synagoge/kapel) wordt er ook
+live tegen de Kadaster Kennisgraaf (KKG, SPARQL) gecheckt hoeveel BAG-
+gebouwen er nu binnen BEBOUWING_RADIUS_M van het punt staan (wens van
+Joop, 2026-08-27: "het kan zijn dat al gebouwd is"). Vereist netwerktoegang
+tot KKG_ENDPOINT; run met --no-kadaster-check om dit over te slaan (bv.
+zonder netwerktoegang). Zie BEBOUWING_WAARSCHUWING voor de interpretatie
+-- dit is een extra aanwijzing, geen bevestiging in welke richting dan ook.
+
 Output:
   data/generated/kandidaat_begraafplaatsen.json
 
@@ -53,10 +61,13 @@ from __future__ import annotations
 
 import json
 import re
+import sys
+import time
 from pathlib import Path
 
+import requests
 from pyproj import Transformer
-from shapely.geometry import MultiPoint, shape
+from shapely.geometry import MultiPoint, Point, shape
 from shapely.ops import transform
 from shapely.strtree import STRtree
 
@@ -67,6 +78,14 @@ PDOK_DIR = REPO_ROOT / "data" / "pdok"
 OUT_PATH = GENERATED_DIR / "kandidaat_begraafplaatsen.json"
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
+to_wgs84 = Transformer.from_crs("EPSG:28992", "EPSG:4326", always_xy=True).transform
+
+# Kadaster Kennisgraaf (KKG) SPARQL-endpoint, gebruikt om te checken of een
+# rijksmonument-kandidaat nu nog in open terrein staat of inmiddels omringd
+# is door (latere) bebouwing -- wens van Joop (2026-08-27): "het kan zijn
+# dat al gebouwd is". Zie BEBOUWING_WAARSCHUWING voor de interpretatiegrens.
+KKG_ENDPOINT = "https://api.labs.kadaster.nl/datasets/kadaster/kkg/services/kkg/sparql"
+BEBOUWING_RADIUS_M = 30
 
 # Ondubbelzinnige zelfstandige naamwoorden voor een begraving/grafveld. Zie
 # de module-docstring voor waarom "graven"/"begraven" NIET meedoen.
@@ -138,10 +157,86 @@ KAPEL_WAARSCHUWING = (
     "functie in de brontekst voordat je een rij serieus neemt."
 )
 
+BEBOUWING_WAARSCHUWING = (
+    "Extra check via de Kadaster Kennisgraaf (KKG), geen aparte kandidatenlijst: "
+    "per klooster/synagoge/kapel-kandidaat hierboven is opgezocht hoeveel "
+    "gebouwen (BAG/KKG imxgeo:Gebouw) er nu binnen 30m van het punt staan, en "
+    "wat het oudste/nieuwste bouwjaar daarvan is. GEEN gebouwen binnen 30m is "
+    "een aanwijzing dat de locatie nog open terrein is (consistent met een "
+    "bewaard gebleven kerkhof); WEL gebouwen betekent niet per se dat een "
+    "eventueel kerkhof weg is (het monument zelf staat er nog, een kerkhof "
+    "ernaast kan een tuin/plein zijn geworden zonder dat er iets gebouwd is, "
+    "of juist onder latere bebouwing verdwenen -- dat laatste kun je hier niet "
+    "van onderscheiden). Puur extra context, geen bevestiging in beide "
+    "richtingen."
+)
+
 
 def load(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
         return json.load(f)["features"]
+
+
+def run_kkg_query(sparql_query: str, max_retries: int = 4) -> list[dict]:
+    last_exc: Exception | None = None
+    for attempt in range(max_retries):
+        try:
+            resp = requests.post(
+                KKG_ENDPOINT,
+                data={"query": sparql_query},
+                headers={"Accept": "application/sparql-results+json"},
+                timeout=60,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return [
+                {var: val["value"] for var, val in binding.items()}
+                for binding in data["results"]["bindings"]
+            ]
+        except requests.RequestException as exc:
+            last_exc = exc
+            if attempt < max_retries - 1:
+                time.sleep(2 * (attempt + 1))
+    raise last_exc
+
+
+def bebouwing_bij_punt(lon: float, lat: float) -> dict:
+    """Aantal BAG/KKG-gebouwen binnen BEBOUWING_RADIUS_M van (lon, lat), plus
+    het oudste/nieuwste bouwjaar daarvan. Zie BEBOUWING_WAARSCHUWING voor de
+    interpretatie. Geeft {"fout": ...} terug i.p.v. te crashen als het
+    KKG-endpoint (tijdelijk) niet bereikbaar is -- dit is een aanvulling,
+    geen kernonderdeel van de output."""
+    point_rd = transform(to_rd, Point(lon, lat))
+    buffer_wgs84 = transform(to_wgs84, point_rd.buffer(BEBOUWING_RADIUS_M, resolution=8))
+    sparql = f"""
+PREFIX imxgeo: <http://modellen.geostandaarden.nl/def/imx-geo#>
+PREFIX ext: <https://modellen.kkg.kadaster.nl/def/imxgeo-ext#>
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?g ?bouwjaar WHERE {{
+  ?g a imxgeo:Gebouw .
+  ?g ext:maaiveldgeometrie ?geomres .
+  ?geomres geosparql:asWKT ?wkt .
+  FILTER(geof:sfIntersects(?wkt, "{buffer_wgs84.wkt}"^^geosparql:wktLiteral))
+  OPTIONAL {{ ?g imxgeo:bouwjaar ?bouwjaar }}
+}}
+"""
+    try:
+        rows = run_kkg_query(sparql)
+    except requests.RequestException as exc:
+        return {"fout": str(exc)}
+
+    gebouwen: dict[str, str | None] = {}
+    for row in rows:
+        uri = row.get("g")
+        if uri and uri not in gebouwen:
+            gebouwen[uri] = row.get("bouwjaar")
+    bouwjaren = sorted(int(j) for j in gebouwen.values() if j and j.isdigit())
+    return {
+        "aantal_gebouwen_binnen_30m": len(gebouwen),
+        "oudste_bouwjaar_nabij": bouwjaren[0] if bouwjaren else None,
+        "nieuwste_bouwjaar_nabij": bouwjaren[-1] if bouwjaren else None,
+    }
 
 
 def rijksmonument_kandidaten(
@@ -294,6 +389,18 @@ def main() -> None:
         rijksmonumenten, KAPEL_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
     )
 
+    if "--no-kadaster-check" in sys.argv:
+        print("kadaster-bebouwingscheck overgeslagen (--no-kadaster-check)")
+    else:
+        totaal = len(kloosters) + len(synagoges) + len(kapellen)
+        gedaan = 0
+        for lijst in (kloosters, synagoges, kapellen):
+            for k in lijst:
+                k["bebouwing"] = bebouwing_bij_punt(k["lon"], k["lat"])
+                gedaan += 1
+                print(f"  kadaster-check {gedaan}/{totaal}: {k.get('naam') or k['gemeente']} -> {k['bebouwing']}")
+                time.sleep(0.3)
+
     out = {
         "waarschuwing": (
             "EXPERIMENTEEL. Automatische tekstzoekactie op archeologische "
@@ -305,6 +412,10 @@ def main() -> None:
         "aantal_treffers": len(candidates) + buiten_zh,
         "aantal_buiten_zuid_holland_bbox_rand": buiten_zh,
         "kandidaten": candidates,
+        "bebouwing_check": {
+            "waarschuwing": BEBOUWING_WAARSCHUWING,
+            "radius_m": BEBOUWING_RADIUS_M,
+        },
         "kloosters": {
             "waarschuwing": KLOOSTER_WAARSCHUWING,
             "aantal_buiten_zuid_holland_bbox_rand": kloosters_buiten_zh,
