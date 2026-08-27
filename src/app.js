@@ -17,6 +17,10 @@ const DATA = {
   // Niet in de initiele Promise.all: 22.254 features / 17MB, alleen ophalen
   // zodra de gebruiker de laag daadwerkelijk aanzet (zie toggle-onderzoeksgebieden).
   onderzoeksgebieden: "../data/rce/archeologische-onderzoeksgebieden.geojson",
+  // Ook lazy (2,7MB, 50 gemeenten) -- alleen gebruikt voor de gemeente-koppeling
+  // in scripts/analyse_spatial.py, maar Joop wilde de grenzen ook als
+  // toggelbare referentielaag op de kaart (2026-08-27), zie toggle-gemeentegrenzen.
+  gemeentegrenzen: "../data/pdok/gemeenten-zuid-holland.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -295,6 +299,38 @@ async function main() {
     type: "line",
     source: "provinciegrens",
     paint: { "line-color": "#495057", "line-width": 2, "line-dasharray": [4, 2] },
+  });
+
+  // --- Gemeentegrenzen Zuid-Holland (lazy: 50 gemeenten, 2,7MB -- pas
+  // ophalen bij het aanzetten, net als de onderzoeksgebieden hieronder).
+  // Dunner/lichter dan de provinciegrens zodat ze duidelijk een ander,
+  // fijnmaziger niveau zijn i.p.v. met elkaar te wedijveren. Puur ter
+  // oriëntatie, geen klikinteractie (wens van Joop, 2026-08-27 -- de
+  // geometrie werd al gebruikt voor de gemeente-koppeling in
+  // scripts/analyse_spatial.py, dit toont 'm ook op de kaart).
+  let gemeentegrenzenLoaded = false;
+  document.getElementById("toggle-gemeentegrenzen").addEventListener("change", async (e) => {
+    updateLegendActivity();
+    syncUrl();
+    if (!e.target.checked) {
+      if (gemeentegrenzenLoaded) map.setLayoutProperty("gemeentegrenzen-lijn", "visibility", "none");
+      return;
+    }
+    if (gemeentegrenzenLoaded) {
+      map.setLayoutProperty("gemeentegrenzen-lijn", "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Gemeentegrenzen laden (2,7MB)…";
+    const gemeentegrenzen = await loadJson(DATA.gemeentegrenzen);
+    map.addSource("gemeentegrenzen", { type: "geojson", data: gemeentegrenzen });
+    map.addLayer({
+      id: "gemeentegrenzen-lijn",
+      type: "line",
+      source: "gemeentegrenzen",
+      paint: { "line-color": "#868e96", "line-width": 1, "line-dasharray": [1, 2] },
+    });
+    gemeentegrenzenLoaded = true;
+    statusEl.textContent = `${gemeentegrenzen.features.length} gemeentegrenzen geladen.`;
   });
 
   // --- Archeologische onderzoeksgebieden (lazy: 22.254 polygonen, 17MB --
@@ -829,6 +865,7 @@ async function main() {
   // houden.
   const LAYER_TOGGLE_CODES = {
     "toggle-provinciegrens": "prov",
+    "toggle-gemeentegrenzen": "gem",
     "toggle-terrein": "terrein",
     "toggle-ingangen": "ingang",
     "toggle-gezichten": "gezicht",
