@@ -1,0 +1,9 @@
+{
+  "source": "Provincie Zuid-Holland, Cultuurhistorische Hoofdstructuur (CHS)",
+  "dataset": "https://data.overheid.nl/dataset/32677-cultuurhistorische-hoofdstructuur--archeologische-terreinen-van-provinciaal-belang",
+  "endpoint": "https://geodata.zuid-holland.nl/geoserver/cultuur/wfs",
+  "layer": "cultuur:CHS_2016_ARCHEOLOGIE_PROVINCIAAL_BELANG",
+  "licentie": "Publiek domein (CC0-achtig)",
+  "retrieved_at": "2026-08-27T14:43:56.091927+00:00",
+  "aantal_features": 662
+}
