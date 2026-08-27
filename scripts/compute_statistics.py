@@ -30,6 +30,7 @@ outputbestand wegschrijven, idempotent.
 from __future__ import annotations
 
 import json
+import re
 import statistics
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -54,12 +55,38 @@ MOLEN_FUNCTIES = {
     "Ondermolen", "Bovenmolen", "Boezemmolen",
 }
 KASTEEL_FUNCTIES = {"Kasteel, buitenplaats"}
+KERK_FUNCTIES = {"Kerk", "Kerk en kerkonderdeel"}
 # Voor de "begraafplaats is zelf een rijksmonument"-tabel: functies die een
 # begraafplaats of een integraal onderdeel ervan aanduiden.
 BEGRAAFPLAATS_FUNCTIES = {
     "Begraafplaats", "Begraafplaats en -onderdelen", "Begraafplaatshek",
     "Begraafplaatsaula", "Dierenbegraafplaats",
 }
+
+# Denominatie (2026-08-27, wens van Joop: "per denominatie in de statistiek
+# (indien bekend)") -- de bron heeft geen apart denominatie-veld, dus dit is
+# een regex-classificatie op `naam` (geen ander betrouwbaar signaal
+# beschikbaar). Prioriteit maakt niet uit: geverifieerd dat geen enkele naam
+# in de dataset op 2+ patronen tegelijk matcht. Namen zonder duidelijke
+# denominatie (bv. "Gem. begraafplaats", "Algemene begraafplaats") vallen in
+# "Onbekend/algemeen" -- vaak zijn dat juist gemeentelijke/algemene
+# begraafplaatsen voor alle gezindten, geen ontbrekend gegeven.
+DENOMINATIE_PATTERNS = [
+    ("Rooms-Katholiek", r"\bR\.?\s?K\.?\b|Rooms[- ]Katholiek|Katholiek"),
+    ("Nederlands Hervormd", r"\bN\.?\s?H\.?\b|Hervormd"),
+    ("Gereformeerd", r"Gereformeerd|\bGeref\."),
+    ("Joods", r"Joods|Joodse|Isra[eë]litisch"),
+    ("Doopsgezind", r"Doopsgezind"),
+    ("Evangelisch-Luthers", r"Evangelisch[- ]?Lutherse?|\bLuthers"),
+    ("Remonstrants", r"Remonstrant"),
+]
+
+
+def classify_denominatie(naam: str) -> str:
+    for label, pattern in DENOMINATIE_PATTERNS:
+        if re.search(pattern, naam, re.IGNORECASE):
+            return label
+    return "Onbekend/algemeen"
 
 
 def load(path: Path) -> list[dict]:
@@ -78,11 +105,14 @@ def monument_point_rd(feature: dict):
     return transform(to_rd, geom)
 
 
-def nabijheid_tot_categorie(begraafplaatsen: list[dict], terrain_geoms: list, rijksmonumenten: list[dict], functies: set[str], thresholds=(250, 500, 1000)) -> dict | None:
+def nabijheid_tot_categorie(begraafplaatsen: list[dict], terrain_geoms: list, rijksmonumenten: list[dict], functies: set[str], thresholds=(25, 50, 100)) -> dict | None:
     """Voor elke begraafplaats de afstand tot het dichtstbijzijnde
     rijksmonument in `functies`, ongeacht de 250m-grens van de al
     opgeslagen rijksmonument_relations (die dekt dit niet voor bv. een
-    molen op 600m die nog steeds relevant/zichtbaar is)."""
+    molen op 600m die nog steeds relevant/zichtbaar is). Drempels op
+    25/50/100m (2026-08-27, wens van Joop: "> 100 is niet interessant
+    genoeg") -- de eerdere 250/500/1000m-drempels zaten te ruim voor een
+    zinvolle "dichtbij"-vraag."""
     cat_feats = [f for f in rijksmonumenten if f["properties"].get("oorspronkelijke_functie_kort") in functies]
     if not cat_feats:
         return None
@@ -224,9 +254,17 @@ def main() -> None:
         "lijst": [{"naam": k[0], "plaats": k[1], "functie": v} for k, v in sorted(zelf_rijksmonument.items())],
     }
 
-    # --- Nabijheid tot molen / kasteel (eigen berekening, geen 250m-grens) ---
+    # --- Nabijheid tot molen / kasteel / kerk (eigen berekening, los van de
+    # 100/250m-grenzen van rijksmonument_relations) ---
     molen = nabijheid_tot_categorie(begraafplaatsen, terrain_geoms, rijksmonumenten, MOLEN_FUNCTIES)
     kasteel = nabijheid_tot_categorie(begraafplaatsen, terrain_geoms, rijksmonumenten, KASTEEL_FUNCTIES)
+    kerk = nabijheid_tot_categorie(begraafplaatsen, terrain_geoms, rijksmonumenten, KERK_FUNCTIES)
+
+    # --- Denominatie (regex op naam, zie DENOMINATIE_PATTERNS hierboven) ---
+    denominatie_counts = Counter(classify_denominatie(f["properties"]["naam"]) for f in begraafplaatsen)
+    denominatie = {
+        "verdeling": [{"denominatie": k, "aantal": v} for k, v in denominatie_counts.most_common()],
+    }
 
     # --- Archeologie ---
     nearest_arch = sorted(
@@ -269,8 +307,10 @@ def main() -> None:
         "beschermd_gezicht": beschermd_gezicht,
         "rijksmonumenten": rijksmonumenten_stats,
         "begraafplaats_als_rijksmonument": begraafplaats_als_rijksmonument,
+        "denominatie": denominatie,
         "molen": molen,
         "kasteel": kasteel,
+        "kerk": kerk,
         "archeologie": archeologie,
         "ingangen": ingangen,
     }
@@ -278,7 +318,7 @@ def main() -> None:
     OUT_PATH.write_text(json.dumps(stats, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"statistieken geschreven -> {OUT_PATH}")
     print(f"  {basis['totaal']} begraafplaatsen, {begraafplaats_als_rijksmonument['aantal']} zelf rijksmonument, "
-          f"{molen['binnen']['500']} binnen 500m van een molen")
+          f"{molen['binnen']['100']} binnen 100m van een molen, {kerk['binnen']['100']} binnen 100m van een kerk")
 
 
 if __name__ == "__main__":

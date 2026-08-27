@@ -192,47 +192,46 @@ async function main() {
   );
 
   // --- Molen ---
-  if (s.molen) {
+  // Molen/kasteel/kerk delen dezelfde vorm (aantal_in_categorie, binnen
+  // 25/50/100m, dichtstbij-lijst, verste) -- zie nabijheid_tot_categorie()
+  // in scripts/compute_statistics.py.
+  function proximitySection(containerId, title, category, noteExtra, dichtstbijLabel) {
+    if (!category) return;
     renderSection(
-      document.getElementById("stats-molen"),
-      "Nabijheid tot een molen",
-      `${fmt(s.molen.aantal_in_categorie)} rijksmonumenten in de bbox zijn een molen (molenaarswoningen niet meegeteld).`,
+      document.getElementById(containerId),
+      title,
+      `${fmt(category.aantal_in_categorie)} rijksmonumenten in de bbox ${noteExtra}.`,
       [
         kv([
-          ["Binnen 250m van een molen", fmt(s.molen.binnen["250"])],
-          ["Binnen 500m van een molen", fmt(s.molen.binnen["500"])],
-          ["Binnen 1000m van een molen", fmt(s.molen.binnen["1000"])],
-          ["Verste begraafplaats van een molen", `${s.molen.verste.naam}, ${plaatsNaam(s.molen.verste.plaats)} (${fmt(s.molen.verste.distance_m)} m)`],
+          ["Binnen 25m", fmt(category.binnen["25"])],
+          ["Binnen 50m", fmt(category.binnen["50"])],
+          ["Binnen 100m", fmt(category.binnen["100"])],
+          ["Verste begraafplaats", `${category.verste.naam}, ${plaatsNaam(category.verste.plaats)} (${fmt(category.verste.distance_m)} m)`],
         ]),
-        el("h3", { text: "Dichtstbij een molen" }),
-        table(
-          ["Begraafplaats", "Plaats", "Afstand tot molen"],
-          s.molen.dichtstbij.map((r) => [r.naam, plaatsNaam(r.plaats), `${fmt(r.distance_m)} m`])
-        ),
-      ]
-    );
-  }
-
-  // --- Kasteel ---
-  if (s.kasteel) {
-    renderSection(
-      document.getElementById("stats-kasteel"),
-      "Nabijheid tot een kasteel of buitenplaats",
-      `${fmt(s.kasteel.aantal_in_categorie)} rijksmonumenten in de bbox zijn een kasteel/buitenplaats.`,
-      [
-        kv([
-          ["Binnen 250m", fmt(s.kasteel.binnen["250"])],
-          ["Binnen 500m", fmt(s.kasteel.binnen["500"])],
-          ["Binnen 1000m", fmt(s.kasteel.binnen["1000"])],
-        ]),
-        el("h3", { text: "Dichtstbij een kasteel/buitenplaats" }),
+        el("h3", { text: dichtstbijLabel }),
         table(
           ["Begraafplaats", "Plaats", "Afstand"],
-          s.kasteel.dichtstbij.map((r) => [r.naam, plaatsNaam(r.plaats), `${fmt(r.distance_m)} m`])
+          category.dichtstbij.map((r) => [r.naam, plaatsNaam(r.plaats), `${fmt(r.distance_m)} m`])
         ),
       ]
     );
   }
+  proximitySection("stats-molen", "Nabijheid tot een molen", s.molen, "zijn een molen (molenaarswoningen niet meegeteld)", "Dichtstbij een molen");
+  proximitySection("stats-kasteel", "Nabijheid tot een kasteel of buitenplaats", s.kasteel, "zijn een kasteel/buitenplaats", "Dichtstbij een kasteel/buitenplaats");
+  proximitySection("stats-kerk", "Nabijheid tot een kerk", s.kerk, "zijn een kerk", "Dichtstbij een kerk");
+
+  // --- Denominatie ---
+  renderSection(
+    document.getElementById("stats-denominatie"),
+    "Denominatie",
+    "Bepaald uit de naam (geen apart veld in de bron) -- \"Onbekend/algemeen\" is vaak juist een gemeentelijke/algemene begraafplaats voor alle gezindten, geen ontbrekend gegeven.",
+    [
+      table(
+        ["Denominatie", "Aantal"],
+        s.denominatie.verdeling.map((r) => [r.denominatie, fmt(r.aantal)])
+      ),
+    ]
+  );
 
   // --- Archeologie ---
   renderSection(

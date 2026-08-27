@@ -61,14 +61,13 @@
       <h3 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h3>
       <label><input type="checkbox" id="filter-niet-geruimd" /> Niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
       <label><input type="checkbox" id="filter-geruimd" /> Geruimd <span class="count" id="count-filter-geruimd"></span></label>
-      <label><input type="checkbox" id="filter-conflict" /> Statusconflict <span class="count" id="count-filter-conflict"></span></label>
 
       <h3 class="filter-group-heading">Erfgoedrelatie <span class="hint">(meerdere aanvinken versmalt de selectie)</span></h3>
       <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht <span class="count" id="count-filter-gezicht"></span></label>
       <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument <span class="count" id="count-filter-archeologie"></span></label>
       <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein <span class="count" id="count-filter-rijksmonument"></span></label>
       <div class="threshold-row">
-        <input type="range" id="rm-threshold" min="50" max="250" step="50" value="100" aria-label="Drempelafstand rijksmonument-filter" />
+        <input type="range" id="rm-threshold" min="0" max="2" step="1" value="2" aria-label="Drempelafstand rijksmonument-filter" />
         <span id="rm-threshold-label">&le;100m</span>
       </div>
       <p class="hint threshold-hint">"Annex (grenst aan)" betekent grenscontact, ongeacht deze drempel &mdash; de drempel bepaalt alleen tot hoever losstaande (niet-rakende) monumenten worden meegeteld.</p>
@@ -87,7 +86,6 @@
       <div class="legend-item" data-layer="toggle-gemeentegrenzen"><span class="swatch outline" style="border-color:#868e96;border-style:dotted"></span> Gemeentegrenzen</div>
       <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#40c057"></span> Niet-geruimd</div>
       <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#a9713f"></span> Geruimd</div>
-      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#ffd43b;border:2px solid #e03131"></span> Statusconflict</div>
       <div class="legend-item" data-layer="toggle-ingangen"><span class="swatch dot" style="background:#e64980"></span> Ingang</div>
       <div class="legend-item" data-layer="toggle-gezichten"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
       <div class="legend-item" data-layer="toggle-monumenten"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd, punt)</div>
