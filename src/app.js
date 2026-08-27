@@ -702,26 +702,28 @@ async function main() {
   // je huidige andere selectie").
   //
   // Twee groepen met andere combinatielogica:
-  // - STATUS_FILTER_IDS zijn drie elkaar uitsluitende toestanden van hetzelfde
-  //   veld (geruimd/niet-geruimd/statusconflict) -- samen aanvinken moet de
-  //   resultaten VERBREDEN (OR/unie), niet versmallen. Met AND is de
-  //   combinatie altijd tegenstrijdig (bv. geruimd === false EN === true) en
-  //   levert dat altijd 0 resultaten op.
+  // - STATUS_FILTER_IDS zijn elkaar uitsluitende toestanden van hetzelfde veld
+  //   (geruimd/niet-geruimd) -- samen aanvinken moet de resultaten VERBREDEN
+  //   (OR/unie), niet versmallen. Met AND is de combinatie altijd
+  //   tegenstrijdig (geruimd === false EN === true) en levert dat altijd 0
+  //   resultaten op. Een losse "statusconflict"-optie stond hier ooit ook in,
+  //   maar is verwijderd (2026-08-27, wens van Joop) nu de bron 0 conflicten
+  //   meer heeft -- status_conflict blijft wel als dataveld/kleur bestaan
+  //   (zie terrein-fill hieronder) als stille vangnet, mocht een toekomstige
+  //   bronupdate er weer een introduceren.
   // - HERITAGE_FILTER_IDS zijn onafhankelijke facetten die een begraafplaats
   //   allemaal tegelijk kan hebben, dus die blijven VERSMALLEN (AND).
-  const STATUS_FILTER_IDS = ["filter-niet-geruimd", "filter-geruimd", "filter-conflict"];
+  const STATUS_FILTER_IDS = ["filter-niet-geruimd", "filter-geruimd"];
   const HERITAGE_FILTER_IDS = ["filter-gezicht", "filter-archeologie", "filter-rijksmonument"];
   const FILTER_IDS = [...STATUS_FILTER_IDS, ...HERITAGE_FILTER_IDS];
   const STATUS_FILTER_EXPR = {
     "filter-niet-geruimd": ["==", ["get", "geruimd"], false],
     "filter-geruimd": ["==", ["get", "geruimd"], true],
-    "filter-conflict": ["==", ["get", "status_conflict"], true],
   };
   function terreinPredicates() {
     return {
       "filter-niet-geruimd": (p) => p.geruimd === false,
       "filter-geruimd": (p) => p.geruimd === true,
-      "filter-conflict": (p) => p.status_conflict === true,
       "filter-gezicht": (p) => p.in_beschermd_gezicht !== "none",
       "filter-archeologie": (p) => p.archeologische_rm_count > 0,
       "filter-rijksmonument": (p) => (p.rijksmonument_relations || []).some((r) => r.distance_m <= rmThreshold),
@@ -873,7 +875,7 @@ async function main() {
     "toggle-monumenten-alle": "monalle",
     "toggle-onderzoeksgebieden": "arch",
   };
-  const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g", "filter-conflict": "sc" };
+  const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };
 
   function currentStateParams() {

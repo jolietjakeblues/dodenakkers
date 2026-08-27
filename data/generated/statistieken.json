@@ -699,12 +699,36 @@
       }
     ]
   },
+  "denominatie": {
+    "verdeling": [
+      {
+        "denominatie": "Onbekend/algemeen",
+        "aantal": 278
+      },
+      {
+        "denominatie": "Nederlands Hervormd",
+        "aantal": 92
+      },
+      {
+        "denominatie": "Rooms-Katholiek",
+        "aantal": 50
+      },
+      {
+        "denominatie": "Joods",
+        "aantal": 26
+      },
+      {
+        "denominatie": "Gereformeerd",
+        "aantal": 2
+      }
+    ]
+  },
   "molen": {
     "aantal_in_categorie": 318,
     "binnen": {
-      "250": 24,
-      "500": 81,
-      "1000": 175
+      "25": 1,
+      "50": 4,
+      "100": 8
     },
     "dichtstbij": [
       {
@@ -778,9 +802,9 @@
   "kasteel": {
     "aantal_in_categorie": 118,
     "binnen": {
-      "250": 12,
-      "500": 27,
-      "1000": 52
+      "25": 1,
+      "50": 3,
+      "100": 8
     },
     "dichtstbij": [
       {
@@ -849,6 +873,82 @@
       "plaats": "Ooltgensplaat",
       "monument_naam": "Kasteel Rhoon",
       "distance_m": 20277.2
+    }
+  },
+  "kerk": {
+    "aantal_in_categorie": 499,
+    "binnen": {
+      "25": 125,
+      "50": 141,
+      "100": 151
+    },
+    "dichtstbij": [
+      {
+        "naam": "RK St. Petrus Banden",
+        "plaats": "Den Haag",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "Vm. kerkhof Nieuwe Kerk",
+        "plaats": "Den Haag",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Rijnsburg",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Lisse",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Koudekerk aan den Rijn",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof Oude Toren",
+        "plaats": "Warmond",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "RK kerkhof De Goede Herder",
+        "plaats": "Wassenaar",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Zoeterwoude-Dorp",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "Oude alg. kerkhof",
+        "plaats": "Zoetermeer",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Katwijk",
+        "monument_naam": null,
+        "distance_m": 0.0
+      }
+    ],
+    "verste": {
+      "naam": "Oude gem. begraafplaats",
+      "plaats": "Zuid-Beijerland",
+      "monument_naam": null,
+      "distance_m": 5492.2
     }
   },
   "archeologie": {
