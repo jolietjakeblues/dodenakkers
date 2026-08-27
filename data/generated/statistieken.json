@@ -1,0 +1,662 @@
+{
+  "basis": {
+    "totaal": 448,
+    "totaal_ha": 519.6,
+    "niet_geruimd": 401,
+    "geruimd": 47,
+    "geruimd_pct": 10.5,
+    "statusconflict": 0,
+    "gemiddelde_m2": 11597.4,
+    "mediaan_m2": 3177.5,
+    "grootste": {
+      "naam": "Gem. begraafplaats Hofwijk",
+      "plaats": "Rotterdam",
+      "m2": 268823.91,
+      "ha": 26.8824
+    },
+    "kleinste": {
+      "naam": "Grafmonument juffrouw Begeer",
+      "plaats": "Voorschoten",
+      "m2": 13.49
+    }
+  },
+  "per_plaats": {
+    "meeste_begraafplaatsen": [
+      {
+        "plaats": "Rotterdam",
+        "aantal": 16,
+        "geruimd": 0,
+        "totaal_m2": 891008.0
+      },
+      {
+        "plaats": "Den Haag",
+        "aantal": 11,
+        "geruimd": 0,
+        "totaal_m2": 485490.0
+      },
+      {
+        "plaats": "Wassenaar",
+        "aantal": 7,
+        "geruimd": 0,
+        "totaal_m2": 45497.0
+      },
+      {
+        "plaats": "Katwijk aan den Rijn",
+        "aantal": 6,
+        "geruimd": 0,
+        "totaal_m2": 15081.0
+      },
+      {
+        "plaats": "Rijswijk",
+        "aantal": 6,
+        "geruimd": 0,
+        "totaal_m2": 83857.0
+      },
+      {
+        "plaats": "Zwijndrecht",
+        "aantal": 6,
+        "geruimd": 0,
+        "totaal_m2": 95167.0
+      },
+      {
+        "plaats": "Delft",
+        "aantal": 5,
+        "geruimd": 0,
+        "totaal_m2": 121620.0
+      },
+      {
+        "plaats": "Lisse",
+        "aantal": 5,
+        "geruimd": 0,
+        "totaal_m2": 41380.0
+      },
+      {
+        "plaats": "Noordwijkerhout",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 14764.0
+      },
+      {
+        "plaats": "Schoonhoven",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 14688.0
+      }
+    ],
+    "meeste_geruimd": [
+      {
+        "plaats": "Noordwijkerhout",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 14764.0
+      },
+      {
+        "plaats": "Schoonhoven",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 14688.0
+      },
+      {
+        "plaats": "Haastrecht",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 4183.0
+      },
+      {
+        "plaats": "Alphen aan den Rijn",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 75422.0
+      },
+      {
+        "plaats": "Moordrecht",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 12662.0
+      },
+      {
+        "plaats": "Zuidland",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 16737.0
+      },
+      {
+        "plaats": "Monster",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 15765.0
+      },
+      {
+        "plaats": "Brielle",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 38940.0
+      },
+      {
+        "plaats": "Ridderkerk",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 92021.0
+      },
+      {
+        "plaats": "Hellevoetsluis",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 41703.0
+      }
+    ],
+    "volledig_geruimd": [],
+    "grootste_totale_oppervlakte": [
+      {
+        "plaats": "Rotterdam",
+        "aantal": 16,
+        "geruimd": 0,
+        "totaal_m2": 891008.0
+      },
+      {
+        "plaats": "Den Haag",
+        "aantal": 11,
+        "geruimd": 0,
+        "totaal_m2": 485490.0
+      },
+      {
+        "plaats": "Dordrecht",
+        "aantal": 4,
+        "geruimd": 0,
+        "totaal_m2": 122064.0
+      },
+      {
+        "plaats": "Delft",
+        "aantal": 5,
+        "geruimd": 0,
+        "totaal_m2": 121620.0
+      },
+      {
+        "plaats": "Leiden",
+        "aantal": 3,
+        "geruimd": 0,
+        "totaal_m2": 112980.0
+      },
+      {
+        "plaats": "Schiedam",
+        "aantal": 3,
+        "geruimd": 1,
+        "totaal_m2": 104108.0
+      },
+      {
+        "plaats": "Heinenoord",
+        "aantal": 3,
+        "geruimd": 1,
+        "totaal_m2": 102678.0
+      },
+      {
+        "plaats": "Vlaardingen",
+        "aantal": 4,
+        "geruimd": 0,
+        "totaal_m2": 96660.0
+      },
+      {
+        "plaats": "Zoetermeer",
+        "aantal": 4,
+        "geruimd": 0,
+        "totaal_m2": 95297.0
+      },
+      {
+        "plaats": "Zwijndrecht",
+        "aantal": 6,
+        "geruimd": 0,
+        "totaal_m2": 95167.0
+      }
+    ]
+  },
+  "beschermd_gezicht": {
+    "totaal": 48,
+    "pct": 10.7,
+    "top_plaatsen": [
+      {
+        "plaats": "Wassenaar",
+        "aantal": 7
+      },
+      {
+        "plaats": "Den Haag",
+        "aantal": 4
+      },
+      {
+        "plaats": "Schoonhoven",
+        "aantal": 4
+      },
+      {
+        "plaats": "Haastrecht",
+        "aantal": 3
+      },
+      {
+        "plaats": "Geervliet",
+        "aantal": 2
+      },
+      {
+        "plaats": "Delft",
+        "aantal": 2
+      },
+      {
+        "plaats": "Leiden",
+        "aantal": 2
+      },
+      {
+        "plaats": "Warmond",
+        "aantal": 2
+      },
+      {
+        "plaats": "Vlaardingen",
+        "aantal": 2
+      },
+      {
+        "plaats": "Goedereede",
+        "aantal": 2
+      }
+    ]
+  },
+  "rijksmonumenten": {
+    "gemiddeld_binnen_100m": 2.38,
+    "meeste_binnen_100m": [
+      {
+        "naam": "NH kerkhof",
+        "plaats": "Brielle",
+        "aantal_100m": 72
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Goedereede",
+        "aantal_100m": 47
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Sommelsdijk",
+        "aantal_100m": 44
+      },
+      {
+        "naam": "Oud NH kerkhof",
+        "plaats": "Schoonhoven",
+        "aantal_100m": 39
+      },
+      {
+        "naam": "NH kerkhof",
+        "plaats": "Heenvliet",
+        "aantal_100m": 30
+      },
+      {
+        "naam": "Vm. NH kerkhof",
+        "plaats": "Maasland",
+        "aantal_100m": 26
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats Kerkhoflaan",
+        "plaats": "Den Haag",
+        "aantal_100m": 23
+      },
+      {
+        "naam": "RK St. Petrus Banden",
+        "plaats": "Den Haag",
+        "aantal_100m": 23
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Middelharnis",
+        "aantal_100m": 21
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Wassenaar",
+        "aantal_100m": 20
+      }
+    ],
+    "zonder_rijksmonument_binnen_250m": 132,
+    "top_functies_nabij_100m": [
+      {
+        "functie": "Woonhuis",
+        "aantal": 413
+      },
+      {
+        "functie": "Kerk",
+        "aantal": 146
+      },
+      {
+        "functie": "Boerderij",
+        "aantal": 59
+      },
+      {
+        "functie": "Werk-woonhuis",
+        "aantal": 43
+      },
+      {
+        "functie": "Kerk en kerkonderdeel",
+        "aantal": 42
+      },
+      {
+        "functie": "Begraafplaats en -onderdelen",
+        "aantal": 19
+      },
+      {
+        "functie": "Begraafplaats",
+        "aantal": 18
+      },
+      {
+        "functie": "Pastorie",
+        "aantal": 15
+      },
+      {
+        "functie": "Tuin, park en plantsoen",
+        "aantal": 14
+      },
+      {
+        "functie": "Baarhuisje",
+        "aantal": 12
+      }
+    ]
+  },
+  "begraafplaats_als_rijksmonument": {
+    "aantal": 22,
+    "lijst": [
+      {
+        "naam": "Begraafplaats Oud-Rijswijk",
+        "plaats": "Rijswijk",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Begraafplaats Wilsveen",
+        "plaats": "Leidschendam",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Krimpen aan de Lek",
+        "functie": "Begraafplaatshek"
+      },
+      {
+        "naam": "Gem. begraafplaats Crooswijk",
+        "plaats": "Rotterdam",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Gem. begraafplaats De Essenhof",
+        "plaats": "Dordrecht",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Gem. kerkhof",
+        "plaats": "Abbenbroek",
+        "functie": "Begraafplaatshek"
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Hazerswoude Dorp",
+        "functie": "Begraafplaatsaula"
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Noordwijk",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Schoonhoven",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats Jaffa",
+        "plaats": "Delft",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats Kerkhoflaan",
+        "plaats": "Den Haag",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Den Haag",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Gorinchem",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Wassenaar",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Joodse begraafplaats Het Toepad",
+        "plaats": "Rotterdam",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "NH Kerkhof Hilligersberg",
+        "plaats": "Rotterdam",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "Oude Gemeentelijke begraafplaats",
+        "plaats": "Gorinchem",
+        "functie": "Begraafplaatshek"
+      },
+      {
+        "naam": "Oude gem. begraafplaats Haagpoort",
+        "plaats": "Delft",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "RK Kerkhof St. Willibrordus",
+        "plaats": "Wassenaar",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "RK begraafplaats Schiedam",
+        "plaats": "Schiedam",
+        "functie": "Begraafplaats"
+      },
+      {
+        "naam": "Ter Navolging",
+        "plaats": "Den Haag",
+        "functie": "Begraafplaats en -onderdelen"
+      },
+      {
+        "naam": "Vm. kerkhof Nieuwe Kerk",
+        "plaats": "Den Haag",
+        "functie": "Begraafplaats en -onderdelen"
+      }
+    ]
+  },
+  "molen": {
+    "aantal_in_categorie": 318,
+    "binnen": {
+      "250": 24,
+      "500": 81,
+      "1000": 175
+    },
+    "dichtstbij": [
+      {
+        "naam": "Gemeentelijke begraafplaats Beukenhage",
+        "plaats": "'s-Gravenzande",
+        "monument_naam": null,
+        "distance_m": 15.2
+      },
+      {
+        "naam": "St. Barbarabegraafplaats",
+        "plaats": "Maassluis",
+        "monument_naam": null,
+        "distance_m": 32.3
+      },
+      {
+        "naam": "Gem. begraafplaats Emmaus",
+        "plaats": "Vlaardingen",
+        "monument_naam": null,
+        "distance_m": 32.7
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Ouddorp",
+        "monument_naam": "De Zwaan",
+        "distance_m": 35.5
+      },
+      {
+        "naam": "Gem. begraafplaats Molenlande",
+        "plaats": "Monster",
+        "monument_naam": null,
+        "distance_m": 63.7
+      },
+      {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Hellevoetsluis",
+        "monument_naam": "Zeezicht",
+        "distance_m": 73.2
+      },
+      {
+        "naam": "RK Kerkhof",
+        "plaats": "Achthuizen",
+        "monument_naam": null,
+        "distance_m": 80.5
+      },
+      {
+        "naam": "NH kerkhof Loosduinen",
+        "plaats": "Den Haag",
+        "monument_naam": "De Korenaer",
+        "distance_m": 90.6
+      },
+      {
+        "naam": "RK begraafplaats",
+        "plaats": "Oude Tonge",
+        "monument_naam": null,
+        "distance_m": 118.2
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Goudriaan",
+        "monument_naam": null,
+        "distance_m": 118.5
+      }
+    ],
+    "verste": {
+      "naam": "Alg. begraafplaats",
+      "plaats": "Strijensas",
+      "monument_naam": "De Hoop",
+      "distance_m": 7638.4
+    }
+  },
+  "kasteel": {
+    "aantal_in_categorie": 118,
+    "binnen": {
+      "250": 12,
+      "500": 27,
+      "1000": 52
+    },
+    "dichtstbij": [
+      {
+        "naam": "NH Kerkhof Hilligersberg",
+        "plaats": "Rotterdam",
+        "monument_naam": null,
+        "distance_m": 0.0
+      },
+      {
+        "naam": "NH kerkhof",
+        "plaats": "Heenvliet",
+        "monument_naam": null,
+        "distance_m": 26.5
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Wassenaar",
+        "monument_naam": null,
+        "distance_m": 48.1
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Schelluinen",
+        "monument_naam": "Schelluinen",
+        "distance_m": 56.8
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Koudekerk aan den Rijn",
+        "monument_naam": null,
+        "distance_m": 63.5
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Rhoon",
+        "monument_naam": "Kasteel Rhoon",
+        "distance_m": 85.5
+      },
+      {
+        "naam": "Gem. kerkhof",
+        "plaats": "Nieuwkoop",
+        "monument_naam": null,
+        "distance_m": 85.5
+      },
+      {
+        "naam": "Gem. begraafplaats Vredehof",
+        "plaats": "Bodegraven",
+        "monument_naam": "Rhodus",
+        "distance_m": 92.0
+      },
+      {
+        "naam": "Grafmonument juffrouw Begeer",
+        "plaats": "Voorschoten",
+        "monument_naam": "Huis Berbice",
+        "distance_m": 155.2
+      },
+      {
+        "naam": "Gem. kerkhof",
+        "plaats": "Rijswijk",
+        "monument_naam": null,
+        "distance_m": 195.9
+      }
+    ],
+    "verste": {
+      "naam": "Oud NH Kerkhof",
+      "plaats": "Ooltgensplaat",
+      "monument_naam": "Kasteel Rhoon",
+      "distance_m": 20277.2
+    }
+  },
+  "archeologie": {
+    "overlapt_aantal": 0,
+    "dichtstbij": [
+      {
+        "naam": "NH kerkhof",
+        "plaats": "Heenvliet",
+        "distance_m": 6.2
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Groot-Ammers",
+        "distance_m": 13.6
+      },
+      {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Wateringen",
+        "distance_m": 27.6
+      },
+      {
+        "naam": "NH Kerkhof Oude Toren",
+        "plaats": "Warmond",
+        "distance_m": 46.9
+      },
+      {
+        "naam": "Militair Ereveld",
+        "plaats": "Valkenburg",
+        "distance_m": 65.4
+      }
+    ]
+  },
+  "ingangen": {
+    "gedeeld_aantal": 2,
+    "gemiddelde_afstand_m": 3.9,
+    "verste": {
+      "naam": "RK begraafplaats",
+      "plaats": "Nootdorp",
+      "afstand_m": 153.61
+    }
+  }
+}
