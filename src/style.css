@@ -440,3 +440,66 @@ body.stats-page {
     height: 32px;
   }
 }
+
+/* --- Kandidaat-begraafplaatsen (src/kandidaten.html, EXPERIMENTEEL) --- */
+
+.kandidaten-page #stats {
+  max-width: 1200px;
+}
+
+.warning-box {
+  background: #fff9db;
+  border: 2px solid #f08c00;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.warning-box strong {
+  display: block;
+  font-size: 15px;
+  color: #e8590c;
+  margin-bottom: 6px;
+}
+
+.warning-box ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.warning-box li {
+  margin: 4px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-concreet {
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+
+.badge-onzeker {
+  background: #fff3bf;
+  color: #997404;
+}
+
+.kandidaten-table .fragment-cell {
+  white-space: normal;
+  max-width: 420px;
+  font-style: italic;
+  color: #555;
+}
+
+.kandidaten-table td,
+.kandidaten-table th {
+  vertical-align: top;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Kandidaat-begraafplaatsen (experimenteel) - Dodenakkers Zuid-Holland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="stats-page kandidaten-page">
+  <div id="stats">
+    <header class="stats-header">
+      <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
+      <div>
+        <h1>Kandidaat-begraafplaatsen</h1>
+        <p class="subtitle">Experimenteel - <a href="index.html">&larr; kaart</a> &middot; <a href="statistieken.html">Statistieken</a></p>
+      </div>
+    </header>
+
+    <div class="warning-box">
+      <strong>Dit is een experiment, geen bevestigde lijst.</strong>
+      <p>
+        Deze pagina zoekt automatisch op tekst in de omschrijvingen van 22.254 archeologische
+        onderzoeksrapporten (dezelfde data als de "Archeologische onderzoeksgebieden"-laag op de kaart) naar
+        woorden als "kerkhof", "begraafplaats", "grafveld" of "crematiegraf", en meet daarna de afstand tot
+        de dichtstbijzijnde <em>al bekende</em> begraafplaats in onze hoofddataset. Niets hieronder is
+        geverifieerd. Bekende beperkingen:
+      </p>
+      <ul>
+        <li>"Kerkhof" is ook een achternaam - onderzoekers heten soms zelf Kerkhof, dat levert een valse
+          treffer op.</li>
+        <li>Archeologische rapporten schrijven vaak over wat er <em>zou kunnen</em> zijn, niet alleen over
+          wat gevonden is - de kolom "Zekerheid" probeert dat onderscheid ruw te maken (geen hedge-taal als
+          "mogelijk"/"zou"/"verwacht" in het fragment), maar is zelf ook maar een woordenboek-trucje.</li>
+        <li>Een "grafveld" kan uit de prehistorie of Romeinse tijd stammen - interessant archeologisch, maar
+          niet per se een begraafplaats zoals Leons dataset die verzamelt.</li>
+        <li>Ver van een bekende begraafplaats liggen kan ook gewoon betekenen: geen begraafplaats in de buurt,
+          punt.</li>
+      </ul>
+      <p>Elke rij moet je zelf tegen de brontekst controleren (link "bron") voordat je er iets aan verbindt.</p>
+    </div>
+
+    <section id="kandidaten-samenvatting"></section>
+    <section id="kandidaten-tabel"></section>
+
+    <p id="stats-status" class="hint"></p>
+  </div>
+
+  <script src="kandidaten.js"></script>
+</body>
+</html>
