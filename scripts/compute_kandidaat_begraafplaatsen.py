@@ -23,6 +23,12 @@ graven"), en "begraven bodem/A-horizont" is een geologische standaardterm
 (begraven bodemlaag), geen menselijke begraving. Beide bleken bij
 handmatige steekproef overwegend fout-positief.
 
+"beenderen" is om dezelfde reden UITGESLOTEN: in de dataset (22.254
+rapporten) komt de term maar 2x voor, waarvan 1x "de beenderen van een
+onvolgroeid rund" (dierlijk, geen mens) en 1x "menselijke botten" die
+via "begraafplaats" al apart wordt gevonden. Netto voegde "beenderen"
+dus alleen een fout-positief toe en geen enkele nieuwe echte treffer.
+
 Output:
   data/generated/kandidaat_begraafplaatsen.json
 
@@ -52,7 +58,7 @@ to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transfor
 # de module-docstring voor waarom "graven"/"begraven" NIET meedoen.
 GRAFTERM_PATTERN = re.compile(
     r"begraafplaats|kerkhof|grafveld|grafkuil|grafheuvel|skeletresten|"
-    r"crematieresten|crematiegraf|inhumatiegraf|beenderen|necropool|"
+    r"crematieresten|crematiegraf|inhumatiegraf|necropool|"
     r"grafmonument|dodenakker|urnenveld",
     re.IGNORECASE,
 )

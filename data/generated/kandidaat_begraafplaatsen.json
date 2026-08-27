@@ -1,22 +1,9 @@
 {
   "waarschuwing": "EXPERIMENTEEL. Automatische tekstzoekactie op archeologische onderzoeksrapporten, geen verificatie. Elke kandidaat moet handmatig beoordeeld worden voordat er conclusies aan worden verbonden. Zie scripts/compute_kandidaat_begraafplaatsen.py.",
   "aantal_onderzoeksgebieden_doorzocht": 22254,
-  "aantal_treffers": 200,
+  "aantal_treffers": 199,
   "aantal_buiten_zuid_holland_bbox_rand": 43,
   "kandidaten": [
-    {
-      "objectnummer": "10126884",
-      "registratiedatum": "2019-04-29",
-      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10126884",
-      "gemeente": "Kaag en Braassem",
-      "gevonden_term": "beenderen",
-      "fragment": "...e put is een concentratie botmateriaal aangetroffen. Dit betreffen de beenderen van een onvolgroeid rund, waarbij naar schatting in het veld een half...",
-      "zekerheid": "concreet genoemd",
-      "afstand_tot_bekende_bp_m": 2227.1,
-      "dichtstbijzijnde_bp": "H Adrianusbegraafplaats, Langeraar",
-      "lon": 4.727536,
-      "lat": 52.210807
-    },
     {
       "objectnummer": "10475645",
       "registratiedatum": "2025-12-17",
