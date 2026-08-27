@@ -66,6 +66,79 @@ function mapLinkRijksmonument(kandidaat) {
   return `index.html?${params.toString()}`;
 }
 
+// Zelfde idee, maar voor een CHS-archeologieterrein: de nieuwe
+// provinciale kaartlaag aan i.p.v. "arch" (zie toggle-chs-archeologie in
+// app.js, code "chsarch").
+function mapLinkChs(kandidaat) {
+  const params = new URLSearchParams({
+    lon: kandidaat.lon.toFixed(5),
+    lat: kandidaat.lat.toFixed(5),
+    z: "16.00",
+    lyr: "terrein,ingang,gezicht,chsarch",
+  });
+  return `index.html?${params.toString()}`;
+}
+
+function renderChsArcheologieSectie(data) {
+  const container = document.getElementById("kandidaten-chs-archeologie");
+  const section = el("div", { class: "stats-section" });
+  section.appendChild(el("h2", { text: `CHS-archeologie: kandidaten (${data.kandidaten.length})` }));
+  section.appendChild(
+    el("div", { class: "warning-box" }, [
+      el("p", { text: data.waarschuwing }),
+    ])
+  );
+  section.appendChild(
+    el("p", {
+      class: "hint",
+      text: `${fmt(data.aantal_terreinen_doorzocht)} archeologische terreinen van provinciaal belang doorzocht, gesorteerd: concreet genoemd eerst, dan verste afstand tot een bekende begraafplaats eerst.`,
+    })
+  );
+
+  const wrap = el("div", { class: "stats-table-wrap" });
+  const t = el("table", { class: "stats-table kandidaten-table" });
+  t.appendChild(
+    el("thead", {}, [
+      el("tr", {}, [
+        el("th", { text: "Zekerheid" }),
+        el("th", { text: "Afstand" }),
+        el("th", { text: "Gemeente" }),
+        el("th", { text: "Toponiem" }),
+        el("th", { text: "Datering" }),
+        el("th", { text: "Veld" }),
+        el("th", { text: "Fragment" }),
+        el("th", { text: "Dichtstbijzijnde bekende bp" }),
+        el("th", { text: "Links" }),
+      ]),
+    ])
+  );
+  const tbody = el("tbody");
+  for (const k of data.kandidaten) {
+    const zekerheidBadge = el("span", {
+      class: k.zekerheid === "concreet genoemd" ? "badge badge-concreet" : "badge badge-onzeker",
+      text: k.zekerheid,
+    });
+    const links = el("td", {}, [el("a", { href: mapLinkChs(k), text: "kaart" })]);
+    tbody.appendChild(
+      el("tr", {}, [
+        el("td", {}, [zekerheidBadge]),
+        el("td", { text: `${fmt(k.afstand_tot_bekende_bp_m)} m` }),
+        el("td", { text: k.gemeente }),
+        el("td", { text: k.toponiem }),
+        el("td", { text: k.datering }),
+        el("td", { text: k.gevonden_veld }),
+        el("td", { class: "fragment-cell", text: k.fragment }),
+        el("td", { text: k.dichtstbijzijnde_bp }),
+        links,
+      ])
+    );
+  }
+  t.appendChild(tbody);
+  wrap.appendChild(t);
+  section.appendChild(wrap);
+  container.appendChild(section);
+}
+
 function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
   const container = document.getElementById(containerId);
   const section = el("div", { class: "stats-section" });
@@ -205,6 +278,7 @@ async function main() {
   renderRijksmonumentSectie("kandidaten-kloosters", "Kloosters", d.kloosters, d.bebouwing_check);
   renderRijksmonumentSectie("kandidaten-synagoges", "Synagoges", d.synagoges, d.bebouwing_check);
   renderRijksmonumentSectie("kandidaten-kapellen", "Kapellen", d.kapellen, d.bebouwing_check);
+  renderChsArcheologieSectie(d.chs_archeologie);
 
   statusEl.textContent = "";
 }
