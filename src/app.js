@@ -549,6 +549,7 @@ async function main() {
       .setHTML(
         popupHtml(p.naam, [
           ["Plaats", p.plaats],
+          ["Gemeente", p.gemeente],
           ["Geruimd", p.status_conflict ? "onbekend (statusconflict)" : p.geruimd ? "ja" : "nee"],
           ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
           ["Omtrek", `${p.omtrek_m} m`],

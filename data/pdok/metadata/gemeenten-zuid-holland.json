@@ -1,0 +1,8 @@
+{
+  "source": "PDOK bestuurlijkegebieden WFS (Kadaster)",
+  "endpoint": "https://service.pdok.nl/kadaster/bestuurlijkegebieden/wfs/v1_0",
+  "layer": "bestuurlijkegebieden:Gemeentegebied",
+  "retrieved_at": "2026-08-27T06:11:36.909836+00:00",
+  "filter": "ligtInProvincieNaam == 'Zuid-Holland' (client-side, zie docstring)",
+  "aantal_gemeenten": 50
+}
