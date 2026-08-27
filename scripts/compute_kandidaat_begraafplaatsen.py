@@ -51,6 +51,14 @@ tot KKG_ENDPOINT; run met --no-kadaster-check om dit over te slaan (bv.
 zonder netwerktoegang). Zie BEBOUWING_WAARSCHUWING voor de interpretatie
 -- dit is een extra aanwijzing, geen bevestiging in welke richting dan ook.
 
+Vierde bron: data/zuid-holland/chs-archeologie-provinciaal-belang.geojson
+(Provincie Zuid-Holland CHS, zie scripts/fetch_chs_archeologie.py), 662
+"archeologische terreinen van provinciaal belang", zelfde grafterm-patroon
+maar gezocht in de kortere Toponiem/WAARDE/Beschrijving-velden i.p.v.
+lange rapporttekst. Geen bbox-rand-effect (provinciale dienst, dekt per
+definitie alleen Zuid-Holland) dus geen gemeentegrenzen-filter nodig hier.
+Zie CHS_ARCHEOLOGIE_WAARSCHUWING voor de kanttekeningen.
+
 Output:
   data/generated/kandidaat_begraafplaatsen.json
 
@@ -75,6 +83,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 RCE_DIR = REPO_ROOT / "data" / "rce"
 PDOK_DIR = REPO_ROOT / "data" / "pdok"
+ZH_DIR = REPO_ROOT / "data" / "zuid-holland"
 OUT_PATH = GENERATED_DIR / "kandidaat_begraafplaatsen.json"
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
@@ -169,6 +178,27 @@ BEBOUWING_WAARSCHUWING = (
     "of juist onder latere bebouwing verdwenen -- dat laatste kun je hier niet "
     "van onderscheiden). Puur extra context, geen bevestiging in beide "
     "richtingen."
+)
+
+CHS_ARCHEOLOGIE_WAARSCHUWING = (
+    "EXPERIMENTEEL. Vierde bron, andere aard dan de rest van deze pagina: "
+    "geen RCE-data maar de eigen Cultuurhistorische Hoofdstructuur (CHS) van "
+    "Provincie Zuid-Holland -- 662 'archeologische terreinen van "
+    "provinciaal belang', dezelfde data als de kaartlaag op de hoofdkaart "
+    "(zie toggle-chs-archeologie). Geen bbox-rand-effect (provinciale "
+    "dienst, dekt per definitie alleen Zuid-Holland), dus geen "
+    "gemeentegrenzen-filter nodig zoals bij de andere drie bronnen. Zelfde "
+    "grafterm-patroon als de archeologie-tekstzoekactie, nu gezocht in de "
+    "kortere 'Toponiem'/'WAARDE'/'Beschrijving'-velden i.p.v. lange "
+    "rapporttekst -- minder kans op fout-positieven zoals 'Kerkhof' als "
+    "achternaam, maar ook geen garantie: sommige treffers zijn Romeinse of "
+    "prehistorische grafvelden, geen begraafplaats zoals Leons dataset die "
+    "verzamelt (zelfde kanttekening als bij de archeologie-tekstzoekactie "
+    "hierboven). Kan overlappen met kandidaten die al via de "
+    "archeologie-tekstzoekactie gevonden zijn (andere bron, dus niet "
+    "automatisch ontdubbeld). Geen directe brontekst-link beschikbaar (deze "
+    "open dataset publiceert geen detailpagina per record) -- gebruik de "
+    "kaartlink om het terrein zelf te bekijken."
 )
 
 
@@ -315,6 +345,59 @@ def rijksmonument_kandidaten(
     return results, buiten_zh
 
 
+def chs_archeologie_kandidaten(
+    terreinen: list[dict],
+    bp_tree: STRtree,
+    bp_geoms: list,
+    begraafplaatsen: list[dict],
+) -> list[dict]:
+    candidates = []
+    for f in terreinen:
+        props = f["properties"]
+        # Volgorde bepaalt welk veld als eerste een match oplevert (voor het
+        # fragment): Toponiem is het kortst en meest to-the-point, dan WAARDE,
+        # dan de langere Beschrijving.
+        velden = [("Toponiem", props.get("Toponiem")), ("WAARDE", props.get("WAARDE")), ("Beschrijving", props.get("Beschrijving"))]
+        match = None
+        veldnaam = None
+        tekst = None
+        for naam, waarde in velden:
+            if not waarde:
+                continue
+            m = GRAFTERM_PATTERN.search(waarde)
+            if m:
+                match, veldnaam, tekst = m, naam, waarde
+                break
+        if not match:
+            continue
+
+        geom = shape(f["geometry"])
+        centroid = geom.centroid
+        point_rd = transform(to_rd, centroid)
+        i = bp_tree.nearest(point_rd)
+        afstand = round(point_rd.distance(bp_geoms[i]), 1)
+        fragment = snippet(tekst, match)
+        candidates.append({
+            "monumentnr": props.get("MONUMENTNR"),
+            "gemeente": props.get("Gemeente"),
+            "plaats": props.get("Plaats"),
+            "toponiem": props.get("Toponiem"),
+            "datering": props.get("Datering"),
+            "waarde": props.get("WAARDE"),
+            "gevonden_veld": veldnaam,
+            "gevonden_term": match.group(0),
+            "fragment": fragment,
+            "zekerheid": "onzeker/verwacht" if HEDGE_PATTERN.search(fragment) else "concreet genoemd",
+            "afstand_tot_bekende_bp_m": afstand,
+            "dichtstbijzijnde_bp": f"{begraafplaatsen[i]['properties']['naam']}, {begraafplaatsen[i]['properties']['plaats']}",
+            "lon": round(centroid.x, 6),
+            "lat": round(centroid.y, 6),
+        })
+
+    candidates.sort(key=lambda c: (c["zekerheid"] != "concreet genoemd", -c["afstand_tot_bekende_bp_m"]))
+    return candidates
+
+
 def snippet(text: str, match: re.Match, context: int = 70) -> str:
     start = max(0, match.start() - context)
     end = min(len(text), match.end() + context)
@@ -333,6 +416,7 @@ def gemeente_for_point(pt, gem_tree: STRtree, gemeenten: list[dict], gem_geoms: 
 def main() -> None:
     onderzoeksgebieden = load(RCE_DIR / "archeologische-onderzoeksgebieden.geojson")
     rijksmonumenten = load(RCE_DIR / "rijksmonumenten.geojson")
+    chs_terreinen = load(ZH_DIR / "chs-archeologie-provinciaal-belang.geojson")
     begraafplaatsen = load(GENERATED_DIR / "analyse.geojson")
     gemeenten = load(PDOK_DIR / "gemeenten-zuid-holland.geojson")
 
@@ -388,6 +472,7 @@ def main() -> None:
     kapellen, kapellen_buiten_zh = rijksmonument_kandidaten(
         rijksmonumenten, KAPEL_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
     )
+    chs_archeologie = chs_archeologie_kandidaten(chs_terreinen, bp_tree, bp_geoms, begraafplaatsen)
 
     if "--no-kadaster-check" in sys.argv:
         print("kadaster-bebouwingscheck overgeslagen (--no-kadaster-check)")
@@ -431,6 +516,11 @@ def main() -> None:
             "aantal_buiten_zuid_holland_bbox_rand": kapellen_buiten_zh,
             "kandidaten": kapellen,
         },
+        "chs_archeologie": {
+            "waarschuwing": CHS_ARCHEOLOGIE_WAARSCHUWING,
+            "aantal_terreinen_doorzocht": len(chs_terreinen),
+            "kandidaten": chs_archeologie,
+        },
     }
     OUT_PATH.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -443,6 +533,7 @@ def main() -> None:
     print(f"  {len(kloosters)} kloostercomplexen in Zuid-Holland ({kloosters_buiten_zh} buiten bbox-rand)")
     print(f"  {len(synagoges)} synagoges in Zuid-Holland ({synagoges_buiten_zh} buiten bbox-rand)")
     print(f"  {len(kapellen)} kapellen(complexen) in Zuid-Holland ({kapellen_buiten_zh} buiten bbox-rand)")
+    print(f"  {len(chs_archeologie)} CHS-archeologiekandidaten (van {len(chs_terreinen)} terreinen van provinciaal belang)")
 
 
 if __name__ == "__main__":
