@@ -7,6 +7,7 @@ Input:
   data/rce/beschermde-gezichten.geojson
   data/rce/rijksmonumenten.geojson
   data/rce/archeologische-rijksmonumenten.geojson
+  data/pdok/gemeenten-zuid-holland.geojson (scripts/fetch_gemeentegrenzen.py)
 
 Output:
   data/generated/analyse.geojson          (begraafplaatsen + erfgoedrelaties)
@@ -34,6 +35,7 @@ from shapely.strtree import STRtree
 REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 RCE_DIR = REPO_ROOT / "data" / "rce"
+PDOK_DIR = REPO_ROOT / "data" / "pdok"
 
 # 100m was de eerste werkhypothese (sectie 18 van de briefing); de viewer
 # heeft nu een schuifregelaar (stappen van 50m) zodat Leon zelf kan
@@ -79,6 +81,25 @@ def classify_gezicht(terrain_rd, gezichten_index: STRtree, gezichten: list[dict]
         elif relation == "intersects" and best != "within":
             best = "intersects"
     return best, matches
+
+
+def classify_gemeente(terrain_rd, gemeenten_index: STRtree, gemeenten: list[dict], gemeenten_geoms: list) -> str:
+    """Welke gemeente (2026-08-27, wens van Joop -- de bron heeft alleen
+    "plaats", geen gemeente) het terrein in ligt.
+
+    Puntligging (representative_point i.p.v. centroid, want een centroid van
+    een niet-convexe polygoon kan buiten de polygoon zelf vallen) i.p.v. de
+    hele terreinpolygoon, want een enkel terrein straddled in de praktijk
+    nooit een gemeentegrens. Bij geen directe treffer (afronding op een
+    gemeentegrens, kustlijn) valt dit terug op de dichtstbijzijnde gemeente
+    i.p.v. een terrein zonder gemeente achter te laten.
+    """
+    point = terrain_rd.representative_point()
+    for i in gemeenten_index.query(point):
+        if gemeenten_geoms[i].contains(point):
+            return gemeenten[i]["properties"]["naam"]
+    i = gemeenten_index.nearest(point)
+    return gemeenten[i]["properties"]["naam"]
 
 
 def nearest_archeologie(terrain_rd, arch_index: STRtree, arch: list[dict], arch_geoms: list):
@@ -176,6 +197,7 @@ def main() -> None:
     gezichten = load_features(RCE_DIR / "beschermde-gezichten.geojson")
     rijksmonumenten_all = load_features(RCE_DIR / "rijksmonumenten.geojson")
     archeologisch = load_features(RCE_DIR / "archeologische-rijksmonumenten.geojson")
+    gemeenten = load_features(PDOK_DIR / "gemeenten-zuid-holland.geojson")
 
     # "gebouwde rijksmonumenten" excludes the archeologisch subset -- those
     # are handled separately via the dedicated archeologische-rijksmonumenten
@@ -188,10 +210,12 @@ def main() -> None:
     gezichten_geoms = [to_rd_geom(f) for f in gezichten]
     arch_geoms = [to_rd_geom(f) for f in archeologisch]
     rm_geoms = [to_rd_geom(f) for f in rijksmonumenten_gebouwd]
+    gemeenten_geoms = [to_rd_geom(f) for f in gemeenten]
 
     gezichten_index = STRtree(gezichten_geoms)
     arch_index = STRtree(arch_geoms)
     rm_index = STRtree(rm_geoms)
+    gemeenten_index = STRtree(gemeenten_geoms)
 
     out_features = []
     stats = {
@@ -201,6 +225,7 @@ def main() -> None:
         "met_rijksmonument_100m": 0,
         "met_rijksmonument_250m": 0,
     }
+    gemeente_via_fallback = 0
 
     for feature in begraafplaatsen:
         terrain_rd = to_rd_geom(feature)
@@ -209,6 +234,10 @@ def main() -> None:
         arch_relations = classify_archeologie(terrain_rd, arch_index, archeologisch, arch_geoms)
         arch_nearest = nearest_archeologie(terrain_rd, arch_index, archeologisch, arch_geoms)
         rm_relations = classify_rijksmonumenten(terrain_rd, rm_index, rijksmonumenten_gebouwd, rm_geoms)
+        gemeente = classify_gemeente(terrain_rd, gemeenten_index, gemeenten, gemeenten_geoms)
+        rep_point = terrain_rd.representative_point()
+        if not any(gemeenten_geoms[i].contains(rep_point) for i in gemeenten_index.query(rep_point)):
+            gemeente_via_fallback += 1
 
         if in_gezicht == "within":
             stats["within_gezicht"] += 1
@@ -222,6 +251,7 @@ def main() -> None:
             stats["met_rijksmonument_100m"] += 1
 
         props = dict(feature["properties"])
+        props["gemeente"] = gemeente
         props["in_beschermd_gezicht"] = in_gezicht
         props["beschermd_gezicht_relaties"] = gezicht_matches
         props["archeologische_rm_count"] = len(arch_relations)
@@ -247,6 +277,7 @@ def main() -> None:
     print(f"  rijksmonument binnen 100m: {stats['met_rijksmonument_100m']}")
     print(f"  rijksmonument binnen {RM_NEARBY_BUFFER_M}m (opgeslagen bereik voor de schuifregelaar): {stats['met_rijksmonument_250m']}")
     print(f"  rijksmonumenten zonder monument_aard (uitgesloten van gebouwd-set): {skipped_null_aard}")
+    print(f"  gemeente via nearest-fallback i.p.v. directe puntligging: {gemeente_via_fallback}")
 
     write_audit(out_features, stats, skipped_null_aard)
 

@@ -15,9 +15,14 @@ Output:
 Alle metrische berekeningen (afstand) draaien in EPSG:28992 (RD New), net
 als scripts/analyse_spatial.py -- nooit in WGS84-graden.
 
-Let op: de bron heeft geen "gemeente"-veld, alleen "plaats" (dorp/stad).
-Tabellen die per plaats groeperen zijn dus niet hetzelfde als per gemeente
-(na de 2019-herindeling kunnen meerdere plaatsen bij één gemeente horen).
+De bron zelf heeft geen "gemeente"-veld, alleen "plaats" (dorp/stad) -- dat
+is niet hetzelfde na een herindeling (meerdere plaatsen kunnen bij één
+gemeente horen, en een plaatsnaam kan bij een andere gemeente horen dan
+zijn eigen naam doet vermoeden, bv. Oudenhoorn -> Voorne aan Zee). Sinds
+2026-08-27 (wens van Joop) voegt scripts/analyse_spatial.py een echt
+`gemeente`-veld toe via een spatial join tegen
+data/pdok/gemeenten-zuid-holland.geojson (scripts/fetch_gemeentegrenzen.py),
+dus dit script levert tabellen zowel per plaats als per gemeente.
 
 Run bij elke build, na scripts/analyse_spatial.py. Alleen lezen + 1
 outputbestand wegschrijven, idempotent.
@@ -138,38 +143,46 @@ def main() -> None:
         },
     }
 
-    # --- Per plaats ---
-    by_plaats = defaultdict(list)
-    for f in begraafplaatsen:
-        by_plaats[f["properties"]["plaats"]].append(f["properties"])
-    plaats_rows = []
-    for plaats, feats in by_plaats.items():
-        g = sum(1 for p in feats if p["geruimd"] is True)
-        plaats_rows.append({
-            "plaats": plaats,
-            "aantal": len(feats),
-            "geruimd": g,
-            "totaal_m2": round(sum(p["oppervlakte_m2"] for p in feats), 0),
-        })
-    per_plaats = {
-        "meeste_begraafplaatsen": sorted(plaats_rows, key=lambda r: -r["aantal"])[:10],
-        "meeste_geruimd": sorted(plaats_rows, key=lambda r: (-r["geruimd"], -r["aantal"]))[:10],
-        "volledig_geruimd": sorted(
-            [r for r in plaats_rows if r["aantal"] >= 2 and r["geruimd"] == r["aantal"]],
-            key=lambda r: -r["aantal"],
-        ),
-        "grootste_totale_oppervlakte": sorted(plaats_rows, key=lambda r: -r["totaal_m2"])[:10],
-    }
+    # --- Per plaats / per gemeente (zelfde rijvorm, dus 1 helper) ---
+    def group_rows(group_key: str) -> dict:
+        by_group = defaultdict(list)
+        for f in begraafplaatsen:
+            by_group[f["properties"][group_key]].append(f["properties"])
+        rows = []
+        for value, feats in by_group.items():
+            g = sum(1 for p in feats if p["geruimd"] is True)
+            rows.append({
+                group_key: value,
+                "aantal": len(feats),
+                "geruimd": g,
+                "totaal_m2": round(sum(p["oppervlakte_m2"] for p in feats), 0),
+            })
+        return {
+            "meeste_begraafplaatsen": sorted(rows, key=lambda r: -r["aantal"])[:10],
+            "meeste_geruimd": sorted(rows, key=lambda r: (-r["geruimd"], -r["aantal"]))[:10],
+            "volledig_geruimd": sorted(
+                [r for r in rows if r["aantal"] >= 2 and r["geruimd"] == r["aantal"]],
+                key=lambda r: -r["aantal"],
+            ),
+            "grootste_totale_oppervlakte": sorted(rows, key=lambda r: -r["totaal_m2"])[:10],
+        }
+
+    per_plaats = group_rows("plaats")
+    per_gemeente = group_rows("gemeente")
 
     # --- Beschermd gezicht ---
     in_gezicht = [f for f in begraafplaatsen if f["properties"]["in_beschermd_gezicht"] != "none"]
     top_plaats_gezicht = [
         {"plaats": p, "aantal": c} for p, c in Counter(f["properties"]["plaats"] for f in in_gezicht).most_common(10)
     ]
+    top_gemeente_gezicht = [
+        {"gemeente": g, "aantal": c} for g, c in Counter(f["properties"]["gemeente"] for f in in_gezicht).most_common(10)
+    ]
     beschermd_gezicht = {
         "totaal": len(in_gezicht),
         "pct": round(100 * len(in_gezicht) / n, 1),
         "top_plaatsen": top_plaats_gezicht,
+        "top_gemeenten": top_gemeente_gezicht,
     }
 
     # --- Rijksmonumenten nabijheid (bestaande relaties, tot 250m bewaard) ---
@@ -252,6 +265,7 @@ def main() -> None:
     stats = {
         "basis": basis,
         "per_plaats": per_plaats,
+        "per_gemeente": per_gemeente,
         "beschermd_gezicht": beschermd_gezicht,
         "rijksmonumenten": rijksmonumenten_stats,
         "begraafplaats_als_rijksmonument": begraafplaats_als_rijksmonument,

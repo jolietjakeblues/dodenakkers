@@ -209,6 +209,195 @@
       }
     ]
   },
+  "per_gemeente": {
+    "meeste_begraafplaatsen": [
+      {
+        "gemeente": "Hoeksche Waard",
+        "aantal": 37,
+        "geruimd": 9,
+        "totaal_m2": 306381.0
+      },
+      {
+        "gemeente": "Goeree-Overflakkee",
+        "aantal": 36,
+        "geruimd": 5,
+        "totaal_m2": 349385.0
+      },
+      {
+        "gemeente": "Molenlanden",
+        "aantal": 27,
+        "geruimd": 1,
+        "totaal_m2": 115833.0
+      },
+      {
+        "gemeente": "Krimpenerwaard",
+        "aantal": 25,
+        "geruimd": 3,
+        "totaal_m2": 107077.0
+      },
+      {
+        "gemeente": "Rotterdam",
+        "aantal": 23,
+        "geruimd": 1,
+        "totaal_m2": 999875.0
+      },
+      {
+        "gemeente": "Alphen aan den Rijn",
+        "aantal": 20,
+        "geruimd": 4,
+        "totaal_m2": 159767.0
+      },
+      {
+        "gemeente": "Westland",
+        "aantal": 17,
+        "geruimd": 2,
+        "totaal_m2": 140525.0
+      },
+      {
+        "gemeente": "Voorne aan Zee",
+        "aantal": 17,
+        "geruimd": 5,
+        "totaal_m2": 204269.0
+      },
+      {
+        "gemeente": "Nissewaard",
+        "aantal": 16,
+        "geruimd": 2,
+        "totaal_m2": 95792.0
+      },
+      {
+        "gemeente": "Katwijk",
+        "aantal": 15,
+        "geruimd": 1,
+        "totaal_m2": 93834.0
+      }
+    ],
+    "meeste_geruimd": [
+      {
+        "gemeente": "Hoeksche Waard",
+        "aantal": 37,
+        "geruimd": 9,
+        "totaal_m2": 306381.0
+      },
+      {
+        "gemeente": "Goeree-Overflakkee",
+        "aantal": 36,
+        "geruimd": 5,
+        "totaal_m2": 349385.0
+      },
+      {
+        "gemeente": "Voorne aan Zee",
+        "aantal": 17,
+        "geruimd": 5,
+        "totaal_m2": 204269.0
+      },
+      {
+        "gemeente": "Alphen aan den Rijn",
+        "aantal": 20,
+        "geruimd": 4,
+        "totaal_m2": 159767.0
+      },
+      {
+        "gemeente": "Krimpenerwaard",
+        "aantal": 25,
+        "geruimd": 3,
+        "totaal_m2": 107077.0
+      },
+      {
+        "gemeente": "Westland",
+        "aantal": 17,
+        "geruimd": 2,
+        "totaal_m2": 140525.0
+      },
+      {
+        "gemeente": "Nissewaard",
+        "aantal": 16,
+        "geruimd": 2,
+        "totaal_m2": 95792.0
+      },
+      {
+        "gemeente": "Kaag en Braassem",
+        "aantal": 14,
+        "geruimd": 2,
+        "totaal_m2": 28411.0
+      },
+      {
+        "gemeente": "Zuidplas",
+        "aantal": 12,
+        "geruimd": 2,
+        "totaal_m2": 76009.0
+      },
+      {
+        "gemeente": "Midden-Delfland",
+        "aantal": 9,
+        "geruimd": 2,
+        "totaal_m2": 23165.0
+      }
+    ],
+    "volledig_geruimd": [],
+    "grootste_totale_oppervlakte": [
+      {
+        "gemeente": "Rotterdam",
+        "aantal": 23,
+        "geruimd": 1,
+        "totaal_m2": 999875.0
+      },
+      {
+        "gemeente": "'s-Gravenhage",
+        "aantal": 12,
+        "geruimd": 1,
+        "totaal_m2": 488104.0
+      },
+      {
+        "gemeente": "Goeree-Overflakkee",
+        "aantal": 36,
+        "geruimd": 5,
+        "totaal_m2": 349385.0
+      },
+      {
+        "gemeente": "Hoeksche Waard",
+        "aantal": 37,
+        "geruimd": 9,
+        "totaal_m2": 306381.0
+      },
+      {
+        "gemeente": "Voorne aan Zee",
+        "aantal": 17,
+        "geruimd": 5,
+        "totaal_m2": 204269.0
+      },
+      {
+        "gemeente": "Alphen aan den Rijn",
+        "aantal": 20,
+        "geruimd": 4,
+        "totaal_m2": 159767.0
+      },
+      {
+        "gemeente": "Westland",
+        "aantal": 17,
+        "geruimd": 2,
+        "totaal_m2": 140525.0
+      },
+      {
+        "gemeente": "Dordrecht",
+        "aantal": 4,
+        "geruimd": 0,
+        "totaal_m2": 122064.0
+      },
+      {
+        "gemeente": "Delft",
+        "aantal": 5,
+        "geruimd": 0,
+        "totaal_m2": 121620.0
+      },
+      {
+        "gemeente": "Molenlanden",
+        "aantal": 27,
+        "geruimd": 1,
+        "totaal_m2": 115833.0
+      }
+    ]
+  },
   "beschermd_gezicht": {
     "totaal": 48,
     "pct": 10.7,
@@ -251,6 +440,48 @@
       },
       {
         "plaats": "Goedereede",
+        "aantal": 2
+      }
+    ],
+    "top_gemeenten": [
+      {
+        "gemeente": "Krimpenerwaard",
+        "aantal": 7
+      },
+      {
+        "gemeente": "Wassenaar",
+        "aantal": 7
+      },
+      {
+        "gemeente": "Nissewaard",
+        "aantal": 5
+      },
+      {
+        "gemeente": "'s-Gravenhage",
+        "aantal": 4
+      },
+      {
+        "gemeente": "Goeree-Overflakkee",
+        "aantal": 4
+      },
+      {
+        "gemeente": "Delft",
+        "aantal": 2
+      },
+      {
+        "gemeente": "Leiden",
+        "aantal": 2
+      },
+      {
+        "gemeente": "Leidschendam-Voorburg",
+        "aantal": 2
+      },
+      {
+        "gemeente": "Teylingen",
+        "aantal": 2
+      },
+      {
+        "gemeente": "Vlaardingen",
         "aantal": 2
       }
     ]

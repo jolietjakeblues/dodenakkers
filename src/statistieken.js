@@ -85,38 +85,52 @@ async function main() {
     ]
   );
 
-  // --- Per plaats ---
-  const perPlaatsNodes = [
-    el("h3", { text: "Meeste begraafplaatsen" }),
-    table(
-      ["Plaats", "Aantal", "Waarvan geruimd", "Totale oppervlakte"],
-      s.per_plaats.meeste_begraafplaatsen.map((r) => [plaatsNaam(r.plaats), fmt(r.aantal), fmt(r.geruimd), `${fmt(r.totaal_m2)} m²`])
-    ),
-    el("h3", { text: "Meeste geruimde begraafplaatsen" }),
-    table(
-      ["Plaats", "Geruimd", "Totaal in plaats"],
-      s.per_plaats.meeste_geruimd.map((r) => [plaatsNaam(r.plaats), fmt(r.geruimd), fmt(r.aantal)])
-    ),
-    el("h3", { text: "Grootste totale oppervlakte" }),
-    table(
-      ["Plaats", "Aantal", "Totale oppervlakte"],
-      s.per_plaats.grootste_totale_oppervlakte.map((r) => [plaatsNaam(r.plaats), fmt(r.aantal), `${fmt(r.totaal_m2)} m²`])
-    ),
-  ];
-  if (s.per_plaats.volledig_geruimd.length) {
-    perPlaatsNodes.push(
-      el("h3", { text: "Plaatsen volledig geruimd (2+ begraafplaatsen)" }),
+  // --- Per plaats / per gemeente (zelfde tabelvorm, dus 1 helper -- zie
+  // scripts/compute_statistics.py voor waarom er nu 2 groeperingen zijn:
+  // de bron heeft alleen "plaats", "gemeente" komt uit een aparte spatial
+  // join tegen echte PDOK-gemeentegrenzen) ---
+  function groupNodes(group, label) {
+    const key = label === "Plaats" ? "plaats" : "gemeente";
+    const naam = (v) => v || "(onbekend)";
+    const nodes = [
+      el("h3", { text: "Meeste begraafplaatsen" }),
       table(
-        ["Plaats", "Aantal begraafplaatsen"],
-        s.per_plaats.volledig_geruimd.map((r) => [plaatsNaam(r.plaats), fmt(r.aantal)])
-      )
-    );
-  } else {
-    perPlaatsNodes.push(
-      el("p", { class: "hint", text: "Geen enkele plaats met 2 of meer begraafplaatsen heeft ze allemaal geruimd." })
-    );
+        [label, "Aantal", "Waarvan geruimd", "Totale oppervlakte"],
+        group.meeste_begraafplaatsen.map((r) => [naam(r[key]), fmt(r.aantal), fmt(r.geruimd), `${fmt(r.totaal_m2)} m²`])
+      ),
+      el("h3", { text: "Meeste geruimde begraafplaatsen" }),
+      table(
+        [label, "Geruimd", `Totaal in ${label.toLowerCase()}`],
+        group.meeste_geruimd.map((r) => [naam(r[key]), fmt(r.geruimd), fmt(r.aantal)])
+      ),
+      el("h3", { text: "Grootste totale oppervlakte" }),
+      table(
+        [label, "Aantal", "Totale oppervlakte"],
+        group.grootste_totale_oppervlakte.map((r) => [naam(r[key]), fmt(r.aantal), `${fmt(r.totaal_m2)} m²`])
+      ),
+    ];
+    if (group.volledig_geruimd.length) {
+      nodes.push(
+        el("h3", { text: `${label === "Plaats" ? "Plaatsen" : "Gemeenten"} volledig geruimd (2+ begraafplaatsen)` }),
+        table(
+          [label, "Aantal begraafplaatsen"],
+          group.volledig_geruimd.map((r) => [naam(r[key]), fmt(r.aantal)])
+        )
+      );
+    } else {
+      nodes.push(
+        el("p", { class: "hint", text: `Geen enkele ${label.toLowerCase()} met 2 of meer begraafplaatsen heeft ze allemaal geruimd.` })
+      );
+    }
+    return nodes;
   }
-  renderSection(document.getElementById("stats-per-plaats"), "Per plaats", null, perPlaatsNodes);
+  renderSection(document.getElementById("stats-per-plaats"), "Per plaats", "\"Plaats\" is dorp/stad, zoals in de bron -- zie hiernaast voor de gemeente-indeling.", groupNodes(s.per_plaats, "Plaats"));
+  renderSection(
+    document.getElementById("stats-per-gemeente"),
+    "Per gemeente",
+    "Echte gemeentegrenzen (PDOK bestuurlijkegebieden), niet in de bron zelf -- via een spatial join toegevoegd.",
+    groupNodes(s.per_gemeente, "Gemeente")
+  );
 
   // --- Beschermd gezicht ---
   renderSection(
@@ -127,10 +141,15 @@ async function main() {
       kv([
         ["Begraafplaatsen binnen/overlappend een beschermd gezicht", `${fmt(s.beschermd_gezicht.totaal)} (${s.beschermd_gezicht.pct}%)`],
       ]),
-      el("h3", { text: "Meeste begraafplaatsen in een beschermd gezicht" }),
+      el("h3", { text: "Meeste begraafplaatsen in een beschermd gezicht (per plaats)" }),
       table(
         ["Plaats", "Aantal"],
         s.beschermd_gezicht.top_plaatsen.map((r) => [plaatsNaam(r.plaats), fmt(r.aantal)])
+      ),
+      el("h3", { text: "Meeste begraafplaatsen in een beschermd gezicht (per gemeente)" }),
+      table(
+        ["Gemeente", "Aantal"],
+        s.beschermd_gezicht.top_gemeenten.map((r) => [plaatsNaam(r.gemeente), fmt(r.aantal)])
       ),
     ]
   );

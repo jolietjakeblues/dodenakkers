@@ -36,6 +36,10 @@ FILES_TO_COPY = [
         SITE_DIR / "data" / "pdok" / "provincie-zuid-holland.geojson",
     ),
     (
+        REPO_ROOT / "data" / "pdok" / "gemeenten-zuid-holland.geojson",
+        SITE_DIR / "data" / "pdok" / "gemeenten-zuid-holland.geojson",
+    ),
+    (
         REPO_ROOT / "images" / "Dodenakkers-logo-68015ff5.webp",
         SITE_DIR / "images" / "Dodenakkers-logo-68015ff5.webp",
     ),
