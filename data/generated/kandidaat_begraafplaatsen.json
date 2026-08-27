@@ -2033,6 +2033,10 @@
       "lat": 52.083822
     }
   ],
+  "bebouwing_check": {
+    "waarschuwing": "Extra check via de Kadaster Kennisgraaf (KKG), geen aparte kandidatenlijst: per klooster/synagoge/kapel-kandidaat hierboven is opgezocht hoeveel gebouwen (BAG/KKG imxgeo:Gebouw) er nu binnen 30m van het punt staan, en wat het oudste/nieuwste bouwjaar daarvan is. GEEN gebouwen binnen 30m is een aanwijzing dat de locatie nog open terrein is (consistent met een bewaard gebleven kerkhof); WEL gebouwen betekent niet per se dat een eventueel kerkhof weg is (het monument zelf staat er nog, een kerkhof ernaast kan een tuin/plein zijn geworden zonder dat er iets gebouwd is, of juist onder latere bebouwing verdwenen -- dat laatste kun je hier niet van onderscheiden). Puur extra context, geen bevestiging in beide richtingen.",
+    "radius_m": 30
+  },
   "kloosters": {
     "waarschuwing": "EXPERIMENTEEL. Kloosters (oorspronkelijke_functie_kort bevat 'klooster') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen (zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot een bekende begraafplaats is GEEN bevestiging: veel kloosters zijn al tijdens/na de Reformatie (16e eeuw) opgeheven en gesloopt of herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart geregistreerd. Puur een aanwijzing waar het de moeite waard is om te kijken.",
     "aantal_buiten_zuid_holland_bbox_rand": 13,
@@ -2056,7 +2060,12 @@
         "afstand_tot_bekende_bp_m": 1170.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Dordrecht",
         "lon": 4.670311,
-        "lat": 51.815448
+        "lat": 51.815448,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 19,
+          "oudste_bouwjaar_nabij": 1275,
+          "nieuwste_bouwjaar_nabij": 1989
+        }
       },
       {
         "naam": null,
@@ -2071,7 +2080,12 @@
         "afstand_tot_bekende_bp_m": 1163.8,
         "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
         "lon": 4.485608,
-        "lat": 52.156483
+        "lat": 52.156483,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 23,
+          "oudste_bouwjaar_nabij": 1750,
+          "nieuwste_bouwjaar_nabij": 1907
+        }
       },
       {
         "naam": null,
@@ -2085,7 +2099,12 @@
         "afstand_tot_bekende_bp_m": 1051.9,
         "dichtstbijzijnde_bp": "RK begraafplaats Schiedam, Schiedam",
         "lon": 4.403143,
-        "lat": 51.912383
+        "lat": 51.912383,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 6,
+          "oudste_bouwjaar_nabij": 1850,
+          "nieuwste_bouwjaar_nabij": 1935
+        }
       },
       {
         "naam": null,
@@ -2099,7 +2118,12 @@
         "afstand_tot_bekende_bp_m": 699.2,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
         "lon": 4.714085,
-        "lat": 52.01059
+        "lat": 52.01059,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 9,
+          "oudste_bouwjaar_nabij": 1642,
+          "nieuwste_bouwjaar_nabij": 1980
+        }
       },
       {
         "naam": null,
@@ -2113,7 +2137,12 @@
         "afstand_tot_bekende_bp_m": 639.6,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
         "lon": 4.307222,
-        "lat": 52.079489
+        "lat": 52.079489,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 10,
+          "oudste_bouwjaar_nabij": 1600,
+          "nieuwste_bouwjaar_nabij": 1947
+        }
       },
       {
         "naam": null,
@@ -2127,7 +2156,12 @@
         "afstand_tot_bekende_bp_m": 554.7,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
         "lon": 4.354711,
-        "lat": 52.012436
+        "lat": 52.012436,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 6,
+          "oudste_bouwjaar_nabij": 1414,
+          "nieuwste_bouwjaar_nabij": 1870
+        }
       },
       {
         "naam": null,
@@ -2141,7 +2175,12 @@
         "afstand_tot_bekende_bp_m": 527.4,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
         "lon": 4.359535,
-        "lat": 52.016784
+        "lat": 52.016784,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 7,
+          "oudste_bouwjaar_nabij": 1671,
+          "nieuwste_bouwjaar_nabij": 1838
+        }
       },
       {
         "naam": null,
@@ -2155,7 +2194,12 @@
         "afstand_tot_bekende_bp_m": 453.0,
         "dichtstbijzijnde_bp": "Vm. RK begraafplaats, Delft",
         "lon": 4.358459,
-        "lat": 52.007786
+        "lat": 52.007786,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 12,
+          "oudste_bouwjaar_nabij": 1405,
+          "nieuwste_bouwjaar_nabij": 1997
+        }
       },
       {
         "naam": null,
@@ -2169,7 +2213,12 @@
         "afstand_tot_bekende_bp_m": 431.1,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
         "lon": 4.707071,
-        "lat": 52.010128
+        "lat": 52.010128,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 18,
+          "oudste_bouwjaar_nabij": 1350,
+          "nieuwste_bouwjaar_nabij": 2001
+        }
       },
       {
         "naam": "Sint Bavo",
@@ -2183,7 +2232,12 @@
         "afstand_tot_bekende_bp_m": 222.8,
         "dichtstbijzijnde_bp": "H. Jozefkerkhof, Noordwijkerhout",
         "lon": 4.491936,
-        "lat": 52.265739
+        "lat": 52.265739,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 1,
+          "oudste_bouwjaar_nabij": 1918,
+          "nieuwste_bouwjaar_nabij": 1918
+        }
       },
       {
         "naam": "H.H. Petrus en Paulus",
@@ -2197,7 +2251,12 @@
         "afstand_tot_bekende_bp_m": 96.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Reeuwijk-Dorp",
         "lon": 4.692098,
-        "lat": 52.055162
+        "lat": 52.055162,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 5,
+          "oudste_bouwjaar_nabij": 1910,
+          "nieuwste_bouwjaar_nabij": 2001
+        }
       },
       {
         "naam": "Sint-Agathaklooster",
@@ -2211,7 +2270,12 @@
         "afstand_tot_bekende_bp_m": 70.1,
         "dichtstbijzijnde_bp": "NH Kerkhof, Lisse",
         "lon": 4.552108,
-        "lat": 52.25756
+        "lat": 52.25756,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 5,
+          "oudste_bouwjaar_nabij": 1902,
+          "nieuwste_bouwjaar_nabij": 1990
+        }
       },
       {
         "naam": null,
@@ -2225,7 +2289,12 @@
         "afstand_tot_bekende_bp_m": 42.7,
         "dichtstbijzijnde_bp": "Vm. NH kerkhof, Maasland",
         "lon": 4.272863,
-        "lat": 51.93665
+        "lat": 51.93665,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 20,
+          "oudste_bouwjaar_nabij": 1556,
+          "nieuwste_bouwjaar_nabij": 1969
+        }
       }
     ]
   },
@@ -2245,7 +2314,12 @@
         "afstand_tot_bekende_bp_m": 648.3,
         "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
         "lon": 4.493199,
-        "lat": 52.155462
+        "lat": 52.155462,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 12,
+          "oudste_bouwjaar_nabij": 1650,
+          "nieuwste_bouwjaar_nabij": 2020
+        }
       },
       {
         "naam": null,
@@ -2259,7 +2333,12 @@
         "afstand_tot_bekende_bp_m": 218.6,
         "dichtstbijzijnde_bp": "Grafkapel fam. De Smeth, Alphen aan den Rijn",
         "lon": 4.663871,
-        "lat": 52.129128
+        "lat": 52.129128,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 14,
+          "oudste_bouwjaar_nabij": 1896,
+          "nieuwste_bouwjaar_nabij": 2005
+        }
       },
       {
         "naam": "v.m. Hoogduitsche Synagoge",
@@ -2273,7 +2352,12 @@
         "afstand_tot_bekende_bp_m": 166.5,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
         "lon": 4.31337,
-        "lat": 52.075005
+        "lat": 52.075005,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 20,
+          "oudste_bouwjaar_nabij": 1650,
+          "nieuwste_bouwjaar_nabij": 1932
+        }
       }
     ]
   },
@@ -2293,7 +2377,12 @@
         "afstand_tot_bekende_bp_m": 734.8,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
         "lon": 4.356575,
-        "lat": 52.011185
+        "lat": 52.011185,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 14,
+          "oudste_bouwjaar_nabij": 1425,
+          "nieuwste_bouwjaar_nabij": 1890
+        }
       },
       {
         "naam": null,
@@ -2307,7 +2396,12 @@
         "afstand_tot_bekende_bp_m": 696.7,
         "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
         "lon": 4.711019,
-        "lat": 52.013
+        "lat": 52.013,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 13,
+          "oudste_bouwjaar_nabij": 1400,
+          "nieuwste_bouwjaar_nabij": 1992
+        }
       },
       {
         "naam": null,
@@ -2321,7 +2415,12 @@
         "afstand_tot_bekende_bp_m": 655.8,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
         "lon": 4.713049,
-        "lat": 52.010665
+        "lat": 52.010665,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 10,
+          "oudste_bouwjaar_nabij": 1497,
+          "nieuwste_bouwjaar_nabij": 1884
+        }
       },
       {
         "naam": null,
@@ -2335,7 +2434,12 @@
         "afstand_tot_bekende_bp_m": 645.4,
         "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
         "lon": 4.667256,
-        "lat": 52.123854
+        "lat": 52.123854,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 1,
+          "oudste_bouwjaar_nabij": 1912,
+          "nieuwste_bouwjaar_nabij": 1912
+        }
       },
       {
         "naam": null,
@@ -2349,7 +2453,12 @@
         "afstand_tot_bekende_bp_m": 430.1,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
         "lon": 4.313942,
-        "lat": 52.080341
+        "lat": 52.080341,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 2,
+          "oudste_bouwjaar_nabij": 1640,
+          "nieuwste_bouwjaar_nabij": 1644
+        }
       },
       {
         "naam": null,
@@ -2363,7 +2472,12 @@
         "afstand_tot_bekende_bp_m": 250.5,
         "dichtstbijzijnde_bp": "RK begraafplaats St. Adrianus, Naaldwijk",
         "lon": 4.209679,
-        "lat": 51.992521
+        "lat": 51.992521,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 19,
+          "oudste_bouwjaar_nabij": 1496,
+          "nieuwste_bouwjaar_nabij": 1910
+        }
       },
       {
         "naam": null,
@@ -2377,7 +2491,12 @@
         "afstand_tot_bekende_bp_m": 216.6,
         "dichtstbijzijnde_bp": "NH kerkhof, Brielle",
         "lon": 4.163815,
-        "lat": 51.904832
+        "lat": 51.904832,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 24,
+          "oudste_bouwjaar_nabij": 1500,
+          "nieuwste_bouwjaar_nabij": 2009
+        }
       },
       {
         "naam": null,
@@ -2391,7 +2510,12 @@
         "afstand_tot_bekende_bp_m": 164.5,
         "dichtstbijzijnde_bp": "RK begraafplaats, Brielle",
         "lon": 4.154681,
-        "lat": 51.895046
+        "lat": 51.895046,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 1,
+          "oudste_bouwjaar_nabij": 1932,
+          "nieuwste_bouwjaar_nabij": 1932
+        }
       },
       {
         "naam": null,
@@ -2405,7 +2529,12 @@
         "afstand_tot_bekende_bp_m": 157.8,
         "dichtstbijzijnde_bp": "Oud NH kerkhof, Schoonhoven",
         "lon": 4.850607,
-        "lat": 51.947537
+        "lat": 51.947537,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 27,
+          "oudste_bouwjaar_nabij": 1575,
+          "nieuwste_bouwjaar_nabij": 2002
+        }
       },
       {
         "naam": null,
@@ -2420,7 +2549,12 @@
         "afstand_tot_bekende_bp_m": 57.4,
         "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
         "lon": 4.660799,
-        "lat": 52.128107
+        "lat": 52.128107,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 1,
+          "oudste_bouwjaar_nabij": 1990,
+          "nieuwste_bouwjaar_nabij": 1990
+        }
       },
       {
         "naam": null,
@@ -2434,7 +2568,12 @@
         "afstand_tot_bekende_bp_m": 11.4,
         "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
         "lon": 4.503902,
-        "lat": 52.162545
+        "lat": 52.162545,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 9,
+          "oudste_bouwjaar_nabij": 1828,
+          "nieuwste_bouwjaar_nabij": 1881
+        }
       },
       {
         "naam": null,
@@ -2448,7 +2587,12 @@
         "afstand_tot_bekende_bp_m": 6.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
         "lon": 4.719158,
-        "lat": 52.018098
+        "lat": 52.018098,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 7,
+          "oudste_bouwjaar_nabij": 1890,
+          "nieuwste_bouwjaar_nabij": 1930
+        }
       },
       {
         "naam": null,
@@ -2462,7 +2606,12 @@
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "RK begraafplaats, Oude Tonge",
         "lon": 4.203846,
-        "lat": 51.692351
+        "lat": 51.692351,
+        "bebouwing": {
+          "aantal_gebouwen_binnen_30m": 3,
+          "oudste_bouwjaar_nabij": 1868,
+          "nieuwste_bouwjaar_nabij": 1990
+        }
       }
     ]
   }
