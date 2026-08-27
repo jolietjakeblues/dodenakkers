@@ -582,6 +582,16 @@
         "functie": "Baarhuisje",
         "aantal": 12
       }
+    ],
+    "aantal_naar_aard": [
+      {
+        "aard": "onroerend gebouwd",
+        "aantal": 14105
+      },
+      {
+        "aard": "archeologisch",
+        "aantal": 99
+      }
     ]
   },
   "begraafplaats_als_rijksmonument": {

@@ -228,6 +228,11 @@ def main() -> None:
             functie = functie_by_nummer.get(r["rijksmonumentnummer"])
             if functie:
                 functie_counter[functie] += 1
+    # ceo:heeftMonumentAard, los van nabijheid tot een begraafplaats -- gewoon
+    # de verdeling van alle rijksmonumenten in de bbox (wens van Joop,
+    # 2026-08-27: aan/uit-toggle gebouwd/archeologisch in de viewer, zelfde
+    # veld ook hier als simpel overzicht).
+    aard_counter = Counter(f["properties"].get("monument_aard") or "onbekend" for f in rijksmonumenten)
     rijksmonumenten_stats = {
         "gemiddeld_binnen_100m": round(statistics.mean(rm_count_100m(f["properties"]) for f in begraafplaatsen), 2),
         "meeste_binnen_100m": [
@@ -236,6 +241,7 @@ def main() -> None:
         ],
         "zonder_rijksmonument_binnen_250m": sum(1 for f in begraafplaatsen if not f["properties"]["rijksmonument_relations"]),
         "top_functies_nabij_100m": [{"functie": k, "aantal": v} for k, v in functie_counter.most_common(10)],
+        "aantal_naar_aard": [{"aard": k, "aantal": v} for k, v in aard_counter.most_common()],
     }
 
     # --- Begraafplaats is zelf een rijksmonument ---
