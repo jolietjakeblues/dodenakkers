@@ -97,6 +97,7 @@ def main() -> None:
     copy_with_rewrites(REPO_ROOT / "src" / "statistieken.js", SITE_DIR / "statistieken.js")
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.html", SITE_DIR / "kandidaten.html")
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.js", SITE_DIR / "kandidaten.js")
+    copy_with_rewrites(REPO_ROOT / "src" / "methode.html", SITE_DIR / "methode.html")
 
     total_bytes = sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
     print(f"\nsite/ klaar, {total_bytes / 1024 / 1024:.1f} MB")

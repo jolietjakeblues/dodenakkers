@@ -226,19 +226,6 @@ async function main() {
   proximitySection("stats-kasteel", "Nabijheid tot een kasteel of buitenplaats", s.kasteel, "zijn een kasteel/buitenplaats", "Dichtstbij een kasteel/buitenplaats");
   proximitySection("stats-kerk", "Nabijheid tot een kerk", s.kerk, "zijn een kerk", "Dichtstbij een kerk");
 
-  // --- Denominatie ---
-  renderSection(
-    document.getElementById("stats-denominatie"),
-    "Denominatie",
-    "Bepaald uit de naam (geen apart veld in de bron) -- \"Onbekend/algemeen\" is vaak juist een gemeentelijke/algemene begraafplaats voor alle gezindten, geen ontbrekend gegeven.",
-    [
-      table(
-        ["Denominatie", "Aantal"],
-        s.denominatie.verdeling.map((r) => [r.denominatie, fmt(r.aantal)])
-      ),
-    ]
-  );
-
   // --- Archeologie ---
   renderSection(
     document.getElementById("stats-archeologie"),

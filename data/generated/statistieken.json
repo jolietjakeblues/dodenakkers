@@ -709,30 +709,6 @@
       }
     ]
   },
-  "denominatie": {
-    "verdeling": [
-      {
-        "denominatie": "Onbekend/algemeen",
-        "aantal": 278
-      },
-      {
-        "denominatie": "Nederlands Hervormd",
-        "aantal": 92
-      },
-      {
-        "denominatie": "Rooms-Katholiek",
-        "aantal": 50
-      },
-      {
-        "denominatie": "Joods",
-        "aantal": 26
-      },
-      {
-        "denominatie": "Gereformeerd",
-        "aantal": 2
-      }
-    ]
-  },
   "molen": {
     "aantal_in_categorie": 318,
     "binnen": {
