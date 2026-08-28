@@ -30,7 +30,6 @@ outputbestand wegschrijven, idempotent.
 from __future__ import annotations
 
 import json
-import re
 import statistics
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -62,31 +61,6 @@ BEGRAAFPLAATS_FUNCTIES = {
     "Begraafplaats", "Begraafplaats en -onderdelen", "Begraafplaatshek",
     "Begraafplaatsaula", "Dierenbegraafplaats",
 }
-
-# Denominatie (2026-08-27, wens van Joop: "per denominatie in de statistiek
-# (indien bekend)") -- de bron heeft geen apart denominatie-veld, dus dit is
-# een regex-classificatie op `naam` (geen ander betrouwbaar signaal
-# beschikbaar). Prioriteit maakt niet uit: geverifieerd dat geen enkele naam
-# in de dataset op 2+ patronen tegelijk matcht. Namen zonder duidelijke
-# denominatie (bv. "Gem. begraafplaats", "Algemene begraafplaats") vallen in
-# "Onbekend/algemeen" -- vaak zijn dat juist gemeentelijke/algemene
-# begraafplaatsen voor alle gezindten, geen ontbrekend gegeven.
-DENOMINATIE_PATTERNS = [
-    ("Rooms-Katholiek", r"\bR\.?\s?K\.?\b|Rooms[- ]Katholiek|Katholiek"),
-    ("Nederlands Hervormd", r"\bN\.?\s?H\.?\b|Hervormd"),
-    ("Joods", r"Joods|Joodse|Isra[eë]litisch"),
-    ("Doopsgezind", r"Doopsgezind"),
-    ("Evangelisch-Luthers", r"Evangelisch[- ]?Lutherse?|\bLuthers"),
-    ("Remonstrants", r"Remonstrant"),
-]
-
-
-def classify_denominatie(naam: str) -> str:
-    for label, pattern in DENOMINATIE_PATTERNS:
-        if re.search(pattern, naam, re.IGNORECASE):
-            return label
-    return "Onbekend/algemeen"
-
 
 def load(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
@@ -265,12 +239,6 @@ def main() -> None:
     kasteel = nabijheid_tot_categorie(begraafplaatsen, terrain_geoms, rijksmonumenten, KASTEEL_FUNCTIES)
     kerk = nabijheid_tot_categorie(begraafplaatsen, terrain_geoms, rijksmonumenten, KERK_FUNCTIES)
 
-    # --- Denominatie (regex op naam, zie DENOMINATIE_PATTERNS hierboven) ---
-    denominatie_counts = Counter(classify_denominatie(f["properties"]["naam"]) for f in begraafplaatsen)
-    denominatie = {
-        "verdeling": [{"denominatie": k, "aantal": v} for k, v in denominatie_counts.most_common()],
-    }
-
     # --- Archeologie ---
     nearest_arch = sorted(
         (f for f in begraafplaatsen if f["properties"].get("archeologische_rm_nearest")),
@@ -312,7 +280,6 @@ def main() -> None:
         "beschermd_gezicht": beschermd_gezicht,
         "rijksmonumenten": rijksmonumenten_stats,
         "begraafplaats_als_rijksmonument": begraafplaats_als_rijksmonument,
-        "denominatie": denominatie,
         "molen": molen,
         "kasteel": kasteel,
         "kerk": kerk,
