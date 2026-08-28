@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Methode - Dodenakkers Zuid-Holland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="stats-page">
+  <div id="stats">
+    <header class="stats-header">
+      <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
+      <div>
+        <h1>Methode, definities en beperkingen</h1>
+        <p class="subtitle"><a href="index.html">&larr; terug naar de kaart</a> &middot; <a href="statistieken.html">Statistieken</a> &middot; <a href="kandidaten.html">Kandidaat-begraafplaatsen (experimenteel)</a></p>
+      </div>
+    </header>
+
+    <p class="intro">
+      Deze pagina bundelt de werkhypothesen, definities en bekende beperkingen die eerder verspreid
+      over het kaartpaneel stonden. Niets hierop is nieuw beleid &mdash; het is een overzicht van
+      besluiten die al golden, nu op één plek in plaats van in losse hints. Voor de volledige,
+      chronologische onderzoeksnotities (elke wijziging met datum en aanleiding) zie
+      <a href="https://github.com/jolietjakeblues/dodenakkers/blob/main/docs/README.md" target="_blank" rel="noopener">docs/README.md op GitHub</a>.
+    </p>
+
+    <section class="stats-section">
+      <h2>Vier soorten data op deze site</h2>
+      <p class="hint">Elke laag heeft een andere mate van zekerheid &mdash; bewust niet door elkaar gehaald.</p>
+      <h3>1. Hoofddataset (448 begraafplaatsen)</h3>
+      <p>De geverifieerde kernset: Leons genormaliseerde CSV, terrein + ingang per begraafplaats, status (geruimd/niet-geruimd). Dit is de enige laag waarop de statistiekenpagina rekent.</p>
+      <h3>2. Verrijkte relaties (rijksmonumenten, beschermde gezichten, archeologie)</h3>
+      <p>De hoofddataset ruimtelijk vergeleken met RCE Linked Data (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) en de CHS-laag van Provincie Zuid-Holland. Feitelijke overlap/afstand, automatisch berekend &mdash; geen menselijke beoordeling per geval.</p>
+      <h3>3. Kandidaat-begraafplaatsen (experimenteel)</h3>
+      <p>Op de <a href="kandidaten.html">losse kandidatenpagina</a>: tekst- en categoriezoekacties (kerken, kloosters, synagoges, kapellen, archeologische omschrijvingen) die een <em>mogelijke</em> onbekende begraafplaats suggereren. Nadrukkelijk geen claim &mdash; elke kandidaat moet door Leon beoordeeld worden voordat hij ooit in de hoofddataset terechtkomt.</p>
+      <h3>4. Verdwenen begraafplaatsen (laag "Verdwenen begraafplaatsen")</h3>
+      <p>Leons eigen historische kennis (907 landelijke punten, 92 in Zuid-Holland) van begraafplaatsen die niet meer bestaan. Geen automatisch signaal zoals categorie 3 &mdash; wel een ruwe, geautomatiseerde inschatting (naam- en plaatsvergelijking) of een punt al voorkomt in de hoofddataset. Rood = die vergelijking vond geen match (mogelijk echt ontbrekend in onze data); grijs = wel een match (lijkt al bekend). Zegt niets over "geruimd" &mdash; puur of het punt al ergens in de 448 begraafplaatsen terugkomt.</p>
+    </section>
+
+    <section class="stats-section">
+      <h2>Ruimtelijke termen</h2>
+      <p class="hint">Labels die de relatie tussen een begraafplaatsterrein en een rijksmonument beschrijven (popup en filters).</p>
+      <table>
+        <tbody>
+          <tr><td><strong>annex (grenst aan)</strong></td><td>grenscontact (touches) &mdash; door Leon bevestigd als de juiste lezing van "annex", niet zomaar "in de buurt"</td></tr>
+          <tr><td><strong>op het terrein</strong></td><td>het monument ligt binnen de begraafplaatspolygoon</td></tr>
+          <tr><td><strong>overlapt</strong></td><td>polygonen snijden elkaar gedeeltelijk</td></tr>
+          <tr><td><strong>omvat het monument</strong></td><td>de begraafplaats omsluit het hele monument</td></tr>
+          <tr><td><strong>monument omvat het terrein</strong></td><td>het monument omsluit de hele begraafplaats</td></tr>
+          <tr><td><strong>punt binnen terrein</strong></td><td>een monument zonder polygoon (alleen een punt) valt binnen de begraafplaatspolygoon</td></tr>
+        </tbody>
+      </table>
+      <p class="hint">"Binnen", "overlapt" en "nabij" in filternamen zijn dezelfde categorieën in gewone taal &mdash; geen aparte definitie.</p>
+    </section>
+
+    <section class="stats-section">
+      <h2>Drempelwaarde "rijksmonument nabij"</h2>
+      <p>De schuifregelaar bij het filter "Rijksmonument op/nabij terrein" biedt drie vaste stappen: 25, 50 en 100 meter. Dit zijn werkhypothesen, geen vastgestelde norm &mdash; verderaf dan 100m is in de praktijk niet interessant genoeg gebleken om als "nabij" te tellen. De onderliggende data bewaart relaties tot 250m, dus een ruimere drempel is technisch mogelijk als daar aanleiding voor komt.</p>
+    </section>
+
+    <section class="stats-section">
+      <h2>Plaats vs. gemeente</h2>
+      <p>"Plaats" (dorp/stad) komt rechtstreeks uit Leons bron. "Gemeente" is er apart bij gezocht via de echte PDOK-gemeentegrenzen: de bron heeft geen gemeenteveld, en na herindelingen hoort een plaats niet altijd bij de gemeente die zijn naam doet vermoeden (Oudenhoorn &rarr; Voorne aan Zee, bijvoorbeeld).</p>
+    </section>
+
+    <section class="stats-section">
+      <h2>Rijksmonumenten: gebouwd vs. archeologisch</h2>
+      <p>Rijksmonumenten kennen een <code>ceo:monumentAard</code>: "onroerend gebouwd" (14.105 in de bbox, getoond als punt) of "archeologisch" (99, getoond als vlak waar de bron een polygoon heeft). Beide zijn los aan/uit te zetten onder "Rijksmonumenten" in het paneel.</p>
+      <p>De functiefilter ("oorspronkelijke functie") is dynamisch opgebouwd uit de daadwerkelijk voorkomende RCE-labels &mdash; geen vaste, gecureerde lijst. Dat betekent ook geen thesaurusgroepering: wat de bron als label gebruikt, zie je terug.</p>
+    </section>
+
+    <section class="stats-section">
+      <h2>Bekende beperkingen</h2>
+      <p>&bull; De kandidaat-begraafplaatsen-pagina gebruikt woordherkenning (grooftermen, hedge-taal) op vrije tekst &mdash; geen garantie tegen fout-positieven (bijvoorbeeld "Kerkhof" als achternaam van een onderzoeker) of gemiste gevallen.</p>
+      <p>&bull; De "in hoofddataset"-inschatting bij verdwenen begraafplaatsen is een ruwe naam- en plaatsvergelijking, geen exacte koppeling &mdash; bewust conservatief (eerder "niet gevonden" dan een foute match).</p>
+      <p>&bull; Alle drempelwaarden (25/50/100m) en categorieën zijn voorlopige werkhypothesen, geen definitief vastgestelde norm.</p>
+    </section>
+  </div>
+</body>
+</html>

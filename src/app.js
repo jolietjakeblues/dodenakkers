@@ -12,6 +12,10 @@ const DATA = {
   // ook (met minder functionaliteit) als je terugzet op begraafplaatsen.geojson.
   begraafplaatsen: "../data/generated/analyse.geojson",
   gezichten: "../data/rce/beschermde-gezichten.geojson",
+  // Ook lazy sinds 2026-08-28 (16.135.605 bytes / 14.204 features, zie
+  // setupMonumentenLayers() in main() en toggle-monumenten) -- was de enige
+  // van de zeven losse lagen die nog standaard meeladen, ook met de laag
+  // uitgezet (die staat zelfs standaard al uit in index.html).
   monumenten: "../data/rce/rijksmonumenten.geojson",
   provinciegrens: "../data/pdok/provincie-zuid-holland.geojson",
   // Niet in de initiele Promise.all: 22.254 features / 17MB, alleen ophalen
@@ -272,12 +276,33 @@ function relationLabel(relation) {
   return RELATION_LABELS[relation] || relation;
 }
 
+// Popup-inhoud komt uit onze eigen brondata (RCE/PDOK/CSV), dus vandaag geen
+// echt aanvalsvector -- maar toch escapen i.p.v. kaal interpoleren, puur
+// defensief tegen toekomstige externe/minder gecontroleerde bronnen en
+// tegen brontekst met &/</>/aanhalingstekens die de HTML anders al zou
+// breken (geen kwaadaardige input nodig, alleen een naam met een &).
+// SafeHtml markeert de enkele plek (het monumentenregister-linkje
+// hieronder) waar we zelf bewust HTML opbouwen en dat niet nogmaals
+// geëscaped mag worden.
+class SafeHtml {
+  constructor(html) {
+    this.html = html;
+  }
+}
+function rawHtml(html) {
+  return new SafeHtml(html);
+}
+const HTML_ESCAPES = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (c) => HTML_ESCAPES[c]);
+}
+
 function popupHtml(title, rows) {
   const dl = rows
     .filter(([, v]) => v !== null && v !== undefined && v !== "")
-    .map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`)
+    .map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${v instanceof SafeHtml ? v.html : escapeHtml(v)}</dd>`)
     .join("");
-  return `<h3>${title}</h3><dl>${dl}</dl>`;
+  return `<h3>${escapeHtml(title)}</h3><dl>${dl}</dl>`;
 }
 
 async function loadJson(url) {
@@ -287,13 +312,17 @@ async function loadJson(url) {
 }
 
 async function main() {
-  const [begraafplaatsen, gezichten, monumenten, provinciegrens] = await Promise.all([
+  const [begraafplaatsen, gezichten, provinciegrens] = await Promise.all([
     loadJson(DATA.begraafplaatsen),
     loadJson(DATA.gezichten),
-    loadJson(DATA.monumenten),
     loadJson(DATA.provinciegrens),
   ]);
   const ingangen = ingangenFromBegraafplaatsen(begraafplaatsen);
+  // Rijksmonumenten (16.135.605 bytes) staan hier bewust niet meer bij --
+  // zie setupMonumentenLayers() en toggle-monumenten verderop, zelfde lazy
+  // patroon als de andere losse lagen.
+  let monumenten = null;
+  let monumentenLoaded = false;
 
   if (!map.isStyleLoaded()) {
     await new Promise((resolve) => map.on("load", resolve));
@@ -522,51 +551,77 @@ async function main() {
     paint: { "line-color": "#5f3dc4", "line-width": 1.5, "line-dasharray": [2, 1] },
   });
 
-  // --- Rijksmonumenten ---
-  // Gebouwde monumenten altijd als punt (ook wanneer de bron een
-  // polygoongeometrie heeft -- dan een client-side centroid, alleen voor
-  // de marker-positie, geen vervanging van de echte geometrie). Archeologische
-  // rijksmonumenten juist als vlak wanneer de bron een polygoon heeft (anders
-  // als punt, want er is dan geen polygoon om te tonen).
-  const monumentenPunten = deriveMonumentPoints(monumenten);
-  map.addSource("monumenten", { type: "geojson", data: monumenten });
-  map.addSource("monumenten-punten", { type: "geojson", data: monumentenPunten });
-  map.addLayer({
-    id: "monumenten-punt",
-    type: "circle",
-    source: "monumenten-punten",
-    layout: { visibility: "none" },
-    paint: {
-      "circle-radius": 4,
-      "circle-color": [
-        "case",
-        ["==", ["get", "monument_aard"], "archeologisch"],
-        "#e8590c",
-        ["==", ["get", "monument_aard"], "onroerend gebouwd"],
-        "#1971c2",
-        "#868e96",
-      ],
-      "circle-stroke-width": 1,
-      "circle-stroke-color": "#ffffff",
-    },
-  });
+  // --- Rijksmonumenten (lazy: zie de toelichting bij DATA.monumenten
+  // hierboven en toggle-monumenten verderop) ---
   const archeologischFilter = ["==", ["get", "monument_aard"], "archeologisch"];
-  map.addLayer({
-    id: "monumenten-vlak",
-    type: "fill",
-    source: "monumenten",
-    layout: { visibility: "none" },
-    filter: archeologischFilter,
-    paint: { "fill-color": "#e8590c", "fill-opacity": 0.4 },
-  });
-  map.addLayer({
-    id: "monumenten-vlak-outline",
-    type: "line",
-    source: "monumenten",
-    layout: { visibility: "none" },
-    filter: archeologischFilter,
-    paint: { "line-color": "#e8590c", "line-width": 1.5 },
-  });
+  const monumentenBaseFilters = {
+    "monumenten-punt": null,
+    "monumenten-vlak": archeologischFilter,
+    "monumenten-vlak-outline": archeologischFilter,
+  };
+
+  function setupMonumentenLayers(fc) {
+    // Gebouwde monumenten altijd als punt (ook wanneer de bron een
+    // polygoongeometrie heeft -- dan een client-side centroid, alleen voor
+    // de marker-positie, geen vervanging van de echte geometrie). Archeologische
+    // rijksmonumenten juist als vlak wanneer de bron een polygoon heeft (anders
+    // als punt, want er is dan geen polygoon om te tonen).
+    const monumentenPunten = deriveMonumentPoints(fc);
+    map.addSource("monumenten", { type: "geojson", data: fc });
+    map.addSource("monumenten-punten", { type: "geojson", data: monumentenPunten });
+    map.addLayer({
+      id: "monumenten-punt",
+      type: "circle",
+      source: "monumenten-punten",
+      paint: {
+        "circle-radius": 4,
+        "circle-color": [
+          "case",
+          ["==", ["get", "monument_aard"], "archeologisch"],
+          "#e8590c",
+          ["==", ["get", "monument_aard"], "onroerend gebouwd"],
+          "#1971c2",
+          "#868e96",
+        ],
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff",
+      },
+    });
+    map.addLayer({
+      id: "monumenten-vlak",
+      type: "fill",
+      source: "monumenten",
+      filter: archeologischFilter,
+      paint: { "fill-color": "#e8590c", "fill-opacity": 0.4 },
+    });
+    map.addLayer({
+      id: "monumenten-vlak-outline",
+      type: "line",
+      source: "monumenten",
+      filter: archeologischFilter,
+      paint: { "line-color": "#e8590c", "line-width": 1.5 },
+    });
+
+    // Boven het terrein maar onder de ingangen -- ingangen-punt bestaat al
+    // (eager geladen), dus moveLayer met een beforeId werkt ongeacht wanneer
+    // deze laag alsnog wordt aangezet (zie ook "Ingangen" verderop).
+    map.moveLayer("monumenten-vlak", "ingangen-punt");
+    map.moveLayer("monumenten-vlak-outline", "ingangen-punt");
+    map.moveLayer("monumenten-punt", "ingangen-punt");
+
+    map.on("click", "monumenten-punt", showMonumentPopup);
+    map.on("click", "monumenten-vlak", showMonumentPopup);
+    for (const layerId of ["monumenten-punt", "monumenten-vlak"]) {
+      map.on("mouseenter", layerId, () => (map.getCanvas().style.cursor = "pointer"));
+      map.on("mouseleave", layerId, () => (map.getCanvas().style.cursor = ""));
+    }
+
+    functieOptions = functieCounts(fc);
+    functieSearchEl.disabled = false;
+    renderFunctieOptions();
+    updateMonumentenFilter();
+    statusEl.textContent = `${fc.features.length} rijksmonumenten geladen.`;
+  }
 
   // Drie vaste stappen i.p.v. een doorlopende 50-250m-schaal (2026-08-27,
   // wens van Joop: "afstand aanpassen naar 25, 50 en 100 meter. > 100 is
@@ -590,25 +645,30 @@ async function main() {
     return best;
   }
 
-  const monumentenBaseFilters = {
-    "monumenten-punt": null,
-    "monumenten-vlak": archeologischFilter,
-    "monumenten-vlak-outline": archeologischFilter,
-  };
-
   // --- Functiefilter: dynamisch opgebouwd uit de daadwerkelijk voorkomende
   // oorspronkelijke_functie_kort-waarden, geen vaste curatie (zie
   // docs/data/004-rce-mcp-querystrategie.md, "Filteren: alleen op
   // oorspronkelijke functie"). Selectie staat los van de zoekbalk zodat
-  // filteren op tekst de selectie niet ongedaan maakt.
-  const functieOptions = functieCounts(monumenten);
+  // filteren op tekst de selectie niet ongedaan maakt. De opties zijn pas
+  // bekend zodra de rijksmonumenten-laag geladen is (setupMonumentenLayers
+  // hierboven) -- tot die tijd toont het select-veld een uitleg i.p.v. een
+  // lege lijst.
+  let functieOptions = [];
   const selectedFunctie = new Set();
   const functieSelectEl = document.getElementById("functie-select");
   const functieSearchEl = document.getElementById("functie-search");
+  functieSearchEl.disabled = true;
   function renderFunctieOptions() {
     const query = functieSearchEl.value.trim().toLowerCase();
     const prevScroll = functieSelectEl.scrollTop;
     functieSelectEl.innerHTML = "";
+    if (!monumentenLoaded) {
+      const placeholder = document.createElement("option");
+      placeholder.disabled = true;
+      placeholder.textContent = "Zet Rijksmonumenten aan (onder Lagen) om te filteren op functie";
+      functieSelectEl.appendChild(placeholder);
+      return;
+    }
     for (const [label, count] of functieOptions) {
       if (query && !label.toLowerCase().includes(query)) continue;
       const opt = document.createElement("option");
@@ -634,39 +694,40 @@ async function main() {
   });
 
   function updateMonumentenFilter() {
-    const showAll = document.getElementById("toggle-monumenten-alle").checked;
     const relevantUris = relevantMonumentUris(begraafplaatsen, rmThreshold);
-    const relevantMonumentenFilter = ["in", ["get", "cho_uri"], ["literal", Array.from(relevantUris)]];
-    const dynamicClauses = [];
-    if (!showAll) dynamicClauses.push(relevantMonumentenFilter);
-    if (selectedFunctie.size) {
-      dynamicClauses.push(["in", ["get", "oorspronkelijke_functie_kort"], ["literal", [...selectedFunctie]]]);
-    }
-    // Aan/uit voor gebouwde vs archeologische monumenten (ceo:monumentAard,
-    // wens van Joop 2026-08-27). Bij beide aan geen extra clausule (zelfde
-    // gedrag als voorheen); bij een van beide uit filteren op de resterende
-    // aard-waarde; bij beide uit een "in" met een lege literal-array, die
-    // voor elke feature false oplevert en zo alles verbergt.
-    const gebouwdAan = document.getElementById("toggle-monumenten-gebouwd").checked;
-    const archeologischAan = document.getElementById("toggle-monumenten-archeologisch").checked;
-    if (!gebouwdAan || !archeologischAan) {
-      const aardWaarden = [];
-      if (gebouwdAan) aardWaarden.push("onroerend gebouwd");
-      if (archeologischAan) aardWaarden.push("archeologisch");
-      dynamicClauses.push(["in", ["get", "monument_aard"], ["literal", aardWaarden]]);
-    }
-    for (const [id, base] of Object.entries(monumentenBaseFilters)) {
-      const clauses = base ? [base, ...dynamicClauses] : dynamicClauses;
-      const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
-      map.setFilter(id, filter);
-    }
     document.getElementById("monumenten-count").textContent = `(${relevantUris.size} relevant, ≤${rmThreshold}m)`;
+    // De daadwerkelijke laagfilters kunnen pas gezet worden zodra de
+    // rijksmonumenten-laag bestaat (setupMonumentenLayers) -- de teller
+    // hierboven werkt altijd, die komt uit begraafplaatsen zelf.
+    if (monumentenLoaded) {
+      const showAll = document.getElementById("toggle-monumenten-alle").checked;
+      const relevantMonumentenFilter = ["in", ["get", "cho_uri"], ["literal", Array.from(relevantUris)]];
+      const dynamicClauses = [];
+      if (!showAll) dynamicClauses.push(relevantMonumentenFilter);
+      if (selectedFunctie.size) {
+        dynamicClauses.push(["in", ["get", "oorspronkelijke_functie_kort"], ["literal", [...selectedFunctie]]]);
+      }
+      // Aan/uit voor gebouwde vs archeologische monumenten (ceo:monumentAard,
+      // wens van Joop 2026-08-27). Bij beide aan geen extra clausule (zelfde
+      // gedrag als voorheen); bij een van beide uit filteren op de resterende
+      // aard-waarde; bij beide uit een "in" met een lege literal-array, die
+      // voor elke feature false oplevert en zo alles verbergt.
+      const gebouwdAan = document.getElementById("toggle-monumenten-gebouwd").checked;
+      const archeologischAan = document.getElementById("toggle-monumenten-archeologisch").checked;
+      if (!gebouwdAan || !archeologischAan) {
+        const aardWaarden = [];
+        if (gebouwdAan) aardWaarden.push("onroerend gebouwd");
+        if (archeologischAan) aardWaarden.push("archeologisch");
+        dynamicClauses.push(["in", ["get", "monument_aard"], ["literal", aardWaarden]]);
+      }
+      for (const [id, base] of Object.entries(monumentenBaseFilters)) {
+        const clauses = base ? [base, ...dynamicClauses] : dynamicClauses;
+        const filter = clauses.length === 0 ? null : clauses.length === 1 ? clauses[0] : ["all", ...clauses];
+        map.setFilter(id, filter);
+      }
+    }
     syncUrl();
   }
-  // Geen aanroep hier meer -- de enige initiele aanroep gebeurt nu via
-  // applyStateFromUrl() aan het einde van main(), na alle andere
-  // declaraties (o.a. searchInputEl bestaat pas verderop; er wordt tussen
-  // hier en daar niets gerenderd, dus dit verandert het gedrag niet).
 
   // --- Begraafplaatsen terrein ---
   map.addSource("terrein", { type: "geojson", data: begraafplaatsen });
@@ -699,16 +760,6 @@ async function main() {
       "line-width": ["case", ["==", ["get", "status_conflict"], true], 3, 1],
     },
   });
-
-  // Rijksmonumenten-lagen zijn eerder toegevoegd dan het terrein (voor de
-  // filter-/UI-logica die eraan hangt), maar moeten er visueel bovenop
-  // liggen -- anders verkleurt de halftransparante terreinvlak-fill de
-  // monumentpunten eronder en zijn ze nauwelijks te onderscheiden (gemeld
-  // door Rene, kleurenblind). Zonder tweede argument verplaatst moveLayer
-  // een laag naar de bovenkant van de stapel.
-  map.moveLayer("monumenten-vlak");
-  map.moveLayer("monumenten-vlak-outline");
-  map.moveLayer("monumenten-punt");
 
   // --- Ingangen (bovenste laag: kleine punten) ---
   map.addSource("ingangen", { type: "geojson", data: ingangen });
@@ -794,15 +845,21 @@ async function main() {
           ["Huidige functie", p.huidige_functie],
           ["Type", p.type],
           ["Datum inschrijving monumentenregister", p.datum_inschrijving_monumentenregister],
-          ["Register", p.monumentenregister_url ? `<a href="${p.monumentenregister_url}" target="_blank" rel="noopener">bekijk</a>` : null],
+          [
+            "Register",
+            p.monumentenregister_url
+              ? rawHtml(`<a href="${escapeHtml(p.monumentenregister_url)}" target="_blank" rel="noopener">bekijk</a>`)
+              : null,
+          ],
         ])
       )
       .addTo(map);
   }
-  map.on("click", "monumenten-punt", showMonumentPopup);
-  map.on("click", "monumenten-vlak", showMonumentPopup);
+  // Klik-/hover-registratie voor monumenten-punt/-vlak gebeurt in
+  // setupMonumentenLayers() hierboven (die layers bestaan pas zodra de
+  // laag lazy geladen is).
 
-  for (const layerId of ["terrein-fill", "ingangen-punt", "gezichten-fill", "monumenten-punt", "monumenten-vlak"]) {
+  for (const layerId of ["terrein-fill", "ingangen-punt", "gezichten-fill"]) {
     map.on("mouseenter", layerId, () => (map.getCanvas().style.cursor = "pointer"));
     map.on("mouseleave", layerId, () => (map.getCanvas().style.cursor = ""));
   }
@@ -813,7 +870,8 @@ async function main() {
     "toggle-terrein": ["terrein-fill", "terrein-outline"],
     "toggle-ingangen": ["ingangen-punt"],
     "toggle-gezichten": ["gezichten-fill", "gezichten-outline"],
-    "toggle-monumenten": Object.keys(monumentenBaseFilters),
+    // toggle-monumenten zit hier bewust niet bij -- die laag is lazy (zie
+    // hieronder, na deze generieke lus) en heeft daarom een eigen listener.
   };
   // Legenda dimt items waarvan de laag uitstaat (data-layer verwijst naar de
   // checkbox-id hierboven), zodat de legenda meteen laat zien wat je nu op
@@ -838,6 +896,30 @@ async function main() {
       syncUrl();
     });
   }
+
+  // Rijksmonumenten: zelfde lazy-patroon als de andere losse lagen
+  // (onderzoeksgebieden/CHS/verdwenen) -- pas ophalen bij de eerste keer
+  // aanzetten, daarna alleen nog zichtbaarheid wisselen (2026-08-28, na
+  // een externe review: dit was de enige van de zeven losse lagen die nog
+  // standaard meeladen, ook met de laag uitgezet).
+  document.getElementById("toggle-monumenten").addEventListener("change", async (e) => {
+    updateLegendActivity();
+    syncUrl();
+    if (!e.target.checked) {
+      if (monumentenLoaded) {
+        for (const id of Object.keys(monumentenBaseFilters)) map.setLayoutProperty(id, "visibility", "none");
+      }
+      return;
+    }
+    if (monumentenLoaded) {
+      for (const id of Object.keys(monumentenBaseFilters)) map.setLayoutProperty(id, "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Rijksmonumenten laden (16MB)…";
+    monumenten = await loadJson(DATA.monumenten);
+    monumentenLoaded = true;
+    setupMonumentenLayers(monumenten);
+  });
 
   document.getElementById("toggle-monumenten-alle").addEventListener("change", updateMonumentenFilter);
   document.getElementById("toggle-monumenten-gebouwd").addEventListener("change", () => {
@@ -1274,8 +1356,7 @@ async function main() {
   statusEl.textContent =
     `${begraafplaatsen.features.length} begraafplaatsen · ` +
     `${ingangen.features.length} ingangen · ` +
-    `${gezichten.features.length} beschermde gezichten · ` +
-    `${monumenten.features.length} rijksmonumenten`;
+    `${gezichten.features.length} beschermde gezichten`;
 }
 
 main().catch((err) => {

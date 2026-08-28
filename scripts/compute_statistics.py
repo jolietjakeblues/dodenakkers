@@ -74,7 +74,6 @@ BEGRAAFPLAATS_FUNCTIES = {
 DENOMINATIE_PATTERNS = [
     ("Rooms-Katholiek", r"\bR\.?\s?K\.?\b|Rooms[- ]Katholiek|Katholiek"),
     ("Nederlands Hervormd", r"\bN\.?\s?H\.?\b|Hervormd"),
-    ("Gereformeerd", r"Gereformeerd|\bGeref\."),
     ("Joods", r"Joods|Joodse|Isra[eë]litisch"),
     ("Doopsgezind", r"Doopsgezind"),
     ("Evangelisch-Luthers", r"Evangelisch[- ]?Lutherse?|\bLuthers"),

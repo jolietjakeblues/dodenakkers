@@ -713,7 +713,7 @@
     "verdeling": [
       {
         "denominatie": "Onbekend/algemeen",
-        "aantal": 278
+        "aantal": 280
       },
       {
         "denominatie": "Nederlands Hervormd",
@@ -726,10 +726,6 @@
       {
         "denominatie": "Joods",
         "aantal": 26
-      },
-      {
-        "denominatie": "Gereformeerd",
-        "aantal": 2
       }
     ]
   },
