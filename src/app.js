@@ -1128,11 +1128,23 @@ async function main() {
     "toggle-gezichten": "gezicht",
     "toggle-monumenten": "mon",
     "toggle-monumenten-alle": "monalle",
-    "toggle-monumenten-gebouwd": "monbouwd",
-    "toggle-monumenten-archeologisch": "monarch",
     "toggle-onderzoeksgebieden": "arch",
     "toggle-chs-archeologie": "chsarch",
     "toggle-verdwenen": "verdwenen",
+  };
+  // De twee monumenten-aard-sub-toggles staan standaard AAN (index.html) --
+  // omgekeerde polariteit t.o.v. LAYER_TOGGLE_CODES hierboven (code aanwezig
+  // = UIT i.p.v. AAN). Anders zou een permalink van vóór deze toggles
+  // bestonden (2026-08-27) ze bij het laden alsnog uitzetten, simpelweg
+  // omdat de codes daar nooit in konden voorkomen -- precies wat er
+  // gebeurde met een oude link met alleen "mon,monalle" erin: de generieke
+  // lus zag "monbouwd"/"monarch" ontbreken en zette dus beide uit, wat de
+  // rijksmonumentfilter herleidde tot een lege literal-array (alles
+  // verborgen, geen rijksmonumenten meer zichtbaar). Gemeld door Joop,
+  // 2026-08-28.
+  const DEFAULT_ON_LAYER_TOGGLE_CODES = {
+    "toggle-monumenten-gebouwd": "nomonbouwd",
+    "toggle-monumenten-archeologisch": "nomonarch",
   };
   const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };
@@ -1149,7 +1161,11 @@ async function main() {
     const layers = Object.entries(LAYER_TOGGLE_CODES)
       .filter(([id]) => document.getElementById(id).checked)
       .map(([, code]) => code);
-    if (layers.length) params.set("lyr", layers.join(","));
+    const layersUit = Object.entries(DEFAULT_ON_LAYER_TOGGLE_CODES)
+      .filter(([id]) => !document.getElementById(id).checked)
+      .map(([, code]) => code);
+    const alleLagen = [...layers, ...layersUit];
+    if (alleLagen.length) params.set("lyr", alleLagen.join(","));
     const status = Object.entries(STATUS_CODES)
       .filter(([id]) => document.getElementById(id).checked)
       .map(([, code]) => code);
@@ -1209,6 +1225,14 @@ async function main() {
       for (const [id, code] of Object.entries(LAYER_TOGGLE_CODES)) {
         const cb = document.getElementById(id);
         const shouldCheck = layerCodes.has(code);
+        if (cb.checked !== shouldCheck) {
+          cb.checked = shouldCheck;
+          cb.dispatchEvent(new Event("change"));
+        }
+      }
+      for (const [id, code] of Object.entries(DEFAULT_ON_LAYER_TOGGLE_CODES)) {
+        const cb = document.getElementById(id);
+        const shouldCheck = !layerCodes.has(code);
         if (cb.checked !== shouldCheck) {
           cb.checked = shouldCheck;
           cb.dispatchEvent(new Event("change"));
