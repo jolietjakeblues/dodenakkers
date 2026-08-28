@@ -490,7 +490,13 @@ async function main() {
   // historische locatie), en geen automatische heuristiek zoals de
   // kandidatenpagina maar Leons eigen kennis. Kleur onderscheidt of de
   // locatie al herkenbaar is in de hoofddataset (grijs, minder interessant)
-  // of niet (rood, de "echt onbekende" gevallen -- wens van Joop, 2026-08-27).
+  // of niet (donker, de "echt onbekende" gevallen -- wens van Joop,
+  // 2026-08-27). Was eerst rood (#c92a2a), maar dat viel qua kleur te
+  // dicht bij de al bestaande roze ingangen (#e64980) -- door elkaar te
+  // halen gemeld door Joop (2026-08-28). #212529 (bijna zwart, ook al de
+  // hoofdtekstkleur van het paneel) is qua hue niet te verwarren met welke
+  // andere kleur op de kaart dan ook, en het contrast blijft ook voor Rene
+  // (kleurenblind) overeind omdat het op lichtheid werkt, niet op hue.
   let verdwenenLoaded = false;
   document.getElementById("toggle-verdwenen").addEventListener("change", async (e) => {
     updateLegendActivity();
@@ -512,7 +518,7 @@ async function main() {
       source: "verdwenen",
       paint: {
         "circle-radius": 5,
-        "circle-color": ["case", ["get", "in_hoofddataset"], "#adb5bd", "#c92a2a"],
+        "circle-color": ["case", ["get", "in_hoofddataset"], "#adb5bd", "#212529"],
         "circle-stroke-width": 1,
         "circle-stroke-color": "#ffffff",
       },
@@ -803,7 +809,7 @@ async function main() {
               : "geen",
           ],
           [
-            "Rijksmonumenten &le;100m",
+            "Rijksmonumenten ≤100m",
             rmRelaties.length
               ? rmRelaties.map((r) => `${r.naam || r.rijksmonumentnummer} (${relationLabel(r.relation)}, ${r.distance_m}m)`).join(", ")
               : "geen",
