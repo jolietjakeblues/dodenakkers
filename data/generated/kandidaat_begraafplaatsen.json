@@ -1,5 +1,5 @@
 {
-  "waarschuwing": "EXPERIMENTEEL. Automatische tekstzoekactie op archeologische onderzoeksrapporten, geen verificatie. Elke kandidaat moet handmatig beoordeeld worden voordat er conclusies aan worden verbonden. Zie scripts/compute_kandidaat_begraafplaatsen.py.",
+  "waarschuwing": "EXPERIMENTEEL. Automatische tekstzoekactie op archeologische onderzoeksrapporten, geen verificatie. Elke kandidaat moet handmatig beoordeeld worden voordat er conclusies aan worden verbonden. Zie scripts/compute_kandidaat_begraafplaatsen.py. Geen periodefilter hier (wel bij CHS-archeologie hieronder): geprobeerd en teruggedraaid na verificatie, vrije rapporttekst bleek te ongestructureerd om betrouwbaar te filteren (zie de toelichting in de broncode) -- een 'grafveld' kan dus nog steeds uit de prehistorie of Romeinse tijd stammen zonder dat de tekst dat met zoveel woorden zegt. Elke kandidaat toont wel de afstand tot de dichtstbijzijnde verdwenen begraafplaats uit Leons eigen kennis (data/generated/verdwenen-begraafplaatsen.geojson) -- vlak erbij betekent mogelijk dat de tekst gewoon die al bekende locatie beschrijft.",
   "aantal_onderzoeksgebieden_doorzocht": 22254,
   "aantal_treffers": 199,
   "aantal_buiten_zuid_holland_bbox_rand": 43,
@@ -14,6 +14,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1903.1,
       "dichtstbijzijnde_bp": "RK begraafplaats St. Adrianus, Naaldwijk",
+      "afstand_tot_verdwenen_bp_m": 1884.0,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.23535,
       "lat": 52.000944
     },
@@ -27,6 +29,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1876.6,
       "dichtstbijzijnde_bp": "RK begraafplaats St. Adrianus, Naaldwijk",
+      "afstand_tot_verdwenen_bp_m": 1855.2,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.234616,
       "lat": 52.001438
     },
@@ -40,6 +44,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1774.6,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Nieuw-Lekkerland",
+      "afstand_tot_verdwenen_bp_m": 1312.7,
+      "dichtstbijzijnde_verdwenen_bp": "Eerste gemeentelijke begraafplaats, Nieuw-Lekkerland",
       "lon": 4.665902,
       "lat": 51.884996
     },
@@ -53,6 +59,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1759.9,
       "dichtstbijzijnde_bp": "NH Kerkhof, Nootdorp",
+      "afstand_tot_verdwenen_bp_m": 3127.3,
+      "dichtstbijzijnde_verdwenen_bp": "Pestkerkhof, Delft",
       "lon": 4.368947,
       "lat": 52.041392
     },
@@ -66,6 +74,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1504.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Molenlande, Monster",
+      "afstand_tot_verdwenen_bp_m": 4052.2,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.201736,
       "lat": 52.031606
     },
@@ -79,6 +89,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1470.0,
       "dichtstbijzijnde_bp": "H. Andreasbegraafplaats, Kwintsheul",
+      "afstand_tot_verdwenen_bp_m": 2399.0,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.23616,
       "lat": 52.009336
     },
@@ -92,6 +104,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1362.4,
       "dichtstbijzijnde_bp": "Rhijnhof, Leiden",
+      "afstand_tot_verdwenen_bp_m": 80.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.474426,
       "lat": 52.166002
     },
@@ -105,6 +119,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1286.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+      "afstand_tot_verdwenen_bp_m": 23.6,
+      "dichtstbijzijnde_verdwenen_bp": "Armenbegraafplaats Blauwe Bolwerk, Leiden",
       "lon": 4.483814,
       "lat": 52.155719
     },
@@ -118,6 +134,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1243.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Schipluiden",
+      "afstand_tot_verdwenen_bp_m": 5624.0,
+      "dichtstbijzijnde_verdwenen_bp": "Oude RK begraafplaats, Maassluis",
       "lon": 4.306117,
       "lat": 51.964754
     },
@@ -131,6 +149,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1233.0,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Dubbeldam, Dordrecht",
+      "afstand_tot_verdwenen_bp_m": 18.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
       "lon": 4.700984,
       "lat": 51.794098
     },
@@ -144,6 +164,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1200.6,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+      "afstand_tot_verdwenen_bp_m": 94.5,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Leiden",
       "lon": 4.485206,
       "lat": 52.154767
     },
@@ -157,6 +179,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1131.0,
       "dichtstbijzijnde_bp": "Begraafplaats Sancta Maria, Noordwijk",
+      "afstand_tot_verdwenen_bp_m": 1268.6,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
       "lon": 4.472872,
       "lat": 52.271515
     },
@@ -170,6 +194,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1072.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Eikelenburg, Rijswijk",
+      "afstand_tot_verdwenen_bp_m": 1566.6,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.296271,
       "lat": 52.029291
     },
@@ -183,6 +209,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1031.7,
       "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
+      "afstand_tot_verdwenen_bp_m": 45.2,
+      "dichtstbijzijnde_verdwenen_bp": "Vrouwekerkhof, Leiden",
       "lon": 4.48895,
       "lat": 52.161054
     },
@@ -196,6 +224,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 1017.7,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+      "afstand_tot_verdwenen_bp_m": 43.7,
+      "dichtstbijzijnde_verdwenen_bp": "Vrouwekerkhof, Leiden",
       "lon": 4.489124,
       "lat": 52.160882
     },
@@ -209,6 +239,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 967.1,
       "dichtstbijzijnde_bp": "RK begraafplaats, Poeldijk",
+      "afstand_tot_verdwenen_bp_m": 2989.1,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.231796,
       "lat": 52.027668
     },
@@ -222,6 +254,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 910.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Westduin, Den Haag",
+      "afstand_tot_verdwenen_bp_m": 5646.7,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.205478,
       "lat": 52.051379
     },
@@ -235,6 +269,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 853.9,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Hellevoetsluis",
+      "afstand_tot_verdwenen_bp_m": 166.4,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Uithof Oosthoek, Hellevoetsluis",
       "lon": 4.156507,
       "lat": 51.848501
     },
@@ -248,6 +284,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 852.1,
       "dichtstbijzijnde_bp": "RK begraafplaats, Poeldijk",
+      "afstand_tot_verdwenen_bp_m": 3230.1,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.228319,
       "lat": 52.027971
     },
@@ -261,6 +299,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 843.9,
       "dichtstbijzijnde_bp": "Gemeentelijk kerkhof, Arkel",
+      "afstand_tot_verdwenen_bp_m": 3567.2,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gorinchem",
       "lon": 4.992586,
       "lat": 51.859446
     },
@@ -274,6 +314,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 843.3,
       "dichtstbijzijnde_bp": "Gem. begraafplaats De Essenhof, Dordrecht",
+      "afstand_tot_verdwenen_bp_m": 1651.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
       "lon": 4.677199,
       "lat": 51.791669
     },
@@ -287,6 +329,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 806.8,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Zuidland",
+      "afstand_tot_verdwenen_bp_m": 3992.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.251322,
       "lat": 51.828193
     },
@@ -300,6 +344,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 763.2,
       "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
+      "afstand_tot_verdwenen_bp_m": 1231.8,
+      "dichtstbijzijnde_verdwenen_bp": "Armenbegraafplaats Grote Bolwerk, Leiden",
       "lon": 4.515852,
       "lat": 52.160896
     },
@@ -313,6 +359,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 757.6,
       "dichtstbijzijnde_bp": "Kerkhof oude kerk, Zwijndrecht",
+      "afstand_tot_verdwenen_bp_m": 67.3,
+      "dichtstbijzijnde_verdwenen_bp": "Grote kerkhof, Dordrecht",
       "lon": 4.661488,
       "lat": 51.814032
     },
@@ -326,6 +374,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 696.7,
       "dichtstbijzijnde_bp": "Kerkhof oude kerk, Zwijndrecht",
+      "afstand_tot_verdwenen_bp_m": 14.6,
+      "dichtstbijzijnde_verdwenen_bp": "Grote kerkhof, Dordrecht",
       "lon": 4.660748,
       "lat": 51.814336
     },
@@ -339,6 +389,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 684.8,
       "dichtstbijzijnde_bp": "NH Kerkhof, Goedereede",
+      "afstand_tot_verdwenen_bp_m": 8364.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Rockanje",
       "lon": 3.97995,
       "lat": 51.824287
     },
@@ -352,6 +404,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 681.0,
       "dichtstbijzijnde_bp": "Vm. RK begraafplaats, Delft",
+      "afstand_tot_verdwenen_bp_m": 43.5,
+      "dichtstbijzijnde_verdwenen_bp": "Nieuwe kerkhof, Delft",
       "lon": 4.359927,
       "lat": 52.012039
     },
@@ -365,6 +419,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 678.2,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Zuidland",
+      "afstand_tot_verdwenen_bp_m": 3890.2,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.248218,
       "lat": 51.826256
     },
@@ -378,6 +434,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 660.5,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+      "afstand_tot_verdwenen_bp_m": 56.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
       "lon": 4.713065,
       "lat": 52.010713
     },
@@ -391,6 +449,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 629.8,
       "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+      "afstand_tot_verdwenen_bp_m": 211.5,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Gouda",
       "lon": 4.71085,
       "lat": 52.014304
     },
@@ -404,6 +464,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 624.3,
       "dichtstbijzijnde_bp": "HH Jacobus en Martinusbegraafplaats, Kerkbuurt",
+      "afstand_tot_verdwenen_bp_m": 2152.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof Overschie, Rotterdam",
       "lon": 4.392596,
       "lat": 51.948588
     },
@@ -417,6 +479,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 619.7,
       "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+      "afstand_tot_verdwenen_bp_m": 186.7,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Gouda",
       "lon": 4.710837,
       "lat": 52.014535
     },
@@ -430,6 +494,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 615.8,
       "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+      "afstand_tot_verdwenen_bp_m": 155.2,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Gouda",
       "lon": 4.710715,
       "lat": 52.014808
     },
@@ -443,6 +509,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 609.3,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+      "afstand_tot_verdwenen_bp_m": 82.1,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
       "lon": 4.711113,
       "lat": 52.011013
     },
@@ -456,6 +524,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 580.7,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Noordwijk",
+      "afstand_tot_verdwenen_bp_m": 4147.0,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
       "lon": 4.444075,
       "lat": 52.235555
     },
@@ -469,6 +539,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 551.6,
       "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+      "afstand_tot_verdwenen_bp_m": 14.9,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof Grote kerk, Den Haag",
       "lon": 4.307068,
       "lat": 52.077366
     },
@@ -482,6 +554,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 536.7,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Vredehof, Spijkenisse",
+      "afstand_tot_verdwenen_bp_m": 3411.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
       "lon": 4.314957,
       "lat": 51.850067
     },
@@ -495,6 +569,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 500.8,
       "dichtstbijzijnde_bp": "Gem. begraafplaats De Bleekerij, Katwijk aan den Rijn",
+      "afstand_tot_verdwenen_bp_m": 5721.9,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.416108,
       "lat": 52.201929
     },
@@ -508,6 +584,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 481.4,
       "dichtstbijzijnde_bp": "NH Begraafplaats Ijsselmonde, Rotterdam",
+      "afstand_tot_verdwenen_bp_m": 4029.1,
+      "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Rotterdam",
       "lon": 4.548528,
       "lat": 51.900312
     },
@@ -521,6 +599,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 464.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats De Ommering, Spijkenisse",
+      "afstand_tot_verdwenen_bp_m": 4340.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Blankenburg",
       "lon": 4.292916,
       "lat": 51.860864
     },
@@ -534,6 +614,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 376.9,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Poortugaal",
+      "afstand_tot_verdwenen_bp_m": 2695.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
       "lon": 4.39778,
       "lat": 51.864104
     },
@@ -547,6 +629,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 263.3,
       "dichtstbijzijnde_bp": "St Jan de Doperbegraafplaats, Wateringen",
+      "afstand_tot_verdwenen_bp_m": 687.6,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.280672,
       "lat": 52.029296
     },
@@ -560,6 +644,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 250.3,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Heerjansdam",
+      "afstand_tot_verdwenen_bp_m": 6853.9,
+      "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Dordrecht",
       "lon": 4.567724,
       "lat": 51.839151
     },
@@ -573,6 +659,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 197.5,
       "dichtstbijzijnde_bp": "NH Kerkhof, Noordeloos",
+      "afstand_tot_verdwenen_bp_m": 6108.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuwpoort",
       "lon": 4.941851,
       "lat": 51.902912
     },
@@ -586,6 +674,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 186.1,
       "dichtstbijzijnde_bp": "NH kerkhof, Hoogblokland",
+      "afstand_tot_verdwenen_bp_m": 4996.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gorinchem",
       "lon": 4.971779,
       "lat": 51.874477
     },
@@ -599,6 +689,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 182.9,
       "dichtstbijzijnde_bp": "St Jan de Doperbegraafplaats, Wateringen",
+      "afstand_tot_verdwenen_bp_m": 557.3,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.279021,
       "lat": 52.028554
     },
@@ -612,6 +704,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 124.2,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Vredehof, Bodegraven",
+      "afstand_tot_verdwenen_bp_m": 4914.0,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Waarder",
       "lon": 4.760021,
       "lat": 52.085922
     },
@@ -625,6 +719,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 98.8,
       "dichtstbijzijnde_bp": "NH Kerkhof, Oostvoorne",
+      "afstand_tot_verdwenen_bp_m": 4427.2,
+      "dichtstbijzijnde_verdwenen_bp": "St. Pieterskerkhof, Brielle",
       "lon": 4.102506,
       "lat": 51.916269
     },
@@ -638,6 +734,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 90.3,
       "dichtstbijzijnde_bp": "Nieuwe gemeentelijke Begraafplaats, Maasland",
+      "afstand_tot_verdwenen_bp_m": 2183.3,
+      "dichtstbijzijnde_verdwenen_bp": "Oude RK begraafplaats, Maassluis",
       "lon": 4.275987,
       "lat": 51.939912
     },
@@ -651,6 +749,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 67.8,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Schoonhoven",
+      "afstand_tot_verdwenen_bp_m": 1324.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuwpoort",
       "lon": 4.85742,
       "lat": 51.943944
     },
@@ -664,6 +764,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 40.0,
       "dichtstbijzijnde_bp": "NH Kerkhof, Zwammerdam",
+      "afstand_tot_verdwenen_bp_m": 3976.3,
+      "dichtstbijzijnde_verdwenen_bp": "Gem. begraafplaats Lage Zijde, Alphen aan den Rijn",
       "lon": 4.728652,
       "lat": 52.105277
     },
@@ -677,6 +779,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 32.3,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Giessen-Oudekerk",
+      "afstand_tot_verdwenen_bp_m": 1722.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Giessenburg",
       "lon": 4.866591,
       "lat": 51.844482
     },
@@ -690,6 +794,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 23.6,
       "dichtstbijzijnde_bp": "Oude gem. begraafplaats, Ammerstol",
+      "afstand_tot_verdwenen_bp_m": 735.2,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Groot Ammers",
       "lon": 4.808637,
       "lat": 51.926749
     },
@@ -703,6 +809,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 22.2,
       "dichtstbijzijnde_bp": "Mausoleum Floris V, Rijnsburg",
+      "afstand_tot_verdwenen_bp_m": 3466.7,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.443706,
       "lat": 52.189897
     },
@@ -716,6 +824,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 16.4,
       "dichtstbijzijnde_bp": "HH Jacobus en Martinusbegraafplaats, Kerkbuurt",
+      "afstand_tot_verdwenen_bp_m": 2263.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof Overschie, Rotterdam",
       "lon": 4.387891,
       "lat": 51.943833
     },
@@ -729,6 +839,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 12.4,
       "dichtstbijzijnde_bp": "NH Kerkhof, Voorschoten",
+      "afstand_tot_verdwenen_bp_m": 4194.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Leiden",
       "lon": 4.446573,
       "lat": 52.12502
     },
@@ -742,6 +854,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 11.6,
       "dichtstbijzijnde_bp": "NH Kerkhof, Katwijk",
+      "afstand_tot_verdwenen_bp_m": 6960.1,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.393127,
       "lat": 52.202578
     },
@@ -755,6 +869,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 11.3,
       "dichtstbijzijnde_bp": "NH Kerkhof, Katwijk",
+      "afstand_tot_verdwenen_bp_m": 6960.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.393123,
       "lat": 52.202579
     },
@@ -768,6 +884,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 10.0,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Rijswijk",
+      "afstand_tot_verdwenen_bp_m": 2996.6,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof Barbaraklooster, Den Haag",
       "lon": 4.33415,
       "lat": 52.05571
     },
@@ -781,6 +899,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 8.1,
       "dichtstbijzijnde_bp": "NH Kerkhof, Aarlanderveen",
+      "afstand_tot_verdwenen_bp_m": 4291.3,
+      "dichtstbijzijnde_verdwenen_bp": "Gem. begraafplaats Lage Zijde, Alphen aan den Rijn",
       "lon": 4.728471,
       "lat": 52.140783
     },
@@ -794,6 +914,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 7.8,
       "dichtstbijzijnde_bp": "Grafkelder Vredenburch, 's-Gravenzande",
+      "afstand_tot_verdwenen_bp_m": 3448.5,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.161225,
       "lat": 52.004284
     },
@@ -807,6 +929,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 6.0,
       "dichtstbijzijnde_bp": "Laurentiuskerkhof, Voorschoten",
+      "afstand_tot_verdwenen_bp_m": 3385.1,
+      "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Leiden",
       "lon": 4.456189,
       "lat": 52.129718
     },
@@ -820,6 +944,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 2.3,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Giessen-Oudekerk",
+      "afstand_tot_verdwenen_bp_m": 1699.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Giessenburg",
       "lon": 4.865687,
       "lat": 51.846039
     },
@@ -833,6 +959,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Beukenhof, Schiedam",
+      "afstand_tot_verdwenen_bp_m": 1629.0,
+      "dichtstbijzijnde_verdwenen_bp": "St. Janskerkhof, Schiedam",
       "lon": 4.376365,
       "lat": 51.915611
     },
@@ -846,6 +974,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Alg. begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 147.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.549885,
       "lat": 51.745473
     },
@@ -859,6 +989,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "NH kerkhof, Noordwijkerhout",
+      "afstand_tot_verdwenen_bp_m": 547.2,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
       "lon": 4.493187,
       "lat": 52.262593
     },
@@ -872,6 +1004,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Nieuwpoort",
+      "afstand_tot_verdwenen_bp_m": 192.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuwpoort",
       "lon": 4.868038,
       "lat": 51.933078
     },
@@ -885,6 +1019,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Alblasserdam",
+      "afstand_tot_verdwenen_bp_m": 3196.4,
+      "dichtstbijzijnde_verdwenen_bp": "Eerste gemeentelijke begraafplaats, Nieuw-Lekkerland",
       "lon": 4.668381,
       "lat": 51.862933
     },
@@ -898,6 +1034,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Koudekerk aan den Rijn",
+      "afstand_tot_verdwenen_bp_m": 4136.2,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Hoogmade",
       "lon": 4.59648,
       "lat": 52.132845
     },
@@ -911,6 +1049,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Nieuwe begraafplaats, Oegstgeest",
+      "afstand_tot_verdwenen_bp_m": 3421.4,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.467608,
       "lat": 52.195763
     },
@@ -924,6 +1064,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Zoetermeer",
+      "afstand_tot_verdwenen_bp_m": 8342.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Moerkapelle",
       "lon": 4.460489,
       "lat": 52.067173
     },
@@ -937,6 +1079,8 @@
       "zekerheid": "concreet genoemd",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Stolwijk",
+      "afstand_tot_verdwenen_bp_m": 277.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Stolwijk",
       "lon": 4.772716,
       "lat": 51.973877
     },
@@ -950,6 +1094,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 4001.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Zuid-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 4910.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.31026,
       "lat": 51.757169
     },
@@ -963,6 +1109,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 3399.1,
       "dichtstbijzijnde_bp": "NH kerkhof, Klaaswaal",
+      "afstand_tot_verdwenen_bp_m": 4140.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.485234,
       "lat": 51.75189
     },
@@ -976,6 +1124,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 3132.6,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 3489.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.60214,
       "lat": 51.743128
     },
@@ -989,6 +1139,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 2803.1,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Zuid-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 5855.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.326818,
       "lat": 51.753923
     },
@@ -1002,6 +1154,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 2757.7,
       "dichtstbijzijnde_bp": "Oude begraafplaats, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 3676.6,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.602143,
       "lat": 51.755309
     },
@@ -1015,6 +1169,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 2082.3,
       "dichtstbijzijnde_bp": "H. Hart van Jezuskerkhof, De Zilk",
+      "afstand_tot_verdwenen_bp_m": 4037.6,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
       "lon": 4.521921,
       "lat": 52.291431
     },
@@ -1028,6 +1184,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 2004.4,
       "dichtstbijzijnde_bp": "NH kerkhof, Woubrugge",
+      "afstand_tot_verdwenen_bp_m": 4401.0,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Alphen aan den Rijn",
       "lon": 4.667862,
       "lat": 52.168066
     },
@@ -1041,6 +1199,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1989.7,
       "dichtstbijzijnde_bp": "NH kerkhof, Woubrugge",
+      "afstand_tot_verdwenen_bp_m": 4443.3,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Alphen aan den Rijn",
       "lon": 4.6676,
       "lat": 52.168472
     },
@@ -1054,6 +1214,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1966.4,
       "dichtstbijzijnde_bp": "Nieuwe gem. begraafplaats, Numansdorp",
+      "afstand_tot_verdwenen_bp_m": 2018.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.457711,
       "lat": 51.742015
     },
@@ -1067,6 +1229,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1888.1,
       "dichtstbijzijnde_bp": "Nieuwe gem. begraafplaats, Numansdorp",
+      "afstand_tot_verdwenen_bp_m": 2435.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.441469,
       "lat": 51.749662
     },
@@ -1080,6 +1244,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1833.3,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Alblasserdam",
+      "afstand_tot_verdwenen_bp_m": 2694.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Krimpen aan de Lek",
       "lon": 4.642892,
       "lat": 51.868671
     },
@@ -1093,6 +1259,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1830.9,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Kerkhoflaan, Den Haag",
+      "afstand_tot_verdwenen_bp_m": 2973.6,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterkerkhof, Den Haag",
       "lon": 4.324058,
       "lat": 52.107502
     },
@@ -1106,6 +1274,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1785.5,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Numansdorp",
+      "afstand_tot_verdwenen_bp_m": 1829.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.456495,
       "lat": 51.740441
     },
@@ -1119,6 +1289,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1697.7,
       "dichtstbijzijnde_bp": "NH kerkhof Koningshof, Pijnacker",
+      "afstand_tot_verdwenen_bp_m": 6068.1,
+      "dichtstbijzijnde_verdwenen_bp": "Pestkerkhof, Delft",
       "lon": 4.458643,
       "lat": 52.007983
     },
@@ -1132,6 +1304,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1623.9,
       "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+      "afstand_tot_verdwenen_bp_m": 2029.9,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterkerkhof Bagijnen, Delft",
       "lon": 4.335003,
       "lat": 52.028322
     },
@@ -1145,6 +1319,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1611.2,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Beukenhage, 's-Gravenzande",
+      "afstand_tot_verdwenen_bp_m": 2531.7,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
       "lon": 4.178342,
       "lat": 51.983219
     },
@@ -1158,6 +1334,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1575.2,
       "dichtstbijzijnde_bp": "NH kerkhof, Mijnsheerenland",
+      "afstand_tot_verdwenen_bp_m": 7552.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.510391,
       "lat": 51.807635
     },
@@ -1171,6 +1349,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1500.8,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Bleskensgraaf",
+      "afstand_tot_verdwenen_bp_m": 1053.0,
+      "dichtstbijzijnde_verdwenen_bp": "Oud gem. kerkhof, Bleskensgraaf",
       "lon": 4.766211,
       "lat": 51.86799
     },
@@ -1184,6 +1364,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1491.0,
       "dichtstbijzijnde_bp": "Begraafplaats Wilsveen, Leidschendam",
+      "afstand_tot_verdwenen_bp_m": 5710.8,
+      "dichtstbijzijnde_verdwenen_bp": "Oorlogsbegraafplaats Schouwweg, Wassenaar",
       "lon": 4.401126,
       "lat": 52.07827
     },
@@ -1197,6 +1379,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1448.7,
       "dichtstbijzijnde_bp": "Natuurbegraafplaats Zomerlanden, Heinenoord",
+      "afstand_tot_verdwenen_bp_m": 7777.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.521978,
       "lat": 51.812201
     },
@@ -1210,6 +1394,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1372.1,
       "dichtstbijzijnde_bp": "Nieuwe begraafplaats, Oegstgeest",
+      "afstand_tot_verdwenen_bp_m": 4435.8,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.449517,
       "lat": 52.202028
     },
@@ -1223,6 +1409,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1370.0,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Waddinxveen",
+      "afstand_tot_verdwenen_bp_m": 2977.0,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof Bloemendaal, Gouda",
       "lon": 4.665148,
       "lat": 52.044413
     },
@@ -1236,6 +1424,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1351.3,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Bleiswijk",
+      "afstand_tot_verdwenen_bp_m": 6559.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Moerkapelle",
       "lon": 4.506154,
       "lat": 52.004037
     },
@@ -1249,6 +1439,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1322.7,
       "dichtstbijzijnde_bp": "RK Kerkhof, Oud-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 5652.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
       "lon": 4.39206,
       "lat": 51.818088
     },
@@ -1262,6 +1454,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1277.3,
       "dichtstbijzijnde_bp": "Grafmonument Wyttenbach, Oegstgeest",
+      "afstand_tot_verdwenen_bp_m": 2651.3,
+      "dichtstbijzijnde_verdwenen_bp": "Begraafplaats op het Rijnsburger Bolwerk, Leiden",
       "lon": 4.486978,
       "lat": 52.188448
     },
@@ -1275,6 +1469,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1247.5,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Dubbeldam, Dordrecht",
+      "afstand_tot_verdwenen_bp_m": 124.0,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
       "lon": 4.699844,
       "lat": 51.794867
     },
@@ -1288,6 +1484,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1241.5,
       "dichtstbijzijnde_bp": "NH kerkhof, Heinenoord",
+      "afstand_tot_verdwenen_bp_m": 7786.7,
+      "dichtstbijzijnde_verdwenen_bp": "Hervormde begraafplaats, Charlois",
       "lon": 4.455388,
       "lat": 51.82445
     },
@@ -1301,6 +1499,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1229.8,
       "dichtstbijzijnde_bp": "Begraafplaats De Essenhof, Puttershoek",
+      "afstand_tot_verdwenen_bp_m": 7019.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.55396,
       "lat": 51.807845
     },
@@ -1314,6 +1514,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1203.1,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Heinenoord",
+      "afstand_tot_verdwenen_bp_m": 9114.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.477992,
       "lat": 51.812751
     },
@@ -1327,6 +1529,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1132.7,
       "dichtstbijzijnde_bp": "NH Kerkhof, Kethel",
+      "afstand_tot_verdwenen_bp_m": 3176.4,
+      "dichtstbijzijnde_verdwenen_bp": "St. Janskerkhof, Schiedam",
       "lon": 4.361789,
       "lat": 51.934007
     },
@@ -1340,6 +1544,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 1107.1,
       "dichtstbijzijnde_bp": "Nieuwe gem. begraafplaats, Brielle",
+      "afstand_tot_verdwenen_bp_m": 3022.7,
+      "dichtstbijzijnde_verdwenen_bp": "St. Pieterskerkhof, Brielle",
       "lon": 4.154667,
       "lat": 51.87753
     },
@@ -1353,6 +1559,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 993.9,
       "dichtstbijzijnde_bp": "NH Kerkhof, Oudenhoorn",
+      "afstand_tot_verdwenen_bp_m": 1697.0,
+      "dichtstbijzijnde_verdwenen_bp": "Begraafplaats De Struyten, Hellevoetsluis",
       "lon": 4.176588,
       "lat": 51.828572
     },
@@ -1366,6 +1574,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 875.7,
       "dichtstbijzijnde_bp": "Oude gem. begraafplaats, Zuid-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 6056.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.365749,
       "lat": 51.757203
     },
@@ -1379,6 +1589,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 816.1,
       "dichtstbijzijnde_bp": "Gem. begraafplaats De Essenhof, Dordrecht",
+      "afstand_tot_verdwenen_bp_m": 1557.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
       "lon": 4.678469,
       "lat": 51.792148
     },
@@ -1392,6 +1604,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 791.9,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Dubbeldam, Dordrecht",
+      "afstand_tot_verdwenen_bp_m": 1376.6,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
       "lon": 4.681183,
       "lat": 51.791894
     },
@@ -1405,6 +1619,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 741.1,
       "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
+      "afstand_tot_verdwenen_bp_m": 32.9,
+      "dichtstbijzijnde_verdwenen_bp": "Begraafplaats Papagaaiebolwerk (Marepoort), Leiden",
       "lon": 4.493237,
       "lat": 52.164333
     },
@@ -1418,6 +1634,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 729.4,
       "dichtstbijzijnde_bp": "Johannes de Doperbegraafplaats, Pijnacker",
+      "afstand_tot_verdwenen_bp_m": 3549.6,
+      "dichtstbijzijnde_verdwenen_bp": "Pestkerkhof, Delft",
       "lon": 4.421935,
       "lat": 52.017523
     },
@@ -1431,6 +1649,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 723.2,
       "dichtstbijzijnde_bp": "St Jan de Doperbegraafplaats, Wateringen",
+      "afstand_tot_verdwenen_bp_m": 1145.3,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Wateringen",
       "lon": 4.29053,
       "lat": 52.027949
     },
@@ -1444,6 +1664,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 645.8,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Piershil",
+      "afstand_tot_verdwenen_bp_m": 2692.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.312819,
       "lat": 51.799203
     },
@@ -1457,6 +1679,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 625.4,
       "dichtstbijzijnde_bp": "NH Kerkhof, Noordeloos",
+      "afstand_tot_verdwenen_bp_m": 6483.9,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuwpoort",
       "lon": 4.950792,
       "lat": 51.905267
     },
@@ -1470,6 +1694,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 610.7,
       "dichtstbijzijnde_bp": "RK begraafplaats, Noordwijk",
+      "afstand_tot_verdwenen_bp_m": 4113.6,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
       "lon": 4.448138,
       "lat": 52.233835
     },
@@ -1483,6 +1709,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 558.9,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Tiendweg, Boven-Hardinxveld",
+      "afstand_tot_verdwenen_bp_m": 3389.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Giessenburg",
       "lon": 4.88693,
       "lat": 51.821813
     },
@@ -1496,6 +1724,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 509.9,
       "dichtstbijzijnde_bp": "Alg. begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 415.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.555705,
       "lat": 51.741988
     },
@@ -1509,6 +1739,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 495.2,
       "dichtstbijzijnde_bp": "Gem. begraafplaats De Ommering, Spijkenisse",
+      "afstand_tot_verdwenen_bp_m": 4078.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
       "lon": 4.301983,
       "lat": 51.853892
     },
@@ -1522,6 +1754,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 446.5,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Oud-Alblas",
+      "afstand_tot_verdwenen_bp_m": 4011.5,
+      "dichtstbijzijnde_verdwenen_bp": "Kerkhof, Papendrecht",
       "lon": 4.715952,
       "lat": 51.858807
     },
@@ -1535,6 +1769,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 446.3,
       "dichtstbijzijnde_bp": "NH Kerkhof, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 2036.5,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.619335,
       "lat": 51.783126
     },
@@ -1548,6 +1784,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 436.7,
       "dichtstbijzijnde_bp": "NH Kerkhof, Maasdam",
+      "afstand_tot_verdwenen_bp_m": 4414.6,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.54853,
       "lat": 51.784398
     },
@@ -1561,6 +1799,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 436.2,
       "dichtstbijzijnde_bp": "NH Kerkhof, Rijnsburg",
+      "afstand_tot_verdwenen_bp_m": 3610.1,
+      "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
       "lon": 4.447501,
       "lat": 52.193072
     },
@@ -1574,6 +1814,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 396.1,
       "dichtstbijzijnde_bp": "Begraafplaats De Essenhof, Puttershoek",
+      "afstand_tot_verdwenen_bp_m": 6245.4,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.564446,
       "lat": 51.802459
     },
@@ -1587,6 +1829,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 390.6,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Puttershoek",
+      "afstand_tot_verdwenen_bp_m": 5984.2,
+      "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Dordrecht",
       "lon": 4.569646,
       "lat": 51.808312
     },
@@ -1600,6 +1844,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 378.4,
       "dichtstbijzijnde_bp": "NH Kerkhof, Maasdam",
+      "afstand_tot_verdwenen_bp_m": 4981.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.547049,
       "lat": 51.789448
     },
@@ -1613,6 +1859,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 369.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 2994.7,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.605601,
       "lat": 51.779521
     },
@@ -1626,6 +1874,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 367.6,
       "dichtstbijzijnde_bp": "NH Kerkhof, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 2050.5,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.619088,
       "lat": 51.782408
     },
@@ -1639,6 +1889,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 343.5,
       "dichtstbijzijnde_bp": "NH Kerkhof, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 1968.4,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.620289,
       "lat": 51.781519
     },
@@ -1652,6 +1904,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 341.9,
       "dichtstbijzijnde_bp": "Grafkelder Groeninx van Zoelen, Ridderkerk",
+      "afstand_tot_verdwenen_bp_m": 2728.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Krimpen aan de Lek",
       "lon": 4.593944,
       "lat": 51.877839
     },
@@ -1665,6 +1919,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 331.7,
       "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Nieuw-Lekkerland",
+      "afstand_tot_verdwenen_bp_m": 959.5,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuw-Lekkerland",
       "lon": 4.692397,
       "lat": 51.88306
     },
@@ -1678,6 +1934,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 296.5,
       "dichtstbijzijnde_bp": "NH kerkhof, Mijnsheerenland",
+      "afstand_tot_verdwenen_bp_m": 7389.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.488256,
       "lat": 51.798276
     },
@@ -1691,6 +1949,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 267.2,
       "dichtstbijzijnde_bp": "NH kerkhof, Heinenoord",
+      "afstand_tot_verdwenen_bp_m": 7685.7,
+      "dichtstbijzijnde_verdwenen_bp": "Hervormde begraafplaats, Charlois",
       "lon": 4.477933,
       "lat": 51.826181
     },
@@ -1704,6 +1964,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 239.9,
       "dichtstbijzijnde_bp": "NH Kerkhof, 's-Gravendeel",
+      "afstand_tot_verdwenen_bp_m": 2171.8,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.61844,
       "lat": 51.776945
     },
@@ -1717,6 +1979,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 225.0,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 203.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.553919,
       "lat": 51.745954
     },
@@ -1730,6 +1994,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 211.4,
       "dichtstbijzijnde_bp": "NH Kerkhof, Nieuw-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 4770.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.337546,
       "lat": 51.812624
     },
@@ -1743,6 +2009,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 199.2,
       "dichtstbijzijnde_bp": "Gem. kerkhof, Piershil",
+      "afstand_tot_verdwenen_bp_m": 2561.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.311277,
       "lat": 51.793132
     },
@@ -1756,6 +2024,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 198.1,
       "dichtstbijzijnde_bp": "NH kerkhof, Heinenoord",
+      "afstand_tot_verdwenen_bp_m": 7509.7,
+      "dichtstbijzijnde_verdwenen_bp": "Hervormde begraafplaats, Charlois",
       "lon": 4.473252,
       "lat": 51.827369
     },
@@ -1769,6 +2039,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 184.7,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Westmaas",
+      "afstand_tot_verdwenen_bp_m": 6638.2,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.475635,
       "lat": 51.783106
     },
@@ -1782,6 +2054,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 147.0,
       "dichtstbijzijnde_bp": "Begraafplaats Vredehof, Ridderkerk",
+      "afstand_tot_verdwenen_bp_m": 3746.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Krimpen aan de Lek",
       "lon": 4.590561,
       "lat": 51.86618
     },
@@ -1795,6 +2069,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 145.9,
       "dichtstbijzijnde_bp": "NH kerkhof, Hendrik-Ido-Ambacht",
+      "afstand_tot_verdwenen_bp_m": 4323.7,
+      "dichtstbijzijnde_verdwenen_bp": "Grote kerkhof, Dordrecht",
       "lon": 4.630295,
       "lat": 51.848419
     },
@@ -1808,6 +2084,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 134.1,
       "dichtstbijzijnde_bp": "NH kerkhof, Oude-Tonge",
+      "afstand_tot_verdwenen_bp_m": 8768.8,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Herkingen",
       "lon": 4.210748,
       "lat": 51.689907
     },
@@ -1821,6 +2099,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 122.5,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Zuid-Beijerland",
+      "afstand_tot_verdwenen_bp_m": 5552.6,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.366011,
       "lat": 51.747965
     },
@@ -1834,6 +2114,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 121.5,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Numansdorp",
+      "afstand_tot_verdwenen_bp_m": 108.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Numansdorp",
       "lon": 4.438541,
       "lat": 51.728548
     },
@@ -1847,6 +2129,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 118.9,
       "dichtstbijzijnde_bp": "NH begraafplaats, Puttershoek",
+      "afstand_tot_verdwenen_bp_m": 5731.6,
+      "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Dordrecht",
       "lon": 4.573452,
       "lat": 51.807062
     },
@@ -1860,6 +2144,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 116.0,
       "dichtstbijzijnde_bp": "Alg. begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 340.3,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.548249,
       "lat": 51.74696
     },
@@ -1873,6 +2159,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 113.0,
       "dichtstbijzijnde_bp": "NH Begraafplaats Ijsselmonde, Rotterdam",
+      "afstand_tot_verdwenen_bp_m": 4526.8,
+      "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Rotterdam",
       "lon": 4.558078,
       "lat": 51.900471
     },
@@ -1886,6 +2174,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 107.4,
       "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Puttershoek",
+      "afstand_tot_verdwenen_bp_m": 5728.5,
+      "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
       "lon": 4.573463,
       "lat": 51.803738
     },
@@ -1899,6 +2189,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 105.0,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Strijen",
+      "afstand_tot_verdwenen_bp_m": 500.4,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.558468,
       "lat": 51.746346
     },
@@ -1912,6 +2204,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 85.9,
       "dichtstbijzijnde_bp": "NH Kerkhof, Benthuizen",
+      "afstand_tot_verdwenen_bp_m": 4495.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Moerkapelle",
       "lon": 4.539733,
       "lat": 52.07768
     },
@@ -1925,6 +2219,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 66.3,
       "dichtstbijzijnde_bp": "Nieuwe gem. begraafplaats, Nieuw Beijerland",
+      "afstand_tot_verdwenen_bp_m": 5291.7,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Goudswaard",
       "lon": 4.348613,
       "lat": 51.807099
     },
@@ -1938,6 +2234,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 32.7,
       "dichtstbijzijnde_bp": "Joodse begraafplaats, Delft",
+      "afstand_tot_verdwenen_bp_m": 13.1,
+      "dichtstbijzijnde_verdwenen_bp": "Pestkerkhof, Delft",
       "lon": 4.370634,
       "lat": 52.013418
     },
@@ -1951,6 +2249,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 27.6,
       "dichtstbijzijnde_bp": "Gem. begraafplaats, Goedereede",
+      "afstand_tot_verdwenen_bp_m": 8056.1,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Melissant",
       "lon": 3.978321,
       "lat": 51.816359
     },
@@ -1964,6 +2264,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 27.2,
       "dichtstbijzijnde_bp": "Oude gem. begraafplaats, Melissant",
+      "afstand_tot_verdwenen_bp_m": 76.2,
+      "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Melissant",
       "lon": 4.067875,
       "lat": 51.769736
     },
@@ -1977,6 +2279,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 14.1,
       "dichtstbijzijnde_bp": "Begraafplaats St. Jans Onthoofding, Zuidbuurt",
+      "afstand_tot_verdwenen_bp_m": 4192.5,
+      "dichtstbijzijnde_verdwenen_bp": "Onze Lieve Vrouw Onbevlekt Ontvangen (kloosterbegraafplaats), Zoeterwoude-Rijndijk",
       "lon": 4.503071,
       "lat": 52.108907
     },
@@ -1990,6 +2294,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 7.2,
       "dichtstbijzijnde_bp": "Oude gem. begraafplaats, Ammerstol",
+      "afstand_tot_verdwenen_bp_m": 726.6,
+      "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Groot Ammers",
       "lon": 4.808979,
       "lat": 51.926936
     },
@@ -2003,6 +2309,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 3.6,
       "dichtstbijzijnde_bp": "NH kerkhof, Scheveningen",
+      "afstand_tot_verdwenen_bp_m": 3693.7,
+      "dichtstbijzijnde_verdwenen_bp": "Noorderkerkhof, Den Haag",
       "lon": 4.272723,
       "lat": 52.106764
     },
@@ -2016,6 +2324,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Kerkhof oude kerk, Zwijndrecht",
+      "afstand_tot_verdwenen_bp_m": 751.0,
+      "dichtstbijzijnde_verdwenen_bp": "Grote kerkhof, Dordrecht",
       "lon": 4.652428,
       "lat": 51.818778
     },
@@ -2029,6 +2339,8 @@
       "zekerheid": "onzeker/verwacht",
       "afstand_tot_bekende_bp_m": 0.0,
       "dichtstbijzijnde_bp": "Gem. begraafplaats Vredehof, Bodegraven",
+      "afstand_tot_verdwenen_bp_m": 4753.3,
+      "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Waarder",
       "lon": 4.760588,
       "lat": 52.083822
     }
@@ -2038,7 +2350,7 @@
     "radius_m": 30
   },
   "kloosters": {
-    "waarschuwing": "EXPERIMENTEEL. Kloosters (oorspronkelijke_functie_kort bevat 'klooster') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen (zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot een bekende begraafplaats is GEEN bevestiging: veel kloosters zijn al tijdens/na de Reformatie (16e eeuw) opgeheven en gesloopt of herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart geregistreerd. Puur een aanwijzing waar het de moeite waard is om te kijken.",
+    "waarschuwing": "EXPERIMENTEEL. Kloosters (oorspronkelijke_functie_kort bevat 'klooster') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen (zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot een bekende begraafplaats is GEEN bevestiging: veel kloosters hadden tot pakweg 1580 een eigen kerkhof (bevestigd door Leon), maar de locatie daarvan is vaak onbekend -- na de Reformatie opgeheven en gesloopt of herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart geregistreerd. Puur een aanwijzing waar het de moeite waard is om te kijken.",
     "aantal_buiten_zuid_holland_bbox_rand": 13,
     "kandidaten": [
       {
@@ -2059,13 +2371,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/13433",
         "afstand_tot_bekende_bp_m": 1170.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Dordrecht",
+        "afstand_tot_verdwenen_bp_m": 348.9,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof Minderbroedersklooster, Dordrecht",
         "lon": 4.670311,
-        "lat": 51.815448,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 19,
-          "oudste_bouwjaar_nabij": 1275,
-          "nieuwste_bouwjaar_nabij": 1989
-        }
+        "lat": 51.815448
       },
       {
         "naam": null,
@@ -2079,13 +2388,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/25503",
         "afstand_tot_bekende_bp_m": 1163.8,
         "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+        "afstand_tot_verdwenen_bp_m": 120.7,
+        "dichtstbijzijnde_verdwenen_bp": "Begijnkerkhof, Leiden",
         "lon": 4.485608,
-        "lat": 52.156483,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 23,
-          "oudste_bouwjaar_nabij": 1750,
-          "nieuwste_bouwjaar_nabij": 1907
-        }
+        "lat": 52.156483
       },
       {
         "naam": null,
@@ -2098,13 +2404,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/525408",
         "afstand_tot_bekende_bp_m": 1051.9,
         "dichtstbijzijnde_bp": "RK begraafplaats Schiedam, Schiedam",
+        "afstand_tot_verdwenen_bp_m": 545.9,
+        "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Schiedam",
         "lon": 4.403143,
-        "lat": 51.912383,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 6,
-          "oudste_bouwjaar_nabij": 1850,
-          "nieuwste_bouwjaar_nabij": 1935
-        }
+        "lat": 51.912383
       },
       {
         "naam": null,
@@ -2117,13 +2420,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16819",
         "afstand_tot_bekende_bp_m": 699.2,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "afstand_tot_verdwenen_bp_m": 127.7,
+        "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
         "lon": 4.714085,
-        "lat": 52.01059,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 9,
-          "oudste_bouwjaar_nabij": 1642,
-          "nieuwste_bouwjaar_nabij": 1980
-        }
+        "lat": 52.01059
       },
       {
         "naam": null,
@@ -2136,13 +2436,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/17859",
         "afstand_tot_bekende_bp_m": 639.6,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "afstand_tot_verdwenen_bp_m": 225.5,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof Grote kerk, Den Haag",
         "lon": 4.307222,
-        "lat": 52.079489,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 10,
-          "oudste_bouwjaar_nabij": 1600,
-          "nieuwste_bouwjaar_nabij": 1947
-        }
+        "lat": 52.079489
       },
       {
         "naam": null,
@@ -2155,13 +2452,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12029",
         "afstand_tot_bekende_bp_m": 554.7,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "afstand_tot_verdwenen_bp_m": 101.3,
+        "dichtstbijzijnde_verdwenen_bp": "Heilige Geestkerkhof, Delft",
         "lon": 4.354711,
-        "lat": 52.012436,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 6,
-          "oudste_bouwjaar_nabij": 1414,
-          "nieuwste_bouwjaar_nabij": 1870
-        }
+        "lat": 52.012436
       },
       {
         "naam": null,
@@ -2174,13 +2468,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12151",
         "afstand_tot_bekende_bp_m": 527.4,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "afstand_tot_verdwenen_bp_m": 515.7,
+        "dichtstbijzijnde_verdwenen_bp": "Nieuwe kerkhof, Delft",
         "lon": 4.359535,
-        "lat": 52.016784,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 7,
-          "oudste_bouwjaar_nabij": 1671,
-          "nieuwste_bouwjaar_nabij": 1838
-        }
+        "lat": 52.016784
       },
       {
         "naam": null,
@@ -2193,13 +2484,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/11987",
         "afstand_tot_bekende_bp_m": 453.0,
         "dichtstbijzijnde_bp": "Vm. RK begraafplaats, Delft",
+        "afstand_tot_verdwenen_bp_m": 509.7,
+        "dichtstbijzijnde_verdwenen_bp": "Nieuwe kerkhof, Delft",
         "lon": 4.358459,
-        "lat": 52.007786,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 12,
-          "oudste_bouwjaar_nabij": 1405,
-          "nieuwste_bouwjaar_nabij": 1997
-        }
+        "lat": 52.007786
       },
       {
         "naam": null,
@@ -2212,13 +2500,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16795",
         "afstand_tot_bekende_bp_m": 431.1,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "afstand_tot_verdwenen_bp_m": 363.6,
+        "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
         "lon": 4.707071,
-        "lat": 52.010128,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 18,
-          "oudste_bouwjaar_nabij": 1350,
-          "nieuwste_bouwjaar_nabij": 2001
-        }
+        "lat": 52.010128
       },
       {
         "naam": "Sint Bavo",
@@ -2231,13 +2516,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/509680",
         "afstand_tot_bekende_bp_m": 222.8,
         "dichtstbijzijnde_bp": "H. Jozefkerkhof, Noordwijkerhout",
+        "afstand_tot_verdwenen_bp_m": 553.1,
+        "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
         "lon": 4.491936,
-        "lat": 52.265739,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 1,
-          "oudste_bouwjaar_nabij": 1918,
-          "nieuwste_bouwjaar_nabij": 1918
-        }
+        "lat": 52.265739
       },
       {
         "naam": "H.H. Petrus en Paulus",
@@ -2250,13 +2532,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/511307",
         "afstand_tot_bekende_bp_m": 96.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Reeuwijk-Dorp",
+        "afstand_tot_verdwenen_bp_m": 2824.2,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof Bloemendaal, Gouda",
         "lon": 4.692098,
-        "lat": 52.055162,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 5,
-          "oudste_bouwjaar_nabij": 1910,
-          "nieuwste_bouwjaar_nabij": 2001
-        }
+        "lat": 52.055162
       },
       {
         "naam": "Sint-Agathaklooster",
@@ -2269,13 +2548,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516104",
         "afstand_tot_bekende_bp_m": 70.1,
         "dichtstbijzijnde_bp": "NH Kerkhof, Lisse",
+        "afstand_tot_verdwenen_bp_m": 4608.0,
+        "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
         "lon": 4.552108,
-        "lat": 52.25756,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 5,
-          "oudste_bouwjaar_nabij": 1902,
-          "nieuwste_bouwjaar_nabij": 1990
-        }
+        "lat": 52.25756
       },
       {
         "naam": null,
@@ -2288,18 +2564,15 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/26567",
         "afstand_tot_bekende_bp_m": 42.7,
         "dichtstbijzijnde_bp": "Vm. NH kerkhof, Maasland",
+        "afstand_tot_verdwenen_bp_m": 1761.8,
+        "dichtstbijzijnde_verdwenen_bp": "Oude RK begraafplaats, Maassluis",
         "lon": 4.272863,
-        "lat": 51.93665,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 20,
-          "oudste_bouwjaar_nabij": 1556,
-          "nieuwste_bouwjaar_nabij": 1969
-        }
+        "lat": 51.93665
       }
     ]
   },
   "synagoges": {
-    "waarschuwing": "EXPERIMENTEEL. Synagoges (oorspronkelijke_functie_kort bevat 'synagoge') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen. LET OP, anders dan bij kerken/kloosters: een joodse begraafplaats hoort van oudsher juist NIET dicht bij de synagoge te liggen -- vaak bewust buiten de bebouwde kom, op een afgelegen plek (denk aan toponiemen als 'Jodenberg(je)'). De afstand hieronder is dus geen signaal op zichzelf, alleen een startpunt: waar stond de synagoge, en is er apart archief- of toponiemenonderzoek nodig naar de bijbehorende begraafplaats elders? Met maar een handvol synagoges in Zuid-Holland is dit bovendien een heel kleine set, niet generaliseerbaar.",
+    "waarschuwing": "EXPERIMENTEEL. Synagoges (oorspronkelijke_functie_kort bevat 'synagoge') uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen. LET OP, anders dan bij kerken/kloosters: bij synagoges zijn over het algemeen GEEN begraafplaatsen in de buurt te vinden, want die moesten van oudsher bewust ver buiten de bebouwde kom aangelegd worden (denk aan toponiemen als 'Jodenberg(je)') -- bevestigd door Leon. Andersom komt wel voor: in de loop der jaren is een bestaande begraafplaats soms later overbouwd door een synagoge, maar dat is Leon voor zover bekend niet gebeurd in Zuid-Holland. De afstand hieronder is dus geen signaal op zichzelf, alleen een startpunt: waar stond de synagoge, en is er apart archief- of toponiemenonderzoek nodig naar de bijbehorende begraafplaats elders? Met maar een handvol synagoges in Zuid-Holland is dit bovendien een heel kleine set, niet generaliseerbaar.",
     "aantal_buiten_zuid_holland_bbox_rand": 1,
     "kandidaten": [
       {
@@ -2313,13 +2586,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/25118",
         "afstand_tot_bekende_bp_m": 648.3,
         "dichtstbijzijnde_bp": "Gem. begraafplaats Groenesteeg, Leiden",
+        "afstand_tot_verdwenen_bp_m": 245.5,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof Hooglandse kerk, Leiden",
         "lon": 4.493199,
-        "lat": 52.155462,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 12,
-          "oudste_bouwjaar_nabij": 1650,
-          "nieuwste_bouwjaar_nabij": 2020
-        }
+        "lat": 52.155462
       },
       {
         "naam": null,
@@ -2332,13 +2602,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516139",
         "afstand_tot_bekende_bp_m": 218.6,
         "dichtstbijzijnde_bp": "Grafkapel fam. De Smeth, Alphen aan den Rijn",
+        "afstand_tot_verdwenen_bp_m": 352.6,
+        "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Alphen aan den Rijn",
         "lon": 4.663871,
-        "lat": 52.129128,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 14,
-          "oudste_bouwjaar_nabij": 1896,
-          "nieuwste_bouwjaar_nabij": 2005
-        }
+        "lat": 52.129128
       },
       {
         "naam": "v.m. Hoogduitsche Synagoge",
@@ -2351,13 +2618,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/459778",
         "afstand_tot_bekende_bp_m": 166.5,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "afstand_tot_verdwenen_bp_m": 502.5,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof Grote kerk, Den Haag",
         "lon": 4.31337,
-        "lat": 52.075005,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 20,
-          "oudste_bouwjaar_nabij": 1650,
-          "nieuwste_bouwjaar_nabij": 1932
-        }
+        "lat": 52.075005
       }
     ]
   },
@@ -2376,13 +2640,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/12090",
         "afstand_tot_bekende_bp_m": 734.8,
         "dichtstbijzijnde_bp": "Oude gem. begraafplaats Haagpoort, Delft",
+        "afstand_tot_verdwenen_bp_m": 137.4,
+        "dichtstbijzijnde_verdwenen_bp": "Heilige Geestkerkhof, Delft",
         "lon": 4.356575,
-        "lat": 52.011185,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 14,
-          "oudste_bouwjaar_nabij": 1425,
-          "nieuwste_bouwjaar_nabij": 1890
-        }
+        "lat": 52.011185
       },
       {
         "naam": null,
@@ -2395,13 +2656,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16879",
         "afstand_tot_bekende_bp_m": 696.7,
         "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+        "afstand_tot_verdwenen_bp_m": 259.6,
+        "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
         "lon": 4.711019,
-        "lat": 52.013,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 13,
-          "oudste_bouwjaar_nabij": 1400,
-          "nieuwste_bouwjaar_nabij": 1992
-        }
+        "lat": 52.013
       },
       {
         "naam": null,
@@ -2414,13 +2672,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/16828",
         "afstand_tot_bekende_bp_m": 655.8,
         "dichtstbijzijnde_bp": "Oude alg. begraafplaats, Gouda",
+        "afstand_tot_verdwenen_bp_m": 56.4,
+        "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Gouda",
         "lon": 4.713049,
-        "lat": 52.010665,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 10,
-          "oudste_bouwjaar_nabij": 1497,
-          "nieuwste_bouwjaar_nabij": 1884
-        }
+        "lat": 52.010665
       },
       {
         "naam": null,
@@ -2433,13 +2688,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/516137",
         "afstand_tot_bekende_bp_m": 645.4,
         "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
+        "afstand_tot_verdwenen_bp_m": 724.3,
+        "dichtstbijzijnde_verdwenen_bp": "Gem. begraafplaats Lage Zijde, Alphen aan den Rijn",
         "lon": 4.667256,
-        "lat": 52.123854,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 1,
-          "oudste_bouwjaar_nabij": 1912,
-          "nieuwste_bouwjaar_nabij": 1912
-        }
+        "lat": 52.123854
       },
       {
         "naam": null,
@@ -2452,13 +2704,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/17477",
         "afstand_tot_bekende_bp_m": 430.1,
         "dichtstbijzijnde_bp": "Vm. kerkhof Nieuwe Kerk, Den Haag",
+        "afstand_tot_verdwenen_bp_m": 348.8,
+        "dichtstbijzijnde_verdwenen_bp": "Kloosterkerkhof, Den Haag",
         "lon": 4.313942,
-        "lat": 52.080341,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 2,
-          "oudste_bouwjaar_nabij": 1640,
-          "nieuwste_bouwjaar_nabij": 1644
-        }
+        "lat": 52.080341
       },
       {
         "naam": null,
@@ -2471,13 +2720,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/30163",
         "afstand_tot_bekende_bp_m": 250.5,
         "dichtstbijzijnde_bp": "RK begraafplaats St. Adrianus, Naaldwijk",
+        "afstand_tot_verdwenen_bp_m": 331.2,
+        "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
         "lon": 4.209679,
-        "lat": 51.992521,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 19,
-          "oudste_bouwjaar_nabij": 1496,
-          "nieuwste_bouwjaar_nabij": 1910
-        }
+        "lat": 51.992521
       },
       {
         "naam": null,
@@ -2490,13 +2736,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/10654",
         "afstand_tot_bekende_bp_m": 216.6,
         "dichtstbijzijnde_bp": "NH kerkhof, Brielle",
+        "afstand_tot_verdwenen_bp_m": 80.6,
+        "dichtstbijzijnde_verdwenen_bp": "St. Pieterskerkhof, Brielle",
         "lon": 4.163815,
-        "lat": 51.904832,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 24,
-          "oudste_bouwjaar_nabij": 1500,
-          "nieuwste_bouwjaar_nabij": 2009
-        }
+        "lat": 51.904832
       },
       {
         "naam": null,
@@ -2509,13 +2752,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/518186",
         "afstand_tot_bekende_bp_m": 164.5,
         "dichtstbijzijnde_bp": "RK begraafplaats, Brielle",
+        "afstand_tot_verdwenen_bp_m": 1186.4,
+        "dichtstbijzijnde_verdwenen_bp": "St. Pieterskerkhof, Brielle",
         "lon": 4.154681,
-        "lat": 51.895046,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 1,
-          "oudste_bouwjaar_nabij": 1932,
-          "nieuwste_bouwjaar_nabij": 1932
-        }
+        "lat": 51.895046
       },
       {
         "naam": null,
@@ -2528,13 +2768,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/33479",
         "afstand_tot_bekende_bp_m": 157.8,
         "dichtstbijzijnde_bp": "Oud NH kerkhof, Schoonhoven",
+        "afstand_tot_verdwenen_bp_m": 1931.9,
+        "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Nieuwpoort",
         "lon": 4.850607,
-        "lat": 51.947537,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 27,
-          "oudste_bouwjaar_nabij": 1575,
-          "nieuwste_bouwjaar_nabij": 2002
-        }
+        "lat": 51.947537
       },
       {
         "naam": null,
@@ -2548,13 +2785,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/7494",
         "afstand_tot_bekende_bp_m": 57.4,
         "dichtstbijzijnde_bp": "H. Bonifaciuskerkhof, Alphen aan den Rijn",
+        "afstand_tot_verdwenen_bp_m": 167.3,
+        "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Alphen aan den Rijn",
         "lon": 4.660799,
-        "lat": 52.128107,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 1,
-          "oudste_bouwjaar_nabij": 1990,
-          "nieuwste_bouwjaar_nabij": 1990
-        }
+        "lat": 52.128107
       },
       {
         "naam": null,
@@ -2567,13 +2801,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/24732",
         "afstand_tot_bekende_bp_m": 11.4,
         "dichtstbijzijnde_bp": "RK begraafplaats Zijlpoort, Leiden",
+        "afstand_tot_verdwenen_bp_m": 397.3,
+        "dichtstbijzijnde_verdwenen_bp": "Armenbegraafplaats Grote Bolwerk, Leiden",
         "lon": 4.503902,
-        "lat": 52.162545,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 9,
-          "oudste_bouwjaar_nabij": 1828,
-          "nieuwste_bouwjaar_nabij": 1881
-        }
+        "lat": 52.162545
       },
       {
         "naam": null,
@@ -2586,13 +2817,10 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/517619",
         "afstand_tot_bekende_bp_m": 6.4,
         "dichtstbijzijnde_bp": "RK begraafplaats, Gouda",
+        "afstand_tot_verdwenen_bp_m": 665.4,
+        "dichtstbijzijnde_verdwenen_bp": "Oude joodse begraafplaats, Gouda",
         "lon": 4.719158,
-        "lat": 52.018098,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 7,
-          "oudste_bouwjaar_nabij": 1890,
-          "nieuwste_bouwjaar_nabij": 1930
-        }
+        "lat": 52.018098
       },
       {
         "naam": null,
@@ -2605,19 +2833,17 @@
         "monumentenregister_url": "https://monumentenregister.cultureelerfgoed.nl/monumenten/521892",
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "RK begraafplaats, Oude Tonge",
+        "afstand_tot_verdwenen_bp_m": 8237.9,
+        "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Herkingen",
         "lon": 4.203846,
-        "lat": 51.692351,
-        "bebouwing": {
-          "aantal_gebouwen_binnen_30m": 3,
-          "oudste_bouwjaar_nabij": 1868,
-          "nieuwste_bouwjaar_nabij": 1990
-        }
+        "lat": 51.692351
       }
     ]
   },
   "chs_archeologie": {
-    "waarschuwing": "EXPERIMENTEEL. Vierde bron, andere aard dan de rest van deze pagina: geen RCE-data maar de eigen Cultuurhistorische Hoofdstructuur (CHS) van Provincie Zuid-Holland -- 662 'archeologische terreinen van provinciaal belang', dezelfde data als de kaartlaag op de hoofdkaart (zie toggle-chs-archeologie). Geen bbox-rand-effect (provinciale dienst, dekt per definitie alleen Zuid-Holland), dus geen gemeentegrenzen-filter nodig zoals bij de andere drie bronnen. Zelfde grafterm-patroon als de archeologie-tekstzoekactie, nu gezocht in de kortere 'Toponiem'/'WAARDE'/'Beschrijving'-velden i.p.v. lange rapporttekst -- minder kans op fout-positieven zoals 'Kerkhof' als achternaam, maar ook geen garantie: sommige treffers zijn Romeinse of prehistorische grafvelden, geen begraafplaats zoals Leons dataset die verzamelt (zelfde kanttekening als bij de archeologie-tekstzoekactie hierboven). Kan overlappen met kandidaten die al via de archeologie-tekstzoekactie gevonden zijn (andere bron, dus niet automatisch ontdubbeld). Geen directe brontekst-link beschikbaar (deze open dataset publiceert geen detailpagina per record) -- gebruik de kaartlink om het terrein zelf te bekijken.",
+    "waarschuwing": "EXPERIMENTEEL. Vierde bron, andere aard dan de rest van deze pagina: geen RCE-data maar de eigen Cultuurhistorische Hoofdstructuur (CHS) van Provincie Zuid-Holland -- 662 'archeologische terreinen van provinciaal belang', dezelfde data als de kaartlaag op de hoofdkaart (zie toggle-chs-archeologie). Geen bbox-rand-effect (provinciale dienst, dekt per definitie alleen Zuid-Holland), dus geen gemeentegrenzen-filter nodig zoals bij de andere drie bronnen. Zelfde grafterm-patroon als de archeologie-tekstzoekactie, nu gezocht in de kortere 'Toponiem'/'WAARDE'/'Beschrijving'-velden i.p.v. lange rapporttekst -- minder kans op fout-positieven zoals 'Kerkhof' als achternaam. CHS heeft een echt Datering-veld, dus kandidaten met uitsluitend een premoderne periode (Romeins, prehistorie, Merovingisch) zijn er sinds 2026-08-31 al uitgefilterd (zie is_pre_1300_periode()) -- een gemengde vindplaats met ook een latere periode blijft gewoon staan. Kan overlappen met kandidaten die al via de archeologie-tekstzoekactie gevonden zijn (andere bron, dus niet automatisch ontdubbeld). Geen directe brontekst-link beschikbaar (deze open dataset publiceert geen detailpagina per record) -- gebruik de kaartlink om het terrein zelf te bekijken.",
     "aantal_terreinen_doorzocht": 662,
+    "aantal_buiten_periode": 4,
     "kandidaten": [
       {
         "monumentnr": 16214,
@@ -2632,6 +2858,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 916.1,
         "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Hellevoetsluis",
+        "afstand_tot_verdwenen_bp_m": 50.3,
+        "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Uithof Oosthoek, Hellevoetsluis",
         "lon": 4.1571,
         "lat": 51.8473
       },
@@ -2648,6 +2876,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 853.2,
         "dichtstbijzijnde_bp": "Gem. begraafplaats De Ommering, Spijkenisse",
+        "afstand_tot_verdwenen_bp_m": 3998.8,
+        "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Blankenburg",
         "lon": 4.287713,
         "lat": 51.862269
       },
@@ -2664,6 +2894,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 849.4,
         "dichtstbijzijnde_bp": "Gem. begraafplaats Emmaus, Vlaardingen",
+        "afstand_tot_verdwenen_bp_m": 32.2,
+        "dichtstbijzijnde_verdwenen_bp": "Kerkhof bij Grote Kerk, Vlaardingen",
         "lon": 4.342616,
         "lat": 51.908246
       },
@@ -2680,56 +2912,10 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 724.5,
         "dichtstbijzijnde_bp": "Oude begraafplaats, 's-Gravendeel",
+        "afstand_tot_verdwenen_bp_m": 2902.7,
+        "dichtstbijzijnde_verdwenen_bp": "Kloosterbegraafplaats Amstelwijck, Dordrecht",
         "lon": 4.609291,
         "lat": 51.773137
-      },
-      {
-        "monumentnr": 16116,
-        "gemeente": "Rotterdam",
-        "plaats": "Rotterdam-Overschie",
-        "toponiem": "Noord-Kethelpolder, Kandelaarweg; Poldervaart zuidwest",
-        "datering": "Romeinse tijd",
-        "waarde": "Terrein van hoge archeologische waarde",
-        "gevonden_veld": "Beschrijving",
-        "gevonden_term": "Grafveld",
-        "fragment": "Grafveld/-heuvel",
-        "zekerheid": "concreet genoemd",
-        "afstand_tot_bekende_bp_m": 693.3,
-        "dichtstbijzijnde_bp": "HH Jacobus en Martinusbegraafplaats, Kerkbuurt",
-        "lon": 4.39237,
-        "lat": 51.94936
-      },
-      {
-        "monumentnr": 2973,
-        "gemeente": "Katwijk",
-        "plaats": "Valkenburg",
-        "toponiem": "Marktveld; Randweg Marine Vliegkamp",
-        "datering": "Romeinse tijd",
-        "waarde": "Terrein van hoge archeologische waarde",
-        "gevonden_veld": "Beschrijving",
-        "gevonden_term": "grafveld",
-        "fragment": "Bewoningssporen; grafveld",
-        "zekerheid": "concreet genoemd",
-        "afstand_tot_bekende_bp_m": 477.7,
-        "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Valkenburg",
-        "lon": 4.431688,
-        "lat": 52.175515
-      },
-      {
-        "monumentnr": 2972,
-        "gemeente": "Katwijk",
-        "plaats": "Valkenburg",
-        "toponiem": "Marktveld, 10 Meilaan; Achterweg",
-        "datering": "Romeinse tijd",
-        "waarde": "Terrein van hoge archeologische waarde",
-        "gevonden_veld": "Beschrijving",
-        "gevonden_term": "grafveld",
-        "fragment": "Nederzetting; grafveld; weg/wegennetwerk",
-        "zekerheid": "concreet genoemd",
-        "afstand_tot_bekende_bp_m": 427.2,
-        "dichtstbijzijnde_bp": "Militair Ereveld, Valkenburg",
-        "lon": 4.435444,
-        "lat": 52.176413
       },
       {
         "monumentnr": 2968,
@@ -2744,6 +2930,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 224.9,
         "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Valkenburg",
+        "afstand_tot_verdwenen_bp_m": 3262.9,
+        "dichtstbijzijnde_verdwenen_bp": "Oude begraafplaats Pesthuis, Leiden",
         "lon": 4.431761,
         "lat": 52.177849
       },
@@ -2760,24 +2948,10 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 91.8,
         "dichtstbijzijnde_bp": "NH Kerkhof Hilligersberg, Rotterdam",
+        "afstand_tot_verdwenen_bp_m": 2215.4,
+        "dichtstbijzijnde_verdwenen_bp": "Portugees-Israelitische begraafplaats, Rotterdam",
         "lon": 4.493971,
         "lat": 51.957407
-      },
-      {
-        "monumentnr": 10677,
-        "gemeente": "Katwijk",
-        "plaats": "Valkenburg",
-        "toponiem": "Centrum",
-        "datering": "1-4) Romeinse tijd",
-        "waarde": "Terrein van hoge archeologische waarde",
-        "gevonden_veld": "Beschrijving",
-        "gevonden_term": "grafveld",
-        "fragment": "...ae; 2) resten van een weg; 3) resten van een vicus; 4) resten van een grafveld",
-        "zekerheid": "concreet genoemd",
-        "afstand_tot_bekende_bp_m": 46.7,
-        "dichtstbijzijnde_bp": "Militair Ereveld, Valkenburg",
-        "lon": 4.433093,
-        "lat": 52.179532
       },
       {
         "monumentnr": 16199,
@@ -2792,6 +2966,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "Gem. kerkhof, Poortugaal",
+        "afstand_tot_verdwenen_bp_m": 2232.9,
+        "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
         "lon": 4.390549,
         "lat": 51.86089
       },
@@ -2808,6 +2984,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "NH Kerkhof Hilligersberg, Rotterdam",
+        "afstand_tot_verdwenen_bp_m": 2111.9,
+        "dichtstbijzijnde_verdwenen_bp": "Portugees-Israelitische begraafplaats, Rotterdam",
         "lon": 4.493223,
         "lat": 51.956498
       },
@@ -2824,6 +3002,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "NH Kerkhof Hilligersberg, Rotterdam",
+        "afstand_tot_verdwenen_bp_m": 2050.5,
+        "dichtstbijzijnde_verdwenen_bp": "Portugees-Israelitische begraafplaats, Rotterdam",
         "lon": 4.493225,
         "lat": 51.955947
       },
@@ -2840,6 +3020,8 @@
         "zekerheid": "concreet genoemd",
         "afstand_tot_bekende_bp_m": 0.0,
         "dichtstbijzijnde_bp": "Begraafplaats Oud-Kralingen, Rotterdam",
+        "afstand_tot_verdwenen_bp_m": 3109.1,
+        "dichtstbijzijnde_verdwenen_bp": "Joodse begraafplaats, Rotterdam",
         "lon": 4.546998,
         "lat": 51.935219
       },
@@ -2856,6 +3038,8 @@
         "zekerheid": "onzeker/verwacht",
         "afstand_tot_bekende_bp_m": 1116.6,
         "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Dubbeldam, Dordrecht",
+        "afstand_tot_verdwenen_bp_m": 108.4,
+        "dichtstbijzijnde_verdwenen_bp": "NH kerkhof en begraafplaats, Dubbeldam",
         "lon": 4.700336,
         "lat": 51.79303
       }
