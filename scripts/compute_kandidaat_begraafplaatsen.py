@@ -59,6 +59,32 @@ lange rapporttekst. Geen bbox-rand-effect (provinciale dienst, dekt per
 definitie alleen Zuid-Holland) dus geen gemeentegrenzen-filter nodig hier.
 Zie CHS_ARCHEOLOGIE_WAARSCHUWING voor de kanttekeningen.
 
+Periodefilter (2026-08-31, wens van de opdrachtgever: "met name focussen
+op de periode van plusminus 1300 en later. Romeinse of Merovingische
+grafvelden brengen we niet in kaart"): alleen toegepast op CHS-archeologie,
+dat een echt Datering-veld heeft -- daar bleek het filter bij verificatie
+4/4 correct (precies de kandidaten met uitsluitend "Romeinse tijd" als
+datering uitgesloten, gemengde vindplaatsen met ook een latere periode
+bleven staan). Op de tekstzoekactie op archeologische onderzoeksgebieden is
+HETZELFDE filter ook geprobeerd, maar weer teruggedraaid: bij een
+steekproef van de uitgesloten records zaten minstens 2 duidelijke
+fout-positieven (een laatmiddeleeuws klooster met een bijkomende
+vroegmiddeleeuwse vondst op dezelfde plek; "latere begravingen op het
+kerkhof van de Petruskerk" bovenop een Romeins castellum -- precies zo'n
+kandidaat willen we juist tonen). Vrije rapporttekst is te ongestructureerd
+voor een betrouwbaar periodepatroon, in tegenstelling tot het
+gestructureerde CHS-veld. Zie is_pre_1300_periode() voor de (bewust
+conservatieve) regel: alleen uitsluiten als de tekst UITSLUITEND premoderne
+periodetermen bevat en geen latere periodeterm.
+
+Verdwenen-begraafplaatsen (2026-08-31, wens van de opdrachtgever): elke
+kandidaat krijgt er ook de afstand tot de dichtstbijzijnde locatie uit
+data/generated/verdwenen-begraafplaatsen.geojson bij (Leons eigen
+geverifieerde kennis, zie scripts/build_verdwenen_begraafplaatsen.py) --
+een kandidaat vlak bij zo'n punt beschrijft mogelijk gewoon die al bekende
+verdwenen begraafplaats, geen nieuwe vondst. Puur extra context, geen
+aparte kandidatenlijst en geen invloed op welke treffers er zijn.
+
 Output:
   data/generated/kandidaat_begraafplaatsen.json
 
@@ -113,6 +139,43 @@ GRAFTERM_PATTERN = re.compile(
 # bekende valkuil dat "Kerkhof" een achternaam van een onderzoeker kan zijn.
 HEDGE_PATTERN = re.compile(r"\bzou\w*\b|\bkunnen\b|\bkan\b|mogelijk\w*|verwacht\w*|\(\?\)", re.IGNORECASE)
 
+# Periodefilter (2026-08-31, wens van de opdrachtgever, zie module-docstring):
+# een kandidaat wordt uitgesloten als de dateringstekst UITSLUITEND
+# premoderne periodetermen bevat en GEEN latere periodeterm -- zo blijft een
+# gemengde vindplaats (bv. "1) Romeinse tijd; 2) late Middeleeuwen", vaak
+# voorkomend in de CHS-data) gewoon staan, want die bevat ook een relevante
+# latere laag. "Volle Middeleeuwen" (circa 1050-1250) staat bewust niet in
+# PRE_1300_PATTERN -- te dicht bij de gevraagde grens van "ongeveer 1300" om
+# hem zonder overleg te laten wegvallen. Bij twijfel (geen dateringstekst, of
+# een onbekende/dubbelzinnige term) blijft een kandidaat gewoon staan.
+PRE_1300_PATTERN = re.compile(
+    r"paleolithicum|mesolithicum|neolithicum|steentijd|bronstijd|ijzertijd|"
+    r"\bromeins(e)?\b|vroege middeleeuwen|merovingisch|merovingers|karolingisch",
+    re.IGNORECASE,
+)
+# Losse tekst in archeologische rapporten (in tegenstelling tot het
+# gestructureerde CHS Datering-veld) schrijft een latere periode vaak anders
+# op dan "late middeleeuwen": als samengesteld bijvoeglijk naamwoord
+# ("laatmiddeleeuwse vrouwenklooster") of als expliciete eeuw ("13e t/m 16e
+# eeuw"). Ontdekt bij het verifiëren van deze periodefilter: een tekst over
+# het laatmiddeleeuwse klooster Mariëndael (1244-1586) werd onterecht
+# uitgesloten omdat de tekst óók een kortstondige vroege-middeleeuwse vondst
+# op dezelfde plek noemt (7e/8e eeuw) -- puur "vroege middeleeuwen" matchte,
+# "laatmiddeleeuwse"/"13e t/m 16e eeuw" niet, dus leek de tekst uitsluitend
+# premodern terwijl ze dat niet is.
+POST_1300_PATTERN = re.compile(
+    r"late middeleeuwen|laatmiddeleeuws\w*|nieuwe tijd|nieuwetijds\w*|nieuwste tijd|"
+    r"\b(1[3-9]|2[0-1])(e|ste) eeuw\b",
+    re.IGNORECASE,
+)
+
+
+def is_pre_1300_periode(tekst: str | None) -> bool:
+    if not tekst:
+        return False
+    return bool(PRE_1300_PATTERN.search(tekst)) and not POST_1300_PATTERN.search(tekst)
+
+
 # Rijksmonumenten-signalen (aanvullend op de tekstzoekactie). Gezocht op
 # oorspronkelijke_functie_kort, niet op naam -- die ontbreekt voor de
 # meeste records (zie main()).
@@ -130,24 +193,29 @@ KLOOSTER_WAARSCHUWING = (
     "EXPERIMENTEEL. Kloosters (oorspronkelijke_functie_kort bevat 'klooster') "
     "uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen "
     "(zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot "
-    "een bekende begraafplaats is GEEN bevestiging: veel kloosters zijn al "
-    "tijdens/na de Reformatie (16e eeuw) opgeheven en gesloopt of herbestemd, "
-    "een kloosterbegraafplaats kan eeuwen geleden spoorloos verdwenen zijn, "
-    "of lag binnen het kloostercomplex zelf en is nooit apart geregistreerd. "
-    "Puur een aanwijzing waar het de moeite waard is om te kijken."
+    "een bekende begraafplaats is GEEN bevestiging: veel kloosters hadden tot "
+    "pakweg 1580 een eigen kerkhof (bevestigd door Leon), maar de locatie "
+    "daarvan is vaak onbekend -- na de Reformatie opgeheven en gesloopt of "
+    "herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos "
+    "verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart "
+    "geregistreerd. Puur een aanwijzing waar het de moeite waard is om te "
+    "kijken."
 )
 
 SYNAGOGE_WAARSCHUWING = (
     "EXPERIMENTEEL. Synagoges (oorspronkelijke_functie_kort bevat 'synagoge') "
     "uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen. "
-    "LET OP, anders dan bij kerken/kloosters: een joodse begraafplaats hoort "
-    "van oudsher juist NIET dicht bij de synagoge te liggen -- vaak bewust "
-    "buiten de bebouwde kom, op een afgelegen plek (denk aan toponiemen als "
-    "'Jodenberg(je)'). De afstand hieronder is dus geen signaal op zichzelf, "
-    "alleen een startpunt: waar stond de synagoge, en is er apart archief- of "
-    "toponiemenonderzoek nodig naar de bijbehorende begraafplaats elders? Met "
-    "maar een handvol synagoges in Zuid-Holland is dit bovendien een heel "
-    "kleine set, niet generaliseerbaar."
+    "LET OP, anders dan bij kerken/kloosters: bij synagoges zijn over het "
+    "algemeen GEEN begraafplaatsen in de buurt te vinden, want die moesten "
+    "van oudsher bewust ver buiten de bebouwde kom aangelegd worden (denk aan "
+    "toponiemen als 'Jodenberg(je)') -- bevestigd door Leon. Andersom komt "
+    "wel voor: in de loop der jaren is een bestaande begraafplaats soms later "
+    "overbouwd door een synagoge, maar dat is Leon voor zover bekend niet "
+    "gebeurd in Zuid-Holland. De afstand hieronder is dus geen signaal op "
+    "zichzelf, alleen een startpunt: waar stond de synagoge, en is er apart "
+    "archief- of toponiemenonderzoek nodig naar de bijbehorende begraafplaats "
+    "elders? Met maar een handvol synagoges in Zuid-Holland is dit bovendien "
+    "een heel kleine set, niet generaliseerbaar."
 )
 
 KAPEL_WAARSCHUWING = (
@@ -191,10 +259,11 @@ CHS_ARCHEOLOGIE_WAARSCHUWING = (
     "grafterm-patroon als de archeologie-tekstzoekactie, nu gezocht in de "
     "kortere 'Toponiem'/'WAARDE'/'Beschrijving'-velden i.p.v. lange "
     "rapporttekst -- minder kans op fout-positieven zoals 'Kerkhof' als "
-    "achternaam, maar ook geen garantie: sommige treffers zijn Romeinse of "
-    "prehistorische grafvelden, geen begraafplaats zoals Leons dataset die "
-    "verzamelt (zelfde kanttekening als bij de archeologie-tekstzoekactie "
-    "hierboven). Kan overlappen met kandidaten die al via de "
+    "achternaam. CHS heeft een echt Datering-veld, dus kandidaten met "
+    "uitsluitend een premoderne periode (Romeins, prehistorie, Merovingisch) "
+    "zijn er sinds 2026-08-31 al uitgefilterd (zie is_pre_1300_periode()) -- "
+    "een gemengde vindplaats met ook een latere periode blijft gewoon staan. "
+    "Kan overlappen met kandidaten die al via de "
     "archeologie-tekstzoekactie gevonden zijn (andere bron, dus niet "
     "automatisch ontdubbeld). Geen directe brontekst-link beschikbaar (deze "
     "open dataset publiceert geen detailpagina per record) -- gebruik de "
@@ -278,6 +347,9 @@ def rijksmonument_kandidaten(
     bp_tree: STRtree,
     bp_geoms: list,
     begraafplaatsen: list[dict],
+    verdwenen_tree: STRtree,
+    verdwenen_geoms: list,
+    verdwenen: list[dict],
 ) -> tuple[list[dict], int]:
     items = []
     buiten_zh = 0
@@ -326,6 +398,7 @@ def rijksmonument_kandidaten(
         centroid_rd = MultiPoint([c["point_rd"] for c in cluster]).centroid
         i = bp_tree.nearest(centroid_rd)
         afstand = round(centroid_rd.distance(bp_geoms[i]), 1)
+        afstand_verdwenen, dichtstbijzijnde_verdwenen = nearest_verdwenen(centroid_rd, verdwenen_tree, verdwenen_geoms, verdwenen)
         url = next((c["monumentenregister_url"] for c in cluster if c["monumentenregister_url"]), None)
         functies = sorted({c["functie"] for c in cluster})
         results.append({
@@ -337,6 +410,8 @@ def rijksmonument_kandidaten(
             "monumentenregister_url": url,
             "afstand_tot_bekende_bp_m": afstand,
             "dichtstbijzijnde_bp": f"{begraafplaatsen[i]['properties']['naam']}, {begraafplaatsen[i]['properties']['plaats']}",
+            "afstand_tot_verdwenen_bp_m": afstand_verdwenen,
+            "dichtstbijzijnde_verdwenen_bp": dichtstbijzijnde_verdwenen,
             "lon": round(sum(c["lon"] for c in cluster) / len(cluster), 6),
             "lat": round(sum(c["lat"] for c in cluster) / len(cluster), 6),
         })
@@ -350,8 +425,12 @@ def chs_archeologie_kandidaten(
     bp_tree: STRtree,
     bp_geoms: list,
     begraafplaatsen: list[dict],
-) -> list[dict]:
+    verdwenen_tree: STRtree,
+    verdwenen_geoms: list,
+    verdwenen: list[dict],
+) -> tuple[list[dict], int]:
     candidates = []
+    buiten_periode = 0
     for f in terreinen:
         props = f["properties"]
         # Volgorde bepaalt welk veld als eerste een match oplevert (voor het
@@ -370,12 +449,16 @@ def chs_archeologie_kandidaten(
                 break
         if not match:
             continue
+        if is_pre_1300_periode(props.get("Datering")):
+            buiten_periode += 1
+            continue
 
         geom = shape(f["geometry"])
         centroid = geom.centroid
         point_rd = transform(to_rd, centroid)
         i = bp_tree.nearest(point_rd)
         afstand = round(point_rd.distance(bp_geoms[i]), 1)
+        afstand_verdwenen, dichtstbijzijnde_verdwenen = nearest_verdwenen(point_rd, verdwenen_tree, verdwenen_geoms, verdwenen)
         fragment = snippet(tekst, match)
         candidates.append({
             "monumentnr": props.get("MONUMENTNR"),
@@ -390,12 +473,14 @@ def chs_archeologie_kandidaten(
             "zekerheid": "onzeker/verwacht" if HEDGE_PATTERN.search(fragment) else "concreet genoemd",
             "afstand_tot_bekende_bp_m": afstand,
             "dichtstbijzijnde_bp": f"{begraafplaatsen[i]['properties']['naam']}, {begraafplaatsen[i]['properties']['plaats']}",
+            "afstand_tot_verdwenen_bp_m": afstand_verdwenen,
+            "dichtstbijzijnde_verdwenen_bp": dichtstbijzijnde_verdwenen,
             "lon": round(centroid.x, 6),
             "lat": round(centroid.y, 6),
         })
 
     candidates.sort(key=lambda c: (c["zekerheid"] != "concreet genoemd", -c["afstand_tot_bekende_bp_m"]))
-    return candidates
+    return candidates, buiten_periode
 
 
 def snippet(text: str, match: re.Match, context: int = 70) -> str:
@@ -413,17 +498,33 @@ def gemeente_for_point(pt, gem_tree: STRtree, gemeenten: list[dict], gem_geoms: 
     return None  # buiten Zuid-Holland (bbox-rand-effect, zie docs/README.md)
 
 
+def nearest_verdwenen(point_rd, verdwenen_tree: STRtree, verdwenen_geoms: list, verdwenen: list[dict]) -> tuple[float, str]:
+    """Afstand tot en naam+plaats van de dichtstbijzijnde verdwenen
+    begraafplaats (Leons eigen, geverifieerde kennis -- zie
+    scripts/build_verdwenen_begraafplaatsen.py). Puur extra context: een
+    kandidaat vlak bij zo'n punt beschrijft mogelijk gewoon die al bekende
+    locatie, geen nieuwe vondst. Geen invloed op welke kandidaten er zijn."""
+    i = verdwenen_tree.nearest(point_rd)
+    afstand = round(point_rd.distance(verdwenen_geoms[i]), 1)
+    p = verdwenen[i]["properties"]
+    naam_plaats = f"{p['naam']}, {p['plaats']}" if p.get("plaats") else p["naam"]
+    return afstand, naam_plaats
+
+
 def main() -> None:
     onderzoeksgebieden = load(RCE_DIR / "archeologische-onderzoeksgebieden.geojson")
     rijksmonumenten = load(RCE_DIR / "rijksmonumenten.geojson")
     chs_terreinen = load(ZH_DIR / "chs-archeologie-provinciaal-belang.geojson")
     begraafplaatsen = load(GENERATED_DIR / "analyse.geojson")
     gemeenten = load(PDOK_DIR / "gemeenten-zuid-holland.geojson")
+    verdwenen = load(GENERATED_DIR / "verdwenen-begraafplaatsen.geojson")
 
     bp_geoms = [transform(to_rd, shape(f["geometry"])) for f in begraafplaatsen]
     bp_tree = STRtree(bp_geoms)
     gem_geoms = [transform(to_rd, shape(f["geometry"])) for f in gemeenten]
     gem_tree = STRtree(gem_geoms)
+    verdwenen_geoms = [transform(to_rd, shape(f["geometry"])) for f in verdwenen]
+    verdwenen_tree = STRtree(verdwenen_geoms)
 
     candidates = []
     buiten_zh = 0
@@ -432,6 +533,17 @@ def main() -> None:
         match = GRAFTERM_PATTERN.search(omschrijving)
         if not match:
             continue
+        # GEEN periodefilter hier -- geprobeerd (2026-08-31) en weer
+        # teruggedraaid na verificatie: bij een steekproef van 16 uitgesloten
+        # records zaten minstens 2 duidelijke fout-positieven (een
+        # laatmiddeleeuws klooster met een bijkomende vroegmiddeleeuwse
+        # vondst op dezelfde plek; "latere begravingen op het kerkhof van de
+        # Petruskerk" bovenop een Romeins castellum -- precies zo'n kandidaat
+        # willen we juist tonen). Vrije rapporttekst is te ongestructureerd
+        # voor een betrouwbaar periodepatroon (zie is_pre_1300_periode()),
+        # in tegenstelling tot het gestructureerde CHS Datering-veld
+        # hieronder, waar hetzelfde patroon wel 4/4 correct bleek. Zie ook
+        # de kanttekening in de waarschuwingstekst en op kandidaten.html.
 
         geom = shape(f["geometry"])
         point_rd = transform(to_rd, geom.centroid if geom.geom_type != "Point" else geom)
@@ -442,6 +554,7 @@ def main() -> None:
 
         i = bp_tree.nearest(point_rd)
         afstand = round(point_rd.distance(bp_geoms[i]), 1)
+        afstand_verdwenen, dichtstbijzijnde_verdwenen = nearest_verdwenen(point_rd, verdwenen_tree, verdwenen_geoms, verdwenen)
 
         centroid_wgs84 = geom.centroid if geom.geom_type != "Point" else geom
         fragment = snippet(omschrijving, match)
@@ -455,6 +568,8 @@ def main() -> None:
             "zekerheid": "onzeker/verwacht" if HEDGE_PATTERN.search(fragment) else "concreet genoemd",
             "afstand_tot_bekende_bp_m": afstand,
             "dichtstbijzijnde_bp": f"{begraafplaatsen[i]['properties']['naam']}, {begraafplaatsen[i]['properties']['plaats']}",
+            "afstand_tot_verdwenen_bp_m": afstand_verdwenen,
+            "dichtstbijzijnde_verdwenen_bp": dichtstbijzijnde_verdwenen,
             "lon": round(centroid_wgs84.x, 6),
             "lat": round(centroid_wgs84.y, 6),
         })
@@ -464,15 +579,20 @@ def main() -> None:
     candidates.sort(key=lambda c: (c["zekerheid"] != "concreet genoemd", -c["afstand_tot_bekende_bp_m"]))
 
     kloosters, kloosters_buiten_zh = rijksmonument_kandidaten(
-        rijksmonumenten, KLOOSTER_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
+        rijksmonumenten, KLOOSTER_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen,
+        verdwenen_tree, verdwenen_geoms, verdwenen,
     )
     synagoges, synagoges_buiten_zh = rijksmonument_kandidaten(
-        rijksmonumenten, SYNAGOGE_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
+        rijksmonumenten, SYNAGOGE_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen,
+        verdwenen_tree, verdwenen_geoms, verdwenen,
     )
     kapellen, kapellen_buiten_zh = rijksmonument_kandidaten(
-        rijksmonumenten, KAPEL_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen
+        rijksmonumenten, KAPEL_PATTERN, gem_tree, gemeenten, gem_geoms, bp_tree, bp_geoms, begraafplaatsen,
+        verdwenen_tree, verdwenen_geoms, verdwenen,
     )
-    chs_archeologie = chs_archeologie_kandidaten(chs_terreinen, bp_tree, bp_geoms, begraafplaatsen)
+    chs_archeologie, chs_buiten_periode = chs_archeologie_kandidaten(
+        chs_terreinen, bp_tree, bp_geoms, begraafplaatsen, verdwenen_tree, verdwenen_geoms, verdwenen,
+    )
 
     if "--no-kadaster-check" in sys.argv:
         print("kadaster-bebouwingscheck overgeslagen (--no-kadaster-check)")
@@ -491,7 +611,17 @@ def main() -> None:
             "EXPERIMENTEEL. Automatische tekstzoekactie op archeologische "
             "onderzoeksrapporten, geen verificatie. Elke kandidaat moet "
             "handmatig beoordeeld worden voordat er conclusies aan worden "
-            "verbonden. Zie scripts/compute_kandidaat_begraafplaatsen.py."
+            "verbonden. Zie scripts/compute_kandidaat_begraafplaatsen.py. "
+            "Geen periodefilter hier (wel bij CHS-archeologie hieronder): "
+            "geprobeerd en teruggedraaid na verificatie, vrije rapporttekst "
+            "bleek te ongestructureerd om betrouwbaar te filteren (zie de "
+            "toelichting in de broncode) -- een 'grafveld' kan dus nog "
+            "steeds uit de prehistorie of Romeinse tijd stammen zonder dat "
+            "de tekst dat met zoveel woorden zegt. Elke kandidaat toont wel "
+            "de afstand tot de dichtstbijzijnde verdwenen begraafplaats uit "
+            "Leons eigen kennis (data/generated/verdwenen-begraafplaatsen.geojson) "
+            "-- vlak erbij betekent mogelijk dat de tekst gewoon die al "
+            "bekende locatie beschrijft."
         ),
         "aantal_onderzoeksgebieden_doorzocht": len(onderzoeksgebieden),
         "aantal_treffers": len(candidates) + buiten_zh,
@@ -519,6 +649,7 @@ def main() -> None:
         "chs_archeologie": {
             "waarschuwing": CHS_ARCHEOLOGIE_WAARSCHUWING,
             "aantal_terreinen_doorzocht": len(chs_terreinen),
+            "aantal_buiten_periode": chs_buiten_periode,
             "kandidaten": chs_archeologie,
         },
     }
@@ -533,7 +664,8 @@ def main() -> None:
     print(f"  {len(kloosters)} kloostercomplexen in Zuid-Holland ({kloosters_buiten_zh} buiten bbox-rand)")
     print(f"  {len(synagoges)} synagoges in Zuid-Holland ({synagoges_buiten_zh} buiten bbox-rand)")
     print(f"  {len(kapellen)} kapellen(complexen) in Zuid-Holland ({kapellen_buiten_zh} buiten bbox-rand)")
-    print(f"  {len(chs_archeologie)} CHS-archeologiekandidaten (van {len(chs_terreinen)} terreinen van provinciaal belang)")
+    print(f"  {len(chs_archeologie)} CHS-archeologiekandidaten van {len(chs_terreinen)} terreinen van provinciaal belang "
+          f"({chs_buiten_periode} uitgesloten wegens uitsluitend premoderne periode)")
 
 
 if __name__ == "__main__":

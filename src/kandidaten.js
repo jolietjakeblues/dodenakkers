@@ -22,6 +22,15 @@ function fmt(n) {
   return new Intl.NumberFormat("nl-NL").format(n);
 }
 
+// Combineert naam+plaats en afstand tot de dichtstbijzijnde verdwenen
+// begraafplaats (Leons eigen kennis, zie build_verdwenen_begraafplaatsen.py)
+// tot één compacte celtekst -- puur context, geen aparte kandidatenlijst
+// (zie de toelichting op kandidaten.html).
+function fmtVerdwenen(naamPlaats, afstandM) {
+  if (!naamPlaats) return "-";
+  return `${naamPlaats} (${fmt(afstandM)} m)`;
+}
+
 // Permalink naar de hoofdkaart, gecentreerd op de kandidaat, met de
 // archeologische-onderzoeksgebieden-laag alvast aangevinkt (zie
 // LAYER_TOGGLE_CODES in app.js -- "arch" is dezelfde code).
@@ -91,7 +100,7 @@ function renderChsArcheologieSectie(data) {
   section.appendChild(
     el("p", {
       class: "hint",
-      text: `${fmt(data.aantal_terreinen_doorzocht)} archeologische terreinen van provinciaal belang doorzocht, gesorteerd: concreet genoemd eerst, dan verste afstand tot een bekende begraafplaats eerst.`,
+      text: `${fmt(data.aantal_terreinen_doorzocht)} archeologische terreinen van provinciaal belang doorzocht (${fmt(data.aantal_buiten_periode)} genegeerd wegens uitsluitend premoderne periode), gesorteerd: concreet genoemd eerst, dan verste afstand tot een bekende begraafplaats eerst.`,
     })
   );
 
@@ -108,6 +117,7 @@ function renderChsArcheologieSectie(data) {
         el("th", { text: "Veld" }),
         el("th", { text: "Fragment" }),
         el("th", { text: "Dichtstbijzijnde bekende bp" }),
+        el("th", { text: "Dichtstbijzijnde verdwenen bp" }),
         el("th", { text: "Links" }),
       ]),
     ])
@@ -129,6 +139,7 @@ function renderChsArcheologieSectie(data) {
         el("td", { text: k.gevonden_veld }),
         el("td", { class: "fragment-cell", text: k.fragment }),
         el("td", { text: k.dichtstbijzijnde_bp }),
+        el("td", { text: fmtVerdwenen(k.dichtstbijzijnde_verdwenen_bp, k.afstand_tot_verdwenen_bp_m) }),
         links,
       ])
     );
@@ -170,6 +181,7 @@ function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
         el("th", { text: "Gemeente" }),
         el("th", { text: "Afstand" }),
         el("th", { text: "Dichtstbijzijnde bekende bp" }),
+        el("th", { text: "Dichtstbijzijnde verdwenen bp" }),
         el("th", { text: "Rijksmonumenten in cluster" }),
         el("th", { text: bebouwingCheck ? `Gebouwen binnen ${bebouwingCheck.radius_m}m` : "Bebouwing" }),
         el("th", { text: "Links" }),
@@ -190,6 +202,7 @@ function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
         el("td", { text: k.gemeente }),
         el("td", { text: `${fmt(k.afstand_tot_bekende_bp_m)} m` }),
         el("td", { text: k.dichtstbijzijnde_bp }),
+        el("td", { text: fmtVerdwenen(k.dichtstbijzijnde_verdwenen_bp, k.afstand_tot_verdwenen_bp_m) }),
         el("td", { text: fmt(k.aantal_rijksmonumenten_in_cluster) }),
         el("td", { text: fmtBebouwing(k.bebouwing) }),
         links,
@@ -243,6 +256,7 @@ async function main() {
         el("th", { text: "Term" }),
         el("th", { text: "Fragment" }),
         el("th", { text: "Dichtstbijzijnde bekende bp" }),
+        el("th", { text: "Dichtstbijzijnde verdwenen bp" }),
         el("th", { text: "Links" }),
       ]),
     ])
@@ -266,6 +280,7 @@ async function main() {
         el("td", { text: c.gevonden_term }),
         el("td", { class: "fragment-cell", text: c.fragment }),
         el("td", { text: c.dichtstbijzijnde_bp }),
+        el("td", { text: fmtVerdwenen(c.dichtstbijzijnde_verdwenen_bp, c.afstand_tot_verdwenen_bp_m) }),
         links,
       ])
     );
