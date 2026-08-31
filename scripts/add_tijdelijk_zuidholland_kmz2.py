@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-One-off: append the 2 cemeteries from Leon's second "Tijdelijk Zuid-Holland"
+One-off: append the 2 cemeteries from the domain expert's second "Tijdelijk Zuid-Holland"
 KMZ (2026-08-26, saved as "Tijdelijk Zuid-Holland 2.kmz" to not overwrite the
 first one from 2026-08-23) to the normalized source CSV, in the same
 terrein+ingang row pair convention used throughout the file (see

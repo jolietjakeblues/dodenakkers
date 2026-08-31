@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-One-off: append the 3 cemeteries from Leon's "Tijdelijk Zuid-Holland.kmz"
+One-off: append the 3 cemeteries from the domain expert's "Tijdelijk Zuid-Holland.kmz"
 (2026-08-23) to the normalized source CSV, in the same terrein+ingang row
 pair convention used throughout the file (see
 docs/data/003-csv-bron-en-koppeling.md).

@@ -20,13 +20,13 @@ Dit document gaat vóór losse technische aannames in code.
 
 ## 1. Doel van het project
 
-De opdracht komt van Leon Bok en draait om begraafplaatsen in Zuid-Holland.
+De opdracht draait om begraafplaatsen in Zuid-Holland.
 
 De kernvraag is niet alleen "toon begraafplaatsen op een kaart", maar:
 
 > maak een kleine ruimtelijke onderzoeksomgeving waarmee snel zichtbaar wordt hoe begraafplaatsen zich verhouden tot beschermd erfgoed.
 
-Leon wil onder meer kunnen zien:
+De domeinexpert wil onder meer kunnen zien:
 
 - welke begraafplaatsen binnen een beschermd stads- of dorpsgezicht liggen;
 - welke begraafplaatsen overlappen met archeologische rijksmonumenten;
@@ -698,7 +698,7 @@ none
 
 Deze grenzen zijn voorlopig werkhypothesen.
 
-Leon moet kunnen aangeven of bijvoorbeeld "annex aan een rijksmonument" betekent:
+De domeinexpert moet kunnen aangeven of bijvoorbeeld "annex aan een rijksmonument" betekent:
 
 - zelfde terrein;
 - grenscontact;
@@ -729,7 +729,7 @@ Presentatie mag een boolean tonen, maar de bronrelatie moet behouden blijven.
 
 ## 20. Archeologisch rijksmonument
 
-Leon wil onder meer zien waar een begraafplaats "boven archeologie" ligt.
+de domeinexpert wil onder meer zien waar een begraafplaats "boven archeologie" ligt.
 
 Technisch interpreteren we dit eerst als een ruimtelijke relatie tussen:
 
@@ -936,7 +936,7 @@ Niet doen alsof `null` betekent `false`.
 
 ## 28. Export
 
-Leon moet onderzoeksselecties kunnen meenemen.
+de domeinexpert moet onderzoeksselecties kunnen meenemen.
 
 Minimaal interessant:
 
@@ -1311,12 +1311,12 @@ Geen verborgen business rules in frontend-JavaScript als die analytisch relevant
 Deze vragen zijn nog niet definitief beantwoord en moeten niet stiekem in code worden vastgelegd:
 
 1. Welke exacte RCE-concepten bepalen "archeologisch rijksmonument"?
-2. Wat bedoelt Leon precies met "annex aan een rijksmonument"?
+2. Wat bedoelt de domeinexpert precies met "annex aan een rijksmonument"?
 3. Welke afstand geldt als "direct aangrenzend" als er geen topologisch grenscontact is?
 4. Moeten gebouwde rijksmonumenten op hetzelfde perceel apart worden geclassificeerd?
-5. Hoe wil Leon statusconflicten `geruimd` inhoudelijk oplossen?
+5. Hoe wil de domeinexpert statusconflicten `geruimd` inhoudelijk oplossen?
 6. Moet een gedeeltelijke overlap met beschermd gezicht anders worden gepresenteerd dan volledig `within`?
-7. Wil Leon percelen standaard of alleen als optionele onderzoeklaag?
+7. Wil de domeinexpert percelen standaard of alleen als optionele onderzoeklaag?
 
 Bewaar technische flexibiliteit zodat deze antwoorden later zonder datamigratie kunnen worden verwerkt.
 
@@ -1383,7 +1383,7 @@ Dit is primair een onderzoeksdataset met viewer, geen generiek GIS-platform.
 
 ## 45. Definitie van succes
 
-Het project is geslaagd als Leon:
+Het project is geslaagd als de domeinexpert:
 
 1. een begraafplaats kan selecteren;
 2. het echte terrein en de echte ingang ziet;

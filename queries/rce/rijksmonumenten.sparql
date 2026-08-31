@@ -60,7 +60,7 @@
 # eerdere versie had een FILTER EXISTS over een handmatig samengestelde
 # lijst thesaurusconcepten. Dat bleek zelf de platslag die sectie 37 van de
 # briefing afraadt. In plaats daarvan filtert de viewer nu rechtstreeks op
-# het echte label (zie ?oorspronkelijkeFunctie), zodat Leon zelf kiest
+# het echte label (zie ?oorspronkelijkeFunctie), zodat de domeinexpert zelf kiest
 # welke functiewaarden relevant zijn.
 #
 # Aanwijzingsinformatie (2026-08-19): de graph aanwijzingenmonumenten bevat

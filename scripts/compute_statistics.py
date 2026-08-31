@@ -2,7 +2,7 @@
 """
 Compute a set of aggregate statistics/overviews from the begraafplaatsen
 dataset + RCE-extracten, for a standalone statistiekenpagina (wens van
-Joop, 2026-08-26: "zoveel mogelijk overzichten, tabellen enzo... meeste
+de opdrachtgever, 2026-08-26: "zoveel mogelijk overzichten, tabellen enzo... meeste
 kerkhoven liggen bij een molen, etc").
 
 Input:
@@ -19,7 +19,7 @@ De bron zelf heeft geen "gemeente"-veld, alleen "plaats" (dorp/stad) -- dat
 is niet hetzelfde na een herindeling (meerdere plaatsen kunnen bij één
 gemeente horen, en een plaatsnaam kan bij een andere gemeente horen dan
 zijn eigen naam doet vermoeden, bv. Oudenhoorn -> Voorne aan Zee). Sinds
-2026-08-27 (wens van Joop) voegt scripts/analyse_spatial.py een echt
+2026-08-27 (wens van de opdrachtgever) voegt scripts/analyse_spatial.py een echt
 `gemeente`-veld toe via een spatial join tegen
 data/pdok/gemeenten-zuid-holland.geojson (scripts/fetch_gemeentegrenzen.py),
 dus dit script levert tabellen zowel per plaats als per gemeente.
@@ -83,7 +83,7 @@ def nabijheid_tot_categorie(begraafplaatsen: list[dict], terrain_geoms: list, ri
     rijksmonument in `functies`, ongeacht de 250m-grens van de al
     opgeslagen rijksmonument_relations (die dekt dit niet voor bv. een
     molen op 600m die nog steeds relevant/zichtbaar is). Drempels op
-    25/50/100m (2026-08-27, wens van Joop: "> 100 is niet interessant
+    25/50/100m (2026-08-27, wens van de opdrachtgever: "> 100 is niet interessant
     genoeg") -- de eerdere 250/500/1000m-drempels zaten te ruim voor een
     zinvolle "dichtbij"-vraag."""
     cat_feats = [f for f in rijksmonumenten if f["properties"].get("oorspronkelijke_functie_kort") in functies]
@@ -202,7 +202,7 @@ def main() -> None:
             if functie:
                 functie_counter[functie] += 1
     # ceo:heeftMonumentAard, los van nabijheid tot een begraafplaats -- gewoon
-    # de verdeling van alle rijksmonumenten in de bbox (wens van Joop,
+    # de verdeling van alle rijksmonumenten in de bbox (wens van de opdrachtgever,
     # 2026-08-27: aan/uit-toggle gebouwd/archeologisch in de viewer, zelfde
     # veld ook hier als simpel overzicht).
     aard_counter = Counter(f["properties"].get("monument_aard") or "onbekend" for f in rijksmonumenten)

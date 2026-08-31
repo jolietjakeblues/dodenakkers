@@ -4,14 +4,14 @@
 
 Alle punten onder "Definition of done" zijn gehaald: volledige reproduceerbare
 keten (CSV -> `build_base_dataset.py` -> `fetch_rce.py` -> `analyse_spatial.py`
--> viewer), live op **https://dodenakkers-zh.pages.dev/** voor Leon om te
+-> viewer), live op **https://dodenakkers-zh.pages.dev/** voor de domeinexpert om te
 bekijken en te testen. Publicatie loopt via **Cloudflare Pages**, niet GitHub
 Pages zoals hieronder nog vermeld staat -- zie
 [006 Hosting](../ideas/006-hosting.md) voor het herziene besluit.
 
 ## Onderzoeksvraag
 
-Kan Leon per begraafplaats snel zien:
+Kan de domeinexpert per begraafplaats snel zien:
 
 1. wat het terrein is en waar de ingang ligt;
 2. of de begraafplaats geruimd of niet-geruimd is;
@@ -102,7 +102,7 @@ GitHub Actions bouwt de afgeleide data en viewer. GitHub Pages serveert het stat
 
 ## Definition of done
 
-De eerste MVP is geslaagd wanneer Leon zonder GIS-software een begraafplaats kan selecteren en direct kan zien:
+De eerste MVP is geslaagd wanneer de domeinexpert zonder GIS-software een begraafplaats kan selecteren en direct kan zien:
 
 - terrein en ingang;
 - geruimd/niet-geruimd;

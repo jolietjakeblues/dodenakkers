@@ -1,10 +1,10 @@
 # Begraafplaatsen Zuid-Holland
 
-**Van:** Leon Bok  
+**Van:** de domeinexpert  
 **Tijd:** 10:08  
-**Aan:** Joop
+**Aan:** de opdrachtgever
 
-Hoi Joop,
+Hoi,
 
 Dit is de link naar de My Maps-kaart:
 
@@ -24,6 +24,4 @@ Als het goed eruitziet, kunnen we kijken hoe we dat kunnen bestendigen.
 
 Met vriendelijke groet,
 
-Leon Bok
-
-[Bureau Funeraire Adviezen](https://www.funerair.nl/)  
+de domeinexpert  

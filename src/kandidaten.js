@@ -1,5 +1,5 @@
 // Dodenakkers Zuid-Holland - kandidaat-begraafplaatsen (2026-08-27,
-// EXPERIMENTEEL, wens van Joop). Toont data/generated/kandidaat_begraafplaatsen.json
+// EXPERIMENTEEL, wens van de opdrachtgever). Toont data/generated/kandidaat_begraafplaatsen.json
 // (zie scripts/compute_kandidaat_begraafplaatsen.py) als tabel. Geen
 // berekeningen hier, alleen weergave -- zelfde scheiding als statistieken.js.
 
@@ -23,7 +23,7 @@ function fmt(n) {
 }
 
 // Combineert naam+plaats en afstand tot de dichtstbijzijnde verdwenen
-// begraafplaats (Leons eigen kennis, zie build_verdwenen_begraafplaatsen.py)
+// begraafplaats (eigen kennis van de domeinexpert, zie build_verdwenen_begraafplaatsen.py)
 // tot één compacte celtekst -- puur context, geen aparte kandidatenlijst
 // (zie de toelichting op kandidaten.html).
 function fmtVerdwenen(naamPlaats, afstandM) {

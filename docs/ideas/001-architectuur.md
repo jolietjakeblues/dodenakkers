@@ -49,7 +49,7 @@ GitHub Pages
 
 ## Waarom vooraf verrijken?
 
-Leon wil onderzoeksresultaten kunnen filteren. Hij hoeft niet bij iedere klik opnieuw SPARQL- of GIS-berekeningen uit te voeren.
+De domeinexpert wil onderzoeksresultaten kunnen filteren. Hij hoeft niet bij iedere klik opnieuw SPARQL- of GIS-berekeningen uit te voeren.
 
 Een vooraf verrijkte dataset maakt de viewer:
 

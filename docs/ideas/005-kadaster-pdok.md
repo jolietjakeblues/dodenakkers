@@ -8,7 +8,7 @@ PDOK is daarom **geen noodzakelijke tussenlaag** voor rijksmonumenten of bescher
 
 ## Doel
 
-Voeg kadastrale percelen toe als dat Leon helpt bij vragen over eigendomseenheden, begrenzing of de relatie tussen begraafplaats en monument.
+Voeg kadastrale percelen toe als dat de domeinexpert helpt bij vragen over eigendomseenheden, begrenzing of de relatie tussen begraafplaats en monument.
 
 ## Mogelijke onderzoeksvragen
 
@@ -47,7 +47,7 @@ Voor de analyse:
 - bewaar perceelidentificatie bij de afgeleide resultaten;
 - houd brondata en afgeleide relaties gescheiden.
 
-## Open vraag voor Leon
+## Open vraag voor de domeinexpert
 
 We moeten weten wat hij met percelen wil onderzoeken.
 

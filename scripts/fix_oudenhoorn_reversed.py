@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-One-time correction: Leon (opdrachtgever's principal) reversed the Oudenhoorn
+One-time correction: de domeinexpert (opdrachtgever's principal) reversed the Oudenhoorn
 call from scripts/fix_oudenhoorn_ingang.py after seeing the live map,
-2026-08-23 (forwarded by Joop via WhatsApp, satellite screenshot with both
+2026-08-23 (forwarded by de opdrachtgever via WhatsApp, satellite screenshot with both
 terreinen marked):
 
   "De groene moet geruimd en de bruine niet. Ingang aan westzijde van de
@@ -19,7 +19,7 @@ backwards). This script:
    begraafplaats to NH Kerkhof, geruimd status following its new terrain.
 3. Reverts the *other* ingang (POINT(4.192397 51.826557), the originally
    mislabeled point reassigned by fix_oudenhoorn_ingang.py) to niet-geruimd,
-   staying with Gem. begraafplaats -- Leon only called out "de ingang aan
+   staying with Gem. begraafplaats -- de domeinexpert only called out "de ingang aan
    westzijde", so this one keeps its current terrain attribution.
 
 Net result: each terrain has exactly 1 ingang again, same as every other

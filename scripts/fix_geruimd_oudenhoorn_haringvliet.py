@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-One-time source correction: 2 more geruimd corrections reported by Leon
+One-time source correction: 2 more geruimd corrections reported by de domeinexpert
 (opdrachtgever), 2026-08-22.
 
 - "Oudenhoorn, fout in aanlevering: Kerkhof = geruimd, bevat geen ingang"
   -> the Oudenhoorn cemetery with no matched ingang (koppelwijze "missing"
-  in the built dataset, zh-0354 "Gem. begraafplaats") is the one Leon means
+  in the built dataset, zh-0354 "Gem. begraafplaats") is the one de domeinexpert means
   ("geen ingang" is the disambiguating detail -- Oudenhoorn also has a
   separate "NH Kerkhof" with a matched ingang, not this one).
 - "Kerkhof Stad aan 't Haringvliet - Status: geruimd" -> matches the "NH
