@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export the known geruimd-statusconflicten to a CSV Leon can put next to the
+Export the known geruimd-statusconflicten to a CSV de domeinexpert can put next to the
 source CSV, to manually resolve (e.g. by adding a "hoort bij"-achtige kolom).
 
 Input:  data/generated/analyse.geojson

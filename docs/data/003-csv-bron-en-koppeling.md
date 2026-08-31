@@ -62,7 +62,7 @@ Oudenhoorn` (koppelde dus via exacte naam+plaats aan het NH Kerkhof-terrein),
 terwijl het punt ruimtelijk 132 m van het NH Kerkhof-terrein ligt en 0 m van
 -- dus binnen -- het terrein van Gem. begraafplaats.
 
-**Eerste poging** (Joop, tegen zijn eigen database bevestigd): het
+**Eerste poging** (de opdrachtgever, tegen zijn eigen database bevestigd): het
 verkeerd-gelabelde punt hernoemd naar `Gem. begraafplaats, Oudenhoorn` en
 `Gem. begraafplaats` op `geruimd` gezet (dit was zelf al een eerdere
 correctie, van 2026-08-22, zie hieronder), met een nieuwe tweede ingang op
@@ -71,8 +71,8 @@ linkerzijde (west)"). Uitgevoerd via `scripts/fix_oudenhoorn_ingang.py`.
 Dit vereiste tijdelijk een `EXTRA_INGANG_EXCEPTIONS`-mechanisme in
 `scripts/build_base_dataset.py` (één terrein met twee eigen ingangen).
 
-**Leon corrigeerde dit dezelfde dag** na het zien van de live kaart (WhatsApp
-naar Joop, met een satellietscreenshot van beide terreinen): "De groene moet
+**de domeinexpert corrigeerde dit dezelfde dag** na het zien van de live kaart (WhatsApp
+naar de opdrachtgever, met een satellietscreenshot van beide terreinen): "De groene moet
 geruimd en de bruine niet. Ingang aan westzijde van de bruine moet naar de
 groene, nagenoeg zelfde locatie." Groen = `NH Kerkhof`, bruin = `Gem.
 begraafplaats`. Uitgevoerd via `scripts/fix_oudenhoorn_reversed.py`
@@ -80,14 +80,14 @@ begraafplaats`. Uitgevoerd via `scripts/fix_oudenhoorn_reversed.py`
 
 1. `NH Kerkhof, Oudenhoorn` -> `geruimd`; `Gem. begraafplaats, Oudenhoorn`
    -> niet-geruimd (de omgekeerde van de eerdere, foutieve
-   2026-08-22-correctie -- "Kerkhof" in Leons oorspronkelijke foutmelding
+   2026-08-22-correctie -- "Kerkhof" in de oorspronkelijke foutmelding van de domeinexpert
    bleek dus letterlijk `NH Kerkhof` te betekenen, niet `Gem.
    begraafplaats`);
 2. de nieuwe west-ingang (`POINT (4.191578 51.826529)`) hertoegewezen van
    `Gem. begraafplaats` naar `NH Kerkhof`, geruimd-status volgt het nieuwe
    terrein;
 3. de andere ingang (`POINT (4.192397 51.826557)`, de oorspronkelijk
-   verkeerd-gelabelde) blijft bij `Gem. begraafplaats` (Leon noemde alleen
+   verkeerd-gelabelde) blijft bij `Gem. begraafplaats` (de domeinexpert noemde alleen
    "de ingang aan westzijde"), nu terug naar niet-geruimd.
 
 Resultaat: beide terreinen hebben weer precies 1 eigen ingang, zoals elk
@@ -132,13 +132,13 @@ is gewijzigd, geen rijen toegevoegd of verwijderd.
 Bij de gemeentelijke herindeling van 2019 ging Vijfheerenlanden (Ameide,
 Hei en Boeicop, Kedichem, Leerbroek, Leerdam, Lexmond, Meerkerk, Nieuwland,
 Oosterwijk, Schoonrewoerd, Tienhoven) van provincie Zuid-Holland naar
-provincie Utrecht. Leon had deze 20 begraafplaatsen destijds al uit een
+provincie Utrecht. De domeinexpert had deze 20 begraafplaatsen destijds al uit een
 Excel-versie van de bron verwijderd, maar die correctie had de KML/CSV die
 deze build leest nooit bereikt.
 
 Verwijderd via `scripts/fix_vijfheerenlanden.py` (eenmalig gedraaid,
 2026-08-19): 20 terreinen + hun 20 gekoppelde ingangen (40 bronregels),
-op naam+plaats geverifieerd tegen Leons opgave voordat er iets verwijderd
+op naam+plaats geverifieerd tegen de opgave van de domeinexpert voordat er iets verwijderd
 werd. Bron ging van 924 naar 884 records; basisdataset van 463 naar 443
 begraafplaatsen. Zie `git log -- "data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"`
 voor de exacte verwijderde rijen (provenance via git-historie, niet apart
@@ -166,7 +166,7 @@ Dit maakt handmatige validatie mogelijk zonder informatieverlies.
 
 De 4 conflicten die zich in de bron voordeden (RK begraafplaats Oude
 Wetering, Oud NH kerkhof Schoonhoven, NH Kerkhof Zwammerdam, Vm. NH kerkhof
-Maasland) zijn door Leon bevestigd als geruimd. Opgelost via
+Maasland) zijn door de domeinexpert bevestigd als geruimd. Opgelost via
 `scripts/fix_statusconflicten.py` (eenmalig gedraaid, 2026-08-20): voor elk
 conflict is de rij (terrein of ingang) die nog niet `geruimd` had daarop
 gezet, en heeft `plaats (origineel)` de bestaande `(geruimd)`-suffixconventie
@@ -176,7 +176,7 @@ conflicten.
 
 ### Losse geruimd-correcties (2026-08-22)
 
-Opdrachtgever Leon meldde twee losstaande fouten in de bron (niet gerelateerd
+Opdrachtgever de domeinexpert meldde twee losstaande fouten in de bron (niet gerelateerd
 aan de statusconflicten hierboven -- deze twee hadden helemaal geen
 `geruimd`-waarde, dus geen conflict, gewoon een ontbrekende waarde):
 
@@ -191,7 +191,7 @@ Beide zijn nu `geruimd`. Opgelost via
 
 ### Tijdelijk Zuid-Holland.kmz (2026-08-23, bronwijziging)
 
-Leon leverde een aparte KMZ (`data/Tijdelijk Zuid-Holland.kmz`, bewaard voor
+de domeinexpert leverde een aparte KMZ (`data/Tijdelijk Zuid-Holland.kmz`, bewaard voor
 provenance naast de KML) met 3 nieuwe begraafplaatsen die nog niet in de
 hoofdbron zaten:
 
@@ -209,7 +209,7 @@ basisdataset van 443 naar 446 begraafplaatsen.
 
 ### Tijdelijk Zuid-Holland 2.kmz (2026-08-26, bronwijziging)
 
-Leon leverde een tweede, losstaande KMZ met dezelfde bestandsnaam als
+de domeinexpert leverde een tweede, losstaande KMZ met dezelfde bestandsnaam als
 hierboven -- bewaard als `data/Tijdelijk Zuid-Holland 2.kmz` om de eerste
 niet te overschrijven -- met 2 nieuwe begraafplaatsen die nog niet in de
 hoofdbron zaten:

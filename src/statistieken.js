@@ -1,4 +1,4 @@
-// Dodenakkers Zuid-Holland - statistiekenpagina (2026-08-26, wens van Joop).
+// Dodenakkers Zuid-Holland - statistiekenpagina (2026-08-26, wens van de opdrachtgever).
 //
 // Leest het vooraf berekende data/generated/statistieken.json (zie
 // scripts/compute_statistics.py) en rendert het als losse secties met

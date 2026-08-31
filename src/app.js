@@ -22,18 +22,18 @@ const DATA = {
   // zodra de gebruiker de laag daadwerkelijk aanzet (zie toggle-onderzoeksgebieden).
   onderzoeksgebieden: "../data/rce/archeologische-onderzoeksgebieden.geojson",
   // Ook lazy (2,7MB, 50 gemeenten) -- alleen gebruikt voor de gemeente-koppeling
-  // in scripts/analyse_spatial.py, maar Joop wilde de grenzen ook als
+  // in scripts/analyse_spatial.py, maar de opdrachtgever wilde de grenzen ook als
   // toggelbare referentielaag op de kaart (2026-08-27), zie toggle-gemeentegrenzen.
   gemeentegrenzen: "../data/pdok/gemeenten-zuid-holland.geojson",
   // Ook lazy (464KB, klein genoeg om eager te laden, maar zelfde
   // "standaard uit, referentielaag"-principe als de twee hierboven). Eigen
   // provinciale bron (Provincie Zuid-Holland CHS), geen RCE-bbox-fetch dus
-  // geen bbox-rand-effect (wens van Joop, 2026-08-27, na het vinden van
+  // geen bbox-rand-effect (wens van de opdrachtgever, 2026-08-27, na het vinden van
   // https://data.overheid.nl/dataset/32677).
   chsArcheologie: "../data/zuid-holland/chs-archeologie-provinciaal-belang.geojson",
-  // Lazy, klein (92 punten): Leons eigen KMZ met verdwenen begraafplaatsen
+  // Lazy, klein (92 punten): eigen KMZ van de domeinexpert met verdwenen begraafplaatsen
   // (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py), wens
-  // van Joop (2026-08-27) nadat Leon de KMZ deelde.
+  // van de opdrachtgever (2026-08-27) nadat de domeinexpert de KMZ deelde.
   verdwenen: "../data/generated/verdwenen-begraafplaatsen.geojson",
 };
 
@@ -260,7 +260,7 @@ function boundsOfFeatureCollection(fc) {
   return bounds;
 }
 
-// Leon bevestigde 2026-08-19: "annex aan een rijksmonument" betekent
+// de domeinexpert bevestigde 2026-08-19: "annex aan een rijksmonument" betekent
 // grenscontact (touches), niet zomaar "binnen X meter". Andere relaties
 // blijven de ruwe categorie tonen (zie sectie 18 van de briefing --
 // werkhypothesen, geen definitieve indeling).
@@ -344,7 +344,7 @@ async function main() {
   // ophalen bij het aanzetten, net als de onderzoeksgebieden hieronder).
   // Dunner/lichter dan de provinciegrens zodat ze duidelijk een ander,
   // fijnmaziger niveau zijn i.p.v. met elkaar te wedijveren. Puur ter
-  // oriëntatie, geen klikinteractie (wens van Joop, 2026-08-27 -- de
+  // oriëntatie, geen klikinteractie (wens van de opdrachtgever, 2026-08-27 -- de
   // geometrie werd al gebruikt voor de gemeente-koppeling in
   // scripts/analyse_spatial.py, dit toont 'm ook op de kaart).
   let gemeentegrenzenLoaded = false;
@@ -427,7 +427,7 @@ async function main() {
   // --- Archeologische terreinen van provinciaal belang (lazy: 662 polygonen,
   // 464KB -- klein genoeg om eager te laden, maar zelfde "standaard uit,
   // referentielaag"-principe als de twee lagen hierboven). Provincie
-  // Zuid-Holland CHS, andere bron dan de RCE-lagen (wens van Joop, 2026-08-27).
+  // Zuid-Holland CHS, andere bron dan de RCE-lagen (wens van de opdrachtgever, 2026-08-27).
   let chsArcheologieLoaded = false;
   document.getElementById("toggle-chs-archeologie").addEventListener("change", async (e) => {
     updateLegendActivity();
@@ -453,7 +453,7 @@ async function main() {
       source: "chs-archeologie",
       // #997404 (olijfgeel/goud) i.p.v. het al gebruikte #e8590c (rijksmonument
       // archeologisch) of #0c8599 (RCE-onderzoeksgebieden) -- eigen, goed te
-      // onderscheiden kleur nodig (Rene, kleurenblind).
+      // onderscheiden kleur nodig (de reviewer, kleurenblind).
       paint: { "fill-color": "#997404", "fill-opacity": 0.25 },
     });
     map.addLayer({
@@ -484,11 +484,11 @@ async function main() {
     statusEl.textContent = `${chsArcheologie.features.length} archeologische terreinen van provinciaal belang geladen.`;
   });
 
-  // --- Verdwenen begraafplaatsen (lazy, klein: 92 punten) -- Leons eigen
-  // KMZ (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py),
+  // --- Verdwenen begraafplaatsen (lazy, klein: 92 punten) -- eigen KMZ
+  // van de domeinexpert (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py),
   // andere aard dan de rest van de kaart: geen terrein meer (alleen de
   // historische locatie), en geen automatische heuristiek zoals de
-  // kandidatenpagina maar Leons eigen, geverifieerde kennis. Tot 2026-08-28
+  // kandidatenpagina maar eigen, geverifieerde kennis van de domeinexpert. Tot 2026-08-28
   // hadden deze punten twee kleuren (een heuristische "lijkt al bekend in
   // de hoofddataset"-vergelijking) -- verwijderd op verzoek van de
   // opdrachtgever: dit zijn stuk voor stuk geverifieerde locaties, geen
@@ -496,7 +496,7 @@ async function main() {
   // zichzelf. Alle punten tonen nu gelijk, in #212529 (bijna zwart, ook al
   // de hoofdtekstkleur van het paneel) -- gekozen (2026-08-28) omdat het
   // qua hue niet te verwarren is met de roze ingangen (#e64980) of iets
-  // anders op de kaart, en het contrast blijft ook voor Rene (kleurenblind)
+  // anders op de kaart, en het contrast blijft ook voor de reviewer (kleurenblind)
   // overeind omdat het op lichtheid werkt, niet op hue.
   let verdwenenLoaded = false;
   document.getElementById("toggle-verdwenen").addEventListener("change", async (e) => {
@@ -630,7 +630,7 @@ async function main() {
   }
 
   // Drie vaste stappen i.p.v. een doorlopende 50-250m-schaal (2026-08-27,
-  // wens van Joop: "afstand aanpassen naar 25, 50 en 100 meter. > 100 is
+  // wens van de opdrachtgever: "afstand aanpassen naar 25, 50 en 100 meter. > 100 is
   // niet interessant genoeg") -- een <input type="range"> ondersteunt geen
   // onregelmatige stapgrootte, dus de slider zelf loopt over de index
   // (0/1/2) en wordt hier vertaald naar de echte meterwaarde. rmThreshold
@@ -714,7 +714,7 @@ async function main() {
         dynamicClauses.push(["in", ["get", "oorspronkelijke_functie_kort"], ["literal", [...selectedFunctie]]]);
       }
       // Aan/uit voor gebouwde vs archeologische monumenten (ceo:monumentAard,
-      // wens van Joop 2026-08-27). Bij beide aan geen extra clausule (zelfde
+      // wens van de opdrachtgever 2026-08-27). Bij beide aan geen extra clausule (zelfde
       // gedrag als voorheen); bij een van beide uit filteren op de resterende
       // aard-waarde; bij beide uit een "in" met een lege literal-array, die
       // voor elke feature false oplevert en zo alles verbergt.
@@ -962,7 +962,7 @@ async function main() {
   //   (OR/unie), niet versmallen. Met AND is de combinatie altijd
   //   tegenstrijdig (geruimd === false EN === true) en levert dat altijd 0
   //   resultaten op. Een losse "statusconflict"-optie stond hier ooit ook in,
-  //   maar is verwijderd (2026-08-27, wens van Joop) nu de bron 0 conflicten
+  //   maar is verwijderd (2026-08-27, wens van de opdrachtgever) nu de bron 0 conflicten
   //   meer heeft -- status_conflict blijft wel als dataveld/kleur bestaan
   //   (zie terrein-fill hieronder) als stille vangnet, mocht een toekomstige
   //   bronupdate er weer een introduceren.
@@ -1115,7 +1115,7 @@ async function main() {
 
   // --- Permalink: huidige kaartweergave + filters/zoekopdracht in de URL,
   // zodat een gedeelde link exact dezelfde weergave reproduceert (wens van
-  // Joop, 2026-08-26 -- "waarschijnlijk het nuttigste voor Leons workflow").
+  // de opdrachtgever, 2026-08-26 -- "waarschijnlijk het nuttigste voor de workflow van de domeinexpert").
   // Alleen history.replaceState (nooit pushState), zodat elke checkbox/pan
   // geen eigen entry in de browser-terug-geschiedenis krijgt. Losse, korte
   // parameternamen i.p.v. de volledige checkbox-id's om de URL leesbaar te
@@ -1140,7 +1140,7 @@ async function main() {
   // gebeurde met een oude link met alleen "mon,monalle" erin: de generieke
   // lus zag "monbouwd"/"monarch" ontbreken en zette dus beide uit, wat de
   // rijksmonumentfilter herleidde tot een lege literal-array (alles
-  // verborgen, geen rijksmonumenten meer zichtbaar). Gemeld door Joop,
+  // verborgen, geen rijksmonumenten meer zichtbaar). Gemeld door de opdrachtgever,
   // 2026-08-28.
   const DEFAULT_ON_LAYER_TOGGLE_CODES = {
     "toggle-monumenten-gebouwd": "nomonbouwd",
@@ -1270,7 +1270,7 @@ async function main() {
   map.on("moveend", syncUrl);
 
   // --- Data-export: knop om de huidige gefilterde selectie te downloaden
-  // (wens van Joop, 2026-08-26 -- handig voor Leon om afwijkingen offline te
+  // (wens van de opdrachtgever, 2026-08-26 -- handig voor de domeinexpert om afwijkingen offline te
   // checken). Als eigen kaart-control i.p.v. paneelknoppen, zodat het
   // filterpaneel links niet voller wordt -- hoort qua functie toch bij "wat
   // zie ik nu op de kaart", net als de laagtoggles.

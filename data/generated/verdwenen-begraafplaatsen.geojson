@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "waarschuwing": "Bron: Leon (data/Verdwenen.kmz), niet de automatische kandidaat-signalen op kandidaten.html. Dit zijn geverifieerde locaties, geen kandidaat-indicatie -- ook een punt vlak bij een bestaand restant staat op zichzelf. Punten, geen terreinpolygoon: de begraafplaats bestaat niet meer, alleen de historische locatie is bekend.",
+  "waarschuwing": "Bron: de domeinexpert (data/Verdwenen.kmz), niet de automatische kandidaat-signalen op kandidaten.html. Dit zijn geverifieerde locaties, geen kandidaat-indicatie -- ook een punt vlak bij een bestaand restant staat op zichzelf. Punten, geen terreinpolygoon: de begraafplaats bestaat niet meer, alleen de historische locatie is bekend.",
   "aantal_landelijk": 907,
   "features": [
     {

@@ -5,9 +5,9 @@ One-time source correction: remove cemeteries in Vijfheerenlanden villages.
 Vijfheerenlanden (Ameide, Hei en Boeicop, Kedichem, Leerbroek, Leerdam,
 Lexmond, Meerkerk, Nieuwland, Oosterwijk, Schoonrewoerd, Tienhoven) moved
 from provincie Zuid-Holland to provincie Utrecht at the 2019 gemeentelijke
-herindeling. Leon had already excluded these in an old Excel pass, but the
+herindeling. De domeinexpert had already excluded these in an old Excel pass, but the
 correction never made it into the KML/CSV this project's build reads from
--- confirmed by Leon 2026-08-19, with exact per-plaats counts that matched
+-- confirmed by de domeinexpert 2026-08-19, with exact per-plaats counts that matched
 this CSV's actual row counts one-for-one before any change was made.
 
 Removes each cemetery's terrain row AND its matched ingang row together
@@ -32,7 +32,7 @@ VIJFHEERENLANDEN_PLAATSEN = [
     "Leerbroek", "Kedichem", "Leerdam", "Oosterwijk", "Nieuwland", "Meerkerk",
 ]
 
-# Verified against this CSV 2026-08-19: matches Leon's reported counts exactly
+# Verified against this CSV 2026-08-19: matches the counts reported by de domeinexpert exactly
 # (Tienhoven 1, Ameide 2, Lexmond 1, Hei en Boeicop 2, Schoonrewoerd 2,
 # Leerbroek 2, Kedichem 1, Leerdam 5, Oosterwijk 1, Nieuwland 1, Meerkerk 2 = 20).
 EXPECTED_TERREIN_COUNT = 20

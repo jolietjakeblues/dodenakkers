@@ -49,7 +49,7 @@ Voor rijksmonumenten kunnen verschillende situaties voorkomen:
 - monument raakt de terreinrand;
 - monument ligt vlak naast de begraafplaats.
 
-De precieze betekenis van "annex aan een rijksmonument" moet op basis van deze meetbare relaties met Leon worden gevalideerd.
+De precieze betekenis van "annex aan een rijksmonument" moet op basis van deze meetbare relaties met de domeinexpert worden gevalideerd.
 
 ## Ingang als aanvullende geometrie
 

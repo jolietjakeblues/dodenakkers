@@ -29,13 +29,13 @@
       <h2>Vier soorten data op deze site</h2>
       <p class="hint">Elke laag heeft een andere mate van zekerheid &mdash; bewust niet door elkaar gehaald.</p>
       <h3>1. Hoofddataset (448 begraafplaatsen)</h3>
-      <p>De geverifieerde kernset: Leons genormaliseerde CSV, terrein + ingang per begraafplaats, status (geruimd/niet-geruimd). Dit is de enige laag waarop de statistiekenpagina rekent.</p>
+      <p>De geverifieerde kernset: de genormaliseerde CSV van de domeinexpert, terrein + ingang per begraafplaats, status (geruimd/niet-geruimd). Dit is de enige laag waarop de statistiekenpagina rekent.</p>
       <h3>2. Verrijkte relaties (rijksmonumenten, beschermde gezichten, archeologie)</h3>
       <p>De hoofddataset ruimtelijk vergeleken met RCE Linked Data (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) en de CHS-laag van Provincie Zuid-Holland. Feitelijke overlap/afstand, automatisch berekend &mdash; geen menselijke beoordeling per geval.</p>
       <h3>3. Kandidaat-begraafplaatsen (experimenteel)</h3>
-      <p>Op de <a href="kandidaten.html">losse kandidatenpagina</a>: tekst- en categoriezoekacties (kerken, kloosters, synagoges, kapellen, archeologische omschrijvingen) die een <em>mogelijke</em> onbekende begraafplaats suggereren. Nadrukkelijk geen claim &mdash; elke kandidaat moet door Leon beoordeeld worden voordat hij ooit in de hoofddataset terechtkomt.</p>
+      <p>Op de <a href="kandidaten.html">losse kandidatenpagina</a>: tekst- en categoriezoekacties (kerken, kloosters, synagoges, kapellen, archeologische omschrijvingen) die een <em>mogelijke</em> onbekende begraafplaats suggereren. Nadrukkelijk geen claim &mdash; elke kandidaat moet door de domeinexpert beoordeeld worden voordat hij ooit in de hoofddataset terechtkomt.</p>
       <h3>4. Verdwenen begraafplaatsen (laag "Verdwenen begraafplaatsen")</h3>
-      <p>Leons eigen, geverifieerde historische kennis (907 landelijke punten, 92 in Zuid-Holland) van begraafplaatsen die niet meer bestaan &mdash; geen automatisch signaal zoals categorie 3, en geen indicatie: elk punt is een gegeven op zichzelf. Ook wanneer een punt vlak bij een bestaand restant ligt, zegt dat niets over dat punt zelf &mdash; er wordt dan ook niet vergeleken met de hoofddataset. Grootte of omvang van de oorspronkelijke begraafplaats is niet meer vast te stellen, vandaar alleen een punt, geen terreinpolygoon.</p>
+      <p>Eigen, geverifieerde historische kennis van de domeinexpert (907 landelijke punten, 92 in Zuid-Holland) van begraafplaatsen die niet meer bestaan &mdash; geen automatisch signaal zoals categorie 3, en geen indicatie: elk punt is een gegeven op zichzelf. Ook wanneer een punt vlak bij een bestaand restant ligt, zegt dat niets over dat punt zelf &mdash; er wordt dan ook niet vergeleken met de hoofddataset. Grootte of omvang van de oorspronkelijke begraafplaats is niet meer vast te stellen, vandaar alleen een punt, geen terreinpolygoon.</p>
     </section>
 
     <section class="stats-section">
@@ -43,7 +43,7 @@
       <p class="hint">Labels die de relatie tussen een begraafplaatsterrein en een rijksmonument beschrijven (popup en filters).</p>
       <table>
         <tbody>
-          <tr><td><strong>annex (grenst aan)</strong></td><td>grenscontact (touches) &mdash; door Leon bevestigd als de juiste lezing van "annex", niet zomaar "in de buurt"</td></tr>
+          <tr><td><strong>annex (grenst aan)</strong></td><td>grenscontact (touches) &mdash; door de domeinexpert bevestigd als de juiste lezing van "annex", niet zomaar "in de buurt"</td></tr>
           <tr><td><strong>op het terrein</strong></td><td>het monument ligt binnen de begraafplaatspolygoon</td></tr>
           <tr><td><strong>overlapt</strong></td><td>polygonen snijden elkaar gedeeltelijk</td></tr>
           <tr><td><strong>omvat het monument</strong></td><td>de begraafplaats omsluit het hele monument</td></tr>
@@ -61,7 +61,7 @@
 
     <section class="stats-section">
       <h2>Plaats vs. gemeente</h2>
-      <p>"Plaats" (dorp/stad) komt rechtstreeks uit Leons bron. "Gemeente" is er apart bij gezocht via de echte PDOK-gemeentegrenzen: de bron heeft geen gemeenteveld, en na herindelingen hoort een plaats niet altijd bij de gemeente die zijn naam doet vermoeden (Oudenhoorn &rarr; Voorne aan Zee, bijvoorbeeld).</p>
+      <p>"Plaats" (dorp/stad) komt rechtstreeks uit de bron van de domeinexpert. "Gemeente" is er apart bij gezocht via de echte PDOK-gemeentegrenzen: de bron heeft geen gemeenteveld, en na herindelingen hoort een plaats niet altijd bij de gemeente die zijn naam doet vermoeden (Oudenhoorn &rarr; Voorne aan Zee, bijvoorbeeld).</p>
     </section>
 
     <section class="stats-section">

@@ -185,7 +185,7 @@ Een eerdere versie had een apart, filterbaar booleanveld
 `oorspronkelijke_functie_begraafplaats`, met een handmatig samengestelde
 lijst van 9 thesaurusconcepten waarvan het label "begraafplaats"/"kerkhof"
 bevat. Dat bleek zelf de platslag die sectie 37 van de briefing afraadt —
-de keuze welke functiewaarden "meetellen" hoort bij Leon, niet in een
+de keuze welke functiewaarden "meetellen" hoort bij de domeinexpert, niet in een
 SPARQL-VALUES-lijst. Dat veld is verwijderd.
 
 In plaats daarvan filtert de viewer nu rechtstreeks op het echte label via

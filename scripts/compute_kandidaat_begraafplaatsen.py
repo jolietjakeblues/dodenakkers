@@ -5,14 +5,14 @@ onderzoeksgebieden (data/rce/archeologische-onderzoeksgebieden.geojson,
 22.254 rapporten) naar tekstuele aanwijzingen voor begravingen, en meet de
 afstand tot de dichtstbijzijnde al bekende begraafplaats -- als hulpmiddel
 om kandidaat-locaties te vinden die mogelijk nog ontbreken in de
-hoofddataset (wens van Joop, 2026-08-27: "waar zou je een begraafplaats
+hoofddataset (wens van de opdrachtgever, 2026-08-27: "waar zou je een begraafplaats
 verwachten").
 
 Dit is GEEN verificatie en GEEN claim dat er een begraafplaats is. Het is
 een woordenboek-achtige tekstzoekactie op archeologische bureau-/
 veldonderzoeksrapporten, die vaak schrijven over wat er "verwacht" of
 "mogelijk" aanwezig is, niet alleen over bevestigde vondsten. Elke
-kandidaat moet door een mens (Leon) beoordeeld worden tegen de brontekst
+kandidaat moet door een mens (de domeinexpert) beoordeeld worden tegen de brontekst
 zelf (via monumentenregister_url/cho_uri) voordat er iets aan de
 hoofddataset wordt toegevoegd.
 
@@ -46,7 +46,7 @@ ongefilterd in).
 Voor diezelfde drie categorieen (klooster/synagoge/kapel) wordt er ook
 live tegen de Kadaster Kennisgraaf (KKG, SPARQL) gecheckt hoeveel BAG-
 gebouwen er nu binnen BEBOUWING_RADIUS_M van het punt staan (wens van
-Joop, 2026-08-27: "het kan zijn dat al gebouwd is"). Vereist netwerktoegang
+de opdrachtgever, 2026-08-27: "het kan zijn dat al gebouwd is"). Vereist netwerktoegang
 tot KKG_ENDPOINT; run met --no-kadaster-check om dit over te slaan (bv.
 zonder netwerktoegang). Zie BEBOUWING_WAARSCHUWING voor de interpretatie
 -- dit is een extra aanwijzing, geen bevestiging in welke richting dan ook.
@@ -79,8 +79,8 @@ periodetermen bevat en geen latere periodeterm.
 
 Verdwenen-begraafplaatsen (2026-08-31, wens van de opdrachtgever): elke
 kandidaat krijgt er ook de afstand tot de dichtstbijzijnde locatie uit
-data/generated/verdwenen-begraafplaatsen.geojson bij (Leons eigen
-geverifieerde kennis, zie scripts/build_verdwenen_begraafplaatsen.py) --
+data/generated/verdwenen-begraafplaatsen.geojson bij (eigen geverifieerde
+kennis van de domeinexpert, zie scripts/build_verdwenen_begraafplaatsen.py) --
 een kandidaat vlak bij zo'n punt beschrijft mogelijk gewoon die al bekende
 verdwenen begraafplaats, geen nieuwe vondst. Puur extra context, geen
 aparte kandidatenlijst en geen invloed op welke treffers er zijn.
@@ -117,7 +117,7 @@ to_wgs84 = Transformer.from_crs("EPSG:28992", "EPSG:4326", always_xy=True).trans
 
 # Kadaster Kennisgraaf (KKG) SPARQL-endpoint, gebruikt om te checken of een
 # rijksmonument-kandidaat nu nog in open terrein staat of inmiddels omringd
-# is door (latere) bebouwing -- wens van Joop (2026-08-27): "het kan zijn
+# is door (latere) bebouwing -- wens van de opdrachtgever (2026-08-27): "het kan zijn
 # dat al gebouwd is". Zie BEBOUWING_WAARSCHUWING voor de interpretatiegrens.
 KKG_ENDPOINT = "https://api.labs.kadaster.nl/datasets/kadaster/kkg/services/kkg/sparql"
 BEBOUWING_RADIUS_M = 30
@@ -194,7 +194,7 @@ KLOOSTER_WAARSCHUWING = (
     "uit de rijksmonumenten, gefilterd op echte Zuid-Holland-gemeentegrenzen "
     "(zelfde bbox-rand-effect als bij de kerk-analyse). Een grote afstand tot "
     "een bekende begraafplaats is GEEN bevestiging: veel kloosters hadden tot "
-    "pakweg 1580 een eigen kerkhof (bevestigd door Leon), maar de locatie "
+    "pakweg 1580 een eigen kerkhof (bevestigd door de domeinexpert), maar de locatie "
     "daarvan is vaak onbekend -- na de Reformatie opgeheven en gesloopt of "
     "herbestemd, een kloosterbegraafplaats kan eeuwen geleden spoorloos "
     "verdwenen zijn, of lag binnen het kloostercomplex zelf en is nooit apart "
@@ -208,9 +208,9 @@ SYNAGOGE_WAARSCHUWING = (
     "LET OP, anders dan bij kerken/kloosters: bij synagoges zijn over het "
     "algemeen GEEN begraafplaatsen in de buurt te vinden, want die moesten "
     "van oudsher bewust ver buiten de bebouwde kom aangelegd worden (denk aan "
-    "toponiemen als 'Jodenberg(je)') -- bevestigd door Leon. Andersom komt "
+    "toponiemen als 'Jodenberg(je)') -- bevestigd door de domeinexpert. Andersom komt "
     "wel voor: in de loop der jaren is een bestaande begraafplaats soms later "
-    "overbouwd door een synagoge, maar dat is Leon voor zover bekend niet "
+    "overbouwd door een synagoge, maar dat is de domeinexpert voor zover bekend niet "
     "gebeurd in Zuid-Holland. De afstand hieronder is dus geen signaal op "
     "zichzelf, alleen een startpunt: waar stond de synagoge, en is er apart "
     "archief- of toponiemenonderzoek nodig naar de bijbehorende begraafplaats "
@@ -500,7 +500,7 @@ def gemeente_for_point(pt, gem_tree: STRtree, gemeenten: list[dict], gem_geoms: 
 
 def nearest_verdwenen(point_rd, verdwenen_tree: STRtree, verdwenen_geoms: list, verdwenen: list[dict]) -> tuple[float, str]:
     """Afstand tot en naam+plaats van de dichtstbijzijnde verdwenen
-    begraafplaats (Leons eigen, geverifieerde kennis -- zie
+    begraafplaats (eigen, geverifieerde kennis van de domeinexpert -- zie
     scripts/build_verdwenen_begraafplaatsen.py). Puur extra context: een
     kandidaat vlak bij zo'n punt beschrijft mogelijk gewoon die al bekende
     locatie, geen nieuwe vondst. Geen invloed op welke kandidaten er zijn."""
@@ -619,7 +619,7 @@ def main() -> None:
             "steeds uit de prehistorie of Romeinse tijd stammen zonder dat "
             "de tekst dat met zoveel woorden zegt. Elke kandidaat toont wel "
             "de afstand tot de dichtstbijzijnde verdwenen begraafplaats uit "
-            "Leons eigen kennis (data/generated/verdwenen-begraafplaatsen.geojson) "
+            "de eigen kennis van de domeinexpert (data/generated/verdwenen-begraafplaatsen.geojson) "
             "-- vlak erbij betekent mogelijk dat de tekst gewoon die al "
             "bekende locatie beschrijft."
         ),

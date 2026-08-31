@@ -2,7 +2,7 @@
 """
 One-time source correction: resolve the 4 known geruimd status conflicts.
 
-Leon confirmed 2026-08-20 that all four are geruimd:
+De domeinexpert confirmed 2026-08-20 that all four are geruimd:
   - RK begraafplaats, Oude Wetering
   - Oud NH kerkhof, Schoonhoven
   - NH Kerkhof, Zwammerdam

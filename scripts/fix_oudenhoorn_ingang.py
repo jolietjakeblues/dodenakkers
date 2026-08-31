@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 One-time source correction: Oudenhoorn ingang situatie, gemeld door de
-opdrachtgever (Joop) op 2026-08-23, naar aanleiding van Leons foutenlijst
+opdrachtgever op 2026-08-23, naar aanleiding van de foutenlijst van de domeinexpert
 ("Oudenhoorn, fout in aanlevering: Kerkhof = geruimd, bevat geen ingang").
 
 Twee stappen:

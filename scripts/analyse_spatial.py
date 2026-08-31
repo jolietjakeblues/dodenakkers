@@ -38,7 +38,7 @@ RCE_DIR = REPO_ROOT / "data" / "rce"
 PDOK_DIR = REPO_ROOT / "data" / "pdok"
 
 # 100m was de eerste werkhypothese (sectie 18 van de briefing); de viewer
-# heeft nu een schuifregelaar (stappen van 50m) zodat Leon zelf kan
+# heeft nu een schuifregelaar (stappen van 50m) zodat de domeinexpert zelf kan
 # verkennen welke afstand de juiste is, dus de dataset bewaart alvast tot
 # 250m aan ruwe afstanden -- de viewer filtert daarna client-side.
 RM_NEARBY_BUFFER_M = 250
@@ -84,7 +84,7 @@ def classify_gezicht(terrain_rd, gezichten_index: STRtree, gezichten: list[dict]
 
 
 def classify_gemeente(terrain_rd, gemeenten_index: STRtree, gemeenten: list[dict], gemeenten_geoms: list) -> str:
-    """Welke gemeente (2026-08-27, wens van Joop -- de bron heeft alleen
+    """Welke gemeente (2026-08-27, wens van de opdrachtgever -- de bron heeft alleen
     "plaats", geen gemeente) het terrein in ligt.
 
     Puntligging (representative_point i.p.v. centroid, want een centroid van
@@ -353,7 +353,7 @@ def write_audit(features: list[dict], stats: dict, skipped_null_aard: int) -> No
         "## Open punten",
         "",
         "1. De 100 m-grens voor 'nabij gebouwd rijksmonument' is een werkhypothese (sectie 18), nog niet door "
-        "Leon bevestigd. Wel al bevestigd (2026-08-19): 'annex aan een rijksmonument' betekent grenscontact "
+        "de domeinexpert bevestigd. Wel al bevestigd (2026-08-19): 'annex aan een rijksmonument' betekent grenscontact "
         "-- de relatie `touches` -- niet zomaar 'binnen X meter'; de viewer toont dit nu als 'annex (grenst aan)'.",
         "2. `rijksmonument_relations` gebruikt alleen de punt/polygoon-geometrie uit `data/rce/rijksmonumenten.geojson`; "
         "monumenten zonder geometrie in die extractie ontbreken hier per definitie.",

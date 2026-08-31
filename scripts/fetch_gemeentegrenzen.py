@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Fetch the 50 Zuid-Holland gemeentegrenzen from PDOK, for een echte
-per-gemeente-koppeling op de statistiekenpagina (wens van Joop, 2026-08-27
+per-gemeente-koppeling op de statistiekenpagina (wens van de opdrachtgever, 2026-08-27
 -- de bron heeft alleen "plaats" (dorp/stad), geen gemeente; sommige
 plaatsen horen sinds de 2019-herindeling bij een andere gemeente dan hun
 eigen naam doet vermoeden).

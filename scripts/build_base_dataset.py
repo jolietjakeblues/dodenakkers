@@ -76,24 +76,24 @@ def load_source() -> pd.DataFrame:
     # 924 -> 884 op 2026-08-19: 20 begraafplaatsen in Vijfheerenlanden-dorpen
     # (Tienhoven, Ameide, Lexmond, Hei en Boeicop, Schoonrewoerd, Leerbroek,
     # Kedichem, Leerdam, Oosterwijk, Nieuwland, Meerkerk) verwijderd -- die
-    # gemeente ging in 2019 van Zuid-Holland naar Utrecht. Leon had dit al
+    # gemeente ging in 2019 van Zuid-Holland naar Utrecht. De domeinexpert had dit al
     # in een oude Excel gecorrigeerd, maar niet in de KML/CSV die deze build
     # leest. Zie scripts/fix_vijfheerenlanden.py (eenmalig gedraaid) en
     # docs/data/003-csv-bron-en-koppeling.md.
     # 884 -> 890 op 2026-08-23: 3 begraafplaatsen (Nieuwe Joodse begraafplaats
     # Schiedam, Grafmonument juffrouw Begeer Voorschoten, NH Kerkhof
-    # Oud-Alblas) toegevoegd uit Leons "Tijdelijk Zuid-Holland.kmz". Zie
+    # Oud-Alblas) toegevoegd uit de "Tijdelijk Zuid-Holland.kmz" van de domeinexpert. Zie
     # scripts/add_tijdelijk_zuidholland_kmz.py (eenmalig gedraaid) en
     # docs/data/003-csv-bron-en-koppeling.md.
     # 890 -> 891 op 2026-08-23: 1 nieuwe ingang toegevoegd voor Oudenhoorn
-    # (eerst voor Gem. begraafplaats, later diezelfde dag door Leon
+    # (eerst voor Gem. begraafplaats, later diezelfde dag door de domeinexpert
     # omgedraaid naar NH Kerkhof -- zie scripts/fix_oudenhoorn_ingang.py en
     # scripts/fix_oudenhoorn_reversed.py, beide eenmalig gedraaid, en
     # docs/data/003-csv-bron-en-koppeling.md. Rijenaantal blijft 891: de
     # omdraaiing hernoemt/herlabelt bestaande rijen, voegt er geen toe.
     # 891 -> 895 op 2026-08-26: 2 nieuwe begraafplaatsen (4 rijen: NH kerkhof
-    # De Lier + NH Kerkhof Oostvoorne, beide geruimd) uit Leons tweede
-    # "Tijdelijk Zuid-Holland"-kmz, zie scripts/add_tijdelijk_zuidholland_kmz2.py
+    # De Lier + NH Kerkhof Oostvoorne, beide geruimd) uit de tweede
+    # "Tijdelijk Zuid-Holland"-kmz van de domeinexpert, zie scripts/add_tijdelijk_zuidholland_kmz2.py
     # (eenmalig gedraaid) en docs/data/003-csv-bron-en-koppeling.md.
     assert len(df) == 895, f"bronrecords: verwacht 895, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
@@ -164,7 +164,7 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
 
     assert len(matches) == len(terrein), f"matches: verwacht {len(terrein)}, gevonden {len(matches)}"
     counts = Counter(m["koppelwijze"] for m in matches)
-    # 433 -> 434 op 2026-08-23: na Leons omdraaiing (scripts/fix_oudenhoorn_
+    # 433 -> 434 op 2026-08-23: na de omdraaiing door de domeinexpert (scripts/fix_oudenhoorn_
     # reversed.py) heeft zowel NH Kerkhof als Gem. begraafplaats, Oudenhoorn
     # weer precies 1 eigen ingang (voorheen had één van de twee er geen).
     # Zie docs/data/003-csv-bron-en-koppeling.md.
@@ -412,7 +412,7 @@ def main() -> None:
 
     conflicts = sum(1 for f in features if f["properties"]["status_conflict"])
     # De 4 conflicten (Oude Wetering RK, Schoonhoven, Zwammerdam, Maasland)
-    # zijn op 2026-08-20 door Leon bevestigd als geruimd en opgelost in de
+    # zijn op 2026-08-20 door de domeinexpert bevestigd als geruimd en opgelost in de
     # bron via scripts/fix_statusconflicten.py -- zie
     # docs/data/003-csv-bron-en-koppeling.md.
     assert conflicts == 0, f"statusconflicten: verwacht 0, gevonden {conflicts}"

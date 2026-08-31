@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Verwerkt "Verdwenen begraafplaatsen" van Leon (data/Verdwenen.kmz, 907
+Verwerkt "Verdwenen begraafplaatsen" van de domeinexpert (data/Verdwenen.kmz, 907
 punten landelijk) tot een aparte referentielaag voor de viewer -- niet de
 tekstzoekactie/rijksmonument-heuristieken van
-scripts/compute_kandidaat_begraafplaatsen.py, maar Leons eigen, geverifieerde
-kennis over begraafplaatsen die niet meer bestaan.
+scripts/compute_kandidaat_begraafplaatsen.py, maar de eigen, geverifieerde
+kennis van de domeinexpert over begraafplaatsen die niet meer bestaan.
 
 Andere aard dan zowel de hoofddataset (Begraafplaatsen Zuid-Holland: actueel
 bestaande terreinen met polygoon+ingang) als de EXPERIMENTELE kandidatenpagina
 (onzekere, automatisch gevonden aanwijzingen): dit zijn punten, geen
 polygonen (er is geen terrein meer om te tonen), en ze zijn niet
-"experimenteel" -- het is Leons eigen historische kennis, alleen niet
+"experimenteel" -- het is eigen historische kennis van de domeinexpert, alleen niet
 (per se) verwerkt in de hoofdbron.
 
 Elk placemark heeft alleen een naam ("Verdwenen NNNN", betekenisloos) en een
@@ -52,7 +52,7 @@ KML_NS = {"kml": "http://www.opengis.net/kml/2.2"}
 
 STATUS_PATTERN = re.compile(r"\((geruimd|verdwenen)\)", re.IGNORECASE)
 
-# Leons KMZ gebruikt af en toe een historische/alternatieve plaatsnaam die
+# De KMZ van de domeinexpert gebruikt af en toe een historische/alternatieve plaatsnaam die
 # niet overeenkomt met de schrijfwijze die de hoofddataset zelf aanhoudt
 # (die noemt de plaats zelf "Den Haag", nooit "'s-Gravenhage") -- puur een
 # schrijfwijze-normalisatie voor de weergave, geen matching-logica.
@@ -114,7 +114,7 @@ def main() -> None:
     out = {
         "type": "FeatureCollection",
         "waarschuwing": (
-            "Bron: Leon (data/Verdwenen.kmz), niet de automatische "
+            "Bron: de domeinexpert (data/Verdwenen.kmz), niet de automatische "
             "kandidaat-signalen op kandidaten.html. Dit zijn geverifieerde "
             "locaties, geen kandidaat-indicatie -- ook een punt vlak bij een "
             "bestaand restant staat op zichzelf. Punten, geen "

@@ -2,7 +2,7 @@
 """
 Fetch de laag "Archeologische terreinen van provinciaal belang" uit de
 Cultuurhistorische Hoofdstructuur (CHS) van Provincie Zuid-Holland, als
-toggelbare referentielaag op de hoofdkaart (wens van Joop, 2026-08-27,
+toggelbare referentielaag op de hoofdkaart (wens van de opdrachtgever, 2026-08-27,
 gevonden via https://data.overheid.nl/dataset/32677).
 
 Andere bron dan de RCE-rijksmonumenten/-onderzoeksgebieden: dit is een
@@ -31,7 +31,7 @@ URL = (
 )
 
 # GDB_GEOMATTR_DATA is bij alle 662 features leeg; GRENS_SRC/VERWERKT zijn
-# interne bronregistratie-/verwerkingsvelden zonder betekenis voor Leon --
+# interne bronregistratie-/verwerkingsvelden zonder betekenis voor de domeinexpert --
 # zelfde principe als eerder toegepaste opschoning van technische velden
 # (zie docs/README.md, "paneel-/popup-opschoning").
 KEEP_PROPERTIES = [

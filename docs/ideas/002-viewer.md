@@ -1,8 +1,8 @@
-# Idee 002: Viewer voor Leon
+# Idee 002: Viewer voor de domeinexpert
 
 ## Doel
 
-Geef Leon een kaart waarmee hij onderzoeksvragen kan beantwoorden zonder GIS-software te gebruiken.
+Geef de domeinexpert een kaart waarmee hij onderzoeksvragen kan beantwoorden zonder GIS-software te gebruiken.
 
 De viewer maakt onderscheid tussen het **terrein van een begraafplaats** en de **ingang**.
 
