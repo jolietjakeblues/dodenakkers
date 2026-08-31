@@ -488,15 +488,16 @@ async function main() {
   // KMZ (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py),
   // andere aard dan de rest van de kaart: geen terrein meer (alleen de
   // historische locatie), en geen automatische heuristiek zoals de
-  // kandidatenpagina maar Leons eigen kennis. Kleur onderscheidt of de
-  // locatie al herkenbaar is in de hoofddataset (grijs, minder interessant)
-  // of niet (donker, de "echt onbekende" gevallen -- wens van Joop,
-  // 2026-08-27). Was eerst rood (#c92a2a), maar dat viel qua kleur te
-  // dicht bij de al bestaande roze ingangen (#e64980) -- door elkaar te
-  // halen gemeld door Joop (2026-08-28). #212529 (bijna zwart, ook al de
-  // hoofdtekstkleur van het paneel) is qua hue niet te verwarren met welke
-  // andere kleur op de kaart dan ook, en het contrast blijft ook voor Rene
-  // (kleurenblind) overeind omdat het op lichtheid werkt, niet op hue.
+  // kandidatenpagina maar Leons eigen, geverifieerde kennis. Tot 2026-08-28
+  // hadden deze punten twee kleuren (een heuristische "lijkt al bekend in
+  // de hoofddataset"-vergelijking) -- verwijderd op verzoek van de
+  // opdrachtgever: dit zijn stuk voor stuk geverifieerde locaties, geen
+  // indicatie, en ook een punt vlak bij een bestaand restant staat op
+  // zichzelf. Alle punten tonen nu gelijk, in #212529 (bijna zwart, ook al
+  // de hoofdtekstkleur van het paneel) -- gekozen (2026-08-28) omdat het
+  // qua hue niet te verwarren is met de roze ingangen (#e64980) of iets
+  // anders op de kaart, en het contrast blijft ook voor Rene (kleurenblind)
+  // overeind omdat het op lichtheid werkt, niet op hue.
   let verdwenenLoaded = false;
   document.getElementById("toggle-verdwenen").addEventListener("change", async (e) => {
     updateLegendActivity();
@@ -518,7 +519,7 @@ async function main() {
       source: "verdwenen",
       paint: {
         "circle-radius": 5,
-        "circle-color": ["case", ["get", "in_hoofddataset"], "#adb5bd", "#212529"],
+        "circle-color": "#212529",
         "circle-stroke-width": 1,
         "circle-stroke-color": "#ffffff",
       },
@@ -531,7 +532,6 @@ async function main() {
           popupHtml(p.naam, [
             ["Plaats", p.plaats],
             ["Vermelde status", p.status_vermeld],
-            ["In hoofddataset", p.in_hoofddataset ? "lijkt al bekend (naam+plaats-heuristiek)" : "niet gevonden -- mogelijk ontbrekend"],
           ])
         )
         .addTo(map);
