@@ -5,6 +5,39 @@ html, body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: #fff;
+  color: #212529;
+  border: 2px solid #212529;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
 #map {
   position: absolute;
   inset: 0;
@@ -224,6 +257,18 @@ p.hint {
   border: 2px solid;
 }
 
+.swatch-provincie { border-color: #495057; border-style: dashed; }
+.swatch-gemeente { border-color: #868e96; border-style: dotted; }
+.swatch-niet-geruimd { background: #40c057; }
+.swatch-geruimd { background: #a9713f; }
+.swatch-ingang { background: #e64980; }
+.swatch-gezicht { border-color: #5f3dc4; }
+.swatch-monument-gebouwd { background: #1971c2; }
+.swatch-monument-archeologisch { background: rgba(232, 89, 12, 0.4); border: 2px solid #e8590c; }
+.swatch-onderzoeksgebied { background: rgba(12, 133, 153, 0.2); border: 1px solid #0c8599; }
+.swatch-chs { background: rgba(153, 116, 4, 0.25); border: 1px solid #997404; }
+.swatch-verdwenen { background: #212529; }
+
 #functie-search,
 #search-naam-plaats {
   width: 100%;
@@ -247,6 +292,31 @@ p.hint {
   margin-top: 4px;
   font-size: 11px;
   cursor: pointer;
+}
+
+#resultatenlijst {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+#resultatenlijst li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+#resultatenlijst button {
+  display: block;
+  margin-top: 3px;
+  min-height: 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 #status {

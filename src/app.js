@@ -1012,6 +1012,51 @@ async function main() {
   // "exporteer huidige selectie" niet de hele dataset opnieuw hoeft te
   // filteren en altijd exact overeenkomt met wat er op de kaart te zien is.
   let currentVisibleFeatures = begraafplaatsen.features;
+  const resultatenlijstEl = document.getElementById("resultatenlijst");
+
+  function featureCenter(feature) {
+    const bounds = new maplibregl.LngLatBounds();
+    extendBoundsWithGeometry(bounds, feature.geometry);
+    return bounds.getCenter();
+  }
+
+  function renderAccessibleResults(features) {
+    const fragment = document.createDocumentFragment();
+    for (const feature of features) {
+      const p = feature.properties;
+      const item = document.createElement("li");
+      const title = document.createElement("strong");
+      title.textContent = p.naam || "Naamloze begraafplaats";
+      const description = document.createElement("span");
+      const status = p.status_conflict ? "status onbekend" : p.geruimd ? "geruimd" : "niet-geruimd";
+      description.textContent = `, ${p.plaats || "plaats onbekend"}, ${status}, ${p.oppervlakte_m2} m²`;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = "Toon op kaart";
+      button.setAttribute("aria-label", `Toon ${p.naam || "deze begraafplaats"} op de kaart`);
+      button.addEventListener("click", () => {
+        const center = featureCenter(feature);
+        const view = { center, zoom: Math.max(map.getZoom(), 15) };
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) map.jumpTo(view);
+        else map.flyTo(view);
+        new maplibregl.Popup()
+          .setLngLat(center)
+          .setHTML(
+            popupHtml(p.naam, [
+              ["Plaats", p.plaats],
+              ["Gemeente", p.gemeente],
+              ["Status", status],
+              ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
+              ["Omtrek", `${p.omtrek_m} m`],
+            ])
+          )
+          .addTo(map);
+      });
+      item.append(title, description, button);
+      fragment.appendChild(item);
+    }
+    resultatenlijstEl.replaceChildren(fragment);
+  }
 
   function applyFilters() {
     const predicates = terreinPredicates();
@@ -1047,6 +1092,7 @@ async function main() {
         statusMatch(predicates, activeStatusIds, f.properties) &&
         heritageMatch(predicates, activeHeritageIds, f.properties)
     );
+    renderAccessibleResults(currentVisibleFeatures);
     syncUrl();
   }
   function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query) {

@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="stats-page kandidaten-page">
-  <div id="stats">
+  <a class="skip-link" href="#inhoud">Ga naar de hoofdinhoud</a>
+  <main id="stats" tabindex="-1">
     <header class="stats-header">
       <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
       <div>
         <h1>Kandidaat-begraafplaatsen</h1>
-        <p class="subtitle">Experimenteel - <a href="index.html">&larr; kaart</a> &middot; <a href="statistieken.html">Statistieken</a> &middot; <a href="methode.html">Methode</a></p>
+        <nav aria-label="Hoofdnavigatie" class="subtitle">Experimenteel - <a href="index.html">&larr; kaart</a> &middot; <a href="statistieken.html">Statistieken</a> &middot; <a href="methode.html">Methode</a></nav>
       </div>
     </header>
 
-    <div class="warning-box">
+    <div class="warning-box" id="inhoud">
       <strong>Dit is een experiment, geen bevestigde lijst.</strong>
       <p>
         Deze pagina zoekt automatisch op tekst in de omschrijvingen van 22.254 archeologische
@@ -74,8 +75,8 @@
     <section id="kandidaten-kapellen"></section>
     <section id="kandidaten-chs-archeologie"></section>
 
-    <p id="stats-status" class="hint"></p>
-  </div>
+    <p id="stats-status" class="hint" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
 
   <script src="kandidaten.js"></script>
 </body>

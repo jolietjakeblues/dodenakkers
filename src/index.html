@@ -5,15 +5,16 @@
   <title>Dodenakkers Zuid-Holland - onderzoeksviewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="vendor/maplibre-gl/maplibre-gl.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="map"></div>
+  <a class="skip-link" href="#panel">Ga naar het bedieningspaneel</a>
+  <div id="map" aria-label="Kaart van begraafplaatsen in Zuid-Holland"></div>
 
   <button id="panel-toggle" type="button" aria-label="Paneel sluiten" aria-expanded="true">&times;</button>
 
-  <div id="panel">
+  <main id="panel" tabindex="-1">
     <div class="brand">
       <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
     </div>
@@ -27,8 +28,10 @@
 
     <details class="panel-section" open>
       <summary>Zoeken</summary>
-      <input type="text" id="search-naam-plaats" placeholder="zoek op naam of plaats…" />
-      <p class="hint" id="search-count"></p>
+      <label for="search-naam-plaats">Naam of plaats</label>
+      <input type="search" id="search-naam-plaats" placeholder="Bijvoorbeeld Delft" aria-describedby="search-help search-count" />
+      <p class="hint" id="search-help">De kaart en resultatenlijst worden tijdens het typen bijgewerkt.</p>
+      <p class="hint" id="search-count" aria-live="polite" aria-atomic="true"></p>
     </details>
 
     <details class="panel-section" open>
@@ -57,7 +60,7 @@
 
     <details class="panel-section" open>
       <summary>Filters</summary>
-      <p class="filter-summary" id="filter-summary"></p>
+      <p class="filter-summary" id="filter-summary" aria-live="polite" aria-atomic="true"></p>
       <button type="button" id="filter-reset">Wis filters</button>
 
       <h3 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h3>
@@ -77,32 +80,41 @@
 
     <details class="panel-section">
       <summary>Rijksmonument: oorspr. functie</summary>
-      <input type="text" id="functie-search" placeholder="zoek functie… (bv. kerk, hek)" />
-      <select id="functie-select" multiple size="8"></select>
+      <label for="functie-search">Zoek oorspronkelijke functie</label>
+      <input type="search" id="functie-search" placeholder="Bijvoorbeeld kerk of hek" />
+      <label for="functie-select">Oorspronkelijke functies</label>
+      <select id="functie-select" multiple size="8" aria-describedby="functie-help"></select>
+      <p class="hint" id="functie-help">Je kunt meer opties kiezen met Ctrl of Command.</p>
       <button type="button" id="functie-clear">Wis selectie</button>
+    </details>
+
+    <details class="panel-section" id="toegankelijke-resultaten">
+      <summary>Resultatenlijst</summary>
+      <p class="hint">Toetsenbordalternatief voor de objecten op de kaart. De lijst volgt jouw zoekopdracht en filters.</p>
+      <ol id="resultatenlijst"></ol>
     </details>
 
     <details class="panel-section">
       <summary>Legenda</summary>
-      <div class="legend-item" data-layer="toggle-provinciegrens"><span class="swatch outline" style="border-color:#495057;border-style:dashed"></span> Provinciegrens Zuid-Holland</div>
-      <div class="legend-item" data-layer="toggle-gemeentegrenzen"><span class="swatch outline" style="border-color:#868e96;border-style:dotted"></span> Gemeentegrenzen</div>
-      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#40c057"></span> Niet-geruimd</div>
-      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch" style="background:#a9713f"></span> Geruimd</div>
-      <div class="legend-item" data-layer="toggle-ingangen"><span class="swatch dot" style="background:#e64980"></span> Ingang</div>
-      <div class="legend-item" data-layer="toggle-gezichten"><span class="swatch outline" style="border-color:#5f3dc4"></span> Beschermd gezicht</div>
-      <div class="legend-item" data-layer="toggle-monumenten-gebouwd" data-parent="toggle-monumenten"><span class="swatch dot" style="background:#1971c2"></span> Rijksmonument (gebouwd, punt)</div>
-      <div class="legend-item" data-layer="toggle-monumenten-archeologisch" data-parent="toggle-monumenten"><span class="swatch" style="background:#e8590c66;border:1.5px solid #e8590c"></span> Rijksmonument (archeologisch, vlak/punt)</div>
-      <div class="legend-item" data-layer="toggle-onderzoeksgebieden"><span class="swatch" style="background:#0c859933;border:1px solid #0c8599"></span> Archeologisch onderzoeksgebied</div>
-      <div class="legend-item" data-layer="toggle-chs-archeologie"><span class="swatch" style="background:#99740440;border:1px solid #997404"></span> Archeologisch terrein van provinciaal belang</div>
-      <div class="legend-item" data-layer="toggle-verdwenen"><span class="swatch dot" style="background:#212529"></span> Verdwenen begraafplaats</div>
+      <div class="legend-item" data-layer="toggle-provinciegrens"><span class="swatch outline swatch-provincie"></span> Provinciegrens Zuid-Holland</div>
+      <div class="legend-item" data-layer="toggle-gemeentegrenzen"><span class="swatch outline swatch-gemeente"></span> Gemeentegrenzen</div>
+      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch swatch-niet-geruimd"></span> Niet-geruimd</div>
+      <div class="legend-item" data-layer="toggle-terrein"><span class="swatch swatch-geruimd"></span> Geruimd</div>
+      <div class="legend-item" data-layer="toggle-ingangen"><span class="swatch dot swatch-ingang"></span> Ingang</div>
+      <div class="legend-item" data-layer="toggle-gezichten"><span class="swatch outline swatch-gezicht"></span> Beschermd gezicht</div>
+      <div class="legend-item" data-layer="toggle-monumenten-gebouwd" data-parent="toggle-monumenten"><span class="swatch dot swatch-monument-gebouwd"></span> Rijksmonument (gebouwd, punt)</div>
+      <div class="legend-item" data-layer="toggle-monumenten-archeologisch" data-parent="toggle-monumenten"><span class="swatch swatch-monument-archeologisch"></span> Rijksmonument (archeologisch, vlak/punt)</div>
+      <div class="legend-item" data-layer="toggle-onderzoeksgebieden"><span class="swatch swatch-onderzoeksgebied"></span> Archeologisch onderzoeksgebied</div>
+      <div class="legend-item" data-layer="toggle-chs-archeologie"><span class="swatch swatch-chs"></span> Archeologisch terrein van provinciaal belang</div>
+      <div class="legend-item" data-layer="toggle-verdwenen"><span class="swatch dot swatch-verdwenen"></span> Verdwenen begraafplaats</div>
       <p class="hint">Vervaagde items staan uit &mdash; vink de bijbehorende laag aan onder "Lagen" om ze te tonen.</p>
       <p class="hint">BGT en kadastrale percelen (BRK) tonen pas beeld vanaf sterk ingezoomd (straat-/pandniveau) &mdash; op provincie- of stadsschaal geeft PDOK daar bewust een lege tegel voor terug, geen storing.</p>
     </details>
 
-    <p id="status">Data laden…</p>
-  </div>
+    <p id="status" role="status" aria-live="polite" aria-atomic="true">Data laden…</p>
+  </main>
 
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="vendor/maplibre-gl/maplibre-gl.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

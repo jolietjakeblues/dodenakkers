@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="stats-page">
-  <div id="stats">
+  <a class="skip-link" href="#inhoud">Ga naar de hoofdinhoud</a>
+  <main id="stats" tabindex="-1">
     <header class="stats-header">
       <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
       <div>
         <h1>Methode, definities en beperkingen</h1>
-        <p class="subtitle"><a href="index.html">&larr; terug naar de kaart</a> &middot; <a href="statistieken.html">Statistieken</a> &middot; <a href="kandidaten.html">Kandidaat-begraafplaatsen (experimenteel)</a></p>
+        <nav aria-label="Hoofdnavigatie" class="subtitle"><a href="index.html">&larr; terug naar de kaart</a> &middot; <a href="statistieken.html">Statistieken</a> &middot; <a href="kandidaten.html">Kandidaat-begraafplaatsen (experimenteel)</a></nav>
       </div>
     </header>
 
-    <p class="intro">
+    <p class="intro" id="inhoud">
       Deze pagina bundelt de werkhypothesen, definities en bekende beperkingen die eerder verspreid
       over het kaartpaneel stonden. Niets hierop is nieuw beleid &mdash; het is een overzicht van
       besluiten die al golden, nu op één plek in plaats van in losse hints. Voor de volledige,
@@ -42,13 +43,14 @@
       <h2>Ruimtelijke termen</h2>
       <p class="hint">Labels die de relatie tussen een begraafplaatsterrein en een rijksmonument beschrijven (popup en filters).</p>
       <table>
+        <caption class="visually-hidden">Betekenis van ruimtelijke relatietermen</caption>
         <tbody>
-          <tr><td><strong>annex (grenst aan)</strong></td><td>grenscontact (touches) &mdash; door de domeinexpert bevestigd als de juiste lezing van "annex", niet zomaar "in de buurt"</td></tr>
-          <tr><td><strong>op het terrein</strong></td><td>het monument ligt binnen de begraafplaatspolygoon</td></tr>
-          <tr><td><strong>overlapt</strong></td><td>polygonen snijden elkaar gedeeltelijk</td></tr>
-          <tr><td><strong>omvat het monument</strong></td><td>de begraafplaats omsluit het hele monument</td></tr>
-          <tr><td><strong>monument omvat het terrein</strong></td><td>het monument omsluit de hele begraafplaats</td></tr>
-          <tr><td><strong>punt binnen terrein</strong></td><td>een monument zonder polygoon (alleen een punt) valt binnen de begraafplaatspolygoon</td></tr>
+          <tr><th scope="row">annex (grenst aan)</th><td>grenscontact (touches) &mdash; door de domeinexpert bevestigd als de juiste lezing van "annex", niet zomaar "in de buurt"</td></tr>
+          <tr><th scope="row">op het terrein</th><td>het monument ligt binnen de begraafplaatspolygoon</td></tr>
+          <tr><th scope="row">overlapt</th><td>polygonen snijden elkaar gedeeltelijk</td></tr>
+          <tr><th scope="row">omvat het monument</th><td>de begraafplaats omsluit het hele monument</td></tr>
+          <tr><th scope="row">monument omvat het terrein</th><td>het monument omsluit de hele begraafplaats</td></tr>
+          <tr><th scope="row">punt binnen terrein</th><td>een monument zonder polygoon (alleen een punt) valt binnen de begraafplaatspolygoon</td></tr>
         </tbody>
       </table>
       <p class="hint">"Binnen", "overlapt" en "nabij" in filternamen zijn dezelfde categorieën in gewone taal &mdash; geen aparte definitie.</p>
@@ -76,6 +78,6 @@
       <p>&bull; De "in hoofddataset"-inschatting bij verdwenen begraafplaatsen is een ruwe naam- en plaatsvergelijking, geen exacte koppeling &mdash; bewust conservatief (eerder "niet gevonden" dan een foute match).</p>
       <p>&bull; Alle drempelwaarden (25/50/100m) en categorieën zijn voorlopige werkhypothesen, geen definitief vastgestelde norm.</p>
     </section>
-  </div>
+  </main>
 </body>
 </html>

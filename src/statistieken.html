@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="stats-page">
-  <div id="stats">
+  <a class="skip-link" href="#inhoud">Ga naar de hoofdinhoud</a>
+  <main id="stats" tabindex="-1">
     <header class="stats-header">
       <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
       <div>
         <h1>Statistieken</h1>
-        <p class="subtitle">Overzichten uit de begraafplaatsendataset Zuid-Holland - <a href="index.html">&larr; terug naar de kaart</a> &middot; <a href="kandidaten.html">Kandidaat-begraafplaatsen (experimenteel)</a> &middot; <a href="methode.html">Methode</a></p>
+        <nav aria-label="Hoofdnavigatie" class="subtitle">Overzichten uit de begraafplaatsendataset Zuid-Holland - <a href="index.html">&larr; terug naar de kaart</a> &middot; <a href="kandidaten.html">Kandidaat-begraafplaatsen (experimenteel)</a> &middot; <a href="methode.html">Methode</a></nav>
       </div>
     </header>
 
-    <p class="intro">
+    <p class="intro" id="inhoud">
       Alle cijfers hieronder komen rechtstreeks uit de dataset (geen schattingen). "Plaats" (dorp/stad) komt
       uit de bron zelf; "Gemeente" is er apart bij gezocht via de echte PDOK-gemeentegrenzen, want de bron
       heeft geen gemeente-veld en na herindelingen hoort een plaats niet altijd bij de gemeente die zijn naam
@@ -36,8 +37,8 @@
     <section id="stats-archeologie"></section>
     <section id="stats-ingangen"></section>
 
-    <p id="stats-status" class="hint"></p>
-  </div>
+    <p id="stats-status" class="hint" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
 
   <script src="statistieken.js"></script>
 </body>

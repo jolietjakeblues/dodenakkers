@@ -7,10 +7,10 @@ const statusEl = document.getElementById("stats-status");
 
 function el(tag, props = {}, children = []) {
   const node = document.createElement(tag);
+  if (tag === "th" && !Object.hasOwn(props, "scope")) node.setAttribute("scope", "col");
   Object.entries(props).forEach(([k, v]) => {
     if (k === "class") node.className = v;
     else if (k === "text") node.textContent = v;
-    else if (k === "html") node.innerHTML = v;
     else node.setAttribute(k, v);
   });
   children.forEach((c) => node.appendChild(c));
@@ -106,6 +106,7 @@ function renderChsArcheologieSectie(data) {
 
   const wrap = el("div", { class: "stats-table-wrap" });
   const t = el("table", { class: "stats-table kandidaten-table" });
+  t.appendChild(el("caption", { class: "visually-hidden", text: "Kandidaten uit CHS-archeologie" }));
   t.appendChild(
     el("thead", {}, [
       el("tr", {}, [
@@ -173,6 +174,7 @@ function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
 
   const wrap = el("div", { class: "stats-table-wrap" });
   const t = el("table", { class: "stats-table kandidaten-table" });
+  t.appendChild(el("caption", { class: "visually-hidden", text: `${titel}: kandidaat-begraafplaatsen` }));
   t.appendChild(
     el("thead", {}, [
       el("tr", {}, [
@@ -247,6 +249,7 @@ async function main() {
 
   const wrap = el("div", { class: "stats-table-wrap" });
   const t = el("table", { class: "stats-table kandidaten-table" });
+  t.appendChild(el("caption", { class: "visually-hidden", text: "Alle kandidaten uit archeologische onderzoeksrapporten" }));
   t.appendChild(
     el("thead", {}, [
       el("tr", {}, [

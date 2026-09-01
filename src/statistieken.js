@@ -10,6 +10,7 @@ const statusEl = document.getElementById("stats-status");
 
 function el(tag, props = {}, children = []) {
   const node = document.createElement(tag);
+  if (tag === "th" && !Object.hasOwn(props, "scope")) node.setAttribute("scope", "col");
   Object.entries(props).forEach(([k, v]) => {
     if (k === "class") node.className = v;
     else if (k === "text") node.textContent = v;
@@ -45,6 +46,7 @@ function kv(pairs) {
 function table(headers, rows) {
   const wrap = el("div", { class: "stats-table-wrap" });
   const t = el("table", { class: "stats-table" });
+  t.appendChild(el("caption", { class: "visually-hidden", text: `Tabel met ${headers.join(", ")}` }));
   const thead = el("tr", {}, headers.map((h) => el("th", { text: h })));
   t.appendChild(el("thead", {}, [thead]));
   const tbody = el("tbody");
