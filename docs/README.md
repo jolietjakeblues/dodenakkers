@@ -158,6 +158,15 @@ python scripts/build_site.py
 npx wrangler pages deploy site --project-name dodenakkers-zh --branch main
 ```
 
+### Dependabot (2026-09-01)
+
+`.github/dependabot.yml` toegevoegd: wekelijkse controle op de `pip`-
+dependencies in `requirements.txt` (root). Geen `npm`/`github-actions`-
+ecosysteem, want die zijn hier niet van toepassing (maplibre-gl is lokaal
+gevendord, geen CI-workflows). Dependabot alerts/security updates zelf
+moeten nog los aangezet worden onder Settings -> Advanced Security -- dat
+is een repo-instelling, geen bestand, dus buiten bereik van deze commit.
+
 ## Licentie
 
 Deze projectcode en -teksten zijn gelicenseerd onder Creative Commons
