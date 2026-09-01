@@ -495,7 +495,7 @@ def gemeente_for_point(pt, gem_tree: STRtree, gemeenten: list[dict], gem_geoms: 
     for i in gem_tree.query(pt):
         if gem_geoms[i].contains(pt):
             return gemeenten[i]["properties"]["naam"]
-    return None  # buiten Zuid-Holland (bbox-rand-effect, zie docs/README.md)
+    return None  # buiten Zuid-Holland (bbox-rand-effect, zie docs/geschiedenis.md)
 
 
 def nearest_verdwenen(point_rd, verdwenen_tree: STRtree, verdwenen_geoms: list, verdwenen: list[dict]) -> tuple[float, str]:

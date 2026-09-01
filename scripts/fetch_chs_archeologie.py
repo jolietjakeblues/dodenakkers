@@ -33,7 +33,7 @@ URL = (
 # GDB_GEOMATTR_DATA is bij alle 662 features leeg; GRENS_SRC/VERWERKT zijn
 # interne bronregistratie-/verwerkingsvelden zonder betekenis voor de domeinexpert --
 # zelfde principe als eerder toegepaste opschoning van technische velden
-# (zie docs/README.md, "paneel-/popup-opschoning").
+# (zie docs/geschiedenis.md, "paneel-/popup-opschoning").
 KEEP_PROPERTIES = [
     "MONUMENTNR", "Gemeente", "Plaats", "Toponiem", "Datering", "WAARDE", "Zichtbaarh", "Beschrijving",
 ]
