@@ -366,7 +366,7 @@ async function main() {
       id: "gemeentegrenzen-lijn",
       type: "line",
       source: "gemeentegrenzen",
-      paint: { "line-color": "#868e96", "line-width": 1, "line-dasharray": [1, 2] },
+      paint: { "line-color": "#495057", "line-width": 1.5, "line-dasharray": [1, 2] },
     });
     gemeentegrenzenLoaded = true;
     statusEl.textContent = `${gemeentegrenzen.features.length} gemeentegrenzen geladen.`;
@@ -798,7 +798,6 @@ async function main() {
           ["Gemeente", p.gemeente],
           ["Geruimd", p.status_conflict ? "onbekend (statusconflict)" : p.geruimd ? "ja" : "nee"],
           ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
-          ["Omtrek", `${p.omtrek_m} m`],
           ["Beschermd gezicht", p.in_beschermd_gezicht === "none" ? "nee" : gezichtNamen],
           [
             "Archeologisch rijksmonument",
@@ -1047,7 +1046,6 @@ async function main() {
               ["Gemeente", p.gemeente],
               ["Status", status],
               ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
-              ["Omtrek", `${p.omtrek_m} m`],
             ])
           )
           .addTo(map);
