@@ -834,7 +834,22 @@ async function main() {
     const p = e.features[0].properties;
     new maplibregl.Popup()
       .setLngLat(e.lngLat)
-      .setHTML(popupHtml(p.naam || "Beschermd gezicht", [["Gezichtsnummer", p.gezichtsnummer], ["Status", p.status]]))
+      .setHTML(
+        popupHtml(p.naam || "Beschermd gezicht", [
+          ["Gezichtsnummer", p.gezichtsnummer],
+          ["Status", p.status],
+          [
+            "Meer informatie",
+            p.gezichtsnummer
+              ? rawHtml(
+                  `<a href="${escapeHtml(
+                    `https://kennis.cultureelerfgoed.nl/index.php/Gezicht/${p.gezichtsnummer}`
+                  )}" target="_blank" rel="noopener">bekijk</a>`
+                )
+              : null,
+          ],
+        ])
+      )
       .addTo(map);
   });
 
