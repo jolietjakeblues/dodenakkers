@@ -23,6 +23,14 @@ SITE_DIR = REPO_ROOT / "site"
 
 FILES_TO_COPY = [
     (REPO_ROOT / "src" / "style.css", SITE_DIR / "style.css"),
+    (
+        REPO_ROOT / "src" / "vendor" / "maplibre-gl" / "maplibre-gl.css",
+        SITE_DIR / "vendor" / "maplibre-gl" / "maplibre-gl.css",
+    ),
+    (
+        REPO_ROOT / "src" / "vendor" / "maplibre-gl" / "maplibre-gl.js",
+        SITE_DIR / "vendor" / "maplibre-gl" / "maplibre-gl.js",
+    ),
     (REPO_ROOT / "data" / "generated" / "analyse.geojson", SITE_DIR / "data" / "generated" / "analyse.geojson"),
     (REPO_ROOT / "data" / "generated" / "statistieken.json", SITE_DIR / "data" / "generated" / "statistieken.json"),
     (
