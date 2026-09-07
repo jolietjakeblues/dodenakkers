@@ -27,16 +27,18 @@
     </p>
 
     <section class="stats-section">
-      <h2>Vier soorten data op deze site</h2>
+      <h2>Vijf soorten data op deze site</h2>
       <p class="hint">Elke laag heeft een andere mate van zekerheid &mdash; bewust niet door elkaar gehaald.</p>
       <h3>1. Hoofddataset (448 begraafplaatsen)</h3>
-      <p>De geverifieerde kernset: de genormaliseerde CSV van de domeinexpert, terrein + ingang per begraafplaats, status (geruimd/niet-geruimd). Dit is de enige laag waarop de statistiekenpagina rekent.</p>
+      <p>De geverifieerde kernset: de genormaliseerde CSV van de domeinexpert, terrein + ingang per begraafplaats, status (geruimd/niet-geruimd). Dit is de enige laag waarop de statistiekenpagina rekent (met uitzondering van de datering-sectie, zie categorie 5).</p>
       <h3>2. Verrijkte relaties (rijksmonumenten, beschermde gezichten, archeologie)</h3>
       <p>De hoofddataset ruimtelijk vergeleken met RCE Linked Data (beschermde gezichten, rijksmonumenten, archeologische rijksmonumenten) en de CHS-laag van Provincie Zuid-Holland. Feitelijke overlap/afstand, automatisch berekend &mdash; geen menselijke beoordeling per geval.</p>
       <h3>3. Kandidaat-begraafplaatsen (experimenteel)</h3>
       <p>Op de <a href="kandidaten.html">losse kandidatenpagina</a>: tekst- en categoriezoekacties (kerken, kloosters, synagoges, kapellen, archeologische omschrijvingen) die een <em>mogelijke</em> onbekende begraafplaats suggereren. Nadrukkelijk geen claim &mdash; elke kandidaat moet door de domeinexpert beoordeeld worden voordat hij ooit in de hoofddataset terechtkomt.</p>
       <h3>4. Verdwenen begraafplaatsen (laag "Verdwenen begraafplaatsen")</h3>
       <p>Eigen, geverifieerde historische kennis van de domeinexpert (907 landelijke punten, 92 in Zuid-Holland) van begraafplaatsen die niet meer bestaan &mdash; geen automatisch signaal zoals categorie 3, en geen indicatie: elk punt is een gegeven op zichzelf. Ook wanneer een punt vlak bij een bestaand restant ligt, zegt dat niets over dat punt zelf &mdash; er wordt dan ook niet vergeleken met de hoofddataset. Grootte of omvang van de oorspronkelijke begraafplaats is niet meer vast te stellen, vandaar alleen een punt, geen terreinpolygoon.</p>
+      <h3>5. Datering (laag "Datering")</h3>
+      <p>Jaartal/periode per begraafplaats uit een aparte xlsx van de domeinexpert (448 rijen). Bewust een zelfstandige laag, <strong>geen koppeling aan de hoofddataset</strong>: bij het uitproberen bleek dat de 448 xlsx-rijen niet 1-op-1 overeenkomen met onze 448 terreinen &mdash; een deel is een sub-onderdeel van een terrein dat wij als één geheel tellen (bv. een Joodse afdeling binnen een algemene begraafplaats), en een ander deel is een begraafplaats die niet in onze 448 zit. Locatie is gegeocodeerd op het bezoekadres uit de xlsx (PDOK Locatieserver, meestal postcode-nauwkeurig) &mdash; niet dezelfde ingang-coördinaat als de hoofddataset. Het jaartallen/periode-overzicht op de statistiekenpagina komt uit deze laag, los van de 448-hoofddataset.</p>
     </section>
 
     <section class="stats-section">

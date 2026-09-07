@@ -1,0 +1,8073 @@
+{
+  "type": "FeatureCollection",
+  "waarschuwing": "Bron: de domeinexpert (data/Begraafplaatsen Zuid-Holland - datering.xlsx). Zelfstandige laag, geen 1-op-1 koppeling aan de 448 begraafplaatsen van de hoofddataset -- zie de toelichting in scripts/build_datering.py en methode.html. Locatie is gegeocodeerd op het bezoekadres (PDOK Locatieserver), meestal postcode-nauwkeurig.",
+  "aantal": 448,
+  "aantal_met_jaartal": 306,
+  "aantal_met_alleen_periode": 112,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "'s-Gravendeel",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1951,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.610628,
+          51.782271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "'s-Gravendeel",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.616021,
+          51.779235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "'s-Gravendeel",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1860,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.614778,
+          51.77944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Oud Eik en Duinen",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.264922,
+          52.067806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Den Haag",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.303536,
+          52.095441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Westduin",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1929,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.225389,
+          52.059436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats Scheveningen (gemengd)",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1694,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.296348,
+          52.088371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Loosduinen",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.234678,
+          52.05068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuw Eykenduynen",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1891,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.267866,
+          52.067432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats St. Barbara",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1920,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.341084,
+          52.06805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Petrus' Banden",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.299769,
+          52.093685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Voormalig Kerkhof Nieuwe Kerk",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.315986,
+          52.076444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Sint Jozefbegraafplaats",
+        "plaats": "'s-Gravenhage (Loosduinen)",
+        "gemeente": "Den Haag",
+        "jaartal": 1835,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.243093,
+          52.052092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Ter Navolging",
+        "plaats": "'s-Gravenhage (Scheveningen)",
+        "gemeente": "Den Haag",
+        "jaartal": 1780,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.277338,
+          52.10243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Beukenhage",
+        "plaats": "'s-Gravenzande",
+        "gemeente": "Westland",
+        "jaartal": 1873,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.161879,
+          51.995574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkelder Van Vredenburch op oude Begraafplaats",
+        "plaats": "'s-Gravenzande",
+        "gemeente": "Westland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.160735,
+          52.004177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "'t Woudt",
+        "gemeente": "Midden-Delfland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.294242,
+          51.996244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats HH Petrus en Paulus",
+        "plaats": "Aarlanderveen",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1809,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.723418,
+          52.148988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Aarlanderveen",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1873,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.736865,
+          52.134842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof",
+        "plaats": "Aarlanderveen",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.72844,
+          52.140656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk Kerkhof",
+        "plaats": "Abbenbroek",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.241242,
+          51.848478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Abbenbroek",
+        "gemeente": "Nissewaard",
+        "jaartal": 1975,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.23762,
+          51.847058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Onze Lieve Vrouw Hemelvaart",
+        "plaats": "Achthuizen",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1849,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.281895,
+          51.686991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Alblasserdam \"de Oude Torenhof\"",
+        "plaats": "Alblasserdam",
+        "gemeente": "Alblasserdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.667688,
+          51.861524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Oosterbegraafplaats",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1938,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.678597,
+          52.131709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkapel familie De Smeth",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1773,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.660679,
+          52.128749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Bonifatiuskerkhof",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1886,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.659804,
+          52.127343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1802,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.667645,
+          52.130748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene Begraafplaats (van Oudshoorn)",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.658809,
+          52.142216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Ammerstol",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1963,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.806211,
+          51.926526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats bij de kerk",
+        "plaats": "Ammerstol",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.809662,
+          51.927094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof bij de Koepelkerk",
+        "plaats": "Arkel",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.991536,
+          51.851019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Den Ouden Dijck",
+        "plaats": "Barendrecht",
+        "gemeente": "Barendrecht",
+        "jaartal": 2003,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.535349,
+          51.837656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Barendrecht",
+        "gemeente": "Barendrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.534499,
+          51.858269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Begraafplaats",
+        "plaats": "Barendrecht",
+        "gemeente": "Barendrecht",
+        "jaartal": 1871,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.538585,
+          51.859574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Vrederust",
+        "plaats": "Benthuizen",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.542614,
+          52.077331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Benthuizen",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.540498,
+          52.077099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Bergambacht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.782546,
+          51.931585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Bergschenhoek",
+        "gemeente": "Lansingerland",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.498721,
+          51.984406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Willibrordbegraafplaats",
+        "plaats": "Bergschenhoek",
+        "gemeente": "Lansingerland",
+        "jaartal": 1860,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.49711,
+          51.988372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Berkel en Rodenrijs",
+        "gemeente": "Lansingerland",
+        "jaartal": 1959,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.480838,
+          51.992639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Berkel",
+        "plaats": "Berkel en Rodenrijs",
+        "gemeente": "Lansingerland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.478185,
+          51.9935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Geboortebegraafplaats",
+        "plaats": "Berkel en Rodenrijs",
+        "gemeente": "Lansingerland",
+        "jaartal": 1825,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.483019,
+          52.000737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Berkenwoude",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.709301,
+          51.945178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Berkenwoude",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1964,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.707437,
+          51.942725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Bleiswijk",
+        "gemeente": "Lansingerland",
+        "jaartal": 1870,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.527363,
+          52.006995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze lieve Vrouw Visitatiekerkhof",
+        "plaats": "Bleiswijk",
+        "gemeente": "Lansingerland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.532396,
+          52.014795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Bleskensgraaf",
+        "gemeente": "Molenlanden",
+        "jaartal": 1931,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.787647,
+          51.871326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Vredehof",
+        "plaats": "Bodegraven",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": 1925,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.760346,
+          52.083277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Willibrordbegraafplaats",
+        "plaats": "Bodegraven",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.743978,
+          52.084363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Bodegraven",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.744625,
+          52.086047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Aan de Roemer",
+        "plaats": "Boskoop",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1965,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.63436,
+          52.077542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats De Loete",
+        "plaats": "Boskoop",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1875,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.66694,
+          52.073874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Joannes de Doperbegraafplaats",
+        "plaats": "Boskoop",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1868,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.663521,
+          52.074998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Krommegat",
+        "plaats": "Boven-Hardinxveld",
+        "gemeente": "Hardinxveld-Giessendam",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.871633,
+          51.822244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Tiendweg",
+        "plaats": "Boven-Hardinxveld",
+        "gemeente": "Hardinxveld-Giessendam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.885222,
+          51.826267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Brandwijk",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.813702,
+          51.889748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Brandwijk en Molenaarsgraaf",
+        "plaats": "Brandwijk (Molenaarsgraaf)",
+        "gemeente": "Molenlanden",
+        "jaartal": 1960,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.821527,
+          51.879691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Brielle",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.162669,
+          51.902618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Begraafplaats",
+        "plaats": "Brielle",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.162039,
+          51.894441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Brielle",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1842,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.162039,
+          51.894441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Brielle",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1900,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.147216,
+          51.901233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Schollevaar",
+        "plaats": "Capelle aan den IJssel",
+        "gemeente": "Capelle aan den IJssel",
+        "jaartal": 1974,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.588157,
+          51.958588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Capelle aan den Ijssel",
+        "gemeente": "Capelle aan den IJssel",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.595744,
+          51.926269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Capelle-West",
+        "gemeente": "Capelle aan den IJssel",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.576037,
+          51.915926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Charlois",
+        "gemeente": "Rotterdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.466239,
+          51.892748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Cillaarshoek",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1872,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.547708,
+          51.76509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Dalem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1894,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.995312,
+          51.826847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof Dalem",
+        "plaats": "Dalem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1801,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.991949,
+          51.827698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "De Bergstoep (Bergambacht)",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.784593,
+          51.922068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats De Lier",
+        "plaats": "De Lier",
+        "gemeente": "Westland",
+        "jaartal": 1915,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.254102,
+          51.971432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "De Lier",
+        "gemeente": "Westland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.248511,
+          51.974414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Hart van Jezusbegraafplaats",
+        "plaats": "De Zilk",
+        "gemeente": "Noordwijk",
+        "jaartal": 1920,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.548766,
+          52.2997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Iepenhof",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "jaartal": 1969,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.386375,
+          52.008706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Jaffa",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "jaartal": 1868,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.37184,
+          52.003421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "jaartal": 1845,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.371647,
+          52.013428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats Haagpoort",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.351093,
+          52.017154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Vm. RK Begraafplaats Kanaalweg",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.366999,
+          52.007628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Den Bommel",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1956,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.283783,
+          51.714938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Den Bommel",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1646,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.281485,
+          51.716194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "HH Antonius en Cornelisbegraafplaats",
+        "plaats": "Den Hoorn",
+        "gemeente": "Midden-Delfland",
+        "jaartal": 1933,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.332151,
+          51.998258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Dirksland",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1847,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.104374,
+          51.751047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkkhof",
+        "plaats": "Dirksland",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.101307,
+          51.747849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats",
+        "plaats": "Dirksland",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1996,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.093696,
+          51.752683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Dirksland",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1796,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.102212,
+          51.747094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "De Essenhof",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.674036,
+          51.79998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Dubbeldam",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.688945,
+          51.784341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "jaartal": 1871,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.678079,
+          51.801466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats Dordrecht",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "jaartal": 1880,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.682948,
+          51.807614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Geervliet",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.259057,
+          51.859806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats van Voorne Putten",
+        "plaats": "Geervliet",
+        "gemeente": "Nissewaard",
+        "jaartal": 1781,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.255788,
+          51.860476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke Begraafplaats Geervliet",
+        "plaats": "Geervliet",
+        "gemeente": "Nissewaard",
+        "jaartal": 1972,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.25079,
+          51.864643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Giessen-Oudekerk",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.865883,
+          51.844437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Giessenburg",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.888298,
+          51.839302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "vm. NH Begraafplaats",
+        "plaats": "Giessenburg",
+        "gemeente": "Molenlanden",
+        "jaartal": 1880,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.888113,
+          51.851318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Neder-Hardinxveld",
+        "plaats": "Giessendam",
+        "gemeente": "Hardinxveld-Giessendam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.836426,
+          51.828558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Goedereede",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1812,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.973369,
+          51.816333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Goedereede",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.976769,
+          51.818477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats",
+        "plaats": "Goedereede",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1878,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.977799,
+          51.817204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats De Haarhof",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1991,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.975466,
+          51.849701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1814,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.977858,
+          51.836575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.978745,
+          51.837948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "jaartal": 1876,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.983847,
+          51.840359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats en Crematorium Ijsselhof",
+        "plaats": "Gouda",
+        "gemeente": "Gouda",
+        "jaartal": 1950,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.72725,
+          52.008931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Gouda",
+        "gemeente": "Gouda",
+        "jaartal": 1832,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.705492,
+          52.007095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats Gouda",
+        "plaats": "Gouda",
+        "gemeente": "Gouda",
+        "jaartal": 1890,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.719163,
+          52.018106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Gouderak",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.674784,
+          51.985083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof met uitbreiding",
+        "plaats": "Goudriaan",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.887632,
+          51.903089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Goudswaard",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.276645,
+          51.791827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Gelkenes",
+        "plaats": "Groot Ammers",
+        "gemeente": "Molenlanden",
+        "jaartal": 1858,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.831546,
+          51.930995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1893,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.78485,
+          52.001581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterbegraafplaats Afzondering St. Gabriël",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1930,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.801582,
+          52.012191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.77417,
+          52.000923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Barnabasbegraafplaats",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1825,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.777325,
+          52.000221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Tombe Bisdom van Vliet",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1881,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.771692,
+          52.001267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Hazerswoude Dorp",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1935,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.589799,
+          52.092939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Engelbewaarderskerkhof",
+        "plaats": "Hazerswoude Dorp",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.583895,
+          52.096656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "HH Michael en Bernarduskerkhof (Scheepjeskerk)",
+        "plaats": "Hazerswoude Rijndijk",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1869,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.559579,
+          52.131485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Heenvliet",
+        "gemeente": "Nissewaard",
+        "jaartal": 1881,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.236263,
+          51.865518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Heenvliet",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.243896,
+          51.864837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Heerjansdam",
+        "gemeente": "Zwijndrecht",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.564251,
+          51.837791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Heerjansdam",
+        "gemeente": "Zwijndrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.563582,
+          51.836263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Heinenoord",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.473349,
+          51.825799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Natuurbegraafplaats Zomerlanden",
+        "plaats": "Heinenoord",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 2021,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.52644,
+          51.826167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Begraafplaats",
+        "plaats": "Heinenoord",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1889,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482403,
+          51.824031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Hekelingen",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.339714,
+          51.827888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Nieuw Helvoet",
+        "plaats": "Hellevoetsluis",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1900,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.124839,
+          51.840641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats met RK gedeelte",
+        "plaats": "Hellevoetsluis",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.133153,
+          51.836103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats De Stoofweg",
+        "plaats": "Hellevoetsluis",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.143772,
+          51.850264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Nieuw Helvoet",
+        "plaats": "Hellevoetsluis",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1231,
+          51.838345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Waelhof",
+        "plaats": "Hendrik-Ido-Ambacht",
+        "gemeente": "Hendrik-Ido-Ambacht",
+        "jaartal": 1854,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.638306,
+          51.849615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Achterambacht",
+        "plaats": "Hendrik-Ido-Ambacht",
+        "gemeente": "Hendrik-Ido-Ambacht",
+        "jaartal": 1968,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.610756,
+          51.848735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Hendrik-Ido-Ambacht",
+        "gemeente": "Hendrik-Ido-Ambacht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.62736,
+          51.85065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Herkingen",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1916,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.091636,
+          51.711911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Hillegom",
+        "gemeente": "Hillegom",
+        "jaartal": 1830,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.572715,
+          52.292688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H. Jozefbegraafplaats",
+        "plaats": "Hillegom",
+        "gemeente": "Hillegom",
+        "jaartal": 1925,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.579212,
+          52.288092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Maartenskerkhof",
+        "plaats": "Hillegom",
+        "gemeente": "Hillegom",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.57815,
+          52.291473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats St. Martinus",
+        "plaats": "Hillegom",
+        "gemeente": "Hillegom",
+        "jaartal": 1900,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.581752,
+          52.294924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Hoek van Holland",
+        "gemeente": "Rotterdam",
+        "jaartal": 1917,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.125569,
+          51.982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Hoogblokland",
+        "gemeente": "Molenlanden",
+        "jaartal": 1873,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.977678,
+          51.873616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Hoogblokland",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.974556,
+          51.873864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Geboortebegraafplaats",
+        "plaats": "Hoogmade",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1900,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.580257,
+          52.168026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats OudHoogvliet",
+        "plaats": "Hoogvliet",
+        "gemeente": "Rotterdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.358885,
+          51.863875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Oudeland",
+        "plaats": "Hoogvliet",
+        "gemeente": "Rotterdam",
+        "jaartal": 1967,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.367807,
+          51.873568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Hoornaar",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.946755,
+          51.880308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Kaag",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 2006,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.558477,
+          52.216825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Katwijk",
+        "gemeente": "Katwijk",
+        "jaartal": 1758,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.42133,
+          52.197977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Katwijk",
+        "gemeente": "Katwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.392373,
+          52.202566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Duinrust",
+        "plaats": "Katwijk aan Zee",
+        "gemeente": "Katwijk",
+        "jaartal": 1952,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.394954,
+          52.19794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Begraafplaats Duinrust",
+        "plaats": "Katwijk aan Zee",
+        "gemeente": "Katwijk",
+        "jaartal": 1952,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.401744,
+          52.199084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude NH Begraafplaats",
+        "plaats": "Katwijk aan Zee",
+        "gemeente": "Katwijk",
+        "jaartal": 1791,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.400488,
+          52.202497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats de Bleekerij",
+        "plaats": "Katwijk aan de Rijn",
+        "gemeente": "Katwijk",
+        "jaartal": 2010,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.424002,
+          52.198528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Verpleegtehuis Wilbert",
+        "plaats": "Katwijk aan den Rijn",
+        "gemeente": "Katwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.428106,
+          52.191704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkelder Van Wassenaar",
+        "plaats": "Katwijk aan den Rijn",
+        "gemeente": "Katwijk",
+        "jaartal": 1858,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.423857,
+          52.196137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof van de Heilige Joannes de Doper",
+        "plaats": "Katwijk aan den Rijn",
+        "gemeente": "Katwijk",
+        "jaartal": 1911,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.421069,
+          52.197193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Katwijk aan den Rijn",
+        "gemeente": "Katwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.423857,
+          52.196137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "HH Jacobus en Martinusbegraafplaats",
+        "plaats": "Kerkbuurt (Schiedam)",
+        "gemeente": "Schiedam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.387819,
+          51.943216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Kethel (Schiedam)",
+        "gemeente": "Schiedam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.377251,
+          51.937165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Kijfhoek",
+        "plaats": "Kijfhoek (Zwijndrecht)",
+        "gemeente": "Zwijndrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.591364,
+          51.825659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Klaaswaal",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1905,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.437823,
+          51.770171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Klaaswaal",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.444905,
+          51.769929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Koudekerk aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.597082,
+          52.132492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof",
+        "plaats": "Koudekerk aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.591115,
+          52.13217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Krimpen aan de Lek",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1882,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.615683,
+          51.897243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Krimpen aan de Lek",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.61926,
+          51.894801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats IJsseldijk",
+        "plaats": "Krimpen aan den IJssel",
+        "gemeente": "Krimpen aan den IJssel",
+        "jaartal": 1915,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.60776,
+          51.924099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Waalhoven",
+        "plaats": "Krimpen aan den IJssel",
+        "gemeente": "Krimpen aan den IJssel",
+        "jaartal": 1982,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.595345,
+          51.905385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Krimpen aan den IJssel",
+        "gemeente": "Krimpen aan den IJssel",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.587459,
+          51.920618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Andreaskerkhof",
+        "plaats": "Kwintsheul",
+        "gemeente": "Westland",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.255419,
+          52.014813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Adrianusbegraafplaats",
+        "plaats": "Langeraar",
+        "gemeente": "Nieuwkoop",
+        "jaartal": 1719,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.711426,
+          52.19363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Langerak",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.882588,
+          51.935586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Groene Steeg",
+        "plaats": "Leiden",
+        "gemeente": "Leiden",
+        "jaartal": 1813,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.502955,
+          52.157365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Rhijnhof",
+        "plaats": "Leiden",
+        "gemeente": "Leiden",
+        "jaartal": 1910,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.453798,
+          52.16181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats Zijlpoort",
+        "plaats": "Leiden",
+        "gemeente": "Leiden",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.503853,
+          52.162486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats met RK gedeelte",
+        "plaats": "Leiderdorp",
+        "gemeente": "Leiderdorp",
+        "jaartal": 1950,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.525424,
+          52.150038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene kerkhof",
+        "plaats": "Leiderdorp",
+        "gemeente": "Leiderdorp",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.523373,
+          52.150951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Uitbreiding nw. Gemeentelijke Begraafplaats (overzijde weg)",
+        "plaats": "Leiderdorp",
+        "gemeente": "Leiderdorp",
+        "jaartal": 2009,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.525424,
+          52.150038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Wilsveen",
+        "plaats": "Leidschendam",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1821,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.422028,
+          52.073668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Noorthey",
+        "plaats": "Leidschendam",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1979,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.409247,
+          52.107825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Agathabegraafplaats",
+        "plaats": "Leidschendam",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1832,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.401786,
+          52.09325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Leimuiden",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.672844,
+          52.223711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Johannes de Doperkerkhof",
+        "plaats": "Leimuiden",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1824,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.669956,
+          52.210349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Lekkerkerk",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1867,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.696991,
+          51.901308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Lekkerkerk",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1866,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.68361,
+          51.902472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats H Engelbewaarders",
+        "plaats": "Lisse",
+        "gemeente": "Lisse",
+        "jaartal": 1931,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.536455,
+          52.235157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Onbevlekt Hart van Maria",
+        "plaats": "Lisse",
+        "gemeente": "Lisse",
+        "jaartal": 1952,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.563943,
+          52.260753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof bij de Grote kerk",
+        "plaats": "Lisse",
+        "gemeente": "Lisse",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.552884,
+          52.258392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Protestantse Begraafplaats Duinhof",
+        "plaats": "Lisse",
+        "gemeente": "Lisse",
+        "jaartal": 1929,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.535664,
+          52.259936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Kerkhof St. Agatha",
+        "plaats": "Lisse",
+        "gemeente": "Lisse",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.552839,
+          52.256882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof St. Anthonie-Polder",
+        "plaats": "Maasdam",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.531955,
+          51.797284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Maasdam",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.552772,
+          51.787905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Maasdijk",
+        "gemeente": "Westland",
+        "jaartal": 1932,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.213054,
+          51.958928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Maria Magdalenabegraafplaats",
+        "plaats": "Maasland",
+        "gemeente": "Midden-Delfland",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.271522,
+          51.932722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats",
+        "plaats": "Maasland",
+        "gemeente": "Midden-Delfland",
+        "jaartal": 1933,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.273943,
+          51.93896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude gemeentelijke Begraafplaats",
+        "plaats": "Maasland",
+        "gemeente": "Midden-Delfland",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.273097,
+          51.940344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Voormalig Kerkhof",
+        "plaats": "Maasland",
+        "gemeente": "Midden-Delfland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.271983,
+          51.936203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "De Dijk",
+        "plaats": "Maassluis",
+        "gemeente": "Maassluis",
+        "jaartal": 2015,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.261837,
+          51.913448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke + Joodse Begraafplaats",
+        "plaats": "Maassluis",
+        "gemeente": "Maassluis",
+        "jaartal": 1887,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.257735,
+          51.916364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats op Algemene Begraafplaats",
+        "plaats": "Maassluis",
+        "gemeente": "Maassluis",
+        "jaartal": 1950,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.257735,
+          51.916364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats St. Barbara",
+        "plaats": "Maassluis",
+        "gemeente": "Maassluis",
+        "jaartal": 1960,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.265523,
+          51.924247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Geboortebegraafplaats",
+        "plaats": "Meije",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.792854,
+          52.121678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke Begraafplaats",
+        "plaats": "Melissant",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1985,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.067204,
+          51.76909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Melissant",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1850,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.068517,
+          51.769779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Onze Lieve Vrouw Hemelvaart",
+        "plaats": "Middelharnis",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1863,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.156479,
+          51.758123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Vrederust",
+        "plaats": "Middelharnis",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1947,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.167577,
+          51.752692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Middelharnis",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1865,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.160812,
+          51.758094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Middelharnis",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.165208,
+          51.757819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Middelharnis",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1895,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.15984,
+          51.758044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Mijnsheerenland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1873,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482913,
+          51.800053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Mijnsheerenland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.492973,
+          51.797973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Moerhage",
+        "plaats": "Moerkapelle",
+        "gemeente": "Zuidplas",
+        "jaartal": 1880,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.577201,
+          52.046598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Westhage",
+        "plaats": "Moerkapelle",
+        "gemeente": "Zuidplas",
+        "jaartal": 1988,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.569554,
+          52.044551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof bij de NH Kerk",
+        "plaats": "Molenaarsgraaf",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.817857,
+          51.875404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gem. begraafplaats",
+        "plaats": "Monster",
+        "gemeente": "Westland",
+        "jaartal": 1830,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.174422,
+          52.026279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Molenlande",
+        "plaats": "Monster",
+        "gemeente": "Westland",
+        "jaartal": 1830,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.177785,
+          52.029196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkelder familie Herckenrath",
+        "plaats": "Monster",
+        "gemeente": "Westland",
+        "jaartal": 1844,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.162852,
+          52.023651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof H. Machutus",
+        "plaats": "Monster",
+        "gemeente": "Westland",
+        "jaartal": 1856,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.177575,
+          52.021659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Middelweg",
+        "plaats": "Moordrecht",
+        "gemeente": "Zuidplas",
+        "jaartal": 1989,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.658401,
+          51.991788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkelder Drost-IJserman",
+        "plaats": "Moordrecht",
+        "gemeente": "Zuidplas",
+        "jaartal": 1853,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.66904,
+          51.983462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof H. Johannes' Onthoofding",
+        "plaats": "Moordrecht",
+        "gemeente": "Zuidplas",
+        "jaartal": 1852,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.681749,
+          51.99621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Moordrecht",
+        "gemeente": "Zuidplas",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.670963,
+          51.986559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude gemeentelijke Begraafplaats",
+        "plaats": "Moordrecht",
+        "gemeente": "Zuidplas",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.666987,
+          51.986675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Naaldwijk",
+        "gemeente": "Westland",
+        "jaartal": 1865,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.196498,
+          51.997655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Naaldwijk",
+        "gemeente": "Westland",
+        "jaartal": 1793,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.194124,
+          51.995121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Adrianusbegraafplaats",
+        "plaats": "Naaldwijk",
+        "gemeente": "Westland",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.210502,
+          51.996381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke Begraafplaats",
+        "plaats": "Nieuw Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1999,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.348033,
+          51.80753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Begraafplaats",
+        "plaats": "Nieuw Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1912,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.342337,
+          51.80973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Nieuw Lekkerland",
+        "gemeente": "Molenlanden",
+        "jaartal": 1961,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.692683,
+          51.887383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Nieuw Lekkerland",
+        "gemeente": "Molenlanden",
+        "jaartal": 1865,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.693355,
+          51.891686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Nieuw-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.33912,
+          51.810742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Nieuwe Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.166257,
+          51.712568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Nieuwe-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.165023,
+          51.713814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke Begraafplaats Essenhof",
+        "plaats": "Nieuwerkerk aan den IJssel",
+        "gemeente": "Zuidplas",
+        "jaartal": 1966,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.607434,
+          51.959471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Nieuwerkerk aan den IJssel",
+        "gemeente": "Zuidplas",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.618976,
+          51.964002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Nieuwerkerk aan den IJssel",
+        "gemeente": "Zuidplas",
+        "jaartal": 1912,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.621516,
+          51.960069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof bij de NH kerk",
+        "plaats": "Nieuwkoop",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.779877,
+          52.149295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Hemelvaartbegraafplaats",
+        "plaats": "Nieuwkoop",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.776341,
+          52.148297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Nieuwpoort",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.868114,
+          51.933676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Nicolaasbegraafplaats",
+        "plaats": "Nieuwveen",
+        "gemeente": "Nieuwkoop",
+        "jaartal": 1867,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.758565,
+          52.199769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oud NH Kerkhof",
+        "plaats": "Nieuwveen",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.757439,
+          52.196047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Johannes' Geboortebegraafplaats",
+        "plaats": "Noordeinde",
+        "gemeente": "Nieuwkoop",
+        "jaartal": 1826,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.774123,
+          52.193811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Noordeloos",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.941483,
+          51.904607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Martinusbegraafplaats",
+        "plaats": "Noorden",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.825837,
+          52.163769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Noorden",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.837658,
+          52.168723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Sancta Maria centrum voor Psychiatrie",
+        "plaats": "Noordwijk",
+        "gemeente": "Noordwijk",
+        "jaartal": 1928,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.493111,
+          52.2794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Noordwijk",
+        "gemeente": "Noordwijk",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.435146,
+          52.237633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats a/d Gooweg",
+        "plaats": "Noordwijk",
+        "gemeente": "Noordwijk",
+        "jaartal": 1884,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.454144,
+          52.238284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Jozefkerkhof",
+        "plaats": "Noordwijkerhout",
+        "gemeente": "Noordwijk",
+        "jaartal": 1916,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.495261,
+          52.264272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Begraafplaats",
+        "plaats": "Noordwijkerhout",
+        "gemeente": "Noordwijk",
+        "jaartal": 1923,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.499916,
+          52.265916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Noordwijkerhout",
+        "gemeente": "Noordwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.493041,
+          52.26253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Victorbegraafplaats",
+        "plaats": "Noordwijkerhout",
+        "gemeente": "Noordwijk",
+        "jaartal": 1852,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.48926,
+          52.250978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St. Bavobegraafplaats (Psychiatrische inrichting)",
+        "plaats": "Noordwijkerhout",
+        "gemeente": "Noordwijk",
+        "jaartal": 1914,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.490977,
+          52.270402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Sint Janshof",
+        "plaats": "Nootdorp",
+        "gemeente": "Pijnacker-Nootdorp",
+        "jaartal": 2004,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.413244,
+          52.035721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Nootdorp",
+        "gemeente": "Pijnacker-Nootdorp",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.394701,
+          52.042923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Bartholomeusbegraafplaats",
+        "plaats": "Nootdorp",
+        "gemeente": "Pijnacker-Nootdorp",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.392178,
+          52.050035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Begraafplaats",
+        "plaats": "Numansdorp",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1930,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.429852,
+          51.732868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Numansdorp",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1830,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.439483,
+          51.727614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafmonument Wyttenbach",
+        "plaats": "Oegstgeest",
+        "gemeente": "Oegstgeest",
+        "jaartal": 1820,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.469822,
+          52.183102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Willibrordbegraafplaats",
+        "plaats": "Oegstgeest",
+        "gemeente": "Oegstgeest",
+        "jaartal": 1821,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.464819,
+          52.180186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof bij het Groene Kerkje",
+        "plaats": "Oegstgeest",
+        "gemeente": "Oegstgeest",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.474061,
+          52.198558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Begraafplaats",
+        "plaats": "Oegstgeest",
+        "gemeente": "Oegstgeest",
+        "jaartal": 2011,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.467242,
+          52.195931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Ooltgensplaat",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1960,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.354257,
+          51.686087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude NH Kerkhof",
+        "plaats": "Ooltgensplaat",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.349699,
+          51.683585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Westvoorne",
+        "plaats": "Oostvoorne",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.100168,
+          51.909948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Oostvoorne",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.102414,
+          51.915082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof bij de Hervormde kerk",
+        "plaats": "Ottoland",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.873537,
+          51.892996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Bavokerkhof",
+        "plaats": "Oud Ade",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.566256,
+          52.191716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Oud Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1790,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.420561,
+          51.822797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Oud-Alblas",
+        "gemeente": "Molenlanden",
+        "jaartal": 1872,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.709959,
+          51.860505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Oud-Alblas",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.704328,
+          51.858502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Oud-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.412968,
+          51.818788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Oud-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.411357,
+          51.824505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Kerkhof",
+        "plaats": "Oud-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1866,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.409534,
+          51.824296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Ouddorp",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.927667,
+          51.807556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats Kleistee",
+        "plaats": "Ouddorp",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 2022,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.925592,
+          51.811846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Ouddorp",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.935079,
+          51.808946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Jacobusbegraafplaats (later gemeentelijk)",
+        "plaats": "Oude Wetering",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.646455,
+          52.208763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Oude en Nieuwe Wetering",
+        "plaats": "Oude Wetering",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1830,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.646017,
+          52.212239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Vm. Gereformeerd kerkhof",
+        "plaats": "Oude Wetering",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1909,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.645064,
+          52.215028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Slachtoffers Watersnoodramp 1953",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1953,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.213435,
+          51.688483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.212564,
+          51.69082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1952,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.181889,
+          51.70405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1810,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.212532,
+          51.691512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1867,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.203855,
+          51.692354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Oudenhoorn",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.19203,
+          51.826368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Oudenhoorn",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.191319,
+          51.827997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Ouderkerk aan den IJssel",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1928,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.637412,
+          51.937275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Lageweg",
+        "plaats": "Ouderkerk aan den IJssel",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 2012,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.643666,
+          51.966749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Ouderkerk aan den IJssel",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.639305,
+          51.941521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Papendrecht",
+        "gemeente": "Papendrecht",
+        "jaartal": 1911,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.699241,
+          51.826201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Pernis",
+        "plaats": "Pernis",
+        "gemeente": "Rotterdam",
+        "jaartal": 1916,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.380912,
+          51.88949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Oud Pernis",
+        "plaats": "Pernis",
+        "gemeente": "Rotterdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.393675,
+          51.88763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof",
+        "plaats": "Piershil",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1524,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.314902,
+          51.793888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke begraafplaats",
+        "plaats": "Piershil",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1970,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.326641,
+          51.793666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Johannes de Doperbegraafplaats",
+        "plaats": "Pijnacker",
+        "gemeente": "Pijnacker-Nootdorp",
+        "jaartal": 1826,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.433067,
+          52.020423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Koningshof",
+        "plaats": "Pijnacker",
+        "gemeente": "Pijnacker-Nootdorp",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.434152,
+          52.013281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Bartholomeusbegraafplaats",
+        "plaats": "Poeldijk",
+        "gemeente": "Westland",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.221009,
+          52.021758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof Groene Kruisweg",
+        "plaats": "Poortugaal",
+        "gemeente": "Albrandswaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.390287,
+          51.860866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "De Essenhof",
+        "plaats": "Puttershoek",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1993,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.550793,
+          51.790147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Puttershoek",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.575823,
+          51.806144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe gemeentelijke begraafplaats",
+        "plaats": "Puttershoek",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1880,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.574468,
+          51.805703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude gemeentelijke begraafplaats",
+        "plaats": "Puttershoek",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.574468,
+          51.805703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Tempel",
+        "plaats": "Reeuwijk",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": 1945,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.710511,
+          52.061852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Sluipwijk",
+        "plaats": "Reeuwijk",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.740916,
+          52.039818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "HH Petrus en Paulusbegraafplaats",
+        "plaats": "Reeuwijk-Dorp",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.692678,
+          52.055399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Reeuwijk-Dorp",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.696468,
+          52.054772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats achter NH kerk",
+        "plaats": "Rhoon",
+        "gemeente": "Albrandswaard",
+        "jaartal": 1840,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.420546,
+          51.860642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Willibrordkerkhof",
+        "plaats": "Rhoon",
+        "gemeente": "Albrandswaard",
+        "jaartal": 1857,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.421133,
+          51.850819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Vredehof",
+        "plaats": "Ridderkerk",
+        "gemeente": "Ridderkerk",
+        "jaartal": 1954,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.589504,
+          51.86719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Grafkelder Groeninx van Zoelen",
+        "plaats": "Ridderkerk",
+        "gemeente": "Ridderkerk",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.596338,
+          51.880674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Ridderkerk",
+        "gemeente": "Ridderkerk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.602251,
+          51.870584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats Rusthof",
+        "plaats": "Ridderkerk",
+        "gemeente": "Ridderkerk",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.598392,
+          51.868724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof bij de NH kerk",
+        "plaats": "Rijnsaterwoude",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.671113,
+          52.199361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gereformeerde en algemene Begraafplaats",
+        "plaats": "Rijnsburg",
+        "gemeente": "Katwijk",
+        "jaartal": 1893,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.437282,
+          52.189243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Mausoleum Floris V",
+        "plaats": "Rijnsburg",
+        "gemeente": "Katwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.443178,
+          52.189495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Rijnsburg",
+        "gemeente": "Katwijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.443178,
+          52.189495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Onze Lieve Vrouw Geboortekerkhof",
+        "plaats": "Rijpwetering",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1858,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.584961,
+          52.192086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Oud-Rijswijk (oude gemeentelijke)",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": 1916,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.337365,
+          52.048287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof bij de NH Kerk",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.334277,
+          52.055672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats op Algemene Begraafplaats",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": 1937,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.337365,
+          52.048287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Liberaal Joodse Begraafplaats Beth Hachaim",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": 1990,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.307313,
+          52.021454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Bonifatiusbegraafplaats",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.329799,
+          52.052616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Yardenhuis van Rijswijk",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "jaartal": 1972,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.307313,
+          52.021454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Maria Rust",
+        "plaats": "Rockanje",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.063504,
+          51.874564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Begraafplaats",
+        "plaats": "Rockanje",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": 1950,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.062988,
+          51.872196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Onze Lieve Vrouw Presentatie",
+        "plaats": "Roelofarendsveen",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1950,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.624686,
+          52.202692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Petrus' Bandenbegraafplaats",
+        "plaats": "Roelofarendsveen",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1817,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.628889,
+          52.195547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Hofwijk",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1938,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.399683,
+          51.957868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Oud Kralingen",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.548294,
+          51.932078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke begraafplaats Crooswijk",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1832,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.492214,
+          51.937895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Het Toepad",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1895,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.532499,
+          51.908959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats Delfshaven",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1865,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.456884,
+          51.905901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats Oostzeedijk (gemengd)",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1696,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.501829,
+          51.922323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Begraafplaats Ijsselmonde",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1872,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.556213,
+          51.900868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Begraafplaats Overschie",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.420873,
+          51.938426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Hillegersberg",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.493328,
+          51.956509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Begraafplaats Schiebroek",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1904,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4779,
+          51.956251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Portugees-Joodse Begraafplaats",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1613,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.487354,
+          51.925515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Protestantse Begraafplaats Charlois",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1924,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.467654,
+          51.864842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats Kralingen",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1837,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.513591,
+          51.920119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats Oud Overschie",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1834,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.421638,
+          51.941528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats St. Laurentius",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1864,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.49586,
+          51.934072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Zuiderbegraafplaats",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "jaartal": 1940,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.50656,
+          51.874311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Rozenburg",
+        "gemeente": "Rotterdam",
+        "jaartal": 1868,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.251184,
+          51.903696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Hervormd kerkhof",
+        "plaats": "Sassenheim",
+        "gemeente": "Teylingen",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.522395,
+          52.227186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Pancratiuskerkhof",
+        "plaats": "Sassenheim",
+        "gemeente": "Teylingen",
+        "jaartal": 1870,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.519721,
+          52.224345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Nolweg",
+        "plaats": "Schelluinen",
+        "gemeente": "Molenlanden",
+        "jaartal": 1976,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.932377,
+          51.845931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oud kerkhof",
+        "plaats": "Schelluinen",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.924922,
+          51.842015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats De Beukenhof",
+        "plaats": "Schiedam",
+        "gemeente": "Schiedam",
+        "jaartal": 1930,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.37644,
+          51.915361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Schiedam",
+        "gemeente": "Schiedam",
+        "jaartal": 1930,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.37608,
+          51.918251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Schiedam",
+        "gemeente": "Schiedam",
+        "jaartal": 1851,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.388738,
+          51.916131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Schipluiden",
+        "gemeente": "Midden-Delfland",
+        "jaartal": 1873,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.306457,
+          51.977571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Hervormd Kerkhof",
+        "plaats": "Schipluiden",
+        "gemeente": "Midden-Delfland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.316644,
+          51.978175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats",
+        "plaats": "Schipluiden",
+        "gemeente": "Midden-Delfland",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.319686,
+          51.986533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Schoonhoven",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.852885,
+          51.943117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Bartholomeusbegraafplaats",
+        "plaats": "Schoonhoven",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1872,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.855045,
+          51.947083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Schoonhoven",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1767,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.854411,
+          51.945665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oud NH Kerkhof",
+        "plaats": "Schoonhoven",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.851058,
+          51.946254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Simonshaven",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.291093,
+          51.823335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Sliedrecht",
+        "gemeente": "Sliedrecht",
+        "jaartal": 1885,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.774481,
+          51.825342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Molenweg",
+        "plaats": "Sommelsdijk",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1926,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.144212,
+          51.758277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Sommelsdijk",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.151394,
+          51.75914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Vredehof",
+        "plaats": "Spijkenisse",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.322671,
+          51.848172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats De Ommering",
+        "plaats": "Spijkenisse",
+        "gemeente": "Nissewaard",
+        "jaartal": 1965,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.300884,
+          51.860688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Spijkenisse",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.32523,
+          51.850557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Stad aan 't Haringvliet",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1877,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.24171,
+          51.738931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof",
+        "plaats": "Stad aan 't Haringvliet",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.24171,
+          51.738931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Stellendam",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 1790,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.024893,
+          51.80326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Begraafplaats Statendam",
+        "plaats": "Stellendam",
+        "gemeente": "Goeree-Overflakkee",
+        "jaartal": 2022,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.020517,
+          51.801819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Stolwijk",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": 1870,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.772279,
+          51.973422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Laurentiuskerkhof",
+        "plaats": "Stompwijk",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1819,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.465265,
+          52.095458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Streefkerk",
+        "gemeente": "Molenlanden",
+        "jaartal": 1931,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.743205,
+          51.897072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Streefkerk",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.74395,
+          51.900492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Strijen",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.549247,
+          51.745156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Strijen",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1896,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.562299,
+          51.747008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH kerkhof Cillaarshoek",
+        "plaats": "Strijen",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1615,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.546807,
+          51.772771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Strijensas",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1830,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.583997,
+          51.715336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Ter Aar",
+        "gemeente": "Nieuwkoop",
+        "jaartal": 1931,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.713166,
+          52.171395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene kerkhof",
+        "plaats": "Ter Aar",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.699343,
+          52.170991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Ter Heijde",
+        "gemeente": "Westland",
+        "jaartal": 1720,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.168786,
+          52.030492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Valkenburg",
+        "gemeente": "Katwijk",
+        "jaartal": 1942,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.431741,
+          52.180426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Militair Erehof achter de NH kerk",
+        "plaats": "Valkenburg",
+        "gemeente": "Katwijk",
+        "jaartal": 1940,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.433099,
+          52.179826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Vierpolders",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.180069,
+          51.879687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Emaus",
+        "plaats": "Vlaardingen",
+        "gemeente": "Vlaardingen",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.345809,
+          51.916009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Holy",
+        "plaats": "Vlaardingen",
+        "gemeente": "Vlaardingen",
+        "jaartal": 1972,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.338012,
+          51.938472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Vlaardingen",
+        "gemeente": "Vlaardingen",
+        "jaartal": 1862,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.345218,
+          51.909456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St. Barbarabegraafplaats",
+        "plaats": "Vlaardingen",
+        "gemeente": "Vlaardingen",
+        "jaartal": 1820,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.345835,
+          51.916755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Oude Kerk",
+        "plaats": "Voorburg",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.363974,
+          52.067703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oosterbegraafplaats",
+        "plaats": "Voorburg",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1937,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.376049,
+          52.082804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Voorburg",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1874,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.369569,
+          52.073454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Martinuskerkhof",
+        "plaats": "Voorburg",
+        "gemeente": "Leidschendam-Voorburg",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.373607,
+          52.072264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene particuliere Begraafplaats",
+        "plaats": "Voorhout",
+        "gemeente": "Teylingen",
+        "jaartal": 1976,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482539,
+          52.221732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Hervormd kerkhof",
+        "plaats": "Voorhout",
+        "gemeente": "Teylingen",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482931,
+          52.22174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof St Bartholomeus",
+        "plaats": "Voorhout",
+        "gemeente": "Teylingen",
+        "jaartal": 1882,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.482539,
+          52.221732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterbegraafplaats Broederhuis Nieuw Schoonoord",
+        "plaats": "Voorhout",
+        "gemeente": "Teylingen",
+        "jaartal": 1924,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.473644,
+          52.219074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Rosenburgh",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "jaartal": 1963,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.430227,
+          52.119647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Graf juffrouw Begeer op landgoed Berbice",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "jaartal": 2009,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.460785,
+          52.136362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kloosterbegraafplaats Dominicanessen Huize Bijdorp",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "jaartal": 1875,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.446595,
+          52.120813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.446492,
+          52.125064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Laurentiuskerkhof",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "jaartal": 1820,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.455414,
+          52.130187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Waarder",
+        "gemeente": "Bodegraven-Reeuwijk",
+        "jaartal": 1876,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.822356,
+          52.064577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe algemene Begraafplaats Thijmhof",
+        "plaats": "Waddinxveen",
+        "gemeente": "Waddinxveen",
+        "jaartal": 1974,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.650094,
+          52.059665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene Begraafplaats",
+        "plaats": "Waddinxveen",
+        "gemeente": "Waddinxveen",
+        "jaartal": 1838,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.647097,
+          52.046064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Begraafplaats St. Victor",
+        "plaats": "Waddinxveen",
+        "gemeente": "Waddinxveen",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.658656,
+          52.03105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H. Matthiasbegraafplaats",
+        "plaats": "Warmond",
+        "gemeente": "Teylingen",
+        "jaartal": 1858,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.500096,
+          52.199414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Ned Herv kerkhof Oude Toren",
+        "plaats": "Warmond",
+        "gemeente": "Teylingen",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.502071,
+          52.200269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Asurn Hazelhoff Roelfsema bij monument gevallenen Wassenaarseslag",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 2007,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.378341,
+          52.128155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Familiebegraafplaats Van Ommeren",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 1935,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.37772,
+          52.122884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Persijnhof met RK deel",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 1982,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.369559,
+          52.111668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 1906,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.372742,
+          52.111194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof Wassenaar",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.390865,
+          52.145325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK Kerkhof St. Willibrordus",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.390832,
+          52.13982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "RK kerkhof De Goede Herder",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "jaartal": 1942,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.368975,
+          52.118294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Wateringen",
+        "gemeente": "Westland",
+        "jaartal": 1930,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.270312,
+          52.026683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "St Jan de Doperbegraafplaats",
+        "plaats": "Wateringen",
+        "gemeente": "Westland",
+        "jaartal": 1819,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.280378,
+          52.026149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Westmaas",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1930,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.474849,
+          51.784799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Westmaas",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.474024,
+          51.787996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe algemene Begraafplaats",
+        "plaats": "Wijngaarden",
+        "gemeente": "Molenlanden",
+        "jaartal": 1984,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.793903,
+          51.845571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene Kerkhof",
+        "plaats": "Wijngaarden",
+        "gemeente": "Molenlanden",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.763384,
+          51.844817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Willige Langerak (Schoonhoven)",
+        "gemeente": "Krimpenerwaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.861077,
+          51.944843
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Gedenkt te Sterven",
+        "plaats": "Woubrugge",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": 1933,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.625566,
+          52.164925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Kerkhof",
+        "plaats": "Woubrugge",
+        "gemeente": "Kaag en Braassem",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.637685,
+          52.167038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijk kerkhof",
+        "plaats": "Zevenhoven",
+        "gemeente": "Nieuwkoop",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.783249,
+          52.18087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Zevenhuizen",
+        "gemeente": "Zuidplas",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.586503,
+          52.008884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Zevenhuizen",
+        "gemeente": "Zuidplas",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.581704,
+          52.012536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Binnenweg",
+        "plaats": "Zoetermeer",
+        "gemeente": "Zoetermeer",
+        "jaartal": 1957,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.50836,
+          52.050095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Hoflaan",
+        "plaats": "Zoetermeer",
+        "gemeente": "Zoetermeer",
+        "jaartal": 1981,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.461344,
+          52.066773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "H Nicolaaskerkhof",
+        "plaats": "Zoetermeer",
+        "gemeente": "Zoetermeer",
+        "jaartal": 1827,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.495295,
+          52.057096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude algemene kerkhof",
+        "plaats": "Zoetermeer",
+        "gemeente": "Zoetermeer",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.496121,
+          52.056421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Zoeterwoude-Dorp",
+        "gemeente": "Zoeterwoude",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.497016,
+          52.121324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Meerburg",
+        "plaats": "Zoeterwoude-Rijndijk",
+        "gemeente": "Zoeterwoude",
+        "jaartal": 1863,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.523984,
+          52.145157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Zuid-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1949,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.365865,
+          51.746304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Zuid-Beijerland",
+        "gemeente": "Hoeksche Waard",
+        "jaartal": 1829,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.367354,
+          51.749765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats St. Jans Onthoofding",
+        "plaats": "Zuidbuurt",
+        "gemeente": "Zoeterwoude",
+        "jaartal": 1817,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.504294,
+          52.108969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Zuidland",
+        "gemeente": "Nissewaard",
+        "jaartal": 1828,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.257297,
+          51.821181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Zuidland",
+        "gemeente": "Nissewaard",
+        "jaartal": 1888,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.253389,
+          51.820856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Zuidland",
+        "gemeente": "Nissewaard",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.259919,
+          51.822365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Algemene Begraafplaats",
+        "plaats": "Zuidland",
+        "gemeente": "Nissewaard",
+        "jaartal": 1952,
+        "jaartal_circa": true,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.256228,
+          51.818826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats Buitendorp",
+        "plaats": "Zwammerdam",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": 1938,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.720223,
+          52.103876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Zwammerdam",
+        "gemeente": "Alphen aan den Rijn",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.727484,
+          52.105376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Begraafplaats",
+        "plaats": "Zwartewaal",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.213609,
+          51.877887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "NH Kerkhof",
+        "plaats": "Zwartewaal",
+        "gemeente": "Voorne aan Zee",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.223714,
+          51.883991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Algemene Begraafplaats Groote Lindt",
+        "plaats": "Zwijndrecht",
+        "gemeente": "Zwijndrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.623897,
+          51.811886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Gemeentelijke Begraafplaats Zwijndrecht",
+        "plaats": "Zwijndrecht",
+        "gemeente": "Zwijndrecht",
+        "jaartal": 1937,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.631903,
+          51.821212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Oude Kerk",
+        "plaats": "Zwijndrecht",
+        "gemeente": "Zwijndrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.652871,
+          51.819103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Kerkhof Pietermankerk",
+        "plaats": "Zwijndrecht",
+        "gemeente": "Zwijndrecht",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.621729,
+          51.821006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Nieuwe Gemeentelijke Begraafplaats",
+        "plaats": "Zwijndrecht",
+        "gemeente": "Zwijndrecht",
+        "jaartal": 1991,
+        "jaartal_circa": false,
+        "periode": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.607208,
+          51.824836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "naam": "Oude kerkhof Scheveningen",
+        "plaats": "s-Gravenhage",
+        "gemeente": "Den Haag",
+        "jaartal": null,
+        "jaartal_circa": false,
+        "periode": "ME"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.273208,
+          52.106647
+        ]
+      }
+    }
+  ]
+}

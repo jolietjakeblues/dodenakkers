@@ -975,5 +975,103 @@
       "plaats": "Nootdorp",
       "afstand_m": 153.61
     }
+  },
+  "datering": {
+    "aantal": 448,
+    "aantal_met_jaartal": 306,
+    "aantal_met_alleen_periode": 112,
+    "aantal_onbekend": 30,
+    "histogram": [
+      {
+        "label": "Middeleeuws (periode bekend, geen jaartal)",
+        "aantal": 112
+      },
+      {
+        "label": "voor 1800",
+        "aantal": 18
+      },
+      {
+        "label": "1800-1849",
+        "aantal": 82
+      },
+      {
+        "label": "1850-1899",
+        "aantal": 79
+      },
+      {
+        "label": "1900-1949",
+        "aantal": 62
+      },
+      {
+        "label": "1950-1999",
+        "aantal": 52
+      },
+      {
+        "label": "2000-heden",
+        "aantal": 13
+      }
+    ],
+    "oudste": [
+      {
+        "naam": "Kerkhof",
+        "plaats": "Piershil",
+        "jaartal": 1524,
+        "circa": false
+      },
+      {
+        "naam": "Portugees-Joodse Begraafplaats",
+        "plaats": "Rotterdam",
+        "jaartal": 1613,
+        "circa": false
+      },
+      {
+        "naam": "NH kerkhof Cillaarshoek",
+        "plaats": "Strijen",
+        "jaartal": 1615,
+        "circa": false
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Den Bommel",
+        "jaartal": 1646,
+        "circa": false
+      },
+      {
+        "naam": "Joodse Begraafplaats Scheveningen (gemengd)",
+        "plaats": "'s-Gravenhage",
+        "jaartal": 1694,
+        "circa": false
+      },
+      {
+        "naam": "Joodse Begraafplaats Oostzeedijk (gemengd)",
+        "plaats": "Rotterdam",
+        "jaartal": 1696,
+        "circa": false
+      },
+      {
+        "naam": "H Adrianusbegraafplaats",
+        "plaats": "Langeraar",
+        "jaartal": 1719,
+        "circa": false
+      },
+      {
+        "naam": "NH Kerkhof",
+        "plaats": "Ter Heijde",
+        "jaartal": 1720,
+        "circa": false
+      },
+      {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Katwijk",
+        "jaartal": 1758,
+        "circa": false
+      },
+      {
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Schoonhoven",
+        "jaartal": 1767,
+        "circa": false
+      }
+    ]
   }
 }
