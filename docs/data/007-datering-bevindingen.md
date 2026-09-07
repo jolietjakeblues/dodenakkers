@@ -1,0 +1,96 @@
+# Data 007: datering - bevindingen
+
+Voor de domeinexpert: wat de nieuwe jaartal/periode-data (eigen bron,
+2026-09-07) oplevert, en waar voorzichtigheid op zijn plaats is. Technische
+achtergrond over de koppeling zelf staat in `scripts/analyse_spatial.py`
+(`nearest_datering()`) en `src/methode.html` (categorie 5); dit document
+gaat over de inhoudelijke uitkomst.
+
+## Dekking
+
+Van de 448 begraafplaatsen:
+
+- **287** hebben een exact jaartal;
+- **116** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
+- **45** hebben geen van beide (geen bruikbare match binnen 300m, of de
+  brondata zelf had niets ingevuld).
+
+Samen dus **403 van de 448 (90%)** met een jaartal of periode.
+
+## Verdeling over de tijd
+
+| Periode | Aantal |
+|---|---|
+| Middeleeuws (periode bekend, geen jaartal) | 116 |
+| voor 1829 | 62 |
+| 1829-1849 | 37 |
+| 1850-1899 | 70 |
+| 1900-1949 | 60 |
+| 1950-1999 | 47 |
+| 2000-heden | 11 |
+
+Dezelfde tabel staat als klikbare filter in het paneel en als balkjesgrafiek
+op de statistiekenpagina.
+
+## De cesuur van 1829
+
+De knip bij 1829 is bewust geen ronde eeuwgrens. Vanaf 1 januari 1829 was
+begraven in en rond de kerk binnen de bebouwde kom in Nederland wettelijk
+verboden (Koninklijk Besluit); plaatsen met meer dan duizend inwoners
+moesten een algemene begraafplaats buiten de bebouwde kom inrichten. Dat
+keerpunt is in onze eigen data ook terug te zien: 62 begraafplaatsen met een
+jaartal vóór 1829, tegenover 37 in de twintig jaar erna (1829-1849) - een
+duidelijke knik, geen toeval van de bucketgrenzen.
+
+## Oudste bekende begraafplaatsen
+
+| Jaartal | Naam | Plaats |
+|---|---|---|
+| 1524 | Gem. kerkhof | Piershil |
+| 1613 | Portugees-Joodse Begraafplaats | Rotterdam |
+| 1615 | Alg. begraafplaats | Cillaarshoek |
+| 1615 | NH Kerkhof Cillaarshoek | Strijen |
+| 1646 | NH Kerkhof | Den Bommel |
+| 1694 | Joodse begraafplaats | Den Haag |
+| 1696 | Joodse begraafplaats Oostzeedijk | Rotterdam |
+| 1719 | H Adrianusbegraafplaats | Langeraar |
+| 1720 | NH Kerkhof | Ter Heijde |
+| 1758 | Joodse begraafplaats | Katwijk aan den Rijn |
+
+De twee treffers op 1615 (Cillaarshoek/Strijen) zijn geen toeval in de data,
+maar een concreet voorbeeld van de matching-onzekerheid hieronder: twee
+dicht bij elkaar gelegen begraafplaatsen die hetzelfde, dichtstbijzijnde
+datering-punt toegewezen kregen. Het jaartal zelf kan best kloppen voor
+allebei (kleine plaatsen deelden destijds soms een gemeenschappelijke
+oorsprong), maar is niet apart geverifieerd per begraafplaats - de moeite
+waard om te controleren als dit ergens toe doet.
+
+## Betrouwbaarheid van de koppeling
+
+De koppeling loopt via het bezoekadres uit de brondata, gegeocodeerd met de
+PDOK Locatieserver en vervolgens gekoppeld aan de dichtstbijzijnde ingang
+van de hoofddataset (drempel 300m). Dat werkt in verreweg de meeste
+gevallen goed - 96% van de 448 valt binnen die drempel - maar twee dingen
+zijn de moeite van het weten waard:
+
+**Geen match gevonden voor 18 begraafplaatsen** (dus geen jaartal/periode
+getoond, ook al staat het misschien wel in de brondata): meestal plaatsen
+met meerdere begraafplaatsen dicht bij elkaar, waarbij het adres uit de
+brondata net bij een andere, niet in onze 448 voorkomende locatie
+uitkwam, of het brongegeven zelf ontbrak. Onder meer: Joodse begraafplaats
+(Strijen), Joodse begraafplaats (Vlaardingen), de Brielse begraafplaatsen
+(Nieuwe/Oude gem., RK), Begraafplaats De Dijk (Maassluis), Begraafplaats De
+Essenhof (Puttershoek).
+
+**13 matches op 200-300m** (dus wel getoond, maar met meer onzekerheid dan
+de gemiddelde 34m): de moeite waard om steekproefsgewijs te controleren of
+het jaartal echt bij het juiste terrein hoort. De verste (280m): Grafkelder
+Herkenrath (Monster, jaartal 1844). Volledige lijst op aanvraag.
+
+## Waar te vinden op de site
+
+- **Kaart**: jaartal/periode staan in het begraafplaats-popup (alleen als
+  bekend), en zijn te filteren via klikbare periode-balkjes onder "Filters".
+- **Statistieken**: histogram + tabel met de oudste bekende jaartallen.
+- **Methode**: `src/methode.html`, categorie 5, voor de volledige
+  toelichting op de koppelmethode en de bekende beperking.
