@@ -62,6 +62,23 @@ function plaatsNaam(p) {
   return p || "(onbekend)";
 }
 
+function histogramBars(buckets) {
+  const wrap = el("div", { class: "datering-histogram" });
+  const max = Math.max(1, ...buckets.map((b) => b.aantal));
+  for (const b of buckets) {
+    const row = el("div", { class: "histogram-row" });
+    row.appendChild(el("span", { class: "histogram-label", text: b.label }));
+    const barWrap = el("span", { class: "histogram-bar-wrap" });
+    const bar = el("span", { class: "histogram-bar" });
+    bar.style.width = `${Math.round((b.aantal / max) * 100)}%`;
+    barWrap.appendChild(bar);
+    row.appendChild(barWrap);
+    row.appendChild(el("span", { class: "histogram-count", text: fmt(b.aantal) }));
+    wrap.appendChild(row);
+  }
+  return wrap;
+}
+
 async function main() {
   const res = await fetch("../data/generated/statistieken.json");
   if (!res.ok) throw new Error(`statistieken.json: HTTP ${res.status}`);
@@ -256,6 +273,24 @@ async function main() {
       ]),
     ]
   );
+
+  // --- Datering (eigen laag, zie methode.html) ---
+  if (s.datering) {
+    const bekend = s.datering.aantal_met_jaartal + s.datering.aantal_met_alleen_periode;
+    renderSection(
+      document.getElementById("stats-datering"),
+      "Datering",
+      `Aanvullende data van de domeinexpert, zelfstandige laag los van de hoofddataset (zie methode.html). ${fmt(bekend)} van de ${fmt(s.datering.aantal)} punten hebben een jaartal of periode bekend.`,
+      [
+        histogramBars(s.datering.histogram),
+        el("h3", { text: "Oudste bekende jaartallen" }),
+        table(
+          ["Naam", "Plaats", "Jaartal"],
+          s.datering.oudste.map((p) => [p.naam, plaatsNaam(p.plaats), p.circa ? `circa ${p.jaartal}` : String(p.jaartal)])
+        ),
+      ]
+    );
+  }
 
   statusEl.textContent = "";
 }

@@ -41,6 +41,7 @@ FILES_TO_COPY = [
         REPO_ROOT / "data" / "generated" / "verdwenen-begraafplaatsen.geojson",
         SITE_DIR / "data" / "generated" / "verdwenen-begraafplaatsen.geojson",
     ),
+    (REPO_ROOT / "data" / "generated" / "datering.geojson", SITE_DIR / "data" / "generated" / "datering.geojson"),
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
     (REPO_ROOT / "data" / "rce" / "rijksmonumenten.geojson", SITE_DIR / "data" / "rce" / "rijksmonumenten.geojson"),
     (

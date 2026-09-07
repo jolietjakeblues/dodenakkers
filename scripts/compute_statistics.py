@@ -109,6 +109,63 @@ def nabijheid_tot_categorie(begraafplaatsen: list[dict], terrain_geoms: list, ri
     }
 
 
+# Histogrambuckets voor de datering-overzichten (wens van de opdrachtgever
+# na een xlsx van de domeinexpert, 2026-09-01) -- gebaseerd op de feitelijke
+# spreiding van de 306 bekende jaartallen (1524-2022, met een duidelijke
+# concentratie 1800-1949) plus een aparte bucket voor de 112 punten die
+# alleen "ME" (middeleeuws) als periode hebben, geen jaartal.
+DATERING_BUCKETS = [
+    ("Middeleeuws (periode bekend, geen jaartal)", None, None),
+    ("voor 1800", None, 1800),
+    ("1800-1849", 1800, 1850),
+    ("1850-1899", 1850, 1900),
+    ("1900-1949", 1900, 1950),
+    ("1950-1999", 1950, 2000),
+    ("2000-heden", 2000, None),
+]
+
+
+def datering_stats() -> dict | None:
+    """Zelfstandige datering-laag (data/generated/datering.geojson, zie
+    scripts/build_datering.py) -- geen koppeling aan de 448 begraafplaatsen
+    van de hoofddataset, dus hier ook los berekend, niet via `begraafplaatsen`
+    hierboven."""
+    path = GENERATED_DIR / "datering.geojson"
+    if not path.exists():
+        return None
+    punten = load(path)
+    props = [f["properties"] for f in punten]
+
+    met_jaartal = [p for p in props if p.get("jaartal")]
+    met_alleen_periode = [p for p in props if p.get("periode") and not p.get("jaartal")]
+    onbekend = len(props) - len(met_jaartal) - len(met_alleen_periode)
+
+    histogram = []
+    for label, lo, hi in DATERING_BUCKETS:
+        if lo is None and hi is None:
+            aantal = len(met_alleen_periode)
+        elif lo is None:
+            aantal = sum(1 for p in met_jaartal if p["jaartal"] < hi)
+        elif hi is None:
+            aantal = sum(1 for p in met_jaartal if p["jaartal"] >= lo)
+        else:
+            aantal = sum(1 for p in met_jaartal if lo <= p["jaartal"] < hi)
+        histogram.append({"label": label, "aantal": aantal})
+
+    oudste = sorted(met_jaartal, key=lambda p: p["jaartal"])[:10]
+    return {
+        "aantal": len(props),
+        "aantal_met_jaartal": len(met_jaartal),
+        "aantal_met_alleen_periode": len(met_alleen_periode),
+        "aantal_onbekend": onbekend,
+        "histogram": histogram,
+        "oudste": [
+            {"naam": p["naam"], "plaats": p["plaats"], "jaartal": p["jaartal"], "circa": p.get("jaartal_circa", False)}
+            for p in oudste
+        ],
+    }
+
+
 def main() -> None:
     begraafplaatsen = load(GENERATED_DIR / "analyse.geojson")
     rijksmonumenten = load(RCE_DIR / "rijksmonumenten.geojson")
@@ -273,6 +330,8 @@ def main() -> None:
         },
     }
 
+    datering = datering_stats()
+
     stats = {
         "basis": basis,
         "per_plaats": per_plaats,
@@ -285,6 +344,7 @@ def main() -> None:
         "kerk": kerk,
         "archeologie": archeologie,
         "ingangen": ingangen,
+        "datering": datering,
     }
 
     OUT_PATH.write_text(json.dumps(stats, indent=2, ensure_ascii=False), encoding="utf-8")

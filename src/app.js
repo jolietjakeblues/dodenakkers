@@ -35,6 +35,12 @@ const DATA = {
   // (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py), wens
   // van de opdrachtgever (2026-08-27) nadat de domeinexpert de KMZ deelde.
   verdwenen: "../data/generated/verdwenen-begraafplaatsen.geojson",
+  // Lazy, klein (448 punten): eigen xlsx van de domeinexpert met jaartal/
+  // periode per begraafplaats (data/Begraafplaatsen Zuid-Holland - datering.xlsx,
+  // scripts/build_datering.py), wens van de opdrachtgever (2026-09-01). Eigen
+  // gegeocodeerde laag, geen koppeling aan de hoofddataset -- zie de
+  // toelichting in scripts/build_datering.py en methode.html.
+  datering: "../data/generated/datering.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -540,6 +546,58 @@ async function main() {
     map.on("mouseleave", "verdwenen-punt", () => (map.getCanvas().style.cursor = ""));
     verdwenenLoaded = true;
     statusEl.textContent = `${verdwenen.features.length} verdwenen begraafplaatsen geladen.`;
+  });
+
+  // --- Datering (lazy, 448 punten) -- eigen xlsx van de domeinexpert met
+  // jaartal/periode per begraafplaats (scripts/build_datering.py). Eigen
+  // gegeocodeerde laag, geen koppeling aan de hoofddataset (de 448 rijen
+  // komen niet 1-op-1 overeen met onze 448 terreinen -- zie de toelichting
+  // in scripts/build_datering.py en methode.html), dus bewust een aparte
+  // laag i.p.v. een veld in het begraafplaats-popup.
+  let dateringLoaded = false;
+  document.getElementById("toggle-datering").addEventListener("change", async (e) => {
+    updateLegendActivity();
+    syncUrl();
+    if (!e.target.checked) {
+      if (dateringLoaded) map.setLayoutProperty("datering-punt", "visibility", "none");
+      return;
+    }
+    if (dateringLoaded) {
+      map.setLayoutProperty("datering-punt", "visibility", "visible");
+      return;
+    }
+    statusEl.textContent = "Datering laden…";
+    const datering = await loadJson(DATA.datering);
+    map.addSource("datering", { type: "geojson", data: datering });
+    map.addLayer({
+      id: "datering-punt",
+      type: "circle",
+      source: "datering",
+      paint: {
+        "circle-radius": 5,
+        "circle-color": "#9c36b5",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff",
+      },
+    });
+    map.on("click", "datering-punt", (ev) => {
+      const p = ev.features[0].properties;
+      new maplibregl.Popup()
+        .setLngLat(ev.lngLat)
+        .setHTML(
+          popupHtml(p.naam, [
+            ["Plaats", p.plaats],
+            ["Gemeente", p.gemeente],
+            ["Jaartal", p.jaartal ? (p.jaartal_circa ? `circa ${p.jaartal}` : String(p.jaartal)) : null],
+            ["Periode", p.periode],
+          ])
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "datering-punt", () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", "datering-punt", () => (map.getCanvas().style.cursor = ""));
+    dateringLoaded = true;
+    statusEl.textContent = `${datering.features.length} dateringspunten geladen.`;
   });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
@@ -1190,6 +1248,7 @@ async function main() {
     "toggle-onderzoeksgebieden": "arch",
     "toggle-chs-archeologie": "chsarch",
     "toggle-verdwenen": "verdwenen",
+    "toggle-datering": "datering",
   };
   // De twee monumenten-aard-sub-toggles staan standaard AAN (index.html) --
   // omgekeerde polariteit t.o.v. LAYER_TOGGLE_CODES hierboven (code aanwezig

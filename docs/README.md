@@ -76,7 +76,8 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - `scripts/export_statusconflicten.py` exporteert eventuele `geruimd`-statusconflicten naar `data/generated/statusconflicten.csv` (met CSV-regelnummers) zodat de domeinexpert ze handmatig kan annoteren; het bestand is momenteel leeg;
 - de filters in het paneel zijn twee groepen met andere combinatielogica: de drie status-checkboxes (geruimd/niet-geruimd/statusconflict) verbreden de selectie (OR/unie) omdat het elkaar uitsluitende toestanden van hetzelfde veld zijn, de drie erfgoed-checkboxes versmallen (AND) omdat een begraafplaats meerdere erfgoedrelaties tegelijk kan hebben -- zie de toelichting bij `applyFilters()` in `src/app.js`;
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
-- de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is.
+- de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
+- "Verdwenen begraafplaatsen" en "Datering" zijn zelfstandige, gegeocodeerde puntenlagen uit eigen bronnen van de domeinexpert (KMZ resp. xlsx), bewust zonder koppeling aan de 448 hoofdterreinen -- zie [methode.html](../src/methode.html) voor de vijf datacategorieën en waarom een koppeling per geval bewust is afgewezen.
 
 Voor de volledige chronologische geschiedenis van hoe dit tot stand kwam
 (elke wijziging met datum, aanleiding en de afwegingen erachter, inclusief
