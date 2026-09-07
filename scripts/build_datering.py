@@ -1,41 +1,43 @@
 #!/usr/bin/env python3
 """
 Verwerkt de datering-data van de domeinexpert (data/Begraafplaatsen
-Zuid-Holland - datering.xlsx, tabblad "Alle begraafplaatsen", 448 rijen)
-tot een aparte referentielaag voor de viewer.
+Zuid-Holland - datering.csv, 448 rijen) tot een aparte referentielaag voor
+de viewer.
 
 Waarom een aparte laag i.p.v. een veld op de bestaande 448 begraafplaatsen:
 geprobeerd is eerst een 1-op-1 koppeling te maken (naam+plaats, daarna
 adres-geocodering + ruimtelijke matching tegen de bestaande ingang-punten).
 De ruimtelijke matching werkt zelf goed (90% binnen 150m), maar legt bloot
-dat de 448 xlsx-rijen NIET 1-op-1 overeenkomen met onze 448 terreinen: een
-deel is een sub-onderdeel van een terrein dat wij als één geheel tellen (bv.
-een Joodse afdeling binnen een algemene begraafplaats, letterlijk dezelfde
-coördinaat), en een ander deel is een begraafplaats die niet in onze 448
-zit. Een 1-op-1 koppeling zou dus op ruim 20 plekken een verkeerde of
-misleidende suggestie van precisie geven -- zelfde valkuil als de
+dat de 448 brondata-rijen NIET 1-op-1 overeenkomen met onze 448 terreinen:
+een deel is een sub-onderdeel van een terrein dat wij als één geheel tellen
+(bv. een Joodse afdeling binnen een algemene begraafplaats, letterlijk
+dezelfde coördinaat), en een ander deel is een begraafplaats die niet in
+onze 448 zit. Een 1-op-1 koppeling zou dus op ruim 20 plekken een verkeerde
+of misleidende suggestie van precisie geven -- zelfde valkuil als de
 in_hoofddataset-heuristiek die eerder al bij de verdwenen-begraafplaatsen-
 laag is verwijderd (2026-08-31, zie docs/geschiedenis.md). Deze laag toont
 daarom de datering-punten op zichzelf, gegeocodeerd op het eigen adres uit
-de xlsx, zonder gepretendeerde koppeling aan de hoofddataset.
+de bron, zonder gepretendeerde koppeling aan de hoofddataset.
 
 Geocoding via de gratis PDOK Locatieserver (Bezoekadres + Huisnummer + PC +
 Plaats -> centroide_ll van het beste treffer, meestal postcode-niveau,
 ruim voldoende nauwkeurig om het juiste terrein te tonen).
 
-De bron-xlsx zelf staat NIET in de repository: naast de datering-kolommen
-bevat het werkblad ook Eigenaar/Contactpersoon/Telefoon/E-mail per
-begraafplaats (persoonsgegevens van derden, niet van dit project). Alleen
-het resultaat van dit script (data/generated/datering.geojson, dat enkel
-naam/plaats/gemeente/jaartal/periode bevat) wordt gecommit. Om dit script
-opnieuw te draaien is de originele xlsx van de domeinexpert lokaal nodig op
-het pad hieronder (XLSX_PATH).
+De bron was oorspronkelijk een xlsx met ook Contactpersoon/Telefoon/E-mail
+per begraafplaats (persoonsgegevens van derden) -- de domeinexpert heeft die
+zelf opgeschoond tot deze CSV (2026-09-07), zonder die kolommen. Wel nog
+Eigenaar/Postadres (van de beherende organisatie, geen privépersoon) en
+Ontwerp van (historische toeschrijving aan een landschapsarchitect, zelfde
+soort attributie als bij rijksmonumenten) -- dit script gebruikt sowieso
+alleen naam/adres/jaartal/circa/periode/gemeente, dus die kolommen komen
+nergens in de output terecht.
 
 Output:
   data/generated/datering.geojson
 """
 from __future__ import annotations
 
+import csv
 import json
 import re
 import time
@@ -43,28 +45,26 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-import openpyxl
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
-XLSX_PATH = REPO_ROOT / "data" / "Begraafplaatsen Zuid-Holland - datering.xlsx"
+CSV_PATH = REPO_ROOT / "data" / "Begraafplaatsen Zuid-Holland - datering.csv"
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 OUT_PATH = GENERATED_DIR / "datering.geojson"
 
 GEOCODE_URL = "https://api.pdok.nl/bzk/locatieserver/search/v3_1/free"
 POINT_PATTERN = re.compile(r"POINT\(([-\d.]+) ([-\d.]+)\)")
 
-# Kolomnummers (1-based) in het tabblad "Alle begraafplaatsen" -- de kop
-# "Plaats" komt twee keer voor (bezoekadres en postadres van de eigenaar),
-# dus positioneel gebruiken i.p.v. op kolomnaam opzoeken.
-COL_NAAM = 4
-COL_BEZOEKADRES = 7
-COL_HUISNUMMER = 8
-COL_PC = 10
-COL_PLAATS = 11
-COL_GEMEENTE = 12
-COL_JAARTAL = 26
-COL_CIRCA = 27
-COL_PERIODE = 28
+# Kolomindexen (0-based) in de bron-CSV -- "Plaats" komt twee keer voor
+# (bezoekadres en postadres van de eigenaar), dus positioneel gebruiken
+# i.p.v. op kolomnaam opzoeken.
+COL_NAAM = 1
+COL_BEZOEKADRES = 4
+COL_HUISNUMMER = 5
+COL_PC = 7
+COL_PLAATS = 8
+COL_GEMEENTE = 9
+COL_JAARTAL = 23
+COL_CIRCA = 24
+COL_PERIODE = 25
 
 
 def geocode(adres: str | None, huisnummer, postcode: str | None, plaats: str | None) -> tuple[float, float] | None:
@@ -85,23 +85,25 @@ def geocode(adres: str | None, huisnummer, postcode: str | None, plaats: str | N
 
 
 def main() -> None:
-    wb = openpyxl.load_workbook(XLSX_PATH, data_only=True)
-    ws = wb["Alle begraafplaatsen"]
+    with CSV_PATH.open(encoding="utf-8-sig") as f:
+        rows = list(csv.reader(f, delimiter="|"))
+    data_rows = rows[1:]
 
     punten = []
     geocode_mislukt = []
-    for r in range(2, ws.max_row + 1):
-        naam = ws.cell(row=r, column=COL_NAAM).value
+    for row in data_rows:
+        naam = row[COL_NAAM].strip()
         if not naam:
             continue
-        adres = ws.cell(row=r, column=COL_BEZOEKADRES).value
-        huisnummer = ws.cell(row=r, column=COL_HUISNUMMER).value
-        pc = ws.cell(row=r, column=COL_PC).value
-        plaats = ws.cell(row=r, column=COL_PLAATS).value
-        gemeente = ws.cell(row=r, column=COL_GEMEENTE).value
-        jaartal = ws.cell(row=r, column=COL_JAARTAL).value
-        circa = ws.cell(row=r, column=COL_CIRCA).value == "Ja"
-        periode = ws.cell(row=r, column=COL_PERIODE).value
+        adres = row[COL_BEZOEKADRES].strip() or None
+        huisnummer = row[COL_HUISNUMMER].strip() or None
+        pc = row[COL_PC].strip() or None
+        plaats = row[COL_PLAATS].strip() or None
+        gemeente = row[COL_GEMEENTE].strip() or None
+        jaartal_raw = row[COL_JAARTAL].strip()
+        jaartal = int(jaartal_raw) if jaartal_raw else None
+        circa = row[COL_CIRCA].strip() == "Ja"
+        periode = row[COL_PERIODE].strip() or None
 
         coords = geocode(adres, huisnummer, pc, plaats)
         time.sleep(0.03)  # de PDOK Locatieserver is een gratis, gedeelde dienst
@@ -130,7 +132,7 @@ def main() -> None:
         "type": "FeatureCollection",
         "waarschuwing": (
             "Bron: de domeinexpert (data/Begraafplaatsen Zuid-Holland - "
-            "datering.xlsx). Zelfstandige laag, geen 1-op-1 koppeling aan "
+            "datering.csv). Zelfstandige laag, geen 1-op-1 koppeling aan "
             "de 448 begraafplaatsen van de hoofddataset -- zie de "
             "toelichting in scripts/build_datering.py en methode.html. "
             "Locatie is gegeocodeerd op het bezoekadres (PDOK Locatieserver), "

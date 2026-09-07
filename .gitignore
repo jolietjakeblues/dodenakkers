@@ -4,9 +4,3 @@ node_modules/
 __pycache__/
 *.pyc
 .claude
-
-# Bron-xlsx voor scripts/build_datering.py bevat persoonsgegevens van derden
-# (Eigenaar/Contactpersoon/Telefoon/E-mail per begraafplaats) -- nooit
-# committen, zie de toelichting bovenaan dat script. Alleen het resultaat
-# (data/generated/datering.geojson) hoort in de repository.
-data/Begraafplaatsen Zuid-Holland - datering.xlsx

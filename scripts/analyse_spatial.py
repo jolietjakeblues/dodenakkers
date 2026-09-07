@@ -8,6 +8,8 @@ Input:
   data/rce/rijksmonumenten.geojson
   data/rce/archeologische-rijksmonumenten.geojson
   data/pdok/gemeenten-zuid-holland.geojson (scripts/fetch_gemeentegrenzen.py)
+  data/generated/datering.geojson (scripts/build_datering.py, optioneel -- draai dat
+    script eerst als de datering-koppeling ook bijgewerkt moet worden)
 
 Output:
   data/generated/analyse.geojson          (begraafplaatsen + erfgoedrelaties)
@@ -28,7 +30,7 @@ import json
 from pathlib import Path
 
 from pyproj import Transformer
-from shapely.geometry import shape, mapping
+from shapely.geometry import Point, shape, mapping
 from shapely.ops import transform
 from shapely.strtree import STRtree
 
@@ -42,6 +44,19 @@ PDOK_DIR = REPO_ROOT / "data" / "pdok"
 # verkennen welke afstand de juiste is, dus de dataset bewaart alvast tot
 # 250m aan ruwe afstanden -- de viewer filtert daarna client-side.
 RM_NEARBY_BUFFER_M = 250
+
+# Datering-koppeling (2026-09-07, wens van de opdrachtgever: "neem datum/
+# datering op in de originele popup"). data/generated/datering.geojson is een
+# los gegeocodeerd puntenbestand (scripts/build_datering.py, bezoekadres via
+# PDOK Locatieserver) zonder gegarandeerde 1-op-1 relatie tot deze 448
+# terreinen -- zie de toelichting in dat script. Nearest-match op de
+# ingang-coordinaat (net als het adres, meestal bij de hoofdingang), met een
+# afstandsdrempel: verificatie tijdens het bouwen liet zien dat 90% van de
+# gegeocodeerde adressen binnen 150m van de bijbehorende ingang valt, en 429
+# van de 448 (96%) binnen 300m -- daarboven wordt de kans op een verkeerde
+# (naburige) koppeling te groot. Geen match binnen de drempel = geen
+# datering getoond, in lijn met "eerder niet gevonden dan een foute match".
+DATERING_MATCH_THRESHOLD_M = 300
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
@@ -100,6 +115,25 @@ def classify_gemeente(terrain_rd, gemeenten_index: STRtree, gemeenten: list[dict
             return gemeenten[i]["properties"]["naam"]
     i = gemeenten_index.nearest(point)
     return gemeenten[i]["properties"]["naam"]
+
+
+def nearest_datering(ingang_rd, datering_index: STRtree, datering: list[dict], datering_geoms: list):
+    """Dichtstbijzijnde datering-punt bij de ingang-coordinaat, binnen
+    DATERING_MATCH_THRESHOLD_M. None als er geen datering-laag is geladen of
+    niets binnen de drempel valt -- zie de toelichting hierboven."""
+    if not datering_geoms or ingang_rd is None:
+        return None
+    i = datering_index.nearest(ingang_rd)
+    distance = ingang_rd.distance(datering_geoms[i])
+    if distance > DATERING_MATCH_THRESHOLD_M:
+        return None
+    props = datering[i]["properties"]
+    return {
+        "jaartal": props.get("jaartal"),
+        "jaartal_circa": props.get("jaartal_circa", False),
+        "periode": props.get("periode"),
+        "distance_m": round(distance, 1),
+    }
 
 
 def nearest_archeologie(terrain_rd, arch_index: STRtree, arch: list[dict], arch_geoms: list):
@@ -198,6 +232,8 @@ def main() -> None:
     rijksmonumenten_all = load_features(RCE_DIR / "rijksmonumenten.geojson")
     archeologisch = load_features(RCE_DIR / "archeologische-rijksmonumenten.geojson")
     gemeenten = load_features(PDOK_DIR / "gemeenten-zuid-holland.geojson")
+    datering_path = GENERATED_DIR / "datering.geojson"
+    datering = load_features(datering_path) if datering_path.exists() else []
 
     # "gebouwde rijksmonumenten" excludes the archeologisch subset -- those
     # are handled separately via the dedicated archeologische-rijksmonumenten
@@ -211,11 +247,13 @@ def main() -> None:
     arch_geoms = [to_rd_geom(f) for f in archeologisch]
     rm_geoms = [to_rd_geom(f) for f in rijksmonumenten_gebouwd]
     gemeenten_geoms = [to_rd_geom(f) for f in gemeenten]
+    datering_geoms = [to_rd_geom(f) for f in datering]
 
     gezichten_index = STRtree(gezichten_geoms)
     arch_index = STRtree(arch_geoms)
     rm_index = STRtree(rm_geoms)
     gemeenten_index = STRtree(gemeenten_geoms)
+    datering_index = STRtree(datering_geoms) if datering_geoms else None
 
     out_features = []
     stats = {
@@ -224,6 +262,7 @@ def main() -> None:
         "met_archeologie": 0,
         "met_rijksmonument_100m": 0,
         "met_rijksmonument_250m": 0,
+        "met_datering": 0,
     }
     gemeente_via_fallback = 0
 
@@ -238,6 +277,13 @@ def main() -> None:
         rep_point = terrain_rd.representative_point()
         if not any(gemeenten_geoms[i].contains(rep_point) for i in gemeenten_index.query(rep_point)):
             gemeente_via_fallback += 1
+
+        ingang_lon = feature["properties"].get("ingang_lon")
+        ingang_lat = feature["properties"].get("ingang_lat")
+        ingang_rd = transform(to_rd, Point(ingang_lon, ingang_lat)) if ingang_lon is not None and ingang_lat is not None else None
+        datering_match = nearest_datering(ingang_rd, datering_index, datering, datering_geoms) if datering_index else None
+        if datering_match:
+            stats["met_datering"] += 1
 
         if in_gezicht == "within":
             stats["within_gezicht"] += 1
@@ -259,6 +305,7 @@ def main() -> None:
         props["archeologische_rm_nearest"] = arch_nearest
         props["rijksmonument_count"] = len(rm_relations)
         props["rijksmonument_relations"] = rm_relations
+        props["datering"] = datering_match
 
         out_features.append({"type": "Feature", "properties": props, "geometry": feature["geometry"]})
 
@@ -278,6 +325,10 @@ def main() -> None:
     print(f"  rijksmonument binnen {RM_NEARBY_BUFFER_M}m (opgeslagen bereik voor de schuifregelaar): {stats['met_rijksmonument_250m']}")
     print(f"  rijksmonumenten zonder monument_aard (uitgesloten van gebouwd-set): {skipped_null_aard}")
     print(f"  gemeente via nearest-fallback i.p.v. directe puntligging: {gemeente_via_fallback}")
+    if datering:
+        print(f"  datering gekoppeld (binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
+    else:
+        print("  datering.geojson niet gevonden -- geen datering-koppeling (draai eerst scripts/build_datering.py)")
 
     write_audit(out_features, stats, skipped_null_aard)
 
