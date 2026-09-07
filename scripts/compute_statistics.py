@@ -110,14 +110,20 @@ def nabijheid_tot_categorie(begraafplaatsen: list[dict], terrain_geoms: list, ri
 
 
 # Histogrambuckets voor de datering-overzichten (wens van de opdrachtgever
-# na een xlsx van de domeinexpert, 2026-09-01) -- gebaseerd op de feitelijke
-# spreiding van de 306 bekende jaartallen (1524-2022, met een duidelijke
-# concentratie 1800-1949) plus een aparte bucket voor de 112 punten die
-# alleen "ME" (middeleeuws) als periode hebben, geen jaartal.
+# na een xlsx/csv van de domeinexpert, 2026-09-01) -- gebaseerd op de
+# feitelijke spreiding van de bekende jaartallen (1524-2022, met een
+# duidelijke concentratie 1800-1949) plus een aparte bucket voor punten die
+# alleen een periode ("Middeleeuwen") hebben, geen jaartal. De knip bij 1829
+# is bewust, geen ronde eeuwgrens: het Koninklijk Besluit van 1829 verbood
+# begraven in en rond de kerk binnen de bebouwde kom, de aanleiding voor de
+# aanleg van losse begraafplaatsen buiten de dorpskern (wens van de
+# opdrachtgever, 2026-09-07: "1829 is een watershed, die scheiding moet te
+# zien zijn"). Zelfde buckets als de datering-filter in src/app.js
+# (DATERING_BUCKETS) -- hou ze gesynchroniseerd als een van de twee wijzigt.
 DATERING_BUCKETS = [
     ("Middeleeuws (periode bekend, geen jaartal)", None, None),
-    ("voor 1800", None, 1800),
-    ("1800-1849", 1800, 1850),
+    ("voor 1829 (verbod op kerkbegraving)", None, 1829),
+    ("1829-1849", 1829, 1850),
     ("1850-1899", 1850, 1900),
     ("1900-1949", 1900, 1950),
     ("1950-1999", 1950, 2000),
@@ -125,43 +131,47 @@ DATERING_BUCKETS = [
 ]
 
 
-def datering_stats() -> dict | None:
-    """Zelfstandige datering-laag (data/generated/datering.geojson, zie
-    scripts/build_datering.py) -- geen koppeling aan de 448 begraafplaatsen
-    van de hoofddataset, dus hier ook los berekend, niet via `begraafplaatsen`
-    hierboven."""
-    path = GENERATED_DIR / "datering.geojson"
-    if not path.exists():
-        return None
-    punten = load(path)
-    props = [f["properties"] for f in punten]
+def datering_stats(begraafplaatsen: list[dict]) -> dict:
+    """Datering van de 448 begraafplaatsen zelf (via de nearest-match-koppeling
+    in scripts/analyse_spatial.py, properties["datering"]) -- dezelfde bron
+    als het jaartal/periode-veld in het begraafplaats-popup en de
+    datering-filter, dus deze cijfers kloppen 1-op-1 met wat de kaart toont."""
+    dateringen = [f["properties"].get("datering") for f in begraafplaatsen]
 
-    met_jaartal = [p for p in props if p.get("jaartal")]
-    met_alleen_periode = [p for p in props if p.get("periode") and not p.get("jaartal")]
-    onbekend = len(props) - len(met_jaartal) - len(met_alleen_periode)
+    met_jaartal = [d for d in dateringen if d and d.get("jaartal")]
+    met_alleen_periode = [d for d in dateringen if d and d.get("periode") and not d.get("jaartal")]
+    onbekend = len(dateringen) - len(met_jaartal) - len(met_alleen_periode)
 
     histogram = []
     for label, lo, hi in DATERING_BUCKETS:
         if lo is None and hi is None:
             aantal = len(met_alleen_periode)
         elif lo is None:
-            aantal = sum(1 for p in met_jaartal if p["jaartal"] < hi)
+            aantal = sum(1 for d in met_jaartal if d["jaartal"] < hi)
         elif hi is None:
-            aantal = sum(1 for p in met_jaartal if p["jaartal"] >= lo)
+            aantal = sum(1 for d in met_jaartal if d["jaartal"] >= lo)
         else:
-            aantal = sum(1 for p in met_jaartal if lo <= p["jaartal"] < hi)
+            aantal = sum(1 for d in met_jaartal if lo <= d["jaartal"] < hi)
         histogram.append({"label": label, "aantal": aantal})
 
-    oudste = sorted(met_jaartal, key=lambda p: p["jaartal"])[:10]
+    oudste_feats = sorted(
+        (f for f in begraafplaatsen if (f["properties"].get("datering") or {}).get("jaartal")),
+        key=lambda f: f["properties"]["datering"]["jaartal"],
+    )[:10]
     return {
-        "aantal": len(props),
+        "aantal": len(begraafplaatsen),
         "aantal_met_jaartal": len(met_jaartal),
         "aantal_met_alleen_periode": len(met_alleen_periode),
         "aantal_onbekend": onbekend,
         "histogram": histogram,
         "oudste": [
-            {"naam": p["naam"], "plaats": p["plaats"], "jaartal": p["jaartal"], "circa": p.get("jaartal_circa", False)}
-            for p in oudste
+            {
+                "naam": f["properties"]["naam"],
+                "plaats": f["properties"]["plaats"],
+                "jaartal": f["properties"]["datering"]["jaartal"],
+                "circa": f["properties"]["datering"].get("jaartal_circa", False),
+            }
+            for f in oudste_feats
         ],
     }
 
@@ -330,7 +340,7 @@ def main() -> None:
         },
     }
 
-    datering = datering_stats()
+    datering = datering_stats(begraafplaatsen)
 
     stats = {
         "basis": basis,

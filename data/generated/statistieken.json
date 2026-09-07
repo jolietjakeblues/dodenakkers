@@ -978,42 +978,42 @@
   },
   "datering": {
     "aantal": 448,
-    "aantal_met_jaartal": 306,
-    "aantal_met_alleen_periode": 112,
-    "aantal_onbekend": 30,
+    "aantal_met_jaartal": 287,
+    "aantal_met_alleen_periode": 116,
+    "aantal_onbekend": 45,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
-        "aantal": 112
+        "aantal": 116
       },
       {
-        "label": "voor 1800",
-        "aantal": 18
-      },
-      {
-        "label": "1800-1849",
-        "aantal": 82
-      },
-      {
-        "label": "1850-1899",
-        "aantal": 79
-      },
-      {
-        "label": "1900-1949",
+        "label": "voor 1829 (verbod op kerkbegraving)",
         "aantal": 62
       },
       {
+        "label": "1829-1849",
+        "aantal": 37
+      },
+      {
+        "label": "1850-1899",
+        "aantal": 70
+      },
+      {
+        "label": "1900-1949",
+        "aantal": 60
+      },
+      {
         "label": "1950-1999",
-        "aantal": 52
+        "aantal": 47
       },
       {
         "label": "2000-heden",
-        "aantal": 13
+        "aantal": 11
       }
     ],
     "oudste": [
       {
-        "naam": "Kerkhof",
+        "naam": "Gem. kerkhof",
         "plaats": "Piershil",
         "jaartal": 1524,
         "circa": false
@@ -1025,7 +1025,13 @@
         "circa": false
       },
       {
-        "naam": "NH kerkhof Cillaarshoek",
+        "naam": "Alg. begraafplaats",
+        "plaats": "Cillaarshoek",
+        "jaartal": 1615,
+        "circa": false
+      },
+      {
+        "naam": "NH Kerkhof Cillaarshoek",
         "plaats": "Strijen",
         "jaartal": 1615,
         "circa": false
@@ -1037,13 +1043,13 @@
         "circa": false
       },
       {
-        "naam": "Joodse Begraafplaats Scheveningen (gemengd)",
-        "plaats": "'s-Gravenhage",
+        "naam": "Joodse begraafplaats",
+        "plaats": "Den Haag",
         "jaartal": 1694,
         "circa": false
       },
       {
-        "naam": "Joodse Begraafplaats Oostzeedijk (gemengd)",
+        "naam": "Joodse begraafplaats Oostzeedijk",
         "plaats": "Rotterdam",
         "jaartal": 1696,
         "circa": false
@@ -1061,15 +1067,9 @@
         "circa": false
       },
       {
-        "naam": "Joodse Begraafplaats",
-        "plaats": "Katwijk",
+        "naam": "Joodse begraafplaats",
+        "plaats": "Katwijk aan den Rijn",
         "jaartal": 1758,
-        "circa": false
-      },
-      {
-        "naam": "Joodse Begraafplaats",
-        "plaats": "Schoonhoven",
-        "jaartal": 1767,
         "circa": false
       }
     ]

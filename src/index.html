@@ -58,7 +58,6 @@
       <label><input type="checkbox" id="toggle-onderzoeksgebieden" /> Archeologische onderzoeksgebieden <span class="hint">(22.254, kan traag zijn)</span></label>
       <label><input type="checkbox" id="toggle-chs-archeologie" /> Archeologische terreinen van provinciaal belang <span class="hint">(662, provincie ZH)</span></label>
       <label><input type="checkbox" id="toggle-verdwenen" /> Verdwenen begraafplaatsen <span class="hint">(92, bron: de domeinexpert)</span></label>
-      <label><input type="checkbox" id="toggle-datering" /> Datering <span class="hint">(448, bron: de domeinexpert)</span></label>
     </details>
 
     <details class="panel-section" open>
@@ -78,6 +77,11 @@
         <input type="range" id="rm-threshold" min="0" max="2" step="1" value="2" aria-label="Drempelafstand rijksmonument-filter" />
         <span id="rm-threshold-label">&le;100m</span>
       </div>
+
+      <h3 class="filter-group-heading">Datering <span class="hint">(meerdere aanklikken toont ze samen)</span></h3>
+      <p class="hint">Jaartal/periode uit een aparte bron van de domeinexpert, gekoppeld op het dichtstbijzijnde adres (zie <a href="methode.html">methode</a>). 1829: vanaf dat jaar was begraven in en rond de kerk in steden wettelijk verboden, een keerpunt zichtbaar in de eerste twee balken.</p>
+      <div id="datering-filter"></div>
+      <p class="hint" id="datering-filter-summary"></p>
       <p class="hint threshold-hint">"Annex (grenst aan)" betekent grenscontact, ongeacht deze drempel &mdash; de drempel bepaalt alleen tot hoever losstaande (niet-rakende) monumenten worden meegeteld.</p>
     </details>
 
@@ -110,7 +114,6 @@
       <div class="legend-item" data-layer="toggle-onderzoeksgebieden"><span class="swatch swatch-onderzoeksgebied"></span> Archeologisch onderzoeksgebied</div>
       <div class="legend-item" data-layer="toggle-chs-archeologie"><span class="swatch swatch-chs"></span> Archeologisch terrein van provinciaal belang</div>
       <div class="legend-item" data-layer="toggle-verdwenen"><span class="swatch dot swatch-verdwenen"></span> Verdwenen begraafplaats</div>
-      <div class="legend-item" data-layer="toggle-datering"><span class="swatch dot swatch-datering"></span> Datering</div>
       <p class="hint">Vervaagde items staan uit &mdash; vink de bijbehorende laag aan onder "Lagen" om ze te tonen.</p>
       <p class="hint">BGT en kadastrale percelen (BRK) tonen pas beeld vanaf sterk ingezoomd (straat-/pandniveau) &mdash; op provincie- of stadsschaal geeft PDOK daar bewust een lege tegel voor terug, geen storing.</p>
     </details>

@@ -68,7 +68,13 @@
             "relation": "25-100m",
             "distance_m": 99.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1909,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 40.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -180,7 +186,13 @@
             "relation": "100-250m",
             "distance_m": 222.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 9.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -254,7 +266,13 @@
           "distance_m": 9019.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 14.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -343,7 +361,13 @@
             "relation": "25-100m",
             "distance_m": 82.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 38.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -546,7 +570,13 @@
             "relation": "0-25m",
             "distance_m": 5.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1873,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 7.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -624,7 +654,13 @@
           "distance_m": 8842.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1809,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -833,7 +869,13 @@
             "relation": "100-250m",
             "distance_m": 202.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 19.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -1023,7 +1065,13 @@
             "relation": "100-250m",
             "distance_m": 243.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1781,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 52.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -1177,7 +1225,13 @@
             "relation": "100-250m",
             "distance_m": 246.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1888,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -1518,7 +1572,13 @@
             "relation": "100-250m",
             "distance_m": 249.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1827,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 65.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -1672,7 +1732,13 @@
             "relation": "100-250m",
             "distance_m": 238.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1868,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 23.4
+        }
       },
       "geometry": {
         "type": "GeometryCollection",
@@ -1817,7 +1883,13 @@
             "relation": "25-100m",
             "distance_m": 56.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 9.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -2014,7 +2086,13 @@
             "relation": "100-250m",
             "distance_m": 188.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1891,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 123.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -2192,7 +2270,13 @@
             "relation": "100-250m",
             "distance_m": 238.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1780,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -2513,7 +2597,13 @@
             "relation": "100-250m",
             "distance_m": 239.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 87.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -2855,7 +2945,13 @@
             "relation": "100-250m",
             "distance_m": 225.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 0.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -2969,7 +3065,13 @@
           "distance_m": 1032.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1920,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 6.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -3242,7 +3344,13 @@
             "relation": "100-250m",
             "distance_m": 247.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 42.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -3455,7 +3563,13 @@
             "relation": "100-250m",
             "distance_m": 247.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1694,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 11.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -3636,7 +3750,13 @@
             "relation": "25-100m",
             "distance_m": 47.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 52.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -3881,7 +4001,13 @@
             "relation": "100-250m",
             "distance_m": 194.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1871,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -3985,7 +4111,13 @@
             "relation": "100-250m",
             "distance_m": 225.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 59.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4119,7 +4251,13 @@
             "relation": "25-100m",
             "distance_m": 56.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4241,7 +4379,13 @@
             "relation": "100-250m",
             "distance_m": 104.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1801,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 20.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4345,7 +4489,13 @@
             "relation": "100-250m",
             "distance_m": 169.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1894,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 68.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4528,7 +4678,13 @@
             "relation": "100-250m",
             "distance_m": 238.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1814,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 6.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4704,7 +4860,13 @@
             "relation": "100-250m",
             "distance_m": 200.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 8.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4810,7 +4972,13 @@
           "distance_m": 2345.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1991,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 81.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -4920,7 +5088,13 @@
             "relation": "25-100m",
             "distance_m": 94.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 30.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5056,7 +5230,13 @@
             "relation": "25-100m",
             "distance_m": 29.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1824,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 75.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5166,7 +5346,13 @@
             "relation": "0-25m",
             "distance_m": 14.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 26.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5300,7 +5486,13 @@
             "relation": "0-25m",
             "distance_m": 5.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 7.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5430,7 +5622,13 @@
           "distance_m": 1447.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 183.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5606,7 +5804,13 @@
             "relation": "100-250m",
             "distance_m": 201.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 50.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5765,7 +5969,13 @@
             "relation": "100-250m",
             "distance_m": 216.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -5890,7 +6100,13 @@
             "relation": "100-250m",
             "distance_m": 231.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1758,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6014,7 +6230,13 @@
             "relation": "100-250m",
             "distance_m": 248.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1911,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6174,7 +6396,13 @@
             "relation": "100-250m",
             "distance_m": 240.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1758,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 124.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6276,7 +6504,13 @@
             "relation": "100-250m",
             "distance_m": 192.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1952,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 82.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6445,7 +6679,13 @@
             "relation": "100-250m",
             "distance_m": 101.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1791,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6546,7 +6786,13 @@
             "relation": "0-25m",
             "distance_m": 5.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6703,7 +6949,13 @@
             "relation": "25-100m",
             "distance_m": 29.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 37.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6869,7 +7121,13 @@
             "relation": "100-250m",
             "distance_m": 231.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1893,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 54.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -6999,7 +7257,13 @@
           "distance_m": 122.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1942,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 13.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -7073,7 +7337,13 @@
           "distance_m": 65.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1940,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 26.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -7917,7 +8187,13 @@
             "relation": "100-250m",
             "distance_m": 245.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1813,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 3.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -8153,7 +8429,13 @@
             "relation": "100-250m",
             "distance_m": 198.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -8289,7 +8571,13 @@
             "relation": "100-250m",
             "distance_m": 184.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1910,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 26.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -8669,7 +8957,13 @@
             "relation": "100-250m",
             "distance_m": 225.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 46.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -8934,7 +9228,13 @@
             "relation": "100-250m",
             "distance_m": 235.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 208.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9051,7 +9351,13 @@
             "relation": "100-250m",
             "distance_m": 242.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1827,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 47.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9129,7 +9435,13 @@
           "distance_m": 3196.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1931,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 261.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9211,7 +9523,13 @@
             "relation": "intersects",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 31.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9341,7 +9659,13 @@
           "distance_m": 6937.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1929,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 149.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9461,7 +9785,13 @@
             "relation": "100-250m",
             "distance_m": 152.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1931,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 20.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9591,7 +9921,13 @@
             "relation": "100-250m",
             "distance_m": 129.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 64.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9745,7 +10081,13 @@
             "relation": "100-250m",
             "distance_m": 216.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 33.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9878,7 +10220,13 @@
             "relation": "100-250m",
             "distance_m": 225.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 86.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -9974,7 +10322,13 @@
             "relation": "100-250m",
             "distance_m": 118.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 11.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -10638,7 +10992,13 @@
             "relation": "100-250m",
             "distance_m": 240.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 32.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -10760,7 +11120,13 @@
           "distance_m": 9394.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -10850,7 +11216,13 @@
             "relation": "0-25m",
             "distance_m": 5.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 20.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -10952,7 +11324,13 @@
           "distance_m": 2181.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1961,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11042,7 +11420,13 @@
           "distance_m": 2811.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1865,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 41.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11168,7 +11552,13 @@
             "relation": "25-100m",
             "distance_m": 39.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 43.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11270,7 +11660,13 @@
           "distance_m": 11487.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1920,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 65.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11360,7 +11756,13 @@
           "distance_m": 7062.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1923,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11470,7 +11872,13 @@
             "relation": "100-250m",
             "distance_m": 222.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1916,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 35.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11591,7 +11999,13 @@
             "relation": "100-250m",
             "distance_m": 248.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1820,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 29.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11698,7 +12112,13 @@
             "relation": "100-250m",
             "distance_m": 220.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1821,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 70.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11784,7 +12204,13 @@
           "distance_m": 4326.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1790,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -11887,7 +12313,13 @@
             "relation": "intersects",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1935,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 31.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12000,7 +12432,13 @@
             "relation": "100-250m",
             "distance_m": 178.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 20.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12168,7 +12606,13 @@
             "relation": "100-250m",
             "distance_m": 247.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 20.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12264,7 +12708,13 @@
             "relation": "100-250m",
             "distance_m": 246.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12392,7 +12842,13 @@
             "relation": "100-250m",
             "distance_m": 146.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1916,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 159.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12488,7 +12944,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1937,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 10.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12594,7 +13056,13 @@
           "distance_m": 2591.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1972,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 163.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12668,7 +13136,13 @@
           "distance_m": 2333.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1972,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 127.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12801,7 +13275,13 @@
             "relation": "100-250m",
             "distance_m": 239.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1917,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -12919,7 +13399,13 @@
           "distance_m": 8816.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1864,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 13.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -13086,7 +13572,13 @@
             "relation": "0-25m",
             "distance_m": 6.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1832,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 14.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -13298,7 +13790,13 @@
             "relation": "100-250m",
             "distance_m": 190.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1837,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 23.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -13380,7 +13878,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1895,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 6.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -13469,7 +13973,13 @@
             "relation": "100-250m",
             "distance_m": 243.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1851,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 46.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -13567,7 +14077,13 @@
             "relation": "100-250m",
             "distance_m": 202.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 173.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -14530,7 +15046,13 @@
             "relation": "100-250m",
             "distance_m": 249.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 34.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -15215,7 +15737,13 @@
             "relation": "100-250m",
             "distance_m": 248.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1767,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 10.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -15668,7 +16196,13 @@
             "relation": "100-250m",
             "distance_m": 249.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 139.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -15871,7 +16405,13 @@
             "relation": "100-250m",
             "distance_m": 234.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1872,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -15978,7 +16518,13 @@
             "relation": "100-250m",
             "distance_m": 188.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 17.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -16096,7 +16642,8 @@
           "distance_m": 4563.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -16192,7 +16739,13 @@
             "relation": "100-250m",
             "distance_m": 144.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1870,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 34.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -16410,7 +16963,13 @@
             "relation": "100-250m",
             "distance_m": 248.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -16556,7 +17115,13 @@
             "relation": "100-250m",
             "distance_m": 118.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1820,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -16652,7 +17217,13 @@
             "relation": "100-250m",
             "distance_m": 249.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -16833,7 +17404,8 @@
             "relation": "100-250m",
             "distance_m": 243.2
           }
-        ]
+        ],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -16937,7 +17509,13 @@
             "relation": "100-250m",
             "distance_m": 238.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 265.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17075,7 +17653,13 @@
             "relation": "100-250m",
             "distance_m": 248.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1982,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 36.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17218,7 +17802,13 @@
             "relation": "100-250m",
             "distance_m": 241.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1982,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 65.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17357,7 +17947,13 @@
             "relation": "100-250m",
             "distance_m": 164.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1942,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 36.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17481,7 +18077,13 @@
             "relation": "100-250m",
             "distance_m": 144.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1827,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 37.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17766,7 +18368,13 @@
             "relation": "100-250m",
             "distance_m": 229.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 90.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17920,7 +18528,13 @@
           "distance_m": 5310.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1720,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18038,7 +18652,13 @@
             "relation": "25-100m",
             "distance_m": 63.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 38.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18136,7 +18756,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1844,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 280.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18262,7 +18888,13 @@
             "relation": "0-25m",
             "distance_m": 9.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1856,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18380,7 +19012,13 @@
           "distance_m": 4666.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1793,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 30.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18466,7 +19104,13 @@
           "distance_m": 4160.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1865,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 7.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18706,7 +19350,13 @@
             "relation": "100-250m",
             "distance_m": 245.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 188.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18788,7 +19438,13 @@
             "relation": "0-25m",
             "distance_m": 15.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1873,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 70.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -18982,7 +19638,13 @@
           "distance_m": 5183.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 91.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -19099,7 +19761,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1882,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 26.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -19248,7 +19916,13 @@
             "relation": "100-250m",
             "distance_m": 142.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1867,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 83.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -19378,7 +20052,13 @@
             "relation": "25-100m",
             "distance_m": 34.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1858,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 13.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -19759,7 +20439,13 @@
             "relation": "100-250m",
             "distance_m": 246.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 38.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -19872,7 +20558,13 @@
             "relation": "0-25m",
             "distance_m": 4.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20065,7 +20757,13 @@
             "relation": "100-250m",
             "distance_m": 113.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 59.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20231,7 +20929,13 @@
             "relation": "25-100m",
             "distance_m": 35.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1863,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 43.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20355,7 +21059,13 @@
             "relation": "100-250m",
             "distance_m": 140.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 15.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20516,7 +21226,13 @@
             "relation": "100-250m",
             "distance_m": 143.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1880,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 11.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20598,7 +21314,13 @@
           "distance_m": 12726.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1956,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 94.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20691,7 +21413,13 @@
             "relation": "0-25m",
             "distance_m": 19.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1646,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 30.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -20832,7 +21560,13 @@
             "relation": "100-250m",
             "distance_m": 217.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1867,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 104.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21029,7 +21763,13 @@
             "relation": "100-250m",
             "distance_m": 118.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1867,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21133,7 +21873,13 @@
             "relation": "100-250m",
             "distance_m": 180.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1810,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 19.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21219,7 +21965,13 @@
           "distance_m": 17112.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1953,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 45.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21316,7 +22068,13 @@
             "relation": "25-100m",
             "distance_m": 80.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1849,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21529,7 +22287,13 @@
             "relation": "100-250m",
             "distance_m": 199.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 9.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -21715,7 +22479,8 @@
           "distance_m": 15395.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -21857,7 +22622,13 @@
           "distance_m": 2357.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1857,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 38.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -22011,7 +22782,13 @@
             "relation": "100-250m",
             "distance_m": 246.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1840,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 134.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -22173,7 +22950,13 @@
           "distance_m": 3138.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1845,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 24.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -22255,7 +23038,13 @@
             "relation": "100-250m",
             "distance_m": 109.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1969,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 176.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -22353,7 +23142,13 @@
           "distance_m": 1049.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1812,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 72.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -23247,7 +24042,13 @@
             "relation": "100-250m",
             "distance_m": 249.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1878,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 116.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -24048,7 +24849,13 @@
             "relation": "100-250m",
             "distance_m": 248.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 51.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -24146,7 +24953,8 @@
           "distance_m": 5633.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -24272,7 +25080,8 @@
             "relation": "100-250m",
             "distance_m": 242.1
           }
-        ]
+        ],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -24446,7 +25255,8 @@
             "relation": "100-250m",
             "distance_m": 164.6
           }
-        ]
+        ],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -24555,7 +25365,13 @@
             "relation": "100-250m",
             "distance_m": 171.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1817,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 51.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -24684,7 +25500,13 @@
             "relation": "25-100m",
             "distance_m": 29.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1819,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 41.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -24801,7 +25623,13 @@
             "relation": "100-250m",
             "distance_m": 236.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1981,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 45.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25183,7 +26011,13 @@
             "relation": "100-250m",
             "distance_m": 124.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1827,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 48.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25293,7 +26127,13 @@
             "relation": "100-250m",
             "distance_m": 199.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 18.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25415,7 +26255,13 @@
           "distance_m": 8170.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1957,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 90.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25529,7 +26375,13 @@
           "distance_m": 13321.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1867,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 24.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25619,7 +26471,13 @@
             "relation": "0-25m",
             "distance_m": 5.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25765,7 +26623,13 @@
           "distance_m": 9033.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1931,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25855,7 +26719,13 @@
             "relation": "0-25m",
             "distance_m": 8.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 23.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26003,7 +26873,13 @@
             "relation": "25-100m",
             "distance_m": 27.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1719,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 43.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26113,7 +26989,8 @@
           "distance_m": 2137.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -26195,7 +27072,13 @@
             "relation": "intersects",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 43.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26281,7 +27164,13 @@
           "distance_m": 11805.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1900,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 77.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26383,7 +27272,13 @@
           "distance_m": 11188.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 40.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26521,7 +27416,13 @@
           "distance_m": 11009.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1925,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 49.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26643,7 +27544,13 @@
           "distance_m": 7882.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1952,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 24.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26797,7 +27704,13 @@
           "distance_m": 7841.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26895,7 +27808,13 @@
             "relation": "25-100m",
             "distance_m": 44.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1817,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 57.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27043,7 +27962,13 @@
             "relation": "100-250m",
             "distance_m": 121.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 53.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27191,7 +28116,13 @@
             "relation": "100-250m",
             "distance_m": 117.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1976,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27299,7 +28230,13 @@
             "relation": "25-100m",
             "distance_m": 59.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 88.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27389,7 +28326,13 @@
           "distance_m": 2728.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1924,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 131.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27545,7 +28488,13 @@
             "relation": "100-250m",
             "distance_m": 243.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1884,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27671,7 +28620,13 @@
           "distance_m": 5522.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1852,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 25.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27745,7 +28700,13 @@
           "distance_m": 7549.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1914,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 208.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27834,7 +28795,13 @@
             "relation": "100-250m",
             "distance_m": 210.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1890,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 9.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -27978,7 +28945,13 @@
             "relation": "100-250m",
             "distance_m": 190.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1832,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 137.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -28076,7 +29049,13 @@
             "relation": "100-250m",
             "distance_m": 174.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2012,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 19.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -28322,7 +29301,13 @@
             "relation": "100-250m",
             "distance_m": 235.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1928,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -28418,7 +29403,13 @@
             "relation": "0-25m",
             "distance_m": 21.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 86.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -28524,7 +29515,13 @@
             "relation": "25-100m",
             "distance_m": 92.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1925,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 40.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -28630,7 +29627,8 @@
           "distance_m": 155.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -28756,7 +29754,8 @@
           "distance_m": 151.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -28901,7 +29900,13 @@
             "relation": "100-250m",
             "distance_m": 152.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 26.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29007,7 +30012,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1821,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 35.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29113,7 +30124,13 @@
             "relation": "0-25m",
             "distance_m": 11.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29267,7 +30284,13 @@
             "relation": "100-250m",
             "distance_m": 248.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29364,7 +30387,13 @@
             "relation": "100-250m",
             "distance_m": 167.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1872,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29446,7 +30475,13 @@
           "distance_m": 487.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1832,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 47.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29559,7 +30594,13 @@
             "relation": "100-250m",
             "distance_m": 134.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1979,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 46.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29653,7 +30694,13 @@
             "relation": "100-250m",
             "distance_m": 216.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 267.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29731,7 +30778,8 @@
           "distance_m": 7285.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -29845,7 +30893,13 @@
           "distance_m": 7288.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 75.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29938,7 +30992,13 @@
             "relation": "100-250m",
             "distance_m": 213.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1900,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30032,7 +31092,13 @@
             "relation": "25-100m",
             "distance_m": 73.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 117.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30159,7 +31225,13 @@
             "relation": "100-250m",
             "distance_m": 185.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 12.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30288,7 +31360,13 @@
             "relation": "100-250m",
             "distance_m": 154.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1868,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 14.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30402,7 +31480,13 @@
           "distance_m": 10455.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 49.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30568,7 +31652,13 @@
           "distance_m": 1259.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1876,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 32.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30669,7 +31759,13 @@
             "relation": "100-250m",
             "distance_m": 237.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1873,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 34.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30777,7 +31873,13 @@
             "relation": "25-100m",
             "distance_m": 38.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 19.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30930,7 +32032,13 @@
             "relation": "25-100m",
             "distance_m": 77.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1880,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 68.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31004,7 +32112,8 @@
           "distance_m": 4043.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -31140,7 +32249,13 @@
             "relation": "100-250m",
             "distance_m": 159.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 13.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31234,7 +32349,13 @@
             "relation": "100-250m",
             "distance_m": 134.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31312,7 +32433,13 @@
           "distance_m": 4974.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 161.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31386,7 +32513,13 @@
           "distance_m": 4331.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1976,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 214.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31476,7 +32609,13 @@
           "distance_m": 7214.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1982,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 97.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31708,7 +32847,13 @@
             "relation": "100-250m",
             "distance_m": 235.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 77.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31814,7 +32959,13 @@
             "relation": "100-250m",
             "distance_m": 185.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1874,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 10.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -31925,7 +33076,13 @@
             "relation": "100-250m",
             "distance_m": 104.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1834,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32007,7 +33164,13 @@
             "relation": "100-250m",
             "distance_m": 174.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1900,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 53.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32108,7 +33271,13 @@
             "relation": "100-250m",
             "distance_m": 142.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1858,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 29.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32214,7 +33383,13 @@
           "distance_m": 8338.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1893,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 10.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32429,7 +33604,13 @@
             "relation": "100-250m",
             "distance_m": 243.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1825,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 34.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32519,7 +33700,13 @@
             "relation": "100-250m",
             "distance_m": 191.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1870,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 106.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32640,7 +33827,13 @@
             "relation": "100-250m",
             "distance_m": 172.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 29.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32722,7 +33915,13 @@
             "relation": "25-100m",
             "distance_m": 85.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1874,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 71.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32857,7 +34056,13 @@
             "relation": "100-250m",
             "distance_m": 248.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 78.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33029,7 +34234,13 @@
             "relation": "100-250m",
             "distance_m": 225.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 22.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33223,7 +34434,13 @@
             "relation": "100-250m",
             "distance_m": 215.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33350,7 +34567,13 @@
             "relation": "25-100m",
             "distance_m": 36.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 10.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33448,7 +34671,13 @@
           "distance_m": 9197.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1938,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 56.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33546,7 +34775,13 @@
           "distance_m": 6721.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1965,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 78.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33674,7 +34909,13 @@
             "relation": "100-250m",
             "distance_m": 172.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1868,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33748,7 +34989,13 @@
           "distance_m": 8298.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1875,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33867,7 +35114,13 @@
             "relation": "100-250m",
             "distance_m": 158.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -33945,7 +35198,13 @@
           "distance_m": 11198.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 151.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34047,7 +35306,13 @@
             "relation": "100-250m",
             "distance_m": 168.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 14.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34153,7 +35418,13 @@
             "relation": "100-250m",
             "distance_m": 177.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1916,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 25.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34338,7 +35609,13 @@
             "relation": "100-250m",
             "distance_m": 230.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1796,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34428,7 +35705,13 @@
           "distance_m": 10916.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1996,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 113.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34517,7 +35800,13 @@
             "relation": "100-250m",
             "distance_m": 245.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1847,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 18.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34599,7 +35888,13 @@
             "relation": "100-250m",
             "distance_m": 235.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1926,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 48.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34699,7 +35994,13 @@
             "relation": "100-250m",
             "distance_m": 246.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1863,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 44.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -34838,7 +36139,13 @@
             "relation": "100-250m",
             "distance_m": 240.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1865,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 50.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -35038,7 +36345,13 @@
             "relation": "100-250m",
             "distance_m": 246.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1865,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 61.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -35400,7 +36713,13 @@
             "relation": "100-250m",
             "distance_m": 200.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 53.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -35542,7 +36861,13 @@
             "relation": "25-100m",
             "distance_m": 71.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1947,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -35735,7 +37060,13 @@
             "relation": "100-250m",
             "distance_m": 143.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 33.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -35955,7 +37286,13 @@
             "relation": "100-250m",
             "distance_m": 249.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 203.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36061,7 +37398,13 @@
             "relation": "0-25m",
             "distance_m": 9.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 19.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36159,7 +37502,13 @@
             "relation": "100-250m",
             "distance_m": 125.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1929,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 272.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36279,7 +37628,13 @@
             "relation": "25-100m",
             "distance_m": 95.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 10.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36373,7 +37728,13 @@
           "distance_m": 3093.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1835,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 13.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36473,7 +37834,13 @@
             "relation": "100-250m",
             "distance_m": 223.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 119.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36724,7 +38091,13 @@
             "relation": "100-250m",
             "distance_m": 245.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 34.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36854,7 +38227,13 @@
           "distance_m": 3937.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1933,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 35.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -36944,7 +38323,13 @@
             "relation": "25-100m",
             "distance_m": 41.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37103,7 +38488,13 @@
             "relation": "100-250m",
             "distance_m": 228.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1773,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37251,7 +38642,13 @@
             "relation": "100-250m",
             "distance_m": 147.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1886,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 51.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37365,7 +38762,13 @@
           "distance_m": 4979.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1802,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 3.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37447,7 +38850,13 @@
           "distance_m": 5626.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1938,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 34.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37765,7 +39174,13 @@
           "distance_m": 12534.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 10.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -37923,7 +39338,13 @@
           "distance_m": 13627.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1826,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38033,7 +39454,13 @@
             "relation": "25-100m",
             "distance_m": 47.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1819,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 69.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38167,7 +39594,13 @@
             "relation": "100-250m",
             "distance_m": 135.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 44.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38273,7 +39706,13 @@
           "distance_m": 1107.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1874,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 13.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38363,7 +39802,13 @@
             "relation": "25-100m",
             "distance_m": 99.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1827,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 52.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38537,7 +39982,13 @@
             "relation": "100-250m",
             "distance_m": 192.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 23.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38627,7 +40078,13 @@
           "distance_m": 1793.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1932,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 27.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38701,7 +40158,13 @@
           "distance_m": 2347.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1915,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 175.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38840,7 +40303,13 @@
             "relation": "100-250m",
             "distance_m": 164.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 19.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38922,7 +40391,13 @@
           "distance_m": 4850.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1933,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 37.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -38996,7 +40471,13 @@
           "distance_m": 4732.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 2004,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 114.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39128,7 +40609,13 @@
             "relation": "100-250m",
             "distance_m": 114.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 11.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39277,7 +40764,13 @@
             "relation": "100-250m",
             "distance_m": 153.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 54.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39417,7 +40910,13 @@
             "relation": "100-250m",
             "distance_m": 172.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 18.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39559,7 +41058,13 @@
           "distance_m": 6446.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1904,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 7.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39648,7 +41153,13 @@
             "relation": "25-100m",
             "distance_m": 85.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 22.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39843,7 +41354,13 @@
             "relation": "100-250m",
             "distance_m": 239.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1826,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -39932,7 +41449,13 @@
             "relation": "25-100m",
             "distance_m": 61.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 30.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40154,7 +41677,13 @@
             "relation": "100-250m",
             "distance_m": 247.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1858,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 90.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40278,7 +41807,13 @@
             "relation": "100-250m",
             "distance_m": 221.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2011,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 276.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40402,7 +41937,13 @@
             "relation": "0-25m",
             "distance_m": 17.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1820,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 38.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40674,7 +42215,13 @@
             "relation": "100-250m",
             "distance_m": 241.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40807,7 +42354,13 @@
             "relation": "100-250m",
             "distance_m": 217.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1875,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 94.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40889,7 +42442,13 @@
             "relation": "100-250m",
             "distance_m": 172.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2011,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 57.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -40997,7 +42556,13 @@
             "relation": "100-250m",
             "distance_m": 172.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 24.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41079,7 +42644,8 @@
             "relation": "25-100m",
             "distance_m": 86.5
           }
-        ]
+        ],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -41224,7 +42790,13 @@
             "relation": "25-100m",
             "distance_m": 80.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 29.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41330,7 +42902,13 @@
             "relation": "25-100m",
             "distance_m": 27.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 42.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41404,7 +42982,13 @@
           "distance_m": 3389.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1937,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 31.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41486,7 +43070,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 23.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41728,7 +43318,13 @@
           "distance_m": 1708.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1991,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41822,7 +43418,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41911,7 +43513,13 @@
             "relation": "100-250m",
             "distance_m": 149.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1874,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 50.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -41993,7 +43601,8 @@
           "distance_m": 8446.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -42096,7 +43705,13 @@
             "relation": "100-250m",
             "distance_m": 246.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2006,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 7.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42170,7 +43785,13 @@
           "distance_m": 3348.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1938,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 80.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42311,7 +43932,13 @@
             "relation": "100-250m",
             "distance_m": 249.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 62.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42437,7 +44064,13 @@
             "relation": "100-250m",
             "distance_m": 199.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1865,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 41.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42511,7 +44144,13 @@
           "distance_m": 2550.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1924,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 43.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42608,7 +44247,13 @@
             "relation": "100-250m",
             "distance_m": 232.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 27.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42682,7 +44327,13 @@
           "distance_m": 3308.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1954,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 78.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42877,7 +44528,13 @@
             "relation": "100-250m",
             "distance_m": 249.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1968,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 36.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42978,7 +44635,13 @@
             "relation": "25-100m",
             "distance_m": 64.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1854,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 142.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43100,7 +44763,13 @@
             "relation": "100-250m",
             "distance_m": 108.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1911,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43210,7 +44879,13 @@
           "distance_m": 4462.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 15.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43320,7 +44995,13 @@
           "distance_m": 8789.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1905,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 132.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43406,7 +45087,13 @@
           "distance_m": 6540.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 31.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43504,7 +45191,13 @@
           "distance_m": 4737.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1873,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43586,7 +45279,13 @@
             "relation": "100-250m",
             "distance_m": 191.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 32.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43684,7 +45383,13 @@
           "distance_m": 10014.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1988,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 8.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43774,7 +45479,13 @@
             "relation": "100-250m",
             "distance_m": 181.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1880,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 76.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43875,7 +45586,13 @@
             "relation": "100-250m",
             "distance_m": 193.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1937,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 56.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44124,7 +45841,13 @@
             "relation": "100-250m",
             "distance_m": 103.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1963,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 86.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44220,7 +45943,13 @@
             "relation": "100-250m",
             "distance_m": 245.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1872,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 104.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44354,7 +46083,13 @@
           "distance_m": 2015.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1931,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 18.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44508,7 +46243,13 @@
           "distance_m": 1275.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44626,7 +46367,13 @@
             "relation": "100-250m",
             "distance_m": 227.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 5.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44796,7 +46543,13 @@
             "relation": "100-250m",
             "distance_m": 223.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1869,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -44870,7 +46623,8 @@
           "distance_m": 6759.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -44948,7 +46702,13 @@
           "distance_m": 8948.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1974,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45082,7 +46842,13 @@
           "distance_m": 10351.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1838,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 126.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45160,7 +46926,13 @@
           "distance_m": 12221.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 68.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45246,7 +47018,13 @@
             "relation": "25-100m",
             "distance_m": 94.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 62.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45472,7 +47250,13 @@
           "distance_m": 10990.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 55.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45554,7 +47338,13 @@
           "distance_m": 11196.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1945,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45662,7 +47452,13 @@
             "relation": "100-250m",
             "distance_m": 229.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 16.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45788,7 +47584,13 @@
             "relation": "25-100m",
             "distance_m": 96.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -45895,7 +47697,13 @@
             "relation": "25-100m",
             "distance_m": 36.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 32.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46013,7 +47821,13 @@
             "relation": "25-100m",
             "distance_m": 35.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 102.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46198,7 +48012,13 @@
             "relation": "25-100m",
             "distance_m": 25.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46324,7 +48144,13 @@
           "distance_m": 3674.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1790,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 72.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46406,7 +48232,13 @@
           "distance_m": 8469.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1850,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 58.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46484,7 +48316,13 @@
           "distance_m": 8457.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1985,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 86.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46581,7 +48419,13 @@
             "relation": "25-100m",
             "distance_m": 34.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 26.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46663,7 +48507,13 @@
           "distance_m": 3025.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1940,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 276.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46784,7 +48634,13 @@
             "relation": "25-100m",
             "distance_m": 67.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 32.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46866,7 +48722,13 @@
             "relation": "100-250m",
             "distance_m": 100.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1916,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 81.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46956,7 +48818,13 @@
           "distance_m": 4641.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1876,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47058,7 +48926,13 @@
             "relation": "100-250m",
             "distance_m": 120.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 130.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47144,7 +49018,13 @@
             "relation": "100-250m",
             "distance_m": 215.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1963,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 49.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47226,7 +49106,13 @@
           "distance_m": 3363.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 12.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47342,7 +49228,13 @@
             "relation": "25-100m",
             "distance_m": 70.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 42.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47460,7 +49352,13 @@
           "distance_m": 8074.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1964,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 15.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47542,7 +49440,8 @@
           "distance_m": 4762.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -47631,7 +49530,13 @@
             "relation": "25-100m",
             "distance_m": 32.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1960,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 49.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -47743,7 +49648,13 @@
             "relation": "100-250m",
             "distance_m": 241.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 107.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48070,7 +49981,13 @@
             "relation": "100-250m",
             "distance_m": 168.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 21.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48282,7 +50199,13 @@
             "relation": "100-250m",
             "distance_m": 249.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1933,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 75.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48427,7 +50350,13 @@
             "relation": "100-250m",
             "distance_m": 247.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1933,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 11.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48521,7 +50450,13 @@
           "distance_m": 7954.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 116.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48645,7 +50580,13 @@
             "relation": "100-250m",
             "distance_m": 211.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48890,7 +50831,13 @@
             "relation": "25-100m",
             "distance_m": 86.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1615,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 90.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -48972,7 +50919,13 @@
             "relation": "0-25m",
             "distance_m": 3.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 26.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49083,7 +51036,13 @@
             "relation": "100-250m",
             "distance_m": 201.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 14.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49193,7 +51152,13 @@
           "distance_m": 3624.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1885,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 27.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49334,7 +51299,13 @@
             "relation": "100-250m",
             "distance_m": 247.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49408,7 +51379,13 @@
           "distance_m": 2118.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1960,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 42.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49538,7 +51515,13 @@
             "relation": "100-250m",
             "distance_m": 190.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1952,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 82.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49640,7 +51623,13 @@
           "distance_m": 8889.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1613,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 76.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49722,7 +51711,13 @@
             "relation": "100-250m",
             "distance_m": 205.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1696,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 70.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49796,7 +51791,13 @@
           "distance_m": 6880.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1972,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 16.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49938,7 +51939,13 @@
             "relation": "100-250m",
             "distance_m": 112.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 14.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50043,7 +52050,13 @@
             "relation": "25-100m",
             "distance_m": 61.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 35.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50125,7 +52138,13 @@
             "relation": "0-25m",
             "distance_m": 3.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 19.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50239,7 +52258,13 @@
           "distance_m": 2106.3
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 28.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50384,7 +52409,13 @@
             "relation": "25-100m",
             "distance_m": 26.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 13.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50523,7 +52554,13 @@
             "relation": "100-250m",
             "distance_m": 246.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1975,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 44.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50645,7 +52682,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 30.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50771,7 +52814,13 @@
             "relation": "100-250m",
             "distance_m": 143.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 32.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -50945,7 +52994,13 @@
             "relation": "100-250m",
             "distance_m": 241.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1952,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": 91.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51101,7 +53156,13 @@
             "relation": "100-250m",
             "distance_m": 231.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 23.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51183,7 +53244,13 @@
             "relation": "0-25m",
             "distance_m": 4.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 55.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51309,7 +53376,13 @@
           "distance_m": 898.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 141.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51431,7 +53504,13 @@
           "distance_m": 2395.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 31.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51517,7 +53596,13 @@
           "distance_m": 3830.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1965,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 66.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51631,7 +53716,13 @@
           "distance_m": 1859.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 67.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51709,7 +53800,13 @@
           "distance_m": 1972.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1967,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 125.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -51887,7 +53984,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 49.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52077,7 +54180,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 28.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52234,7 +54343,13 @@
             "relation": "100-250m",
             "distance_m": 135.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 31.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52388,7 +54503,13 @@
           "distance_m": 11838.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1974,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 42.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52478,7 +54599,13 @@
           "distance_m": 11317.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1966,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 55.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52600,7 +54727,13 @@
           "distance_m": 11576.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1874,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 60.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52678,7 +54811,13 @@
           "distance_m": 11209.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1912,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 275.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52802,7 +54941,13 @@
             "relation": "100-250m",
             "distance_m": 239.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1853,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 15.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -52926,7 +55071,13 @@
             "relation": "100-250m",
             "distance_m": 248.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 42.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53023,7 +55174,8 @@
             "relation": "25-100m",
             "distance_m": 33.6
           }
-        ]
+        ],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -53097,7 +55249,13 @@
           "distance_m": 13581.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1989,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53202,7 +55360,13 @@
             "relation": "100-250m",
             "distance_m": 124.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53375,7 +55539,13 @@
             "relation": "0-25m",
             "distance_m": 19.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 8.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53508,7 +55678,13 @@
             "relation": "25-100m",
             "distance_m": 52.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 23.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53642,7 +55818,13 @@
             "relation": "100-250m",
             "distance_m": 160.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 3.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53800,7 +55982,13 @@
           "distance_m": 6345.9
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1860,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 98.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -53896,7 +56084,13 @@
             "relation": "100-250m",
             "distance_m": 135.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1959,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 31.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54028,7 +56222,13 @@
             "relation": "0-25m",
             "distance_m": 7.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 41.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54118,7 +56318,13 @@
           "distance_m": 5563.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1825,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 43.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54228,7 +56434,13 @@
             "relation": "100-250m",
             "distance_m": 118.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1870,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 42.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54326,7 +56538,13 @@
           "distance_m": 9189.8
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 27.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54437,7 +56655,13 @@
             "relation": "100-250m",
             "distance_m": 189.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 43.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54531,7 +56755,13 @@
             "relation": "100-250m",
             "distance_m": 210.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1860,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 27.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54609,7 +56839,13 @@
           "distance_m": 2753.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1951,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 15.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54743,7 +56979,13 @@
             "relation": "25-100m",
             "distance_m": 25.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 6.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -54841,7 +57083,8 @@
           "distance_m": 1215.1
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -54958,7 +57201,13 @@
             "relation": "100-250m",
             "distance_m": 231.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1880,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 142.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55096,7 +57345,13 @@
             "relation": "100-250m",
             "distance_m": 167.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1880,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 20.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55286,7 +57541,13 @@
             "relation": "100-250m",
             "distance_m": 218.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1935,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 163.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55412,7 +57673,13 @@
           "distance_m": 3885.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1866,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 20.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55494,7 +57761,13 @@
             "relation": "100-250m",
             "distance_m": 144.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1915,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 5.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55686,7 +57959,13 @@
             "relation": "100-250m",
             "distance_m": 242.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 18.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55776,7 +58055,13 @@
             "relation": "100-250m",
             "distance_m": 189.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2003,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 21.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55960,7 +58245,13 @@
             "relation": "100-250m",
             "distance_m": 176.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 74.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56116,7 +58407,13 @@
             "relation": "100-250m",
             "distance_m": 235.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1871,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 32.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56265,7 +58562,13 @@
             "relation": "100-250m",
             "distance_m": 127.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 2.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56383,7 +58686,13 @@
           "distance_m": 2216.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1889,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 9.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56543,7 +58852,13 @@
             "relation": "100-250m",
             "distance_m": 176.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 59.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56675,7 +58990,13 @@
             "relation": "100-250m",
             "distance_m": 177.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 147.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56900,7 +59221,13 @@
             "relation": "100-250m",
             "distance_m": 247.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1866,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 23.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -56982,7 +59309,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 47.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57080,7 +59413,13 @@
             "relation": "25-100m",
             "distance_m": 97.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1829,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 50.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57154,7 +59493,13 @@
           "distance_m": 9137.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1949,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 21.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57228,7 +59573,13 @@
           "distance_m": 381.0
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1972,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 60.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57314,7 +59665,13 @@
           "distance_m": 353.2
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1881,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 38.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57408,7 +59765,13 @@
             "relation": "100-250m",
             "distance_m": 211.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1912,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 78.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57482,7 +59845,13 @@
           "distance_m": 2495.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1999,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 95.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57600,7 +59969,8 @@
           "distance_m": 3575.4
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": null
       },
       "geometry": {
         "type": "Polygon",
@@ -57746,7 +60116,13 @@
             "relation": "100-250m",
             "distance_m": 140.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1524,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 69.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57864,7 +60240,13 @@
           "distance_m": 5077.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1828,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 22.0
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57974,7 +60356,13 @@
           "distance_m": 3506.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 2022,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 33.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -58196,7 +60584,13 @@
             "relation": "100-250m",
             "distance_m": 244.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 16.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -58340,7 +60734,13 @@
             "relation": "100-250m",
             "distance_m": 240.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 16.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -58520,7 +60920,13 @@
             "relation": "100-250m",
             "distance_m": 248.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 11.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -58698,7 +61104,13 @@
           "distance_m": 4895.7
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1830,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 49.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -60071,7 +62483,13 @@
             "relation": "100-250m",
             "distance_m": 247.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 53.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -60252,7 +62670,13 @@
             "relation": "100-250m",
             "distance_m": 244.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 13.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -60447,7 +62871,13 @@
             "relation": "100-250m",
             "distance_m": 121.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 24.1
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -60581,7 +63011,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 41.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -60731,7 +63167,13 @@
             "relation": "0-25m",
             "distance_m": 21.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 37.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -61031,7 +63473,13 @@
             "relation": "100-250m",
             "distance_m": 180.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 22.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -61243,7 +63691,13 @@
             "relation": "100-250m",
             "distance_m": 120.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 34.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -61454,7 +63908,13 @@
             "relation": "100-250m",
             "distance_m": 212.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 22.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -61632,7 +64092,13 @@
             "relation": "100-250m",
             "distance_m": 132.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 29.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -61706,7 +64172,13 @@
           "distance_m": 2550.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 2021,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 34.7
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -62032,7 +64504,13 @@
             "relation": "100-250m",
             "distance_m": 149.7
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 44.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -62175,7 +64653,13 @@
             "relation": "100-250m",
             "distance_m": 133.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 23.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -62385,7 +64869,13 @@
             "relation": "100-250m",
             "distance_m": 158.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 35.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -62556,7 +65046,13 @@
             "relation": "100-250m",
             "distance_m": 237.6
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2007,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 180.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -62659,7 +65155,13 @@
             "relation": "100-250m",
             "distance_m": 183.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 13.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63115,7 +65617,13 @@
             "relation": "100-250m",
             "distance_m": 207.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 18.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63312,7 +65820,13 @@
             "relation": "100-250m",
             "distance_m": 104.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 12.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63513,7 +66027,13 @@
             "relation": "25-100m",
             "distance_m": 62.2
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 36.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63698,7 +66218,13 @@
             "relation": "25-100m",
             "distance_m": 42.3
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 277.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63810,7 +66336,13 @@
             "relation": "100-250m",
             "distance_m": 168.1
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 21.2
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -63892,7 +66424,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 29.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64094,7 +66632,13 @@
             "relation": "100-250m",
             "distance_m": 203.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 15.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64184,7 +66728,13 @@
             "relation": "inside_on_site",
             "distance_m": 0.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 60.8
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64277,7 +66827,13 @@
             "relation": "0-25m",
             "distance_m": 12.0
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 1615,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 17.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64509,7 +67065,13 @@
             "relation": "100-250m",
             "distance_m": 173.4
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 25.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64587,7 +67149,13 @@
           "distance_m": 1273.6
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 2022,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 66.4
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64677,7 +67245,13 @@
           "distance_m": 6266.5
         },
         "rijksmonument_count": 0,
-        "rijksmonument_relations": []
+        "rijksmonument_relations": [],
+        "datering": {
+          "jaartal": 1930,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 123.9
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64843,7 +67417,13 @@
             "relation": "100-250m",
             "distance_m": 217.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": 2009,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": 75.5
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -64960,7 +67540,13 @@
             "relation": "25-100m",
             "distance_m": 37.9
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 21.6
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -65090,7 +67676,13 @@
             "relation": "25-100m",
             "distance_m": 60.8
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 24.3
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -65224,7 +67816,13 @@
             "relation": "100-250m",
             "distance_m": 210.5
           }
-        ]
+        ],
+        "datering": {
+          "jaartal": null,
+          "jaartal_circa": false,
+          "periode": "Middeleeuwen",
+          "distance_m": 29.2
+        }
       },
       "geometry": {
         "type": "Polygon",

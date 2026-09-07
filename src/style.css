@@ -274,7 +274,6 @@ p.hint {
 .swatch-onderzoeksgebied { background: rgba(12, 133, 153, 0.2); border: 1px solid #0c8599; }
 .swatch-chs { background: rgba(153, 116, 4, 0.25); border: 1px solid #997404; }
 .swatch-verdwenen { background: #212529; }
-.swatch-datering { background: #9c36b5; }
 
 #functie-search,
 #search-naam-plaats {
@@ -544,6 +543,65 @@ body.stats-page {
 
 .histogram-count {
   font-variant-numeric: tabular-nums;
+}
+
+/* Klikbare balkjes in het filterpaneel (Datering), i.p.v. de statische
+   balkjes op de statistiekenpagina hierboven -- veel smaller paneel, dus
+   eigen, kleinere kolombreedtes. */
+#datering-filter {
+  margin: 4px 0 6px;
+}
+
+.histogram-row-button {
+  display: grid;
+  grid-template-columns: 62px 1fr 26px;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 2px 0;
+  padding: 3px 4px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  font: inherit;
+  font-size: 11px;
+  text-align: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.histogram-row-button:hover {
+  background: #f1f3f5;
+}
+
+.histogram-row-button .histogram-label {
+  font-size: 11px;
+}
+
+.histogram-row-button .histogram-bar-wrap {
+  height: 12px;
+}
+
+.histogram-row-button .histogram-bar {
+  background: #adb5bd;
+}
+
+.histogram-row-button[aria-pressed="true"] {
+  background: #e7f0fb;
+  font-weight: 600;
+}
+
+.histogram-row-button[aria-pressed="true"] .histogram-label {
+  color: #1971c2;
+}
+
+.histogram-row-button[aria-pressed="true"] .histogram-label::after {
+  content: " ✓";
+}
+
+.histogram-row-button[aria-pressed="true"] .histogram-bar {
+  background: #1971c2;
 }
 
 @media (max-width: 700px) {

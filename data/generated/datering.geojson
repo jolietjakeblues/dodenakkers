@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "waarschuwing": "Bron: de domeinexpert (data/Begraafplaatsen Zuid-Holland - datering.xlsx). Zelfstandige laag, geen 1-op-1 koppeling aan de 448 begraafplaatsen van de hoofddataset -- zie de toelichting in scripts/build_datering.py en methode.html. Locatie is gegeocodeerd op het bezoekadres (PDOK Locatieserver), meestal postcode-nauwkeurig.",
+  "waarschuwing": "Bron: de domeinexpert (data/Begraafplaatsen Zuid-Holland - datering.csv). Zelfstandige laag, geen 1-op-1 koppeling aan de 448 begraafplaatsen van de hoofddataset -- zie de toelichting in scripts/build_datering.py en methode.html. Locatie is gegeocodeerd op het bezoekadres (PDOK Locatieserver), meestal postcode-nauwkeurig.",
   "aantal": 448,
   "aantal_met_jaartal": 306,
   "aantal_met_alleen_periode": 112,
@@ -31,7 +31,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -67,7 +67,7 @@
         "gemeente": "Den Haag",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -139,7 +139,7 @@
         "gemeente": "Den Haag",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -211,7 +211,7 @@
         "gemeente": "Den Haag",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -283,7 +283,7 @@
         "gemeente": "Westland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -301,7 +301,7 @@
         "gemeente": "Midden-Delfland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -355,7 +355,7 @@
         "gemeente": "Alphen aan den Rijn",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -373,7 +373,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -427,7 +427,7 @@
         "gemeente": "Alblasserdam",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -553,7 +553,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -571,7 +571,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -607,7 +607,7 @@
         "gemeente": "Barendrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -661,7 +661,7 @@
         "gemeente": "Alphen aan den Rijn",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -679,7 +679,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -751,7 +751,7 @@
         "gemeente": "Lansingerland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -787,7 +787,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -913,7 +913,7 @@
         "gemeente": "Bodegraven-Reeuwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1021,7 +1021,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1057,7 +1057,7 @@
         "gemeente": "Voorne aan Zee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1147,7 +1147,7 @@
         "gemeente": "Capelle aan den IJssel",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1183,7 +1183,7 @@
         "gemeente": "Rotterdam",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1291,7 +1291,7 @@
         "gemeente": "Westland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1489,7 +1489,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1615,7 +1615,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1669,7 +1669,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1759,7 +1759,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -1939,7 +1939,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2029,7 +2029,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2155,7 +2155,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2191,7 +2191,7 @@
         "gemeente": "Zwijndrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2209,7 +2209,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2335,7 +2335,7 @@
         "gemeente": "Voorne aan Zee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2389,7 +2389,7 @@
         "gemeente": "Hendrik-Ido-Ambacht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2461,7 +2461,7 @@
         "gemeente": "Hillegom",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2533,7 +2533,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2605,7 +2605,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2659,7 +2659,7 @@
         "gemeente": "Katwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2803,7 +2803,7 @@
         "gemeente": "Katwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2839,7 +2839,7 @@
         "gemeente": "Schiedam",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2857,7 +2857,7 @@
         "gemeente": "Zwijndrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2893,7 +2893,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -2929,7 +2929,7 @@
         "gemeente": "Alphen aan den Rijn",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3073,7 +3073,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3163,7 +3163,7 @@
         "gemeente": "Leiderdorp",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3253,7 +3253,7 @@
         "gemeente": "Kaag en Braassem",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3361,7 +3361,7 @@
         "gemeente": "Lisse",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3415,7 +3415,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3433,7 +3433,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3523,7 +3523,7 @@
         "gemeente": "Midden-Delfland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3721,7 +3721,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3775,7 +3775,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3829,7 +3829,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -3973,7 +3973,7 @@
         "gemeente": "Zuidplas",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4135,7 +4135,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4171,7 +4171,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4243,7 +4243,7 @@
         "gemeente": "Nieuwkoop",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4315,7 +4315,7 @@
         "gemeente": "Nieuwkoop",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4351,7 +4351,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4387,7 +4387,7 @@
         "gemeente": "Nieuwkoop",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4495,7 +4495,7 @@
         "gemeente": "Noordwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4567,7 +4567,7 @@
         "gemeente": "Pijnacker-Nootdorp",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4675,7 +4675,7 @@
         "gemeente": "Oegstgeest",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4729,7 +4729,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4765,7 +4765,7 @@
         "gemeente": "Voorne aan Zee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4783,7 +4783,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4855,7 +4855,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4891,7 +4891,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -4963,7 +4963,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5053,7 +5053,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5143,7 +5143,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5323,7 +5323,7 @@
         "gemeente": "Pijnacker-Nootdorp",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5359,7 +5359,7 @@
         "gemeente": "Albrandswaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5395,7 +5395,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5467,7 +5467,7 @@
         "gemeente": "Bodegraven-Reeuwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5503,7 +5503,7 @@
         "gemeente": "Bodegraven-Reeuwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5593,7 +5593,7 @@
         "gemeente": "Ridderkerk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5629,7 +5629,7 @@
         "gemeente": "Kaag en Braassem",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5665,7 +5665,7 @@
         "gemeente": "Katwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5683,7 +5683,7 @@
         "gemeente": "Katwijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5737,7 +5737,7 @@
         "gemeente": "Rijswijk",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -5917,7 +5917,7 @@
         "gemeente": "Rotterdam",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6043,7 +6043,7 @@
         "gemeente": "Rotterdam",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6205,7 +6205,7 @@
         "gemeente": "Teylingen",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6259,7 +6259,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6349,7 +6349,7 @@
         "gemeente": "Midden-Delfland",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6439,7 +6439,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6457,7 +6457,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6511,7 +6511,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6565,7 +6565,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6601,7 +6601,7 @@
         "gemeente": "Goeree-Overflakkee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6709,7 +6709,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6817,7 +6817,7 @@
         "gemeente": "Nieuwkoop",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -6979,7 +6979,7 @@
         "gemeente": "Leidschendam-Voorburg",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7069,7 +7069,7 @@
         "gemeente": "Teylingen",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7177,7 +7177,7 @@
         "gemeente": "Voorschoten",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7303,7 +7303,7 @@
         "gemeente": "Teylingen",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7393,7 +7393,7 @@
         "gemeente": "Wassenaar",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7501,7 +7501,7 @@
         "gemeente": "Hoeksche Waard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7537,7 +7537,7 @@
         "gemeente": "Molenlanden",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7555,7 +7555,7 @@
         "gemeente": "Krimpenerwaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7591,7 +7591,7 @@
         "gemeente": "Kaag en Braassem",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7609,7 +7609,7 @@
         "gemeente": "Nieuwkoop",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7645,7 +7645,7 @@
         "gemeente": "Zuidplas",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7717,7 +7717,7 @@
         "gemeente": "Zoetermeer",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7735,7 +7735,7 @@
         "gemeente": "Zoeterwoude",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7861,7 +7861,7 @@
         "gemeente": "Nissewaard",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7915,7 +7915,7 @@
         "gemeente": "Alphen aan den Rijn",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7951,7 +7951,7 @@
         "gemeente": "Voorne aan Zee",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -7969,7 +7969,7 @@
         "gemeente": "Zwijndrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -8005,7 +8005,7 @@
         "gemeente": "Zwijndrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -8023,7 +8023,7 @@
         "gemeente": "Zwijndrecht",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",
@@ -8059,7 +8059,7 @@
         "gemeente": "Den Haag",
         "jaartal": null,
         "jaartal_circa": false,
-        "periode": "ME"
+        "periode": "Middeleeuwen"
       },
       "geometry": {
         "type": "Point",

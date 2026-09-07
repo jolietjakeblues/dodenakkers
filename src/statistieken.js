@@ -280,7 +280,7 @@ async function main() {
     renderSection(
       document.getElementById("stats-datering"),
       "Datering",
-      `Aanvullende data van de domeinexpert, zelfstandige laag los van de hoofddataset (zie methode.html). ${fmt(bekend)} van de ${fmt(s.datering.aantal)} punten hebben een jaartal of periode bekend.`,
+      `Jaartal/periode uit een aparte bron van de domeinexpert, gekoppeld aan de hoofddataset op het dichtstbijzijnde adres (zie methode.html) -- ook zichtbaar in het begraafplaats-popup en als filter op de kaart. ${fmt(bekend)} van de ${fmt(s.datering.aantal)} begraafplaatsen hebben een jaartal of periode bekend.`,
       [
         histogramBars(s.datering.histogram),
         el("h3", { text: "Oudste bekende jaartallen" }),

@@ -35,12 +35,6 @@ const DATA = {
   // (data/Verdwenen.kmz, scripts/build_verdwenen_begraafplaatsen.py), wens
   // van de opdrachtgever (2026-08-27) nadat de domeinexpert de KMZ deelde.
   verdwenen: "../data/generated/verdwenen-begraafplaatsen.geojson",
-  // Lazy, klein (448 punten): eigen xlsx van de domeinexpert met jaartal/
-  // periode per begraafplaats (data/Begraafplaatsen Zuid-Holland - datering.xlsx,
-  // scripts/build_datering.py), wens van de opdrachtgever (2026-09-01). Eigen
-  // gegeocodeerde laag, geen koppeling aan de hoofddataset -- zie de
-  // toelichting in scripts/build_datering.py en methode.html.
-  datering: "../data/generated/datering.geojson",
 };
 
 const statusEl = document.getElementById("status");
@@ -548,57 +542,6 @@ async function main() {
     statusEl.textContent = `${verdwenen.features.length} verdwenen begraafplaatsen geladen.`;
   });
 
-  // --- Datering (lazy, 448 punten) -- eigen xlsx van de domeinexpert met
-  // jaartal/periode per begraafplaats (scripts/build_datering.py). Eigen
-  // gegeocodeerde laag, geen koppeling aan de hoofddataset (de 448 rijen
-  // komen niet 1-op-1 overeen met onze 448 terreinen -- zie de toelichting
-  // in scripts/build_datering.py en methode.html), dus bewust een aparte
-  // laag i.p.v. een veld in het begraafplaats-popup.
-  let dateringLoaded = false;
-  document.getElementById("toggle-datering").addEventListener("change", async (e) => {
-    updateLegendActivity();
-    syncUrl();
-    if (!e.target.checked) {
-      if (dateringLoaded) map.setLayoutProperty("datering-punt", "visibility", "none");
-      return;
-    }
-    if (dateringLoaded) {
-      map.setLayoutProperty("datering-punt", "visibility", "visible");
-      return;
-    }
-    statusEl.textContent = "Datering laden…";
-    const datering = await loadJson(DATA.datering);
-    map.addSource("datering", { type: "geojson", data: datering });
-    map.addLayer({
-      id: "datering-punt",
-      type: "circle",
-      source: "datering",
-      paint: {
-        "circle-radius": 5,
-        "circle-color": "#9c36b5",
-        "circle-stroke-width": 1,
-        "circle-stroke-color": "#ffffff",
-      },
-    });
-    map.on("click", "datering-punt", (ev) => {
-      const p = ev.features[0].properties;
-      new maplibregl.Popup()
-        .setLngLat(ev.lngLat)
-        .setHTML(
-          popupHtml(p.naam, [
-            ["Plaats", p.plaats],
-            ["Gemeente", p.gemeente],
-            ["Jaartal", p.jaartal ? (p.jaartal_circa ? `circa ${p.jaartal}` : String(p.jaartal)) : null],
-            ["Periode", p.periode],
-          ])
-        )
-        .addTo(map);
-    });
-    map.on("mouseenter", "datering-punt", () => (map.getCanvas().style.cursor = "pointer"));
-    map.on("mouseleave", "datering-punt", () => (map.getCanvas().style.cursor = ""));
-    dateringLoaded = true;
-    statusEl.textContent = `${datering.features.length} dateringspunten geladen.`;
-  });
 
   // --- Beschermde gezichten (onderste laag: grote polygonen) ---
   map.addSource("gezichten", { type: "geojson", data: gezichten });
@@ -848,6 +791,7 @@ async function main() {
     const rmRelaties = JSON.parse(p.rijksmonument_relations || "[]");
     const archRelaties = JSON.parse(p.archeologische_rm_relations || "[]");
     const archNearest = p.archeologische_rm_nearest ? JSON.parse(p.archeologische_rm_nearest) : null;
+    const datering = p.datering ? JSON.parse(p.datering) : null;
     new maplibregl.Popup()
       .setLngLat(e.lngLat)
       .setHTML(
@@ -856,6 +800,8 @@ async function main() {
           ["Gemeente", p.gemeente],
           ["Geruimd", p.status_conflict ? "onbekend (statusconflict)" : p.geruimd ? "ja" : "nee"],
           ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
+          ["Jaartal", datering && datering.jaartal ? (datering.jaartal_circa ? `circa ${datering.jaartal}` : String(datering.jaartal)) : null],
+          ["Periode", datering ? datering.periode : null],
           ["Beschermd gezicht", p.in_beschermd_gezicht === "none" ? "nee" : gezichtNamen],
           [
             "Archeologisch rijksmonument",
@@ -1047,14 +993,41 @@ async function main() {
     "filter-niet-geruimd": ["==", ["get", "geruimd"], false],
     "filter-geruimd": ["==", ["get", "geruimd"], true],
   };
+
+  // --- Datering-filter (2026-09-07, wens van de opdrachtgever: "neem datum/
+  // datering op in de originele popup en maak een filtermogelijkheid op
+  // datering zoals bij muurschilderingen") -- klikbare balkjes i.p.v.
+  // checkboxes, met een levende telling per balk, zelfde interactiepatroon
+  // als het voorbeeld dat de opdrachtgever liet zien. Elkaar uitsluitende
+  // toestanden van hetzelfde veld, dus net als STATUS_FILTER_IDS een
+  // VERBREDENDE (OR/unie) combinatielogica: meerdere balken aanklikken toont
+  // de vereniging, niet het snijpunt. De knip bij 1829 is geen ronde
+  // eeuwgrens maar het jaar van het Koninklijk Besluit dat begraven in en
+  // rond de kerk verbood (wens van de opdrachtgever: "1829 is een watershed,
+  // die scheiding moet te zien zijn") -- zelfde buckets als
+  // scripts/compute_statistics.py (DATERING_BUCKETS), hou ze
+  // gesynchroniseerd als een van de twee wijzigt.
+  const DATERING_BUCKETS = [
+    { id: "filter-datering-me", label: "Middeleeuws", test: (d) => !!(d && d.periode && !d.jaartal) },
+    { id: "filter-datering-voor1829", label: "vóór 1829", test: (d) => !!(d && d.jaartal && d.jaartal < 1829) },
+    { id: "filter-datering-1829", label: "1829–1849", test: (d) => !!(d && d.jaartal && d.jaartal >= 1829 && d.jaartal < 1850) },
+    { id: "filter-datering-1850", label: "1850–1899", test: (d) => !!(d && d.jaartal && d.jaartal >= 1850 && d.jaartal < 1900) },
+    { id: "filter-datering-1900", label: "1900–1949", test: (d) => !!(d && d.jaartal && d.jaartal >= 1900 && d.jaartal < 1950) },
+    { id: "filter-datering-1950", label: "1950–1999", test: (d) => !!(d && d.jaartal && d.jaartal >= 1950 && d.jaartal < 2000) },
+    { id: "filter-datering-2000", label: "2000–heden", test: (d) => !!(d && d.jaartal && d.jaartal >= 2000) },
+  ];
+  const DATERING_FILTER_IDS = DATERING_BUCKETS.map((b) => b.id);
+
   function terreinPredicates() {
-    return {
+    const predicates = {
       "filter-niet-geruimd": (p) => p.geruimd === false,
       "filter-geruimd": (p) => p.geruimd === true,
       "filter-gezicht": (p) => p.in_beschermd_gezicht !== "none",
       "filter-archeologie": (p) => p.archeologische_rm_count > 0,
       "filter-rijksmonument": (p) => (p.rijksmonument_relations || []).some((r) => r.distance_m <= rmThreshold),
     };
+    for (const bucket of DATERING_BUCKETS) predicates[bucket.id] = (p) => bucket.test(p.datering);
+    return predicates;
   }
   function statusMatch(predicates, statusIds, p) {
     if (statusIds.length === 0) return true;
@@ -1063,8 +1036,15 @@ async function main() {
   function heritageMatch(predicates, heritageIds, p) {
     return heritageIds.every((id) => predicates[id](p));
   }
+  function dateringMatch(predicates, dateringIds, p) {
+    if (dateringIds.length === 0) return true;
+    return dateringIds.some((id) => predicates[id](p));
+  }
   function activeIdsIn(group) {
     return group.filter((id) => document.getElementById(id).checked);
+  }
+  function activeDateringIds() {
+    return DATERING_FILTER_IDS.filter((id) => document.getElementById(id).getAttribute("aria-pressed") === "true");
   }
 
   // --- Zoeken op naam/plaats (los van de facet-filters hierboven: versmalt
@@ -1119,6 +1099,8 @@ async function main() {
               ["Gemeente", p.gemeente],
               ["Status", status],
               ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
+              ["Jaartal", p.datering && p.datering.jaartal ? (p.datering.jaartal_circa ? `circa ${p.datering.jaartal}` : String(p.datering.jaartal)) : null],
+              ["Periode", p.datering ? p.datering.periode : null],
             ])
           )
           .addTo(map);
@@ -1133,6 +1115,7 @@ async function main() {
     const predicates = terreinPredicates();
     const activeStatusIds = activeIdsIn(STATUS_FILTER_IDS);
     const activeHeritageIds = activeIdsIn(HERITAGE_FILTER_IDS);
+    const activeDatIds = activeDateringIds();
     const query = searchQuery();
 
     const clauses = [];
@@ -1153,23 +1136,31 @@ async function main() {
       const ids = idsWithRijksmonumentWithin(begraafplaatsen, rmThreshold);
       clauses.push(["in", ["get", "id"], ["literal", Array.from(ids)]]);
     }
+    if (activeDatIds.length) {
+      const ids = begraafplaatsen.features
+        .filter((f) => dateringMatch(predicates, activeDatIds, f.properties))
+        .map((f) => f.properties.id);
+      clauses.push(["in", ["get", "id"], ["literal", ids]]);
+    }
     const filter = clauses.length ? ["all", ...clauses] : null;
     map.setFilter("terrein-fill", filter);
     map.setFilter("terrein-outline", filter);
-    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query);
+    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query);
     currentVisibleFeatures = begraafplaatsen.features.filter(
       (f) =>
         searchMatch(query, f.properties) &&
         statusMatch(predicates, activeStatusIds, f.properties) &&
-        heritageMatch(predicates, activeHeritageIds, f.properties)
+        heritageMatch(predicates, activeHeritageIds, f.properties) &&
+        dateringMatch(predicates, activeDatIds, f.properties)
     );
     renderAccessibleResults(currentVisibleFeatures);
     syncUrl();
   }
-  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, query) {
+  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query) {
     predicates = predicates || terreinPredicates();
     activeStatusIds = activeStatusIds || activeIdsIn(STATUS_FILTER_IDS);
     activeHeritageIds = activeHeritageIds || activeIdsIn(HERITAGE_FILTER_IDS);
+    activeDatIds = activeDatIds || activeDateringIds();
     query = query === undefined ? searchQuery() : query;
     const totalCount = begraafplaatsen.features.length;
     const allProps = begraafplaatsen.features.map((f) => f.properties).filter((p) => searchMatch(query, p));
@@ -1177,28 +1168,94 @@ async function main() {
     for (const id of STATUS_FILTER_IDS) {
       const hypothetical = activeStatusIds.includes(id) ? activeStatusIds : [...activeStatusIds, id];
       const count = allProps.filter(
-        (p) => heritageMatch(predicates, activeHeritageIds, p) && statusMatch(predicates, hypothetical, p)
+        (p) =>
+          heritageMatch(predicates, activeHeritageIds, p) &&
+          statusMatch(predicates, hypothetical, p) &&
+          dateringMatch(predicates, activeDatIds, p)
       ).length;
       document.getElementById(`count-${id}`).textContent = `(${count})`;
     }
     for (const id of HERITAGE_FILTER_IDS) {
       const hypothetical = activeHeritageIds.includes(id) ? activeHeritageIds : [...activeHeritageIds, id];
       const count = allProps.filter(
-        (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, hypothetical, p)
+        (p) =>
+          statusMatch(predicates, activeStatusIds, p) &&
+          heritageMatch(predicates, hypothetical, p) &&
+          dateringMatch(predicates, activeDatIds, p)
       ).length;
       document.getElementById(`count-${id}`).textContent = `(${count})`;
     }
-    const visibleCount = allProps.filter(
+    const baseCount = allProps.filter(
       (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, activeHeritageIds, p)
     ).length;
+    const dateringCounts = DATERING_BUCKETS.map((bucket) => {
+      const hypothetical = activeDatIds.includes(bucket.id) ? activeDatIds : [...activeDatIds, bucket.id];
+      return allProps.filter(
+        (p) =>
+          statusMatch(predicates, activeStatusIds, p) &&
+          heritageMatch(predicates, activeHeritageIds, p) &&
+          dateringMatch(predicates, hypothetical, p)
+      ).length;
+    });
+    const dateringMax = Math.max(1, baseCount, ...dateringCounts);
+    DATERING_BUCKETS.forEach((bucket, i) => {
+      const btn = document.getElementById(bucket.id);
+      btn.querySelector(".histogram-bar").style.width = `${Math.round((dateringCounts[i] / dateringMax) * 100)}%`;
+      btn.querySelector(".histogram-count").textContent = dateringCounts[i];
+      btn.setAttribute("aria-pressed", activeDatIds.includes(bucket.id) ? "true" : "false");
+    });
+    const dateringBekendCount = allProps.filter(
+      (p) =>
+        statusMatch(predicates, activeStatusIds, p) &&
+        heritageMatch(predicates, activeHeritageIds, p) &&
+        dateringMatch(predicates, activeDatIds, p) &&
+        p.datering &&
+        (p.datering.jaartal || p.datering.periode)
+    ).length;
+    const visibleCount = allProps.filter(
+      (p) =>
+        statusMatch(predicates, activeStatusIds, p) &&
+        heritageMatch(predicates, activeHeritageIds, p) &&
+        dateringMatch(predicates, activeDatIds, p)
+    ).length;
+    document.getElementById("datering-filter-summary").textContent = `${dateringBekendCount} van ${visibleCount} hebben een jaartal of periode bekend`;
     document.getElementById("filter-summary").textContent = `${visibleCount} van ${totalCount} zichtbaar`;
     searchCountEl.textContent = query ? `${allProps.length} gevonden op "${query}"` : "";
   }
+  function setupDateringFilter() {
+    const container = document.getElementById("datering-filter");
+    for (const bucket of DATERING_BUCKETS) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = bucket.id;
+      btn.className = "histogram-row histogram-row-button";
+      btn.setAttribute("aria-pressed", "false");
+      const label = document.createElement("span");
+      label.className = "histogram-label";
+      label.textContent = bucket.label;
+      const barWrap = document.createElement("span");
+      barWrap.className = "histogram-bar-wrap";
+      const bar = document.createElement("span");
+      bar.className = "histogram-bar";
+      barWrap.appendChild(bar);
+      const count = document.createElement("span");
+      count.className = "histogram-count";
+      btn.append(label, barWrap, count);
+      btn.addEventListener("click", () => {
+        const pressed = btn.getAttribute("aria-pressed") === "true";
+        btn.setAttribute("aria-pressed", pressed ? "false" : "true");
+        applyFilters();
+      });
+      container.appendChild(btn);
+    }
+  }
+  setupDateringFilter();
   for (const id of FILTER_IDS) {
     document.getElementById(id).addEventListener("change", applyFilters);
   }
   document.getElementById("filter-reset").addEventListener("click", () => {
     for (const id of FILTER_IDS) document.getElementById(id).checked = false;
+    for (const id of DATERING_FILTER_IDS) document.getElementById(id).setAttribute("aria-pressed", "false");
     searchInputEl.value = "";
     applyFilters();
   });
@@ -1248,7 +1305,6 @@ async function main() {
     "toggle-onderzoeksgebieden": "arch",
     "toggle-chs-archeologie": "chsarch",
     "toggle-verdwenen": "verdwenen",
-    "toggle-datering": "datering",
   };
   // De twee monumenten-aard-sub-toggles staan standaard AAN (index.html) --
   // omgekeerde polariteit t.o.v. LAYER_TOGGLE_CODES hierboven (code aanwezig
@@ -1266,6 +1322,15 @@ async function main() {
   };
   const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };
+  const DATERING_CODES = {
+    "filter-datering-me": "me",
+    "filter-datering-voor1829": "v1829",
+    "filter-datering-1829": "1829",
+    "filter-datering-1850": "1850",
+    "filter-datering-1900": "1900",
+    "filter-datering-1950": "1950",
+    "filter-datering-2000": "2000",
+  };
 
   function currentStateParams() {
     const params = new URLSearchParams();
@@ -1292,6 +1357,10 @@ async function main() {
       .filter(([id]) => document.getElementById(id).checked)
       .map(([, code]) => code);
     if (heritage.length) params.set("hg", heritage.join(","));
+    const datering = Object.entries(DATERING_CODES)
+      .filter(([id]) => document.getElementById(id).getAttribute("aria-pressed") === "true")
+      .map(([, code]) => code);
+    if (datering.length) params.set("dt", datering.join(","));
     if (rmThreshold !== 100) params.set("rmt", String(rmThreshold));
     if (selectedFunctie.size) params.set("fn", [...selectedFunctie].join("|"));
     const query = searchInputEl.value.trim();
@@ -1363,6 +1432,10 @@ async function main() {
       const heritageCodes = new Set((params.get("hg") || "").split(",").filter(Boolean));
       for (const [id, code] of Object.entries(HERITAGE_CODES)) {
         document.getElementById(id).checked = heritageCodes.has(code);
+      }
+      const dateringCodes = new Set((params.get("dt") || "").split(",").filter(Boolean));
+      for (const [id, code] of Object.entries(DATERING_CODES)) {
+        document.getElementById(id).setAttribute("aria-pressed", dateringCodes.has(code) ? "true" : "false");
       }
       const rmt = parseInt(params.get("rmt"), 10);
       if (Number.isFinite(rmt)) {
