@@ -4,18 +4,22 @@ Voor de domeinexpert: wat de nieuwe jaartal/periode-data (eigen bron,
 2026-09-07) oplevert, en waar voorzichtigheid op zijn plaats is. Technische
 achtergrond over de koppeling zelf staat in `scripts/analyse_spatial.py`
 (`nearest_datering()`) en `src/methode.html` (categorie 5); dit document
-gaat over de inhoudelijke uitkomst.
+gaat over de inhoudelijke uitkomst. Bijgewerkt op 2026-09-08 na een
+controleronde van de domeinexpert op de eerder ontbrekende gevallen (zie
+[008 Datering - ontbrekend](008-datering-ontbrekend.md)) -- de cijfers
+hieronder zijn de actuele stand, niet meer de eerste versie.
 
 ## Dekking
 
 Van de 448 begraafplaatsen:
 
-- **287** hebben een exact jaartal;
+- **304** hebben een exact jaartal;
 - **116** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
-- **45** hebben geen van beide (geen bruikbare match binnen 300m, of de
-  brondata zelf had niets ingevuld).
+- **28** hebben geen van beide (geen bruikbare match binnen 300m en ook de
+  domeinexpert kent het jaartal niet, of de brondata zelf had niets
+  ingevuld).
 
-Samen dus **403 van de 448 (90%)** met een jaartal of periode.
+Samen dus **420 van de 448 (94%)** met een jaartal of periode.
 
 ## Verdeling over de tijd
 
@@ -23,11 +27,11 @@ Samen dus **403 van de 448 (90%)** met een jaartal of periode.
 |---|---|
 | Middeleeuws (periode bekend, geen jaartal) | 116 |
 | voor 1829 | 62 |
-| 1829-1849 | 37 |
-| 1850-1899 | 70 |
-| 1900-1949 | 60 |
-| 1950-1999 | 47 |
-| 2000-heden | 11 |
+| 1829-1849 | 38 |
+| 1850-1899 | 74 |
+| 1900-1949 | 62 |
+| 1950-1999 | 55 |
+| 2000-heden | 13 |
 
 Dezelfde tabel staat als klikbare filter in het paneel en als balkjesgrafiek
 op de statistiekenpagina.
@@ -73,14 +77,19 @@ van de hoofddataset (drempel 300m). Dat werkt in verreweg de meeste
 gevallen goed - 96% van de 448 valt binnen die drempel - maar twee dingen
 zijn de moeite van het weten waard:
 
-**Geen match gevonden voor 18 begraafplaatsen** (dus geen jaartal/periode
-getoond, ook al staat het misschien wel in de brondata): meestal plaatsen
-met meerdere begraafplaatsen dicht bij elkaar, waarbij het adres uit de
-brondata net bij een andere, niet in onze 448 voorkomende locatie
-uitkwam, of het brongegeven zelf ontbrak. Onder meer: Joodse begraafplaats
-(Strijen), Joodse begraafplaats (Vlaardingen), de Brielse begraafplaatsen
-(Nieuwe/Oude gem., RK), Begraafplaats De Dijk (Maassluis), Begraafplaats De
-Essenhof (Puttershoek).
+**Geen automatische match gevonden voor 18 begraafplaatsen** (dus geen
+jaartal/periode getoond, ook al stond het soms wel in de brondata): meestal
+plaatsen met meerdere begraafplaatsen dicht bij elkaar, waarbij het adres
+uit de brondata net bij een andere, niet in onze 448 voorkomende locatie
+uitkwam, of het brongegeven zelf ontbrak. Deze lijst is inmiddels door de
+domeinexpert nagelopen ([008 Datering - ontbrekend](008-datering-ontbrekend.md)):
+voor 17 van de 18 kon hij het echte jaartal bevestigen (soms omdat de
+kandidaat net buiten de 300m-drempel viel, zoals Strijen op 402m), voor 1
+(Nieuwe gem. begraafplaats, Brielle) is het jaartal ook bij hem onbekend --
+een echte lege waarde in de bron, geen matchingprobleem. Die 17
+bevestigingen staan nu als handmatige correctie in
+`data/datering-correcties.json` en overschrijven de automatische koppeling
+voor precies deze terreinen.
 
 **13 matches op 200-300m** (dus wel getoond, maar met meer onzekerheid dan
 de gemiddelde 34m): de moeite waard om steekproefsgewijs te controleren of

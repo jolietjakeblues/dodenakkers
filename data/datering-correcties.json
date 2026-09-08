@@ -1,0 +1,22 @@
+{
+  "_bron": "Handmatige bevestiging door de domeinexpert (2026-09-08), naar aanleiding van docs/data/008-datering-ontbrekend.md (de 18 begraafplaatsen zonder automatische koppeling). Overschrijft de automatische ruimtelijke koppeling (nearest_datering() in scripts/analyse_spatial.py) voor precies deze terreinen -- een directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde nabijheidsmatch. Denominatie is hier bewust niet meegenomen, zie de toelichting in scripts/analyse_spatial.py. Eén van de 18 (zh-0138, Nieuwe gem. begraafplaats, Brielle) staat hier niet in -- ook de domeinexpert kent het jaartal niet, dat is dus een echte lege waarde in de bron, geen matchingprobleem.",
+  "correcties": {
+    "zh-0271": { "jaartal": 1873, "jaartal_circa": false },
+    "zh-0183": { "jaartal": 1950, "jaartal_circa": false },
+    "zh-0304": { "jaartal": 1968, "jaartal_circa": true },
+    "zh-0410": { "jaartal": 1970, "jaartal_circa": false },
+    "zh-0092": { "jaartal": 1896, "jaartal_circa": false },
+    "zh-0130": { "jaartal": 1960, "jaartal_circa": false },
+    "zh-0279": { "jaartal": 1928, "jaartal_circa": false },
+    "zh-0139": { "jaartal": 1842, "jaartal_circa": false },
+    "zh-0194": { "jaartal": 1977, "jaartal_circa": false },
+    "zh-0152": { "jaartal": 1984, "jaartal_circa": false },
+    "zh-0372": { "jaartal": 1852, "jaartal_circa": false },
+    "zh-0329": { "jaartal": 2015, "jaartal_circa": false },
+    "zh-0173": { "jaartal": 1950, "jaartal_circa": false },
+    "zh-0174": { "jaartal": 2009, "jaartal_circa": false },
+    "zh-0140": { "jaartal": 1900, "jaartal_circa": false },
+    "zh-0097": { "jaartal": 1862, "jaartal_circa": false },
+    "zh-0388": { "jaartal": 1993, "jaartal_circa": false }
+  }
+}
