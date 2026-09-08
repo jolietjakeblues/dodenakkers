@@ -1153,6 +1153,16 @@ async function main() {
         heritageMatch(predicates, activeHeritageIds, f.properties) &&
         dateringMatch(predicates, activeDatIds, f.properties)
     );
+    // Ingangen delen dezelfde zichtbare set als het terrein (zelfde filters,
+    // incl. datering) -- ingangen zijn kleine losse punten dus een filter
+    // is daar veel opvallender te zien dan op de terreinvlakken alleen.
+    const visibleIds = currentVisibleFeatures.map((f) => f.properties.id);
+    map.setFilter(
+      "ingangen-punt",
+      visibleIds.length === begraafplaatsen.features.length
+        ? null
+        : ["in", ["get", "begraafplaats_id"], ["literal", visibleIds]]
+    );
     renderAccessibleResults(currentVisibleFeatures);
     syncUrl();
   }
