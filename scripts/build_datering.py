@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 """
-Verwerkt de datering-data van de domeinexpert (data/Begraafplaatsen
-Zuid-Holland - datering.csv, 448 rijen) tot een aparte referentielaag voor
-de viewer.
+Geocodeert de datering-data van de domeinexpert (data/Begraafplaatsen
+Zuid-Holland - datering.csv, 448 rijen) tot losse punten met jaartal/
+periode. Dit script koppelt zelf niets aan de hoofddataset -- dat gebeurt
+in een aparte stap, `nearest_datering()` in scripts/analyse_spatial.py,
+die elke begraafplaats aan het dichtstbijzijnde punt hier koppelt binnen
+een afstandsdrempel van 300m (zie docs/data/007-datering-bevindingen.md
+voor de onderbouwing van die drempel en docs/data/008-datering-ontbrekend.md
+voor de gevallen die erbuiten vallen).
 
-Waarom een aparte laag i.p.v. een veld op de bestaande 448 begraafplaatsen:
-geprobeerd is eerst een 1-op-1 koppeling te maken (naam+plaats, daarna
-adres-geocodering + ruimtelijke matching tegen de bestaande ingang-punten).
-De ruimtelijke matching werkt zelf goed (90% binnen 150m), maar legt bloot
-dat de 448 brondata-rijen NIET 1-op-1 overeenkomen met onze 448 terreinen:
-een deel is een sub-onderdeel van een terrein dat wij als één geheel tellen
-(bv. een Joodse afdeling binnen een algemene begraafplaats, letterlijk
-dezelfde coördinaat), en een ander deel is een begraafplaats die niet in
-onze 448 zit. Een 1-op-1 koppeling zou dus op ruim 20 plekken een verkeerde
+Waarom niet direct op naam+plaats gekoppeld: eerst geprobeerd, matchte maar
+37% zeker en fuzzy naam-matching leverde aantoonbaar verkeerde koppelingen
+op bij generieke namen ("Gem. begraafplaats", "RK Begraafplaats" komen
+tientallen keren voor). Waarom niet blind 1-op-1 op volgorde: de 448
+brondata-rijen komen niet 1-op-1 overeen met onze 448 terreinen -- een deel
+is een sub-onderdeel van een terrein dat wij als één geheel tellen (bv. een
+Joodse afdeling binnen een algemene begraafplaats, letterlijk dezelfde
+coördinaat), een ander deel is een begraafplaats die niet in onze 448 zit.
+Een geforceerde 1-op-1 koppeling zou dus op meerdere plekken een verkeerde
 of misleidende suggestie van precisie geven -- zelfde valkuil als de
 in_hoofddataset-heuristiek die eerder al bij de verdwenen-begraafplaatsen-
-laag is verwijderd (2026-08-31, zie docs/geschiedenis.md). Deze laag toont
-daarom de datering-punten op zichzelf, gegeocodeerd op het eigen adres uit
-de bron, zonder gepretendeerde koppeling aan de hoofddataset.
+laag is verwijderd (2026-08-31, zie docs/geschiedenis.md). Vandaar de
+ruimtelijke koppeling met expliciete drempel in plaats daarvan.
 
 Geocoding via de gratis PDOK Locatieserver (Bezoekadres + Huisnummer + PC +
 Plaats -> centroide_ll van het beste treffer, meestal postcode-niveau,

@@ -56,6 +56,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - [005 Erfgoedrelaties resultaten](data/005-erfgoedrelaties-resultaten.md)
 - [006 ABR2-thesaurus verkenning](data/006-abr-thesaurus-verkenning.md)
 - [007 Datering - bevindingen](data/007-datering-bevindingen.md)
+- [008 Datering - ontbrekend](data/008-datering-ontbrekend.md)
 
 ## MVP
 
