@@ -16643,7 +16643,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1896,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -17405,7 +17411,13 @@
             "distance_m": 243.2
           }
         ],
-        "datering": null
+        "datering": {
+          "jaartal": 1862,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -22480,7 +22492,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1960,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25081,7 +25099,13 @@
             "distance_m": 242.1
           }
         ],
-        "datering": null
+        "datering": {
+          "jaartal": 1842,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -25256,7 +25280,13 @@
             "distance_m": 164.6
           }
         ],
-        "datering": null
+        "datering": {
+          "jaartal": 1900,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -26990,7 +27020,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1984,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29628,7 +29664,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -29755,7 +29797,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 2009,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -30779,7 +30827,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1950,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -32113,7 +32167,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1977,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -42645,7 +42705,13 @@
             "distance_m": 86.5
           }
         ],
-        "datering": null
+        "datering": {
+          "jaartal": 1873,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -43602,7 +43668,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1928,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -46624,7 +46696,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1968,
+          "jaartal_circa": true,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -49441,7 +49519,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 2015,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -55175,7 +55259,13 @@
             "distance_m": 33.6
           }
         ],
-        "datering": null
+        "datering": {
+          "jaartal": 1852,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -57084,7 +57174,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1993,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",
@@ -59970,7 +60066,13 @@
         },
         "rijksmonument_count": 0,
         "rijksmonument_relations": [],
-        "datering": null
+        "datering": {
+          "jaartal": 1970,
+          "jaartal_circa": false,
+          "periode": null,
+          "distance_m": null,
+          "bron": "handmatig bevestigd door de domeinexpert"
+        }
       },
       "geometry": {
         "type": "Polygon",

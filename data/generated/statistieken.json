@@ -978,9 +978,9 @@
   },
   "datering": {
     "aantal": 448,
-    "aantal_met_jaartal": 287,
+    "aantal_met_jaartal": 304,
     "aantal_met_alleen_periode": 116,
-    "aantal_onbekend": 45,
+    "aantal_onbekend": 28,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
@@ -992,23 +992,23 @@
       },
       {
         "label": "1829-1849",
-        "aantal": 37
+        "aantal": 38
       },
       {
         "label": "1850-1899",
-        "aantal": 70
+        "aantal": 74
       },
       {
         "label": "1900-1949",
-        "aantal": 60
+        "aantal": 62
       },
       {
         "label": "1950-1999",
-        "aantal": 47
+        "aantal": 55
       },
       {
         "label": "2000-heden",
-        "aantal": 11
+        "aantal": 13
       }
     ],
     "oudste": [

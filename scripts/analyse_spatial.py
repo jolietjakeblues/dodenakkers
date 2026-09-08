@@ -10,6 +10,8 @@ Input:
   data/pdok/gemeenten-zuid-holland.geojson (scripts/fetch_gemeentegrenzen.py)
   data/generated/datering.geojson (scripts/build_datering.py, optioneel -- draai dat
     script eerst als de datering-koppeling ook bijgewerkt moet worden)
+  data/datering-correcties.json (optioneel -- handmatige bevestigingen door de
+    domeinexpert die de automatische koppeling overschrijven, zie dat bestand)
 
 Output:
   data/generated/analyse.geojson          (begraafplaatsen + erfgoedrelaties)
@@ -57,6 +59,17 @@ RM_NEARBY_BUFFER_M = 250
 # (naburige) koppeling te groot. Geen match binnen de drempel = geen
 # datering getoond, in lijn met "eerder niet gevonden dan een foute match".
 DATERING_MATCH_THRESHOLD_M = 300
+
+# Handmatige correcties (2026-09-08): de domeinexpert kreeg de lijst van 18
+# begraafplaatsen zonder automatische koppeling (docs/data/008-datering-
+# ontbrekend.md) en bevestigde het echte jaartal voor 17 daarvan -- soms
+# omdat de kandidaat net buiten de 300m-drempel viel (bv. Strijen, 402m),
+# soms omdat er helemaal geen bruikbare kandidaat in de buurt lag. Een
+# directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde
+# nabijheidsmatch, dus dit overschrijft nearest_datering() voor deze
+# specifieke terreinen. Zie data/datering-correcties.json voor de herkomst
+# per terrein.
+DATERING_CORRECTIES_PATH = REPO_ROOT / "data" / "datering-correcties.json"
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
@@ -234,6 +247,11 @@ def main() -> None:
     gemeenten = load_features(PDOK_DIR / "gemeenten-zuid-holland.geojson")
     datering_path = GENERATED_DIR / "datering.geojson"
     datering = load_features(datering_path) if datering_path.exists() else []
+    datering_correcties = (
+        json.loads(DATERING_CORRECTIES_PATH.read_text(encoding="utf-8"))["correcties"]
+        if DATERING_CORRECTIES_PATH.exists()
+        else {}
+    )
 
     # "gebouwde rijksmonumenten" excludes the archeologisch subset -- those
     # are handled separately via the dedicated archeologische-rijksmonumenten
@@ -263,6 +281,7 @@ def main() -> None:
         "met_rijksmonument_100m": 0,
         "met_rijksmonument_250m": 0,
         "met_datering": 0,
+        "met_datering_correctie": 0,
     }
     gemeente_via_fallback = 0
 
@@ -282,6 +301,16 @@ def main() -> None:
         ingang_lat = feature["properties"].get("ingang_lat")
         ingang_rd = transform(to_rd, Point(ingang_lon, ingang_lat)) if ingang_lon is not None and ingang_lat is not None else None
         datering_match = nearest_datering(ingang_rd, datering_index, datering, datering_geoms) if datering_index else None
+        correctie = datering_correcties.get(feature["properties"]["id"])
+        if correctie:
+            datering_match = {
+                "jaartal": correctie.get("jaartal"),
+                "jaartal_circa": correctie.get("jaartal_circa", False),
+                "periode": correctie.get("periode"),
+                "distance_m": None,
+                "bron": "handmatig bevestigd door de domeinexpert",
+            }
+            stats["met_datering_correctie"] += 1
         if datering_match:
             stats["met_datering"] += 1
 
@@ -329,6 +358,8 @@ def main() -> None:
         print(f"  datering gekoppeld (binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
     else:
         print("  datering.geojson niet gevonden -- geen datering-koppeling (draai eerst scripts/build_datering.py)")
+    if datering_correcties:
+        print(f"  waarvan handmatige correctie door de domeinexpert: {stats['met_datering_correctie']} van {len(datering_correcties)} beschikbare correcties toegepast")
 
     write_audit(out_features, stats, skipped_null_aard)
 
