@@ -67,6 +67,10 @@ FILES_TO_COPY = [
     # Cloudflare Pages leest _headers uit de root van de build-output (geen
     # paden erin, dus geen REWRITES nodig -- gewoon 1-op-1 kopieren).
     (REPO_ROOT / "_headers", SITE_DIR / "_headers"),
+    # robots.txt/sitemap.xml gebruiken al absolute URL's (geen ../images/ of
+    # ../data/ paden), dus geen REWRITES nodig.
+    (REPO_ROOT / "robots.txt", SITE_DIR / "robots.txt"),
+    (REPO_ROOT / "sitemap.xml", SITE_DIR / "sitemap.xml"),
 ]
 
 REWRITES = [
@@ -107,6 +111,9 @@ def main() -> None:
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.html", SITE_DIR / "kandidaten.html")
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.js", SITE_DIR / "kandidaten.js")
     copy_with_rewrites(REPO_ROOT / "src" / "methode.html", SITE_DIR / "methode.html")
+    # Cloudflare Pages serveert dit automatisch bij een onbekende URL zodra
+    # het op de root van de build-output staat (geen aparte configuratie).
+    copy_with_rewrites(REPO_ROOT / "src" / "404.html", SITE_DIR / "404.html")
 
     total_bytes = sum(f.stat().st_size for f in SITE_DIR.rglob("*") if f.is_file())
     print(f"\nsite/ klaar, {total_bytes / 1024 / 1024:.1f} MB")

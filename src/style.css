@@ -617,6 +617,20 @@ body.stats-page {
   .stats-header .logo {
     height: 32px;
   }
+  .stats-kv {
+    /* max-content dt's force the page wider than the viewport on long
+       Nederlandse labels (bv. "Begraafplaatsen binnen/overlappend een
+       beschermd gezicht") -- stapel term/waarde i.p.v. naast elkaar, en
+       laat de dt weer afbreken (elders bewust nowrap, hier niet houdbaar). */
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+  .stats-kv dt {
+    white-space: normal;
+  }
+  .stats-kv dd {
+    margin-bottom: 8px;
+  }
 }
 
 /* --- Kandidaat-begraafplaatsen (src/kandidaten.html, EXPERIMENTEEL) --- */
