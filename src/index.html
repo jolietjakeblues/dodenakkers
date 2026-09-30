@@ -4,6 +4,16 @@
   <meta charset="utf-8" />
   <title>Dodenakkers Zuid-Holland - onderzoeksviewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Onderzoeksviewer voor de 448 begraafplaatsen van Zuid-Holland: ligging, oppervlakte, status, datering en relatie tot beschermd erfgoed op één kaart." />
+  <link rel="canonical" href="https://dodenakkers-zh.pages.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dodenakkers Zuid-Holland" />
+  <meta property="og:title" content="Dodenakkers Zuid-Holland - onderzoeksviewer" />
+  <meta property="og:description" content="Onderzoeksviewer voor de 448 begraafplaatsen van Zuid-Holland: ligging, oppervlakte, status, datering en relatie tot beschermd erfgoed op één kaart." />
+  <meta property="og:url" content="https://dodenakkers-zh.pages.dev/" />
+  <meta property="og:image" content="https://dodenakkers-zh.pages.dev/images/Dodenakkers-logo-68015ff5.webp" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta name="twitter:card" content="summary" />
   <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
   <link rel="stylesheet" href="vendor/maplibre-gl/maplibre-gl.css" />
   <link rel="stylesheet" href="style.css" />
@@ -65,11 +75,11 @@
       <p class="filter-summary" id="filter-summary" aria-live="polite" aria-atomic="true"></p>
       <button type="button" id="filter-reset">Wis filters</button>
 
-      <h3 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h3>
+      <h2 class="filter-group-heading">Status <span class="hint">(meerdere aanvinken toont ze samen)</span></h2>
       <label><input type="checkbox" id="filter-niet-geruimd" /> Niet-geruimd <span class="count" id="count-filter-niet-geruimd"></span></label>
       <label><input type="checkbox" id="filter-geruimd" /> Geruimd <span class="count" id="count-filter-geruimd"></span></label>
 
-      <h3 class="filter-group-heading">Erfgoedrelatie <span class="hint">(meerdere aanvinken versmalt de selectie)</span></h3>
+      <h2 class="filter-group-heading">Erfgoedrelatie <span class="hint">(meerdere aanvinken versmalt de selectie)</span></h2>
       <label><input type="checkbox" id="filter-gezicht" /> Binnen/overlapt beschermd gezicht <span class="count" id="count-filter-gezicht"></span></label>
       <label><input type="checkbox" id="filter-archeologie" /> Overlapt archeologisch rijksmonument <span class="count" id="count-filter-archeologie"></span></label>
       <label><input type="checkbox" id="filter-rijksmonument" /> Rijksmonument op/nabij terrein <span class="count" id="count-filter-rijksmonument"></span></label>
@@ -78,7 +88,7 @@
         <span id="rm-threshold-label">&le;100m</span>
       </div>
 
-      <h3 class="filter-group-heading">Datering <span class="hint">(meerdere aanklikken toont ze samen)</span></h3>
+      <h2 class="filter-group-heading">Datering <span class="hint">(meerdere aanklikken toont ze samen)</span></h2>
       <p class="hint">Jaartal/periode uit een aparte bron van de domeinexpert, gekoppeld op het dichtstbijzijnde adres (zie <a href="methode.html">methode</a>). 1829: vanaf dat jaar was begraven in en rond de kerk in steden wettelijk verboden, een keerpunt zichtbaar in de eerste twee balken.</p>
       <div id="datering-filter"></div>
       <p class="hint" id="datering-filter-summary"></p>
