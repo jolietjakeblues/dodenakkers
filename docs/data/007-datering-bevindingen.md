@@ -11,15 +11,17 @@ hieronder zijn de actuele stand, niet meer de eerste versie.
 
 ## Dekking
 
-Van de 448 begraafplaatsen:
+Van de 449 begraafplaatsen:
 
 - **304** hebben een exact jaartal;
 - **116** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
-- **28** hebben geen van beide (geen bruikbare match binnen 300m en ook de
+- **29** hebben geen van beide (geen bruikbare match binnen 300m en ook de
   domeinexpert kent het jaartal niet, of de brondata zelf had niets
-  ingevuld).
+  ingevuld -- inclusief Natuurbegraafplaats Staelduinen, Hoek van Holland,
+  die pas op 2026-10-10 is toegevoegd en nog niet in de datering-bron van
+  de domeinexpert voorkomt).
 
-Samen dus **420 van de 448 (94%)** met een jaartal of periode.
+Samen dus **420 van de 449 (94%)** met een jaartal of periode.
 
 ## Verdeling over de tijd
 
@@ -74,7 +76,7 @@ waard om te controleren als dit ergens toe doet.
 De koppeling loopt via het bezoekadres uit de brondata, gegeocodeerd met de
 PDOK Locatieserver en vervolgens gekoppeld aan de dichtstbijzijnde ingang
 van de hoofddataset (drempel 300m). Dat werkt in verreweg de meeste
-gevallen goed - 96% van de 448 valt binnen die drempel - maar twee dingen
+gevallen goed - 96% van de oorspronkelijke 448 valt binnen die drempel - maar twee dingen
 zijn de moeite van het weten waard:
 
 **Geen automatische match gevonden voor 18 begraafplaatsen** (dus geen
