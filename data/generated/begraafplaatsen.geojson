@@ -40743,6 +40743,123 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0449",
+        "naam": "Natuurbegraafplaats Staelduinen",
+        "plaats_origineel": "Hoek van Holland",
+        "plaats": "Hoek van Holland",
+        "geruimd": false,
+        "geruimd_bron_terrein": false,
+        "geruimd_bron_ingang": false,
+        "status_conflict": false,
+        "oppervlakte_m2": 301096.18,
+        "oppervlakte_ha": 30.1096,
+        "omtrek_m": 4344.17,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.163628346967432,
+            51.97548024230696
+          ]
+        },
+        "ingang_lon": 4.163628346967432,
+        "ingang_lat": 51.97548024230696,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 0.82,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "Natuurbegraafplaats Staelduinen",
+        "naam_bron_ingang": "Natuurbegraafplaats Staelduinen",
+        "bron_rij_terrein": 897,
+        "bron_rij_ingang": 898,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.161661796323344,
+              51.9751696945189
+            ],
+            [
+              4.162803552815635,
+              51.9748142252754
+            ],
+            [
+              4.164420109267375,
+              51.97414190378423
+            ],
+            [
+              4.171810045565651,
+              51.97139692015709
+            ],
+            [
+              4.168837823274185,
+              51.96832283941251
+            ],
+            [
+              4.169978859545173,
+              51.96619309005317
+            ],
+            [
+              4.174114139281173,
+              51.97015166190531
+            ],
+            [
+              4.17820359026514,
+              51.96841478684677
+            ],
+            [
+              4.179650680535911,
+              51.96977519017941
+            ],
+            [
+              4.172487933169762,
+              51.97259422649464
+            ],
+            [
+              4.169700595793513,
+              51.97378042034228
+            ],
+            [
+              4.16824054893326,
+              51.974183846713
+            ],
+            [
+              4.166751344595994,
+              51.97462197763236
+            ],
+            [
+              4.166230473055215,
+              51.97475369245907
+            ],
+            [
+              4.165378356039366,
+              51.97495320901871
+            ],
+            [
+              4.163650371945693,
+              51.97546650444275
+            ],
+            [
+              4.159450683557182,
+              51.97655391741412
+            ],
+            [
+              4.159232098200567,
+              51.97608142203857
+            ],
+            [
+              4.161661796323344,
+              51.9751696945189
+            ]
+          ]
+        ]
+      }
     }
   ]
 }

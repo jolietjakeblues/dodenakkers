@@ -1310,21 +1310,6 @@
       "lat": 52.028322
     },
     {
-      "objectnummer": "10063127",
-      "registratiedatum": "2017-08-28",
-      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10063127",
-      "gemeente": "Westland",
-      "gevonden_term": "grafveld",
-      "fragment": "...zou immers kunnen gaan om nederzettingsterreinen, activiteitenzones, grafvelden, maar ook om akker- en/of weidegebieden, enz. Over de daadwerkelijk...",
-      "zekerheid": "onzeker/verwacht",
-      "afstand_tot_bekende_bp_m": 1611.2,
-      "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats Beukenhage, 's-Gravenzande",
-      "afstand_tot_verdwenen_bp_m": 2531.7,
-      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
-      "lon": 4.178342,
-      "lat": 51.983219
-    },
-    {
       "objectnummer": "10248184",
       "registratiedatum": "2021-10-11",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10248184",
@@ -1503,6 +1488,21 @@
       "dichtstbijzijnde_verdwenen_bp": "NH kerkhof, Strijen",
       "lon": 4.55396,
       "lat": 51.807845
+    },
+    {
+      "objectnummer": "10063127",
+      "registratiedatum": "2017-08-28",
+      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10063127",
+      "gemeente": "Westland",
+      "gevonden_term": "grafveld",
+      "fragment": "...zou immers kunnen gaan om nederzettingsterreinen, activiteitenzones, grafvelden, maar ook om akker- en/of weidegebieden, enz. Over de daadwerkelijk...",
+      "zekerheid": "onzeker/verwacht",
+      "afstand_tot_bekende_bp_m": 1206.4,
+      "dichtstbijzijnde_bp": "Natuurbegraafplaats Staelduinen, Hoek van Holland",
+      "afstand_tot_verdwenen_bp_m": 2531.7,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Naaldwijk",
+      "lon": 4.178342,
+      "lat": 51.983219
     },
     {
       "objectnummer": "10104492",

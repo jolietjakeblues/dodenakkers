@@ -1,18 +1,18 @@
 {
   "basis": {
-    "totaal": 448,
-    "totaal_ha": 519.6,
-    "niet_geruimd": 401,
+    "totaal": 449,
+    "totaal_ha": 549.7,
+    "niet_geruimd": 402,
     "geruimd": 47,
     "geruimd_pct": 10.5,
     "statusconflict": 0,
-    "gemiddelde_m2": 11597.4,
-    "mediaan_m2": 3177.5,
+    "gemiddelde_m2": 12242.2,
+    "mediaan_m2": 3220.3,
     "grootste": {
-      "naam": "Gem. begraafplaats Hofwijk",
-      "plaats": "Rotterdam",
-      "m2": 268823.91,
-      "ha": 26.8824
+      "naam": "Natuurbegraafplaats Staelduinen",
+      "plaats": "Hoek van Holland",
+      "m2": 301096.18,
+      "ha": 30.1096
     },
     "kleinste": {
       "naam": "Grafmonument juffrouw Begeer",
@@ -160,6 +160,12 @@
         "totaal_m2": 485490.0
       },
       {
+        "plaats": "Hoek van Holland",
+        "aantal": 2,
+        "geruimd": 0,
+        "totaal_m2": 325803.0
+      },
+      {
         "plaats": "Dordrecht",
         "aantal": 4,
         "geruimd": 0,
@@ -200,12 +206,6 @@
         "aantal": 4,
         "geruimd": 0,
         "totaal_m2": 95297.0
-      },
-      {
-        "plaats": "Zwijndrecht",
-        "aantal": 6,
-        "geruimd": 0,
-        "totaal_m2": 95167.0
       }
     ]
   },
@@ -237,9 +237,9 @@
       },
       {
         "gemeente": "Rotterdam",
-        "aantal": 23,
+        "aantal": 24,
         "geruimd": 1,
-        "totaal_m2": 999875.0
+        "totaal_m2": 1300971.0
       },
       {
         "gemeente": "Alphen aan den Rijn",
@@ -338,9 +338,9 @@
     "grootste_totale_oppervlakte": [
       {
         "gemeente": "Rotterdam",
-        "aantal": 23,
+        "aantal": 24,
         "geruimd": 1,
-        "totaal_m2": 999875.0
+        "totaal_m2": 1300971.0
       },
       {
         "gemeente": "'s-Gravenhage",
@@ -487,7 +487,7 @@
     ]
   },
   "rijksmonumenten": {
-    "gemiddeld_binnen_100m": 2.38,
+    "gemiddeld_binnen_100m": 2.37,
     "meeste_binnen_100m": [
       {
         "naam": "NH kerkhof",
@@ -977,10 +977,10 @@
     }
   },
   "datering": {
-    "aantal": 448,
+    "aantal": 449,
     "aantal_met_jaartal": 304,
     "aantal_met_alleen_periode": 116,
-    "aantal_onbekend": 28,
+    "aantal_onbekend": 29,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
