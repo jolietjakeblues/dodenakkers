@@ -13,14 +13,14 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 [geschiedenis.md](geschiedenis.md) voor hoe deze aantallen tot stand kwamen
 (brondata-updates, correcties).*
 
-**Begraafplaatsen** - 449 terreinen, samen circa **550 ha**:
+**Begraafplaatsen** - 450 terreinen, samen circa **550 ha**:
 
-- 402 niet-geruimd, 47 geruimd, 0 statusconflicten;
-- kleinste terrein 13,49 m², grootste 301.096,18 m² (30,1 ha, Natuurbegraafplaats Staelduinen), mediaan 3.220,30 m².
+- 402 niet-geruimd, 48 geruimd, 0 statusconflicten;
+- kleinste terrein 13,49 m², grootste 301.096,18 m² (30,1 ha, Natuurbegraafplaats Staelduinen), mediaan 3.220,27 m².
 
 **Tegenover beschermde gezichten** (105 rijksbeschermde stads-/dorpsgezichten in de Zuid-Holland-bbox):
 
-- 43 begraafplaatsen liggen volledig binnen een beschermd gezicht;
+- 44 begraafplaatsen liggen volledig binnen een beschermd gezicht;
 - 5 overlappen een beschermd gezicht deels;
 - 401 hebben geen relatie met een beschermd gezicht.
 
@@ -31,9 +31,9 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 
 **Tegenover (gebouwde) rijksmonumenten** (14.204 in de bbox):
 
-- 247 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (317 binnen 250 m -- de dataset bewaart relaties tot 250 m zodat de schuifregelaar in de viewer verder dan 100 m kan verkennen; categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`/`100-250m` - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
+- 248 begraafplaatsen hebben minstens één rijksmonument binnen 100 m (318 binnen 250 m -- de dataset bewaart relaties tot 250 m zodat de schuifregelaar in de viewer verder dan 100 m kan verkennen; categorieën `inside_on_site`/`touches`/`intersects`/`0-25m`/`25-100m`/`100-250m` - voorlopige werkhypothesen, ruwe afstand blijft altijd bewaard).
 
-Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt - ongeacht of ze bij een van de 449 begraafplaatsen in de buurt liggen.
+Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen vaste systeemcategorie, gewoon een zoekopdracht op het echte RCE-label): 65 van de 14.204 rijksmonumenten in de bbox hebben een oorspronkelijke functie waar "begraafplaats" of "kerkhof" in voorkomt - ongeacht of ze bij een van de 450 begraafplaatsen in de buurt liggen.
 
 **Archeologische onderzoeksgebieden** (`ceo:ArcheologischOnderzoeksgebied`, andere class dan rijksmonumenten): 22.254 gebieden in de bbox gepubliceerd als losse, standaard uitgeschakelde kaartlaag (200 gebieden met een "vertrouwelijk"-vlag in de bron zijn uitgesloten, zie [004 RCE-MCP querystrategie](data/004-rce-mcp-querystrategie.md#q4-archeologische-onderzoeksgebieden-2026-08-20)). Geen spatiale koppeling met de begraafplaatsendataset, puur een informatieve referentielaag.
 
@@ -57,6 +57,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - [006 ABR2-thesaurus verkenning](data/006-abr-thesaurus-verkenning.md)
 - [007 Datering - bevindingen](data/007-datering-bevindingen.md)
 - [008 Datering - ontbrekend](data/008-datering-ontbrekend.md)
+- [009 Vragen aan de domeinexpert](data/009-vragen-domeinexpert.md)
 
 ## MVP
 
@@ -79,7 +80,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - de filters in het paneel zijn twee groepen met andere combinatielogica: de drie status-checkboxes (geruimd/niet-geruimd/statusconflict) verbreden de selectie (OR/unie) omdat het elkaar uitsluitende toestanden van hetzelfde veld zijn, de drie erfgoed-checkboxes versmallen (AND) omdat een begraafplaats meerdere erfgoedrelaties tegelijk kan hebben -- zie de toelichting bij `applyFilters()` in `src/app.js`;
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
 - de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
-- "Verdwenen begraafplaatsen" is een zelfstandige, gegeocodeerde puntenlaag uit een eigen bron van de domeinexpert (KMZ), bewust zonder koppeling aan de 449 hoofdterreinen -- zie [methode.html](../src/methode.html) voor de vijf datacategorieën en waarom een koppeling hier bewust is afgewezen;
+- "Verdwenen begraafplaatsen" is een zelfstandige, gegeocodeerde puntenlaag uit een eigen bron van de domeinexpert (KMZ), bewust zonder koppeling aan de 450 hoofdterreinen -- zie [methode.html](../src/methode.html) voor de vijf datacategorieën en waarom een koppeling hier bewust is afgewezen;
 - "Datering" (jaartal/periode per begraafplaats, eigen CSV-bron van de domeinexpert) is wél gekoppeld aan de hoofddataset -- op het dichtstbijzijnde adres via de ingang-coördinaat, met een afstandsdrempel van 300m (`nearest_datering()` in `scripts/analyse_spatial.py`) -- en zichtbaar als veld in het begraafplaats-popup en als klikbare periode-filter in het paneel, niet als eigen kaartlaag.
 
 Voor de volledige chronologische geschiedenis van hoe dit tot stand kwam
@@ -100,8 +101,8 @@ CSV (data/Begraafplaatsen Zuid-Holland- Zuid-Holland.csv)
 
 `build_base_dataset.py` implementeert de matchingregels uit
 [003 CSV als genormaliseerde bronlaag](data/003-csv-bron-en-koppeling.md) en
-faalt met een assertion zodra de bekende invarianten (897/449/448,
-437/11/1/0 koppelwijzen, 0 statusconflicten) niet meer kloppen.
+faalt met een assertion zodra de bekende invarianten (899/450/449,
+438/11/1/0 koppelwijzen, 0 statusconflicten) niet meer kloppen.
 
 ## Hosting
 

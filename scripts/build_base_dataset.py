@@ -98,7 +98,10 @@ def load_source() -> pd.DataFrame:
     # 895 -> 897 op 2026-10-10: 1 nieuwe begraafplaats (2 rijen: Natuurbegraafplaats
     # Staelduinen, Hoek van Holland, niet geruimd) uit een kmz van de domeinexpert,
     # zie scripts/add_staelduinen.py (eenmalig gedraaid).
-    assert len(df) == 897, f"bronrecords: verwacht 897, gevonden {len(df)}"
+    # 897 -> 899 op 2026-10-16: 1 nieuwe begraafplaats (2 rijen: NH Kerkhof,
+    # Noordwijk, geruimd) uit een kmz van de domeinexpert, zie
+    # scripts/add_noordwijk_kerkhof.py (eenmalig gedraaid).
+    assert len(df) == 899, f"bronrecords: verwacht 899, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -175,7 +178,9 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
     # "Tijdelijk Zuid-Holland"-kmz koppelen allebei exact op naam+plaats.
     # 436 -> 437 op 2026-10-10: Natuurbegraafplaats Staelduinen koppelt ook
     # exact op naam+plaats, zie scripts/add_staelduinen.py.
-    assert counts["exact_name_place"] == 437, counts
+    # 437 -> 438 op 2026-10-16: NH Kerkhof, Noordwijk koppelt ook exact op
+    # naam+plaats, zie scripts/add_noordwijk_kerkhof.py.
+    assert counts["exact_name_place"] == 438, counts
     assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
     assert counts["missing"] == 0, counts
@@ -408,8 +413,10 @@ def main() -> None:
     # docs/data/003-csv-bron-en-koppeling.md.
     # 448 -> 449 terreinen, 447 -> 448 ingangen op 2026-10-10: Natuurbegraafplaats
     # Staelduinen, Hoek van Holland, zie scripts/add_staelduinen.py.
-    assert len(terrein) == 449, f"terreinen: verwacht 449, gevonden {len(terrein)}"
-    assert len(ingang) == 448, f"ingangen: verwacht 448, gevonden {len(ingang)}"
+    # 449 -> 450 terreinen, 448 -> 449 ingangen op 2026-10-16: NH Kerkhof,
+    # Noordwijk, zie scripts/add_noordwijk_kerkhof.py.
+    assert len(terrein) == 450, f"terreinen: verwacht 450, gevonden {len(terrein)}"
+    assert len(ingang) == 449, f"ingangen: verwacht 449, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 

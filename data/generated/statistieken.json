@@ -1,13 +1,13 @@
 {
   "basis": {
-    "totaal": 449,
-    "totaal_ha": 549.7,
+    "totaal": 450,
+    "totaal_ha": 549.8,
     "niet_geruimd": 402,
-    "geruimd": 47,
-    "geruimd_pct": 10.5,
+    "geruimd": 48,
+    "geruimd_pct": 10.7,
     "statusconflict": 0,
-    "gemiddelde_m2": 12242.2,
-    "mediaan_m2": 3220.3,
+    "gemiddelde_m2": 12218.7,
+    "mediaan_m2": 3177.5,
     "grootste": {
       "naam": "Natuurbegraafplaats Staelduinen",
       "plaats": "Hoek van Holland",
@@ -121,6 +121,12 @@
         "totaal_m2": 16737.0
       },
       {
+        "plaats": "Noordwijk",
+        "aantal": 4,
+        "geruimd": 1,
+        "totaal_m2": 26398.0
+      },
+      {
         "plaats": "Monster",
         "aantal": 4,
         "geruimd": 1,
@@ -137,12 +143,6 @@
         "aantal": 4,
         "geruimd": 1,
         "totaal_m2": 92021.0
-      },
-      {
-        "plaats": "Hellevoetsluis",
-        "aantal": 4,
-        "geruimd": 1,
-        "totaal_m2": 41703.0
       }
     ],
     "volledig_geruimd": [],
@@ -328,10 +328,10 @@
         "totaal_m2": 76009.0
       },
       {
-        "gemeente": "Midden-Delfland",
-        "aantal": 9,
+        "gemeente": "Noordwijk",
+        "aantal": 10,
         "geruimd": 2,
-        "totaal_m2": 23165.0
+        "totaal_m2": 43191.0
       }
     ],
     "volledig_geruimd": [],
@@ -399,8 +399,8 @@
     ]
   },
   "beschermd_gezicht": {
-    "totaal": 48,
-    "pct": 10.7,
+    "totaal": 49,
+    "pct": 10.9,
     "top_plaatsen": [
       {
         "plaats": "Wassenaar",
@@ -487,7 +487,7 @@
     ]
   },
   "rijksmonumenten": {
-    "gemiddeld_binnen_100m": 2.37,
+    "gemiddeld_binnen_100m": 2.4,
     "meeste_binnen_100m": [
       {
         "naam": "NH kerkhof",
@@ -544,23 +544,23 @@
     "top_functies_nabij_100m": [
       {
         "functie": "Woonhuis",
-        "aantal": 413
+        "aantal": 422
       },
       {
         "functie": "Kerk",
-        "aantal": 146
+        "aantal": 147
       },
       {
         "functie": "Boerderij",
         "aantal": 59
       },
       {
-        "functie": "Werk-woonhuis",
+        "functie": "Kerk en kerkonderdeel",
         "aantal": 43
       },
       {
-        "functie": "Kerk en kerkonderdeel",
-        "aantal": 42
+        "functie": "Werk-woonhuis",
+        "aantal": 43
       },
       {
         "functie": "Begraafplaats en -onderdelen",
@@ -572,7 +572,7 @@
       },
       {
         "functie": "Pastorie",
-        "aantal": 15
+        "aantal": 17
       },
       {
         "functie": "Tuin, park en plantsoen",
@@ -864,9 +864,9 @@
   "kerk": {
     "aantal_in_categorie": 499,
     "binnen": {
-      "25": 125,
-      "50": 141,
-      "100": 151
+      "25": 126,
+      "50": 142,
+      "100": 152
     },
     "dichtstbij": [
       {
@@ -977,18 +977,18 @@
     }
   },
   "datering": {
-    "aantal": 449,
-    "aantal_met_jaartal": 304,
-    "aantal_met_alleen_periode": 116,
-    "aantal_onbekend": 29,
+    "aantal": 450,
+    "aantal_met_jaartal": 305,
+    "aantal_met_alleen_periode": 115,
+    "aantal_onbekend": 30,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
-        "aantal": 116
+        "aantal": 115
       },
       {
         "label": "voor 1829 (verbod op kerkbegraving)",
-        "aantal": 62
+        "aantal": 64
       },
       {
         "label": "1829-1849",
@@ -1000,7 +1000,7 @@
       },
       {
         "label": "1900-1949",
-        "aantal": 62
+        "aantal": 61
       },
       {
         "label": "1950-1999",
