@@ -95,7 +95,13 @@ def load_source() -> pd.DataFrame:
     # De Lier + NH Kerkhof Oostvoorne, beide geruimd) uit de tweede
     # "Tijdelijk Zuid-Holland"-kmz van de domeinexpert, zie scripts/add_tijdelijk_zuidholland_kmz2.py
     # (eenmalig gedraaid) en docs/data/003-csv-bron-en-koppeling.md.
-    assert len(df) == 895, f"bronrecords: verwacht 895, gevonden {len(df)}"
+    # 895 -> 897 op 2026-10-10: 1 nieuwe begraafplaats (2 rijen: Natuurbegraafplaats
+    # Staelduinen, Hoek van Holland, niet geruimd) uit een kmz van de domeinexpert,
+    # zie scripts/add_staelduinen.py (eenmalig gedraaid).
+    # 897 -> 899 op 2026-10-16: 1 nieuwe begraafplaats (2 rijen: NH Kerkhof,
+    # Noordwijk, geruimd) uit een kmz van de domeinexpert, zie
+    # scripts/add_noordwijk_kerkhof.py (eenmalig gedraaid).
+    assert len(df) == 899, f"bronrecords: verwacht 899, gevonden {len(df)}"
     return df.reset_index().rename(columns={"index": "orig_idx"})
 
 
@@ -170,7 +176,11 @@ def match_terrein_ingang(terrein: pd.DataFrame, ingang: pd.DataFrame) -> list[di
     # Zie docs/data/003-csv-bron-en-koppeling.md.
     # 434 -> 436 op 2026-08-26: 2 nieuwe begraafplaatsen uit de tweede
     # "Tijdelijk Zuid-Holland"-kmz koppelen allebei exact op naam+plaats.
-    assert counts["exact_name_place"] == 436, counts
+    # 436 -> 437 op 2026-10-10: Natuurbegraafplaats Staelduinen koppelt ook
+    # exact op naam+plaats, zie scripts/add_staelduinen.py.
+    # 437 -> 438 op 2026-10-16: NH Kerkhof, Noordwijk koppelt ook exact op
+    # naam+plaats, zie scripts/add_noordwijk_kerkhof.py.
+    assert counts["exact_name_place"] == 438, counts
     assert counts["spatial_name_variant"] == 11, counts
     assert counts["shared_entrance_spatial"] == 1, counts
     assert counts["missing"] == 0, counts
@@ -401,8 +411,12 @@ def main() -> None:
     # begraafplaatsen uit de tweede "Tijdelijk Zuid-Holland"-kmz, zie
     # scripts/add_tijdelijk_zuidholland_kmz2.py en
     # docs/data/003-csv-bron-en-koppeling.md.
-    assert len(terrein) == 448, f"terreinen: verwacht 448, gevonden {len(terrein)}"
-    assert len(ingang) == 447, f"ingangen: verwacht 447, gevonden {len(ingang)}"
+    # 448 -> 449 terreinen, 447 -> 448 ingangen op 2026-10-10: Natuurbegraafplaats
+    # Staelduinen, Hoek van Holland, zie scripts/add_staelduinen.py.
+    # 449 -> 450 terreinen, 448 -> 449 ingangen op 2026-10-16: NH Kerkhof,
+    # Noordwijk, zie scripts/add_noordwijk_kerkhof.py.
+    assert len(terrein) == 450, f"terreinen: verwacht 450, gevonden {len(terrein)}"
+    assert len(ingang) == 449, f"ingangen: verwacht 449, gevonden {len(ingang)}"
 
     matches, shared_ingang_idx = match_terrein_ingang(terrein, ingang)
 

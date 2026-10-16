@@ -4,3 +4,6 @@ node_modules/
 __pycache__/
 *.pyc
 .claude
+data/Voor Joop Zuid-Holland*.kmz
+# Excel-bron van de domeinexpert bevat persoonsgegevens (contactkolommen): nooit in git
+data/*.xlsx
