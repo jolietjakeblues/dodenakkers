@@ -4,3 +4,8 @@ node_modules/
 __pycache__/
 *.pyc
 .claude
+# Ruwe leveringen van de domeinexpert: de Excel bevat contactgegevens (persoonsgegevens)
+# en de kmz's dragen de naam van de opdrachtgever in hun bestandsnaam. Alleen de
+# opgeschoonde versies (zoals data/Noordwijk Zuid-Holland.kmz) horen in git.
+data/*.xlsx
+data/Voor Joop*.kmz

@@ -515,21 +515,6 @@
       "lat": 52.011013
     },
     {
-      "objectnummer": "2030418",
-      "registratiedatum": "2015-05-26",
-      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2030418",
-      "gemeente": "Noordwijk",
-      "gevonden_term": "Kerkhof",
-      "fragment": "...raat) een gebied onderzocht, en in het zuiden (hoek Bronckhorststraat/Kerkhofpad).",
-      "zekerheid": "concreet genoemd",
-      "afstand_tot_bekende_bp_m": 580.7,
-      "dichtstbijzijnde_bp": "Gemeentelijke begraafplaats, Noordwijk",
-      "afstand_tot_verdwenen_bp_m": 4147.0,
-      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
-      "lon": 4.444075,
-      "lat": 52.235555
-    },
-    {
       "objectnummer": "2010446",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2010446",
@@ -618,6 +603,21 @@
       "dichtstbijzijnde_verdwenen_bp": "NH Kerkhof, Hoogvliet",
       "lon": 4.39778,
       "lat": 51.864104
+    },
+    {
+      "objectnummer": "2030418",
+      "registratiedatum": "2015-05-26",
+      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2030418",
+      "gemeente": "Noordwijk",
+      "gevonden_term": "Kerkhof",
+      "fragment": "...raat) een gebied onderzocht, en in het zuiden (hoek Bronckhorststraat/Kerkhofpad).",
+      "zekerheid": "concreet genoemd",
+      "afstand_tot_bekende_bp_m": 278.3,
+      "dichtstbijzijnde_bp": "NH Kerkhof, Noordwijk",
+      "afstand_tot_verdwenen_bp_m": 4147.0,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
+      "lon": 4.444075,
+      "lat": 52.235555
     },
     {
       "objectnummer": "2050979",
@@ -1685,21 +1685,6 @@
       "lat": 51.905267
     },
     {
-      "objectnummer": "2036020",
-      "registratiedatum": "2015-05-26",
-      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2036020",
-      "gemeente": "Noordwijk",
-      "gevonden_term": "begraafplaats",
-      "fragment": "...uwen-) Nieuwe tijd.\nEr is een hoge kans is op de aanwezigheid van een begraafplaats. Zodoende kunnen resten van inhumaties aangetroffen worden. Tevens wo...",
-      "zekerheid": "onzeker/verwacht",
-      "afstand_tot_bekende_bp_m": 610.7,
-      "dichtstbijzijnde_bp": "RK begraafplaats, Noordwijk",
-      "afstand_tot_verdwenen_bp_m": 4113.6,
-      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
-      "lon": 4.448138,
-      "lat": 52.233835
-    },
-    {
       "objectnummer": "10106633",
       "registratiedatum": "2019-01-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10106633",
@@ -2343,6 +2328,21 @@
       "dichtstbijzijnde_verdwenen_bp": "Oude kerkhof, Waarder",
       "lon": 4.760588,
       "lat": 52.083822
+    },
+    {
+      "objectnummer": "2036020",
+      "registratiedatum": "2015-05-26",
+      "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2036020",
+      "gemeente": "Noordwijk",
+      "gevonden_term": "begraafplaats",
+      "fragment": "...uwen-) Nieuwe tijd.\nEr is een hoge kans is op de aanwezigheid van een begraafplaats. Zodoende kunnen resten van inhumaties aangetroffen worden. Tevens wo...",
+      "zekerheid": "onzeker/verwacht",
+      "afstand_tot_bekende_bp_m": 0.0,
+      "dichtstbijzijnde_bp": "NH Kerkhof, Noordwijk",
+      "afstand_tot_verdwenen_bp_m": 4113.6,
+      "dichtstbijzijnde_verdwenen_bp": "Algemene begraafplaats, Noordwijkerhout",
+      "lon": 4.448138,
+      "lat": 52.233835
     }
   ],
   "bebouwing_check": {

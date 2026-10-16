@@ -40860,6 +40860,115 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zh-0450",
+        "naam": "NH Kerkhof",
+        "plaats_origineel": "Noordwijk (geruimd)",
+        "plaats": "Noordwijk",
+        "geruimd": true,
+        "geruimd_bron_terrein": true,
+        "geruimd_bron_ingang": true,
+        "status_conflict": false,
+        "oppervlakte_m2": 1684.68,
+        "oppervlakte_ha": 0.1685,
+        "omtrek_m": 253.23,
+        "ingang": {
+          "type": "Point",
+          "coordinates": [
+            4.448124481035043,
+            52.23367522042484
+          ]
+        },
+        "ingang_lon": 4.448124481035043,
+        "ingang_lat": 52.23367522042484,
+        "ingang_koppelwijze": "exact_name_place",
+        "ingang_afstand_tot_terrein_m": 0.78,
+        "ingang_gedeeld": false,
+        "naam_bron_terrein": "NH Kerkhof",
+        "naam_bron_ingang": "NH Kerkhof",
+        "bron_rij_terrein": 899,
+        "bron_rij_ingang": 900,
+        "bron": "Begraafplaatsen Zuid-Holland",
+        "source_file": "Begraafplaatsen Zuid-Holland- Zuid-Holland.csv"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.447549960118982,
+              52.23417013343028
+            ],
+            [
+              4.4472836945097,
+              52.23401383723077
+            ],
+            [
+              4.447465723590169,
+              52.23389494733705
+            ],
+            [
+              4.447766142565066,
+              52.23377186991795
+            ],
+            [
+              4.448040326717308,
+              52.2336366546585
+            ],
+            [
+              4.448432386427125,
+              52.2338611758618
+            ],
+            [
+              4.448490270036432,
+              52.23399564136271
+            ],
+            [
+              4.448276019906034,
+              52.23398680580341
+            ],
+            [
+              4.448274262557628,
+              52.23392220586508
+            ],
+            [
+              4.448109803518301,
+              52.23391804400951
+            ],
+            [
+              4.448106073540554,
+              52.2339590497774
+            ],
+            [
+              4.44797937351982,
+              52.23395762535559
+            ],
+            [
+              4.447980119479872,
+              52.23391403245367
+            ],
+            [
+              4.447885361007405,
+              52.23390998906903
+            ],
+            [
+              4.447883245488624,
+              52.23395102087436
+            ],
+            [
+              4.447558523823867,
+              52.23394833026352
+            ],
+            [
+              4.447549960118982,
+              52.23417013343028
+            ]
+          ]
+        ]
+      }
     }
   ]
 }

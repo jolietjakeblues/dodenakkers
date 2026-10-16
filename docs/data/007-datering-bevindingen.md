@@ -6,33 +6,34 @@ achtergrond over de koppeling zelf staat in `scripts/analyse_spatial.py`
 (`nearest_datering()`) en `src/methode.html` (categorie 5); dit document
 gaat over de inhoudelijke uitkomst. Bijgewerkt op 2026-09-08 na een
 controleronde van de domeinexpert op de eerder ontbrekende gevallen (zie
-[008 Datering - ontbrekend](008-datering-ontbrekend.md)) -- de cijfers
-hieronder zijn de actuele stand, niet meer de eerste versie.
+[008 Datering - ontbrekend](008-datering-ontbrekend.md)), en opnieuw op
+2026-10-16 na een volledig vernieuwde Excel van de domeinexpert (inclusief
+twee nieuwe begraafplaatsen, Natuurbegraafplaats Staelduinen en NH Kerkhof
+Noordwijk) -- de cijfers hieronder zijn de actuele stand, niet meer de
+eerste versie.
 
 ## Dekking
 
-Van de 449 begraafplaatsen:
+Van de 450 begraafplaatsen:
 
-- **304** hebben een exact jaartal;
-- **116** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
-- **29** hebben geen van beide (geen bruikbare match binnen 300m en ook de
+- **305** hebben een exact jaartal;
+- **115** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
+- **30** hebben geen van beide (geen bruikbare match binnen 300m en ook de
   domeinexpert kent het jaartal niet, of de brondata zelf had niets
-  ingevuld -- inclusief Natuurbegraafplaats Staelduinen, Hoek van Holland,
-  die pas op 2026-10-10 is toegevoegd en nog niet in de datering-bron van
-  de domeinexpert voorkomt).
+  ingevuld).
 
-Samen dus **420 van de 449 (94%)** met een jaartal of periode.
+Samen dus **420 van de 450 (93%)** met een jaartal of periode.
 
 ## Verdeling over de tijd
 
 | Periode | Aantal |
 |---|---|
-| Middeleeuws (periode bekend, geen jaartal) | 116 |
-| voor 1829 | 62 |
+| Middeleeuws (periode bekend, geen jaartal) | 115 |
+| voor 1829 | 64 |
 | 1829-1849 | 38 |
-| 1850-1899 | 74 |
-| 1900-1949 | 62 |
-| 1950-1999 | 55 |
+| 1850-1899 | 77 |
+| 1900-1949 | 61 |
+| 1950-1999 | 52 |
 | 2000-heden | 13 |
 
 Dezelfde tabel staat als klikbare filter in het paneel en als balkjesgrafiek
@@ -44,8 +45,8 @@ De knip bij 1829 is bewust geen ronde eeuwgrens. Vanaf 1 januari 1829 was
 begraven in en rond de kerk binnen de bebouwde kom in Nederland wettelijk
 verboden (Koninklijk Besluit); plaatsen met meer dan duizend inwoners
 moesten een algemene begraafplaats buiten de bebouwde kom inrichten. Dat
-keerpunt is in onze eigen data ook terug te zien: 62 begraafplaatsen met een
-jaartal vóór 1829, tegenover 37 in de twintig jaar erna (1829-1849) - een
+keerpunt is in onze eigen data ook terug te zien: 64 begraafplaatsen met een
+jaartal vóór 1829, tegenover 38 in de twintig jaar erna (1829-1849) - een
 duidelijke knik, geen toeval van de bucketgrenzen.
 
 ## Oudste bekende begraafplaatsen
@@ -97,6 +98,12 @@ voor precies deze terreinen.
 de gemiddelde 34m): de moeite waard om steekproefsgewijs te controleren of
 het jaartal echt bij het juiste terrein hoort. De verste (280m): Grafkelder
 Herkenrath (Monster, jaartal 1844). Volledige lijst op aanvraag.
+
+**De twee nieuwe begraafplaatsen uit 2026-10-16** (Natuurbegraafplaats
+Staelduinen, Hoek van Holland; NH Kerkhof, Noordwijk) stonden zelf ook in de
+vernieuwde Excel en zijn zonder handmatige correctie automatisch gekoppeld:
+Staelduinen op 79m (jaartal 2026), NH Kerkhof Noordwijk op 35m (periode
+Middeleeuwen) -- allebei ruim binnen de drempel.
 
 ## Waar te vinden op de site
 

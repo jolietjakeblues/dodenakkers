@@ -1,0 +1,227 @@
+VRAGEN OVER DE BEGRAAFPLAATSEN ZUID-HOLLAND
+Stand: 16 oktober 2026
+
+Hoi,
+
+Bij het naast elkaar leggen van je laatste Excel (450 rijen) en de kaart
+(450 begraafplaatsen) bleven een paar punten over waar alleen jij het
+antwoord op weet. Er is niets aangepast op basis van aannames: alles staat nog
+zoals het in de bron zat.
+
+Je kunt je antwoord achter "Antwoord:" zetten, of gewoon per nummer terugmailen.
+De begraafplaatsen staan met naam en plaats genoemd, zodat je ze op de kaart
+kunt opzoeken. (De codes zoals zh-0229 zijn interne nummers; die zie je niet op
+de kaart.)
+
+OVERZICHT
+  1. Status geruimd: Excel en kaart zeggen iets anders        (2)   belangrijk
+  2. Datering: twee Excel-rijen op dezelfde plek               (14)  belangrijk
+  3. Begraafplaatsen zonder zekere datering                    (3)
+  4. Nummering: hetzelfde nummer bij twee begraafplaatsen      (3)
+  5. Gemeente: Excel en kaart verschillen                      (2)   minder urgent
+  6. Weergave op de kaart (ME, gesloten)                       (2)   minder urgent
+
+
+------------------------------------------------------------------------
+1. STATUS GERUIMD
+------------------------------------------------------------------------
+De Excel telt 50 begraafplaatsen met status "Geruimd", de kaart 48. Twee
+daarvan zijn met zekerheid aan te wijzen (naam en plaats komen exact overeen).
+De status op de kaart komt uit de kmz/CSV die je eerder aanleverde, de Excel is
+een andere levering. Welke is juist?
+
+1a. NH Kerkhof, Middelharnis (Excel nr 75)
+    Excel zegt: geruimd. Kaart zegt: niet geruimd.
+    Antwoord:
+
+1b. NH kerkhof, Hoogblokland (Excel nr 241)
+    Excel zegt: geruimd. Kaart zegt: niet geruimd.
+    Antwoord:
+
+Is de Excel hier de juiste, dan kloppen de totalen met de Excel: 50 geruimd en
+400 niet-geruimd (316 in gebruik + 84 gesloten).
+
+Ter controle (alleen reageren als het fout is): negen andere geruimde Excel-rijen
+hebben een andere naam dan op de kaart, maar in hetzelfde dorp staat precies een
+geruimde begraafplaats op de kaart. Zo hebben we ze aan elkaar gekoppeld:
+
+  - nr 39, Kerkhof (Aarlanderveen)             = NH Kerkhof
+  - nr 116, HH Michael en Bernarduskerkhof
+    (Scheepjeskerk), Hazerswoude Rijndijk      = H. Michael en Bernarduskerkhof
+  - nr 170, Oude kerkhof Scheveningen          = NH kerkhof (Scheveningen)
+  - nr 235, NH kerkkhof (Dirksland)            = NH kerkhof
+  - nr 67, H Jacobusbegraafplaats (later
+    gemeentelijk), Oude Wetering               = RK begraafplaats
+  - nr 128, Oude Kerkhof (Woubrugge)           = NH kerkhof
+  - nr 26, Voormalig Kerkhof (Maasland)        = Vm. NH kerkhof
+  - nr 277, Hervormd Kerkhof (Schipluiden)     = NH kerkhof
+  - nr 207, Gem. begraafplaats (Monster)       = Oude gem. begraafplaats
+
+
+------------------------------------------------------------------------
+2. DATERING: TWEE EXCEL-RIJEN OP DEZELFDE PLEK
+------------------------------------------------------------------------
+Bij 14 begraafplaatsen liggen in de Excel twee rijen op (vrijwel) hetzelfde punt,
+met een verschillend jaartal of periode. De kaart pakt dan de dichtstbijzijnde en
+kan niet kiezen. Gevolg: bij beide begraafplaatsen van een paar staat nu
+dezelfde waarde, dus minstens een van de twee is waarschijnlijk fout.
+"Voorstel" is een vermoeden op basis van de naam, geen besluit.
+
+Welk jaartal/periode hoort bij welke begraafplaats?
+
+2a. Katwijk aan den Rijn
+    Excel-rijen op die plek:
+      nr 1363  Grafkelder Van Wassenaar      1858
+      nr 1386  NH Kerkhof                    ME
+    Grafkelder Van Wassenaar  - kaart toont nu ME   - voorstel 1858
+    NH Kerkhof                - kaart toont nu ME   - voorstel ME
+    Antwoord:
+
+2b. Gem. begraafplaats De Bleekerij, Katwijk aan den Rijn
+    Excel-rijen op die plek:
+      nr 4189  Joodse Begraafplaats          1758
+      nr 1409  Begraafplaats de Bleekerij    2010
+    Kaart toont nu 1758 - voorstel 2010
+    Antwoord:
+
+2c. Maassluis
+    Excel-rijen op die plek:
+      nr 1389  Gemeentelijke + Joodse Begraafplaats               1887
+      nr 4140  Joodse Begraafplaats op Algemene Begraafplaats     1950
+    Joodse begraafplaats          - kaart toont nu 1950 - voorstel 1950
+    Gemeentelijke begraafplaats   - kaart toont nu 1950 - voorstel 1887
+    Antwoord:
+
+2d. Oud-Rijswijk, Rijswijk
+    Excel-rijen op die plek:
+      nr 3023  Begraafplaats Oud-Rijswijk (oude gemeentelijke)    1916
+      nr 874   Joodse Begraafplaats op Algemene Begraafplaats     1937
+    Joods deel op Oud Rijswijk    - kaart toont nu 1937 - voorstel 1937
+    Begraafplaats Oud-Rijswijk    - kaart toont nu 1937 - voorstel 1916
+    Antwoord:
+
+2e. Liberaal Joodse begraafplaats en Eikelenburg, Rijswijk
+    Excel-rijen op die plek:
+      nr 243   Liberaal Joodse Begraafplaats Beth Hachaim   1990
+      nr 3245  Yardenhuis van Rijswijk                      1972
+    Liberaal Joodse begraafplaats     - kaart toont nu 1990 - voorstel 1990
+    Gem. begraafplaats Eikelenburg    - kaart toont nu 1990 - geen voorstel
+    Antwoord:
+
+2f. RK Kerkhof, Voorhout
+    Excel-rijen op die plek:
+      nr 1483  Algemene particuliere Begraafplaats   1976
+      nr 1349  Kerkhof St Bartholomeus               1882
+    Kaart toont nu 1976 - voorstel 1882
+    Antwoord:
+
+2g. Stad aan 't Haringvliet
+    Excel-rijen op die plek:
+      nr 2153  Algemene Begraafplaats        1877
+      nr 280   NH kerkhof                    ME
+    Gem. Begraafplaats   - kaart toont nu 1877 - voorstel 1877
+    NH kerkhof           - kaart toont nu 1877 - voorstel ME
+    Antwoord:
+
+2h. Puttershoek
+    Excel-rijen op die plek:
+      nr 1943  Nieuwe gemeentelijke begraafplaats    1880
+      nr 1948  Oude gemeentelijke begraafplaats      1827
+    Oude alg. begraafplaats   - kaart toont nu 1827 - voorstel 1827
+    NH begraafplaats          - kaart toont nu 1827 - geen voorstel
+    Antwoord:
+
+Zodra je dit bevestigt, leggen we het per begraafplaats vast, zodat de kaart de
+juiste waarde toont.
+
+
+------------------------------------------------------------------------
+3. BEGRAAFPLAATSEN ZONDER ZEKERE DATERING
+------------------------------------------------------------------------
+Voor deze drie vindt de kaart geen Excel-rij binnen 300 m van de ingang.
+
+3a. Nieuwe gem. begraafplaats, Brielle
+    Dichtstbijzijnde Excel-rij: nr 1733 Nieuwe Begraafplaats, Brielle (947 m
+    verderop, en zonder jaartal in de Excel).
+    Is dit dezelfde begraafplaats? Zo ja: is het jaartal inderdaad onbekend?
+    Antwoord:
+
+3b. Gem. begraafplaats Westduin, Den Haag
+    Dichtstbijzijnde Excel-rij: nr 3019 Gemeentelijke Begraafplaats Westduin,
+    's-Gravenhage, 1929 (301 m, net buiten de drempel).
+    Klopt 1929 voor deze begraafplaats?
+    Antwoord:
+
+3c. Asurn Hazelhoff Roelfsema bij monument gevallenen Wassenaarseslag, Wassenaar
+    Dichtstbijzijnde Excel-rij: nr 4337, dezelfde naam, 2007 (332 m).
+    Klopt 2007?
+    Antwoord:
+
+
+------------------------------------------------------------------------
+4. NUMMERING IN DE EXCEL
+------------------------------------------------------------------------
+In de kolom Nr komen drie nummers twee keer voor, steeds bij twee verschillende
+begraafplaatsen. We gebruiken Nr daardoor niet als sleutel, maar we willen
+weten of dit zo bedoeld is.
+
+4a. Nr 66: Begraafplaats Slachtoffers Watersnoodramp 1953 (Oude-Tonge)
+          en NH Kerkhof (Zwammerdam)
+    Bedoeld?
+    Antwoord:
+
+4b. Nr 67: Nieuwe Algemene Begraafplaats (Oude-Tonge)
+          en H Jacobusbegraafplaats, later gemeentelijk (Oude Wetering)
+    Bedoeld?
+    Antwoord:
+
+4c. Nr 74: RK Begraafplaats (Oude-Tonge)
+          en NH Kerkhof ('s-Gravendeel)
+    Bedoeld?
+    Antwoord:
+
+
+------------------------------------------------------------------------
+5. GEMEENTE
+------------------------------------------------------------------------
+De kaart bepaalt de gemeente zelf uit de actuele gemeentegrenzen, de Excel heeft
+een eigen kolom. Per gemeente komen de aantallen overeen, op een verschuiving na:
+beide begraafplaatsen in Oudenhoorn staan in de Excel bij Nissewaard, op de
+kaart bij Voorne aan Zee.
+
+5a. NH Kerkhof, Oudenhoorn (Excel nr 162)
+5b. Gem. begraafplaats, Oudenhoorn (Excel nr 1712)
+    Welke gemeente is juist: Nissewaard of Voorne aan Zee?
+    Antwoord:
+
+
+------------------------------------------------------------------------
+6. WEERGAVE OP DE KAART
+------------------------------------------------------------------------
+6a. Periode "ME"
+    In de nieuwe Excel staat bij 116 rijen alleen de periode "ME" (vroeger
+    stond er "Middeleeuwen"). In het popup op de kaart staat nu letterlijk
+    "Periode: ME". Is ME = Middeleeuwen, en mogen we dat voluit tonen?
+    Antwoord:
+
+6b. Status "gesloten"
+    De Excel kent drie statussen: in gebruik (316), gesloten (84) en geruimd
+    (50). De kaart toont alleen geruimd of niet-geruimd, dus "gesloten" is niet
+    te zien of te filteren. Is dat onderscheid voor het onderzoek bruikbaar als
+    filter?
+    Antwoord:
+
+
+------------------------------------------------------------------------
+WAT AL KLOPT (geen actie nodig)
+------------------------------------------------------------------------
+  - NH Kerkhof, Noordwijk (geruimd) uit je nieuwe kmz staat op de kaart.
+  - De Excel (450 rijen) en de kaart (450 begraafplaatsen) komen per gemeente
+    overeen, behalve punt 5.
+  - Het tabblad "Verdwenen" van de Excel (92 rijen) komt overeen met de laag
+    "Verdwenen begraafplaatsen" op de kaart (92 punten).
+  - De overige tabbladen van de Excel (Per Gem., Statistiek, TOTALEN, Grondvorm,
+    Ontwerpers, Veldnamen) gebruiken we niet op de kaart. Laat het weten als er
+    iets uit nodig is.
+
+Alvast bedankt!
