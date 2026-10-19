@@ -206,7 +206,7 @@ async function main() {
   renderSection(
     document.getElementById("stats-zelf-rijksmonument"),
     "Begraafplaatsen die zelf een rijksmonument zijn",
-    "Op het terrein of grenzend eraan staat een rijksmonument met een begraafplaats-gerelateerde functie (begraafplaats zelf, hek, aula, ...).",
+    "Op het terrein of grenzend eraan staat een rijksmonument met een begraafplaats-gerelateerde functie (begraafplaats zelf, hek, aula, ...). Dit komt uit de RCE-gegevens en telt alleen monumenten met zo'n functie die op of aan het terrein liggen. Begraafplaatsen die alleen via een ander onderdeel beschermd zijn (kapel, poortgebouw, baarhuisje, grafkelder, ...), of waarvan het monument net buiten de terreingrens ligt, staan hier niet bij: zie de telling volgens de Excel hieronder.",
     [
       kv([["Aantal", fmt(s.begraafplaats_als_rijksmonument.aantal)]]),
       table(
@@ -215,6 +215,29 @@ async function main() {
       ),
     ]
   );
+
+  // --- Beschermd volgens de Excel van de domeinexpert ---
+  // Wens van de domeinexpert (2026-10-19): ook begraafplaatsen die alleen een
+  // beschermd onderdeel bevatten. Kolom "Beschermd deel" is ongewijzigd uit de
+  // Excel overgenomen -- zie beschermd_volgens_excel() in compute_statistics.py.
+  const excel = s.beschermd_volgens_excel;
+  if (excel) {
+    renderSection(
+      document.getElementById("stats-excel-rijksmonument"),
+      "Rijksmonument of beschermd onderdeel volgens de Excel",
+      "In de Excel van de domeinexpert staat per begraafplaats of die rijksmonument is (kolom Rijksmonument) en wat er precies beschermd is (kolom Beschermd deel, ongewijzigd overgenomen). Dat zijn er meer dan hierboven, omdat daar alleen een monument met een begraafplaats-functie meetelt dat op of aan het terrein ligt.",
+      [
+        kv([
+          ["Aantal", fmt(excel.aantal)],
+          ["Van totaal in de Excel", fmt(excel.totaal_begraafplaatsen_in_excel)],
+        ]),
+        table(
+          ["Begraafplaats", "Plaats", "Rijksmonumentnr.", "Beschermd deel (volgens de Excel)"],
+          excel.lijst.map((r) => [r.naam, plaatsNaam(r.plaats), r.rmonr, r.beschermd_deel || "(niet ingevuld)"])
+        ),
+      ]
+    );
+  }
 
   // --- Molen ---
   // Molen/kasteel/kerk delen dezelfde vorm (aantal_in_categorie, binnen

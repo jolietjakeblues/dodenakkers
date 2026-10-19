@@ -2,9 +2,9 @@
   "basis": {
     "totaal": 450,
     "totaal_ha": 549.8,
-    "niet_geruimd": 402,
-    "geruimd": 48,
-    "geruimd_pct": 10.7,
+    "niet_geruimd": 400,
+    "geruimd": 50,
+    "geruimd_pct": 11.1,
     "statusconflict": 0,
     "gemiddelde_m2": 12218.7,
     "mediaan_m2": 3177.5,
@@ -103,6 +103,12 @@
         "totaal_m2": 4183.0
       },
       {
+        "plaats": "Middelharnis",
+        "aantal": 5,
+        "geruimd": 1,
+        "totaal_m2": 44629.0
+      },
+      {
         "plaats": "Alphen aan den Rijn",
         "aantal": 5,
         "geruimd": 1,
@@ -137,12 +143,6 @@
         "aantal": 4,
         "geruimd": 1,
         "totaal_m2": 38940.0
-      },
-      {
-        "plaats": "Ridderkerk",
-        "aantal": 4,
-        "geruimd": 1,
-        "totaal_m2": 92021.0
       }
     ],
     "volledig_geruimd": [],
@@ -220,13 +220,13 @@
       {
         "gemeente": "Goeree-Overflakkee",
         "aantal": 36,
-        "geruimd": 5,
+        "geruimd": 6,
         "totaal_m2": 349385.0
       },
       {
         "gemeente": "Molenlanden",
         "aantal": 27,
-        "geruimd": 1,
+        "geruimd": 2,
         "totaal_m2": 115833.0
       },
       {
@@ -282,7 +282,7 @@
       {
         "gemeente": "Goeree-Overflakkee",
         "aantal": 36,
-        "geruimd": 5,
+        "geruimd": 6,
         "totaal_m2": 349385.0
       },
       {
@@ -302,6 +302,12 @@
         "aantal": 25,
         "geruimd": 3,
         "totaal_m2": 107077.0
+      },
+      {
+        "gemeente": "Molenlanden",
+        "aantal": 27,
+        "geruimd": 2,
+        "totaal_m2": 115833.0
       },
       {
         "gemeente": "Westland",
@@ -326,12 +332,6 @@
         "aantal": 12,
         "geruimd": 2,
         "totaal_m2": 76009.0
-      },
-      {
-        "gemeente": "Noordwijk",
-        "aantal": 10,
-        "geruimd": 2,
-        "totaal_m2": 43191.0
       }
     ],
     "volledig_geruimd": [],
@@ -351,7 +351,7 @@
       {
         "gemeente": "Goeree-Overflakkee",
         "aantal": 36,
-        "geruimd": 5,
+        "geruimd": 6,
         "totaal_m2": 349385.0
       },
       {
@@ -393,7 +393,7 @@
       {
         "gemeente": "Molenlanden",
         "aantal": 27,
-        "geruimd": 1,
+        "geruimd": 2,
         "totaal_m2": 115833.0
       }
     ]
@@ -660,7 +660,7 @@
       {
         "naam": "Joodse begraafplaats",
         "plaats": "Gorinchem",
-        "functie": "Begraafplaats"
+        "functie": "Begraafplaatshek"
       },
       {
         "naam": "Joodse begraafplaats",
@@ -706,6 +706,610 @@
         "naam": "Vm. kerkhof Nieuwe Kerk",
         "plaats": "Den Haag",
         "functie": "Begraafplaats en -onderdelen"
+      }
+    ]
+  },
+  "beschermd_volgens_excel": {
+    "aantal": 54,
+    "totaal_begraafplaatsen_in_excel": 450,
+    "lijst": [
+      {
+        "nr": "3918",
+        "naam": "Begraafplaats Oud Eik en Duinen",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "rmonr": "17652",
+        "beschermd_deel": "Ruine toren en grondslagen 15e eeuws kerkje"
+      },
+      {
+        "nr": "4164",
+        "naam": "Gemeentelijke Begraafplaats Den Haag",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "rmonr": "17620",
+        "beschermd_deel": "Wachthuisjes, aula, div. grafmonumenten"
+      },
+      {
+        "nr": "3888",
+        "naam": "Joodse Begraafplaats Scheveningen (gemengd)",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "rmonr": "18067",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "4087",
+        "naam": "St Petrus' Banden",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "rmonr": "17619",
+        "beschermd_deel": "Kapel, entree en galerij"
+      },
+      {
+        "nr": "193",
+        "naam": "Voormalig Kerkhof Nieuwe Kerk",
+        "plaats": "'s-Gravenhage",
+        "gemeente": "Den Haag",
+        "rmonr": "17997",
+        "beschermd_deel": "kerkhof bij de Nieuwe Kerk"
+      },
+      {
+        "nr": "125",
+        "naam": "Ter Navolging",
+        "plaats": "'s-Gravenhage (Scheveningen)",
+        "gemeente": "Den Haag",
+        "rmonr": "17960",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1588",
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Aarlanderveen",
+        "gemeente": "Alphen aan den Rijn",
+        "rmonr": "516118",
+        "beschermd_deel": "Toegangshek, Baarhuisje, lijkenhuisje en aanleg en beplanting"
+      },
+      {
+        "nr": "39",
+        "naam": "Kerkhof",
+        "plaats": "Aarlanderveen",
+        "gemeente": "Alphen aan den Rijn",
+        "rmonr": "7515",
+        "beschermd_deel": "Priesterzerk (onderdeel)"
+      },
+      {
+        "nr": "1723",
+        "naam": "Gemeentelijk Kerkhof",
+        "plaats": "Abbenbroek",
+        "gemeente": "Nissewaard",
+        "rmonr": "525168",
+        "beschermd_deel": "Toegangshek"
+      },
+      {
+        "nr": "787",
+        "naam": "Grafkapel familie De Smeth",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "rmonr": "7494",
+        "beschermd_deel": "Grafkapel"
+      },
+      {
+        "nr": "1623",
+        "naam": "H Bonifatiuskerkhof",
+        "plaats": "Alphen aan den Rijn",
+        "gemeente": "Alphen aan den Rijn",
+        "rmonr": "516117",
+        "beschermd_deel": "Bidkapelletje"
+      },
+      {
+        "nr": "1614",
+        "naam": "Gemeentelijke Begraafplaats Jaffa",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "rmonr": "525265",
+        "beschermd_deel": "Begraafplaats, directeurswoning"
+      },
+      {
+        "nr": "1556",
+        "naam": "Oude Algemene Begraafplaats Haagpoort",
+        "plaats": "Delft",
+        "gemeente": "Delft",
+        "rmonr": "525248",
+        "beschermd_deel": "Dienstwoning, gedenkteken Adrien Huet en restanten gem. begraafplaats"
+      },
+      {
+        "nr": "1903",
+        "naam": "De Essenhof",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "rmonr": "522269",
+        "beschermd_deel": "Aula, Toegangshek met achterliggende woning en aanleg oude gedeelte"
+      },
+      {
+        "nr": "1912",
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Dordrecht",
+        "gemeente": "Dordrecht",
+        "rmonr": "522272",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1714",
+        "naam": "Joodse Begraafplaats van Voorne Putten",
+        "plaats": "Geervliet",
+        "gemeente": "Nissewaard",
+        "rmonr": "9377",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1844",
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "rmonr": "525108",
+        "beschermd_deel": "Begraafplaats, aula en hek"
+      },
+      {
+        "nr": "1824",
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Gorinchem",
+        "gemeente": "Gorinchem",
+        "rmonr": "525112",
+        "beschermd_deel": "Aanleg, toegangshek oude gedeelte, entreecomplex met dienstwoning en aula, toegangshek"
+      },
+      {
+        "nr": "1707",
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Gouda",
+        "gemeente": "Gouda",
+        "rmonr": "333054",
+        "beschermd_deel": "Aula / begraafplaats"
+      },
+      {
+        "nr": "1704",
+        "naam": "RK Begraafplaats Gouda",
+        "plaats": "Gouda",
+        "gemeente": "Gouda",
+        "rmonr": "517619",
+        "beschermd_deel": "Grafkapel"
+      },
+      {
+        "nr": "1753",
+        "naam": "St Barnabasbegraafplaats",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "rmonr": "512485",
+        "beschermd_deel": "Baarhuisje"
+      },
+      {
+        "nr": "334",
+        "naam": "Tombe Bisdom van Vliet",
+        "plaats": "Haastrecht",
+        "gemeente": "Krimpenerwaard",
+        "rmonr": "512498",
+        "beschermd_deel": "Grafmon. voor mw. P.M. Lefévre de Montigny-Bisdom van Vliet (1923) en grafsteen voor de hond Nora (1906)"
+      },
+      {
+        "nr": "1627",
+        "naam": "Gemeentelijke begraafplaats",
+        "plaats": "Hazerswoude Dorp",
+        "gemeente": "Alphen aan den Rijn",
+        "rmonr": "517876",
+        "beschermd_deel": "Aanleg, aula, 2 vaste bruggen"
+      },
+      {
+        "nr": "3449",
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Heerjansdam",
+        "gemeente": "Zwijndrecht",
+        "rmonr": "509912",
+        "beschermd_deel": "Poortgebouw"
+      },
+      {
+        "nr": "2242",
+        "naam": "Begraafplaats Waelhof",
+        "plaats": "Hendrik-Ido-Ambacht",
+        "gemeente": "Hendrik-Ido-Ambacht",
+        "rmonr": "511003",
+        "beschermd_deel": "Poortgebouw"
+      },
+      {
+        "nr": "4189",
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Katwijk",
+        "gemeente": "Katwijk",
+        "rmonr": "23527",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1363",
+        "naam": "Grafkelder Van Wassenaar",
+        "plaats": "Katwijk aan den Rijn",
+        "gemeente": "Katwijk",
+        "rmonr": "23518",
+        "beschermd_deel": "Toegang tot grafkelder"
+      },
+      {
+        "nr": "2469",
+        "naam": "Oude NH Begraafplaats",
+        "plaats": "Katwijk aan Zee",
+        "gemeente": "Katwijk",
+        "rmonr": "23541",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "4156",
+        "naam": "Algemene Begraafplaats",
+        "plaats": "Krimpen aan de Lek",
+        "gemeente": "Krimpenerwaard",
+        "rmonr": "512459",
+        "beschermd_deel": "5 grafkelders en toegangshek met hekpijlers / Grafzerken en oorlogsmonument Het Offer"
+      },
+      {
+        "nr": "4128",
+        "naam": "Begraafplaats Groene Steeg",
+        "plaats": "Leiden",
+        "gemeente": "Leiden",
+        "rmonr": "24699",
+        "beschermd_deel": "Begraafplaats met aula"
+      },
+      {
+        "nr": "1347",
+        "naam": "RK Begraafplaats Zijlpoort",
+        "plaats": "Leiden",
+        "gemeente": "Leiden",
+        "rmonr": "24732",
+        "beschermd_deel": "Kapel / begraafplaats"
+      },
+      {
+        "nr": "1697",
+        "naam": "Begraafplaats Wilsveen",
+        "plaats": "Leidschendam",
+        "gemeente": "Leidschendam-Voorburg",
+        "rmonr": "510321",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1586",
+        "naam": "H Johannes de Doperkerkhof",
+        "plaats": "Leimuiden",
+        "gemeente": "Kaag en Braassem",
+        "rmonr": "509923",
+        "beschermd_deel": "Toegangshek"
+      },
+      {
+        "nr": "733",
+        "naam": "Grafkelder familie Herckenrath",
+        "plaats": "Monster",
+        "gemeente": "Westland",
+        "rmonr": "525142",
+        "beschermd_deel": "Grafkelder"
+      },
+      {
+        "nr": "1592",
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Noordwijk",
+        "gemeente": "Noordwijk",
+        "rmonr": "511981",
+        "beschermd_deel": "Oude gedeelte, muur, baarhuisje en 2 grafmonumenten / Graf Daniël Noteboom, schaker (+ ouders)"
+      },
+      {
+        "nr": "188",
+        "naam": "Oude NH Kerkhof",
+        "plaats": "Ooltgensplaat",
+        "gemeente": "Goeree-Overflakkee",
+        "rmonr": "31699",
+        "beschermd_deel": "Toegangshek"
+      },
+      {
+        "nr": "5",
+        "naam": "NH Kerkhof",
+        "plaats": "Ouddorp",
+        "gemeente": "Goeree-Overflakkee",
+        "rmonr": "16267",
+        "beschermd_deel": "Kerkhof"
+      },
+      {
+        "nr": "74",
+        "naam": "RK Begraafplaats",
+        "plaats": "Oude-Tonge",
+        "gemeente": "Goeree-Overflakkee",
+        "rmonr": "521892",
+        "beschermd_deel": "Kapel op NW-deel, 1867-1868"
+      },
+      {
+        "nr": "1690",
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Ouderkerk aan den IJssel",
+        "gemeente": "Krimpenerwaard",
+        "rmonr": "512186",
+        "beschermd_deel": "Baarhuisje, gietijzeren hekwerk en grafmon. A.J. Schelling"
+      },
+      {
+        "nr": "2237",
+        "naam": "Grafkelder Groeninx van Zoelen",
+        "plaats": "Ridderkerk",
+        "gemeente": "Ridderkerk",
+        "rmonr": "32507",
+        "beschermd_deel": "Begraafplaats bij Huis ten Donck"
+      },
+      {
+        "nr": "3023",
+        "naam": "Begraafplaats Oud-Rijswijk (oude gemeentelijke)",
+        "plaats": "Rijswijk",
+        "gemeente": "Rijswijk",
+        "rmonr": "518123",
+        "beschermd_deel": "Aanleg, aula en toegangshek"
+      },
+      {
+        "nr": "1329",
+        "naam": "Begraafplaats Oud Kralingen",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "rmonr": "527205",
+        "beschermd_deel": "Grafkapel Kruyff Bartholomeus"
+      },
+      {
+        "nr": "4200",
+        "naam": "Begraafplaats Toepad",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "rmonr": "32923",
+        "beschermd_deel": "Begraafplaats"
+      },
+      {
+        "nr": "1327",
+        "naam": "Gemeentelijke begraafplaats Crooswijk",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "rmonr": "506293",
+        "beschermd_deel": "Poortgebouw, drenkelingenhuis, wachtlokaal annex opzichterswoning, poortgebouw met hek, etc."
+      },
+      {
+        "nr": "1326",
+        "naam": "NH Kerkhof Hillegersberg",
+        "plaats": "Rotterdam",
+        "gemeente": "Rotterdam",
+        "rmonr": "32898",
+        "beschermd_deel": "Hek en muur van het kerkhof"
+      },
+      {
+        "nr": "4232",
+        "naam": "RK Begraafplaats",
+        "plaats": "Schiedam",
+        "gemeente": "Schiedam",
+        "rmonr": "33288",
+        "beschermd_deel": "Begraafplaats en kapel"
+      },
+      {
+        "nr": "4115",
+        "naam": "Gemeentelijke Begraafplaats",
+        "plaats": "Schoonhoven",
+        "gemeente": "Krimpenerwaard",
+        "rmonr": "33540",
+        "beschermd_deel": "Toegangspoort"
+      },
+      {
+        "nr": "1937",
+        "naam": "NH Kerkhof",
+        "plaats": "Sommelsdijk",
+        "gemeente": "Goeree-Overflakkee",
+        "rmonr": "29842",
+        "beschermd_deel": "Grafkelder in ruïne koor, hekwerk"
+      },
+      {
+        "nr": "3000",
+        "naam": "Oude Algemene Begraafplaats",
+        "plaats": "Voorburg",
+        "gemeente": "Leidschendam-Voorburg",
+        "rmonr": "524448",
+        "beschermd_deel": "Poortgebouw en doodgraverswoning"
+      },
+      {
+        "nr": "250",
+        "naam": "Hervormd kerkhof",
+        "plaats": "Voorhout",
+        "gemeente": "Teylingen",
+        "rmonr": "523429",
+        "beschermd_deel": "Baarhuisje en verbindingsmuur"
+      },
+      {
+        "nr": "3393",
+        "naam": "St Laurentiuskerkhof",
+        "plaats": "Voorschoten",
+        "gemeente": "Voorschoten",
+        "rmonr": "515012",
+        "beschermd_deel": "Toegangshek"
+      },
+      {
+        "nr": "3466",
+        "naam": "Familiebegraafplaats Van Ommeren",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "rmonr": "530407",
+        "beschermd_deel": "Familiebegraafplaats"
+      },
+      {
+        "nr": "1343",
+        "naam": "Joodse Begraafplaats",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "rmonr": "524542",
+        "beschermd_deel": "Aanleg en metaarhuisje"
+      },
+      {
+        "nr": "1401",
+        "naam": "RK Kerkhof St. Willibrordus",
+        "plaats": "Wassenaar",
+        "gemeente": "Wassenaar",
+        "rmonr": "524513",
+        "beschermd_deel": "Begraafplaats"
+      }
+    ],
+    "beschermd_deel_aantallen": [
+      {
+        "tekst": "Begraafplaats",
+        "aantal": 9
+      },
+      {
+        "tekst": "Toegangshek",
+        "aantal": 4
+      },
+      {
+        "tekst": "Grafkapel",
+        "aantal": 2
+      },
+      {
+        "tekst": "Poortgebouw",
+        "aantal": 2
+      },
+      {
+        "tekst": "Ruine toren en grondslagen 15e eeuws kerkje",
+        "aantal": 1
+      },
+      {
+        "tekst": "Wachthuisjes, aula, div. grafmonumenten",
+        "aantal": 1
+      },
+      {
+        "tekst": "Kapel, entree en galerij",
+        "aantal": 1
+      },
+      {
+        "tekst": "kerkhof bij de Nieuwe Kerk",
+        "aantal": 1
+      },
+      {
+        "tekst": "Toegangshek, Baarhuisje, lijkenhuisje en aanleg en beplanting",
+        "aantal": 1
+      },
+      {
+        "tekst": "Priesterzerk (onderdeel)",
+        "aantal": 1
+      },
+      {
+        "tekst": "Bidkapelletje",
+        "aantal": 1
+      },
+      {
+        "tekst": "Begraafplaats, directeurswoning",
+        "aantal": 1
+      },
+      {
+        "tekst": "Dienstwoning, gedenkteken Adrien Huet en restanten gem. begraafplaats",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aula, Toegangshek met achterliggende woning en aanleg oude gedeelte",
+        "aantal": 1
+      },
+      {
+        "tekst": "Begraafplaats, aula en hek",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aanleg, toegangshek oude gedeelte, entreecomplex met dienstwoning en aula, toegangshek",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aula / begraafplaats",
+        "aantal": 1
+      },
+      {
+        "tekst": "Baarhuisje",
+        "aantal": 1
+      },
+      {
+        "tekst": "Grafmon. voor mw. P.M. Lefévre de Montigny-Bisdom van Vliet (1923) en grafsteen voor de hond Nora (1906)",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aanleg, aula, 2 vaste bruggen",
+        "aantal": 1
+      },
+      {
+        "tekst": "Toegang tot grafkelder",
+        "aantal": 1
+      },
+      {
+        "tekst": "5 grafkelders en toegangshek met hekpijlers / Grafzerken en oorlogsmonument Het Offer",
+        "aantal": 1
+      },
+      {
+        "tekst": "Begraafplaats met aula",
+        "aantal": 1
+      },
+      {
+        "tekst": "Kapel / begraafplaats",
+        "aantal": 1
+      },
+      {
+        "tekst": "Grafkelder",
+        "aantal": 1
+      },
+      {
+        "tekst": "Oude gedeelte, muur, baarhuisje en 2 grafmonumenten / Graf Daniël Noteboom, schaker (+ ouders)",
+        "aantal": 1
+      },
+      {
+        "tekst": "Kerkhof",
+        "aantal": 1
+      },
+      {
+        "tekst": "Kapel op NW-deel, 1867-1868",
+        "aantal": 1
+      },
+      {
+        "tekst": "Baarhuisje, gietijzeren hekwerk en grafmon. A.J. Schelling",
+        "aantal": 1
+      },
+      {
+        "tekst": "Begraafplaats bij Huis ten Donck",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aanleg, aula en toegangshek",
+        "aantal": 1
+      },
+      {
+        "tekst": "Grafkapel Kruyff Bartholomeus",
+        "aantal": 1
+      },
+      {
+        "tekst": "Poortgebouw, drenkelingenhuis, wachtlokaal annex opzichterswoning, poortgebouw met hek, etc.",
+        "aantal": 1
+      },
+      {
+        "tekst": "Hek en muur van het kerkhof",
+        "aantal": 1
+      },
+      {
+        "tekst": "Begraafplaats en kapel",
+        "aantal": 1
+      },
+      {
+        "tekst": "Toegangspoort",
+        "aantal": 1
+      },
+      {
+        "tekst": "Grafkelder in ruïne koor, hekwerk",
+        "aantal": 1
+      },
+      {
+        "tekst": "Poortgebouw en doodgraverswoning",
+        "aantal": 1
+      },
+      {
+        "tekst": "Baarhuisje en verbindingsmuur",
+        "aantal": 1
+      },
+      {
+        "tekst": "Familiebegraafplaats",
+        "aantal": 1
+      },
+      {
+        "tekst": "Aanleg en metaarhuisje",
+        "aantal": 1
       }
     ]
   },
@@ -978,37 +1582,37 @@
   },
   "datering": {
     "aantal": 450,
-    "aantal_met_jaartal": 305,
-    "aantal_met_alleen_periode": 115,
-    "aantal_onbekend": 30,
+    "aantal_met_jaartal": 309,
+    "aantal_met_alleen_periode": 114,
+    "aantal_onbekend": 27,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
-        "aantal": 115
+        "aantal": 114
       },
       {
         "label": "voor 1829 (verbod op kerkbegraving)",
-        "aantal": 64
-      },
-      {
-        "label": "1829-1849",
-        "aantal": 38
-      },
-      {
-        "label": "1850-1899",
-        "aantal": 74
-      },
-      {
-        "label": "1900-1949",
         "aantal": 61
       },
       {
+        "label": "1829-1849",
+        "aantal": 39
+      },
+      {
+        "label": "1850-1899",
+        "aantal": 79
+      },
+      {
+        "label": "1900-1949",
+        "aantal": 62
+      },
+      {
         "label": "1950-1999",
-        "aantal": 55
+        "aantal": 54
       },
       {
         "label": "2000-heden",
-        "aantal": 13
+        "aantal": 14
       }
     ],
     "oudste": [
@@ -1022,12 +1626,6 @@
         "naam": "Portugees-Joodse Begraafplaats",
         "plaats": "Rotterdam",
         "jaartal": 1613,
-        "circa": false
-      },
-      {
-        "naam": "Alg. begraafplaats",
-        "plaats": "Cillaarshoek",
-        "jaartal": 1615,
         "circa": false
       },
       {
@@ -1070,6 +1668,12 @@
         "naam": "Joodse begraafplaats",
         "plaats": "Katwijk aan den Rijn",
         "jaartal": 1758,
+        "circa": false
+      },
+      {
+        "naam": "Joodse begraafplaats",
+        "plaats": "Schoonhoven",
+        "jaartal": 1767,
         "circa": false
       }
     ]

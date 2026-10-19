@@ -29,6 +29,7 @@ outputbestand wegschrijven, idempotent.
 """
 from __future__ import annotations
 
+import csv
 import json
 import statistics
 from collections import Counter, defaultdict
@@ -43,6 +44,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 RCE_DIR = REPO_ROOT / "data" / "rce"
 OUT_PATH = GENERATED_DIR / "statistieken.json"
+DATERING_CSV = REPO_ROOT / "data" / "Begraafplaatsen Zuid-Holland - datering.csv"
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
@@ -65,6 +67,46 @@ BEGRAAFPLAATS_FUNCTIES = {
 def load(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
         return json.load(f)["features"]
+
+
+def beschermd_volgens_excel() -> dict | None:
+    """Begraafplaatsen die volgens de Excel van de domeinexpert (kolom
+    "Rijksmonument" = Ja) zelf rijksmonument zijn of een beschermd onderdeel
+    bevatten. Naast `begraafplaats_als_rijksmonument` (die uit de RCE-data
+    komt en alleen monumenten met een begraafplaats-functie telt die op of
+    aan het terrein liggen) -- de domeinexpert vroeg 2026-10-19 om dit
+    onderscheid, omdat ook onderdelen (hek, poortgebouw, kapel, baarhuisje,
+    grafkelder) beschermd kunnen zijn. De kolom "Beschermd deel" wordt
+    ongewijzigd overgenomen: geen eigen indeling, de Excel is leidend.
+
+    Leest de PII-vrije datering-CSV (de kolommen Rijksmonument/Rmonr./
+    Beschermd deel zitten daar al in); None als die niet bestaat."""
+    if not DATERING_CSV.exists():
+        return None
+    with DATERING_CSV.open(encoding="utf-8-sig", newline="") as f:
+        rows = list(csv.reader(f, delimiter="|"))
+    kop, data = rows[0], rows[1:]
+    i = {naam: kop.index(naam) for naam in ("Nr", "Naam", "Plaats", "Gemeente", "Rijksmonument", "Rmonr.", "Beschermd deel")}
+    lijst = []
+    for r in data:
+        if r[i["Rijksmonument"]].strip().lower() != "ja":
+            continue
+        lijst.append({
+            "nr": r[i["Nr"]].strip(),
+            "naam": r[i["Naam"]].strip(),
+            "plaats": r[i["Plaats"]].strip(),
+            "gemeente": r[i["Gemeente"]].strip(),
+            "rmonr": r[i["Rmonr."]].strip(),
+            "beschermd_deel": r[i["Beschermd deel"]].strip() or None,
+        })
+    lijst.sort(key=lambda x: (x["plaats"].lower(), x["naam"].lower()))
+    delen = Counter(x["beschermd_deel"] or "(niet ingevuld)" for x in lijst)
+    return {
+        "aantal": len(lijst),
+        "totaal_begraafplaatsen_in_excel": len(data),
+        "lijst": lijst,
+        "beschermd_deel_aantallen": [{"tekst": k, "aantal": v} for k, v in delen.most_common()],
+    }
 
 
 def terrain_rd_geom(feature: dict):
@@ -349,6 +391,7 @@ def main() -> None:
         "beschermd_gezicht": beschermd_gezicht,
         "rijksmonumenten": rijksmonumenten_stats,
         "begraafplaats_als_rijksmonument": begraafplaats_als_rijksmonument,
+        "beschermd_volgens_excel": beschermd_volgens_excel(),
         "molen": molen,
         "kasteel": kasteel,
         "kerk": kerk,

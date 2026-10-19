@@ -10,7 +10,7 @@ De genormaliseerde CSV bevat **899 bronrecords**:
 - **449** ingangen;
 - **449** terreinpolygonen;
 - **1** terreinrecord met een `GeometryCollection`;
-- **96** bronrecords met status `geruimd`.
+- **100** bronrecords met status `geruimd`.
 
 De basisdataset bevat **450 begraafplaatsrecords**, één record per terrein.
 
