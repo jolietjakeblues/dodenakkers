@@ -1,5 +1,5 @@
 {
-  "_bron": "Handmatige bevestiging door de domeinexpert (2026-09-08), naar aanleiding van docs/data/008-datering-ontbrekend.md (de 18 begraafplaatsen zonder automatische koppeling). Overschrijft de automatische ruimtelijke koppeling (nearest_datering() in scripts/analyse_spatial.py) voor precies deze terreinen -- een directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde nabijheidsmatch. Denominatie is hier bewust niet meegenomen, zie de toelichting in scripts/analyse_spatial.py. Eén van de 18 (zh-0138, Nieuwe gem. begraafplaats, Brielle) staat hier niet in -- ook de domeinexpert kent het jaartal niet, dat is dus een echte lege waarde in de bron, geen matchingprobleem.",
+  "_bron": "Handmatige bevestiging door de domeinexpert (2026-09-08), naar aanleiding van docs/data/008-datering-ontbrekend.md (de 18 begraafplaatsen zonder automatische koppeling). Overschrijft de automatische ruimtelijke koppeling (nearest_datering() in scripts/analyse_spatial.py) voor precies deze terreinen -- een directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde nabijheidsmatch. Denominatie is hier bewust niet meegenomen, zie de toelichting in scripts/analyse_spatial.py. Eén van de 18 (zh-0138, Nieuwe gem. begraafplaats, Brielle) stond hier eerst niet in -- toen kende ook de domeinexpert het jaartal niet. Aanvulling 2026-10-19 (antwoorden op docs/data/009-vragen-domeinexpert.md): 18 extra bevestigingen. Dat zijn de gevallen waar twee Excel-rijen op dezelfde plek liggen en de automatische koppeling niet kon kiezen (zh-0034/0035/0038/0058/0059/0076/0077/0078/0079/0161/0231/0434/0389/0390), de drie begraafplaatsen zonder koppeling binnen 300 m (zh-0138 nu circa 1994, zh-0234 1929, zh-0431 2007) en zh-0162 (Voorhout, Particuliere alg. begraafplaats, 1976: de domeinexpert noemt dit jaartal expliciet; de automatische koppeling gaf ten onrechte 'ME'). Periode 'ME' wordt bij het koppelen voluit 'Middeleeuwen' getoond (zie scripts/analyse_spatial.py).",
   "correcties": {
     "zh-0271": { "jaartal": 1873, "jaartal_circa": false },
     "zh-0183": { "jaartal": 1950, "jaartal_circa": false },
@@ -17,6 +17,24 @@
     "zh-0174": { "jaartal": 2009, "jaartal_circa": false },
     "zh-0140": { "jaartal": 1900, "jaartal_circa": false },
     "zh-0097": { "jaartal": 1862, "jaartal_circa": false },
-    "zh-0388": { "jaartal": 1993, "jaartal_circa": false }
+    "zh-0388": { "jaartal": 1993, "jaartal_circa": false },
+    "zh-0034": { "jaartal": 1858, "jaartal_circa": false },
+    "zh-0035": { "jaartal": null, "jaartal_circa": false, "periode": "ME" },
+    "zh-0038": { "jaartal": 2010, "jaartal_circa": false },
+    "zh-0058": { "jaartal": 1950, "jaartal_circa": false },
+    "zh-0059": { "jaartal": 1887, "jaartal_circa": false },
+    "zh-0076": { "jaartal": 1937, "jaartal_circa": false },
+    "zh-0077": { "jaartal": 1916, "jaartal_circa": false },
+    "zh-0078": { "jaartal": 1990, "jaartal_circa": false },
+    "zh-0079": { "jaartal": 1972, "jaartal_circa": false },
+    "zh-0161": { "jaartal": 1882, "jaartal_circa": false },
+    "zh-0162": { "jaartal": 1976, "jaartal_circa": false },
+    "zh-0231": { "jaartal": 1877, "jaartal_circa": false },
+    "zh-0434": { "jaartal": null, "jaartal_circa": false, "periode": "ME" },
+    "zh-0389": { "jaartal": 1827, "jaartal_circa": false },
+    "zh-0390": { "jaartal": 1880, "jaartal_circa": false },
+    "zh-0138": { "jaartal": 1994, "jaartal_circa": true },
+    "zh-0234": { "jaartal": 1929, "jaartal_circa": false },
+    "zh-0431": { "jaartal": 2007, "jaartal_circa": false }
   }
 }

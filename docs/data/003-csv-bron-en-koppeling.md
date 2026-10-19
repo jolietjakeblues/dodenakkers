@@ -246,6 +246,30 @@ Beide gecorrigeerd via `scripts/fix_plaats_typos.py` (eenmalig gedraaid).
 Geen rijen toegevoegd/verwijderd, geen koppelcategorie veranderd
 (`exact_name_place`/`spatial_name_variant`-tellingen blijven gelijk).
 
+### Antwoorden van de domeinexpert op de vragenlijst (2026-10-19)
+
+Naar aanleiding van [009 Vragen aan de domeinexpert](009-vragen-domeinexpert.md)
+zijn twee dingen in de bron-CSV aangepast, via
+`scripts/fix_antwoorden_domeinexpert_2026_10_19.py` (eenmalig gedraaid; telkens
+terrein- én ingangrij):
+
+- **Status**: NH Kerkhof, Middelharnis en NH kerkhof, Hoogblokland zijn
+  `geruimd` ("de excel gaat hier boven wat er op de kaart staat"). Beide hadden
+  een lege `geruimd`-waarde (dus geen statusconflict). Daarmee komen de totalen
+  exact overeen met de Excel: 50 geruimd en 400 niet-geruimd (316 in gebruik +
+  84 gesloten).
+- **Naam**: de `NH begraafplaats` in Puttershoek is `Nieuwe gemeentelijke
+  begraafplaats` (de naam uit de Excel). Beide rijen zijn samen hernoemd, anders
+  breekt de koppeling op naam + plaats tussen terrein en ingang.
+
+De jaartallen/perioden uit dezelfde antwoorden staan niet in de CSV maar in
+`data/datering-correcties.json` (zie [007](007-datering-bevindingen.md)). Over
+de drie dubbele nummers in de Excel (66, 67, 74) zei de domeinexpert dat het zo
+klopt: de geruimde begraafplaatsen (NH Kerkhof Zwammerdam, H Jacobusbegraafplaats
+Oude Wetering, NH Kerkhof 's-Gravendeel) komen uit een aparte lijst en zijn in de
+Excel geel gemarkeerd. Nr is dus geen unieke sleutel en wordt niet als zodanig
+gebruikt.
+
 ## Rol van de KML
 
 De KML blijft nuttig voor:

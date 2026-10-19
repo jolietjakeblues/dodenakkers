@@ -15,7 +15,7 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 
 **Begraafplaatsen** - 450 terreinen, samen circa **550 ha**:
 
-- 402 niet-geruimd, 48 geruimd, 0 statusconflicten;
+- 400 niet-geruimd, 50 geruimd, 0 statusconflicten (komt exact overeen met de Excel van de domeinexpert: 316 in gebruik + 84 gesloten, 50 geruimd; NH Kerkhof Middelharnis en NH kerkhof Hoogblokland zijn op 2026-10-19 op geruimd gezet, zie [003](data/003-csv-bron-en-koppeling.md));
 - kleinste terrein 13,49 m², grootste 301.096,18 m² (30,1 ha, Natuurbegraafplaats Staelduinen), mediaan 3.220,27 m².
 
 **Tegenover beschermde gezichten** (105 rijksbeschermde stads-/dorpsgezichten in de Zuid-Holland-bbox):

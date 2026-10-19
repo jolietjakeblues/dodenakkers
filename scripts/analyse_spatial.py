@@ -29,6 +29,8 @@ Monuments beyond 100m are not included in rijksmonument_relations.
 from __future__ import annotations
 
 import json
+import re
+from collections import defaultdict
 from pathlib import Path
 
 from pyproj import Transformer
@@ -71,7 +73,66 @@ DATERING_MATCH_THRESHOLD_M = 300
 # per terrein.
 DATERING_CORRECTIES_PATH = REPO_ROOT / "data" / "datering-correcties.json"
 
-to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
+# 2026-10-19: aanvulling met de antwoorden op docs/data/009-vragen-
+# domeinexpert.md. Bij 14 begraafplaatsen lagen twee Excel-rijen op dezelfde
+# plek met een verschillend jaartal; nearest() koos dan willekeurig (afhankelijk
+# van rijvolgorde en shapely-versie). Die zijn nu allemaal vastgezet, net als
+# de drie zonder koppeling binnen de drempel.
+
+# De Excel van de domeinexpert schrijft de periode Middeleeuwen als "ME".
+# Voluit tonen mocht (2026-10-19: "dat mag je er wel van maken"); de ruwe
+# waarde blijft als periode_bron naast het label bewaard.
+PERIODE_LABELS = {"ME": "Middeleeuwen"}
+
+
+def periode_label(raw: str | None) -> str | None:
+    return PERIODE_LABELS.get(raw, raw)
+
+
+# Koppeling op naam + plaats (2026-10-19). nearest_datering() koppelt op
+# nabijheid van een geocodeerd adres; dat gaat mis zodra twee begraafplaatsen
+# dicht bij elkaar liggen (bv. een Joodse begraafplaats in Wassenaar kreeg het
+# jaartal van de gemeentelijke begraafplaats ernaast, Kerkhof Groene Kerkje in
+# Oegstgeest dat van de Nieuwe Begraafplaats). De Excel is leidend ("de excel
+# heeft altijd gelijk"), dus als naam en plaats van een terrein eenduidig met
+# een Excel-rij overeenkomen, wint die rij van de nabijheid. Bewust streng: de
+# naamwoorden (zonder 'begraafplaats'/'kerkhof' en bekende afkortingen
+# uitgeschreven) moeten gelijk zijn en de plaats ook; bij meerdere rijen met
+# een verschillende waarde valt het terug op nearest_datering(). Volgorde:
+# handmatige correctie > naam+plaats > nabijheid.
+_NAAM_AFKORTINGEN = {
+    "gem": "gemeentelijke", "gemeentelijk": "gemeentelijke", "alg": "algemene", "algemeen": "algemene",
+    "nw": "nieuwe", "nieuw": "nieuwe", "vm": "voormalig", "hh": "heilige", "h": "heilige", "st": "sint",
+}
+_NAAM_STOPWOORDEN = {"begraafplaats", "kerkhof", "de", "het", "en", "van", "bij", "op", "in", "met", "later", "deel", "kerk"}
+
+
+def naam_woorden(naam: str | None) -> frozenset[str]:
+    woorden = [_NAAM_AFKORTINGEN.get(w, w) for w in re.findall(r"[a-zà-ÿ]+", (naam or "").lower())]
+    return frozenset(w for w in woorden if w not in _NAAM_STOPWOORDEN)
+
+
+def plaats_sleutel(plaats: str | None) -> str:
+    sleutel = re.sub(r"[^a-z]", "", re.sub(r"\(geruimd\)", "", plaats or "", flags=re.I).lower())
+    return "denhaag" if sleutel == "sgravenhage" else sleutel
+
+
+def datering_op_naam(props: dict, datering_per_plaats: dict) -> dict | None:
+    woorden = naam_woorden(props.get("naam"))
+    kandidaten = [
+        (i, f["properties"])
+        for i, f in datering_per_plaats.get(plaats_sleutel(props.get("plaats")), [])
+        if naam_woorden(f["properties"].get("naam")) == woorden
+    ]
+    if not kandidaten:
+        return None
+    waarden = {(p.get("jaartal"), p.get("jaartal_circa", False), p.get("periode")) for _, p in kandidaten}
+    if len(waarden) > 1:
+        return None
+    return kandidaten[0][1]
+
+
+to_rd =Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
 
 def load_features(path: Path) -> list[dict]:
@@ -144,7 +205,8 @@ def nearest_datering(ingang_rd, datering_index: STRtree, datering: list[dict], d
     return {
         "jaartal": props.get("jaartal"),
         "jaartal_circa": props.get("jaartal_circa", False),
-        "periode": props.get("periode"),
+        "periode": periode_label(props.get("periode")),
+        "periode_bron": props.get("periode"),
         "distance_m": round(distance, 1),
     }
 
@@ -235,7 +297,9 @@ def classify_rijksmonumenten(terrain_rd, rm_index: STRtree, rm: list[dict], rm_g
                 "distance_m": round(distance_m, 1),
             }
         )
-    relations.sort(key=lambda r: r["distance_m"])
+    # Tweede sleutel: bij gelijke afstand hing de volgorde anders van de
+    # STRtree-volgorde (en dus van de shapely-versie) af.
+    relations.sort(key=lambda r: (r["distance_m"], str(r["rijksmonumentnummer"] or "")))
     return relations
 
 
@@ -272,6 +336,9 @@ def main() -> None:
     rm_index = STRtree(rm_geoms)
     gemeenten_index = STRtree(gemeenten_geoms)
     datering_index = STRtree(datering_geoms) if datering_geoms else None
+    datering_per_plaats: dict = defaultdict(list)
+    for i, f in enumerate(datering):
+        datering_per_plaats[plaats_sleutel(f["properties"].get("plaats"))].append((i, f))
 
     out_features = []
     stats = {
@@ -282,6 +349,8 @@ def main() -> None:
         "met_rijksmonument_250m": 0,
         "met_datering": 0,
         "met_datering_correctie": 0,
+        "datering_op_naam": 0,
+        "datering_naam_wijkt_af_van_nabijheid": 0,
     }
     gemeente_via_fallback = 0
 
@@ -301,12 +370,27 @@ def main() -> None:
         ingang_lat = feature["properties"].get("ingang_lat")
         ingang_rd = transform(to_rd, Point(ingang_lon, ingang_lat)) if ingang_lon is not None and ingang_lat is not None else None
         datering_match = nearest_datering(ingang_rd, datering_index, datering, datering_geoms) if datering_index else None
+        naam_props = datering_op_naam(feature["properties"], datering_per_plaats) if datering_index else None
+        if naam_props is not None:
+            nabij = (datering_match["jaartal"], datering_match["periode_bron"]) if datering_match else None
+            if nabij != (naam_props.get("jaartal"), naam_props.get("periode")):
+                stats["datering_naam_wijkt_af_van_nabijheid"] += 1
+            datering_match = {
+                "jaartal": naam_props.get("jaartal"),
+                "jaartal_circa": naam_props.get("jaartal_circa", False),
+                "periode": periode_label(naam_props.get("periode")),
+                "periode_bron": naam_props.get("periode"),
+                "distance_m": None,
+                "bron": "naam en plaats (Excel van de domeinexpert)",
+            }
+            stats["datering_op_naam"] += 1
         correctie = datering_correcties.get(feature["properties"]["id"])
         if correctie:
             datering_match = {
                 "jaartal": correctie.get("jaartal"),
                 "jaartal_circa": correctie.get("jaartal_circa", False),
-                "periode": correctie.get("periode"),
+                "periode": periode_label(correctie.get("periode")),
+                "periode_bron": correctie.get("periode"),
                 "distance_m": None,
                 "bron": "handmatig bevestigd door de domeinexpert",
             }
@@ -355,7 +439,8 @@ def main() -> None:
     print(f"  rijksmonumenten zonder monument_aard (uitgesloten van gebouwd-set): {skipped_null_aard}")
     print(f"  gemeente via nearest-fallback i.p.v. directe puntligging: {gemeente_via_fallback}")
     if datering:
-        print(f"  datering gekoppeld (binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
+        print(f"  datering gekoppeld (correctie, naam+plaats of binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
+        print(f"  waarvan op naam+plaats met de Excel gekoppeld: {stats['datering_op_naam']} (bij {stats['datering_naam_wijkt_af_van_nabijheid']} wijkt dat af van de dichtstbijzijnde punt-koppeling)")
     else:
         print("  datering.geojson niet gevonden -- geen datering-koppeling (draai eerst scripts/build_datering.py)")
     if datering_correcties:
