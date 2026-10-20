@@ -695,3 +695,19 @@ body.stats-page {
 .kandidaten-table th {
   vertical-align: top;
 }
+
+/* Oude kaarten bij een punt (oude-kaarten.html): hergebruikt #map en #panel. */
+body.oude-kaarten h1 { font-size: 18px; margin: 4px 0 2px; }
+body.oude-kaarten .ok-nav, body.oude-kaarten .ok-naam { margin: 0 0 8px; }
+body.oude-kaarten .ok-naam { font-weight: 600; }
+body.oude-kaarten label { display: block; margin: 10px 0 2px; }
+body.oude-kaarten .ok-onder label { margin: 4px 0; }
+body.oude-kaarten select, body.oude-kaarten input[type="range"] { width: 100%; box-sizing: border-box; }
+body.oude-kaarten select { padding: 6px 8px; font-size: 13px; border: 1px solid #aaa; border-radius: 4px; }
+body.oude-kaarten .ok-onder { border: 0; padding: 0; margin: 10px 0 0; }
+body.oude-kaarten .ok-onder legend { padding: 0; }
+body.oude-kaarten #status.fout { color: #a00; }
+@media (max-width: 700px) {
+  body.oude-kaarten select { font-size: 16px; padding: 10px; }
+  body.oude-kaarten .ok-onder label { padding: 6px 0; }
+}

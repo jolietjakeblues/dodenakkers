@@ -402,6 +402,8 @@ def rijksmonument_kandidaten(
         url = next((c["monumentenregister_url"] for c in cluster if c["monumentenregister_url"]), None)
         functies = sorted({c["functie"] for c in cluster})
         results.append({
+            # Vaste sleutel voor oude_kaarten.json (scripts/fetch_allmaps.py): laagste rijksmonumentnummer van de cluster.
+            "id": f"rm-{min(int(c['rijksmonumentnummer']) for c in cluster)}",
             "naam": named[0] if named else None,
             "functie": ", ".join(functies),
             "gemeente": cluster[0]["gemeente"],
@@ -461,6 +463,7 @@ def chs_archeologie_kandidaten(
         afstand_verdwenen, dichtstbijzijnde_verdwenen = nearest_verdwenen(point_rd, verdwenen_tree, verdwenen_geoms, verdwenen)
         fragment = snippet(tekst, match)
         candidates.append({
+            "id": f"chs-{props.get('MONUMENTNR')}",
             "monumentnr": props.get("MONUMENTNR"),
             "gemeente": props.get("Gemeente"),
             "plaats": props.get("Plaats"),
@@ -480,6 +483,13 @@ def chs_archeologie_kandidaten(
         })
 
     candidates.sort(key=lambda c: (c["zekerheid"] != "concreet genoemd", -c["afstand_tot_bekende_bp_m"]))
+    # Een terrein kan uit meer dan een deel (polygoon) bestaan: elk deel is een eigen
+    # kandidaat met een eigen punt, dus een eigen sleutel (-2, -3, ...).
+    gezien: dict[str, int] = {}
+    for c in candidates:
+        gezien[c["id"]] = gezien.get(c["id"], 0) + 1
+        if gezien[c["id"]] > 1:
+            c["id"] = f"{c['id']}-{gezien[c['id']]}"
     return candidates, buiten_periode
 
 
@@ -559,6 +569,7 @@ def main() -> None:
         centroid_wgs84 = geom.centroid if geom.geom_type != "Point" else geom
         fragment = snippet(omschrijving, match)
         candidates.append({
+            "id": f"ka-{f['properties'].get('objectnummer')}",
             "objectnummer": f["properties"].get("objectnummer"),
             "registratiedatum": f["properties"].get("registratiedatum"),
             "cho_uri": f["properties"].get("cho_uri"),

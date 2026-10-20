@@ -31,6 +31,11 @@ function fmtVerdwenen(naamPlaats, afstandM) {
   return `${naamPlaats} (${fmt(afstandM)} m)`;
 }
 
+// Oude kaarten (Allmaps) over het punt van de kandidaat, zie scripts/fetch_allmaps.py.
+function oudeKaartenLink(kandidaat) {
+  return el("a", { href: `oude-kaarten.html?id=${encodeURIComponent(kandidaat.id)}`, text: "oude kaarten" });
+}
+
 // Permalink naar de hoofdkaart, gecentreerd op de kandidaat, met de
 // archeologische-onderzoeksgebieden-laag alvast aangevinkt (zie
 // LAYER_TOGGLE_CODES in app.js -- "arch" is dezelfde code).
@@ -129,7 +134,7 @@ function renderChsArcheologieSectie(data) {
       class: k.zekerheid === "concreet genoemd" ? "badge badge-concreet" : "badge badge-onzeker",
       text: k.zekerheid,
     });
-    const links = el("td", {}, [el("a", { href: mapLinkChs(k), text: "kaart" })]);
+    const links = el("td", {}, [el("a", { href: mapLinkChs(k), text: "kaart" }), el("span", { text: " · " }), oudeKaartenLink(k)]);
     tbody.appendChild(
       el("tr", {}, [
         el("td", {}, [zekerheidBadge]),
@@ -196,6 +201,8 @@ function renderRijksmonumentSectie(containerId, titel, data, bebouwingCheck) {
       el("a", { href: k.monumentenregister_url, target: "_blank", rel: "noopener", text: "bron" }),
       el("span", { text: " · " }),
       el("a", { href: mapLinkRijksmonument(k), text: "kaart" }),
+      el("span", { text: " · " }),
+      oudeKaartenLink(k),
     ]);
     tbody.appendChild(
       el("tr", {}, [
@@ -274,6 +281,8 @@ async function main() {
       el("a", { href: c.cho_uri, target: "_blank", rel: "noopener", text: "bron" }),
       el("span", { text: " · " }),
       el("a", { href: mapLink(c), text: "kaart" }),
+      el("span", { text: " · " }),
+      oudeKaartenLink(c),
     ]);
     tbody.appendChild(
       el("tr", {}, [

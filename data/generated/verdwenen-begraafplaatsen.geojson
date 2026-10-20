@@ -6,6 +6,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-alphen-aan-den-rijn-algemene-begraafplaats",
         "naam": "Algemene begraafplaats",
         "plaats": "Alphen aan den Rijn",
         "status_vermeld": null
@@ -21,6 +22,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-alphen-aan-den-rijn-gem-begraafplaats-lage-zijde",
         "naam": "Gem. begraafplaats Lage Zijde",
         "plaats": "Alphen aan den Rijn",
         "status_vermeld": null
@@ -36,6 +38,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-blankenburg-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Blankenburg",
         "status_vermeld": null
@@ -51,6 +54,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-bleskensgraaf-oud-gem-kerkhof",
         "naam": "Oud gem. kerkhof",
         "plaats": "Bleskensgraaf",
         "status_vermeld": null
@@ -66,6 +70,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-boskoop-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Boskoop",
         "status_vermeld": null
@@ -81,6 +86,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-brielle-st-pieterskerkhof",
         "naam": "St. Pieterskerkhof",
         "plaats": "Brielle",
         "status_vermeld": null
@@ -96,6 +102,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-charlois-hervormde-begraafplaats",
         "naam": "Hervormde begraafplaats",
         "plaats": "Charlois",
         "status_vermeld": null
@@ -111,6 +118,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-delft-heilige-geestkerkhof",
         "naam": "Heilige Geestkerkhof",
         "plaats": "Delft",
         "status_vermeld": null
@@ -126,6 +134,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-delft-kerkhof-broerhuisstraat",
         "naam": "Kerkhof Broerhuisstraat",
         "plaats": "Delft",
         "status_vermeld": null
@@ -141,6 +150,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-delft-kloosterkerkhof-bagijnen",
         "naam": "Kloosterkerkhof Bagijnen",
         "plaats": "Delft",
         "status_vermeld": null
@@ -156,6 +166,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-delft-nieuwe-kerkhof",
         "naam": "Nieuwe kerkhof",
         "plaats": "Delft",
         "status_vermeld": null
@@ -171,6 +182,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-delft-pestkerkhof",
         "naam": "Pestkerkhof",
         "plaats": "Delft",
         "status_vermeld": null
@@ -186,6 +198,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-begraafplaats-dolhuis",
         "naam": "Begraafplaats Dolhuis",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -201,6 +214,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-kerkhof-agnietenklooster",
         "naam": "Kerkhof Agnietenklooster",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -216,6 +230,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-kerkhof-barbaraklooster",
         "naam": "Kerkhof Barbaraklooster",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -231,6 +246,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-kerkhof-grote-kerk",
         "naam": "Kerkhof Grote kerk",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -246,6 +262,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-kloosterkerkhof",
         "naam": "Kloosterkerkhof",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -261,6 +278,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-den-haag-noorderkerkhof",
         "naam": "Noorderkerkhof",
         "plaats": "Den Haag",
         "status_vermeld": null
@@ -276,6 +294,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dordrecht-grote-kerkhof",
         "naam": "Grote kerkhof",
         "plaats": "Dordrecht",
         "status_vermeld": null
@@ -291,6 +310,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dordrecht-joodse-begraafplaats",
         "naam": "Joodse begraafplaats",
         "plaats": "Dordrecht",
         "status_vermeld": null
@@ -306,6 +326,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dordrecht-kerkhof-minderbroedersklooster",
         "naam": "Kerkhof Minderbroedersklooster",
         "plaats": "Dordrecht",
         "status_vermeld": null
@@ -321,6 +342,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dordrecht-kloosterbegraafplaats-amstelwijck",
         "naam": "Kloosterbegraafplaats Amstelwijck",
         "plaats": "Dordrecht",
         "status_vermeld": null
@@ -336,6 +358,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dordrecht-nieuwe-kerkhof",
         "naam": "Nieuwe kerkhof",
         "plaats": "Dordrecht",
         "status_vermeld": null
@@ -351,6 +374,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-dubbeldam-nh-kerkhof-en-begraafplaats",
         "naam": "NH kerkhof en begraafplaats",
         "plaats": "Dubbeldam",
         "status_vermeld": null
@@ -366,6 +390,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-giessenburg-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Giessenburg",
         "status_vermeld": "verdwenen"
@@ -381,6 +406,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-gorinchem-oude-kerkhof",
         "naam": "Oude kerkhof",
         "plaats": "Gorinchem",
         "status_vermeld": null
@@ -396,6 +422,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-gouda-joodse-begraafplaats",
         "naam": "Joodse begraafplaats",
         "plaats": "Gouda",
         "status_vermeld": null
@@ -411,6 +438,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-gouda-kerkhof-bloemendaal",
         "naam": "Kerkhof Bloemendaal",
         "plaats": "Gouda",
         "status_vermeld": null
@@ -426,6 +454,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-gouda-oude-joodse-begraafplaats",
         "naam": "Oude joodse begraafplaats",
         "plaats": "Gouda",
         "status_vermeld": null
@@ -441,6 +470,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-gouda-oude-kerkhof",
         "naam": "Oude kerkhof",
         "plaats": "Gouda",
         "status_vermeld": null
@@ -456,6 +486,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-goudswaard-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Goudswaard",
         "status_vermeld": null
@@ -471,6 +502,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-groot-ammers-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Groot Ammers",
         "status_vermeld": null
@@ -486,6 +518,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hellevoetsluis-begraafplaats-de-struyten",
         "naam": "Begraafplaats De Struyten",
         "plaats": "Hellevoetsluis",
         "status_vermeld": null
@@ -501,6 +534,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hellevoetsluis-het-franse-graf",
         "naam": "Het Franse graf",
         "plaats": "Hellevoetsluis",
         "status_vermeld": null
@@ -516,6 +550,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hellevoetsluis-kloosterbegraafplaats-uithof-oosthoek",
         "naam": "Kloosterbegraafplaats Uithof Oosthoek",
         "plaats": "Hellevoetsluis",
         "status_vermeld": null
@@ -531,6 +566,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hellevoetsluis-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Hellevoetsluis",
         "status_vermeld": null
@@ -546,6 +582,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-herkingen-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Herkingen",
         "status_vermeld": null
@@ -561,6 +598,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hoogmade-katholieke-kerkhof",
         "naam": "Katholieke kerkhof",
         "plaats": "Hoogmade",
         "status_vermeld": null
@@ -576,6 +614,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hoogmade-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Hoogmade",
         "status_vermeld": null
@@ -591,6 +630,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-hoogvliet-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Hoogvliet",
         "status_vermeld": null
@@ -606,6 +646,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-krimpen-aan-de-lek-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Krimpen aan de Lek",
         "status_vermeld": null
@@ -621,6 +662,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-armenbegraafplaats-blauwe-bolwerk",
         "naam": "Armenbegraafplaats Blauwe Bolwerk",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -636,6 +678,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-armenbegraafplaats-grote-bolwerk",
         "naam": "Armenbegraafplaats Grote Bolwerk",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -651,6 +694,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-begijnkerkhof",
         "naam": "Begijnkerkhof",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -666,6 +710,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-begraafplaats-papagaaiebolwerk-marepoort",
         "naam": "Begraafplaats Papagaaiebolwerk (Marepoort)",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -681,6 +726,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-begraafplaats-op-het-rijnsburger-bolwerk",
         "naam": "Begraafplaats op het Rijnsburger Bolwerk",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -696,6 +742,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-joodse-armenbegraafplaats",
         "naam": "Joodse armenbegraafplaats",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -711,6 +758,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-kerkhof-hooglandse-kerk",
         "naam": "Kerkhof Hooglandse kerk",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -726,6 +774,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-oude-begraafplaats-pesthuis",
         "naam": "Oude begraafplaats Pesthuis",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -741,6 +790,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-oude-joodse-begraafplaats",
         "naam": "Oude joodse begraafplaats",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -756,6 +806,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-pieterskerkhof",
         "naam": "Pieterskerkhof",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -771,6 +822,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-leiden-vrouwekerkhof",
         "naam": "Vrouwekerkhof",
         "plaats": "Leiden",
         "status_vermeld": null
@@ -786,6 +838,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-lekkerkerk-nh-kerkhof",
         "naam": "NH Kerkhof",
         "plaats": "Lekkerkerk",
         "status_vermeld": null
@@ -801,6 +854,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-maassluis-joodse-begraafplats",
         "naam": "Joodse begraafplats",
         "plaats": "Maassluis",
         "status_vermeld": null
@@ -816,6 +870,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-maassluis-oud-kerkhof",
         "naam": "Oud kerkhof",
         "plaats": "Maassluis",
         "status_vermeld": null
@@ -831,6 +886,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-maassluis-oude-rk-begraafplaats",
         "naam": "Oude RK begraafplaats",
         "plaats": "Maassluis",
         "status_vermeld": null
@@ -846,6 +902,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-melissant-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Melissant",
         "status_vermeld": null
@@ -861,6 +918,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-moerkapelle-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Moerkapelle",
         "status_vermeld": null
@@ -876,6 +934,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-naaldwijk-algemene-begraafplaats",
         "naam": "Algemene begraafplaats",
         "plaats": "Naaldwijk",
         "status_vermeld": null
@@ -891,6 +950,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-nieuw-lekkerland-eerste-gemeentelijke-begraafplaats",
         "naam": "Eerste gemeentelijke begraafplaats",
         "plaats": "Nieuw-Lekkerland",
         "status_vermeld": null
@@ -906,6 +966,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-nieuw-lekkerland-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Nieuw-Lekkerland",
         "status_vermeld": null
@@ -921,6 +982,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-nieuwpoort-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Nieuwpoort",
         "status_vermeld": null
@@ -936,6 +998,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-nieuwveen-begraafplaats-johannes-stichting",
         "naam": "Begraafplaats Johannes Stichting",
         "plaats": "Nieuwveen",
         "status_vermeld": null
@@ -951,6 +1014,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-noordwijkerhout-algemene-begraafplaats",
         "naam": "Algemene begraafplaats",
         "plaats": "Noordwijkerhout",
         "status_vermeld": null
@@ -966,6 +1030,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-numansdorp-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Numansdorp",
         "status_vermeld": null
@@ -981,6 +1046,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-papendrecht-kerkhof",
         "naam": "Kerkhof",
         "plaats": "Papendrecht",
         "status_vermeld": null
@@ -996,6 +1062,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rockanje-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Rockanje",
         "status_vermeld": null
@@ -1011,6 +1078,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-bombazijnen-kerkhof",
         "naam": "Bombazijnen kerkhof",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1026,6 +1094,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-joodse-begraafplaats",
         "naam": "Joodse begraafplaats",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1041,6 +1110,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-kerkhof-begijnenhof",
         "naam": "Kerkhof Begijnenhof",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1056,6 +1126,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-kerkhof-van-schoonderloo",
         "naam": "Kerkhof van Schoonderloo",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1071,6 +1142,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-nh-begraafplaats-delfshaven",
         "naam": "NH Begraafplaats Delfshaven",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1086,6 +1158,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-nh-begraafplaats",
         "naam": "NH begraafplaats",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1101,6 +1174,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-nh-kerkhof-overschie",
         "naam": "NH kerkhof Overschie",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1116,6 +1190,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-pestkerkhof",
         "naam": "Pestkerkhof",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1131,6 +1206,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-portugees-israelitische-begraafplaats",
         "naam": "Portugees-Israelitische begraafplaats",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1146,6 +1222,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-portugees-joodse-begraafplaats-crooswijk",
         "naam": "Portugees-Joodse begraafplaats Crooswijk",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1161,6 +1238,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-rk-begraafplaats-st-antonius-abt",
         "naam": "RK begraafplaats St. Antonius Abt",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1176,6 +1254,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-sint-laurenskerkhof",
         "naam": "Sint Laurenskerkhof",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1191,6 +1270,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-rotterdam-zuiderkerkhof",
         "naam": "Zuiderkerkhof",
         "plaats": "Rotterdam",
         "status_vermeld": null
@@ -1206,6 +1286,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-schiedam-joodse-begraafplaats",
         "naam": "Joodse begraafplaats",
         "plaats": "Schiedam",
         "status_vermeld": null
@@ -1221,6 +1302,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-schiedam-oude-gem-begraafplaats",
         "naam": "Oude gem. begraafplaats",
         "plaats": "Schiedam",
         "status_vermeld": null
@@ -1236,6 +1318,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-schiedam-st-janskerkhof",
         "naam": "St. Janskerkhof",
         "plaats": "Schiedam",
         "status_vermeld": null
@@ -1251,6 +1334,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-sliedrecht-oude-algemene-begraafplaats",
         "naam": "Oude algemene begraafplaats",
         "plaats": "Sliedrecht",
         "status_vermeld": null
@@ -1266,6 +1350,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-sliedrecht-oude-kerkhof",
         "naam": "Oude kerkhof",
         "plaats": "Sliedrecht",
         "status_vermeld": null
@@ -1281,6 +1366,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-stolwijk-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Stolwijk",
         "status_vermeld": null
@@ -1296,6 +1382,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-strijen-nh-kerkhof",
         "naam": "NH kerkhof",
         "plaats": "Strijen",
         "status_vermeld": null
@@ -1311,6 +1398,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-vlaardingen-kerkhof-bij-grote-kerk",
         "naam": "Kerkhof bij Grote Kerk",
         "plaats": "Vlaardingen",
         "status_vermeld": null
@@ -1326,6 +1414,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-waarder-oude-kerkhof",
         "naam": "Oude kerkhof",
         "plaats": "Waarder",
         "status_vermeld": null
@@ -1341,6 +1430,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-wassenaar-oorlogsbegraafplaats-schouwweg",
         "naam": "Oorlogsbegraafplaats Schouwweg",
         "plaats": "Wassenaar",
         "status_vermeld": null
@@ -1356,6 +1446,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-wateringen-kerkhof",
         "naam": "Kerkhof",
         "plaats": "Wateringen",
         "status_vermeld": null
@@ -1371,6 +1462,7 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "vd-zoeterwoude-rijndijk-onze-lieve-vrouw-onbevlekt-ontvangen-kloosterbegraafplaats",
         "naam": "Onze Lieve Vrouw Onbevlekt Ontvangen (kloosterbegraafplaats)",
         "plaats": "Zoeterwoude-Rijndijk",
         "status_vermeld": null

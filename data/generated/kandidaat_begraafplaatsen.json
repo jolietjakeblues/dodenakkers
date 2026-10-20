@@ -5,6 +5,7 @@
   "aantal_buiten_zuid_holland_bbox_rand": 43,
   "kandidaten": [
     {
+      "id": "ka-10475645",
       "objectnummer": "10475645",
       "registratiedatum": "2025-12-17",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10475645",
@@ -20,6 +21,7 @@
       "lat": 52.000944
     },
     {
+      "id": "ka-10156803",
       "objectnummer": "10156803",
       "registratiedatum": "2019-12-05",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10156803",
@@ -35,6 +37,7 @@
       "lat": 52.001438
     },
     {
+      "id": "ka-10221864",
       "objectnummer": "10221864",
       "registratiedatum": "2021-04-23",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10221864",
@@ -50,6 +53,7 @@
       "lat": 51.884996
     },
     {
+      "id": "ka-2024179",
       "objectnummer": "2024179",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2024179",
@@ -65,6 +69,7 @@
       "lat": 52.041392
     },
     {
+      "id": "ka-10491337",
       "objectnummer": "10491337",
       "registratiedatum": "2025-09-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10491337",
@@ -80,6 +85,7 @@
       "lat": 52.031606
     },
     {
+      "id": "ka-2042140",
       "objectnummer": "2042140",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2042140",
@@ -95,6 +101,7 @@
       "lat": 52.009336
     },
     {
+      "id": "ka-2035829",
       "objectnummer": "2035829",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2035829",
@@ -110,6 +117,7 @@
       "lat": 52.166002
     },
     {
+      "id": "ka-2006694",
       "objectnummer": "2006694",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2006694",
@@ -125,6 +133,7 @@
       "lat": 52.155719
     },
     {
+      "id": "ka-2046378",
       "objectnummer": "2046378",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2046378",
@@ -140,6 +149,7 @@
       "lat": 51.964754
     },
     {
+      "id": "ka-10195369",
       "objectnummer": "10195369",
       "registratiedatum": "2020-11-09",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10195369",
@@ -155,6 +165,7 @@
       "lat": 51.794098
     },
     {
+      "id": "ka-2005635",
       "objectnummer": "2005635",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2005635",
@@ -170,6 +181,7 @@
       "lat": 52.154767
     },
     {
+      "id": "ka-10502086",
       "objectnummer": "10502086",
       "registratiedatum": "2025-07-16",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10502086",
@@ -185,6 +197,7 @@
       "lat": 52.271515
     },
     {
+      "id": "ka-2044530",
       "objectnummer": "2044530",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2044530",
@@ -200,6 +213,7 @@
       "lat": 52.029291
     },
     {
+      "id": "ka-2028244",
       "objectnummer": "2028244",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2028244",
@@ -215,6 +229,7 @@
       "lat": 52.161054
     },
     {
+      "id": "ka-2027457",
       "objectnummer": "2027457",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2027457",
@@ -230,6 +245,7 @@
       "lat": 52.160882
     },
     {
+      "id": "ka-2029243",
       "objectnummer": "2029243",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2029243",
@@ -245,6 +261,7 @@
       "lat": 52.027668
     },
     {
+      "id": "ka-2037524",
       "objectnummer": "2037524",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2037524",
@@ -260,6 +277,7 @@
       "lat": 52.051379
     },
     {
+      "id": "ka-10252287",
       "objectnummer": "10252287",
       "registratiedatum": "2021-11-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10252287",
@@ -275,6 +293,7 @@
       "lat": 51.848501
     },
     {
+      "id": "ka-10055879",
       "objectnummer": "10055879",
       "registratiedatum": "2017-06-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10055879",
@@ -290,6 +309,7 @@
       "lat": 52.027971
     },
     {
+      "id": "ka-10077516",
       "objectnummer": "10077516",
       "registratiedatum": "2018-03-07",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10077516",
@@ -305,6 +325,7 @@
       "lat": 51.859446
     },
     {
+      "id": "ka-2046147",
       "objectnummer": "2046147",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2046147",
@@ -320,6 +341,7 @@
       "lat": 51.791669
     },
     {
+      "id": "ka-2033987",
       "objectnummer": "2033987",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2033987",
@@ -335,6 +357,7 @@
       "lat": 51.828193
     },
     {
+      "id": "ka-10119352",
       "objectnummer": "10119352",
       "registratiedatum": "2019-03-13",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10119352",
@@ -350,6 +373,7 @@
       "lat": 52.160896
     },
     {
+      "id": "ka-2045476",
       "objectnummer": "2045476",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2045476",
@@ -365,6 +389,7 @@
       "lat": 51.814032
     },
     {
+      "id": "ka-2018149",
       "objectnummer": "2018149",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2018149",
@@ -380,6 +405,7 @@
       "lat": 51.814336
     },
     {
+      "id": "ka-10346232",
       "objectnummer": "10346232",
       "registratiedatum": "2022-05-19",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10346232",
@@ -395,6 +421,7 @@
       "lat": 51.824287
     },
     {
+      "id": "ka-2023967",
       "objectnummer": "2023967",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2023967",
@@ -410,6 +437,7 @@
       "lat": 52.012039
     },
     {
+      "id": "ka-2051058",
       "objectnummer": "2051058",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2051058",
@@ -425,6 +453,7 @@
       "lat": 51.826256
     },
     {
+      "id": "ka-2051008",
       "objectnummer": "2051008",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2051008",
@@ -440,6 +469,7 @@
       "lat": 52.010713
     },
     {
+      "id": "ka-10489697",
       "objectnummer": "10489697",
       "registratiedatum": "2025-01-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10489697",
@@ -455,6 +485,7 @@
       "lat": 52.014304
     },
     {
+      "id": "ka-10254645",
       "objectnummer": "10254645",
       "registratiedatum": "2021-11-16",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10254645",
@@ -470,6 +501,7 @@
       "lat": 51.948588
     },
     {
+      "id": "ka-10438931",
       "objectnummer": "10438931",
       "registratiedatum": "2025-04-24",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10438931",
@@ -485,6 +517,7 @@
       "lat": 52.014535
     },
     {
+      "id": "ka-10502632",
       "objectnummer": "10502632",
       "registratiedatum": "2025-08-08",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10502632",
@@ -500,6 +533,7 @@
       "lat": 52.014808
     },
     {
+      "id": "ka-2037498",
       "objectnummer": "2037498",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2037498",
@@ -515,6 +549,7 @@
       "lat": 52.011013
     },
     {
+      "id": "ka-2010446",
       "objectnummer": "2010446",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2010446",
@@ -530,6 +565,7 @@
       "lat": 52.077366
     },
     {
+      "id": "ka-10346071",
       "objectnummer": "10346071",
       "registratiedatum": "2022-05-18",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10346071",
@@ -545,6 +581,7 @@
       "lat": 51.850067
     },
     {
+      "id": "ka-10006431",
       "objectnummer": "10006431",
       "registratiedatum": "2021-04-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10006431",
@@ -560,6 +597,7 @@
       "lat": 52.201929
     },
     {
+      "id": "ka-2029686",
       "objectnummer": "2029686",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2029686",
@@ -575,6 +613,7 @@
       "lat": 51.900312
     },
     {
+      "id": "ka-10334489",
       "objectnummer": "10334489",
       "registratiedatum": "2022-02-23",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10334489",
@@ -590,6 +629,7 @@
       "lat": 51.860864
     },
     {
+      "id": "ka-10252300",
       "objectnummer": "10252300",
       "registratiedatum": "2021-11-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10252300",
@@ -605,6 +645,7 @@
       "lat": 51.864104
     },
     {
+      "id": "ka-2030418",
       "objectnummer": "2030418",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2030418",
@@ -620,6 +661,7 @@
       "lat": 52.235555
     },
     {
+      "id": "ka-2050979",
       "objectnummer": "2050979",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2050979",
@@ -635,6 +677,7 @@
       "lat": 52.029296
     },
     {
+      "id": "ka-2002964",
       "objectnummer": "2002964",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2002964",
@@ -650,6 +693,7 @@
       "lat": 51.839151
     },
     {
+      "id": "ka-10089270",
       "objectnummer": "10089270",
       "registratiedatum": "2018-07-05",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10089270",
@@ -665,6 +709,7 @@
       "lat": 51.902912
     },
     {
+      "id": "ka-10072229",
       "objectnummer": "10072229",
       "registratiedatum": "2018-01-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10072229",
@@ -680,6 +725,7 @@
       "lat": 51.874477
     },
     {
+      "id": "ka-2037668",
       "objectnummer": "2037668",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2037668",
@@ -695,6 +741,7 @@
       "lat": 52.028554
     },
     {
+      "id": "ka-2033315",
       "objectnummer": "2033315",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2033315",
@@ -710,6 +757,7 @@
       "lat": 52.085922
     },
     {
+      "id": "ka-2003997",
       "objectnummer": "2003997",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2003997",
@@ -725,6 +773,7 @@
       "lat": 51.916269
     },
     {
+      "id": "ka-2002463",
       "objectnummer": "2002463",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2002463",
@@ -740,6 +789,7 @@
       "lat": 51.939912
     },
     {
+      "id": "ka-2052291",
       "objectnummer": "2052291",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2052291",
@@ -755,6 +805,7 @@
       "lat": 51.943944
     },
     {
+      "id": "ka-10249750",
       "objectnummer": "10249750",
       "registratiedatum": "2025-08-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10249750",
@@ -770,6 +821,7 @@
       "lat": 52.105277
     },
     {
+      "id": "ka-2014718",
       "objectnummer": "2014718",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2014718",
@@ -785,6 +837,7 @@
       "lat": 51.844482
     },
     {
+      "id": "ka-2019413",
       "objectnummer": "2019413",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2019413",
@@ -800,6 +853,7 @@
       "lat": 51.926749
     },
     {
+      "id": "ka-2050912",
       "objectnummer": "2050912",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2050912",
@@ -815,6 +869,7 @@
       "lat": 52.189897
     },
     {
+      "id": "ka-2029477",
       "objectnummer": "2029477",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2029477",
@@ -830,6 +885,7 @@
       "lat": 51.943833
     },
     {
+      "id": "ka-10044911",
       "objectnummer": "10044911",
       "registratiedatum": "2020-02-08",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10044911",
@@ -845,6 +901,7 @@
       "lat": 52.12502
     },
     {
+      "id": "ka-2051189",
       "objectnummer": "2051189",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2051189",
@@ -860,6 +917,7 @@
       "lat": 52.202578
     },
     {
+      "id": "ka-2019266",
       "objectnummer": "2019266",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2019266",
@@ -875,6 +933,7 @@
       "lat": 52.202579
     },
     {
+      "id": "ka-2000727",
       "objectnummer": "2000727",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2000727",
@@ -890,6 +949,7 @@
       "lat": 52.05571
     },
     {
+      "id": "ka-10189722",
       "objectnummer": "10189722",
       "registratiedatum": "2020-09-20",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10189722",
@@ -905,6 +965,7 @@
       "lat": 52.140783
     },
     {
+      "id": "ka-2040902",
       "objectnummer": "2040902",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2040902",
@@ -920,6 +981,7 @@
       "lat": 52.004284
     },
     {
+      "id": "ka-2017011",
       "objectnummer": "2017011",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2017011",
@@ -935,6 +997,7 @@
       "lat": 52.129718
     },
     {
+      "id": "ka-2001072",
       "objectnummer": "2001072",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2001072",
@@ -950,6 +1013,7 @@
       "lat": 51.846039
     },
     {
+      "id": "ka-10499052",
       "objectnummer": "10499052",
       "registratiedatum": "2026-02-09",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10499052",
@@ -965,6 +1029,7 @@
       "lat": 51.915611
     },
     {
+      "id": "ka-2014444",
       "objectnummer": "2014444",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2014444",
@@ -980,6 +1045,7 @@
       "lat": 51.745473
     },
     {
+      "id": "ka-2028822",
       "objectnummer": "2028822",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2028822",
@@ -995,6 +1061,7 @@
       "lat": 52.262593
     },
     {
+      "id": "ka-2051606",
       "objectnummer": "2051606",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2051606",
@@ -1010,6 +1077,7 @@
       "lat": 51.933078
     },
     {
+      "id": "ka-2004012",
       "objectnummer": "2004012",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2004012",
@@ -1025,6 +1093,7 @@
       "lat": 51.862933
     },
     {
+      "id": "ka-2044956",
       "objectnummer": "2044956",
       "registratiedatum": "2025-03-25",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2044956",
@@ -1040,6 +1109,7 @@
       "lat": 52.132845
     },
     {
+      "id": "ka-2032628",
       "objectnummer": "2032628",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2032628",
@@ -1055,6 +1125,7 @@
       "lat": 52.195763
     },
     {
+      "id": "ka-2012156",
       "objectnummer": "2012156",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2012156",
@@ -1070,6 +1141,7 @@
       "lat": 52.067173
     },
     {
+      "id": "ka-2040458",
       "objectnummer": "2040458",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2040458",
@@ -1085,6 +1157,7 @@
       "lat": 51.973877
     },
     {
+      "id": "ka-10393858",
       "objectnummer": "10393858",
       "registratiedatum": "2023-04-03",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10393858",
@@ -1100,6 +1173,7 @@
       "lat": 51.757169
     },
     {
+      "id": "ka-10197281",
       "objectnummer": "10197281",
       "registratiedatum": "2020-11-25",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10197281",
@@ -1115,6 +1189,7 @@
       "lat": 51.75189
     },
     {
+      "id": "ka-10358945",
       "objectnummer": "10358945",
       "registratiedatum": "2022-08-18",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10358945",
@@ -1130,6 +1205,7 @@
       "lat": 51.743128
     },
     {
+      "id": "ka-10125781",
       "objectnummer": "10125781",
       "registratiedatum": "2019-04-18",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10125781",
@@ -1145,6 +1221,7 @@
       "lat": 51.753923
     },
     {
+      "id": "ka-10445466",
       "objectnummer": "10445466",
       "registratiedatum": "2024-02-15",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10445466",
@@ -1160,6 +1237,7 @@
       "lat": 51.755309
     },
     {
+      "id": "ka-10000719",
       "objectnummer": "10000719",
       "registratiedatum": "2015-06-24",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10000719",
@@ -1175,6 +1253,7 @@
       "lat": 52.291431
     },
     {
+      "id": "ka-2041815",
       "objectnummer": "2041815",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2041815",
@@ -1190,6 +1269,7 @@
       "lat": 52.168066
     },
     {
+      "id": "ka-2014923",
       "objectnummer": "2014923",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2014923",
@@ -1205,6 +1285,7 @@
       "lat": 52.168472
     },
     {
+      "id": "ka-10518064",
       "objectnummer": "10518064",
       "registratiedatum": "2026-03-27",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10518064",
@@ -1220,6 +1301,7 @@
       "lat": 51.742015
     },
     {
+      "id": "ka-10432761",
       "objectnummer": "10432761",
       "registratiedatum": "2023-11-28",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10432761",
@@ -1235,6 +1317,7 @@
       "lat": 51.749662
     },
     {
+      "id": "ka-10081636",
       "objectnummer": "10081636",
       "registratiedatum": "2018-04-13",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10081636",
@@ -1250,6 +1333,7 @@
       "lat": 51.868671
     },
     {
+      "id": "ka-2037496",
       "objectnummer": "2037496",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2037496",
@@ -1265,6 +1349,7 @@
       "lat": 52.107502
     },
     {
+      "id": "ka-10392431",
       "objectnummer": "10392431",
       "registratiedatum": "2023-03-21",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10392431",
@@ -1280,6 +1365,7 @@
       "lat": 51.740441
     },
     {
+      "id": "ka-2049280",
       "objectnummer": "2049280",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2049280",
@@ -1295,6 +1381,7 @@
       "lat": 52.007983
     },
     {
+      "id": "ka-10225104",
       "objectnummer": "10225104",
       "registratiedatum": "2021-05-17",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10225104",
@@ -1310,6 +1397,7 @@
       "lat": 52.028322
     },
     {
+      "id": "ka-10248184",
       "objectnummer": "10248184",
       "registratiedatum": "2021-10-11",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10248184",
@@ -1325,6 +1413,7 @@
       "lat": 51.807635
     },
     {
+      "id": "ka-10097326",
       "objectnummer": "10097326",
       "registratiedatum": "2018-09-27",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10097326",
@@ -1340,6 +1429,7 @@
       "lat": 51.86799
     },
     {
+      "id": "ka-10197762",
       "objectnummer": "10197762",
       "registratiedatum": "2020-11-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10197762",
@@ -1355,6 +1445,7 @@
       "lat": 52.07827
     },
     {
+      "id": "ka-10339280",
       "objectnummer": "10339280",
       "registratiedatum": "2022-04-07",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10339280",
@@ -1370,6 +1461,7 @@
       "lat": 51.812201
     },
     {
+      "id": "ka-10000494",
       "objectnummer": "10000494",
       "registratiedatum": "2015-06-17",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10000494",
@@ -1385,6 +1477,7 @@
       "lat": 52.202028
     },
     {
+      "id": "ka-10069930",
       "objectnummer": "10069930",
       "registratiedatum": "2017-11-20",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10069930",
@@ -1400,6 +1493,7 @@
       "lat": 52.044413
     },
     {
+      "id": "ka-2046373",
       "objectnummer": "2046373",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2046373",
@@ -1415,6 +1509,7 @@
       "lat": 52.004037
     },
     {
+      "id": "ka-10481405",
       "objectnummer": "10481405",
       "registratiedatum": "2024-11-19",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10481405",
@@ -1430,6 +1525,7 @@
       "lat": 51.818088
     },
     {
+      "id": "ka-10380241",
       "objectnummer": "10380241",
       "registratiedatum": "2025-05-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10380241",
@@ -1445,6 +1541,7 @@
       "lat": 52.188448
     },
     {
+      "id": "ka-2032529",
       "objectnummer": "2032529",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2032529",
@@ -1460,6 +1557,7 @@
       "lat": 51.794867
     },
     {
+      "id": "ka-10462463",
       "objectnummer": "10462463",
       "registratiedatum": "2024-06-18",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10462463",
@@ -1475,6 +1573,7 @@
       "lat": 51.82445
     },
     {
+      "id": "ka-10492562",
       "objectnummer": "10492562",
       "registratiedatum": "2025-12-12",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10492562",
@@ -1490,6 +1589,7 @@
       "lat": 51.807845
     },
     {
+      "id": "ka-10063127",
       "objectnummer": "10063127",
       "registratiedatum": "2017-08-28",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10063127",
@@ -1505,6 +1605,7 @@
       "lat": 51.983219
     },
     {
+      "id": "ka-10104492",
       "objectnummer": "10104492",
       "registratiedatum": "2018-12-03",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10104492",
@@ -1520,6 +1621,7 @@
       "lat": 51.812751
     },
     {
+      "id": "ka-10087577",
       "objectnummer": "10087577",
       "registratiedatum": "2018-06-20",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10087577",
@@ -1535,6 +1637,7 @@
       "lat": 51.934007
     },
     {
+      "id": "ka-10114645",
       "objectnummer": "10114645",
       "registratiedatum": "2019-02-04",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10114645",
@@ -1550,6 +1653,7 @@
       "lat": 51.87753
     },
     {
+      "id": "ka-10130059",
       "objectnummer": "10130059",
       "registratiedatum": "2019-05-20",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10130059",
@@ -1565,6 +1669,7 @@
       "lat": 51.828572
     },
     {
+      "id": "ka-10495480",
       "objectnummer": "10495480",
       "registratiedatum": "2025-12-06",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10495480",
@@ -1580,6 +1685,7 @@
       "lat": 51.757203
     },
     {
+      "id": "ka-2037825",
       "objectnummer": "2037825",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2037825",
@@ -1595,6 +1701,7 @@
       "lat": 51.792148
     },
     {
+      "id": "ka-2017671",
       "objectnummer": "2017671",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2017671",
@@ -1610,6 +1717,7 @@
       "lat": 51.791894
     },
     {
+      "id": "ka-2049859",
       "objectnummer": "2049859",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2049859",
@@ -1625,6 +1733,7 @@
       "lat": 52.164333
     },
     {
+      "id": "ka-2046377",
       "objectnummer": "2046377",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2046377",
@@ -1640,6 +1749,7 @@
       "lat": 52.017523
     },
     {
+      "id": "ka-2039759",
       "objectnummer": "2039759",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2039759",
@@ -1655,6 +1765,7 @@
       "lat": 52.027949
     },
     {
+      "id": "ka-10220639",
       "objectnummer": "10220639",
       "registratiedatum": "2021-04-16",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10220639",
@@ -1670,6 +1781,7 @@
       "lat": 51.799203
     },
     {
+      "id": "ka-10100857",
       "objectnummer": "10100857",
       "registratiedatum": "2018-10-29",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10100857",
@@ -1685,6 +1797,7 @@
       "lat": 51.905267
     },
     {
+      "id": "ka-10106633",
       "objectnummer": "10106633",
       "registratiedatum": "2019-01-02",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10106633",
@@ -1700,6 +1813,7 @@
       "lat": 51.821813
     },
     {
+      "id": "ka-10147984",
       "objectnummer": "10147984",
       "registratiedatum": "2019-10-15",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10147984",
@@ -1715,6 +1829,7 @@
       "lat": 51.741988
     },
     {
+      "id": "ka-10131510",
       "objectnummer": "10131510",
       "registratiedatum": "2019-05-31",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10131510",
@@ -1730,6 +1845,7 @@
       "lat": 51.853892
     },
     {
+      "id": "ka-10392875",
       "objectnummer": "10392875",
       "registratiedatum": "2025-05-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10392875",
@@ -1745,6 +1861,7 @@
       "lat": 51.858807
     },
     {
+      "id": "ka-10496519",
       "objectnummer": "10496519",
       "registratiedatum": "2025-12-11",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10496519",
@@ -1760,6 +1877,7 @@
       "lat": 51.783126
     },
     {
+      "id": "ka-10329476",
       "objectnummer": "10329476",
       "registratiedatum": "2022-01-31",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10329476",
@@ -1775,6 +1893,7 @@
       "lat": 51.784398
     },
     {
+      "id": "ka-2023213",
       "objectnummer": "2023213",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2023213",
@@ -1790,6 +1909,7 @@
       "lat": 52.193072
     },
     {
+      "id": "ka-10325920",
       "objectnummer": "10325920",
       "registratiedatum": "2022-01-10",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10325920",
@@ -1805,6 +1925,7 @@
       "lat": 51.802459
     },
     {
+      "id": "ka-10326367",
       "objectnummer": "10326367",
       "registratiedatum": "2022-01-12",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10326367",
@@ -1820,6 +1941,7 @@
       "lat": 51.808312
     },
     {
+      "id": "ka-10337800",
       "objectnummer": "10337800",
       "registratiedatum": "2022-03-28",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10337800",
@@ -1835,6 +1957,7 @@
       "lat": 51.789448
     },
     {
+      "id": "ka-10498840",
       "objectnummer": "10498840",
       "registratiedatum": "2025-06-01",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10498840",
@@ -1850,6 +1973,7 @@
       "lat": 51.779521
     },
     {
+      "id": "ka-10220451",
       "objectnummer": "10220451",
       "registratiedatum": "2021-04-15",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10220451",
@@ -1865,6 +1989,7 @@
       "lat": 51.782408
     },
     {
+      "id": "ka-10364653",
       "objectnummer": "10364653",
       "registratiedatum": "2022-10-07",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10364653",
@@ -1880,6 +2005,7 @@
       "lat": 51.781519
     },
     {
+      "id": "ka-10174610",
       "objectnummer": "10174610",
       "registratiedatum": "2020-04-29",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10174610",
@@ -1895,6 +2021,7 @@
       "lat": 51.877839
     },
     {
+      "id": "ka-10082927",
       "objectnummer": "10082927",
       "registratiedatum": "2018-04-25",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10082927",
@@ -1910,6 +2037,7 @@
       "lat": 51.88306
     },
     {
+      "id": "ka-10458157",
       "objectnummer": "10458157",
       "registratiedatum": "2024-04-23",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10458157",
@@ -1925,6 +2053,7 @@
       "lat": 51.798276
     },
     {
+      "id": "ka-10485568",
       "objectnummer": "10485568",
       "registratiedatum": "2025-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10485568",
@@ -1940,6 +2069,7 @@
       "lat": 51.826181
     },
     {
+      "id": "ka-10521621",
       "objectnummer": "10521621",
       "registratiedatum": "2026-08-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10521621",
@@ -1955,6 +2085,7 @@
       "lat": 51.776945
     },
     {
+      "id": "ka-10145816",
       "objectnummer": "10145816",
       "registratiedatum": "2019-09-30",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10145816",
@@ -1970,6 +2101,7 @@
       "lat": 51.745954
     },
     {
+      "id": "ka-10228233",
       "objectnummer": "10228233",
       "registratiedatum": "2021-06-07",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10228233",
@@ -1985,6 +2117,7 @@
       "lat": 51.812624
     },
     {
+      "id": "ka-10491821",
       "objectnummer": "10491821",
       "registratiedatum": "2025-05-21",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10491821",
@@ -2000,6 +2133,7 @@
       "lat": 51.793132
     },
     {
+      "id": "ka-10202767",
       "objectnummer": "10202767",
       "registratiedatum": "2021-01-05",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10202767",
@@ -2015,6 +2149,7 @@
       "lat": 51.827369
     },
     {
+      "id": "ka-10209395",
       "objectnummer": "10209395",
       "registratiedatum": "2021-02-12",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10209395",
@@ -2030,6 +2165,7 @@
       "lat": 51.783106
     },
     {
+      "id": "ka-10091701",
       "objectnummer": "10091701",
       "registratiedatum": "2018-07-19",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10091701",
@@ -2045,6 +2181,7 @@
       "lat": 51.86618
     },
     {
+      "id": "ka-10348635",
       "objectnummer": "10348635",
       "registratiedatum": "2022-06-15",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10348635",
@@ -2060,6 +2197,7 @@
       "lat": 51.848419
     },
     {
+      "id": "ka-10391384",
       "objectnummer": "10391384",
       "registratiedatum": "2023-03-14",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10391384",
@@ -2075,6 +2213,7 @@
       "lat": 51.689907
     },
     {
+      "id": "ka-10248183",
       "objectnummer": "10248183",
       "registratiedatum": "2021-10-11",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10248183",
@@ -2090,6 +2229,7 @@
       "lat": 51.747965
     },
     {
+      "id": "ka-10392544",
       "objectnummer": "10392544",
       "registratiedatum": "2023-03-22",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10392544",
@@ -2105,6 +2245,7 @@
       "lat": 51.728548
     },
     {
+      "id": "ka-10490189",
       "objectnummer": "10490189",
       "registratiedatum": "2025-01-16",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10490189",
@@ -2120,6 +2261,7 @@
       "lat": 51.807062
     },
     {
+      "id": "ka-10453738",
       "objectnummer": "10453738",
       "registratiedatum": "2024-03-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10453738",
@@ -2135,6 +2277,7 @@
       "lat": 51.74696
     },
     {
+      "id": "ka-10520637",
       "objectnummer": "10520637",
       "registratiedatum": "2026-06-01",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10520637",
@@ -2150,6 +2293,7 @@
       "lat": 51.900471
     },
     {
+      "id": "ka-10205811",
       "objectnummer": "10205811",
       "registratiedatum": "2021-01-25",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10205811",
@@ -2165,6 +2309,7 @@
       "lat": 51.803738
     },
     {
+      "id": "ka-10460031",
       "objectnummer": "10460031",
       "registratiedatum": "2024-05-16",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10460031",
@@ -2180,6 +2325,7 @@
       "lat": 51.746346
     },
     {
+      "id": "ka-10072861",
       "objectnummer": "10072861",
       "registratiedatum": "2018-01-11",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10072861",
@@ -2195,6 +2341,7 @@
       "lat": 52.07768
     },
     {
+      "id": "ka-10075108",
       "objectnummer": "10075108",
       "registratiedatum": "2018-02-06",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10075108",
@@ -2210,6 +2357,7 @@
       "lat": 51.807099
     },
     {
+      "id": "ka-10152370",
       "objectnummer": "10152370",
       "registratiedatum": "2019-11-06",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10152370",
@@ -2225,6 +2373,7 @@
       "lat": 52.013418
     },
     {
+      "id": "ka-10074634",
       "objectnummer": "10074634",
       "registratiedatum": "2018-01-31",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10074634",
@@ -2240,6 +2389,7 @@
       "lat": 51.816359
     },
     {
+      "id": "ka-10201605",
       "objectnummer": "10201605",
       "registratiedatum": "2020-12-17",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10201605",
@@ -2255,6 +2405,7 @@
       "lat": 51.769736
     },
     {
+      "id": "ka-10019483",
       "objectnummer": "10019483",
       "registratiedatum": "2016-05-24",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10019483",
@@ -2270,6 +2421,7 @@
       "lat": 52.108907
     },
     {
+      "id": "ka-2010005",
       "objectnummer": "2010005",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2010005",
@@ -2285,6 +2437,7 @@
       "lat": 51.926936
     },
     {
+      "id": "ka-10364517",
       "objectnummer": "10364517",
       "registratiedatum": "2026-04-24",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10364517",
@@ -2300,6 +2453,7 @@
       "lat": 52.106764
     },
     {
+      "id": "ka-10516564",
       "objectnummer": "10516564",
       "registratiedatum": "2026-05-25",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/10516564",
@@ -2315,6 +2469,7 @@
       "lat": 51.818778
     },
     {
+      "id": "ka-2047387",
       "objectnummer": "2047387",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2047387",
@@ -2330,6 +2485,7 @@
       "lat": 52.083822
     },
     {
+      "id": "ka-2036020",
       "objectnummer": "2036020",
       "registratiedatum": "2015-05-26",
       "cho_uri": "https://linkeddata.cultureelerfgoed.nl/cho-kennis/id/archeologischonderzoeksgebied/2036020",
@@ -2354,6 +2510,7 @@
     "aantal_buiten_zuid_holland_bbox_rand": 13,
     "kandidaten": [
       {
+        "id": "rm-13433",
         "naam": "De Hof",
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Dordrecht",
@@ -2377,6 +2534,7 @@
         "lat": 51.815448
       },
       {
+        "id": "rm-24976",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Leiden",
@@ -2394,6 +2552,7 @@
         "lat": 52.156483
       },
       {
+        "id": "rm-525408",
         "naam": null,
         "functie": "Klooster",
         "gemeente": "Schiedam",
@@ -2410,6 +2569,7 @@
         "lat": 51.912383
       },
       {
+        "id": "rm-16819",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Gouda",
@@ -2426,6 +2586,7 @@
         "lat": 52.01059
       },
       {
+        "id": "rm-17859",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "'s-Gravenhage",
@@ -2442,6 +2603,7 @@
         "lat": 52.079489
       },
       {
+        "id": "rm-12029",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
@@ -2458,6 +2620,7 @@
         "lat": 52.012436
       },
       {
+        "id": "rm-12151",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
@@ -2474,6 +2637,7 @@
         "lat": 52.016784
       },
       {
+        "id": "rm-11987",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Delft",
@@ -2490,6 +2654,7 @@
         "lat": 52.007786
       },
       {
+        "id": "rm-16795",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Gouda",
@@ -2506,6 +2671,7 @@
         "lat": 52.010128
       },
       {
+        "id": "rm-509680",
         "naam": "Sint Bavo",
         "functie": "Klooster",
         "gemeente": "Noordwijk",
@@ -2522,6 +2688,7 @@
         "lat": 52.265739
       },
       {
+        "id": "rm-511307",
         "naam": "H.H. Petrus en Paulus",
         "functie": "Klooster",
         "gemeente": "Bodegraven-Reeuwijk",
@@ -2538,6 +2705,7 @@
         "lat": 52.055162
       },
       {
+        "id": "rm-516104",
         "naam": "Sint-Agathaklooster",
         "functie": "Klooster",
         "gemeente": "Lisse",
@@ -2554,6 +2722,7 @@
         "lat": 52.25756
       },
       {
+        "id": "rm-26567",
         "naam": null,
         "functie": "Klooster, kloosteronderdl",
         "gemeente": "Midden-Delfland",
@@ -2576,6 +2745,7 @@
     "aantal_buiten_zuid_holland_bbox_rand": 1,
     "kandidaten": [
       {
+        "id": "rm-25118",
         "naam": null,
         "functie": "Synagoge",
         "gemeente": "Leiden",
@@ -2592,6 +2762,7 @@
         "lat": 52.155462
       },
       {
+        "id": "rm-516139",
         "naam": null,
         "functie": "Synagoge",
         "gemeente": "Alphen aan den Rijn",
@@ -2608,6 +2779,7 @@
         "lat": 52.129128
       },
       {
+        "id": "rm-459778",
         "naam": "v.m. Hoogduitsche Synagoge",
         "functie": "Synagoge",
         "gemeente": "'s-Gravenhage",
@@ -2630,6 +2802,7 @@
     "aantal_buiten_zuid_holland_bbox_rand": 5,
     "kandidaten": [
       {
+        "id": "rm-12090",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Delft",
@@ -2646,6 +2819,7 @@
         "lat": 52.011185
       },
       {
+        "id": "rm-16879",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Gouda",
@@ -2662,6 +2836,7 @@
         "lat": 52.013
       },
       {
+        "id": "rm-16828",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Gouda",
@@ -2678,6 +2853,7 @@
         "lat": 52.010665
       },
       {
+        "id": "rm-516137",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Alphen aan den Rijn",
@@ -2694,6 +2870,7 @@
         "lat": 52.123854
       },
       {
+        "id": "rm-17477",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "'s-Gravenhage",
@@ -2710,6 +2887,7 @@
         "lat": 52.080341
       },
       {
+        "id": "rm-30163",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Westland",
@@ -2726,6 +2904,7 @@
         "lat": 51.992521
       },
       {
+        "id": "rm-10654",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Voorne aan Zee",
@@ -2742,6 +2921,7 @@
         "lat": 51.904832
       },
       {
+        "id": "rm-518186",
         "naam": null,
         "functie": "Bedevaartkapel",
         "gemeente": "Voorne aan Zee",
@@ -2758,6 +2938,7 @@
         "lat": 51.895046
       },
       {
+        "id": "rm-33479",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Krimpenerwaard",
@@ -2774,6 +2955,7 @@
         "lat": 51.947537
       },
       {
+        "id": "rm-7494",
         "naam": null,
         "functie": "Bidkapel, Kapel",
         "gemeente": "Alphen aan den Rijn",
@@ -2791,6 +2973,7 @@
         "lat": 52.128107
       },
       {
+        "id": "rm-24732",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Leiden",
@@ -2807,6 +2990,7 @@
         "lat": 52.162545
       },
       {
+        "id": "rm-517619",
         "naam": null,
         "functie": "Grafkapel",
         "gemeente": "Gouda",
@@ -2823,6 +3007,7 @@
         "lat": 52.018098
       },
       {
+        "id": "rm-521892",
         "naam": null,
         "functie": "Kapel",
         "gemeente": "Goeree-Overflakkee",
@@ -2846,6 +3031,7 @@
     "aantal_buiten_periode": 4,
     "kandidaten": [
       {
+        "id": "chs-16214",
         "monumentnr": 16214,
         "gemeente": "Hellevoetsluis",
         "plaats": "Nieuwenhoorn",
@@ -2864,6 +3050,7 @@
         "lat": 51.8473
       },
       {
+        "id": "chs-10382",
         "monumentnr": 10382,
         "gemeente": "Nissewaard",
         "plaats": "Spijkenisse",
@@ -2882,6 +3069,7 @@
         "lat": 51.862269
       },
       {
+        "id": "chs-10396",
         "monumentnr": 10396,
         "gemeente": "Vlaardingen",
         "plaats": "Vlaardingen",
@@ -2900,6 +3088,7 @@
         "lat": 51.908246
       },
       {
+        "id": "chs-16177",
         "monumentnr": 16177,
         "gemeente": "Binnenmaas",
         "plaats": "'s-Gravendeel",
@@ -2918,6 +3107,7 @@
         "lat": 51.773137
       },
       {
+        "id": "chs-2968",
         "monumentnr": 2968,
         "gemeente": "Katwijk",
         "plaats": "Valkenburg",
@@ -2936,6 +3126,7 @@
         "lat": 52.177849
       },
       {
+        "id": "chs-15907",
         "monumentnr": 15907,
         "gemeente": "Rotterdam",
         "plaats": "Rotterdam-Hillegersberg",
@@ -2954,6 +3145,7 @@
         "lat": 51.957407
       },
       {
+        "id": "chs-16199",
         "monumentnr": 16199,
         "gemeente": "Albrandswaard",
         "plaats": "Poortugaal",
@@ -2972,6 +3164,7 @@
         "lat": 51.86089
       },
       {
+        "id": "chs-15907-2",
         "monumentnr": 15907,
         "gemeente": "Rotterdam",
         "plaats": "Rotterdam-Hillegersberg",
@@ -2990,6 +3183,7 @@
         "lat": 51.956498
       },
       {
+        "id": "chs-15907-3",
         "monumentnr": 15907,
         "gemeente": "Rotterdam",
         "plaats": "Rotterdam-Hillegersberg",
@@ -3008,6 +3202,7 @@
         "lat": 51.955947
       },
       {
+        "id": "chs-16202",
         "monumentnr": 16202,
         "gemeente": "Rotterdam",
         "plaats": "Rotterdam-Prins Alexander",
@@ -3026,6 +3221,7 @@
         "lat": 51.935219
       },
       {
+        "id": "chs-16174",
         "monumentnr": 16174,
         "gemeente": "Dordrecht",
         "plaats": "Dordrecht",
