@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 import zipfile
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -57,6 +58,11 @@ STATUS_PATTERN = re.compile(r"\((geruimd|verdwenen)\)", re.IGNORECASE)
 # (die noemt de plaats zelf "Den Haag", nooit "'s-Gravenhage") -- puur een
 # schrijfwijze-normalisatie voor de weergave, geen matching-logica.
 PLAATS_ALIASEN = {"'s-gravenhage": "Den Haag"}
+
+
+def slug(tekst: str) -> str:
+    tekst = unicodedata.normalize("NFKD", tekst).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", tekst.lower()).strip("-")
 
 
 def parse_kmz(path: Path) -> list[dict]:
@@ -102,6 +108,7 @@ def main() -> None:
             continue
         naam, plaats, status = split_naam_plaats(item["omschrijving"])
         punten.append({
+            "id": None,  # onderaan ingevuld, na het sorteren
             "naam": naam,
             "plaats": plaats,
             "status_vermeld": status,
@@ -110,6 +117,11 @@ def main() -> None:
         })
 
     punten.sort(key=lambda k: (k["plaats"], k["naam"]))
+
+    # Leesbare, stabiele sleutel (voor oude_kaarten.json en permalinks): plaats + naam.
+    for punt in punten:
+        punt["id"] = "vd-" + slug(f"{punt['plaats']} {punt['naam']}")
+    assert len({p["id"] for p in punten}) == len(punten), "dubbele sleutel bij verdwenen begraafplaatsen"
 
     out = {
         "type": "FeatureCollection",

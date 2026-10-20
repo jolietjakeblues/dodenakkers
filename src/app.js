@@ -547,6 +547,8 @@ async function main() {
           popupHtml(p.naam, [
             ["Plaats", p.plaats],
             ["Vermelde status", p.status_vermeld],
+            // Oude kaarten (Allmaps) over dit punt, zie scripts/fetch_allmaps.py.
+            ["Oude kaarten", p.id ? rawHtml(`<a href="oude-kaarten.html?id=${encodeURIComponent(p.id)}">bekijk op oude kaarten</a>`) : null],
           ])
         )
         .addTo(map);

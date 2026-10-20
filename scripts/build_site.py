@@ -42,6 +42,7 @@ FILES_TO_COPY = [
         SITE_DIR / "data" / "generated" / "verdwenen-begraafplaatsen.geojson",
     ),
     (REPO_ROOT / "data" / "generated" / "datering.geojson", SITE_DIR / "data" / "generated" / "datering.geojson"),
+    (REPO_ROOT / "data" / "generated" / "oude_kaarten.json", SITE_DIR / "data" / "generated" / "oude_kaarten.json"),
     (REPO_ROOT / "data" / "rce" / "beschermde-gezichten.geojson", SITE_DIR / "data" / "rce" / "beschermde-gezichten.geojson"),
     (REPO_ROOT / "data" / "rce" / "rijksmonumenten.geojson", SITE_DIR / "data" / "rce" / "rijksmonumenten.geojson"),
     (
@@ -110,6 +111,8 @@ def main() -> None:
     copy_with_rewrites(REPO_ROOT / "src" / "statistieken.js", SITE_DIR / "statistieken.js")
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.html", SITE_DIR / "kandidaten.html")
     copy_with_rewrites(REPO_ROOT / "src" / "kandidaten.js", SITE_DIR / "kandidaten.js")
+    copy_with_rewrites(REPO_ROOT / "src" / "oude-kaarten.html", SITE_DIR / "oude-kaarten.html")
+    copy_with_rewrites(REPO_ROOT / "src" / "oude-kaarten.js", SITE_DIR / "oude-kaarten.js")
     copy_with_rewrites(REPO_ROOT / "src" / "methode.html", SITE_DIR / "methode.html")
     # Cloudflare Pages serveert dit automatisch bij een onbekende URL zodra
     # het op de root van de build-output staat (geen aparte configuratie).

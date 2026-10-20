@@ -87,6 +87,13 @@
       <p>De functiefilter ("oorspronkelijke functie") is dynamisch opgebouwd uit de daadwerkelijk voorkomende RCE-labels &mdash; geen vaste, gecureerde lijst. Dat betekent ook geen thesaurusgroepering: wat de bron als label gebruikt, zie je terug.</p>
     </section>
 
+    <section class="stats-section" id="oude-kaarten">
+      <h2>Oude kaarten (Allmaps)</h2>
+      <p>Bij de verdwenen begraafplaatsen en bij de kandidaat-begraafplaatsen staat een link "oude kaarten". Die opent de pagina <a href="oude-kaarten.html">Oude kaarten</a>: het punt op een historische kaart (Bonnebladen, Waterstaatskaart, kadastrale en stadskaarten), met een keuze uit de beschikbare kaarten, een schuifregelaar voor de doorzichtigheid en ringen van 100 en 250 m om het punt.</p>
+      <p>De kaarten komen uit <a href="https://allmaps.org/" target="_blank" rel="noopener">Allmaps</a>: gegeorefereerde kaarten waarvan de plaatsing vrij beschikbaar is (CC0). Het kaartbeeld zelf blijft bij de instelling (bijvoorbeeld TU Delft Library, Universiteitsbibliotheek Utrecht, Nationaal Archief) en wordt via de Allmaps Tile Server getoond. Per punt tonen we alleen kaarten die het punt bevatten, die kleiner zijn dan 600 km&sup2; (geen overzichtskaarten), een herkenbare titel hebben en uit een bekende collectie komen. Bij de Bonnebladen komt het jaartal uit de lijst van TU Delft Library. De selectie staat vooraf berekend (<code>scripts/fetch_allmaps.py</code>).</p>
+      <p>Wat dit wel en niet kan zeggen: een kaart waarop een begraafplaats staat is een aanwijzing dat hij er in dat jaar lag. Een kaart waarop niets staat is geen bewijs van het tegendeel: kleine terreinen vallen op schaal 1:25.000 weg, en een terrein dat verdween voor het blad verscheen, staat er nooit op. Georefereren is handwerk, dus afwijkingen van enkele tientallen meters zijn normaal. Dit is een hulpmiddel om een punt zelf te beoordelen, geen controle van de bron.</p>
+    </section>
+
     <section class="stats-section">
       <h2>Bekende beperkingen</h2>
       <p>&bull; De kandidaat-begraafplaatsen-pagina gebruikt woordherkenning (grooftermen, hedge-taal) op vrije tekst &mdash; geen garantie tegen fout-positieven (bijvoorbeeld "Kerkhof" als achternaam van een onderzoeker) of gemiste gevallen.</p>

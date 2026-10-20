@@ -59,6 +59,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - [007 Datering - bevindingen](data/007-datering-bevindingen.md)
 - [008 Datering - ontbrekend](data/008-datering-ontbrekend.md)
 - [009 Vragen aan de domeinexpert](data/009-vragen-domeinexpert.md)
+- [010 Oude kaarten (Allmaps)](data/010-oude-kaarten.md)
 
 ## MVP
 

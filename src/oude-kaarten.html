@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Oude kaarten - Dodenakkers Zuid-Holland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Een verdwenen of kandidaat-begraafplaats op oude kaarten: Bonnebladen, Waterstaatskaart en andere historische kaarten via Allmaps." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://dodenakkers-zh.pages.dev/oude-kaarten.html" />
+  <link rel="icon" href="../images/Dodenakkers-logo-68015ff5.webp" type="image/webp" />
+  <link rel="stylesheet" href="vendor/maplibre-gl/maplibre-gl.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="oude-kaarten">
+  <a class="skip-link" href="#panel">Ga naar het bedieningspaneel</a>
+  <div id="map" role="region" aria-label="Kaart met een oude kaart over de gekozen plek"></div>
+
+  <button id="panel-toggle" type="button" aria-label="Paneel sluiten" aria-expanded="true">&times;</button>
+
+  <main id="panel" tabindex="-1">
+    <div class="brand">
+      <img src="../images/Dodenakkers-logo-68015ff5.webp" alt="Dodenakkers" class="logo" />
+    </div>
+    <h1>Oude kaarten</h1>
+    <p class="subtitle"><a id="ok-kaartlink" href="index.html">&larr; kaart</a> &middot; <a href="kandidaten.html">Kandidaten</a> &middot; <a href="methode.html#oude-kaarten">Methode</a></p>
+    <p id="ok-naam" class="ok-naam"></p>
+    <p id="ok-soort" class="hint"></p>
+
+    <label for="ok-keuze">Oude kaart</label>
+    <select id="ok-keuze"></select>
+    <p id="ok-bron" class="hint"></p>
+
+    <label for="ok-dekking">Doorzichtigheid van de oude kaart</label>
+    <input type="range" id="ok-dekking" min="0" max="100" value="85" aria-valuetext="85 procent zichtbaar" />
+
+    <fieldset class="ok-onder">
+      <legend>Ondergrond</legend>
+      <label><input type="radio" name="basemap" value="grijs" checked /> PDOK grijs</label>
+      <label><input type="radio" name="basemap" value="luchtfoto" /> Luchtfoto (actueel)</label>
+    </fieldset>
+
+    <p class="hint" id="ok-ringen">De ringen om het punt zijn 100 m en 250 m.</p>
+    <p id="status" class="hint" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="hint credits">Oude kaarten: gegeorefereerd in <a href="https://allmaps.org/">Allmaps</a>; kaartbeeld van de genoemde collectie, getoond via de Allmaps Tile Server. Plaatsing en uitsnede kunnen enkele tientallen meters afwijken. Een kaart zonder begraafplaats is geen bewijs dat er niets lag: kleine terreinen vallen op een schaal van 1:25.000 weg. <a href="methode.html#oude-kaarten">Meer</a></p>
+  </main>
+
+  <script src="vendor/maplibre-gl/maplibre-gl.js"></script>
+  <script src="oude-kaarten.js"></script>
+</body>
+</html>
