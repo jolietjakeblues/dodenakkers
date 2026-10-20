@@ -19,8 +19,8 @@ koppeling").
 
 Van de 450 begraafplaatsen:
 
-- **309** hebben een exact jaartal;
-- **114** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
+- **310** hebben een exact jaartal;
+- **113** hebben alleen een periode ("Middeleeuwen"), geen jaartal;
 - **27** hebben geen van beide (de Excel heeft er geen jaartal of periode
   voor ingevuld).
 
@@ -32,12 +32,12 @@ waarden in de bron, geen matchingprobleem.
 
 | Periode | Aantal |
 |---|---|
-| Middeleeuws (periode bekend, geen jaartal) | 114 |
+| Middeleeuws (periode bekend, geen jaartal) | 113 |
 | voor 1829 | 61 |
 | 1829-1849 | 39 |
 | 1850-1899 | 79 |
 | 1900-1949 | 62 |
-| 1950-1999 | 54 |
+| 1950-1999 | 55 |
 | 2000-heden | 14 |
 
 Dezelfde tabel staat als klikbare filter in het paneel en als balkjesgrafiek
@@ -74,35 +74,58 @@ daarvoor 1872. Alleen NH Kerkhof Cillaarshoek (Strijen) heeft 1615.
 
 ## Betrouwbaarheid van de koppeling
 
-Sinds 2026-10-19 loopt de koppeling in drie stappen, in deze volgorde:
+Sinds 2026-10-20 loopt de koppeling in drie stappen, in deze volgorde:
 
 1. **Bevestiging door de domeinexpert** (35 begraafplaatsen, in
    `data/datering-correcties.json`): wint altijd.
-2. **Naam en plaats** (217 begraafplaatsen): komen de naamwoorden van het
-   terrein (zonder "begraafplaats"/"kerkhof", afkortingen als "Gem." en "Alg."
-   uitgeschreven) en de plaats eenduidig overeen met een Excel-rij, dan is dat
-   de rij. De Excel is leidend.
-3. **Dichtstbijzijnde adres** (198 begraafplaatsen, mediaan 38 m): het
-   bezoekadres uit de Excel, gegeocodeerd met de PDOK Locatieserver en
-   gekoppeld aan de dichtstbijzijnde ingang (drempel 300m). Alleen voor
-   terreinen waarvan de naam niet eenduidig te koppelen is.
+2. **De aan het terrein toegewezen Excel-rij** (de overige 415): Excel en kaart
+   hebben evenveel begraafplaatsen (450), dus elke Excel-rij hoort bij precies
+   een terrein. `scripts/excel_koppeling.py` wijst ze een-op-een aan elkaar toe
+   op naamovereenkomst (afkortingen als "Gem." en "Alg." uitgeschreven, zonder
+   "begraafplaats"/"kerkhof"), plaats en de afstand tot het gegeocodeerde adres.
+   Omdat het een toewijzing is, kan een rij die bij de ene buur past niet ook
+   nog bij de andere horen. 442 terreinen zijn zo automatisch gekoppeld, 8 zijn
+   door ons vastgezet met `excel_nr` in het correctiebestand (zie hieronder).
+3. **Dichtstbijzijnde adres** (drempel 300 m): alleen als terugval als een
+   terrein aan geen Excel-rij gekoppeld kon worden. Dat komt nu niet meer voor.
 
-Aanleiding voor stap 2 was een controle na de antwoorden op
-[009](009-vragen-domeinexpert.md): de nabijheidskoppeling bleek bij vijf
-begraafplaatsen de verkeerde Excel-rij te pakken, omdat het geocodeerde adres
-dichter bij een buur lag. Kerkhof Groene Kerkje in Oegstgeest kreeg 2011 van de
-Nieuwe Begraafplaats (de Excel zegt Middeleeuwen), de Joodse begraafplaats in
-Wassenaar kreeg 1982 van de gemeentelijke begraafplaats ernaast (Excel: 1906),
-Tombe Bisdom van Vliet in Haastrecht kreeg Middeleeuwen (Excel: 1881), Oude
-gemeentelijke Begraafplaats Maasland kreeg 1933 (Excel: 1829) en Alg.
-begraafplaats Cillaarshoek kreeg 1615 (Excel: 1872). Waar naam en plaats wel
-eenduidig te koppelen waren, klopte de nabijheidskoppeling in 208 van de 213
-gevallen. Bij ruim 200 andere terreinen (niet gecorrigeerd) is de naam niet
-gelijk aan een Excel-naam of dubbelzinnig, zodat dit niet te controleren was.
-Daar blijft de nabijheidskoppeling de enige bron en dus het zwakste deel.
+Dezelfde koppeling levert de beschermingsstatus uit de Excel (gemeentelijk
+monument, rijksmonument, beschermd deel), zie [009](009-vragen-domeinexpert.md).
 
-Eerder, voor deze controle, gold alleen de nabijheid. Dat werkte in verreweg
-de meeste gevallen goed, maar twee dingen zijn de moeite van het weten waard:
+Aanleiding was een controle na de antwoorden op [009](009-vragen-domeinexpert.md):
+de eerdere koppeling op alleen nabijheid bleek bij vijf begraafplaatsen de
+verkeerde Excel-rij te pakken, omdat het geocodeerde adres dichter bij een buur
+lag. Kerkhof Groene Kerkje in Oegstgeest kreeg 2011 van de Nieuwe Begraafplaats
+(de Excel zegt Middeleeuwen), de Joodse begraafplaats in Wassenaar kreeg 1982
+van de gemeentelijke begraafplaats ernaast (Excel: 1906), Tombe Bisdom van Vliet
+in Haastrecht kreeg Middeleeuwen (Excel: 1881), Oude gemeentelijke Begraafplaats
+Maasland kreeg 1933 (Excel: 1829) en Alg. begraafplaats Cillaarshoek kreeg 1615
+(Excel: 1872). Een tweede ronde met de toewijzing vond er nog drie: Oude gem.
+begraafplaats Voorburg stond op Middeleeuwen terwijl de Oude Algemene
+Begraafplaats (rijksmonument, 1874) erbij hoort, de Gem. begraafplaats in Oude
+Tonge kreeg 1867 van de RK begraafplaats ernaast (de Excel zegt circa 1952) en de
+Oude gem. begraafplaats in Middelharnis kreeg 1865 (Excel: 1895).
+
+**Controle van de toewijzing.** De Excel-status (geruimd of niet) komt bij alle
+446 terreinen die de controle kon nalopen overeen met de kaart (bij vier staat
+de plaats anders in de Excel). Dat is een onafhankelijke toets, want de status
+wordt niet voor de koppeling gebruikt. Alleen bij begraafplaatsen die in naam en
+locatie sterk op elkaar lijken kan een toewijzing nog verwisseld zijn en zou dat
+iets veranderen aan wat er getoond wordt: dat zijn zeven paren. Vijf daarvan
+zijn door de domeinexpert bevestigd en kloppen (Voorhout, Rijswijk twee keer,
+Maassluis, Puttershoek). Twee zijn nog niet bevestigd: Voorburg (zh-0049 en
+zh-0050) en Leiderdorp (zh-0173 "Nieuwe gem. begraafplaats" en zh-0175 "Gem.
+kerkhof").
+
+**Acht door ons vastgezette koppelingen** (nog niet door de domeinexpert
+bevestigd): zh-0049 en zh-0050 in Voorburg (NH Kerkhof hoort bij Excel-rij 346
+"Kerkhof Oude Kerk", Oude gem. begraafplaats bij rij 3000 "Oude Algemene
+Begraafplaats"), zh-0124 (Oude Tonge, rij 67), zh-0201 (Capelle-West, rij 3664),
+zh-0209 (Meije, rij 2899), zh-0326 (Bergambacht, rij 2255), zh-0416
+(Scheveningen, rij 170) en zh-0173 (Leiderdorp, rij 1338).
+
+Historisch, toen alleen de nabijheid gold, waren er twee dingen die de moeite
+van het weten waard waren (beide zijn inmiddels opgelost):
 
 **Geen automatische match gevonden voor 18 begraafplaatsen** (dus geen
 jaartal/periode getoond, ook al stond het soms wel in de brondata): meestal

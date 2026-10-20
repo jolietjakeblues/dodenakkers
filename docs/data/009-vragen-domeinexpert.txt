@@ -1,5 +1,5 @@
 VRAGEN OVER DE BEGRAAFPLAATSEN ZUID-HOLLAND
-Stand: 16 oktober 2026
+Stand: 16 oktober 2026 (punt 8 en 9 toegevoegd op 20 oktober 2026)
 
 Hoi,
 
@@ -20,6 +20,9 @@ OVERZICHT
   4. Nummering: hetzelfde nummer bij twee begraafplaatsen      (3)
   5. Gemeente: Excel en kaart verschillen                      (2)   minder urgent
   6. Weergave op de kaart (ME, gesloten)                       (2)   minder urgent
+  8. Koppeling Excel en kaart: ter bevestiging (nieuw)         (3)
+  9. Controle gemeentelijk beschermd tegen Wikipedia (nieuw)   (4)
+  (Punt 7 over rijksmonumenten is al beantwoord en staat alleen in de md.)
 
 
 ------------------------------------------------------------------------
@@ -209,6 +212,68 @@ kaart bij Voorne aan Zee.
     (50). De kaart toont alleen geruimd of niet-geruimd, dus "gesloten" is niet
     te zien of te filteren. Is dat onderscheid voor het onderzoek bruikbaar als
     filter?
+    Antwoord:
+
+
+------------------------------------------------------------------------
+8. NIEUWE VRAGEN NA JE LAATSTE ANTWOORDEN (20 oktober 2026)
+------------------------------------------------------------------------
+Voor het gemeentelijke filter hebben we elke Excel-rij een-op-een aan een
+begraafplaats op de kaart gekoppeld (op naam, plaats en afstand). Een paar
+koppelingen hebben we moeten vastzetten of waren eerder verwisseld.
+
+8a. Voorburg: klopt het dat "NH Kerkhof" bij Excel-rij 346 "Kerkhof Oude Kerk"
+    (Middeleeuwen) hoort en "Oude gem. begraafplaats" bij rij 3000 "Oude
+    Algemene Begraafplaats" (rijksmonument 524448, 1874)? We hadden die twee
+    verwisseld.
+    Antwoord:
+
+8b. Leiderdorp: klopt het dat "Nieuwe gem. begraafplaats" bij rij 1338 "Nieuwe
+    Algemene Begraafplaats met RK gedeelte" hoort, en "Gem. kerkhof" bij rij
+    670 "Oude Algemene kerkhof"?
+    Antwoord:
+
+8c. Vijf andere koppelingen hebben we vastgezet omdat de naamvorm te veel
+    afwijkt. Klopt dat?
+      - Oude Tonge, "Gem. begraafplaats" = rij 67 "Nieuwe Algemene Begraafplaats"
+      - Capelle-West, "Gem. begraafplaats" = rij 3664
+      - Meije, "RK begraafplaats" = rij 2899 "Onze Lieve Vrouw Geboortebegraafplaats"
+      - Bergambacht, "Gem. begraafplaats" = rij 2255 "Algemene Begraafplaats"
+      - Scheveningen, "NH kerkhof" = rij 170 "Oude kerkhof Scheveningen"
+    Antwoord:
+
+
+------------------------------------------------------------------------
+9. CONTROLE "GEMEENTELIJK BESCHERMD" TEGEN WIKIPEDIA
+------------------------------------------------------------------------
+Ter controle hebben we de 64 begraafplaatsen die in je Excel gemeentelijk
+beschermd zijn naast de Wikipedia-lijsten van gemeentelijke monumenten gelegd.
+Wikipedia is alleen een controle en geen bron: jouw Excel blijft leidend, en er
+is niets aangepast. Bij 38 begraafplaatsen staat op Wikipedia een gemeentelijk
+monument op of aan het terrein, en alle 38 zijn bij jou "ja". Er is dus geen
+tegenspraak. Op drie plekken staat bij jou "nee", terwijl Wikipedia vlakbij
+(100 tot 116 m) een gemeentelijk monument noemt:
+
+9a. Den Haag, Gem. begraafplaats Westduin
+    Wikipedia: "Aula bij Begraafplaats Westduin" (Wijndaelersingel 3-5).
+    Is de aula een gemeentelijk monument, en hoort die bij de begraafplaats?
+    Antwoord:
+
+9b. Hardinxveld-Giessendam, Gem. begraafplaats Krommegat
+    Wikipedia: "Grafkelder van de familie Wisboom" (Kromme Gat 12).
+    Is die grafkelder een gemeentelijk monument op deze begraafplaats?
+    Antwoord:
+
+9c. Katwijk aan Zee, Hervormde begraafplaats
+    Wikipedia: "Kosterij/rouwkamer" (Zuidstraat 103). Waarschijnlijk de kosterij
+    van de kerk en geen onderdeel van de begraafplaats. Klopt dat?
+    Antwoord:
+
+9d. Maasland (minder zeker)
+    Wikipedia noemt drie begraafplaatsen (Hammerdreef 1, Hofsingel,
+    Commandeurskade); bij jou zijn RK begraafplaats, Oude gemeentelijke en
+    Nieuwe gemeentelijke Begraafplaats "ja". Zijn dat dezelfde drie? De
+    Hofsingel ligt het dichtst bij de Vm. NH kerkhof (bij jou "nee").
     Antwoord:
 
 

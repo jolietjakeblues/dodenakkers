@@ -1,0 +1,10 @@
+{
+  "source": "RCE Linked Data Voorziening (CHO)",
+  "endpoint": "https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/cho/sparql",
+  "query_file": "queries/rce/rmon-lookup.sparql",
+  "retrieved_at": "2026-10-20T07:10:35.078537+00:00",
+  "nummers_uit_excel": 54,
+  "complexen": 13,
+  "onderdelen_totaal": 50,
+  "gewone_rijksmonumenten": 41
+}

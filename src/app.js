@@ -305,6 +305,21 @@ function popupHtml(title, rows) {
   return `<h3>${escapeHtml(title)}</h3><dl>${dl}</dl>`;
 }
 
+// Beschermingsstatus volgens de Excel van de domeinexpert (zie
+// scripts/excel_koppeling.py): gemeentelijk monument (ja/nee), rijksmonument
+// en wat er precies beschermd is. Onbekend (terrein niet aan een Excel-rij
+// gekoppeld) wordt niet getoond. In het MapLibre-klikpopup zijn geneste
+// eigenschappen een JSON-tekst, in de resultatenlijst een object.
+function excelBeschermingRegels(p) {
+  const excel = typeof p.excel === "string" ? JSON.parse(p.excel) : p.excel;
+  const gemeentelijk = p.gemeentelijk_monument;
+  return [
+    ["Gemeentelijk monument", gemeentelijk === true ? "ja" : gemeentelijk === false ? "nee" : null],
+    ["Rijksmonument volgens Excel", excel ? (excel.rijksmonument ? `ja${excel.rmonr ? ` (nr. ${excel.rmonr})` : ""}` : "nee") : null],
+    ["Beschermd deel (Excel)", excel ? excel.beschermd_deel : null],
+  ];
+}
+
 async function loadJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
@@ -802,6 +817,7 @@ async function main() {
           ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
           ["Jaartal", datering && datering.jaartal ? (datering.jaartal_circa ? `circa ${datering.jaartal}` : String(datering.jaartal)) : null],
           ["Periode", datering ? datering.periode : null],
+          ...excelBeschermingRegels(p),
           ["Beschermd gezicht", p.in_beschermd_gezicht === "none" ? "nee" : gezichtNamen],
           [
             "Archeologisch rijksmonument",
@@ -986,12 +1002,23 @@ async function main() {
   //   bronupdate er weer een introduceren.
   // - HERITAGE_FILTER_IDS zijn onafhankelijke facetten die een begraafplaats
   //   allemaal tegelijk kan hebben, dus die blijven VERSMALLEN (AND).
+  // - GEMEENTELIJK_FILTER_IDS (2026-10-20, wens van de domeinexpert: "filteren
+  //   op gemeentelijk beschermd ja of nee") zijn ook elkaar uitsluitende
+  //   toestanden van een enkel veld, dus net als status VERBREDEND (OR).
+  //   Bron is de Excel (kolom "Gemeentelijk monument"); een terrein dat niet
+  //   eenduidig aan een Excel-rij gekoppeld kon worden heeft de waarde null en
+  //   valt onder geen van beide opties.
   const STATUS_FILTER_IDS = ["filter-niet-geruimd", "filter-geruimd"];
+  const GEMEENTELIJK_FILTER_IDS = ["filter-gemeentelijk-ja", "filter-gemeentelijk-nee"];
   const HERITAGE_FILTER_IDS = ["filter-gezicht", "filter-archeologie", "filter-rijksmonument"];
-  const FILTER_IDS = [...STATUS_FILTER_IDS, ...HERITAGE_FILTER_IDS];
+  const FILTER_IDS = [...STATUS_FILTER_IDS, ...GEMEENTELIJK_FILTER_IDS, ...HERITAGE_FILTER_IDS];
   const STATUS_FILTER_EXPR = {
     "filter-niet-geruimd": ["==", ["get", "geruimd"], false],
     "filter-geruimd": ["==", ["get", "geruimd"], true],
+  };
+  const GEMEENTELIJK_FILTER_EXPR = {
+    "filter-gemeentelijk-ja": ["==", ["get", "gemeentelijk_monument"], true],
+    "filter-gemeentelijk-nee": ["==", ["get", "gemeentelijk_monument"], false],
   };
 
   // --- Datering-filter (2026-09-07, wens van de opdrachtgever: "neem datum/
@@ -1022,6 +1049,8 @@ async function main() {
     const predicates = {
       "filter-niet-geruimd": (p) => p.geruimd === false,
       "filter-geruimd": (p) => p.geruimd === true,
+      "filter-gemeentelijk-ja": (p) => p.gemeentelijk_monument === true,
+      "filter-gemeentelijk-nee": (p) => p.gemeentelijk_monument === false,
       "filter-gezicht": (p) => p.in_beschermd_gezicht !== "none",
       "filter-archeologie": (p) => p.archeologische_rm_count > 0,
       "filter-rijksmonument": (p) => (p.rijksmonument_relations || []).some((r) => r.distance_m <= rmThreshold),
@@ -1032,6 +1061,10 @@ async function main() {
   function statusMatch(predicates, statusIds, p) {
     if (statusIds.length === 0) return true;
     return statusIds.some((id) => predicates[id](p));
+  }
+  function gemeentelijkMatch(predicates, gemeentelijkIds, p) {
+    if (gemeentelijkIds.length === 0) return true;
+    return gemeentelijkIds.some((id) => predicates[id](p));
   }
   function heritageMatch(predicates, heritageIds, p) {
     return heritageIds.every((id) => predicates[id](p));
@@ -1101,6 +1134,7 @@ async function main() {
               ["Oppervlakte", `${p.oppervlakte_m2} m² (${p.oppervlakte_ha} ha)`],
               ["Jaartal", p.datering && p.datering.jaartal ? (p.datering.jaartal_circa ? `circa ${p.datering.jaartal}` : String(p.datering.jaartal)) : null],
               ["Periode", p.datering ? p.datering.periode : null],
+              ...excelBeschermingRegels(p),
             ])
           )
           .addTo(map);
@@ -1114,6 +1148,7 @@ async function main() {
   function applyFilters() {
     const predicates = terreinPredicates();
     const activeStatusIds = activeIdsIn(STATUS_FILTER_IDS);
+    const activeGemeentelijkIds = activeIdsIn(GEMEENTELIJK_FILTER_IDS);
     const activeHeritageIds = activeIdsIn(HERITAGE_FILTER_IDS);
     const activeDatIds = activeDateringIds();
     const query = searchQuery();
@@ -1130,6 +1165,10 @@ async function main() {
       const statusExprs = activeStatusIds.map((id) => STATUS_FILTER_EXPR[id]);
       clauses.push(statusExprs.length === 1 ? statusExprs[0] : ["any", ...statusExprs]);
     }
+    if (activeGemeentelijkIds.length) {
+      const gemeentelijkExprs = activeGemeentelijkIds.map((id) => GEMEENTELIJK_FILTER_EXPR[id]);
+      clauses.push(gemeentelijkExprs.length === 1 ? gemeentelijkExprs[0] : ["any", ...gemeentelijkExprs]);
+    }
     if (activeHeritageIds.includes("filter-gezicht")) clauses.push(["!=", ["get", "in_beschermd_gezicht"], "none"]);
     if (activeHeritageIds.includes("filter-archeologie")) clauses.push([">", ["get", "archeologische_rm_count"], 0]);
     if (activeHeritageIds.includes("filter-rijksmonument")) {
@@ -1145,11 +1184,12 @@ async function main() {
     const filter = clauses.length ? ["all", ...clauses] : null;
     map.setFilter("terrein-fill", filter);
     map.setFilter("terrein-outline", filter);
-    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query);
+    updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query, activeGemeentelijkIds);
     currentVisibleFeatures = begraafplaatsen.features.filter(
       (f) =>
         searchMatch(query, f.properties) &&
         statusMatch(predicates, activeStatusIds, f.properties) &&
+        gemeentelijkMatch(predicates, activeGemeentelijkIds, f.properties) &&
         heritageMatch(predicates, activeHeritageIds, f.properties) &&
         dateringMatch(predicates, activeDatIds, f.properties)
     );
@@ -1166,47 +1206,42 @@ async function main() {
     renderAccessibleResults(currentVisibleFeatures);
     syncUrl();
   }
-  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query) {
+  function updateFilterCounts(predicates, activeStatusIds, activeHeritageIds, activeDatIds, query, activeGemeentelijkIds) {
     predicates = predicates || terreinPredicates();
     activeStatusIds = activeStatusIds || activeIdsIn(STATUS_FILTER_IDS);
+    activeGemeentelijkIds = activeGemeentelijkIds || activeIdsIn(GEMEENTELIJK_FILTER_IDS);
     activeHeritageIds = activeHeritageIds || activeIdsIn(HERITAGE_FILTER_IDS);
     activeDatIds = activeDatIds || activeDateringIds();
     query = query === undefined ? searchQuery() : query;
     const totalCount = begraafplaatsen.features.length;
     const allProps = begraafplaatsen.features.map((f) => f.properties).filter((p) => searchMatch(query, p));
 
+    // Voldoet een begraafplaats aan alle vier de filtergroepen? Een groep kan
+    // vervangen worden door een hypothetische selectie (facet-telling: "als je
+    // dit ook aanvinkt, gegeven je huidige andere selectie").
+    const voldoet = (p, o = {}) =>
+      statusMatch(predicates, o.status || activeStatusIds, p) &&
+      gemeentelijkMatch(predicates, o.gemeentelijk || activeGemeentelijkIds, p) &&
+      heritageMatch(predicates, o.heritage || activeHeritageIds, p) &&
+      dateringMatch(predicates, o.datering || activeDatIds, p);
+    const hypothetisch = (actief, id) => (actief.includes(id) ? actief : [...actief, id]);
+
     for (const id of STATUS_FILTER_IDS) {
-      const hypothetical = activeStatusIds.includes(id) ? activeStatusIds : [...activeStatusIds, id];
-      const count = allProps.filter(
-        (p) =>
-          heritageMatch(predicates, activeHeritageIds, p) &&
-          statusMatch(predicates, hypothetical, p) &&
-          dateringMatch(predicates, activeDatIds, p)
-      ).length;
+      const count = allProps.filter((p) => voldoet(p, { status: hypothetisch(activeStatusIds, id) })).length;
+      document.getElementById(`count-${id}`).textContent = `(${count})`;
+    }
+    for (const id of GEMEENTELIJK_FILTER_IDS) {
+      const count = allProps.filter((p) => voldoet(p, { gemeentelijk: hypothetisch(activeGemeentelijkIds, id) })).length;
       document.getElementById(`count-${id}`).textContent = `(${count})`;
     }
     for (const id of HERITAGE_FILTER_IDS) {
-      const hypothetical = activeHeritageIds.includes(id) ? activeHeritageIds : [...activeHeritageIds, id];
-      const count = allProps.filter(
-        (p) =>
-          statusMatch(predicates, activeStatusIds, p) &&
-          heritageMatch(predicates, hypothetical, p) &&
-          dateringMatch(predicates, activeDatIds, p)
-      ).length;
+      const count = allProps.filter((p) => voldoet(p, { heritage: hypothetisch(activeHeritageIds, id) })).length;
       document.getElementById(`count-${id}`).textContent = `(${count})`;
     }
-    const baseCount = allProps.filter(
-      (p) => statusMatch(predicates, activeStatusIds, p) && heritageMatch(predicates, activeHeritageIds, p)
-    ).length;
-    const dateringCounts = DATERING_BUCKETS.map((bucket) => {
-      const hypothetical = activeDatIds.includes(bucket.id) ? activeDatIds : [...activeDatIds, bucket.id];
-      return allProps.filter(
-        (p) =>
-          statusMatch(predicates, activeStatusIds, p) &&
-          heritageMatch(predicates, activeHeritageIds, p) &&
-          dateringMatch(predicates, hypothetical, p)
-      ).length;
-    });
+    const baseCount = allProps.filter((p) => voldoet(p, { datering: [] })).length;
+    const dateringCounts = DATERING_BUCKETS.map((bucket) =>
+      allProps.filter((p) => voldoet(p, { datering: hypothetisch(activeDatIds, bucket.id) })).length
+    );
     const dateringMax = Math.max(1, baseCount, ...dateringCounts);
     DATERING_BUCKETS.forEach((bucket, i) => {
       const btn = document.getElementById(bucket.id);
@@ -1215,19 +1250,9 @@ async function main() {
       btn.setAttribute("aria-pressed", activeDatIds.includes(bucket.id) ? "true" : "false");
     });
     const dateringBekendCount = allProps.filter(
-      (p) =>
-        statusMatch(predicates, activeStatusIds, p) &&
-        heritageMatch(predicates, activeHeritageIds, p) &&
-        dateringMatch(predicates, activeDatIds, p) &&
-        p.datering &&
-        (p.datering.jaartal || p.datering.periode)
+      (p) => voldoet(p) && p.datering && (p.datering.jaartal || p.datering.periode)
     ).length;
-    const visibleCount = allProps.filter(
-      (p) =>
-        statusMatch(predicates, activeStatusIds, p) &&
-        heritageMatch(predicates, activeHeritageIds, p) &&
-        dateringMatch(predicates, activeDatIds, p)
-    ).length;
+    const visibleCount = allProps.filter((p) => voldoet(p)).length;
     document.getElementById("datering-filter-summary").textContent = `${dateringBekendCount} van ${visibleCount} hebben een jaartal of periode bekend`;
     document.getElementById("filter-summary").textContent = `${visibleCount} van ${totalCount} zichtbaar`;
     searchCountEl.textContent = query ? `${allProps.length} gevonden op "${query}"` : "";
@@ -1331,6 +1356,7 @@ async function main() {
     "toggle-monumenten-archeologisch": "nomonarch",
   };
   const STATUS_CODES = { "filter-niet-geruimd": "ng", "filter-geruimd": "g" };
+  const GEMEENTELIJK_CODES = { "filter-gemeentelijk-ja": "gj", "filter-gemeentelijk-nee": "gn" };
   const HERITAGE_CODES = { "filter-gezicht": "gz", "filter-archeologie": "ar", "filter-rijksmonument": "rm" };
   const DATERING_CODES = {
     "filter-datering-me": "me",
@@ -1363,6 +1389,10 @@ async function main() {
       .filter(([id]) => document.getElementById(id).checked)
       .map(([, code]) => code);
     if (status.length) params.set("st", status.join(","));
+    const gemeentelijk = Object.entries(GEMEENTELIJK_CODES)
+      .filter(([id]) => document.getElementById(id).checked)
+      .map(([, code]) => code);
+    if (gemeentelijk.length) params.set("gm", gemeentelijk.join(","));
     const heritage = Object.entries(HERITAGE_CODES)
       .filter(([id]) => document.getElementById(id).checked)
       .map(([, code]) => code);
@@ -1438,6 +1468,10 @@ async function main() {
       const statusCodes = new Set((params.get("st") || "").split(",").filter(Boolean));
       for (const [id, code] of Object.entries(STATUS_CODES)) {
         document.getElementById(id).checked = statusCodes.has(code);
+      }
+      const gemeentelijkCodes = new Set((params.get("gm") || "").split(",").filter(Boolean));
+      for (const [id, code] of Object.entries(GEMEENTELIJK_CODES)) {
+        document.getElementById(id).checked = gemeentelijkCodes.has(code);
       }
       const heritageCodes = new Set((params.get("hg") || "").split(",").filter(Boolean));
       for (const [id, code] of Object.entries(HERITAGE_CODES)) {

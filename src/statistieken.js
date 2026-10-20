@@ -225,15 +225,30 @@ async function main() {
     renderSection(
       document.getElementById("stats-excel-rijksmonument"),
       "Rijksmonument of beschermd onderdeel volgens de Excel",
-      "In de Excel van de domeinexpert staat per begraafplaats of die rijksmonument is (kolom Rijksmonument) en wat er precies beschermd is (kolom Beschermd deel, ongewijzigd overgenomen). Dat zijn er meer dan hierboven, omdat daar alleen een monument met een begraafplaats-functie meetelt dat op of aan het terrein ligt.",
+      "In de Excel van de domeinexpert staat per begraafplaats of die rijksmonument is (kolom Rijksmonument) en wat er precies beschermd is (kolom Beschermd deel, ongewijzigd overgenomen). Dat zijn er meer dan hierboven, omdat daar alleen een monument met een begraafplaats-functie meetelt dat op of aan het terrein ligt. Het nummer in de Excel is soms een complexnummer: dan staan de onderdelen uit de RCE-gegevens erbij en hoeveel daarvan op of aan het terrein liggen. Rijksmonumenten staan in de RCE vaak op een adres in plaats van op de begraafplaats zelf, dus de afstand tot het terrein kan afwijken van de werkelijkheid.",
       [
         kv([
           ["Aantal", fmt(excel.aantal)],
+          ["Waarvan complexen", `${fmt(excel.aantal_complexen)} (met samen ${fmt(excel.onderdelen_in_complexen)} onderdelen)`],
           ["Van totaal in de Excel", fmt(excel.totaal_begraafplaatsen_in_excel)],
+          ["Gemeentelijk monument (Excel)", fmt(excel.gemeentelijk_monument_aantal)],
         ]),
         table(
-          ["Begraafplaats", "Plaats", "Rijksmonumentnr.", "Beschermd deel (volgens de Excel)"],
-          excel.lijst.map((r) => [r.naam, plaatsNaam(r.plaats), r.rmonr, r.beschermd_deel || "(niet ingevuld)"])
+          ["Begraafplaats", "Plaats", "Nr.", "Soort", "Beschermd deel (volgens de Excel)", "Op of aan het terrein"],
+          excel.lijst.map((r) => [
+            r.naam,
+            plaatsNaam(r.plaats),
+            r.rmonr || "",
+            r.soort === "complex" ? `Complex: ${r.complex_naam || "naamloos"}, ${r.onderdelen_aantal} onderdelen` : "Rijksmonument",
+            r.beschermd_deel || "(niet ingevuld)",
+            r.soort === "complex"
+              ? `${r.onderdelen_op_terrein} van ${r.onderdelen_aantal} onderdelen (${r.onderdelen_binnen_50m} binnen 50 m)`
+              : r.dichtstbij_m === null
+              ? "geen monument binnen 250 m"
+              : r.dichtstbij_m === 0
+              ? "ja"
+              : `nee, ${String(r.dichtstbij_m).replace(".", ",")} m ernaast`,
+          ])
         ),
       ]
     );

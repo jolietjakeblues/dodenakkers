@@ -29,7 +29,6 @@ Monuments beyond 100m are not included in rijksmonument_relations.
 from __future__ import annotations
 
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -37,6 +36,8 @@ from pyproj import Transformer
 from shapely.geometry import Point, shape, mapping
 from shapely.ops import transform
 from shapely.strtree import STRtree
+
+from excel_koppeling import koppel_terreinen, load_excel_rijen
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
@@ -100,39 +101,12 @@ def periode_label(raw: str | None) -> str | None:
 # uitgeschreven) moeten gelijk zijn en de plaats ook; bij meerdere rijen met
 # een verschillende waarde valt het terug op nearest_datering(). Volgorde:
 # handmatige correctie > naam+plaats > nabijheid.
-_NAAM_AFKORTINGEN = {
-    "gem": "gemeentelijke", "gemeentelijk": "gemeentelijke", "alg": "algemene", "algemeen": "algemene",
-    "nw": "nieuwe", "nieuw": "nieuwe", "vm": "voormalig", "hh": "heilige", "h": "heilige", "st": "sint",
-}
-_NAAM_STOPWOORDEN = {"begraafplaats", "kerkhof", "de", "het", "en", "van", "bij", "op", "in", "met", "later", "deel", "kerk"}
+# naam_woorden/plaats_sleutel staan in scripts/excel_koppeling.py, dat ook de
+# koppeling aan de Excel-rij voor de beschermingsstatus (gemeentelijk monument)
+# doet.
 
 
-def naam_woorden(naam: str | None) -> frozenset[str]:
-    woorden = [_NAAM_AFKORTINGEN.get(w, w) for w in re.findall(r"[a-zà-ÿ]+", (naam or "").lower())]
-    return frozenset(w for w in woorden if w not in _NAAM_STOPWOORDEN)
-
-
-def plaats_sleutel(plaats: str | None) -> str:
-    sleutel = re.sub(r"[^a-z]", "", re.sub(r"\(geruimd\)", "", plaats or "", flags=re.I).lower())
-    return "denhaag" if sleutel == "sgravenhage" else sleutel
-
-
-def datering_op_naam(props: dict, datering_per_plaats: dict) -> dict | None:
-    woorden = naam_woorden(props.get("naam"))
-    kandidaten = [
-        (i, f["properties"])
-        for i, f in datering_per_plaats.get(plaats_sleutel(props.get("plaats")), [])
-        if naam_woorden(f["properties"].get("naam")) == woorden
-    ]
-    if not kandidaten:
-        return None
-    waarden = {(p.get("jaartal"), p.get("jaartal_circa", False), p.get("periode")) for _, p in kandidaten}
-    if len(waarden) > 1:
-        return None
-    return kandidaten[0][1]
-
-
-to_rd =Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
+to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
 
 def load_features(path: Path) -> list[dict]:
@@ -336,9 +310,30 @@ def main() -> None:
     rm_index = STRtree(rm_geoms)
     gemeenten_index = STRtree(gemeenten_geoms)
     datering_index = STRtree(datering_geoms) if datering_geoms else None
-    datering_per_plaats: dict = defaultdict(list)
-    for i, f in enumerate(datering):
-        datering_per_plaats[plaats_sleutel(f["properties"].get("plaats"))].append((i, f))
+
+    # Koppeling terrein <-> Excel-rij (voor beschermingsstatus, o.a. gemeentelijk
+    # monument), zie scripts/excel_koppeling.py. Het punt van een Excel-rij is
+    # het gegeocodeerde datering-punt met dezelfde naam/plaats/gemeente.
+    excel_rijen = load_excel_rijen()
+    punt_per_sleutel = {
+        (f["properties"]["naam"].lower(), f["properties"]["plaats"].lower(), f["properties"]["gemeente"].lower()): g
+        for f, g in zip(datering, datering_geoms)
+    }
+    rij_punten = [punt_per_sleutel.get((r["naam"].lower(), r["plaats"].lower(), r["gemeente"].lower())) for r in excel_rijen]
+    terreinen_voor_koppeling = []
+    for feature in begraafplaatsen:
+        lon, lat = feature["properties"].get("ingang_lon"), feature["properties"].get("ingang_lat")
+        terreinen_voor_koppeling.append(
+            {
+                "id": feature["properties"]["id"],
+                "naam": feature["properties"]["naam"],
+                "plaats": feature["properties"]["plaats"],
+                "ingang_rd": transform(to_rd, Point(lon, lat)) if lon is not None and lat is not None else None,
+            }
+        )
+    excel_koppeling = koppel_terreinen(terreinen_voor_koppeling, excel_rijen, rij_punten, datering_correcties) if excel_rijen else {}
+    excel_koppeling_telling: dict = defaultdict(int)
+    excel_zonder_koppeling: list = []
 
     out_features = []
     stats = {
@@ -349,8 +344,8 @@ def main() -> None:
         "met_rijksmonument_250m": 0,
         "met_datering": 0,
         "met_datering_correctie": 0,
-        "datering_op_naam": 0,
-        "datering_naam_wijkt_af_van_nabijheid": 0,
+        "datering_via_excel_rij": 0,
+        "datering_excel_wijkt_af_van_nabijheid": 0,
     }
     gemeente_via_fallback = 0
 
@@ -369,23 +364,29 @@ def main() -> None:
         ingang_lon = feature["properties"].get("ingang_lon")
         ingang_lat = feature["properties"].get("ingang_lat")
         ingang_rd = transform(to_rd, Point(ingang_lon, ingang_lat)) if ingang_lon is not None and ingang_lat is not None else None
-        datering_match = nearest_datering(ingang_rd, datering_index, datering, datering_geoms) if datering_index else None
-        naam_props = datering_op_naam(feature["properties"], datering_per_plaats) if datering_index else None
-        if naam_props is not None:
-            nabij = (datering_match["jaartal"], datering_match["periode_bron"]) if datering_match else None
-            if nabij != (naam_props.get("jaartal"), naam_props.get("periode")):
-                stats["datering_naam_wijkt_af_van_nabijheid"] += 1
+        # Volgorde (2026-10-19/20): 1. bevestiging van de domeinexpert, 2. de
+        # aan dit terrein toegewezen Excel-rij (scripts/excel_koppeling.py; de
+        # Excel is leidend), 3. pas dan het dichtstbijzijnde geocodeerde adres.
+        koppeling = excel_koppeling.get(feature["properties"]["id"])
+        excel_rij = koppeling["rij"] if koppeling else None
+        excel_via = koppeling["via"] if koppeling else None
+        nabij = nearest_datering(ingang_rd, datering_index, datering, datering_geoms) if datering_index else None
+        datering_match = nabij
+        if excel_rij is not None:
+            if nabij is None or (nabij["jaartal"], nabij["periode_bron"]) != (excel_rij["jaartal"], excel_rij["periode"]):
+                stats["datering_excel_wijkt_af_van_nabijheid"] += 1
             datering_match = {
-                "jaartal": naam_props.get("jaartal"),
-                "jaartal_circa": naam_props.get("jaartal_circa", False),
-                "periode": periode_label(naam_props.get("periode")),
-                "periode_bron": naam_props.get("periode"),
+                "jaartal": excel_rij["jaartal"],
+                "jaartal_circa": excel_rij["jaartal_circa"],
+                "periode": periode_label(excel_rij["periode"]),
+                "periode_bron": excel_rij["periode"],
                 "distance_m": None,
-                "bron": "naam en plaats (Excel van de domeinexpert)",
+                "bron": "Excel van de domeinexpert (toegewezen rij)",
             }
-            stats["datering_op_naam"] += 1
+            stats["datering_via_excel_rij"] += 1
         correctie = datering_correcties.get(feature["properties"]["id"])
-        if correctie:
+        # Een entry met alleen `excel_nr` zet alleen de koppeling vast, geen datering.
+        if correctie and ("jaartal" in correctie or "periode" in correctie):
             datering_match = {
                 "jaartal": correctie.get("jaartal"),
                 "jaartal_circa": correctie.get("jaartal_circa", False),
@@ -397,6 +398,10 @@ def main() -> None:
             stats["met_datering_correctie"] += 1
         if datering_match:
             stats["met_datering"] += 1
+
+        excel_koppeling_telling[excel_via or "geen"] += 1
+        if excel_rijen and excel_rij is None:
+            excel_zonder_koppeling.append(feature["properties"]["id"])
 
         if in_gezicht == "within":
             stats["within_gezicht"] += 1
@@ -419,6 +424,21 @@ def main() -> None:
         props["rijksmonument_count"] = len(rm_relations)
         props["rijksmonument_relations"] = rm_relations
         props["datering"] = datering_match
+        # Beschermingsstatus volgens de Excel (None = niet eenduidig te koppelen,
+        # dus onbekend, geen gok). `gemeentelijk_monument` staat plat zodat de
+        # viewer erop kan filteren; de rest zit in `excel`.
+        props["gemeentelijk_monument"] = excel_rij["gemeentelijk_monument"] if excel_rij else None
+        props["excel"] = (
+            {
+                "nr": excel_rij["nr"],
+                "koppeling": excel_via,
+                "rijksmonument": excel_rij["rijksmonument"],
+                "rmonr": excel_rij["rmonr"],
+                "beschermd_deel": excel_rij["beschermd_deel"],
+            }
+            if excel_rij
+            else None
+        )
 
         out_features.append({"type": "Feature", "properties": props, "geometry": feature["geometry"]})
 
@@ -439,12 +459,16 @@ def main() -> None:
     print(f"  rijksmonumenten zonder monument_aard (uitgesloten van gebouwd-set): {skipped_null_aard}")
     print(f"  gemeente via nearest-fallback i.p.v. directe puntligging: {gemeente_via_fallback}")
     if datering:
-        print(f"  datering gekoppeld (correctie, naam+plaats of binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
-        print(f"  waarvan op naam+plaats met de Excel gekoppeld: {stats['datering_op_naam']} (bij {stats['datering_naam_wijkt_af_van_nabijheid']} wijkt dat af van de dichtstbijzijnde punt-koppeling)")
+        print(f"  datering gekoppeld (correctie, toegewezen Excel-rij of binnen {DATERING_MATCH_THRESHOLD_M}m van de ingang): {stats['met_datering']} van {len(begraafplaatsen)}")
+        print(f"  waarvan via de toegewezen Excel-rij: {stats['datering_via_excel_rij']} (bij {stats['datering_excel_wijkt_af_van_nabijheid']} wijkt dat af van de dichtstbijzijnde punt-koppeling)")
     else:
         print("  datering.geojson niet gevonden -- geen datering-koppeling (draai eerst scripts/build_datering.py)")
     if datering_correcties:
-        print(f"  waarvan handmatige correctie door de domeinexpert: {stats['met_datering_correctie']} van {len(datering_correcties)} beschikbare correcties toegepast")
+        print(f"  waarvan handmatige correctie door de domeinexpert: {stats['met_datering_correctie']} van {sum(1 for c in datering_correcties.values() if 'jaartal' in c or 'periode' in c)} beschikbare datering-correcties toegepast")
+    if excel_rijen:
+        print(f"  koppeling aan Excel-rij (voor beschermingsstatus): {dict(excel_koppeling_telling)}")
+        if excel_zonder_koppeling:
+            print(f"  zonder eenduidige Excel-rij ({len(excel_zonder_koppeling)}): {', '.join(excel_zonder_koppeling)}")
 
     write_audit(out_features, stats, skipped_null_aard)
 

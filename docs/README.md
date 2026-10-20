@@ -16,6 +16,7 @@ methodiek: [Auditresultaten basisdataset](data/kml-audit-resultaten.md) en
 **Begraafplaatsen** - 450 terreinen, samen circa **550 ha**:
 
 - 400 niet-geruimd, 50 geruimd, 0 statusconflicten (komt exact overeen met de Excel van de domeinexpert: 316 in gebruik + 84 gesloten, 50 geruimd; NH Kerkhof Middelharnis en NH kerkhof Hoogblokland zijn op 2026-10-19 op geruimd gezet, zie [003](data/003-csv-bron-en-koppeling.md));
+- 64 gemeentelijk beschermd en 386 niet, volgens de Excel van de domeinexpert (filter in de viewer; elk terrein is aan zijn Excel-rij gekoppeld, zie [007](data/007-datering-bevindingen.md));
 - kleinste terrein 13,49 m², grootste 301.096,18 m² (30,1 ha, Natuurbegraafplaats Staelduinen), mediaan 3.220,27 m².
 
 **Tegenover beschermde gezichten** (105 rijksbeschermde stads-/dorpsgezichten in de Zuid-Holland-bbox):
@@ -80,7 +81,7 @@ Los daarvan, als voorbeeld van wat de functiefilter in de viewer oplevert (geen 
 - de filters in het paneel zijn twee groepen met andere combinatielogica: de drie status-checkboxes (geruimd/niet-geruimd/statusconflict) verbreden de selectie (OR/unie) omdat het elkaar uitsluitende toestanden van hetzelfde veld zijn, de drie erfgoed-checkboxes versmallen (AND) omdat een begraafplaats meerdere erfgoedrelaties tegelijk kan hebben -- zie de toelichting bij `applyFilters()` in `src/app.js`;
 - het paneel heeft een naam/plaats-zoekveld (los van de facet-filters, versmalt er altijd bovenop) en de secties zijn inklapbaar (`<details>`), met Zoeken/Ondergrond/Lagen/Filters standaard open en Functie/Legenda standaard dicht om het paneel compacter te maken;
 - de legenda dimt items waarvan de bijbehorende laag uit staat, zodat de legenda meteen laat zien wat er op de kaart te zien is;
-- "Verdwenen begraafplaatsen" is een zelfstandige, gegeocodeerde puntenlaag uit een eigen bron van de domeinexpert (KMZ), bewust zonder koppeling aan de 450 hoofdterreinen -- zie [methode.html](../src/methode.html) voor de vijf datacategorieën en waarom een koppeling hier bewust is afgewezen;
+- "Verdwenen begraafplaatsen" is een zelfstandige, gegeocodeerde puntenlaag uit een eigen bron van de domeinexpert (KMZ), bewust zonder koppeling aan de 450 hoofdterreinen -- zie [methode.html](../src/methode.html) voor de zes datacategorieën en waarom een koppeling hier bewust is afgewezen;
 - "Datering" (jaartal/periode per begraafplaats, eigen CSV-bron van de domeinexpert) is wél gekoppeld aan de hoofddataset -- op het dichtstbijzijnde adres via de ingang-coördinaat, met een afstandsdrempel van 300m (`nearest_datering()` in `scripts/analyse_spatial.py`) -- en zichtbaar als veld in het begraafplaats-popup en als klikbare periode-filter in het paneel, niet als eigen kaartlaag.
 
 Voor de volledige chronologische geschiedenis van hoe dit tot stand kwam

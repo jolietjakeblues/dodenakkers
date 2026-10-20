@@ -712,6 +712,9 @@
   "beschermd_volgens_excel": {
     "aantal": 54,
     "totaal_begraafplaatsen_in_excel": 450,
+    "aantal_complexen": 13,
+    "onderdelen_in_complexen": 50,
+    "gemeentelijk_monument_aantal": 64,
     "lijst": [
       {
         "nr": "3918",
@@ -719,6 +722,13 @@
         "plaats": "'s-Gravenhage",
         "gemeente": "Den Haag",
         "rmonr": "17652",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 16.1,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Ruine toren en grondslagen 15e eeuws kerkje"
       },
       {
@@ -727,6 +737,13 @@
         "plaats": "'s-Gravenhage",
         "gemeente": "Den Haag",
         "rmonr": "17620",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Wachthuisjes, aula, div. grafmonumenten"
       },
       {
@@ -735,6 +752,13 @@
         "plaats": "'s-Gravenhage",
         "gemeente": "Den Haag",
         "rmonr": "18067",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -743,6 +767,13 @@
         "plaats": "'s-Gravenhage",
         "gemeente": "Den Haag",
         "rmonr": "17619",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Kapel, entree en galerij"
       },
       {
@@ -751,6 +782,13 @@
         "plaats": "'s-Gravenhage",
         "gemeente": "Den Haag",
         "rmonr": "17997",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "kerkhof bij de Nieuwe Kerk"
       },
       {
@@ -759,6 +797,13 @@
         "plaats": "'s-Gravenhage (Scheveningen)",
         "gemeente": "Den Haag",
         "rmonr": "17960",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -767,6 +812,13 @@
         "plaats": "Aarlanderveen",
         "gemeente": "Alphen aan den Rijn",
         "rmonr": "516118",
+        "soort": "complex",
+        "complex_naam": "Algemene Begraafplaats",
+        "onderdelen_aantal": 4,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 4,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangshek, Baarhuisje, lijkenhuisje en aanleg en beplanting"
       },
       {
@@ -775,6 +827,13 @@
         "plaats": "Aarlanderveen",
         "gemeente": "Alphen aan den Rijn",
         "rmonr": "7515",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Priesterzerk (onderdeel)"
       },
       {
@@ -783,6 +842,13 @@
         "plaats": "Abbenbroek",
         "gemeente": "Nissewaard",
         "rmonr": "525168",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangshek"
       },
       {
@@ -791,6 +857,13 @@
         "plaats": "Alphen aan den Rijn",
         "gemeente": "Alphen aan den Rijn",
         "rmonr": "7494",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 41.9,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafkapel"
       },
       {
@@ -799,6 +872,13 @@
         "plaats": "Alphen aan den Rijn",
         "gemeente": "Alphen aan den Rijn",
         "rmonr": "516117",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 13.1,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Bidkapelletje"
       },
       {
@@ -807,6 +887,13 @@
         "plaats": "Delft",
         "gemeente": "Delft",
         "rmonr": "525265",
+        "soort": "complex",
+        "complex_naam": "Algemene Begraafplaats Jaffa",
+        "onderdelen_aantal": 2,
+        "onderdelen_op_terrein": 2,
+        "onderdelen_binnen_50m": 2,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats, directeurswoning"
       },
       {
@@ -815,6 +902,13 @@
         "plaats": "Delft",
         "gemeente": "Delft",
         "rmonr": "525248",
+        "soort": "complex",
+        "complex_naam": "Begraafplaats met dienstwoning",
+        "onderdelen_aantal": 3,
+        "onderdelen_op_terrein": 3,
+        "onderdelen_binnen_50m": 3,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Dienstwoning, gedenkteken Adrien Huet en restanten gem. begraafplaats"
       },
       {
@@ -823,6 +917,13 @@
         "plaats": "Dordrecht",
         "gemeente": "Dordrecht",
         "rmonr": "522269",
+        "soort": "complex",
+        "complex_naam": "Begraafplaats Essenhof",
+        "onderdelen_aantal": 5,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 5,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aula, Toegangshek met achterliggende woning en aanleg oude gedeelte"
       },
       {
@@ -831,6 +932,13 @@
         "plaats": "Dordrecht",
         "gemeente": "Dordrecht",
         "rmonr": "522272",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -839,6 +947,13 @@
         "plaats": "Geervliet",
         "gemeente": "Nissewaard",
         "rmonr": "9377",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 36.5,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -847,6 +962,13 @@
         "plaats": "Gorinchem",
         "gemeente": "Gorinchem",
         "rmonr": "525108",
+        "soort": "complex",
+        "complex_naam": "Joodse begraafplaats",
+        "onderdelen_aantal": 3,
+        "onderdelen_op_terrein": 3,
+        "onderdelen_binnen_50m": 3,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats, aula en hek"
       },
       {
@@ -855,6 +977,13 @@
         "plaats": "Gorinchem",
         "gemeente": "Gorinchem",
         "rmonr": "525112",
+        "soort": "complex",
+        "complex_naam": "Algemene begraafplaats",
+        "onderdelen_aantal": 5,
+        "onderdelen_op_terrein": 5,
+        "onderdelen_binnen_50m": 5,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aanleg, toegangshek oude gedeelte, entreecomplex met dienstwoning en aula, toegangshek"
       },
       {
@@ -863,6 +992,13 @@
         "plaats": "Gouda",
         "gemeente": "Gouda",
         "rmonr": "333054",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 6.1,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aula / begraafplaats"
       },
       {
@@ -871,6 +1007,13 @@
         "plaats": "Gouda",
         "gemeente": "Gouda",
         "rmonr": "517619",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 6.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafkapel"
       },
       {
@@ -879,6 +1022,13 @@
         "plaats": "Haastrecht",
         "gemeente": "Krimpenerwaard",
         "rmonr": "512485",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 33.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Baarhuisje"
       },
       {
@@ -887,6 +1037,13 @@
         "plaats": "Haastrecht",
         "gemeente": "Krimpenerwaard",
         "rmonr": "512498",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 0,
+        "dichtstbij_m": null,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafmon. voor mw. P.M. Lefévre de Montigny-Bisdom van Vliet (1923) en grafsteen voor de hond Nora (1906)"
       },
       {
@@ -895,6 +1052,13 @@
         "plaats": "Hazerswoude Dorp",
         "gemeente": "Alphen aan den Rijn",
         "rmonr": "517876",
+        "soort": "complex",
+        "complex_naam": "Algemene Begraafplaats",
+        "onderdelen_aantal": 4,
+        "onderdelen_op_terrein": 4,
+        "onderdelen_binnen_50m": 4,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aanleg, aula, 2 vaste bruggen"
       },
       {
@@ -903,6 +1067,13 @@
         "plaats": "Heerjansdam",
         "gemeente": "Zwijndrecht",
         "rmonr": "509912",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Poortgebouw"
       },
       {
@@ -911,6 +1082,13 @@
         "plaats": "Hendrik-Ido-Ambacht",
         "gemeente": "Hendrik-Ido-Ambacht",
         "rmonr": "511003",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Poortgebouw"
       },
       {
@@ -919,6 +1097,13 @@
         "plaats": "Katwijk",
         "gemeente": "Katwijk",
         "rmonr": "23527",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 4.7,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -927,6 +1112,13 @@
         "plaats": "Katwijk aan den Rijn",
         "gemeente": "Katwijk",
         "rmonr": "23518",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 33.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegang tot grafkelder"
       },
       {
@@ -935,6 +1127,13 @@
         "plaats": "Katwijk aan Zee",
         "gemeente": "Katwijk",
         "rmonr": "23541",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -943,6 +1142,13 @@
         "plaats": "Krimpen aan de Lek",
         "gemeente": "Krimpenerwaard",
         "rmonr": "512459",
+        "soort": "complex",
+        "complex_naam": "Begraafplaats Complex",
+        "onderdelen_aantal": 6,
+        "onderdelen_op_terrein": 6,
+        "onderdelen_binnen_50m": 6,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "5 grafkelders en toegangshek met hekpijlers / Grafzerken en oorlogsmonument Het Offer"
       },
       {
@@ -951,6 +1157,13 @@
         "plaats": "Leiden",
         "gemeente": "Leiden",
         "rmonr": "24699",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 1.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats met aula"
       },
       {
@@ -959,6 +1172,13 @@
         "plaats": "Leiden",
         "gemeente": "Leiden",
         "rmonr": "24732",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 11.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Kapel / begraafplaats"
       },
       {
@@ -967,6 +1187,13 @@
         "plaats": "Leidschendam",
         "gemeente": "Leidschendam-Voorburg",
         "rmonr": "510321",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -975,6 +1202,13 @@
         "plaats": "Leimuiden",
         "gemeente": "Kaag en Braassem",
         "rmonr": "509923",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 4.2,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangshek"
       },
       {
@@ -983,6 +1217,13 @@
         "plaats": "Monster",
         "gemeente": "Westland",
         "rmonr": "525142",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafkelder"
       },
       {
@@ -991,6 +1232,13 @@
         "plaats": "Noordwijk",
         "gemeente": "Noordwijk",
         "rmonr": "511981",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Oude gedeelte, muur, baarhuisje en 2 grafmonumenten / Graf Daniël Noteboom, schaker (+ ouders)"
       },
       {
@@ -999,6 +1247,13 @@
         "plaats": "Ooltgensplaat",
         "gemeente": "Goeree-Overflakkee",
         "rmonr": "31699",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 4.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangshek"
       },
       {
@@ -1007,6 +1262,13 @@
         "plaats": "Ouddorp",
         "gemeente": "Goeree-Overflakkee",
         "rmonr": "16267",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Kerkhof"
       },
       {
@@ -1015,6 +1277,13 @@
         "plaats": "Oude-Tonge",
         "gemeente": "Goeree-Overflakkee",
         "rmonr": "521892",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Kapel op NW-deel, 1867-1868"
       },
       {
@@ -1023,6 +1292,13 @@
         "plaats": "Ouderkerk aan den IJssel",
         "gemeente": "Krimpenerwaard",
         "rmonr": "512186",
+        "soort": "complex",
+        "complex_naam": "Complex",
+        "onderdelen_aantal": 3,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 3,
+        "dichtstbij_m": 21.1,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Baarhuisje, gietijzeren hekwerk en grafmon. A.J. Schelling"
       },
       {
@@ -1031,6 +1307,13 @@
         "plaats": "Ridderkerk",
         "gemeente": "Ridderkerk",
         "rmonr": "32507",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 10.4,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats bij Huis ten Donck"
       },
       {
@@ -1039,6 +1322,13 @@
         "plaats": "Rijswijk",
         "gemeente": "Rijswijk",
         "rmonr": "518123",
+        "soort": "complex",
+        "complex_naam": "Begraafplaats",
+        "onderdelen_aantal": 3,
+        "onderdelen_op_terrein": 3,
+        "onderdelen_binnen_50m": 3,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aanleg, aula en toegangshek"
       },
       {
@@ -1047,6 +1337,13 @@
         "plaats": "Rotterdam",
         "gemeente": "Rotterdam",
         "rmonr": "527205",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 11.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafkapel Kruyff Bartholomeus"
       },
       {
@@ -1055,6 +1352,13 @@
         "plaats": "Rotterdam",
         "gemeente": "Rotterdam",
         "rmonr": "32923",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       },
       {
@@ -1063,6 +1367,13 @@
         "plaats": "Rotterdam",
         "gemeente": "Rotterdam",
         "rmonr": "506293",
+        "soort": "complex",
+        "complex_naam": "Algemene Begraafplaats Crooswijk",
+        "onderdelen_aantal": 8,
+        "onderdelen_op_terrein": 6,
+        "onderdelen_binnen_50m": 8,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Poortgebouw, drenkelingenhuis, wachtlokaal annex opzichterswoning, poortgebouw met hek, etc."
       },
       {
@@ -1071,6 +1382,13 @@
         "plaats": "Rotterdam",
         "gemeente": "Rotterdam",
         "rmonr": "32898",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Hek en muur van het kerkhof"
       },
       {
@@ -1079,6 +1397,13 @@
         "plaats": "Schiedam",
         "gemeente": "Schiedam",
         "rmonr": "33288",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats en kapel"
       },
       {
@@ -1087,6 +1412,13 @@
         "plaats": "Schoonhoven",
         "gemeente": "Krimpenerwaard",
         "rmonr": "33540",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangspoort"
       },
       {
@@ -1095,6 +1427,13 @@
         "plaats": "Sommelsdijk",
         "gemeente": "Goeree-Overflakkee",
         "rmonr": "29842",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 28.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Grafkelder in ruïne koor, hekwerk"
       },
       {
@@ -1103,6 +1442,13 @@
         "plaats": "Voorburg",
         "gemeente": "Leidschendam-Voorburg",
         "rmonr": "524448",
+        "soort": "complex",
+        "complex_naam": "Algemene Begraafplaats",
+        "onderdelen_aantal": 2,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 2,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Poortgebouw en doodgraverswoning"
       },
       {
@@ -1111,6 +1457,13 @@
         "plaats": "Voorhout",
         "gemeente": "Teylingen",
         "rmonr": "523429",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 4.3,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Baarhuisje en verbindingsmuur"
       },
       {
@@ -1119,6 +1472,13 @@
         "plaats": "Voorschoten",
         "gemeente": "Voorschoten",
         "rmonr": "515012",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 17.9,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Toegangshek"
       },
       {
@@ -1127,6 +1487,13 @@
         "plaats": "Wassenaar",
         "gemeente": "Wassenaar",
         "rmonr": "530407",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 0,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 1.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Familiebegraafplaats"
       },
       {
@@ -1135,6 +1502,13 @@
         "plaats": "Wassenaar",
         "gemeente": "Wassenaar",
         "rmonr": "524542",
+        "soort": "complex",
+        "complex_naam": "Begraafplaats Kerkehout",
+        "onderdelen_aantal": 2,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Aanleg en metaarhuisje"
       },
       {
@@ -1143,6 +1517,13 @@
         "plaats": "Wassenaar",
         "gemeente": "Wassenaar",
         "rmonr": "524513",
+        "soort": "rijksmonument",
+        "complex_naam": null,
+        "onderdelen_aantal": 1,
+        "onderdelen_op_terrein": 1,
+        "onderdelen_binnen_50m": 1,
+        "dichtstbij_m": 0.0,
+        "terrein_gekoppeld": true,
         "beschermd_deel": "Begraafplaats"
       }
     ],
@@ -1582,13 +1963,13 @@
   },
   "datering": {
     "aantal": 450,
-    "aantal_met_jaartal": 309,
-    "aantal_met_alleen_periode": 114,
+    "aantal_met_jaartal": 310,
+    "aantal_met_alleen_periode": 113,
     "aantal_onbekend": 27,
     "histogram": [
       {
         "label": "Middeleeuws (periode bekend, geen jaartal)",
-        "aantal": 114
+        "aantal": 113
       },
       {
         "label": "voor 1829 (verbod op kerkbegraving)",
@@ -1608,7 +1989,7 @@
       },
       {
         "label": "1950-1999",
-        "aantal": 54
+        "aantal": 55
       },
       {
         "label": "2000-heden",
