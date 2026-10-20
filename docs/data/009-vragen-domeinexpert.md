@@ -105,10 +105,58 @@ beschermd onderdeel volgens de Excel" met alle 54 rijen en de tekst van *Bescher
 deel* ongewijzigd uit de Excel (geen eigen indeling). De uitleg bij de 22 is
 aangescherpt: die telling is smaller en bedoeld als RCE-controle.
 
-**Nieuwe vragen:**
+**Antwoord op het geheel (2026-10-20):** "Veel rijksmonumenten staan inderdaad bij
+de RCE niet goed. Veel begraafplaatsen zelf hebben geen adres en dan wordt de
+puntlocatie wel op een adres gezet, maar dat is vaak niet op de begraafplaats
+zelf. Het zij zo!" De naamconventie tussen Excel en kmz "kan inderdaad beter,
+maar is allemaal oud handwerk waarvan destijds nog niet zo het belang van een
+exacte match werd gezien".
+
+| # | Vraag | Antwoord | Verwerkt |
+|---|---|---|---|
+| 7a | Tombe Bisdom van Vliet, Haastrecht: terrein op de kaart 285 m van het rijksmonument. Goede plek, of ligt het monument in een andere begraafplaats? | "Ligt in werkelijkheid nog iets verder op het terrein en dat is in de bron gecorrigeerd. Hoeft niet op deze kaart. Het punt van het rijksmonument staat inderdaad op het adres Hoogstraat 164, maar ligt daar dus totaal verkeerd." | Geen kaartwijziging. De statistiek toont "geen monument binnen 250 m"; de uitleg in [004](004-rce-mcp-querystrategie.md) noemt dit als voorbeeld van een RCE-puntlocatie op een adres. |
+| 7b | Gemeentelijke monumenten (64 in de Excel) ook als telling of filter? | "Kunnen filteren op gemeentelijk beschermd ja of nee, zou leuk zijn. Dat kan ik nu niet in mijn Google Maps, alleen in de excel." | Gebouwd: filtergroep "Gemeentelijk monument" (Gemeentelijk beschermd / Niet gemeentelijk beschermd), plus popupregels "Gemeentelijk monument", "Rijksmonument volgens Excel" en "Beschermd deel (Excel)". Zie hieronder. |
+| 7c | Drie nummers (516118, 512186, 524448) niet in onze RCE-gegevens: complexnummers? | "Dat zijn inderdaad complexnummers met meerdere beschermde onderdelen nabij. Het lastige is dat een monumentnummer kiezen de lading niet dekt. Dus inclusief complexnummers zou mooi zijn." | Gebouwd: `scripts/fetch_complexen.py` zoekt alle nummers op als rijksmonument en complex. 13 van de 54 zijn een complex (samen 50 onderdelen); de statistiekenpagina toont per complex de onderdelen en hoeveel daarvan op of aan het terrein liggen, zie [004](004-rce-mcp-querystrategie.md). |
+
+**Hoe het gemeentelijke filter aan de Excel gekoppeld is.** Een terrein en een Excel-rij
+hebben geen gedeelde sleutel (Nr is niet uniek, de namen verschillen). Omdat Excel en kaart
+evenveel begraafplaatsen hebben, wijst `scripts/excel_koppeling.py` ze een-op-een aan elkaar toe
+op naamovereenkomst, plaats en afstand. Alle 450 terreinen zijn gekoppeld: 64 zijn gemeentelijk
+beschermd, 386 niet, en alle 64 komen overeen met de Excel. De Excel-status (geruimd) komt bij
+alle terreinen die de controle kon nalopen overeen met de kaart, wat een onafhankelijke toets op
+de toewijzing is. Bij de koppeling kwamen drie datering-fouten naar boven die nu zijn gecorrigeerd:
+Oude gem. begraafplaats Voorburg stond op "Middeleeuwen" (nu 1874, de Oude Algemene
+Begraafplaats met poortgebouw), de Gem. begraafplaats in Oude Tonge op 1867 (nu circa 1952) en
+de Oude gem. begraafplaats in Middelharnis op 1865 (nu 1895).
+
+**Nieuwe vragen aan de domeinexpert (ter bevestiging):**
 
 | # | Vraag | Antwoord |
 |---|---|---|
-| 7a | Tombe Bisdom van Vliet, Haastrecht (Excel nr 334, rijksmonument 512498): het terrein op de kaart ligt 285 m van het rijksmonument zelf (het Grafmonument). Staat het terrein op de kaart op de goede plek, of ligt het monument in een andere begraafplaats (bijvoorbeeld het NH kerkhof in Haastrecht)? | |
-| 7b | De Excel kent ook 64 begraafplaatsen met *Gemeentelijk monument* = Ja (58 alleen gemeentelijk, 4 ook rijksmonument, 2 zonder beschermd deel); ook daar is *Beschermd deel* ingevuld. De kaart toont alleen rijksmonumenten. Wil je gemeentelijke monumenten ook als telling of filter? | |
-| 7c | Drie rijksmonumentnummers uit de Excel (516118 Aarlanderveen, 512186 Ouderkerk aan den IJssel, 524448 Voorburg) zitten niet in onze RCE-gegevens. Zijn dit complexnummers met onderdelen (hek, baarhuisje, poortgebouw) op de begraafplaats? Zo ja, dan halen we die onderdelen erbij uit de RCE-gegevens. | |
+| 8a | Voorburg: klopt het dat "NH Kerkhof" bij Excel-rij 346 "Kerkhof Oude Kerk" hoort (Middeleeuwen) en "Oude gem. begraafplaats" bij rij 3000 "Oude Algemene Begraafplaats" (rijksmonument 524448, 1874)? We hadden die twee verwisseld. | |
+| 8b | Leiderdorp: klopt het dat "Nieuwe gem. begraafplaats" bij rij 1338 "Nieuwe Algemene Begraafplaats met RK gedeelte" hoort, en "Gem. kerkhof" bij rij 670 "Oude Algemene kerkhof"? | |
+| 8c | Vijf andere koppelingen hebben we vastgezet omdat de naamvorm te veel afwijkt: Oude Tonge "Gem. begraafplaats" = rij 67 "Nieuwe Algemene Begraafplaats"; Capelle-West "Gem. begraafplaats" = rij 3664; Meije "RK begraafplaats" = rij 2899 "Onze Lieve Vrouw Geboortebegraafplaats"; Bergambacht "Gem. begraafplaats" = rij 2255 "Algemene Begraafplaats"; Scheveningen "NH kerkhof" = rij 170 "Oude kerkhof Scheveningen". Klopt dat? | |
+
+## 9. Controle van "gemeentelijk beschermd" tegen Wikipedia
+
+Op verzoek van de opdrachtgever is de gemeentelijk-monument-vlag uit de Excel (64 ja) naast de
+Wikipedia-lijsten "Lijst van gemeentelijke monumenten in Zuid-Holland" gelegd
+(`scripts/controle_wikipedia_gemeentelijke_monumenten.py`). **Wikipedia is alleen een controle,
+geen bron:** de Excel blijft leidend en er is niets in de data of op de kaart veranderd. Wikipedia
+is onvolledig en geeft bij adressen met "ong." een grove locatie.
+
+**Uitkomst.** Van 88 Wikipedia-lijsten (8.913 gemeentelijke monumenten) gaan er 71 over
+begraafplaatsen of onderdelen daarvan, waarvan 64 met coördinaten. Bij 38 terreinen staat een
+gemeentelijk monument op of aan het terrein (binnen 30 m); alle 38 zijn in de Excel
+"gemeentelijk beschermd". Er is dus geen tegenspraak. Voor de overige 26 van de 64 Excel-"ja"-terreinen
+is op Wikipedia geen bruikbare vermelding te vinden; dat zegt niets over de Excel. Wel liggen er bij
+drie terreinen die de Excel "niet gemeentelijk" noemt monumenten op 100 tot 116 m afstand:
+
+| # | Vraag | Antwoord |
+|---|---|---|
+| 9a | Den Haag, Gem. begraafplaats Westduin: Wikipedia noemt het gemeentelijk monument "Aula bij Begraafplaats Westduin" (Wijndaelersingel 3-5), 116 m van het terrein. De Excel zegt hier "Nee". Is de aula een gemeentelijk monument, en hoort die bij de begraafplaats? | |
+| 9b | Hardinxveld-Giessendam, Gem. begraafplaats Krommegat: Wikipedia noemt "Grafkelder van de familie Wisboom" (Kromme Gat 12), 99 m van het terrein. Excel: "Nee". Is die grafkelder een gemeentelijk monument op deze begraafplaats? | |
+| 9c | Katwijk aan Zee, Hervormde begraafplaats: Wikipedia noemt "Kosterij/rouwkamer" (Zuidstraat 103), 100 m van het terrein. Waarschijnlijk de kosterij van de kerk en geen onderdeel van de begraafplaats; klopt dat? | |
+| 9d | Maasland: Wikipedia noemt drie begraafplaatsen (Hammerdreef 1, Hofsingel, Commandeurskade), de Excel geeft "Ja" aan de RK begraafplaats, de Oude gemeentelijke en de Nieuwe gemeentelijke Begraafplaats. Zijn dat dezelfde drie? De Hofsingel ligt het dichtst bij de Vm. NH kerkhof (Excel: "Nee"). | |
+
+Pas bij een bevestiging wordt de Excel-waarde (of het beschermde deel) aangepast.

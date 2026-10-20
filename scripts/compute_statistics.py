@@ -29,7 +29,6 @@ outputbestand wegschrijven, idempotent.
 """
 from __future__ import annotations
 
-import csv
 import json
 import statistics
 from collections import Counter, defaultdict
@@ -40,11 +39,13 @@ from shapely.geometry import shape
 from shapely.ops import transform
 from shapely.strtree import STRtree
 
+from excel_koppeling import load_excel_rijen, plaats_sleutel
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED_DIR = REPO_ROOT / "data" / "generated"
 RCE_DIR = REPO_ROOT / "data" / "rce"
 OUT_PATH = GENERATED_DIR / "statistieken.json"
-DATERING_CSV = REPO_ROOT / "data" / "Begraafplaatsen Zuid-Holland - datering.csv"
+COMPLEXEN_JSON = RCE_DIR / "complexen.json"
 
 to_rd = Transformer.from_crs("EPSG:4326", "EPSG:28992", always_xy=True).transform
 
@@ -69,7 +70,7 @@ def load(path: Path) -> list[dict]:
         return json.load(f)["features"]
 
 
-def beschermd_volgens_excel() -> dict | None:
+def beschermd_volgens_excel(begraafplaatsen: list[dict]) -> dict | None:
     """Begraafplaatsen die volgens de Excel van de domeinexpert (kolom
     "Rijksmonument" = Ja) zelf rijksmonument zijn of een beschermd onderdeel
     bevatten. Naast `begraafplaats_als_rijksmonument` (die uit de RCE-data
@@ -79,31 +80,63 @@ def beschermd_volgens_excel() -> dict | None:
     grafkelder) beschermd kunnen zijn. De kolom "Beschermd deel" wordt
     ongewijzigd overgenomen: geen eigen indeling, de Excel is leidend.
 
-    Leest de PII-vrije datering-CSV (de kolommen Rijksmonument/Rmonr./
-    Beschermd deel zitten daar al in); None als die niet bestaat."""
-    if not DATERING_CSV.exists():
+    Het nummer in de Excel is een rijksmonumentnummer OF een complexnummer
+    (2026-10-20: "inclusief complexnummers zou mooi zijn"). Complexen worden
+    opgelost via data/rce/complexen.json (scripts/fetch_complexen.py); per rij
+    staat hoeveel onderdelen er zijn en hoeveel daarvan op of vlak bij het
+    terrein liggen (uit `rijksmonument_relations`, gebouwde monumenten tot
+    250 m).
+
+    Leest de PII-vrije datering-CSV; None als die niet bestaat."""
+    rijen = load_excel_rijen()
+    if not rijen:
         return None
-    with DATERING_CSV.open(encoding="utf-8-sig", newline="") as f:
-        rows = list(csv.reader(f, delimiter="|"))
-    kop, data = rows[0], rows[1:]
-    i = {naam: kop.index(naam) for naam in ("Nr", "Naam", "Plaats", "Gemeente", "Rijksmonument", "Rmonr.", "Beschermd deel")}
+    complexen = json.loads(COMPLEXEN_JSON.read_text(encoding="utf-8"))["complexen"] if COMPLEXEN_JSON.exists() else {}
+
+    # terrein per Excel-rij (Nr is niet uniek: de plaats beslist bij dubbele nummers)
+    terrein_per_rij: dict = {}
+    for f in begraafplaatsen:
+        e = f["properties"].get("excel")
+        if e:
+            terrein_per_rij.setdefault(e["nr"], []).append(f["properties"])
+
     lijst = []
-    for r in data:
-        if r[i["Rijksmonument"]].strip().lower() != "ja":
+    for r in rijen:
+        if not r["rijksmonument"]:
             continue
+        kandidaten = terrein_per_rij.get(r["nr"], [])
+        if len(kandidaten) > 1:
+            kandidaten = [p for p in kandidaten if plaats_sleutel(p["plaats"]) == plaats_sleutel(r["plaats"])] or kandidaten
+        terrein = kandidaten[0] if len(kandidaten) == 1 else None
+        complex_ = complexen.get(r["rmonr"]) if r["rmonr"] else None
+        nummers = complex_["onderdelen"] if complex_ else ([r["rmonr"]] if r["rmonr"] else [])
+        afstand_per_nummer = {
+            rel["rijksmonumentnummer"]: rel["distance_m"] for rel in (terrein["rijksmonument_relations"] if terrein else [])
+        }
+        afstanden = [afstand_per_nummer[n] for n in nummers if n in afstand_per_nummer]
         lijst.append({
-            "nr": r[i["Nr"]].strip(),
-            "naam": r[i["Naam"]].strip(),
-            "plaats": r[i["Plaats"]].strip(),
-            "gemeente": r[i["Gemeente"]].strip(),
-            "rmonr": r[i["Rmonr."]].strip(),
-            "beschermd_deel": r[i["Beschermd deel"]].strip() or None,
+            "nr": r["nr"],
+            "naam": r["naam"],
+            "plaats": r["plaats"],
+            "gemeente": r["gemeente"],
+            "rmonr": r["rmonr"],
+            "soort": "complex" if complex_ else "rijksmonument",
+            "complex_naam": complex_["naam"] if complex_ else None,
+            "onderdelen_aantal": len(nummers),
+            "onderdelen_op_terrein": sum(1 for d in afstanden if d == 0),
+            "onderdelen_binnen_50m": sum(1 for d in afstanden if d <= 50),
+            "dichtstbij_m": min(afstanden) if afstanden else None,
+            "terrein_gekoppeld": terrein is not None,
+            "beschermd_deel": r["beschermd_deel"],
         })
     lijst.sort(key=lambda x: (x["plaats"].lower(), x["naam"].lower()))
     delen = Counter(x["beschermd_deel"] or "(niet ingevuld)" for x in lijst)
     return {
         "aantal": len(lijst),
-        "totaal_begraafplaatsen_in_excel": len(data),
+        "totaal_begraafplaatsen_in_excel": len(rijen),
+        "aantal_complexen": sum(1 for x in lijst if x["soort"] == "complex"),
+        "onderdelen_in_complexen": sum(x["onderdelen_aantal"] for x in lijst if x["soort"] == "complex"),
+        "gemeentelijk_monument_aantal": sum(1 for r in rijen if r["gemeentelijk_monument"]),
         "lijst": lijst,
         "beschermd_deel_aantallen": [{"tekst": k, "aantal": v} for k, v in delen.most_common()],
     }
@@ -391,7 +424,7 @@ def main() -> None:
         "beschermd_gezicht": beschermd_gezicht,
         "rijksmonumenten": rijksmonumenten_stats,
         "begraafplaats_als_rijksmonument": begraafplaats_als_rijksmonument,
-        "beschermd_volgens_excel": beschermd_volgens_excel(),
+        "beschermd_volgens_excel": beschermd_volgens_excel(begraafplaatsen),
         "molen": molen,
         "kasteel": kasteel,
         "kerk": kerk,

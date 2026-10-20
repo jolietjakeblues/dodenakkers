@@ -158,6 +158,38 @@ willekeurig een gekozen.
 **Viewer**: laadt lazy (pas bij het aanzetten van de laag, niet standaard
 mee bij het openen van de pagina) gezien de bestandsgrootte.
 
+## Q5. Complexnummers uit de Excel (2026-10-20)
+
+Bestand: `queries/rce/rmon-lookup.sparql`, uitgevoerd door
+`scripts/fetch_complexen.py` (apart van `fetch_rce.py`, dat alle 14.204
+monumenten opnieuw ophaalt en bij elke run veel volgorde-ruis geeft).
+Resultaat: `data/rce/complexen.json` + `data/rce/metadata/complexen.json`.
+
+De kolom "Rmonr." in de Excel van de domeinexpert bevat soms een
+rijksmonumentnummer en soms een **complexnummer**: "het lastige is dat een
+monumentnummer kiezen de lading niet dekt, dus inclusief complexnummers zou
+mooi zijn". De query zoekt elk nummer op als `ceo:rijksmonumentnummer` en als
+`ceo:complexnummer`; bij een complex komen `ceo:heeftRijksmonument`
+(de onderdelen) en `ceo:heeftHoofdobject` mee. Het hoofdobject blijkt altijd
+ook een van de onderdelen. `{NUMMERS}` wordt met `.replace()` ingevuld, niet met
+`str.format` (SPARQL zit vol accolades).
+
+Van de 54 nummers bij "Rijksmonument = Ja" zijn **41 gewone rijksmonumenten en
+13 complexen**, met samen **50 onderdelen**. Alle 50 onderdelen zitten al in
+`data/rce/rijksmonumenten.geojson` (met geometrie); wat ontbrak was de koppeling
+"dit Excel-nummer is een complex met deze onderdelen". Die staat nu op de
+statistiekenpagina: per complex hoeveel onderdelen er zijn en hoeveel daarvan op
+of vlak bij het terrein liggen.
+
+Valkuil: rijksmonumenten staan in de RCE vaak op een adres in plaats van op de
+begraafplaats zelf ("veel begraafplaatsen hebben geen adres en dan wordt de
+puntlocatie op een adres gezet, dat vaak niet op de begraafplaats zelf is"),
+dus een afstand van enkele tot tientallen meters tot het terrein is geen fout
+in de Excel. Het uiterste geval is Tombe Bisdom van Vliet (Haastrecht): het
+monumentpunt staat op Hoogstraat 164 en ligt daarmee ruim 280 m van het
+echte terrein; de domeinexpert heeft dat in zijn bron gecorrigeerd en wil het
+niet op deze kaart aangepast.
+
 ## Functies en type
 
 Q2 en Q3 bevatten drie parallelle velden, alle drie via de RCE-MCP

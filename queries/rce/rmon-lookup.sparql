@@ -1,0 +1,24 @@
+# Rmon-opzoeking: de kolom `Rmon` in de Excel van Dodenakkers bevat meestal een
+# rijksmonumentnummer, maar soms een COMPLEXNUMMER (bv. Gorinchem 525108,
+# Wassenaar 524542 -- vastgesteld 2026-10-02). Deze query zoekt elk nummer
+# op als rijksmonumentnummer en als complexnummer, en geeft bij een complex
+# de onderdelen (ceo:heeftRijksmonument) en het hoofdobject.
+#
+# {NUMMERS} wordt door scripts/fetch_rce.py gevuld met "123" "456" ...
+# Naam via ceo:heeftNaam -> ceo:naam (optioneel; veel objecten hebben er geen).
+
+PREFIX ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+
+SELECT DISTINCT ?nummer ?soort ?object ?naam ?onderdeelNummer ?hoofdobjectNummer WHERE {
+  VALUES ?nummer { {NUMMERS} }
+  {
+    ?object ceo:rijksmonumentnummer ?nummer .
+    BIND("rijksmonument" AS ?soort)
+  } UNION {
+    ?object ceo:complexnummer ?nummer .
+    BIND("complex" AS ?soort)
+    OPTIONAL { ?object ceo:heeftRijksmonument/ceo:rijksmonumentnummer ?onderdeelNummer . }
+    OPTIONAL { ?object ceo:heeftHoofdobject/ceo:rijksmonumentnummer ?hoofdobjectNummer . }
+  }
+  OPTIONAL { ?object ceo:heeftNaam/ceo:naam ?naam . }
+}

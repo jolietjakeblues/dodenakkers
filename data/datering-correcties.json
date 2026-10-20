@@ -1,5 +1,5 @@
 {
-  "_bron": "Handmatige bevestiging door de domeinexpert (2026-09-08), naar aanleiding van docs/data/008-datering-ontbrekend.md (de 18 begraafplaatsen zonder automatische koppeling). Overschrijft de automatische ruimtelijke koppeling (nearest_datering() in scripts/analyse_spatial.py) voor precies deze terreinen -- een directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde nabijheidsmatch. Denominatie is hier bewust niet meegenomen, zie de toelichting in scripts/analyse_spatial.py. Eén van de 18 (zh-0138, Nieuwe gem. begraafplaats, Brielle) stond hier eerst niet in -- toen kende ook de domeinexpert het jaartal niet. Aanvulling 2026-10-19 (antwoorden op docs/data/009-vragen-domeinexpert.md): 18 extra bevestigingen. Dat zijn de gevallen waar twee Excel-rijen op dezelfde plek liggen en de automatische koppeling niet kon kiezen (zh-0034/0035/0038/0058/0059/0076/0077/0078/0079/0161/0231/0434/0389/0390), de drie begraafplaatsen zonder koppeling binnen 300 m (zh-0138 nu circa 1994, zh-0234 1929, zh-0431 2007) en zh-0162 (Voorhout, Particuliere alg. begraafplaats, 1976: de domeinexpert noemt dit jaartal expliciet; de automatische koppeling gaf ten onrechte 'ME'). Periode 'ME' wordt bij het koppelen voluit 'Middeleeuwen' getoond (zie scripts/analyse_spatial.py).",
+  "_bron": "Handmatige bevestiging door de domeinexpert (2026-09-08), naar aanleiding van docs/data/008-datering-ontbrekend.md (de 18 begraafplaatsen zonder automatische koppeling). Overschrijft de automatische ruimtelijke koppeling (nearest_datering() in scripts/analyse_spatial.py) voor precies deze terreinen -- een directe bevestiging van de domeinexpert weegt zwaarder dan een geocodeerde nabijheidsmatch. Denominatie is hier bewust niet meegenomen, zie de toelichting in scripts/analyse_spatial.py. Eén van de 18 (zh-0138, Nieuwe gem. begraafplaats, Brielle) stond hier eerst niet in -- toen kende ook de domeinexpert het jaartal niet. Aanvulling 2026-10-19 (antwoorden op docs/data/009-vragen-domeinexpert.md): 18 extra bevestigingen. Dat zijn de gevallen waar twee Excel-rijen op dezelfde plek liggen en de automatische koppeling niet kon kiezen (zh-0034/0035/0038/0058/0059/0076/0077/0078/0079/0161/0231/0434/0389/0390), de drie begraafplaatsen zonder koppeling binnen 300 m (zh-0138 nu circa 1994, zh-0234 1929, zh-0431 2007) en zh-0162 (Voorhout, Particuliere alg. begraafplaats, 1976: de domeinexpert noemt dit jaartal expliciet; de automatische koppeling gaf ten onrechte 'ME'). Periode 'ME' wordt bij het koppelen voluit 'Middeleeuwen' getoond (zie scripts/analyse_spatial.py). Entries met alleen `excel_nr` (en dus zonder jaartal/periode) zetten uitsluitend de koppeling van dit terrein aan zijn Excel-rij vast (scripts/excel_koppeling.py), zonder het jaartal te overschrijven: dat komt dan uit die rij. Dit betreft zeven terreinen waar de automatische toewijzing geen rij vond of er twee verwisselde (zh-0049 en zh-0050 in Voorburg: 'NH Kerkhof' hoort bij Excel-rij 346 'Kerkhof Oude Kerk', 'Oude gem. begraafplaats' bij rij 3000 'Oude Algemene Begraafplaats') -- door ons vastgezet op basis van naam, afstand en de beschermingsgegevens, nog niet door de domeinexpert bevestigd. De overige zijn zh-0124, 0201, 0209, 0326, 0416 (en zh-0173 hierboven).",
   "correcties": {
     "zh-0271": { "jaartal": 1873, "jaartal_circa": false },
     "zh-0183": { "jaartal": 1950, "jaartal_circa": false },
@@ -13,7 +13,7 @@
     "zh-0152": { "jaartal": 1984, "jaartal_circa": false },
     "zh-0372": { "jaartal": 1852, "jaartal_circa": false },
     "zh-0329": { "jaartal": 2015, "jaartal_circa": false },
-    "zh-0173": { "jaartal": 1950, "jaartal_circa": false },
+    "zh-0173": { "jaartal": 1950, "jaartal_circa": false, "excel_nr": "1338" },
     "zh-0174": { "jaartal": 2009, "jaartal_circa": false },
     "zh-0140": { "jaartal": 1900, "jaartal_circa": false },
     "zh-0097": { "jaartal": 1862, "jaartal_circa": false },
@@ -35,6 +35,13 @@
     "zh-0390": { "jaartal": 1880, "jaartal_circa": false },
     "zh-0138": { "jaartal": 1994, "jaartal_circa": true },
     "zh-0234": { "jaartal": 1929, "jaartal_circa": false },
-    "zh-0431": { "jaartal": 2007, "jaartal_circa": false }
+    "zh-0431": { "jaartal": 2007, "jaartal_circa": false },
+    "zh-0049": { "excel_nr": "346" },
+    "zh-0050": { "excel_nr": "3000" },
+    "zh-0124": { "excel_nr": "67" },
+    "zh-0201": { "excel_nr": "3664" },
+    "zh-0209": { "excel_nr": "2899" },
+    "zh-0326": { "excel_nr": "2255" },
+    "zh-0416": { "excel_nr": "170" }
   }
 }
