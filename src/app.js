@@ -201,6 +201,11 @@ function relevantMonumentUris(begraafplaatsenFc, maxDistance) {
     for (const r of f.properties.rijksmonument_relations || []) {
       if (r.cho_uri && r.distance_m <= maxDistance) uris.add(r.cho_uri);
     }
+    // Archeologische monumenten staan niet in rijksmonument_relations (alleen gebouwde),
+    // maar horen wel bij "relevant": binnen dezelfde afstand van een begraafplaats.
+    for (const r of f.properties.archeologische_rm_nabij || []) {
+      if (r.cho_uri && r.distance_m <= maxDistance) uris.add(r.cho_uri);
+    }
   }
   return uris;
 }

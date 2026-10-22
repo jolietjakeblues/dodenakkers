@@ -206,6 +206,34 @@ def nearest_archeologie(terrain_rd, arch_index: STRtree, arch: list[dict], arch_
     }
 
 
+def archeologie_nabij(terrain_rd, arch_index: STRtree, arch: list[dict], arch_geoms: list) -> list[dict]:
+    """Alle archeologische rijksmonumenten binnen RM_NEARBY_BUFFER_M van het terrein.
+
+    Zelfde idee als classify_rijksmonumenten() voor de gebouwde monumenten: ruwe
+    afstanden tot 250 m, waarna de viewer client-side filtert op de gekozen
+    drempel. Zonder deze lijst bleef een archeologisch monument op 6 m van een
+    terrein onzichtbaar in de laag "Rijksmonumenten (relevant)": die laag toonde
+    alleen monumenten uit `rijksmonument_relations`, en dat zijn per ontwerp alleen
+    de gebouwde (zie `rijksmonumenten_gebouwd`). Geen overlap-relatie: dat blijft
+    `archeologische_rm_relations`."""
+    nabij = []
+    for i in arch_index.query(terrain_rd.buffer(RM_NEARBY_BUFFER_M)):
+        distance_m = terrain_rd.distance(arch_geoms[i])
+        if distance_m > RM_NEARBY_BUFFER_M:
+            continue
+        props = arch[i]["properties"]
+        nabij.append(
+            {
+                "rijksmonumentnummer": props.get("rijksmonumentnummer"),
+                "naam": props.get("naam"),
+                "cho_uri": props.get("cho_uri"),
+                "distance_m": round(distance_m, 1),
+            }
+        )
+    nabij.sort(key=lambda r: (r["distance_m"], str(r["rijksmonumentnummer"])))
+    return nabij
+
+
 def classify_archeologie(terrain_rd, arch_index: STRtree, arch: list[dict], arch_geoms: list):
     candidate_idx = arch_index.query(terrain_rd)
     relations = []
@@ -355,6 +383,7 @@ def main() -> None:
         in_gezicht, gezicht_matches = classify_gezicht(terrain_rd, gezichten_index, gezichten, gezichten_geoms)
         arch_relations = classify_archeologie(terrain_rd, arch_index, archeologisch, arch_geoms)
         arch_nearest = nearest_archeologie(terrain_rd, arch_index, archeologisch, arch_geoms)
+        arch_nabij = archeologie_nabij(terrain_rd, arch_index, archeologisch, arch_geoms)
         rm_relations = classify_rijksmonumenten(terrain_rd, rm_index, rijksmonumenten_gebouwd, rm_geoms)
         gemeente = classify_gemeente(terrain_rd, gemeenten_index, gemeenten, gemeenten_geoms)
         rep_point = terrain_rd.representative_point()
@@ -421,6 +450,7 @@ def main() -> None:
         props["archeologische_rm_count"] = len(arch_relations)
         props["archeologische_rm_relations"] = arch_relations
         props["archeologische_rm_nearest"] = arch_nearest
+        props["archeologische_rm_nabij"] = arch_nabij
         props["rijksmonument_count"] = len(rm_relations)
         props["rijksmonument_relations"] = rm_relations
         props["datering"] = datering_match
